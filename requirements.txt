@@ -5,3 +5,4 @@ PyMuPDF>=1.25
 Pillow>=11
 pypdf>=6
 reportlab>=4.4
+svgpathtools>=1.6
