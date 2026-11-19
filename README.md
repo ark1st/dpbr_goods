@@ -7,14 +7,16 @@
 - `main`: 소스 코드와 제작에 필요한 원본 자료.
 - [`output`](https://github.com/ark1st/dpbr_goods/tree/output/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
 
-## 끼움형 디오라마 (2026-11-20)
+## 끼움형 디오라마 V2 (2026-11-20)
 
 **가람 + 단팽이 + 받침대, 1세트 3조각**의 기본형입니다.
-받침대 120×65mm, 가람 그림 높이65mm, 단팽이24.65mm로 기존 높이 비율을 유지했습니다.
+받침대 **100×36mm**로 V1보다 면적을 약54% 줄였습니다.
+가람 그림56.78×65mm, 단팽이28.30×24.65mm로 원본 카드의 가로세로 비율과 상대 높이를 유지했습니다.
+가람 갓의 그림자와 단팽이 눈 모양·기울기·위치를 원본과 대조해 수정했습니다.
 두 캐릭터의 돌기 폭은18mm로 같아 위치를 바꾸거나 다른 캐릭터로 교체할 수 있습니다.
 
-- [3T/5T 제작 파일과 조립 시안](https://github.com/ark1st/dpbr_goods/tree/output/output/diorama_v1)
-- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output/output/Danpungbaram_Diorama_V1_3T_5T.zip)
+- [3T/5T 제작 파일과 조립 시안](https://github.com/ark1st/dpbr_goods/tree/output/output/diorama_v2)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output/output/Danpungbaram_Diorama_V2_3T_5T.zip)
 - `scripts/build_diorama.py`: 두께별 파일 생성.
 - `configs/diorama.json`: 기본 디자인의 설계 치수.
 
@@ -31,7 +33,7 @@ python scripts/build_diorama.py --part-thickness 3 --base-thickness 3 --slot-wid
 python scripts/build_diorama.py --part-thickness 3 --base-thickness 5 --slot-width 2.80 --name mixed_3T_5T
 ```
 
-출력은 `output/diorama_v1/`에 저장됩니다. 두께 인수에는 실측 소수값도 입력할 수 있습니다.
+출력은 `output/diorama_v2/`에 저장됩니다. 두께 인수에는 실측 소수값도 입력할 수 있습니다.
 기본 디자인 크기를 바꾸면 배치와 안내서도 함께 검토해야 합니다. 두께와 홈 너비를 조정할 때에는 위 명령의 인수를 사용하세요.
 
 ## 아크릴 키링 도안 (V3)
