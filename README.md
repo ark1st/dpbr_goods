@@ -5,7 +5,7 @@
 ## 브랜치
 
 - `main`: 소스 코드와 제작에 필요한 원본 자료.
-- [`output`](https://github.com/ark1st/dpbr_goods/tree/output/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
+- [`output_len`](https://github.com/ark1st/dpbr_goods/tree/output_len/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
 
 ## 제목 포함 로고 디오라마 (2026-11-20)
 
@@ -14,8 +14,8 @@
 로고 그림96×33.80mm, 작은 받침대90×26mm. 18mm 돌기 두 개로 세웁니다.
 3T·5T 파일은 같은 디자인의 두께별 대안이며, 실제 사용할 한 종류만 선택합니다.
 
-- [제작 파일·조립 시안](https://github.com/ark1st/dpbr_goods/tree/output/output/logo_diorama_v1)
-- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output/output/Danpungbaram_Logo_Diorama_V1_3T_5T.zip)
+- [제작 파일·조립 시안](https://github.com/ark1st/dpbr_goods/tree/output_len/output/logo_diorama_v1)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Logo_Diorama_V1_3T_5T.zip)
 - `scripts/build_logo_diorama.py`: 인쇄·재단 원본, 안내서, 끼움 시험판 생성.
 - `configs/logo_diorama.json`: 로고 크기와 받침대·끼움 규격.
 
@@ -37,8 +37,8 @@ python scripts/build_logo_diorama.py --part-thickness 3 --base-thickness 5 --slo
 가람 갓의 그림자와 단팽이 눈 모양·기울기·위치를 원본과 대조해 수정했습니다.
 두 캐릭터의 돌기 폭은18mm로 같아 위치를 바꾸거나 다른 캐릭터로 교체할 수 있습니다.
 
-- [3T/5T 제작 파일과 조립 시안](https://github.com/ark1st/dpbr_goods/tree/output/output/diorama_v2)
-- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output/output/Danpungbaram_Diorama_V2_3T_5T.zip)
+- [3T/5T 제작 파일과 조립 시안](https://github.com/ark1st/dpbr_goods/tree/output_len/output/diorama_v2)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Diorama_V2_3T_5T.zip)
 - `scripts/build_diorama.py`: 두께별 파일 생성.
 - `configs/diorama.json`: 기본 디자인의 설계 치수.
 
@@ -62,7 +62,7 @@ python scripts/build_diorama.py --part-thickness 3 --base-thickness 5 --slot-wid
 
 4세트 + 로고 단독 4개, 총 **16조각**입니다. 한 세트는 가람·단팽이·미니 로고 각 1개입니다.
 V2의 12조각보다 조금 늘리고 작업영역은 320×180mm에서 **300×160mm**로 줄였습니다.
-조각 사이 실제 최소 간격은 **7.06mm**입니다. [배치 미리보기](https://github.com/ark1st/dpbr_goods/blob/output/output/production_v3/preview/board_layout.png).
+조각 사이 실제 최소 간격은 **7.06mm**입니다. [배치 미리보기](https://github.com/ark1st/dpbr_goods/blob/output_len/output/production_v3/preview/board_layout.png).
 
 | 그림 | 높이 |
 |---|---:|
