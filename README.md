@@ -40,7 +40,7 @@ python scripts/build_diorama.py --part-thickness 3 --base-thickness 5 --slot-wid
 
 4세트 + 로고 단독 4개, 총 **16조각**입니다. 한 세트는 가람·단팽이·미니 로고 각 1개입니다.
 V2의 12조각보다 조금 늘리고 작업영역은 320×180mm에서 **300×160mm**로 줄였습니다.
-조각 사이 실제 최소 간격은 **7.07mm**입니다. [배치 미리보기](https://github.com/ark1st/dpbr_goods/blob/output/output/production_v3/preview/board_layout.png).
+조각 사이 실제 최소 간격은 **7.06mm**입니다. [배치 미리보기](https://github.com/ark1st/dpbr_goods/blob/output/output/production_v3/preview/board_layout.png).
 
 | 그림 | 높이 |
 |---|---:|
