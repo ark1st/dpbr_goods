@@ -7,17 +7,20 @@
 - `main`: 소스 코드와 제작에 필요한 원본 자료.
 - [`output_len`](https://github.com/ark1st/dpbr_goods/tree/output_len/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
 
-## 제목 포함 로고 디오라마 (2026-11-20)
+## 메인 로고 디오라마 V2 (2026-11-20)
 
 **단풍바람 로고판 1개 + 투명 받침대 1개, 한 디자인 1세트 2조각**입니다.
 원본 AI의 심벌과 ‘단풍바람’ 제목을 이루는38개 벡터 경로를 그대로 사용했습니다.
-로고 그림96×33.80mm, 작은 받침대90×26mm. 18mm 돌기 두 개로 세웁니다.
+로고 그림160×56.33mm로 기존96mm보다 가로·높이를 약1.67배 키웠습니다.
+로고판 외곽 약167.2×63.5mm, 받침대140×38mm. 18mm 돌기 두 개의 중심 간격은84mm입니다.
 3T·5T 파일은 같은 디자인의 두께별 대안이며, 실제 사용할 한 종류만 선택합니다.
 
-- [제작 파일·조립 시안](https://github.com/ark1st/dpbr_goods/tree/output_len/output/logo_diorama_v1)
-- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Logo_Diorama_V1_3T_5T.zip)
+- [제작 파일·조립 시안](https://github.com/ark1st/dpbr_goods/tree/output_len/output/logo_diorama_v2)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Logo_Diorama_V2_MAIN_3T_5T.zip)
 - `scripts/build_logo_diorama.py`: 인쇄·재단 원본, 안내서, 끼움 시험판 생성.
 - `configs/logo_diorama.json`: 로고 크기와 받침대·끼움 규격.
+
+이전 작은 V1은 보관하며, 메인 장식용 제작 파일은 `logo_diorama_v2`를 사용합니다.
 
 ```powershell
 python scripts/build_logo_diorama.py

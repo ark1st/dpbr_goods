@@ -1,18 +1,20 @@
 # 출력 파일
 
-## 제목 포함 로고 디오라마 · 2026-11-20
+## 메인 로고 디오라마 V2 · 2026-11-20
 
 **한 디자인, 1세트2조각**: 단풍바람 로고판1개 + 투명 받침대1개.
-받침대90×26mm, 로고 그림96×33.80mm. 원본 AI의 심벌과 제목 벡터·색상·비율을 유지했습니다.
+받침대140×38mm, 로고 그림160×56.33mm. 기존 로고보다 가로·높이 약1.67배 확대했습니다. 원본 AI의 심벌과 제목 벡터·색상·비율을 유지했습니다.
 
-- [제작 파일과 사용법](logo_diorama_v1/README.md)
-- [전체 ZIP](Danpungbaram_Logo_Diorama_V1_3T_5T.zip)
-- [조립·치수 안내서](logo_diorama_v1/00_ASSEMBLY_GUIDE.pdf)
-- [3T 파일](logo_diorama_v1/3T) / [5T 파일](logo_diorama_v1/5T): 둘 중 한 종류만 선택.
+- [제작 파일과 사용법](logo_diorama_v2/README.md)
+- [전체 ZIP](Danpungbaram_Logo_Diorama_V2_MAIN_3T_5T.zip)
+- [조립·치수 안내서](logo_diorama_v2/00_ASSEMBLY_GUIDE.pdf)
+- [3T 파일](logo_diorama_v2/3T) / [5T 파일](logo_diorama_v2/5T): 둘 중 한 종류만 선택.
 
-![제목 포함 로고 디오라마 조립 예상도](logo_diorama_v1/3T/preview/assembly.png)
+![제목 포함 로고 디오라마 조립 예상도](logo_diorama_v2/3T/preview/assembly.png)
 
 실물 끼움은 시험 전입니다. 동봉 시험판으로 실제 홈 너비를 선택한 뒤 제작합니다.
+
+이전96mm 소형 시안은 `logo_diorama_v1`에 보관했습니다. 메인 장식은 V2 파일로 제작하세요.
 
 ## 끼움형 디오라마 V2 · 2026-11-20
 
