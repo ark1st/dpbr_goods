@@ -1,0 +1,258 @@
+{
+  "ai": [
+    {
+      "file": "output\\production_v4\\02_MASTER.ai",
+      "size_mm": [
+        299.99999152289496,
+        160.00000983344182
+      ],
+      "path_objects": 32,
+      "closed_contours": 32,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\carabiner_trials_v1\\02_MASTER.ai",
+      "size_mm": [
+        307.99999847412107,
+        71.99999796549479
+      ],
+      "path_objects": 23,
+      "closed_contours": 23,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\diorama_v3\\3T\\02_MASTER.ai",
+      "size_mm": [
+        200.00000152587887,
+        110.0000040690104
+      ],
+      "path_objects": 5,
+      "closed_contours": 5,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\logo_diorama_v3\\3T\\02_MASTER.ai",
+      "size_mm": [
+        200.00000152587887,
+        140.0000032212999
+      ],
+      "path_objects": 4,
+      "closed_contours": 4,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\combined_diorama_v3\\3T\\02_COMBINED_MASTER.ai",
+      "size_mm": [
+        310.0000055948893,
+        204.99999779595268
+      ],
+      "path_objects": 34,
+      "closed_contours": 34,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\diorama_v3\\5T\\02_MASTER.ai",
+      "size_mm": [
+        200.00000152587887,
+        110.0000040690104
+      ],
+      "path_objects": 5,
+      "closed_contours": 5,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\logo_diorama_v3\\5T\\02_MASTER.ai",
+      "size_mm": [
+        200.00000152587887,
+        140.0000032212999
+      ],
+      "path_objects": 4,
+      "closed_contours": 4,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\combined_diorama_v3\\5T\\02_COMBINED_MASTER.ai",
+      "size_mm": [
+        310.0000055948893,
+        204.99999779595268
+      ],
+      "path_objects": 34,
+      "closed_contours": 34,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT"
+      ]
+    },
+    {
+      "file": "output\\extra_sheet\\3T\\05_MASTER.ai",
+      "size_mm": [
+        527.0000030517577,
+        203.99999423556855
+      ],
+      "path_objects": 49,
+      "closed_contours": 95,
+      "layers": [
+        "PRINT_ARTWORK",
+        "CORNER_REFERENCE",
+        "LASER_CUT",
+        "WHITE_INK_MASK"
+      ]
+    },
+    {
+      "file": "output\\extra_sheet\\5T\\05_MASTER.ai",
+      "size_mm": [
+        527.0000030517577,
+        203.99999423556855
+      ],
+      "path_objects": 49,
+      "closed_contours": 95,
+      "layers": [
+        "PRINT_ARTWORK",
+        "CORNER_REFERENCE",
+        "LASER_CUT",
+        "WHITE_INK_MASK"
+      ]
+    }
+  ],
+  "png": [
+    {
+      "file": "output\\extra_sheet\\3T\\02_PRINT_300ppi.png",
+      "pixels": [
+        6225,
+        2410
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\extra_sheet\\5T\\02_PRINT_300ppi.png",
+      "pixels": [
+        6225,
+        2410
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\production_v4\\01_PRINT_300ppi.png",
+      "pixels": [
+        3543,
+        1890
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\combined_diorama_v3\\3T\\01_PRINT_300ppi.png",
+      "pixels": [
+        3661,
+        2421
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\combined_diorama_v3\\5T\\01_PRINT_300ppi.png",
+      "pixels": [
+        3661,
+        2421
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\tshirt_fronts\\aing\\01_DTG_14x16in_300ppi.png",
+      "pixels": [
+        4200,
+        4800
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\tshirt_fronts\\changseop\\01_DTG_14x16in_300ppi.png",
+      "pixels": [
+        4200,
+        4800
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ],
+  "zip": [
+    {
+      "file": "Danpungbaram_V4_SMALL_BATCH_16pcs.zip",
+      "bytes": 8114449
+    },
+    {
+      "file": "Danpungbaram_Diorama_V3_3T_5T.zip",
+      "bytes": 1362992
+    },
+    {
+      "file": "Danpungbaram_Logo_Diorama_V3_MAIN_3T_5T.zip",
+      "bytes": 1121733
+    },
+    {
+      "file": "Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip",
+      "bytes": 10308245
+    },
+    {
+      "file": "Extra_Sheet_38pcs_3T.zip",
+      "bytes": 53077152
+    },
+    {
+      "file": "Extra_Sheet_38pcs_5T.zip",
+      "bytes": 53068769
+    },
+    {
+      "file": "Tshirt_Fronts_Aing_Changseop_14x16in.zip",
+      "bytes": 7507329
+    }
+  ],
+  "rendered_pages": 16,
+  "physical_prototype_tested": false,
+  "visual_review": "All 16 rendered PDF pages and final garment previews reviewed."
+}

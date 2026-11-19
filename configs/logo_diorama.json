@@ -2,7 +2,7 @@
   "art_width_mm": 160,
   "base_mm": [140, 38],
   "base_corner_radius_mm": 5,
-  "clear_border_mm": 3.6,
+  "clear_border_mm": 2.5,
   "tab_width_mm": 18,
   "tab_center_spacing_mm": 84,
   "tab_bottom_clearance_mm": 0.4,

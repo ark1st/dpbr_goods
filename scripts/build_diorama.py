@@ -21,7 +21,7 @@ from reportlab.lib.units import mm
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 
-OUT=ROOT/'output/diorama_v2'
+OUT=ROOT/'output/diorama_v3'
 TMP=ROOT/'tmp/diorama'
 CFG=json.loads((ROOT/'configs/diorama.json').read_text(encoding='utf-8'))
 BOARD=(200,110)
@@ -97,7 +97,7 @@ def standee(a,base_thickness):
     assert shape.geom_type=='Polygon' and shape.is_valid and not shape.interiors
     assert shape.contains(art)
     clearance=shape.boundary.distance(art)
-    assert clearance>3.5,(clearance,a['h'])
+    assert border-.02 <= clearance <= border+.001,(clearance,a['h'])
     # Confirm the two contact shoulders and the standard-width stem exist.
     section=shape.intersection(LineString([(cx-30,shoulder+.15),(cx+30,shoulder+.15)]))
     assert abs(section.length-CFG['tab_width_mm'])<.001
@@ -236,7 +236,7 @@ def assembly(assets,shapes,preset,folder):
         parts.append(f'<g transform="translate({X} {Y})">{body}{a["inner"]}</g>')
     parts.append(svg_text(13,15,'GAR AM + DANPAENGI'.replace('GAR AM','GARAM'),5,'#4d5148'))
     parts.append(svg_text(13,23,'100 x 36 mm / original character proportions',3.4))
-    parts.append(svg_text(13,129,f'V2 / {preset["name"]} concept / transparent acrylic',3.1))
+    parts.append(svg_text(13,129,f'V3 / {preset["name"]} concept / transparent acrylic',3.1))
     svg=write_svg(folder/'preview/assembly.svg',175,135,''.join(parts))
     render(svg,folder/'preview/assembly.png',2.7)
 
@@ -294,7 +294,7 @@ def validate(assets,shapes,preset,items,gap,folder,rows):
             s=shapes[p['name']];points=[(p['tx']+s['cx'],p['ty']+s['shoulder']+s['depth']/2)]
         for x,y in points:
             xx=round(x*300/25.4);yy=round(y*300/25.4);assert arr[yy,xx,3]==0
-    report={'revision':2,'preset':preset,'canvas_mm':BOARD,'base_mm':CFG['base_mm'],'pieces':3,
+    report={'revision':3,'nominal_art_border_mm':CFG['clear_border_mm'],'preset':preset,'canvas_mm':BOARD,'base_mm':CFG['base_mm'],'pieces':3,
             'cut_closed_paths':5,'hole_paths_first':True,'hole_count':2,
             'tab_width_mm':CFG['tab_width_mm'],'tab_depth_mm':shapes['garam']['depth'],
             'slot_length_mm':CFG['slot_length_mm'],'slot_width_mm':preset['slot_width_mm'],
@@ -320,7 +320,7 @@ def guide(reports):
         c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
     def page(title,sub,num):
         c.setFillColor('#faf8f2');c.rect(0,0,210*mm,297*mm,fill=1,stroke=0)
-        text(17,278,'DANPUNGBARAM / ACRYLIC DIORAMA 02',9,True,'#bd664e')
+        text(17,278,'DANPUNGBARAM / ACRYLIC DIORAMA 03',9,True,'#bd664e')
         text(17,262,title,21,True);text(17,250,sub,9,color='#777567')
         c.setStrokeColor('#d8d4c7');c.line(17*mm,243*mm,193*mm,243*mm)
         text(17,10,'2026.11.20 / 1:1 mm / 실물 끼움 시험 전 도안',8,color='#777567');text(190,10,str(num),8)
@@ -330,7 +330,7 @@ def guide(reports):
     text(17,83,'받침대 100 × 36 mm / 기존보다 면적을 약 54% 줄였습니다.',11,True)
     text(17,71,'가람 그림 높이 65 mm / 단팽이 24.65 mm. 원본의 가로세로·상대 높이 비율 적용.',9)
     text(17,62,'가람은 뒤쪽 왼편, 단팽이는 앞쪽 오른편. 두 개의 독립된 홈에 각각 꽂습니다.',9)
-    text(17,53,'그림 바깥 투명 여백 3.5 mm 이상. 키링 구멍은 없고 아래쪽에 끼움 돌기가 있습니다.',9)
+    text(17,53,'일반 외곽 여백 2.5 mm 기준. 아래쪽 받침 어깨와 끼움 돌기는 별도입니다.',9)
     text(17,44,'공통 돌기 폭 18 mm로 두 자리를 바꾸거나 같은 규격의 다른 캐릭터로 교체합니다.',9)
     text(17,33,'가람 갓: 가장자리를 따라 이어지는 그림자 / 단팽이: 원본의 기울어진 타원 눈.',8.5,color='#777567')
     text(17,23,'위 그림은 조립 예상도이며, 실제 끼움과 기울어짐은 시험 조각으로 확인하세요.',8.5,color='#777567')
@@ -418,7 +418,7 @@ def guide(reports):
 
 
 def readme(reports):
-    text='''# 가람 + 단팽이 끼움형 디오라마 V2
+    text='''# 가람 + 단팽이 끼움형 디오라마 V3
 
 ![조립 예상도](3T/preview/assembly.png)
 
@@ -429,6 +429,8 @@ def readme(reports):
 가람 그림56.78×65mm / 단팽이28.30×24.65mm.
 같은 원본 카드의 가람311×356px, 단팽이155×135px를 기준으로 각각의 가로세로 비율과 상대 높이를 유지합니다.
 가람 갓의 중간에서 끊기는 그림자를 고쳤고, 단팽이 눈의 크기·기울기·위치를 원본에 맞췄습니다.
+일반 외곽 여백을2.5mm로 줄였습니다(근사오차0.02mm 이내). 받침 어깨·돌기는 구조상 더 넓습니다.
+레이저 선 자체는0.001mm이며 그림 크기·원본 비율은 유지했습니다.
 두 캐릭터의 돌기 폭은 공통18mm로 서로 교체할 수 있습니다. 교체 후 받침대 밖 돌출과 안정성을 확인하세요.
 다른 캐릭터는 `05_CHARACTER_TEMPLATE.svg`의 그림과 윗부분 윤곽을 바꾸고 아래 결합부를 유지하세요.
 
@@ -515,10 +517,10 @@ def main():
         print(json.dumps(report,ensure_ascii=False),flush=True)
     if not custom:
         guide(reports);readme(reports)
-        with zipfile.ZipFile(ROOT/'output/Danpungbaram_Diorama_V2_3T_5T.zip','w',zipfile.ZIP_DEFLATED) as z:
+        with zipfile.ZipFile(ROOT/'output/Danpungbaram_Diorama_V3_3T_5T.zip','w',zipfile.ZIP_DEFLATED) as z:
             for file in sorted(OUT.rglob('*')):
                 if file.is_file() and (file.parent==OUT or file.relative_to(OUT).parts[0] in ['3T','5T']):
-                    z.write(file,Path('Danpungbaram_Diorama_V2')/file.relative_to(OUT))
+                    z.write(file,Path('Danpungbaram_Diorama_V3')/file.relative_to(OUT))
         print('Default package complete',flush=True)
 
 

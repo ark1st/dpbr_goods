@@ -1,0 +1,221 @@
+{
+  "canvas_mm": [
+    308,
+    72
+  ],
+  "pieces": 5,
+  "cut_paths": 23,
+  "hardware": {
+    "revision": 1,
+    "hardware_external_mm": [
+      9,
+      23.5,
+      1
+    ],
+    "left_arm_shift_mm": [
+      -5.0,
+      -1.5
+    ],
+    "gate_location": "lower_left",
+    "samples": [
+      {
+        "id": "A",
+        "height_mm": 50,
+        "border_mm": 2.0
+      },
+      {
+        "id": "B",
+        "height_mm": 50,
+        "border_mm": 2.5
+      },
+      {
+        "id": "C",
+        "height_mm": 55,
+        "border_mm": 2.0
+      },
+      {
+        "id": "D",
+        "height_mm": 55,
+        "border_mm": 2.5
+      }
+    ],
+    "coupon_hole_diameters_mm": [
+      1.2,
+      1.4,
+      1.6
+    ],
+    "coupon_hole_pitches_mm": [
+      3.0,
+      4.0,
+      5.0
+    ],
+    "body_mounting_holes": "unpierced pads; drill after physical fitting",
+    "physical_fit_verified": false
+  },
+  "samples": {
+    "carabiner_A": {
+      "art_to_cut_min_mm": 1.9999697506869887,
+      "lower_opening_min_mm": 5.2193446753457975,
+      "outer_mm": [
+        50.53470362529674,
+        49.99997375647684
+      ],
+      "mount_holes_finalized": false
+    },
+    "carabiner_B": {
+      "art_to_cut_min_mm": 2.499960519819013,
+      "lower_opening_min_mm": 4.1319043576311,
+      "outer_mm": [
+        50.631760328319814,
+        49.99995418693604
+      ],
+      "mount_holes_finalized": false
+    },
+    "carabiner_C": {
+      "art_to_cut_min_mm": 1.9999754069068607,
+      "lower_opening_min_mm": 5.656685731478633,
+      "outer_mm": [
+        55.04932788547524,
+        54.99997984605774
+      ],
+      "mount_holes_finalized": false
+    },
+    "carabiner_D": {
+      "art_to_cut_min_mm": 2.4999679984877026,
+      "lower_opening_min_mm": 4.569206489684237,
+      "outer_mm": [
+        55.14642716723173,
+        54.999977146338686
+      ],
+      "mount_holes_finalized": false
+    }
+  },
+  "coupon": [
+    {
+      "diameter_mm": 1.2,
+      "pitch_mm": 3.0,
+      "centers_mm": [
+        [
+          8,
+          6.5
+        ],
+        [
+          8,
+          9.5
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.4,
+      "pitch_mm": 3.0,
+      "centers_mm": [
+        [
+          26,
+          6.5
+        ],
+        [
+          26,
+          9.5
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.6,
+      "pitch_mm": 3.0,
+      "centers_mm": [
+        [
+          44,
+          6.5
+        ],
+        [
+          44,
+          9.5
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.2,
+      "pitch_mm": 4.0,
+      "centers_mm": [
+        [
+          8,
+          20.0
+        ],
+        [
+          8,
+          24.0
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.4,
+      "pitch_mm": 4.0,
+      "centers_mm": [
+        [
+          26,
+          20.0
+        ],
+        [
+          26,
+          24.0
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.6,
+      "pitch_mm": 4.0,
+      "centers_mm": [
+        [
+          44,
+          20.0
+        ],
+        [
+          44,
+          24.0
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.2,
+      "pitch_mm": 5.0,
+      "centers_mm": [
+        [
+          8,
+          33.5
+        ],
+        [
+          8,
+          38.5
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.4,
+      "pitch_mm": 5.0,
+      "centers_mm": [
+        [
+          26,
+          33.5
+        ],
+        [
+          26,
+          38.5
+        ]
+      ]
+    },
+    {
+      "diameter_mm": 1.6,
+      "pitch_mm": 5.0,
+      "centers_mm": [
+        [
+          44,
+          33.5
+        ],
+        [
+          44,
+          38.5
+        ]
+      ]
+    }
+  ]
+}

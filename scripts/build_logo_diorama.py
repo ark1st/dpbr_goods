@@ -27,7 +27,7 @@ import build_diorama as acrylic
 from build_diorama import rounded, write_svg, render, export_native, export_png, svg_text
 
 CFG = json.loads((ROOT / 'configs/logo_diorama.json').read_text(encoding='utf-8'))
-OUT = ROOT / 'output/logo_diorama_v2'
+OUT = ROOT / 'output/logo_diorama_v3'
 TMP = ROOT / 'tmp/logo_diorama'
 RED, BLUE = '#ff0000', '#0000ff'
 
@@ -69,8 +69,7 @@ def geometry(art, preset):
     depth = preset['base_thickness_mm']-CFG['tab_bottom_clearance_mm']
     centers = [art['w']/2-CFG['tab_center_spacing_mm']/2,
                art['w']/2+CFG['tab_center_spacing_mm']/2]
-    # 0.01 mm extra offsets the polygonal approximation of circular corners.
-    body = art['hull'].buffer(CFG['clear_border_mm']+.01, quad_segs=32)
+    body = art['hull'].buffer(CFG['clear_border_mm'], quad_segs=64)
     plinth = box(centers[0]-13, shoulder-9, centers[1]+13, shoulder)
     body = unary_union([body, plinth]).convex_hull.intersection(box(-20, -20, art['w']+20, shoulder))
     stand = unary_union([body]+[tab(x, shoulder, depth) for x in centers])
@@ -81,7 +80,8 @@ def geometry(art, preset):
                      CFG['slot_length_mm'], preset['slot_width_mm'], CFG['slot_corner_radius_mm'])
              for x in centers]
     assert stand.is_valid and stand.geom_type == 'Polygon' and not stand.interiors
-    assert stand.contains(art['hull']) and stand.boundary.distance(art['hull']) >= 3.599
+    assert stand.contains(art['hull'])
+    assert CFG['clear_border_mm']-.002 <= stand.boundary.distance(art['hull']) <= CFG['clear_border_mm']+.001
     assert all(base.contains(s) and base.boundary.distance(s) > 8 for s in slots)
     for x in centers:
         section = stand.intersection(LineString([(x-10, shoulder+.1), (x+10, shoulder+.1)]))
@@ -161,8 +161,8 @@ def build(preset, art):
     cut_text = (folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
     assert cut_text.count('<path ') == cut_text.count(' Z"') == 4
     assert BLUE not in cut_text
-    report = {'design':'full-logo-diorama-v2-main', 'quantity':1, 'pieces':2, 'preset':preset,
-        'canvas_mm':CFG['canvas_mm'], 'base_mm':CFG['base_mm'],
+    report = {'design':'full-logo-diorama-v3-main', 'quantity':1, 'pieces':2, 'preset':preset,
+        'canvas_mm':CFG['canvas_mm'], 'base_mm':CFG['base_mm'], 'nominal_art_border_mm':CFG['clear_border_mm'],
         'art_mm':[art['w'],art['h']], 'source_aspect_ratio':art['provenance']['aspect_ratio'],
         'art_aspect_ratio':art['w']/art['h'], 'original_paths_unchanged':38,
         'stand_width_mm':stand.bounds[2]-stand.bounds[0],
@@ -215,7 +215,7 @@ def guide(reports):
     register_guide_fonts()
     draft=TMP/'guide_draft.pdf'
     c=canvas.Canvas(str(draft),pagesize=(210*mm,297*mm))
-    c.setTitle('단풍바람 메인 로고 디오라마 V2 - 1세트 제작 안내')
+    c.setTitle('단풍바람 메인 로고 디오라마 V3 - 1세트 제작 안내')
     def text(x,y,s,size=10,bold=False,color='#3f413a'):
         c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
     def page(title,sub,n):
@@ -243,7 +243,7 @@ def guide(reports):
     page('두께를 정하고, 시험 후 끼우기','홈 너비는 로고판 두께, 돌기 길이는 받침대 두께를 기준으로 합니다.',2)
     text(17,226,f'공통 돌기 18 mm × 2개 / 중심 간격 {CFG["tab_center_spacing_mm"]} mm / 홈 길이 18.8 mm',11,True)
     edge=min(r['slot_minimum_edge_margin_mm'] for r in reports)
-    text(17,214,f'그림과 외곽은 최소 3.6 mm, 홈과 받침대 가장자리는 최소 {edge:.1f} mm 여유.',9)
+    text(17,214,f'일반 외곽 여백2.5 mm, 홈과 받침대 가장자리는 최소 {edge:.1f} mm 여유.',9)
     y=199
     for r in reports:
         p=r['preset']
@@ -283,7 +283,7 @@ def guide(reports):
 
 
 def readme(reports):
-    text='''# 단풍바람 메인 로고 디오라마 V2
+    text='''# 단풍바람 메인 로고 디오라마 V3
 
 **한 디자인, 1세트 2조각**: 로고판 1개 + 투명 받침대 1개. 3T와 5T는 두께별 대안이며 둘 다 생산하지 않습니다.
 
@@ -292,7 +292,9 @@ def readme(reports):
 - 받침대 **140×38 mm**, 로고 그림 **160×56.33 mm**. 이전96 mm 로고의 가로·높이 약1.67배입니다.
 - 원본 `assets/source_logo.ai`의 `기본` 그룹: 심벌 7개 + 제목 31개 벡터 경로를 그대로 사용했습니다.
 - 글꼴을 새로 입력하지 않았으며 원본 색상·상대 위치·가로세로 비율을 보존했습니다.
-- 로고판 외곽은 약167.2×63.5 mm, 투명 연결판으로 전체 로고가 한 조각이 됩니다.
+- 로고판 외곽은 약165.0×61.3 mm, 투명 연결판으로 전체 로고가 한 조각이 됩니다.
+- 일반 외곽 여백2.5mm 기준. 글자·심벌 사이 연결판과 돌기 주변은 구조상 더 넓습니다.
+- 레이저 선 자체는0.001mm이고 원본 그림 크기는 유지했습니다.
 - 18 mm 돌기 2개, 중심 간격84 mm. 받침대는 인쇄 없이 투명하게 사용합니다.
 
 ## 파일 선택
@@ -326,7 +328,7 @@ python scripts/build_logo_diorama.py --part-thickness 3 --base-thickness 5 --slo
 파란 선은 위치·방향 맞춤용이며 커팅하지 않습니다. 모든 파일은 같은 원점, 실제 크기100%로 사용합니다.
 UV 백색 잉크 처리는 장비 담당자가 그림의 불투명 부분 기준으로 설정합니다. 투명 여백과 돌기는 인쇄하지 않습니다.
 원본 재추출은 `python scripts/extract_logo_full.py`로 할 수 있습니다.
-이전 작은 버전은 `logo_diorama_v1`에 보관되어 있습니다. 메인 장식용 제작은 이 V2를 사용합니다.
+이전 작은 버전은 `logo_diorama_v1`에 보관되어 있습니다. 메인 장식용 제작은 이 V3를 사용합니다.
 '''
     if reports[0]['preset']['name']!='3T':
         text=text.replace('(3T/preview/assembly.png)',f'({reports[0]["preset"]["name"]}/preview/assembly.png)')
@@ -347,7 +349,7 @@ def main():
         if not (2<=args.part_thickness<=6 and 2<=args.base_thickness<=6):parser.error('Thickness range: 2 to 6 mm')
         if not (args.part_thickness-.6<=args.slot_width<=args.part_thickness+.6):parser.error('Slot width must be within 0.6 mm of the part thickness')
         if not re.fullmatch(r'[A-Za-z0-9_-]+',args.name):parser.error('Name may contain ASCII letters, numbers, underscore and hyphen')
-        OUT=ROOT/'output'/f'logo_diorama_v2_{args.name}'
+        OUT=ROOT/'output'/f'logo_diorama_v3_{args.name}'
         presets=[{'name':args.name,'part_thickness_mm':args.part_thickness,
                   'base_thickness_mm':args.base_thickness,'slot_width_mm':args.slot_width}]
     else:presets=CFG['presets']
@@ -357,7 +359,7 @@ def main():
     reports=[build(p,art) for p in presets]
     guide(reports);readme(reports)
     (OUT/'validation_summary.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
-    zipname='Danpungbaram_Logo_Diorama_V2_MAIN_3T_5T.zip' if len(presets)==2 else f'Danpungbaram_Logo_Diorama_V2_{args.name}.zip'
+    zipname='Danpungbaram_Logo_Diorama_V3_MAIN_3T_5T.zip' if len(presets)==2 else f'Danpungbaram_Logo_Diorama_V3_{args.name}.zip'
     with zipfile.ZipFile(OUT.parent/zipname,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in sorted(OUT.rglob('*')):
             if file.is_file():archive.write(file,file.relative_to(OUT.parent))
