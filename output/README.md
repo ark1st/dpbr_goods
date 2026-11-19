@@ -3,7 +3,7 @@
 ## 추가 아크릴 합본 · 33조각
 
 **421 × 204 mm 한 장**에 첨부 도안 30조각과 단팽이 1개, 미니 로고 2개를 배치했습니다.
-파란 위치 기준선을 포함한 [인쇄 PNG](extra_sheet/02_PRINT_300ppi.png)와 함께 [합본 제작 파일과 출력 안내](extra_sheet/README.md)를 확인하세요.
+[3T 제작 파일](extra_sheet/3T) · [5T 제작 파일](extra_sheet/5T) · [두께 선택 및 출력 안내](extra_sheet/README.md)
 
 [가람이 단독 PNG · 55 mm · 600dpi](garam_55mm_600dpi.png)
 
