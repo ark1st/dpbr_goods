@@ -3,19 +3,26 @@ from pathlib import Path
 import os
 import shutil
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SVG = 'http://www.w3.org/2000/svg'
 
 def cli_path():
     override = os.environ.get('VECTORCRAFT_CLI')
-    candidates = [override, shutil.which('vectorcraft-cli')]
+    if override:
+        candidate = Path(override).expanduser()
+        if not candidate.is_file():
+            raise FileNotFoundError(f'VECTORCRAFT_CLI does not point to a file: {candidate}')
+        return candidate.resolve()
+    executable = 'vectorcraft-cli.exe' if os.name == 'nt' else 'vectorcraft-cli'
+    candidates = [Path(sys.executable).with_name(executable), shutil.which(executable)]
     if os.environ.get('LOCALAPPDATA'):
         candidates.append(str(Path(os.environ['LOCALAPPDATA'])/'Programs/ArtCraft/VectorCraft/vectorcraft-cli.exe'))
     for candidate in candidates:
         if candidate and Path(candidate).is_file():
             return candidate
-    raise FileNotFoundError('Install VectorCraft or set VECTORCRAFT_CLI to vectorcraft-cli.')
+    raise FileNotFoundError('Install the separate VectorCraft CLI on PATH or set VECTORCRAFT_CLI to its executable.')
 
 def runvc(args):
     result = subprocess.run([cli_path(), *map(str, args)], capture_output=True,

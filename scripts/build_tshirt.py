@@ -8,8 +8,7 @@ from PIL import Image
 from pypdf import PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
+from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 from vector_utils import runvc,svg_doc,layer
 
 OUT=ROOT/'output/tshirt'
@@ -17,6 +16,7 @@ TMP=ROOT/'tmp/tshirt'
 
 
 def main():
+    register_guide_fonts()
     OUT.mkdir(parents=True,exist_ok=True);TMP.mkdir(parents=True,exist_ok=True)
     a=json.loads((ROOT/'assets/artwork.json').read_text(encoding='utf-8'))['solo_logo']
     scale=70/a['h'];width=a['w']*scale
@@ -31,12 +31,10 @@ def main():
     cmd=TMP/'export.json';cmd.write_text(json.dumps(commands),encoding='utf-8')
     runvc(['run','--in',svg,'--commands',cmd])
 
-    pdfmetrics.registerFont(TTFont('Malgun','C:/Windows/Fonts/malgun.ttf'))
-    pdfmetrics.registerFont(TTFont('MalgunB','C:/Windows/Fonts/malgunbd.ttf'))
     c=canvas.Canvas(str(OUT/'tshirt_70mm_A4_ACTUAL_SIZE.pdf'),pagesize=(210*mm,297*mm))
     c.setTitle('단풍바람 티셔츠 로고 - A4 실물 크기 확인')
     def text(x,y,s,size=10,bold=False):
-        c.setFont('MalgunB' if bold else 'Malgun',size);c.drawString(x*mm,y*mm,s)
+        c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
     text(20,272,'단풍바람 / 왼쪽 가슴 로고',20,True)
     text(20,256,'흰색 또는 밝은 티셔츠용 · 이름 없는 로고 · 높이 70 mm')
     text(20,246,'A4 용지에 실제 크기 100%로 출력한 뒤 가슴에 대어 위치를 확인하세요.')
