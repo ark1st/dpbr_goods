@@ -36,7 +36,7 @@ def extract():
     provenance = {
         'source': 'assets/source_logo.ai',
         'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
-        'extracted_svg_sha256': hashlib.sha256((ROOT / 'assets/logo_full.svg').read_bytes()).hexdigest(),
+        'extracted_svg_sha256_lf': hashlib.sha256((ROOT / 'assets/logo_full.svg').read_text(encoding='utf-8').encode('utf-8')).hexdigest(),
         'source_group': '기본', 'path_count': len(paths),
         'symbol_paths': 7, 'outlined_wordmark_paths': 31,
         'source_viewbox': [x0, y0, width, height],

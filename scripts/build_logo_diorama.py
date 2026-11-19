@@ -37,7 +37,8 @@ def load_logo():
     x, y, w, h = map(float, root.get('viewBox').split())
     provenance = json.loads((ROOT / 'assets/logo_full_provenance.json').read_text(encoding='utf-8'))
     assert hashlib.sha256((ROOT / provenance['source']).read_bytes()).hexdigest() == provenance['source_sha256']
-    assert hashlib.sha256((ROOT / 'assets/logo_full.svg').read_bytes()).hexdigest() == provenance['extracted_svg_sha256']
+    # Text-mode reading normalizes Git's Windows/macOS line-ending differences.
+    assert hashlib.sha256((ROOT / 'assets/logo_full.svg').read_text(encoding='utf-8').encode('utf-8')).hexdigest() == provenance['extracted_svg_sha256_lf']
     groups = [e for e in root if e.tag == f'{{{SVG}}}g']
     paths = [p for g in groups for p in g.iter() if p.tag == f'{{{SVG}}}path']
     assert len(paths) == provenance['path_count'] == 38
