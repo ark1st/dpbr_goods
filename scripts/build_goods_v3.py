@@ -178,6 +178,9 @@ def label(c,x,y,s,size=10,bold=False,color='#252525'):
     c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
 
 def guides(assets,shapes,gap):
+    def outline(name):
+        x0,y0,x1,y1=shapes[name]['poly'].bounds
+        return f'약 {x1-x0:.1f} × {y1-y0:.1f} mm'
     c=canvas.Canvas(str(OUT/'00_REVISION_GUIDE.pdf'),pagesize=(210*mm,297*mm));c.setTitle('단풍바람 키링 수정본 V3 - 소량 제작 16조각')
     def page(title,sub,n):
         c.setFillColor('#faf8f3');c.rect(0,0,210*mm,297*mm,fill=1,stroke=0)
@@ -210,8 +213,8 @@ def guides(assets,shapes,gap):
         '구멍 가장자리와 그림: 최소 5 mm.',
         '구멍 가장자리와 아크릴 외곽: 최소 4 mm. 목 부분 폭은 약 10.4 mm입니다.',
         f'배치된 조각끼리 외곽 간격은 최소 {gap:.2f} mm입니다.',
-        '완성 외곽: 가람 약 55.2 × 71.8 mm / 단팽이 약 31.6 × 37.7 mm.',
-        '미니 로고 약 23.4 × 34.8 mm / 단독 로고 약 34.2 × 46.9 mm.'
+        f'완성 외곽: 가람 {outline("garam")} / 단팽이 {outline("danpaengi")}.',
+        f'미니 로고 {outline("mini_logo")} / 단독 로고 {outline("solo_logo")}.'
     ])
     c.drawImage(str(OUT/'preview/board_layout.png'),55*mm,19*mm,width=100*mm,height=100*H/W*mm,mask='auto')
     # Overview sits in a reserved bottom area; the text layout is kept above it.
