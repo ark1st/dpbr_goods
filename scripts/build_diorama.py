@@ -18,9 +18,8 @@ from shapely.ops import unary_union
 from pypdf import PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 from vector_utils import runvc, svg_doc, path, poly_path, layer
+from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 
 OUT=ROOT/'output/diorama_v1'
 TMP=ROOT/'tmp/diorama'
@@ -307,12 +306,11 @@ def validate(assets,shapes,preset,items,gap,folder,rows):
 
 
 def guide(reports):
-    pdfmetrics.registerFont(TTFont('Malgun','C:/Windows/Fonts/malgun.ttf'))
-    pdfmetrics.registerFont(TTFont('MalgunB','C:/Windows/Fonts/malgunbd.ttf'))
+    register_guide_fonts()
     c=canvas.Canvas(str(OUT/'00_ASSEMBLY_GUIDE.pdf'),pagesize=(210*mm,297*mm))
     c.setTitle('가람과 단팽이 - 3T / 5T 끼움형 아크릴 디오라마')
     def text(x,y,s,size=10,bold=False,color='#33362e'):
-        c.setFillColor(color);c.setFont('MalgunB' if bold else 'Malgun',size);c.drawString(x*mm,y*mm,s)
+        c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
     def page(title,sub,num):
         c.setFillColor('#faf8f2');c.rect(0,0,210*mm,297*mm,fill=1,stroke=0)
         text(17,278,'DANPUNGBARAM / ACRYLIC DIORAMA 01',9,True,'#bd664e')
