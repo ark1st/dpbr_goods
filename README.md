@@ -21,7 +21,6 @@
 - [그림 원본과 편집용 SVG](assets/README.md): `main`의 `assets/`에서 관리합니다.
 
 `preview/00_DISPLAY_COMPARISON.ai`는 조립 모습 편집용이고, `02_COMBINED_MASTER.ai`가 제작용입니다.
-이전 합본 V1은 보관했습니다. 새 제작에는 V2 파일을 사용합니다.
 
 ## 메인 로고 디오라마 V2 (2026-11-20)
 
@@ -35,8 +34,6 @@
 - [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Logo_Diorama_V2_MAIN_3T_5T.zip)
 - `scripts/build_logo_diorama.py`: 인쇄·재단 원본, 안내서, 끼움 시험판 생성.
 - `configs/logo_diorama.json`: 로고 크기와 받침대·끼움 규격.
-
-이전 작은 V1은 보관하며, 메인 장식용 제작 파일은 `logo_diorama_v2`를 사용합니다.
 
 ```powershell
 python scripts/build_logo_diorama.py
@@ -95,7 +92,7 @@ V2의 12조각보다 조금 늘리고 작업영역은 320×180mm에서 **300×16
 
 ## 출력 파일
 
-`output` 브랜치의 `output/production_v3/`:
+`output_len` 브랜치의 `output/production_v3/`:
 
 - `01_PRINT_300ppi.png`: UV 인쇄용, 투명 배경, 파란 사각 기준선 포함.
 - `02_MASTER.ai`, `03_MASTER.vectorcraft`: 3개 레이어를 보존한 편집 원본.
@@ -131,13 +128,10 @@ Windows에서는 PATH나 기본 설치 경로에서 CLI를 찾습니다. 필요�
 빌드 중간 파일은 `tmp/`, 최종 파일은 `output/`에 생성됩니다. `main`에서는 둘 다 Git 추적 대상에서 제외합니다.
 검증은 실제 판 크기·레이어·PNG 해상도·기준선 네 변·폐곡선 수·간격을 검사하며 `validation_report.json`으로 저장합니다. 실물 인쇄·커팅 시험을 대신하지 않습니다.
 
-### 첨부 AI 두 파일 합본
+## 추가 아크릴 합본 · 33조각
 
-```sh
-.venv/bin/python scripts/build_extra_sheet.py "/path/to/아크릴키링.ai" "/path/to/yun_image.ai"
-```
-
-`output/extra_sheet/`의 합본은 **640 × 225 mm 한 장**입니다. 원본의 그림과 칼선을 크기 변형 없이 함께 이동하고, 커팅선은 #FF0000 / 0.001 mm로 출력합니다. `01_COMBINED_SHEET.pdf`는 기본으로 컬러 인쇄 레이어만 표시합니다. UV 인쇄에는 `02_PRINT_300ppi.png`, 커팅에는 `03_CUT_ONLY.pdf`를 같은 원점과 실제 크기 100%로 사용합니다. `04_WHITE_INK_MASK_300ppi.png`는 yun 도안의 백색 잉크 영역을 검게 표시한 분판 데이터입니다. VectorCraft에서 편집하려면 세 레이어가 들어 있는 `05_MASTER.vectorcraft`를 엽니다.
+**421 × 204 mm 한 장**에 첨부 도안 30조각과 단팽이 1개, 미니 로고 2개를 배치했습니다.
+파란 기준선이 들어간 인쇄 PNG, 커팅 PDF, 백색 분판과 편집 원본은 [추가 아크릴 합본 안내](output/extra_sheet/README.md)에 있습니다.
 
 ## 원본
 

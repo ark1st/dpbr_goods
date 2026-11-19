@@ -38,4 +38,4 @@
 인쇄·재단은 같은 원점과100% 크기를 유지합니다. 파란 사각 기준선은 재단하지 않습니다.
 실물 끼움은 시험 전입니다. 기존과 같은18mm 돌기·홈 규격을 유지했으며 같은 재료와 설정으로 시험 후 제작합니다.
 `python scripts/build_combined_diorama.py`로 재생성합니다.
-배치 좌표와 회전각은 `configs/combined_layout.json`에 있습니다. 이전 V1은 보관용이며 새 제작에는 V2를 사용합니다.
+배치 좌표와 회전각은 `configs/combined_layout.json`에 있습니다.

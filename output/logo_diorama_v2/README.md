@@ -41,4 +41,3 @@ python scripts/build_logo_diorama.py --part-thickness 3 --base-thickness 5 --slo
 파란 선은 위치·방향 맞춤용이며 커팅하지 않습니다. 모든 파일은 같은 원점, 실제 크기100%로 사용합니다.
 UV 백색 잉크 처리는 장비 담당자가 그림의 불투명 부분 기준으로 설정합니다. 투명 여백과 돌기는 인쇄하지 않습니다.
 원본 재추출은 `python scripts/extract_logo_full.py`로 할 수 있습니다.
-이전 작은 버전은 `logo_diorama_v1`에 보관되어 있습니다. 메인 장식용 제작은 이 V2를 사용합니다.
