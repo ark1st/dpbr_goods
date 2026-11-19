@@ -7,18 +7,21 @@
 - `main`: 소스 코드와 제작에 필요한 원본 자료.
 - [`output_len`](https://github.com/ark1st/dpbr_goods/tree/output_len/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
 
-## 마스코트 + 메인 로고 AI 합본 (2026-11-20)
+## 마스코트 + 메인 로고 AI 합본 V2 (2026-11-20)
 
-가람1 + 단팽이1 + 큰 로고1 + 기존 받침대2, **총5조각**을310×160mm 제작 판에 모았습니다.
-기존 치수·비율·끼움 규격을 유지하고 위치만 옮겼습니다. 3T·5T 각각 한 개의 AI로 편집할 수 있습니다.
-조립 시안은 같은 배율의 평행 투영이며 정면 비교도는 받침대 바닥선을 맞췄습니다.
+가람1 + 단팽이1 + 큰 로고1 + 기존 받침대2 + 로고 키링1, **총6조각**입니다.
+295×140mm로 대지 면적을 기존310×160mm보다 **16.7% 줄였습니다**.
+기존 부품은 크기 변경 없이 회전·이동만 했고, 실제 최소 재단 간격은 약9mm입니다.
 
-- [실제 비율 비교·AI 합본](https://github.com/ark1st/dpbr_goods/tree/output_len/output/combined_diorama_v1)
-- [3T 제작 AI](https://github.com/ark1st/dpbr_goods/blob/output_len/output/combined_diorama_v1/3T/02_COMBINED_MASTER.ai) / [5T 제작 AI](https://github.com/ark1st/dpbr_goods/blob/output_len/output/combined_diorama_v1/5T/02_COMBINED_MASTER.ai)
-- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Combined_Diorama_3T_5T.zip)
-- `python scripts/build_combined_diorama.py`: 합본과 비교 시안 재생성.
+- [압축 배치·AI 합본](https://github.com/ark1st/dpbr_goods/tree/output_len/output/combined_diorama_v2)
+- [3T 제작 AI](https://github.com/ark1st/dpbr_goods/blob/output_len/output/combined_diorama_v2/3T/02_COMBINED_MASTER.ai) / [5T 제작 AI](https://github.com/ark1st/dpbr_goods/blob/output_len/output/combined_diorama_v2/5T/02_COMBINED_MASTER.ai)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output_len/output/Danpungbaram_Combined_Diorama_V2_COMPACT_6pcs.zip)
+- `python scripts/build_combined_diorama.py`: 합본·비교 시안 재생성.
+- `configs/combined_layout.json`: 부품의 회전각과 배치 좌표.
+- [그림 원본과 편집용 SVG](assets/README.md): `main`의 `assets/`에서 관리합니다.
 
 `preview/00_DISPLAY_COMPARISON.ai`는 조립 모습 편집용이고, `02_COMBINED_MASTER.ai`가 제작용입니다.
+이전 합본 V1은 보관했습니다. 새 제작에는 V2 파일을 사용합니다.
 
 ## 메인 로고 디오라마 V2 (2026-11-20)
 

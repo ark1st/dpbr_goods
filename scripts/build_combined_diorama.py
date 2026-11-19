@@ -1,4 +1,4 @@
-"""Same-scale assembly comparison and a five-piece Illustrator production sheet."""
+"""Same-scale assembly comparison and compact six-piece production sheets."""
 from pathlib import Path
 import json
 import sys
@@ -10,18 +10,36 @@ import numpy as np
 from PIL import Image
 from pypdf import PdfReader
 from shapely import affinity
-from shapely.geometry import box
+from shapely.geometry import box, Point
 from vector_utils import layer, path, poly_path
 import build_diorama as mascot
 import build_logo_diorama as logo
+import build_goods_v3 as keyring
 from build_diorama import write_svg, render, export_native, export_png, rounded, svg_text
 
-OUT = ROOT/'output/combined_diorama_v1'
-BOARD = (310,160)
+OUT = ROOT/'output/combined_diorama_v2'
+PACKING = json.loads((ROOT/'configs/combined_layout.json').read_text(encoding='utf-8'))
+BOARD = tuple(PACKING['board_mm'])
 SCENE = (350,145)
 BLUE, RED = '#0000ff', '#ff0000'
-POSES = {'garam':(12,12), 'danpaengi':(87,15), 'main_logo':(132,12),
-         'mascot_base':(18,108), 'logo_base':(150,108)}
+POSES = {p['name']:p for p in PACKING['placements']}
+
+
+def logo_keyring():
+    a=json.loads((ROOT/'assets/artwork.json').read_text(encoding='utf-8'))['solo_logo']
+    folder=mascot.TMP/'combined_keyring';folder.mkdir(parents=True,exist_ok=True)
+    svg=write_svg(folder/'solo_logo.svg',a['w'],a['h'],a['inner'])
+    render(svg,folder/'solo_logo.png',8)
+    original_folder=keyring.AS
+    try:
+        keyring.AS=folder
+        shape=keyring.geometry({'solo_logo':a})['solo_logo']
+    finally:keyring.AS=original_folder
+    return {'name':'logo_keyring','poly':shape['poly'],'ink':a['inner'],
+            'holes':[Point(*shape['hole']).buffer(2,quad_segs=64)],
+            'keyring_metrics':{'art_mm':[a['w'],a['h']],'hole_diameter_mm':4,
+                'art_to_cut_mm':shape['clearance'],'hole_to_art_mm':shape['hole_art'],
+                'hole_to_edge_mm':shape['hole_edge']}}
 
 
 def load_geometry(assets, art, preset):
@@ -36,19 +54,30 @@ def load_geometry(assets, art, preset):
         {'name':'mascot_base','poly':rounded(0,0,*mascot.CFG['base_mm'],mascot.CFG['base_corner_radius_mm']),
          'ink':mascot.base_art(assets),'holes':mascot.base_slots(preset['slot_width_mm'])},
         {'name':'logo_base','poly':main['base'],'ink':'','holes':main['slots']}]
+    originals.append(logo_keyring())
+    for p in originals:
+        if p['holes']:p['blank_zones']=[h.buffer(1.5) for h in p['holes']]
+        else:
+            shoulder=p['poly'].bounds[3]-(preset['base_thickness_mm']-.4)
+            region=p['poly'].intersection(box(-50,shoulder+.05,400,400))
+            p['blank_zones']=list(region.geoms) if region.geom_type=='MultiPolygon' else [region]
     return shapes,main,originals
 
 
 def layout(originals):
     items=[]
     for original in originals:
-        x0,y0,_,_=original['poly'].bounds
-        x,y=POSES[original['name']];tx,ty=x-x0,y-y0
-        items.append({**original,'tx':tx,'ty':ty,
-                      'poly':affinity.translate(original['poly'],tx,ty),
-                      'holes':[affinity.translate(h,tx,ty) for h in original['holes']]})
-        # Combining only translates the original geometry, never scales it.
-        restored=affinity.translate(items[-1]['poly'],-tx,-ty)
+        pose=POSES[original['name']];tx,ty=pose['tx'],pose['ty'];angle=pose['angle']
+        assert angle in [0,90,180,270]
+        a,b,c,d={0:(1,0,0,1),90:(0,1,-1,0),180:(-1,0,0,-1),270:(0,-1,1,0)}[angle]
+        transform=lambda p:affinity.affine_transform(p,[a,c,b,d,tx,ty])
+        items.append({**original,'tx':tx,'ty':ty,'angle':angle,
+                      'matrix':f'matrix({a} {b} {c} {d} {tx:.9f} {ty:.9f})',
+                      'poly':transform(original['poly']),
+                      'holes':[transform(h) for h in original['holes']],
+                      'blank_zones':[transform(z) for z in original['blank_zones']]})
+        # Quarter-turn rotation and translation only; dimensions and proportions stay exact.
+        restored=affinity.rotate(affinity.translate(items[-1]['poly'],-tx,-ty),-angle,origin=(0,0))
         assert restored.hausdorff_distance(original['poly']) < 1e-8
     for p in items:
         assert box(8,8,BOARD[0]-8,BOARD[1]-8).contains(p['poly'])
@@ -58,31 +87,35 @@ def layout(originals):
     return items,gap
 
 
+def artwork(items):
+    return ''.join(f'<g id="{p["name"]}" transform="{p["matrix"]}">{p["ink"]}</g>' for p in items)
+
+
 def make_sheet(assets,art,preset):
     folder=OUT/preset['name'];(folder/'preview').mkdir(parents=True,exist_ok=True)
     shapes,main,originals=load_geometry(assets,art,preset)
     items,gap=layout(originals);w,h=BOARD
-    ink=layer('3_ARTWORK',mascot.artwork_layer(items))
+    ink=layer('3_ARTWORK',artwork(items))
     reference=layer('2_CORNER_REFERENCE',
         f'<rect x="4" y="4" width="{w-8}" height="{h-8}" fill="none" stroke="{BLUE}" stroke-width="0.3"/>')
     cutting=layer('1_LASER_CUT',mascot.cut_layer(items))
     master=write_svg(folder/'02_COMBINED_MASTER.svg',w,h,ink+reference+cutting,
-                     'Garam + Danpaengi + main logo / 5 pieces / 1:1 mm')
+                     'Compact: diorama + one logo keyring / 6 pieces / 1:1 mm')
     export_native(master,folder,'02_COMBINED_MASTER')
     printing=write_svg(folder/'01_PRINT.svg',w,h,ink+reference)
     export_png(printing,folder/'01_PRINT_300ppi.png')
     write_svg(folder/'03_CUT_ONLY.svg',w,h,cutting)
-    labels=svg_text(12,99,f'{preset["name"]} / GARAM + DANPAENGI + MAIN LOGO',3.5)
-    labels+=svg_text(w/2,154,'5 PIECES / 2 BASES / ACTUAL SIZE / 310 x 160 mm',3.1,anchor='middle')
-    flat=write_svg(folder/'preview/flat_layout.svg',w,h,
-        f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+mascot.cut_layer(items,.17)+labels)
+    labels=svg_text(w/2,h+7,f'{preset["name"]} / {w} x {h} mm / 6 PIECES / +1 LOGO KEYRING',3.2,anchor='middle')
+    flat=write_svg(folder/'preview/flat_layout.svg',w,h+12,
+        f'<rect width="{w}" height="{h+12}" fill="#fffdf8"/>'+ink+reference+mascot.cut_layer(items,.17)+labels)
     render(flat,folder/'preview/flat_layout.png',2)
     # One shared coupon for the unchanged 18 mm tab interface.
     rows=mascot.fit_test(preset,folder)
-    for name,subset in [('UPRIGHTS',[p for p in items if not p['holes']]),
-                        ('BASES',[p for p in items if p['holes']])]:
+    for name,subset in [('UPRIGHTS',[p for p in items if p['name'] in ['garam','danpaengi','main_logo']]),
+                        ('BASES',[p for p in items if p['name'].endswith('_base')]),
+                        ('KEYRING',[p for p in items if p['name']=='logo_keyring'])]:
         write_svg(folder/f'05_{name}_ONLY.svg',w,h,
-            layer('3_ARTWORK',mascot.artwork_layer(subset))+reference+layer('1_LASER_CUT',mascot.cut_layer(subset)))
+            layer('3_ARTWORK',artwork(subset))+reference+layer('1_LASER_CUT',mascot.cut_layer(subset)))
     assembly(assets,art,shapes,main,preset,folder,front=False)
     assembly(assets,art,shapes,main,preset,folder,front=True)
     validate(assets,art,preset,originals,items,gap,folder,rows)
@@ -161,8 +194,8 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
     assert abs(float(page.mediabox.width)*25.4/72-BOARD[0])<.01
     assert abs(float(page.mediabox.height)*25.4/72-BOARD[1])<.01
     source=(folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
-    assert source.count('<path ')==source.count(' Z"')==9 and BLUE not in source
-    assert len(items)==5 and sum(len(p['holes']) for p in items)==4
+    assert source.count('<path ')==source.count(' Z"')==11 and BLUE not in source
+    assert len(items)==6 and sum(len(p['holes']) for p in items)==5
     im=Image.open(folder/'01_PRINT_300ppi.png');pixels=np.asarray(im)
     assert im.mode=='RGBA' and im.size==tuple(round(v*300/25.4) for v in BOARD)
     assert abs(im.info['dpi'][0]-300)<.1
@@ -173,29 +206,26 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
     import cv2
     blank=np.zeros(pixels.shape[:2],np.uint8)
     for p in items:
-        if p['holes']:zones=[h.buffer(1.5) for h in p['holes']]
-        else:
-            shoulder=p['poly'].bounds[3]-(preset['base_thickness_mm']-.4)
-            zones=[p['poly'].intersection(box(-10,shoulder+.05,BOARD[0]+10,BOARD[1]))]
-            zones=[q for z in zones for q in (z.geoms if z.geom_type=='MultiPolygon' else [z])]
-        for z in zones:
+        for z in p['blank_zones']:
             coords=np.round(np.asarray(z.exterior.coords)*300/25.4).astype(np.int32)
             cv2.fillPoly(blank,[coords],1)
     assert not pixels[:,:,3][blank.astype(bool)].any()
-    report={'design':'combined-diorama-v1','preset':preset,'quantity':1,'pieces':5,
+    report={'design':'combined-diorama-v2-compact','preset':preset,'quantity':1,'pieces':6,
         'uprights':['garam','danpaengi','main_logo'],'bases':['mascot_base','logo_base'],
-        'canvas_mm':BOARD,'original_geometry_translation_only':True,
+        'canvas_mm':BOARD,'original_geometry_rigid_transform_only':True,
+        'previous_canvas_mm':[310,160],'canvas_area_reduction_percent':100*(1-BOARD[0]*BOARD[1]/(310*160)),
+        'keyring_count':1,'keyring':next(p['keyring_metrics'] for p in items if p['name']=='logo_keyring'),
         'comparison_projection':'orthographic; x and vertical z have identical scale; depth translation only',
         'comparison_scale_for_all_parts':1,'front_view_common_ground_line_mm':110,
         'source_designs':['diorama_v2','logo_diorama_v2'],
         'art_dimensions_mm':{**{n:[assets[n]['w'],assets[n]['h']] for n in ['garam','danpaengi']},
                              'main_logo':[art['w'],art['h']]},
         'base_dimensions_mm':{'mascot_base':mascot.CFG['base_mm'],'logo_base':logo.CFG['base_mm']},
-        'minimum_piece_gap_mm':gap,'cut_closed_paths':9,'slot_count':4,'ai_layers':layers,
+        'minimum_piece_gap_mm':gap,'cut_closed_paths':11,'slot_count':4,'keyring_hole_count':1,'ai_layers':layers,
         'blue_reference_four_sides':True,'rgba_300ppi':True,'tabs_and_slot_buffers_unprinted':True,
         'physical_fit_test':False,'fit_test_slots':rows}
     (folder/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-    (folder/'parameters.json').write_text(json.dumps({'canvas_mm':BOARD,'positions_top_left_mm':POSES,
+    (folder/'parameters.json').write_text(json.dumps({'canvas_mm':BOARD,'rigid_placements':POSES,
         'mascot_config':mascot.CFG,'logo_config':logo.CFG,'selected_preset':preset},ensure_ascii=False,indent=2),encoding='utf-8')
     return report
 
@@ -205,13 +235,19 @@ def main():
     art=logo.load_logo();assets=mascot.load_art()
     assert mascot.CFG['presets']==logo.CFG['presets']
     for preset in logo.CFG['presets']:make_sheet(assets,art,preset)
-    (OUT/'README.md').write_text('''# 가람·단팽이·메인 로고 합본
+    (OUT/'README.md').write_text('''# 가람·단팽이·메인 로고 합본 V2 - 압축 배치
 
 기존 마스코트 디오라마 V2와 큰 로고 V2를 **그대로, 같은 배율**로 모았습니다.
-구성은 가람1 + 단팽이1 + 큰 로고1 + 기존 받침대2 = **총5조각**입니다.
+구성은 가람1 + 단팽이1 + 큰 로고1 + 기존 받침대2 + 로고 키링1 = **총6조각**입니다.
+대지를310×160mm에서 **295×140mm로 약16.7% 줄이고**, 기존30mm 높이의 로고 단독 키링1개를 추가했습니다.
+그림과 재단선·구멍을 함께90도 단위로 회전하고 이동했습니다. 기존 부품 크기는 바꾸지 않았습니다.
+부품 사이 실제 최소 간격은 약9.00mm입니다. 키링 구멍 지름4mm, 구멍과 외곽은4.18mm 이상입니다.
+키링의 그림과 재단선은3.57mm 이상, 구멍과 그림은5.10mm 이상 떨어져 있습니다.
 한 개의 공통 받침대로 바꾸지 않았습니다. 마스코트는100×36mm, 로고는140×38mm 받침대에 꽂습니다.
 3T와5T는 두께별 대안으로 한 종류만 선택합니다.
 
+![압축한 제작 배치](3T/preview/flat_layout.png)
+아래 조립 시안은 기존 디오라마5조각을 보여줍니다. 추가 키링은 별도 사용합니다.
 ![같은 배율로 함께 세운 모습](3T/preview/assembly_together.png)
 ![동일 바닥선의 정면 크기 비교](3T/preview/front_comparison.png)
 
@@ -228,23 +264,24 @@ def main():
 
 ## Illustrator 파일
 
-- `3T/02_COMBINED_MASTER.ai` / `5T/02_COMBINED_MASTER.ai`: **제작용 합본**. 310×160mm 판에5조각 배치.
+- `3T/02_COMBINED_MASTER.ai` / `5T/02_COMBINED_MASTER.ai`: **제작용 합본**. 295×140mm 판에6조각 배치.
 - `3T/preview/00_DISPLAY_COMPARISON.ai`: **조립 모습 편집용**. 설명 그림이므로 생산용으로 쓰지 않습니다.
 - 각 AI의 `.vectorcraft`, `.svg` 원본도 포함합니다.
 - `01_PRINT_300ppi.png`: 그림과 파란 기준선만 있는 투명 UV 인쇄 파일.
-- `03_CUT_ONLY.svg`: 빨간0.001mm 재단선. 홈4개를 먼저 자르고 외곽5개를 자릅니다.
+- `03_CUT_ONLY.svg`: 빨간0.001mm 재단선. 홈4개와 키링 구멍1개를 먼저 자르고 외곽6개를 자릅니다.
 - `04_FIT_TEST_*`: 공통18mm 돌기의 홈 너비 시험판.
-- `05_UPRIGHTS_ONLY.svg`, `05_BASES_ONLY.svg`: 부품 종류별 확인 파일. 두께가 다르면 별도 두께용 도안으로 생성해야 합니다.
+- `05_UPRIGHTS_ONLY.svg`, `05_BASES_ONLY.svg`, `05_KEYRING_ONLY.svg`: 부품 종류별 확인 파일. 두께가 다르면 별도 두께용 도안으로 생성해야 합니다.
 
 인쇄·재단은 같은 원점과100% 크기를 유지합니다. 파란 사각 기준선은 재단하지 않습니다.
 실물 끼움은 시험 전입니다. 기존과 같은18mm 돌기·홈 규격을 유지했으며 같은 재료와 설정으로 시험 후 제작합니다.
 `python scripts/build_combined_diorama.py`로 재생성합니다.
+배치 좌표와 회전각은 `configs/combined_layout.json`에 있습니다. 이전 V1은 보관용이며 새 제작에는 V2를 사용합니다.
 ''',encoding='utf-8')
-    dest=OUT.parent/'Danpungbaram_Combined_Diorama_3T_5T.zip'
+    dest=OUT.parent/'Danpungbaram_Combined_Diorama_V2_COMPACT_6pcs.zip'
     with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
         for p in sorted(OUT.rglob('*')):
             if p.is_file():z.write(p,p.relative_to(OUT.parent))
-    print(json.dumps({'folder':str(OUT),'canvas_mm':BOARD,'pieces':5,'presets':['3T','5T']},ensure_ascii=False))
+    print(json.dumps({'folder':str(OUT),'canvas_mm':BOARD,'pieces':6,'presets':['3T','5T']},ensure_ascii=False))
 
 
 if __name__=='__main__':main()
