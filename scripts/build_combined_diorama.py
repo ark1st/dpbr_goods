@@ -1,4 +1,4 @@
-"""Same-scale assembly comparison and compact six-piece production sheets."""
+"""Same-scale assembly comparison and eleven-piece sheets with carabiner trials."""
 from pathlib import Path
 import json
 import sys
@@ -15,9 +15,10 @@ from vector_utils import layer, path, poly_path
 import build_diorama as mascot
 import build_logo_diorama as logo
 import build_goods_v3 as keyring
+import build_carabiner as carabiner
 from build_diorama import write_svg, render, export_native, export_png, rounded, svg_text
 
-OUT = ROOT/'output/combined_diorama_v2'
+OUT = ROOT/'output/combined_diorama_v3'
 PACKING = json.loads((ROOT/'configs/combined_layout.json').read_text(encoding='utf-8'))
 BOARD = tuple(PACKING['board_mm'])
 SCENE = (350,145)
@@ -79,11 +80,12 @@ def layout(originals):
         # Quarter-turn rotation and translation only; dimensions and proportions stay exact.
         restored=affinity.rotate(affinity.translate(items[-1]['poly'],-tx,-ty),-angle,origin=(0,0))
         assert restored.hausdorff_distance(original['poly']) < 1e-8
+    items.extend(carabiner.placed_samples(PACKING['carabiner_row_y_mm']))
     for p in items:
         assert box(8,8,BOARD[0]-8,BOARD[1]-8).contains(p['poly'])
         assert all(p['poly'].contains(h) for h in p['holes'])
     gap=min(p['poly'].distance(q['poly']) for i,p in enumerate(items) for q in items[:i])
-    assert gap>=8, gap
+    assert gap>=PACKING['minimum_gap_mm'], gap
     return items,gap
 
 
@@ -100,12 +102,14 @@ def make_sheet(assets,art,preset):
         f'<rect x="4" y="4" width="{w-8}" height="{h-8}" fill="none" stroke="{BLUE}" stroke-width="0.3"/>')
     cutting=layer('1_LASER_CUT',mascot.cut_layer(items))
     master=write_svg(folder/'02_COMBINED_MASTER.svg',w,h,ink+reference+cutting,
-                     'Compact: diorama + one logo keyring / 6 pieces / 1:1 mm')
+                     'Compact: diorama + one logo keyring / 11 pieces / 1:1 mm')
     export_native(master,folder,'02_COMBINED_MASTER')
     printing=write_svg(folder/'01_PRINT.svg',w,h,ink+reference)
     export_png(printing,folder/'01_PRINT_300ppi.png')
-    write_svg(folder/'03_CUT_ONLY.svg',w,h,cutting)
-    labels=svg_text(w/2,h+7,f'{preset["name"]} / {w} x {h} mm / 6 PIECES / +1 LOGO KEYRING',3.2,anchor='middle')
+    cut_svg=write_svg(folder/'03_CUT_ONLY.svg',w,h,cutting)
+    from vector_utils import runvc
+    runvc(['convert',cut_svg,folder/'03_CUT_ONLY.pdf'])
+    labels=svg_text(w/2,h+7,f'{preset["name"]} / {w} x {h} mm / 11 PIECES / 4 CARABINERS + FIT COUPON',3.2,anchor='middle')
     flat=write_svg(folder/'preview/flat_layout.svg',w,h+12,
         f'<rect width="{w}" height="{h+12}" fill="#fffdf8"/>'+ink+reference+mascot.cut_layer(items,.17)+labels)
     render(flat,folder/'preview/flat_layout.png',2)
@@ -113,7 +117,8 @@ def make_sheet(assets,art,preset):
     rows=mascot.fit_test(preset,folder)
     for name,subset in [('UPRIGHTS',[p for p in items if p['name'] in ['garam','danpaengi','main_logo']]),
                         ('BASES',[p for p in items if p['name'].endswith('_base')]),
-                        ('KEYRING',[p for p in items if p['name']=='logo_keyring'])]:
+                        ('KEYRING',[p for p in items if p['name']=='logo_keyring']),
+                        ('CARABINERS',[p for p in items if p['name'].startswith('carabiner_') or p['name']=='gate_fit_coupon'])]:
         write_svg(folder/f'05_{name}_ONLY.svg',w,h,
             layer('3_ARTWORK',artwork(subset))+reference+layer('1_LASER_CUT',mascot.cut_layer(subset)))
     assembly(assets,art,shapes,main,preset,folder,front=False)
@@ -194,8 +199,8 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
     assert abs(float(page.mediabox.width)*25.4/72-BOARD[0])<.01
     assert abs(float(page.mediabox.height)*25.4/72-BOARD[1])<.01
     source=(folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
-    assert source.count('<path ')==source.count(' Z"')==11 and BLUE not in source
-    assert len(items)==6 and sum(len(p['holes']) for p in items)==5
+    assert source.count('<path ')==source.count(' Z"')==34 and BLUE not in source
+    assert len(items)==11 and sum(len(p['holes']) for p in items)==23
     im=Image.open(folder/'01_PRINT_300ppi.png');pixels=np.asarray(im)
     assert im.mode=='RGBA' and im.size==tuple(round(v*300/25.4) for v in BOARD)
     assert abs(im.info['dpi'][0]-300)<.1
@@ -210,18 +215,18 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
             coords=np.round(np.asarray(z.exterior.coords)*300/25.4).astype(np.int32)
             cv2.fillPoly(blank,[coords],1)
     assert not pixels[:,:,3][blank.astype(bool)].any()
-    report={'design':'combined-diorama-v2-compact','preset':preset,'quantity':1,'pieces':6,
+    report={'design':'combined-diorama-v3-compact','preset':preset,'quantity':1,'pieces':11,
         'uprights':['garam','danpaengi','main_logo'],'bases':['mascot_base','logo_base'],
-        'canvas_mm':BOARD,'original_geometry_rigid_transform_only':True,
-        'previous_canvas_mm':[310,160],'canvas_area_reduction_percent':100*(1-BOARD[0]*BOARD[1]/(310*160)),
+        'canvas_mm':BOARD,'nominal_art_border_mm':mascot.CFG['clear_border_mm'],'original_geometry_rigid_transform_only':True,
+        'previous_canvas_mm':[295,140],'added_carabiner_trials':4,'added_gate_coupon':1,
         'keyring_count':1,'keyring':next(p['keyring_metrics'] for p in items if p['name']=='logo_keyring'),
         'comparison_projection':'orthographic; x and vertical z have identical scale; depth translation only',
         'comparison_scale_for_all_parts':1,'front_view_common_ground_line_mm':110,
-        'source_designs':['diorama_v2','logo_diorama_v2'],
+        'source_designs':['diorama_v3','logo_diorama_v3'],
         'art_dimensions_mm':{**{n:[assets[n]['w'],assets[n]['h']] for n in ['garam','danpaengi']},
                              'main_logo':[art['w'],art['h']]},
         'base_dimensions_mm':{'mascot_base':mascot.CFG['base_mm'],'logo_base':logo.CFG['base_mm']},
-        'minimum_piece_gap_mm':gap,'cut_closed_paths':11,'slot_count':4,'keyring_hole_count':1,'ai_layers':layers,
+        'minimum_piece_gap_mm':gap,'cut_closed_paths':34,'slot_count':4,'keyring_hole_count':1,'gate_coupon_holes':18,'ai_layers':layers,
         'blue_reference_four_sides':True,'rgba_300ppi':True,'tabs_and_slot_buffers_unprinted':True,
         'physical_fit_test':False,'fit_test_slots':rows}
     (folder/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -235,53 +240,51 @@ def main():
     art=logo.load_logo();assets=mascot.load_art()
     assert mascot.CFG['presets']==logo.CFG['presets']
     for preset in logo.CFG['presets']:make_sheet(assets,art,preset)
-    (OUT/'README.md').write_text('''# 가람·단팽이·메인 로고 합본 V2 - 압축 배치
+    (OUT/'README.md').write_text('''# 가람·단팽이·메인 로고 합본 V3 + 카라비너 시험 4종
 
-기존 마스코트 디오라마 V2와 큰 로고 V2를 **그대로, 같은 배율**로 모았습니다.
-구성은 가람1 + 단팽이1 + 큰 로고1 + 기존 받침대2 + 로고 키링1 = **총6조각**입니다.
-대지를310×160mm에서 **295×140mm로 약16.7% 줄이고**, 기존30mm 높이의 로고 단독 키링1개를 추가했습니다.
-그림과 재단선·구멍을 함께90도 단위로 회전하고 이동했습니다. 기존 부품 크기는 바꾸지 않았습니다.
-부품 사이 실제 최소 간격은 약9.00mm입니다. 키링 구멍 지름4mm, 구멍과 외곽은4.18mm 이상입니다.
-키링의 그림과 재단선은3.57mm 이상, 구멍과 그림은5.10mm 이상 떨어져 있습니다.
-한 개의 공통 받침대로 바꾸지 않았습니다. 마스코트는100×36mm, 로고는140×38mm 받침대에 꽂습니다.
-3T와5T는 두께별 대안으로 한 종류만 선택합니다.
+**내일 제작할 단바 시트입니다. 310×205mm, 총11조각.**
+기존6조각(가람·단팽이·큰 로고·받침2·로고 키링)에 카라비너4종과 구멍 시험편1개를 추가했습니다.
+3T·5T는 두께별 대안으로 **실제 판 두께에 맞는 한 종류만** 사용합니다.
 
-![압축한 제작 배치](3T/preview/flat_layout.png)
-아래 조립 시안은 기존 디오라마5조각을 보여줍니다. 추가 키링은 별도 사용합니다.
-![같은 배율로 함께 세운 모습](3T/preview/assembly_together.png)
-![동일 바닥선의 정면 크기 비교](3T/preview/front_comparison.png)
+![전체 배치](3T/preview/flat_layout.png)
+![실제 비율의 조립 시안](3T/preview/assembly_together.png)
+![정면 크기 비교](3T/preview/front_comparison.png)
 
-| 그림 | 폭×높이(mm) |
-|---|---:|
-| 가람 | 56.78×65.00 |
-| 단팽이 | 28.30×24.65 |
-| 제목 포함 큰 로고 | 160.00×56.33 |
+| 파일 | 용도 |
+|---|---|
+| 3T/02_COMBINED_MASTER.ai 또는 5T/02_COMBINED_MASTER.ai | Illustrator 편집용 합본 |
+| 같은 폴더의 01_PRINT_300ppi.png | UV 인쇄용 투명 PNG |
+| 03_CUT_ONLY.pdf / SVG | 빨간0.001mm, 34개 폐곡선 |
+| 04_FIT_TEST_* | 디오라마18mm 돌기의 홈 너비 시험판 |
+| 05_CARABINERS_ONLY.svg | 합본과 같은 좌표의 카라비너·구멍 시험편만 |
+| preview/00_DISPLAY_COMPARISON.ai | 조립 시안 편집용, 제작용 아님 |
 
-비교 그림은 원근 축소가 없는 평행 투영이며 모든 부품의 가로·세로 축척이 같습니다.
-정면도는 받침대 바닥선을 맞췄고, 점선 눈금은10mm입니다.
-화면 표시 크기는 기기에 따라 달라지지만 세 그림 사이의 실제 제작 비율은 유지됩니다.
-그림 치수는 인쇄 부분 기준이며 투명 여백·받침대 두께는 별도입니다.
+**구멍23개(받침 홈4+키링1+시험편18)를 먼저 자르고 외곽11개를 나중에 자릅니다.**
+파란 사각형은 위치 기준선입니다. 재단 대상이 아닙니다.
+인쇄·재단 모두 원점과100% 크기를 유지하고 자동 맞춤은 끕니다.
+작업영역은 안내문의800×500mm 이내입니다.
 
-## Illustrator 파일
+마스코트와 큰 로고의 그림 크기·원본 비율은 V2와 같습니다.
+가람56.78×65mm / 단팽이28.30×24.65mm / 제목 포함 로고160×56.33mm.
+받침은100×36mm와140×38mm입니다. 일반 투명 여백2.5mm, 키링 구멍 지름4mm,
+구멍-외곽2.5mm, 구멍-그림3mm 기준으로 줄였습니다. 구조 연결부·받침 어깨는 더 넓습니다.
 
-- `3T/02_COMBINED_MASTER.ai` / `5T/02_COMBINED_MASTER.ai`: **제작용 합본**. 295×140mm 판에6조각 배치.
-- `3T/preview/00_DISPLAY_COMPARISON.ai`: **조립 모습 편집용**. 설명 그림이므로 생산용으로 쓰지 않습니다.
-- 각 AI의 `.vectorcraft`, `.svg` 원본도 포함합니다.
-- `01_PRINT_300ppi.png`: 그림과 파란 기준선만 있는 투명 UV 인쇄 파일.
-- `03_CUT_ONLY.svg`: 빨간0.001mm 재단선. 홈4개와 키링 구멍1개를 먼저 자르고 외곽6개를 자릅니다.
-- `04_FIT_TEST_*`: 공통18mm 돌기의 홈 너비 시험판.
-- `05_UPRIGHTS_ONLY.svg`, `05_BASES_ONLY.svg`, `05_KEYRING_ONLY.svg`: 부품 종류별 확인 파일. 두께가 다르면 별도 두께용 도안으로 생성해야 합니다.
+카라비너는 A=50mm/2mm, B=50mm/2.5mm, C=55mm/2mm, D=55mm/2.5mm입니다.
+아래쪽 왼편 개방형이며 원본 로고의 왼팔·주황 점만 외측으로 이동한 시험용 변형입니다.
+**구매 부품9×23.5×1mm의 실제 다리 간격이 미확정이므로 본체는 미타공입니다.**
+시험편으로 지름·간격을 비교하고 실제 부품을 대어 본체 타공 위치와 개폐 여유를 잡습니다.
+[카라비너 상세 시안과 시험 절차](../carabiner_trials_v1/README.md)의 수치는 미검증 시작값입니다.
+독립 카라비너 시트와 이 합본의 샘플은 같습니다. 중복 출력하지 마세요.
 
-인쇄·재단은 같은 원점과100% 크기를 유지합니다. 파란 사각 기준선은 재단하지 않습니다.
-실물 끼움은 시험 전입니다. 기존과 같은18mm 돌기·홈 규격을 유지했으며 같은 재료와 설정으로 시험 후 제작합니다.
-`python scripts/build_combined_diorama.py`로 재생성합니다.
-배치 좌표와 회전각은 `configs/combined_layout.json`에 있습니다. 이전 V1은 보관용이며 새 제작에는 V2를 사용합니다.
+실물 끼움·개폐 시험은 아직 하지 않았습니다.
+동봉 시험판으로 실제 재료와 장비의 커프를 확인한 뒤 나머지를 가공합니다.
+이전 V2는 보관용이며 이번 수정 파일은 V3입니다.
 ''',encoding='utf-8')
-    dest=OUT.parent/'Danpungbaram_Combined_Diorama_V2_COMPACT_6pcs.zip'
+    dest=OUT.parent/'Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip'
     with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
         for p in sorted(OUT.rglob('*')):
             if p.is_file():z.write(p,p.relative_to(OUT.parent))
-    print(json.dumps({'folder':str(OUT),'canvas_mm':BOARD,'pieces':6,'presets':['3T','5T']},ensure_ascii=False))
+    print(json.dumps({'folder':str(OUT),'canvas_mm':BOARD,'pieces':11,'presets':['3T','5T']},ensure_ascii=False))
 
 
 if __name__=='__main__':main()

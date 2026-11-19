@@ -18,7 +18,8 @@ from reportlab.lib.units import mm
 from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 from vector_utils import runvc,svg_doc,path,poly_path,layer
 
-OUT=ROOT/'output/production_v3'
+OUT=ROOT/'output/production_v4'
+CFG=json.loads((ROOT/'configs/keyring.json').read_text(encoding='utf-8'))
 TMP=ROOT/'tmp/v3'
 AS=OUT/'assets'
 W,H=300,160
@@ -47,23 +48,24 @@ def geometry(assets):
         polys=[Polygon(c[:,0,:]*[a['w']/im.width,a['h']/im.height]).buffer(0) for c in contours if cv2.contourArea(c)>6]
         art=unary_union(polys)
         carrier=concave_hull(art,ratio=.45) if 'logo' in name else art
-        body=carrier.buffer(3.6,quad_segs=24)
+        body=carrier.buffer(CFG['clear_border_mm'],quad_segs=24)
         if body.geom_type!='Polygon':body=concave_hull(body,ratio=.5)
         body=Polygon(body.exterior)
         cs=np.array(art.convex_hull.exterior.coords);top=cs[cs[:,1]<cs[:,1].min()+.2]
-        hx=float(np.mean(top[:,0]));hy=float(art.bounds[1]-7.1)
-        tab=Point(hx,hy).buffer(6.2,quad_segs=40)
-        neck=box(hx-5.2,hy,hx+5.2,art.bounds[1]+1.5)
-        outer=unary_union([body,tab,neck]).buffer(.7,quad_segs=12).buffer(-.7,quad_segs=12).simplify(.025,preserve_topology=True)
+        hx=float(np.mean(top[:,0]));hy=float(art.bounds[1]-2-CFG['hole_to_art_mm'])
+        radius=2+CFG['hole_edge_mm']
+        tab=Point(hx,hy).buffer(radius,quad_segs=128)
+        neck=box(hx-radius+.5,hy,hx+radius-.5,art.bounds[1]+1.5)
+        outer=unary_union([body,tab,neck]).buffer(.5,quad_segs=32).buffer(-.5,quad_segs=32)
         assert outer.geom_type=='Polygon'
         outer=Polygon(outer.exterior)
         hole=Point(hx,hy).buffer(2,quad_segs=64)
         assert outer.contains(art) and outer.contains(hole)
         clearance=outer.boundary.distance(art)
         hole_art=hole.distance(art);hole_edge=outer.boundary.distance(hole)
-        assert clearance>=3.5,(name,clearance)
-        assert hole_art>=5,(name,hole_art)
-        assert hole_edge>=4,(name,hole_edge)
+        assert CFG['clear_border_mm']-.03 <= clearance <= CFG['clear_border_mm']+.001,(name,clearance)
+        assert hole_art>=CFG['hole_to_art_mm']-.001,(name,hole_art)
+        assert CFG['hole_edge_mm']-.003<=hole_edge<=CFG['hole_edge_mm']+.001,(name,hole_edge)
         shapes[name]={'poly':outer,'hole':(hx,hy),'art':art,'clearance':clearance,'hole_art':hole_art,'hole_edge':hole_edge}
     return shapes
 
@@ -117,7 +119,7 @@ def make_layers(assets,shapes,items,board_w,board_h,shift=(0,0),review=False):
     return layer('3_ARTWORK',''.join(arts)),layer('2_CORNER_REFERENCE',reference),layer('1_LASER_CUT',''.join(holes+outlines))
 
 def cut_pdf(items,shapes):
-    c=canvas.Canvas(str(OUT/'04_CUT_ONLY.pdf'),pagesize=(W*mm,H*mm));c.setTitle('V3 Small batch - laser cut only 300 x 160 mm')
+    c=canvas.Canvas(str(OUT/'04_CUT_ONLY.pdf'),pagesize=(W*mm,H*mm));c.setTitle('V4 Small batch - laser cut only 300 x 160 mm')
     c.transform(mm,0,0,-mm,0,H*mm);c.setStrokeColorRGB(1,0,0);c.setLineWidth(.001)
     for p in items:
         hx,hy=shapes[p['name']]['hole'];hx+=p['tx'];hy+=p['ty']
@@ -130,7 +132,7 @@ def cut_pdf(items,shapes):
 
 def files(assets,shapes,items):
     ar,ref,cut=make_layers(assets,shapes,items,W,H)
-    master=OUT/'02_MASTER.svg';master.write_text(svg_doc(W,H,ar+ref+cut,'V3 16 pieces - 300 x 160 mm'),encoding='utf-8')
+    master=OUT/'02_MASTER.svg';master.write_text(svg_doc(W,H,ar+ref+cut,'V4 16 pieces - 300 x 160 mm'),encoding='utf-8')
     printing=OUT/'01_PRINT.svg';printing.write_text(svg_doc(W,H,ar+ref),encoding='utf-8')
     (OUT/'04_CUT_ONLY.svg').write_text(svg_doc(W,H,cut),encoding='utf-8')
     commands=[{'command':'document.setUnits','params':{'units':'Millimeters'}},
@@ -181,22 +183,22 @@ def guides(assets,shapes,gap):
     def outline(name):
         x0,y0,x1,y1=shapes[name]['poly'].bounds
         return f'약 {x1-x0:.1f} × {y1-y0:.1f} mm'
-    c=canvas.Canvas(str(OUT/'00_REVISION_GUIDE.pdf'),pagesize=(210*mm,297*mm));c.setTitle('단풍바람 키링 수정본 V3 - 소량 제작 16조각')
+    c=canvas.Canvas(str(OUT/'00_REVISION_GUIDE.pdf'),pagesize=(210*mm,297*mm));c.setTitle('단풍바람 키링 수정본 V4 - 소량 제작 16조각')
     def page(title,sub,n):
         c.setFillColor('#faf8f3');c.rect(0,0,210*mm,297*mm,fill=1,stroke=0)
-        label(c,17,279,'DANPUNGBARAM / REVISION 03',9,True,'#d46850')
+        label(c,17,279,'DANPUNGBARAM / REVISION 04',9,True,'#d46850')
         label(c,17,264,title,22,True);label(c,17,252,sub,9,color='#666666')
         c.setStrokeColor('#d7d1c7');c.line(17*mm,245*mm,193*mm,245*mm)
-        label(c,17,10,'2026.11.17 수정 / 11.19 목요일 제작 / 실제 크기 100%',8,color='#666666');label(c,190,10,str(n),8)
+        label(c,17,10,'2026.11.20 수정 / 투명 여백 2.5 mm / 실제 크기 100%',8,color='#666666');label(c,190,10,str(n),8)
     def section(y,title,rows):
         label(c,17,y,title,12,True);y-=10
         for row in rows:label(c,17,y,row,9.4);y-=6.2
         return y-9
-    page('빈 공간을 조금 더 채웠습니다','4세트 + 로고 단독 4개 = 총 16조각',1)
+    page('투명 테두리를 줄였습니다','4세트 + 로고 단독 4개 = 총 16조각',1)
     y=section(231,'이번 제작 수량',[
         '한 세트: 가람 1개 + 작은 단팽이 1개 + 미니 로고 1개. 네 세트입니다.',
         '로고만 달 수 있는 단독 키링은 4개를 추가했습니다.',
-        '12조각에서 16조각으로 늘리고, 작업영역을 300 × 160 mm로 줄였습니다.',
+        '수량 16조각과 그림 크기는 유지하고, 일반 외곽 여백만 2.5 mm로 줄였습니다.',
         '기본 파일과 optional_800x600 파일은 같은 16조각입니다. 둘 다 찍지 마세요.'
     ])
     y=section(y,'그림 크기 - 투명 테두리와 고리 부분 제외',[
@@ -208,10 +210,10 @@ def guides(assets,shapes,gap):
         '단팽이 몸통과 껍데기 경계를 다시 그리고 회색 삼각형을 제거했습니다.'
     ])
     y=section(y,'구멍과 재단 여유',[
-        '그림과 재단 외곽: 최소 3.5 mm. 이전 약 1.8 mm보다 넓혔습니다.',
+        '일반 외곽 여백: 2.5 mm 기준. 고리 목과 로고 연결부는 구조상 더 넓습니다.',
         '구멍 지름: 4 mm. 그림 위로 별도의 둥근 고리 부분을 올렸습니다.',
-        '구멍 가장자리와 그림: 최소 5 mm.',
-        '구멍 가장자리와 아크릴 외곽: 최소 4 mm. 목 부분 폭은 약 10.4 mm입니다.',
+        '구멍 가장자리와 그림: 최소 3 mm.',
+        '구멍 가장자리와 아크릴 외곽: 약 2.5 mm. 고리 외경은 약 9 mm입니다.',
         f'배치된 조각끼리 외곽 간격은 최소 {gap:.2f} mm입니다.',
         f'완성 외곽: 가람 {outline("garam")} / 단팽이 {outline("danpaengi")}.',
         f'미니 로고 {outline("mini_logo")} / 단독 로고 {outline("solo_logo")}.'
@@ -284,7 +286,7 @@ def assembly_preview(assets,shapes):
 
 def validate(assets,shapes,items,gap):
     assert len(items)==16 and all(sum(p['name']==name for p in items)==4 for name in assets)
-    report={'revision':3,'quantity':16,'set_count':4,'standalone_logos':4,'canvas_mm':[W,H],
+    report={'revision':4,'nominal_art_border_mm':CFG['clear_border_mm'],'quantity':16,'set_count':4,'standalone_logos':4,'canvas_mm':[W,H],
         'source_measurement':{'garam_bbox_px':[551,579,311,356],'danpaengi_bbox_px':[884,794,155,135],'height_ratio':SOURCE_RATIO},
         'min_piece_gap_mm':gap,'hole_diameter_mm':4,'assets':{}}
     for name,a in assets.items():
@@ -312,7 +314,7 @@ def validate(assets,shapes,items,gap):
     return report
 
 def package(report):
-    readme='''단풍바람 아크릴 수정본 V3 / 2026-11-17
+    readme='''단풍바람 아크릴 수정본 V4 / 2026-11-20
 
 확정 수량: 4세트 + 로고 단독 4개 = 총 16조각.
 세트 1개 = 가람 1 + 단팽이 1 + 미니 로고 1.
@@ -330,11 +332,29 @@ optional_800x600은 같은 16조각을 800x600mm 좌표에 배치한 대안입�
 기본 파일과 추가 파일을 둘 다 출력하지 마세요. 큰 판 사용 가능 장비인지 확인하세요.
 
 그림 높이: 가람55mm / 단팽이20.86mm / 미니로고18mm / 단독로고30mm.
-구멍4mm, 구멍-그림5mm 이상, 구멍-외곽4mm 이상, 그림-재단선3.5mm 이상.
+구멍4mm, 구멍-그림3mm 이상, 구멍-외곽2.5mm 기준, 일반 그림-재단선2.5mm 기준(근사오차 0.03mm 이내).
+고리 목·로고 연결부는 구조상 더 넓으며, 빨간 레이저 선은 0.001mm입니다.
 마스코트는 원본 카드뉴스 참고 벡터 재구성본, 로고는 원본AI 심볼입니다.
 티셔츠 파일 수정 요청은 없어서 이번 ZIP은 수정된 아크릴 파일만 담았습니다.
 '''
     (OUT/'00_START_HERE.txt').write_text(readme,encoding='utf-8-sig')
+    (OUT/'README.md').write_text('''# 마스코트·로고 키링 V4 · 16조각
+
+![전체 배치 시안](preview/board_layout.png)
+
+4세트 + 로고 단독 4개입니다. 한 세트는 가람·단팽이·미니 로고 각 1개입니다.
+작업 영역 300×160mm, 가람 높이 55mm, 단팽이 높이 20.86mm로 원본 비율을 유지했습니다.
+일반 투명 여백과 구멍-외곽 여유는 2.5mm입니다. 실제 레이저 선은 빨강 0.001mm입니다.
+
+- [UV 인쇄 PNG](01_PRINT_300ppi.png): 투명 300ppi, 파란 위치 기준선 포함.
+- [편집용 AI](02_MASTER.ai): 그림·위치 기준선·칼선 3개 레이어.
+- [재단 전용 PDF](04_CUT_ONLY.pdf): 32개 폐곡선.
+- [시안과 제작 안내 PDF](00_REVISION_GUIDE.pdf)
+- [전체 ZIP](../Danpungbaram_V4_SMALL_BATCH_16pcs.zip)
+
+인쇄·재단은 같은 원점과 실제 크기 100%로 진행합니다. 파란 기준선은 절단하지 않습니다.
+optional_800x600은 같은 16조각을 큰 대지에 놓은 대안이므로 중복 출력하지 않습니다.
+''' ,encoding='utf-8')
     sources='''Sources
 Maker-space guide: user-supplied 2026-11-16_scan_QuickScanApp.com.pdf, page 1.
 Notion: https://ark1st.notion.site/4199cd9d18388078b431c5573819102d
@@ -346,10 +366,10 @@ Logo: assets/source_logo.ai, 7 original symbol paths.
 VectorCraft export: genuine PDF-compatible AI, native VectorCraft, RGB PNG.
 '''
     (OUT/'SOURCES.txt').write_text(sources,encoding='utf-8')
-    zpath=ROOT/'output/Danpungbaram_V3_SMALL_BATCH_16pcs.zip'
+    zpath=ROOT/'output/Danpungbaram_V4_SMALL_BATCH_16pcs.zip'
     with zipfile.ZipFile(zpath,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for p in sorted(OUT.rglob('*')):
-            if p.is_file():z.write(p,Path('Danpungbaram_V3')/p.relative_to(OUT))
+            if p.is_file():z.write(p,Path('Danpungbaram_V4')/p.relative_to(OUT))
     with zipfile.ZipFile(zpath) as z:assert z.testzip() is None
     print('ZIP',zpath,zpath.stat().st_size,flush=True)
 

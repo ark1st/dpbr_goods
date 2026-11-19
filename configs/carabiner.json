@@ -1,0 +1,16 @@
+{
+  "revision": 1,
+  "hardware_external_mm": [9, 23.5, 1],
+  "left_arm_shift_mm": [-5.0, -1.5],
+  "gate_location": "lower_left",
+  "samples": [
+    {"id": "A", "height_mm": 50, "border_mm": 2.0},
+    {"id": "B", "height_mm": 50, "border_mm": 2.5},
+    {"id": "C", "height_mm": 55, "border_mm": 2.0},
+    {"id": "D", "height_mm": 55, "border_mm": 2.5}
+  ],
+  "coupon_hole_diameters_mm": [1.2, 1.4, 1.6],
+  "coupon_hole_pitches_mm": [3.0, 4.0, 5.0],
+  "body_mounting_holes": "unpierced pads; drill after physical fitting",
+  "physical_fit_verified": false
+}
