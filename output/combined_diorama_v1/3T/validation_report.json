@@ -1,0 +1,151 @@
+{
+  "design": "combined-diorama-v1",
+  "preset": {
+    "name": "3T",
+    "part_thickness_mm": 3,
+    "base_thickness_mm": 3,
+    "slot_width_mm": 3
+  },
+  "quantity": 1,
+  "pieces": 5,
+  "uprights": [
+    "garam",
+    "danpaengi",
+    "main_logo"
+  ],
+  "bases": [
+    "mascot_base",
+    "logo_base"
+  ],
+  "canvas_mm": [
+    310,
+    160
+  ],
+  "original_geometry_translation_only": true,
+  "comparison_projection": "orthographic; x and vertical z have identical scale; depth translation only",
+  "comparison_scale_for_all_parts": 1,
+  "front_view_common_ground_line_mm": 110,
+  "source_designs": [
+    "diorama_v2",
+    "logo_diorama_v2"
+  ],
+  "art_dimensions_mm": {
+    "garam": [
+      56.78370786516854,
+      65
+    ],
+    "danpaengi": [
+      28.300561797752806,
+      24.64887640449438
+    ],
+    "main_logo": [
+      160,
+      56.3294797736437
+    ]
+  },
+  "base_dimensions_mm": {
+    "mascot_base": [
+      100,
+      36
+    ],
+    "logo_base": [
+      140,
+      38
+    ]
+  },
+  "minimum_piece_gap_mm": 10.048291555968607,
+  "cut_closed_paths": 9,
+  "slot_count": 4,
+  "ai_layers": [
+    "3_ARTWORK",
+    "2_CORNER_REFERENCE",
+    "1_LASER_CUT"
+  ],
+  "blue_reference_four_sides": true,
+  "rgba_300ppi": true,
+  "tabs_and_slot_buffers_unprinted": true,
+  "physical_fit_test": false,
+  "fit_test_slots": [
+    {
+      "id": 1,
+      "path_slot_width_mm": 2.6,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        17
+      ]
+    },
+    {
+      "id": 2,
+      "path_slot_width_mm": 2.7,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        17
+      ]
+    },
+    {
+      "id": 3,
+      "path_slot_width_mm": 2.8,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        17
+      ]
+    },
+    {
+      "id": 4,
+      "path_slot_width_mm": 2.9,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        36
+      ]
+    },
+    {
+      "id": 5,
+      "path_slot_width_mm": 3,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        36
+      ]
+    },
+    {
+      "id": 6,
+      "path_slot_width_mm": 3.1,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        36
+      ]
+    },
+    {
+      "id": 7,
+      "path_slot_width_mm": 3.2,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        55
+      ]
+    },
+    {
+      "id": 8,
+      "path_slot_width_mm": 3.3,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        55
+      ]
+    },
+    {
+      "id": 9,
+      "path_slot_width_mm": 3.4,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        55
+      ]
+    }
+  ]
+}

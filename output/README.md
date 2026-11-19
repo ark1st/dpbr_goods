@@ -1,5 +1,19 @@
 # 출력 파일
 
+## 가람·단팽이·메인 로고 AI 합본 · 2026-11-20
+
+기존 마스코트 V2와 메인 로고 V2를 실제 제작 비율 그대로 나란히 세웠습니다.
+가람·단팽이·큰 로고와 받침대2개, **총5조각**을 한310×160mm 판에 배치했습니다.
+
+- [같은 배율 비교·사용법](combined_diorama_v1/README.md)
+- [3T 합본 AI](combined_diorama_v1/3T/02_COMBINED_MASTER.ai) / [5T 합본 AI](combined_diorama_v1/5T/02_COMBINED_MASTER.ai)
+- [조립 모습 편집용 AI](combined_diorama_v1/3T/preview/00_DISPLAY_COMPARISON.ai)
+- [전체 ZIP](Danpungbaram_Combined_Diorama_3T_5T.zip)
+
+![실제 제작 비율로 함께 세운 모습](combined_diorama_v1/3T/preview/assembly_together.png)
+
+3T와5T는 두께별 대안입니다. `preview`의 설명 그림 대신 `02_COMBINED_MASTER.ai`로 제작합니다.
+
 ## 메인 로고 디오라마 V2 · 2026-11-20
 
 **한 디자인, 1세트2조각**: 단풍바람 로고판1개 + 투명 받침대1개.

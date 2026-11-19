@@ -1,0 +1,116 @@
+{
+  "canvas_mm": [
+    310,
+    160
+  ],
+  "positions_top_left_mm": {
+    "garam": [
+      12,
+      12
+    ],
+    "danpaengi": [
+      87,
+      15
+    ],
+    "main_logo": [
+      132,
+      12
+    ],
+    "mascot_base": [
+      18,
+      108
+    ],
+    "logo_base": [
+      150,
+      108
+    ]
+  },
+  "mascot_config": {
+    "base_mm": [
+      100,
+      36
+    ],
+    "base_corner_radius_mm": 6,
+    "garam_art_height_mm": 65,
+    "danpaengi_height_ratio": 0.3792134831460674,
+    "clear_border_mm": 3.6,
+    "tab_width_mm": 18,
+    "tab_bottom_clearance_mm": 0.4,
+    "slot_length_mm": 18.8,
+    "slot_corner_radius_mm": 0.35,
+    "mount_centers_mm": {
+      "garam": [
+        34,
+        14
+      ],
+      "danpaengi": [
+        80,
+        24
+      ]
+    },
+    "fit_test_offsets_mm": [
+      -0.4,
+      -0.3,
+      -0.2,
+      -0.1,
+      0,
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "presets": [
+      {
+        "name": "3T",
+        "part_thickness_mm": 3,
+        "base_thickness_mm": 3,
+        "slot_width_mm": 3
+      },
+      {
+        "name": "5T",
+        "part_thickness_mm": 5,
+        "base_thickness_mm": 5,
+        "slot_width_mm": 5
+      }
+    ]
+  },
+  "logo_config": {
+    "art_width_mm": 160,
+    "base_mm": [
+      140,
+      38
+    ],
+    "base_corner_radius_mm": 5,
+    "clear_border_mm": 3.6,
+    "tab_width_mm": 18,
+    "tab_center_spacing_mm": 84,
+    "tab_bottom_clearance_mm": 0.4,
+    "slot_length_mm": 18.8,
+    "slot_corner_radius_mm": 0.35,
+    "canvas_mm": [
+      200,
+      140
+    ],
+    "layout_base_y_mm": 92,
+    "presets": [
+      {
+        "name": "3T",
+        "part_thickness_mm": 3,
+        "base_thickness_mm": 3,
+        "slot_width_mm": 3
+      },
+      {
+        "name": "5T",
+        "part_thickness_mm": 5,
+        "base_thickness_mm": 5,
+        "slot_width_mm": 5
+      }
+    ]
+  },
+  "selected_preset": {
+    "name": "3T",
+    "part_thickness_mm": 3,
+    "base_thickness_mm": 3,
+    "slot_width_mm": 3
+  }
+}
