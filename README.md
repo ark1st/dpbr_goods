@@ -7,6 +7,28 @@
 - `main`: 소스 코드와 제작에 필요한 원본 자료.
 - [`output`](https://github.com/ark1st/dpbr_goods/tree/output/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
 
+## 제목 포함 로고 디오라마 (2026-11-20)
+
+**단풍바람 로고판 1개 + 투명 받침대 1개, 한 디자인 1세트 2조각**입니다.
+원본 AI의 심벌과 ‘단풍바람’ 제목을 이루는38개 벡터 경로를 그대로 사용했습니다.
+로고 그림96×33.80mm, 작은 받침대90×26mm. 18mm 돌기 두 개로 세웁니다.
+3T·5T 파일은 같은 디자인의 두께별 대안이며, 실제 사용할 한 종류만 선택합니다.
+
+- [제작 파일·조립 시안](https://github.com/ark1st/dpbr_goods/tree/output/output/logo_diorama_v1)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output/output/Danpungbaram_Logo_Diorama_V1_3T_5T.zip)
+- `scripts/build_logo_diorama.py`: 인쇄·재단 원본, 안내서, 끼움 시험판 생성.
+- `configs/logo_diorama.json`: 로고 크기와 받침대·끼움 규격.
+
+```powershell
+python scripts/build_logo_diorama.py
+# 2.80은 실물 시험에서 그 값을 선택했을 때의 예시입니다.
+python scripts/build_logo_diorama.py --part-thickness 3 --base-thickness 5 --slot-width 2.80 --name mixed_3T_5T
+```
+
+기본 홈 너비3.00/5.00mm는 커프 보정 전 시작값입니다. 동봉 시험판으로 실제 재료·장비에 맞게 보정합니다.
+전체 로고는 `assets/source_logo.ai`의 `기본` 그룹에서 추출했습니다. 글자를 새로 입력하거나 심벌을 다시 그리지 않았습니다.
+`python scripts/extract_logo_full.py`로 원본 벡터를 재추출할 수 있습니다.
+
 ## 끼움형 디오라마 V2 (2026-11-20)
 
 **가람 + 단팽이 + 받침대, 1세트 3조각**의 기본형입니다.
