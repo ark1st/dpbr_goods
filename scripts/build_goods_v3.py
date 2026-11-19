@@ -15,8 +15,7 @@ from shapely.ops import unary_union
 from pypdf import PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
+from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 from vector_utils import runvc,svg_doc,path,poly_path,layer
 
 OUT=ROOT/'output/production_v3'
@@ -165,10 +164,10 @@ def single_keyring(name,assets,shapes):
     render(svg,OUT/f'preview/{name}_keyring.png',4)
     return x1-x0+4,y1-y0+4
 
-def source_ratio_preview():
+def source_ratio_preview(font_path):
     im=Image.open(ROOT/'assets/mascot_card.png').convert('RGB')
     crop=im.crop((525,565,1055,945)).resize((1060,760))
-    d=ImageDraw.Draw(crop);font=ImageFont.truetype('C:/Windows/Fonts/malgun.ttf',24)
+    d=ImageDraw.Draw(crop);font=ImageFont.truetype(str(font_path),24)
     for label,(x,y,w,h),color in [('가람 356px',(551,579,311,356),'#195aac'),('단팽이 135px',(884,794,155,135),'#ba4242')]:
         x=(x-525)*2;y=(y-565)*2;w*=2;h*=2
         d.rectangle((x,y,x+w,y+h),outline=color,width=3)
@@ -176,11 +175,9 @@ def source_ratio_preview():
     crop.save(OUT/'preview/source_ratio_evidence.png')
 
 def label(c,x,y,s,size=10,bold=False,color='#252525'):
-    c.setFillColor(color);c.setFont('MalgunB' if bold else 'Malgun',size);c.drawString(x*mm,y*mm,s)
+    c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
 
 def guides(assets,shapes,gap):
-    pdfmetrics.registerFont(TTFont('Malgun','C:/Windows/Fonts/malgun.ttf'))
-    pdfmetrics.registerFont(TTFont('MalgunB','C:/Windows/Fonts/malgunbd.ttf'))
     c=canvas.Canvas(str(OUT/'00_REVISION_GUIDE.pdf'),pagesize=(210*mm,297*mm));c.setTitle('단풍바람 키링 수정본 V3 - 소량 제작 16조각')
     def page(title,sub,n):
         c.setFillColor('#faf8f3');c.rect(0,0,210*mm,297*mm,fill=1,stroke=0)
@@ -354,11 +351,12 @@ VectorCraft export: genuine PDF-compatible AI, native VectorCraft, RGB PNG.
     print('ZIP',zpath,zpath.stat().st_size,flush=True)
 
 if __name__=='__main__':
+    font_path=register_guide_fonts()
     for folder in [OUT,AS,TMP,OUT/'preview',OUT/'optional_800x600']:
         folder.mkdir(parents=True,exist_ok=True)
     assets=artwork();shapes=geometry(assets);items,gap=place(shapes)
     print('geometry',json.dumps({k:{'size':v['poly'].bounds,'art_cut':v['clearance'],'hole_art':v['hole_art'],'hole_edge':v['hole_edge']} for k,v in shapes.items()}),flush=True)
-    files(assets,shapes,items);source_ratio_preview();guides(assets,shapes,gap);assembly_preview(assets,shapes)
+    files(assets,shapes,items);source_ratio_preview(font_path);guides(assets,shapes,gap);assembly_preview(assets,shapes)
     report=validate(assets,shapes,items,gap)
     (TMP/'placements.json').write_text(json.dumps([{k:v for k,v in p.items() if k!='poly'} for p in items]),encoding='utf-8')
     doc=fitz.open(OUT/'00_REVISION_GUIDE.pdf')
