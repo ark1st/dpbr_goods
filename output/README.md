@@ -1,18 +1,20 @@
 # 출력 파일
 
-## 끼움형 디오라마 V1 · 2026-11-20
+## 끼움형 디오라마 V2 · 2026-11-20
 
 가람·단팽이·받침대 각1개, **1세트3조각**입니다. 3T와5T는 두께별 대안입니다.
-받침대120×65mm. 공통18mm 돌기를 사용해 캐릭터를 교체할 수 있습니다.
+받침대**100×36mm**로 V1보다 면적을 약54% 줄였습니다. 공통18mm 돌기를 사용합니다.
+원본 카드의 가로세로·상대 높이 비율을 적용하고 가람 갓 그림자와 단팽이 눈을 수정했습니다.
 
-- [3T/5T 제작 파일 및 사용법](diorama_v1/README.md)
-- [전체 ZIP](Danpungbaram_Diorama_V1_3T_5T.zip)
-- [조립·치수 안내서](diorama_v1/00_ASSEMBLY_GUIDE.pdf)
-- [3T 파일](diorama_v1/3T) / [5T 파일](diorama_v1/5T)
+- [3T/5T 제작 파일 및 사용법](diorama_v2/README.md)
+- [전체 ZIP](Danpungbaram_Diorama_V2_3T_5T.zip)
+- [조립·치수 안내서](diorama_v2/00_ASSEMBLY_GUIDE.pdf)
+- [3T 파일](diorama_v2/3T) / [5T 파일](diorama_v2/5T)
 
-![가람·단팽이 조립 예상도](diorama_v1/3T/preview/assembly.png)
+![가람·단팽이 조립 예상도](diorama_v2/3T/preview/assembly.png)
 
 실물 끼움은 시험 전입니다. 포함된9개 홈 시험판으로 해당 재료·장비에 맞는 홈 너비를 먼저 고르세요.
+`diorama_v1`과 V1 ZIP은 이전 시안 보관용입니다. 새로 제작할 때는 V2를 사용하세요.
 
 ## 아크릴 키링 V3
 

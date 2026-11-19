@@ -21,10 +21,10 @@ from reportlab.lib.units import mm
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 
-OUT=ROOT/'output/diorama_v1'
+OUT=ROOT/'output/diorama_v2'
 TMP=ROOT/'tmp/diorama'
 CFG=json.loads((ROOT/'configs/diorama.json').read_text(encoding='utf-8'))
-BOARD=(220,150)
+BOARD=(200,110)
 RED='#ff0000'
 BLUE='#0000ff'
 
@@ -56,7 +56,9 @@ def load_art():
     for name,height in [('garam',CFG['garam_art_height_mm']),
                         ('danpaengi',CFG['garam_art_height_mm']*CFG['danpaengi_height_ratio'])]:
         a=raw[name];s=height/a['h']
-        a={'w':a['w']*s,'h':height,'inner':f'<g transform="scale({s:.9f})">{a["inner"]}</g>'}
+        a={'w':a['w']*s,'h':height,'inner':f'<g transform="scale({s:.9f})">{a["inner"]}</g>',
+           'source_bbox_px':a['source_bbox_px']}
+        assert abs(a['w']/a['h']-a['source_bbox_px'][2]/a['source_bbox_px'][3])<1e-9
         p=write_svg(TMP/f'{name}_art.svg',a['w'],a['h'],a['inner'])
         render(p,TMP/f'{name}_art.png',8)
         im=Image.open(TMP/f'{name}_art.png').convert('RGBA')
@@ -109,20 +111,16 @@ def base_slots(width):
 
 
 def base_art(assets):
-    # Transparent stage with a quiet autumn motif; no ink on tabs or in slots.
-    logo=assets['logo'];s=11/logo['h']
-    lines=[f'<g transform="translate(53 49) scale({s})">{logo["inner"]}</g>']
-    lines.append('<path d="M15 52 C27 47 35 58 46 53 M70 54 C83 58 96 51 105 53" fill="none" stroke="#ffd475" stroke-width="0.9" stroke-linecap="round"/>')
-    for x,y,rot,color in [(19,48,-25,'#ff9b74'),(25,54,25,'#ffd475'),(103,50,25,'#ff9b74'),(104,55,-20,'#ffd475')]:
-        lines.append(f'<path transform="translate({x} {y}) rotate({rot})" d="M-2 0 Q0 -4 2 0 Q0 3 -2 0 Z" fill="{color}"/>')
-    return ''.join(lines)
+    # Compact clear base; a single small logo replaces the wider decorative band.
+    logo=assets['logo'];s=7/logo['h']
+    return f'<g transform="translate(47 25) scale({s})">{logo["inner"]}</g>'
 
 
 def positioned(assets,shapes,preset):
     bw,bh=CFG['base_mm']
     base=rounded(0,0,bw,bh,CFG['base_corner_radius_mm'])
-    # Three separate pieces in one 220 x 150 mm work area.
-    poses={'garam':(15,13),'danpaengi':(88,34),'base':(85,78)}
+    # Three separate pieces in a compact production work area.
+    poses={'garam':(15,13),'danpaengi':(92,15),'base':(85,65)}
     items=[]
     for name in ['garam','danpaengi']:
         s=shapes[name];bx,by,_,_=s['poly'].bounds
@@ -174,13 +172,13 @@ def make_board(assets,shapes,preset,folder):
     write_svg(folder/'03_CUT_ONLY.svg',w,h,cutting)
     export_native(master,folder)
     export_png(printing,folder/'01_PRINT_300ppi.png')
-    labels=svg_text(15,102,'GARAM / 65 mm',3.5)+svg_text(88,29,'DANPAENGI / 24.65 mm',3.5)
+    labels=svg_text(15,100,'GARAM / 65 mm',3.5)+svg_text(92,11,'DANPAENGI / 24.65 mm',3)
     labels+=svg_text(146,19,f'{preset["name"]} / 3 PIECES',4.3)
     labels+=svg_text(146,27,f'Slot: {CFG["slot_length_mm"]:.1f} x {preset["slot_width_mm"]:.2f} mm',3.3)
     labels+=svg_text(146,34,f'Tab depth: {shapes["garam"]["depth"]:.2f} mm',3.3)
     labels+=svg_text(146,42,'FIT TEST FIRST',3.1,'#b55f46')
     preview=write_svg(folder/'preview/flat_layout.svg',w,h,
-        '<rect width="220" height="150" fill="#fffdf8"/>'+ink+reference+cut_layer(items,.17)+labels)
+        f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+cut_layer(items,.17)+labels)
     render(preview,folder/'preview/flat_layout.png',2.2)
     return items,gap
 
@@ -216,12 +214,12 @@ def fit_test(preset,folder):
 def assembly(assets,shapes,preset,folder):
     # Orthographic axonometric drawing from the actual cut polygons; illustrative, not a cut file.
     # x moves right, depth moves up/right, z moves vertically upward.
-    ox,oy=19,119;dx,dy=.44,-.34
+    ox,oy=23,110;dx,dy=.44,-.34
     base=rounded(0,0,*CFG['base_mm'],CFG['base_corner_radius_mm'])
     bt=preset['base_thickness_mm'];pt=preset['part_thickness_mm']
-    parts=['<rect width="198" height="150" fill="#f7f3eb"/>']
-    parts.append('<ellipse cx="100" cy="123" rx="75" ry="10" fill="#e9e2d5"/>')
-    # Base drawing y=0 is the rear edge; y=65 is the front edge.
+    parts=['<rect width="175" height="135" fill="#f7f3eb"/>']
+    parts.append('<ellipse cx="90" cy="114" rx="65" ry="7.5" fill="#e9e2d5"/>')
+    # Base drawing y=0 is the rear edge.
     front=CFG['base_mm'][1]
     bt_transform=f'matrix(1 0 {-dx} {-dy} {ox+dx*front} {oy+dy*front})'
     parts.append(f'<g transform="{bt_transform}">'+path(poly_path(base),'#d4dedb','#99ada9',.35)+'</g>')
@@ -237,9 +235,9 @@ def assembly(assets,shapes,preset,folder):
         parts.append(f'<g transform="translate({X+dx*pt} {Y+dy*pt})">{body}</g>')
         parts.append(f'<g transform="translate({X} {Y})">{body}{a["inner"]}</g>')
     parts.append(svg_text(13,15,'GAR AM + DANPAENGI'.replace('GAR AM','GARAM'),5,'#4d5148'))
-    parts.append(svg_text(13,23,'120 x 65 mm / removable standees',3.4))
-    parts.append(svg_text(13,141,f'{preset["name"]} concept / transparent acrylic edges shown',3.1))
-    svg=write_svg(folder/'preview/assembly.svg',198,150,''.join(parts))
+    parts.append(svg_text(13,23,'100 x 36 mm / original character proportions',3.4))
+    parts.append(svg_text(13,129,f'V2 / {preset["name"]} concept / transparent acrylic',3.1))
+    svg=write_svg(folder/'preview/assembly.svg',175,135,''.join(parts))
     render(svg,folder/'preview/assembly.png',2.7)
 
 
@@ -260,10 +258,11 @@ def templates(assets,shapes,preset,folder):
 
 def validate(assets,shapes,preset,items,gap,folder,rows):
     im=Image.open(folder/'01_PRINT_300ppi.png')
-    assert im.mode=='RGBA' and im.size==(2598,1772)
+    assert im.mode=='RGBA' and im.size==tuple(round(v*300/25.4) for v in BOARD)
     assert abs(im.info['dpi'][0]-300)<.1
     arr=np.asarray(im);blue=(arr[:,:,2]>240)&(arr[:,:,0]<10)&(arr[:,:,1]<10)&(arr[:,:,3]>150)
-    for x,y in [(110,4),(110,146),(4,75),(216,75)]:
+    w,h=BOARD
+    for x,y in [(w/2,4),(w/2,h-4),(4,h/2),(w-4,h/2)]:
         xx=round(x*300/25.4);yy=round(y*300/25.4)
         assert blue[yy-3:yy+4,xx-3:xx+4].any()
     reader=PdfReader(folder/'02_MASTER.ai');page=reader.pages[0]
@@ -277,6 +276,11 @@ def validate(assets,shapes,preset,items,gap,folder,rows):
     for p in items:
         for h in p['holes']:assert p['poly'].contains(h)
     assert abs(assets['danpaengi']['h']/assets['garam']['h']-CFG['danpaengi_height_ratio'])<1e-9
+    for name in ['garam','danpaengi']:
+        a=assets[name];bb=a['source_bbox_px']
+        assert abs(a['w']/a['h']-bb[2]/bb[3])<1e-9
+        x0,y0,x1,y1=a['shape'].bounds
+        assert abs((x1-x0)/(y1-y0)-bb[2]/bb[3])<.003
     # Center of each base slot has no print ink, and the tab tips are unprinted.
     for p in items:
         if p['name']=='base':
@@ -290,7 +294,7 @@ def validate(assets,shapes,preset,items,gap,folder,rows):
             s=shapes[p['name']];points=[(p['tx']+s['cx'],p['ty']+s['shoulder']+s['depth']/2)]
         for x,y in points:
             xx=round(x*300/25.4);yy=round(y*300/25.4);assert arr[yy,xx,3]==0
-    report={'preset':preset,'canvas_mm':BOARD,'base_mm':CFG['base_mm'],'pieces':3,
+    report={'revision':2,'preset':preset,'canvas_mm':BOARD,'base_mm':CFG['base_mm'],'pieces':3,
             'cut_closed_paths':5,'hole_paths_first':True,'hole_count':2,
             'tab_width_mm':CFG['tab_width_mm'],'tab_depth_mm':shapes['garam']['depth'],
             'slot_length_mm':CFG['slot_length_mm'],'slot_width_mm':preset['slot_width_mm'],
@@ -298,7 +302,10 @@ def validate(assets,shapes,preset,items,gap,folder,rows):
             'fit_status':'UNTESTED - cut fit coupon from the same sheets first',
             'physical_fit_test':False,'minimum_piece_gap_mm':gap,'ai_layers':names,
             'blue_reference_four_sides':True,'unprinted_tabs_and_slots':True,'slot_ink_clearance_checked_mm':1.5,
-            'assets':{n:{'art_height_mm':assets[n]['h'],'minimum_art_to_cut_mm':s['clearance']} for n,s in shapes.items()},
+            'assets':{n:{'art_width_mm':assets[n]['w'],'art_height_mm':assets[n]['h'],
+                'source_bbox_px':assets[n]['source_bbox_px'],
+                'aspect_ratio':assets[n]['w']/assets[n]['h'],
+                'minimum_art_to_cut_mm':s['clearance']} for n,s in shapes.items()},
             'fit_test_slots':rows}
     (folder/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     (folder/'parameters.json').write_text(json.dumps({**CFG,'selected_preset':preset},ensure_ascii=False,indent=2),encoding='utf-8')
@@ -313,19 +320,20 @@ def guide(reports):
         c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
     def page(title,sub,num):
         c.setFillColor('#faf8f2');c.rect(0,0,210*mm,297*mm,fill=1,stroke=0)
-        text(17,278,'DANPUNGBARAM / ACRYLIC DIORAMA 01',9,True,'#bd664e')
+        text(17,278,'DANPUNGBARAM / ACRYLIC DIORAMA 02',9,True,'#bd664e')
         text(17,262,title,21,True);text(17,250,sub,9,color='#777567')
         c.setStrokeColor('#d8d4c7');c.line(17*mm,243*mm,193*mm,243*mm)
         text(17,10,'2026.11.20 / 1:1 mm / 실물 끼움 시험 전 도안',8,color='#777567');text(190,10,str(num),8)
     first=reports[0]['preset']['name']
     page('두 친구를 꽂아 세우는 작은 무대','기본 구성: 받침대 1 + 가람 1 + 단팽이 1 = 총 3조각',1)
-    c.drawImage(str(OUT/first/'preview/assembly.png'),19*mm,96*mm,width=172*mm,height=172*150/198*mm,mask='auto')
-    text(17,83,'받침대 120 × 65 mm / 모서리가 둥근 투명 아크릴',11,True)
-    text(17,71,'가람 그림 높이 65 mm / 단팽이 24.65 mm. 기존 원본 높이 비율을 유지했습니다.',9)
+    c.drawImage(str(OUT/first/'preview/assembly.png'),19*mm,96*mm,width=172*mm,height=172*135/175*mm,mask='auto')
+    text(17,83,'받침대 100 × 36 mm / 기존보다 면적을 약 54% 줄였습니다.',11,True)
+    text(17,71,'가람 그림 높이 65 mm / 단팽이 24.65 mm. 원본의 가로세로·상대 높이 비율 적용.',9)
     text(17,62,'가람은 뒤쪽 왼편, 단팽이는 앞쪽 오른편. 두 개의 독립된 홈에 각각 꽂습니다.',9)
     text(17,53,'그림 바깥 투명 여백 3.5 mm 이상. 키링 구멍은 없고 아래쪽에 끼움 돌기가 있습니다.',9)
     text(17,44,'공통 돌기 폭 18 mm로 두 자리를 바꾸거나 같은 규격의 다른 캐릭터로 교체합니다.',9)
-    text(17,31,'위 그림은 도안 기반 조립 예상도입니다. 실물 조립을 검증한 사진은 아닙니다.',8.5,color='#777567')
+    text(17,33,'가람 갓: 가장자리를 따라 이어지는 그림자 / 단팽이: 원본의 기울어진 타원 눈.',8.5,color='#777567')
+    text(17,23,'위 그림은 조립 예상도이며, 실제 끼움과 기울어짐은 시험 조각으로 확인하세요.',8.5,color='#777567')
     c.showPage()
     page('3T와 5T, 달라지는 두 치수','T = 판 두께(mm). 홈 너비와 돌기 길이는 서로 다른 판을 기준으로 정합니다.',2)
     for y,title,lines in [
@@ -380,7 +388,7 @@ def guide(reports):
         ('06_BASE_ONLY / STANDEES_ONLY','서로 다른 두께의 판을 쓸 때 분리해 사용하는 도안.')]
     for i,(a,b) in enumerate(lines):
         y=229-i*23;text(17,y,a,10,True);text(17,y-9,b,8.7)
-    text(17,84,'본품 작업영역 220 × 150 mm / 파란 기준선 (4, 4), 212 × 142 mm.',9)
+    text(17,84,'본품 작업영역 200 × 110 mm / 파란 기준선 (4, 4), 192 × 102 mm.',9)
     text(17,74,'빨간 선은 홈 2개 + 외곽 3개 = 폐곡선 5개. 홈부터, 외곽은 마지막에 자릅니다.',9)
     text(17,64,'파란 선은 위치 기준이며 자르지 않습니다. 인쇄와 커팅은 같은 원점, 실제 크기 100%.',9)
     text(17,54,'3T와 5T는 대안입니다. 필요한 두께의 폴더 하나만 사용하면 됩니다.',9,True)
@@ -391,10 +399,11 @@ def guide(reports):
     page('출력 전 치수 확인','A4 100% 출력 / 페이지 맞춤 해제 / 이 페이지는 인쇄 그림으로 사용하지 않습니다.',5)
     # Actual-size base drawing plus dimension labels and two preset slots.
     c.setStrokeColor('#33362e');c.setLineWidth(.5)
-    x,y=40,144;c.roundRect(x*mm,y*mm,120*mm,65*mm,11*mm,stroke=1,fill=0)
+    bw,bh=CFG['base_mm'];x,y=(210-bw)/2,163
+    c.roundRect(x*mm,y*mm,bw*mm,bh*mm,CFG['base_corner_radius_mm']*mm,stroke=1,fill=0)
     for xx,yy in CFG['mount_centers_mm'].values():
-        c.roundRect((x+xx-9.4)*mm,(y+65-yy-1.5)*mm,18.8*mm,3*mm,.35*mm,stroke=1,fill=0)
-    text(68,220,'받침대 외곽 120 × 65 mm',11,True)
+        c.roundRect((x+xx-9.4)*mm,(y+bh-yy-1.5)*mm,18.8*mm,3*mm,.35*mm,stroke=1,fill=0)
+    text(68,220,'받침대 외곽 100 × 36 mm',11,True)
     text(49,132,'위 도면은 3T 기본 홈을 표시한 실물 크기 받침대입니다.',9)
     text(17,110,'조립 순서',11,True)
     for i,s in enumerate(['① 시험 조각으로 홈 너비 선택 → 해당 값으로 도안 재생성.',
@@ -409,15 +418,18 @@ def guide(reports):
 
 
 def readme(reports):
-    text='''# 가람 + 단팽이 끼움형 디오라마 V1
+    text='''# 가람 + 단팽이 끼움형 디오라마 V2
 
 ![조립 예상도](3T/preview/assembly.png)
 
 **본품 1세트 = 받침대 1 + 가람 1 + 단팽이 1, 총 3조각.**
 3T와 5T는 같은 세트의 두께별 대안이며, 각 폴더는 1세트 분량입니다.
 
-받침대 120×65mm / 가람 그림 높이65mm / 단팽이24.65mm.
-같은 원본 카드의 캐릭터 높이 비율을 유지합니다. 두 캐릭터의 돌기 폭은 공통18mm로 서로 교체할 수 있습니다.
+받침대 **100×36mm**로 V1의120×65mm보다 면적을 약54% 줄였습니다.
+가람 그림56.78×65mm / 단팽이28.30×24.65mm.
+같은 원본 카드의 가람311×356px, 단팽이155×135px를 기준으로 각각의 가로세로 비율과 상대 높이를 유지합니다.
+가람 갓의 중간에서 끊기는 그림자를 고쳤고, 단팽이 눈의 크기·기울기·위치를 원본에 맞췄습니다.
+두 캐릭터의 돌기 폭은 공통18mm로 서로 교체할 수 있습니다. 교체 후 받침대 밖 돌출과 안정성을 확인하세요.
 다른 캐릭터는 `05_CHARACTER_TEMPLATE.svg`의 그림과 윗부분 윤곽을 바꾸고 아래 결합부를 유지하세요.
 
 ## 먼저 시험 조각
@@ -444,8 +456,8 @@ def readme(reports):
 - `06_BASE_ONLY.svg` / `06_STANDEES_ONLY.svg`: 판 두께를 서로 다르게 쓸 때 분리된 편집 도안.
 - `parameters.json`, `validation_report.json`: 적용 치수 및 파일검사 결과.
 
-본품 작업영역220×150mm. 3T/5T의 인쇄·재단 좌표는 같습니다.
-파란 사각형(4,4),212×142mm은 위치기준이며 자르지 않습니다. 실제 크기100%로 출력합니다.
+본품 작업영역200×110mm. 3T/5T의 인쇄·재단 좌표는 같습니다.
+파란 사각형(4,4),192×102mm은 위치기준이며 자르지 않습니다. 실제 크기100%로 출력합니다.
 전면 정방향 인쇄가 기본입니다. 후면 인쇄라면 백색잉크와 반전 순서를 현장 방식에 맞춥니다.
 
 ## 치수 조정
@@ -503,10 +515,10 @@ def main():
         print(json.dumps(report,ensure_ascii=False),flush=True)
     if not custom:
         guide(reports);readme(reports)
-        with zipfile.ZipFile(ROOT/'output/Danpungbaram_Diorama_V1_3T_5T.zip','w',zipfile.ZIP_DEFLATED) as z:
+        with zipfile.ZipFile(ROOT/'output/Danpungbaram_Diorama_V2_3T_5T.zip','w',zipfile.ZIP_DEFLATED) as z:
             for file in sorted(OUT.rglob('*')):
                 if file.is_file() and (file.parent==OUT or file.relative_to(OUT).parts[0] in ['3T','5T']):
-                    z.write(file,Path('Danpungbaram_Diorama_V1')/file.relative_to(OUT))
+                    z.write(file,Path('Danpungbaram_Diorama_V2')/file.relative_to(OUT))
         print('Default package complete',flush=True)
 
 
