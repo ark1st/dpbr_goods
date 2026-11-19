@@ -1,13 +1,40 @@
 # 단풍바람 굿즈 제작
 
-티셔츠와 아크릴 키링의 벡터 원본, 배치 및 출력 파일 생성 코드입니다.
+티셔츠, 아크릴 키링, 끼움형 디오라마의 벡터 원본과 출력 파일 생성 코드입니다.
 
 ## 브랜치
 
 - `main`: 소스 코드와 제작에 필요한 원본 자료.
 - [`output`](https://github.com/ark1st/dpbr_goods/tree/output/output): 생성된 출력 파일. 인쇄할 때는 이 브랜치의 최신 파일을 사용합니다.
 
-## 현재 아크릴 도안 (V3)
+## 끼움형 디오라마 (2026-11-20)
+
+**가람 + 단팽이 + 받침대, 1세트 3조각**의 기본형입니다.
+받침대 120×65mm, 가람 그림 높이65mm, 단팽이24.65mm로 기존 높이 비율을 유지했습니다.
+두 캐릭터의 돌기 폭은18mm로 같아 위치를 바꾸거나 다른 캐릭터로 교체할 수 있습니다.
+
+- [3T/5T 제작 파일과 조립 시안](https://github.com/ark1st/dpbr_goods/tree/output/output/diorama_v1)
+- [전체 ZIP](https://github.com/ark1st/dpbr_goods/blob/output/output/Danpungbaram_Diorama_V1_3T_5T.zip)
+- `scripts/build_diorama.py`: 두께별 파일 생성.
+- `configs/diorama.json`: 기본 디자인의 설계 치수.
+
+홈 너비는 **캐릭터 판**의 두께, 돌기 길이는 **받침대 판**의 두께를 기준으로 따로 설정합니다.
+기본 돌기 길이는 받침대 두께에서0.40mm 뺀 값(3T 2.60mm /5T 4.60mm)입니다.
+3T/5T 기본 홈 너비3.00/5.00mm는 커프 보정 전 절단경로의 시작값입니다.
+실물 끼움은 아직 시험하지 않았습니다. 동봉된9개 홈 시험판을 같은 판·같은 가공 설정으로 잘라 홈 너비를 먼저 선택하세요.
+
+```powershell
+python scripts/build_diorama.py
+# 아래 2.80은 시험에서 그 값을 선택했을 때의 예시입니다.
+python scripts/build_diorama.py --part-thickness 3 --base-thickness 3 --slot-width 2.80 --name calibrated_3T
+# 캐릭터3T + 받침대5T 조합도 지원합니다. 각 부품은 해당 두께의 판에 따로 출력합니다.
+python scripts/build_diorama.py --part-thickness 3 --base-thickness 5 --slot-width 2.80 --name mixed_3T_5T
+```
+
+출력은 `output/diorama_v1/`에 저장됩니다. 두께 인수에는 실측 소수값도 입력할 수 있습니다.
+기본 디자인 크기를 바꾸면 배치와 안내서도 함께 검토해야 합니다. 두께와 홈 너비를 조정할 때에는 위 명령의 인수를 사용하세요.
+
+## 아크릴 키링 도안 (V3)
 
 4세트 + 로고 단독 4개, 총 **16조각**입니다. 한 세트는 가람·단팽이·미니 로고 각 1개입니다.
 V2의 12조각보다 조금 늘리고 작업영역은 320×180mm에서 **300×160mm**로 줄였습니다.
