@@ -8,14 +8,15 @@
 
 ## 단바 합본
 
-![310×205mm 배치](combined_diorama_v3/3T/preview/flat_layout.png)
+![300×175mm 배치 · 조각 간격3mm](combined_diorama_v3/3T/preview/flat_layout.png)
 
 [전체 ZIP](Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip) ·
 [3T AI](combined_diorama_v3/3T/02_COMBINED_MASTER.ai) ·
 [5T AI](combined_diorama_v3/5T/02_COMBINED_MASTER.ai)
 
 3T/5T 중 실제 판에 맞는 한 종류만 선택합니다.
-카라비너 본체4개는 장착 부위를 실측 후 타공하는 시험용입니다. 같은 판의 구멍 시험편9조합을 먼저 확인합니다.
+310×205mm에서300×175mm로 대지를17.4% 줄였습니다. 그림 크기와11조각 수량은 그대로입니다.
+카라비너 본체마다 레이저 장착 구멍2개가 있습니다. 지름·간격이 다른4종과 같은 판의 시험편9조합으로 조립을 확인합니다.
 [카라비너 상세 시안·조건](carabiner_trials_v1/README.md)
 
 ## 엑스트라 시트

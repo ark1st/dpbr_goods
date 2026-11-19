@@ -20,8 +20,8 @@
         307.99999847412107,
         71.99999796549479
       ],
-      "path_objects": 23,
-      "closed_contours": 23,
+      "path_objects": 31,
+      "closed_contours": 31,
       "layers": [
         "3_ARTWORK",
         "2_CORNER_REFERENCE",
@@ -59,11 +59,11 @@
     {
       "file": "output\\combined_diorama_v3\\3T\\02_COMBINED_MASTER.ai",
       "size_mm": [
-        310.0000055948893,
-        204.99999779595268
+        299.99999152289496,
+        175.00000940958657
       ],
-      "path_objects": 34,
-      "closed_contours": 34,
+      "path_objects": 42,
+      "closed_contours": 42,
       "layers": [
         "3_ARTWORK",
         "2_CORNER_REFERENCE",
@@ -101,11 +101,11 @@
     {
       "file": "output\\combined_diorama_v3\\5T\\02_COMBINED_MASTER.ai",
       "size_mm": [
-        310.0000055948893,
-        204.99999779595268
+        299.99999152289496,
+        175.00000940958657
       ],
-      "path_objects": 34,
-      "closed_contours": 34,
+      "path_objects": 42,
+      "closed_contours": 42,
       "layers": [
         "3_ARTWORK",
         "2_CORNER_REFERENCE",
@@ -180,8 +180,8 @@
     {
       "file": "output\\combined_diorama_v3\\3T\\01_PRINT_300ppi.png",
       "pixels": [
-        3661,
-        2421
+        3543,
+        2067
       ],
       "ppi": [
         299.9994,
@@ -191,8 +191,8 @@
     {
       "file": "output\\combined_diorama_v3\\5T\\01_PRINT_300ppi.png",
       "pixels": [
-        3661,
-        2421
+        3543,
+        2067
       ],
       "ppi": [
         299.9994,
@@ -237,7 +237,7 @@
     },
     {
       "file": "Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip",
-      "bytes": 10308245
+      "bytes": 17482162
     },
     {
       "file": "Extra_Sheet_38pcs_3T.zip",
@@ -254,5 +254,21 @@
   ],
   "rendered_pages": 16,
   "physical_prototype_tested": false,
-  "visual_review": "All 16 rendered PDF pages and final garment previews reviewed."
+  "visual_review": "All 16 rendered PDF pages and final garment previews reviewed.",
+  "latest_revision": {
+    "combined_canvas_mm": [
+      300,
+      175
+    ],
+    "previous_canvas_mm": [
+      310,
+      205
+    ],
+    "minimum_gap_mm": 3,
+    "measured_min_gap_mm": 3.119194657849476,
+    "area_reduction_percent": 17.39,
+    "carabiner_body_mount_holes": 8,
+    "ai_cut_pdf_checked": 3,
+    "body_hole_fit": "trial values; physical assembly not yet verified"
+  }
 }

@@ -18,17 +18,18 @@
     "logo_base"
   ],
   "canvas_mm": [
-    310,
-    205
+    300,
+    175
   ],
   "nominal_art_border_mm": 2.5,
   "original_geometry_rigid_transform_only": true,
   "previous_canvas_mm": [
-    295,
-    140
+    310,
+    205
   ],
   "added_carabiner_trials": 4,
   "added_gate_coupon": 1,
+  "area_reduction_percent": 17.39,
   "keyring_count": 1,
   "keyring": {
     "art_mm": [
@@ -71,11 +72,110 @@
       38
     ]
   },
-  "minimum_piece_gap_mm": 7.0,
-  "cut_closed_paths": 34,
+  "minimum_piece_gap_mm": 3.119194657849476,
+  "cut_closed_paths": 42,
   "slot_count": 4,
   "keyring_hole_count": 1,
   "gate_coupon_holes": 18,
+  "body_mount_holes": 8,
+  "carabiner_samples": {
+    "carabiner_A": {
+      "art_to_cut_min_mm": 1.9999697506869887,
+      "lower_opening_min_mm": 5.2193446753457975,
+      "outer_mm": [
+        50.53470362529674,
+        49.99997375647684
+      ],
+      "mount_hole_count": 2,
+      "mount_diameter_mm": 1.2,
+      "mount_pitch_mm": 4.0,
+      "mount_centers_local_mm": [
+        [
+          20.955555555555556,
+          34.96
+        ],
+        [
+          24.30159005712774,
+          37.151815027389084
+        ]
+      ],
+      "mount_hole_to_edge_min_mm": 2.6402016595266393,
+      "mount_holes_in_laser_layer": true,
+      "mount_holes_finalized": false
+    },
+    "carabiner_B": {
+      "art_to_cut_min_mm": 2.499960519819013,
+      "lower_opening_min_mm": 4.1319043576311,
+      "outer_mm": [
+        50.631760328319814,
+        49.99995418693604
+      ],
+      "mount_hole_count": 2,
+      "mount_diameter_mm": 1.4,
+      "mount_pitch_mm": 4.0,
+      "mount_centers_local_mm": [
+        [
+          20.5,
+          34.2
+        ],
+        [
+          23.84866480006355,
+          36.38779433604152
+        ]
+      ],
+      "mount_hole_to_edge_min_mm": 3.0442245093340707,
+      "mount_holes_in_laser_layer": true,
+      "mount_holes_finalized": false
+    },
+    "carabiner_C": {
+      "art_to_cut_min_mm": 1.9999754069068607,
+      "lower_opening_min_mm": 5.656685731478633,
+      "outer_mm": [
+        55.04932788547524,
+        54.99997984605774
+      ],
+      "mount_hole_count": 2,
+      "mount_diameter_mm": 1.6,
+      "mount_pitch_mm": 4.0,
+      "mount_centers_local_mm": [
+        [
+          23.233333333333334,
+          38.76
+        ],
+        [
+          26.56744384700076,
+          40.96991110288453
+        ]
+      ],
+      "mount_hole_to_edge_min_mm": 2.755978808857501,
+      "mount_holes_in_laser_layer": true,
+      "mount_holes_finalized": false
+    },
+    "carabiner_D": {
+      "art_to_cut_min_mm": 2.4999679984877026,
+      "lower_opening_min_mm": 4.569206489684237,
+      "outer_mm": [
+        55.14642716723173,
+        54.999977146338686
+      ],
+      "mount_hole_count": 2,
+      "mount_diameter_mm": 1.4,
+      "mount_pitch_mm": 5.0,
+      "mount_centers_local_mm": [
+        [
+          22.77777777777778,
+          38.00000000000001
+        ],
+        [
+          26.948208422438363,
+          40.75817117635508
+        ]
+      ],
+      "mount_hole_to_edge_min_mm": 2.85322447870324,
+      "mount_holes_in_laser_layer": true,
+      "mount_holes_finalized": false
+    }
+  },
   "ai_layers": [
     "3_ARTWORK",
     "2_CORNER_REFERENCE",

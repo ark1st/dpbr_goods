@@ -1,16 +1,18 @@
 {
-  "revision": 1,
+  "revision": 2,
   "hardware_external_mm": [9, 23.5, 1],
   "left_arm_shift_mm": [-5.0, -1.5],
   "gate_location": "lower_left",
   "samples": [
-    {"id": "A", "height_mm": 50, "border_mm": 2.0},
-    {"id": "B", "height_mm": 50, "border_mm": 2.5},
-    {"id": "C", "height_mm": 55, "border_mm": 2.0},
-    {"id": "D", "height_mm": 55, "border_mm": 2.5}
+    {"id": "A", "height_mm": 50, "border_mm": 2.0, "mount_diameter_mm": 1.2, "mount_pitch_mm": 4.0},
+    {"id": "B", "height_mm": 50, "border_mm": 2.5, "mount_diameter_mm": 1.4, "mount_pitch_mm": 4.0},
+    {"id": "C", "height_mm": 55, "border_mm": 2.0, "mount_diameter_mm": 1.6, "mount_pitch_mm": 4.0},
+    {"id": "D", "height_mm": 55, "border_mm": 2.5, "mount_diameter_mm": 1.4, "mount_pitch_mm": 5.0}
   ],
   "coupon_hole_diameters_mm": [1.2, 1.4, 1.6],
   "coupon_hole_pitches_mm": [3.0, 4.0, 5.0],
-  "body_mounting_holes": "unpierced pads; drill after physical fitting",
+  "body_mounting_holes": "two laser-cut through holes per body; prototype dimensions pending physical fit",
+  "mount_edge_min_mm": 2.5,
+  "mount_print_clearance_mm": 0.25,
   "physical_fit_verified": false
 }
