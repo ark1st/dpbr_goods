@@ -67,7 +67,7 @@ def load_geometry(assets, art, preset):
 
 def layout(originals):
     items=[]
-    for original in originals:
+    for original in originals+carabiner.samples():
         pose=POSES[original['name']];tx,ty=pose['tx'],pose['ty'];angle=pose['angle']
         assert angle in [0,90,180,270]
         a,b,c,d={0:(1,0,0,1),90:(0,1,-1,0),180:(-1,0,0,-1),270:(0,-1,1,0)}[angle]
@@ -80,7 +80,6 @@ def layout(originals):
         # Quarter-turn rotation and translation only; dimensions and proportions stay exact.
         restored=affinity.rotate(affinity.translate(items[-1]['poly'],-tx,-ty),-angle,origin=(0,0))
         assert restored.hausdorff_distance(original['poly']) < 1e-8
-    items.extend(carabiner.placed_samples(PACKING['carabiner_row_y_mm']))
     for p in items:
         assert box(8,8,BOARD[0]-8,BOARD[1]-8).contains(p['poly'])
         assert all(p['poly'].contains(h) for h in p['holes'])
@@ -199,8 +198,8 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
     assert abs(float(page.mediabox.width)*25.4/72-BOARD[0])<.01
     assert abs(float(page.mediabox.height)*25.4/72-BOARD[1])<.01
     source=(folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
-    assert source.count('<path ')==source.count(' Z"')==34 and BLUE not in source
-    assert len(items)==11 and sum(len(p['holes']) for p in items)==23
+    assert source.count('<path ')==source.count(' Z"')==42 and BLUE not in source
+    assert len(items)==11 and sum(len(p['holes']) for p in items)==31
     im=Image.open(folder/'01_PRINT_300ppi.png');pixels=np.asarray(im)
     assert im.mode=='RGBA' and im.size==tuple(round(v*300/25.4) for v in BOARD)
     assert abs(im.info['dpi'][0]-300)<.1
@@ -218,7 +217,8 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
     report={'design':'combined-diorama-v3-compact','preset':preset,'quantity':1,'pieces':11,
         'uprights':['garam','danpaengi','main_logo'],'bases':['mascot_base','logo_base'],
         'canvas_mm':BOARD,'nominal_art_border_mm':mascot.CFG['clear_border_mm'],'original_geometry_rigid_transform_only':True,
-        'previous_canvas_mm':[295,140],'added_carabiner_trials':4,'added_gate_coupon':1,
+        'previous_canvas_mm':[310,205],'added_carabiner_trials':4,'added_gate_coupon':1,
+        'area_reduction_percent':round(100*(1-BOARD[0]*BOARD[1]/(310*205)),2),
         'keyring_count':1,'keyring':next(p['keyring_metrics'] for p in items if p['name']=='logo_keyring'),
         'comparison_projection':'orthographic; x and vertical z have identical scale; depth translation only',
         'comparison_scale_for_all_parts':1,'front_view_common_ground_line_mm':110,
@@ -226,12 +226,13 @@ def validate(assets,art,preset,originals,items,gap,folder,rows):
         'art_dimensions_mm':{**{n:[assets[n]['w'],assets[n]['h']] for n in ['garam','danpaengi']},
                              'main_logo':[art['w'],art['h']]},
         'base_dimensions_mm':{'mascot_base':mascot.CFG['base_mm'],'logo_base':logo.CFG['base_mm']},
-        'minimum_piece_gap_mm':gap,'cut_closed_paths':34,'slot_count':4,'keyring_hole_count':1,'gate_coupon_holes':18,'ai_layers':layers,
+        'minimum_piece_gap_mm':gap,'cut_closed_paths':42,'slot_count':4,'keyring_hole_count':1,'gate_coupon_holes':18,
+        'body_mount_holes':8,'carabiner_samples':{p['name']:p['metrics'] for p in items if p['name'].startswith('carabiner_')},'ai_layers':layers,
         'blue_reference_four_sides':True,'rgba_300ppi':True,'tabs_and_slot_buffers_unprinted':True,
         'physical_fit_test':False,'fit_test_slots':rows}
     (folder/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     (folder/'parameters.json').write_text(json.dumps({'canvas_mm':BOARD,'rigid_placements':POSES,
-        'mascot_config':mascot.CFG,'logo_config':logo.CFG,'selected_preset':preset},ensure_ascii=False,indent=2),encoding='utf-8')
+        'mascot_config':mascot.CFG,'logo_config':logo.CFG,'carabiner_config':carabiner.CFG,'selected_preset':preset},ensure_ascii=False,indent=2),encoding='utf-8')
     return report
 
 
@@ -240,9 +241,11 @@ def main():
     art=logo.load_logo();assets=mascot.load_art()
     assert mascot.CFG['presets']==logo.CFG['presets']
     for preset in logo.CFG['presets']:make_sheet(assets,art,preset)
-    (OUT/'README.md').write_text('''# 가람·단팽이·메인 로고 합본 V3 + 카라비너 시험 4종
+    (OUT/'README.md').write_text(f'''# 가람·단팽이·메인 로고 합본 V3 · 간격 3mm 압축 배치 + 카라비너 레이저 타공
 
-**내일 제작할 단바 시트입니다. 310×205mm, 총11조각.**
+**{BOARD[0]}×{BOARD[1]}mm, 총 11조각. 조각 사이 최소 간격 3mm.**
+이전 310×205mm보다 대지 면적을 {100*(1-BOARD[0]*BOARD[1]/(310*205)):.1f}% 줄였습니다.
+그림과 부품 크기는 그대로이며 회전·이동만으로 재배치했습니다.
 기존6조각(가람·단팽이·큰 로고·받침2·로고 키링)에 카라비너4종과 구멍 시험편1개를 추가했습니다.
 3T·5T는 두께별 대안으로 **실제 판 두께에 맞는 한 종류만** 사용합니다.
 
@@ -254,12 +257,12 @@ def main():
 |---|---|
 | 3T/02_COMBINED_MASTER.ai 또는 5T/02_COMBINED_MASTER.ai | Illustrator 편집용 합본 |
 | 같은 폴더의 01_PRINT_300ppi.png | UV 인쇄용 투명 PNG |
-| 03_CUT_ONLY.pdf / SVG | 빨간0.001mm, 34개 폐곡선 |
+| 03_CUT_ONLY.pdf / SVG | 빨간0.001mm, 42개 폐곡선 |
 | 04_FIT_TEST_* | 디오라마18mm 돌기의 홈 너비 시험판 |
 | 05_CARABINERS_ONLY.svg | 합본과 같은 좌표의 카라비너·구멍 시험편만 |
 | preview/00_DISPLAY_COMPARISON.ai | 조립 시안 편집용, 제작용 아님 |
 
-**구멍23개(받침 홈4+키링1+시험편18)를 먼저 자르고 외곽11개를 나중에 자릅니다.**
+**구멍31개(받침 홈4+키링1+카라비너 본체8+시험편18)를 먼저 자르고 외곽11개를 나중에 자릅니다.**
 파란 사각형은 위치 기준선입니다. 재단 대상이 아닙니다.
 인쇄·재단 모두 원점과100% 크기를 유지하고 자동 맞춤은 끕니다.
 작업영역은 안내문의800×500mm 이내입니다.
@@ -271,8 +274,10 @@ def main():
 
 카라비너는 A=50mm/2mm, B=50mm/2.5mm, C=55mm/2mm, D=55mm/2.5mm입니다.
 아래쪽 왼편 개방형이며 원본 로고의 왼팔·주황 점만 외측으로 이동한 시험용 변형입니다.
-**구매 부품9×23.5×1mm의 실제 다리 간격이 미확정이므로 본체는 미타공입니다.**
-시험편으로 지름·간격을 비교하고 실제 부품을 대어 본체 타공 위치와 개폐 여유를 잡습니다.
+**각 본체에 장착 구멍 2개를 레이저 칼선으로 넣었습니다. 이전 미타공 도안을 대체합니다.**
+A=지름1.2/간격4mm, B=1.4/4mm, C=1.6/4mm, D=1.4/5mm입니다.
+구멍-외곽 여유는 최소2.5mm 이상입니다. 구멍 주변0.25mm는 인쇄하지 않습니다.
+구매 부품9×23.5×1mm의 실제 다리 간격은 미확정이므로 네 조합은 조립 시험용 시작값입니다.
 [카라비너 상세 시안과 시험 절차](../carabiner_trials_v1/README.md)의 수치는 미검증 시작값입니다.
 독립 카라비너 시트와 이 합본의 샘플은 같습니다. 중복 출력하지 마세요.
 

@@ -75,12 +75,13 @@ def render_pdf(path,slug):
 def main():
     QA.mkdir(parents=True,exist_ok=True);report={'ai':[],'png':[],'zip':[]}
     cases=[('production_v4/02_MASTER.ai',(300,160),32),
-           ('carabiner_trials_v1/02_MASTER.ai',(308,72),23)]
+           ('carabiner_trials_v1/02_MASTER.ai',(308,72),31)]
+    combined_dim=tuple(json.loads((ROOT/'configs/combined_layout.json').read_text(encoding='utf-8'))['board_mm'])
     for t in ['3T','5T']:
         cases.extend([
           (f'diorama_v3/{t}/02_MASTER.ai',(200,110),5),
           (f'logo_diorama_v3/{t}/02_MASTER.ai',(220,155),4),
-          (f'combined_diorama_v3/{t}/02_COMBINED_MASTER.ai',(310,205),34)])
+          (f'combined_diorama_v3/{t}/02_COMBINED_MASTER.ai',combined_dim,42)])
     for rel,dim,count in cases:
         if 'logo_diorama' in rel:
             with fitz.open(OUT/rel) as d:dim=(d[0].rect.width/MM,d[0].rect.height/MM)
@@ -94,8 +95,8 @@ def main():
         assert rep['pieces']==38 and rep['min_gap_mm']>=6
         assert rep['external_30_cut_geometry_unchanged'] and rep['existing_print_pixels_unchanged']
     for rel,dim in [('production_v4/01_PRINT_300ppi.png',(300,160)),
-                    ('combined_diorama_v3/3T/01_PRINT_300ppi.png',(310,205)),
-                    ('combined_diorama_v3/5T/01_PRINT_300ppi.png',(310,205)),
+                    ('combined_diorama_v3/3T/01_PRINT_300ppi.png',combined_dim),
+                    ('combined_diorama_v3/5T/01_PRINT_300ppi.png',combined_dim),
                     ('tshirt_fronts/aing/01_DTG_14x16in_300ppi.png',(355.6,406.4)),
                     ('tshirt_fronts/changseop/01_DTG_14x16in_300ppi.png',(355.6,406.4))]:
         report['png'].append(check_png(OUT/rel,dim))

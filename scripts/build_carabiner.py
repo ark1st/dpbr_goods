@@ -1,4 +1,4 @@
-"""Dimensioned outline trials and a separate hardware calibration coupon."""
+"""Laser-pierced carabiner bodies and a hardware calibration coupon."""
 from pathlib import Path
 import sys,json,re,math
 ROOT=Path(__file__).resolve().parents[1]
@@ -7,6 +7,8 @@ from svgpathtools import parse_path
 from shapely.geometry import Polygon,LineString,Point
 from shapely.ops import unary_union,nearest_points
 from shapely import affinity
+import pymupdf as fitz
+from PIL import Image
 from vector_utils import layer,path,poly_path,runvc
 from build_diorama import write_svg,render,export_native,export_png,rounded,svg_text,TMP,cut_layer
 
@@ -51,10 +53,27 @@ def body(spec):
     toward=Point(3*h/45-5,21*h/45-1.5)
     dx,dy=toward.x-anchor.x,toward.y-anchor.y;length=math.hypot(dx,dy)
     tip=Point(anchor.x+dx/length*23.5,anchor.y+dy/length*23.5)
-    return {'name':'carabiner_'+spec['id'],'spec':spec,'poly':poly,'holes':[],
-        'ink':ink,'blank_zones':[],'gate':[[anchor.x,anchor.y],[tip.x,tip.y]],
+    # The two legs enter separate through-holes along the closed-gate axis.
+    # These are explicitly trial values, not dimensions inferred from overall hardware size.
+    dia,pitch=spec['mount_diameter_mm'],spec['mount_pitch_mm']
+    centers=[anchor,Point(anchor.x-dx/length*pitch,anchor.y-dy/length*pitch)]
+    holes=[p.buffer(dia/2,quad_segs=64) for p in centers]
+    assert all(poly.contains(h) for h in holes)
+    edge=min(poly.boundary.distance(h) for h in holes)
+    assert edge>=CFG['mount_edge_min_mm'],(spec,edge)
+    assert abs(centers[0].distance(centers[1])-pitch)<1e-8
+    blanks=[h.buffer(CFG['mount_print_clearance_mm']) for h in holes]
+    clip_id='mount_blank_'+spec['id']
+    clip_d=poly_path(poly)+' '+ ' '.join(poly_path(h) for h in blanks)
+    ink=(f'<defs><clipPath id="{clip_id}"><path d="{clip_d}" clip-rule="evenodd"/></clipPath></defs>'
+         f'<g clip-path="url(#{clip_id})">{ink}</g>')
+    return {'name':'carabiner_'+spec['id'],'spec':spec,'poly':poly,'holes':holes,
+        'ink':ink,'blank_zones':holes,'gate':[[anchor.x,anchor.y],[tip.x,tip.y]],
         'metrics':{'art_to_cut_min_mm':clearance,'lower_opening_min_mm':mouth,
                    'outer_mm':[poly.bounds[2]-poly.bounds[0],poly.bounds[3]-poly.bounds[1]],
+                   'mount_hole_count':2,'mount_diameter_mm':dia,'mount_pitch_mm':pitch,
+                   'mount_centers_local_mm':[[p.x,p.y] for p in centers],
+                   'mount_hole_to_edge_min_mm':edge,'mount_holes_in_laser_layer':True,
                    'mount_holes_finalized':False}}
 
 def coupon():
@@ -77,6 +96,7 @@ def placed_samples(y=7):
         x0,y0,x1,y1=p['poly'].bounds;tx=x-x0;ty=y-y0
         result.append({**p,'poly':affinity.translate(p['poly'],tx,ty),
             'holes':[affinity.translate(h,tx,ty) for h in p['holes']],
+            'blank_zones':[affinity.translate(z,tx,ty) for z in p['blank_zones']],
             'matrix':f'translate({tx:.9f} {ty:.9f})','tx':tx,'ty':ty,'angle':0})
         x+=x1-x0+7
     return result
@@ -101,24 +121,44 @@ def sheet():
             a,b=p['gate'];a=[a[0]+p['tx'],a[1]+p['ty']];b=[b[0]+p['tx'],b[1]+p['ty']]
             preview+=f'<path d="M{a[0]} {a[1]} L{b[0]} {b[1]}" stroke="#66727a" stroke-width=".65" fill="none"/>'
             spec=p['spec'];label=f'{spec["id"]}: H{spec["height_mm"]} / rim {spec["border_mm"]}'
+            preview+=svg_text((p['poly'].bounds[0]+p['poly'].bounds[2])/2,69,
+                f'hole {spec["mount_diameter_mm"]} / pitch {spec["mount_pitch_mm"]}',2.3,anchor='middle')
         else:label='hole / pitch (mm)'
         preview+=svg_text((p['poly'].bounds[0]+p['poly'].bounds[2])/2,65,label,2.7,anchor='middle')
     flat=write_svg(OUT/'preview.svg',w,h,preview);render(flat,OUT/'preview.png',2)
-    report={'canvas_mm':[w,h],'pieces':5,'cut_paths':23,'hardware':CFG,'samples':{p['name']:p['metrics'] for p in items if 'metrics' in p},'coupon':coupon()['rows']}
+    with fitz.open(OUT/'03_CUT_ONLY.pdf') as doc:
+        drawings=doc[0].get_drawings()
+        assert len(drawings)==31
+        assert all(d['color']==(1,0,0) and d['fill'] is None and abs(d['width']*25.4/72-.001)<1e-5 for d in drawings)
+        # The first eight PDF cut paths must be the body mounting holes, not preview marks.
+        for d,hole in zip(drawings[:8],[h for p in items[:4] for h in p['holes']]):
+            assert max(abs(a*25.4/72-b) for a,b in zip(d['rect'],hole.bounds))<.002
+    im=Image.open(OUT/'01_PRINT_300ppi.png').convert('RGBA')
+    for p in items[:4]:
+        for hole in p['holes']:
+            x,y=hole.centroid.coords[0]
+            assert im.getpixel((round(x*300/25.4),round(y*300/25.4)))[3]==0
+    report={'canvas_mm':[w,h],'pieces':5,'cut_paths':31,'body_mount_holes':8,'hardware':CFG,'samples':{p['name']:p['metrics'] for p in items if 'metrics' in p},'coupon':coupon()['rows']}
     (OUT/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT/'README.md').write_text(README,encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False))
 
-README="""# 단풍바람 카라비너 샘플 4종 + 구멍 시험편
+README="""# 단풍바람 카라비너 샘플 4종 + 구멍 시험편 · 본체 레이저 타공 수정판
 
 ![실척 비율 시안](preview.png)
 
-| 샘플 | 몸체 높이 | 일반 투명 여백 |
-|---|---:|---:|
-| A | 50mm | 2.0mm |
-| B | 50mm | 2.5mm |
-| C | 55mm | 2.0mm |
-| D | 55mm | 2.5mm |
+| 샘플 | 몸체 높이 | 일반 투명 여백 | 장착 구멍 지름 | 구멍 중심 간격 |
+|---|---:|---:|---:|---:|
+| A | 50mm | 2.0mm | 1.2mm | 4.0mm |
+| B | 50mm | 2.5mm | 1.4mm | 4.0mm |
+| C | 55mm | 2.0mm | 1.6mm | 4.0mm |
+| D | 55mm | 2.5mm | 1.4mm | 5.0mm |
+
+**본체마다 장착 구멍 2개를 빨간 레이저 칼선에 넣었습니다.**
+이전 미타공 파일을 대체합니다. 별도로 드릴로 뚫는 전제가 아닙니다.
+구멍 26개(본체 8 + 시험편 18)를 먼저 자르고, 외곽 5개를 나중에 자릅니다.
+장착 구멍 끝에서 몸체 외곽까지 최소 2.5mm 이상을 남겼습니다.
+구멍과 그 주변 0.25mm는 인쇄하지 않습니다.
 
 구매한 금속 부품은 **9×23.5×1mm**. 회색 막대는 길이 참고용이며 인쇄·재단 파일에는 없습니다.
 왼쪽 아래가 열리는 형태입니다. 5cm 원본 배치에서는 여백2.5mm를 두르면 개방부가 닫히므로,
@@ -128,8 +168,9 @@ README="""# 단풍바람 카라비너 샘플 4종 + 구멍 시험편
 
 **시험용입니다. 금속 부품 장착과 개폐는 실물 검증 전입니다.**
 문서에는 부품의 바깥 치수만 있어 두 다리의 구멍 간격·꺾임 깊이를 확정할 수 없습니다.
-따라서 본체 장착 부분은 미타공입니다. 시험편으로 지름1.2/1.4/1.6mm와 중심간격3/4/5mm를 비교한 뒤,
-본체에 실제 부품을 대고 위치를 표시해 타공합니다. 맞는 조합이 없으면 실측값으로 config를 수정합니다.
+표의 네 조합은 레이저로 바로 잘라 조립해보는 시험값입니다. 확정된 부품 규격이 아닙니다.
+별도 시험편에서는 지름1.2/1.4/1.6mm와 중심간격3/4/5mm의 9조합도 비교할 수 있습니다.
+맞는 조합이 없으면 실제 두 다리 간격과 선경을 측정하여 configs/carabiner.json을 수정하고 다시 출력합니다.
 시험편의 '1.4/4' 표기는 구멍 지름1.4mm / 중심간격4mm입니다. 커프 보정 전입니다.
 23.5mm는 부품 전체 높이이며 유효 회전 길이와 같다고 가정하지 않습니다.
 3T·5T 판에 같은 평면 경로를 사용할 수 있지만 부품의 폭·다리 깊이·스프링 예압은 두께마다 확인해야 합니다.
@@ -137,11 +178,14 @@ README="""# 단풍바람 카라비너 샘플 4종 + 구멍 시험편
 
 - 02_MASTER.ai: 편집용. 빨간 칼선0.001mm.
 - 01_PRINT_300ppi.png: 투명 인쇄 파일. 파란 기준 사각형 포함.
-- 03_CUT_ONLY.pdf / SVG: 23폐곡선, 5외곽 + 시험편 구멍18개.
+- 03_CUT_ONLY.pdf / SVG: 31폐곡선, 5외곽 + 본체 구멍8개 + 시험편 구멍18개.
 - 단바 합본에도 **동일한 샘플5조각**이 들어갑니다. 별도 시트와 중복 제작하지 마세요.
 
 문서의 레진·실리콘 몰드는 다음 제작 방식 검토 항목입니다.
 이번 파일은 평판 아크릴 형상·장착 시험용이며 레진 금형 도면이 아닙니다.
+
+결합 방식 참고: [DAIO 아크릴 카라비너 스프링](https://en.daiomfg.co.jp/products/detail/view/1168).
+이 자료는 다른 부품의 설명이므로 그 제품의 구멍 치수를 구매 부품의 확정값으로 적용하지 않았습니다.
 """
 
 if __name__=='__main__':sheet()
