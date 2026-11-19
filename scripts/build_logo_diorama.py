@@ -1,4 +1,4 @@
-"""One original full-logo stand + compact base; 3T/5T are alternatives."""
+"""One larger main-logo stand + compact base; 3T/5T are alternatives."""
 from pathlib import Path
 import argparse
 import hashlib
@@ -27,7 +27,7 @@ import build_diorama as acrylic
 from build_diorama import rounded, write_svg, render, export_native, export_png, svg_text
 
 CFG = json.loads((ROOT / 'configs/logo_diorama.json').read_text(encoding='utf-8'))
-OUT = ROOT / 'output/logo_diorama_v1'
+OUT = ROOT / 'output/logo_diorama_v2'
 TMP = ROOT / 'tmp/logo_diorama'
 RED, BLUE = '#ff0000', '#0000ff'
 
@@ -72,7 +72,7 @@ def geometry(art, preset):
     # 0.01 mm extra offsets the polygonal approximation of circular corners.
     body = art['hull'].buffer(CFG['clear_border_mm']+.01, quad_segs=32)
     plinth = box(centers[0]-13, shoulder-9, centers[1]+13, shoulder)
-    body = unary_union([body, plinth]).convex_hull.intersection(box(-20, -20, 150, shoulder))
+    body = unary_union([body, plinth]).convex_hull.intersection(box(-20, -20, art['w']+20, shoulder))
     stand = unary_union([body]+[tab(x, shoulder, depth) for x in centers])
     base = rounded(0, 0, *CFG['base_mm'], CFG['base_corner_radius_mm'])
     bw, bh = CFG['base_mm']
@@ -91,10 +91,10 @@ def geometry(art, preset):
 
 
 def position(geo):
-    x0, y0, _, _ = geo['stand'].bounds
-    tx, ty = 11-x0, 11-y0
+    x0, y0, x1, _ = geo['stand'].bounds
+    tx, ty = (CFG['canvas_mm'][0]-(x1-x0))/2-x0, 11-y0
     stand = affinity.translate(geo['stand'], tx, ty)
-    bx, by = (CFG['canvas_mm'][0]-CFG['base_mm'][0])/2, 68
+    bx, by = (CFG['canvas_mm'][0]-CFG['base_mm'][0])/2, CFG['layout_base_y_mm']
     base = affinity.translate(geo['base'], bx, by)
     slots = [affinity.translate(s, bx, by) for s in geo['slots']]
     gap = stand.distance(base)
@@ -128,8 +128,9 @@ def build(preset, art):
     export_png(printing, folder/'01_PRINT_300ppi.png')
     write_svg(folder/'05_UPRIGHT_ONLY.svg', w, h, ink+reference+layer('1_LASER_CUT', cuts([stand])))
     write_svg(folder/'05_BASE_ONLY.svg', w, h, layer('1_LASER_CUT', cuts(slots+[base])))
-    labels = svg_text(17,64,f'{preset["name"]} / 1 SET = 2 PIECES',3.2)
-    labels += svg_text(62.5,100,'90 x 26 mm BASE / TWO 18 mm TABS',2.8,anchor='middle')
+    bw,bh = CFG['base_mm']
+    labels = svg_text(w/2,CFG['layout_base_y_mm']-4,f'{preset["name"]} / 1 SET = 2 PIECES',3.2,anchor='middle')
+    labels += svg_text(w/2,h-5,f'{bw} x {bh} mm BASE / TWO 18 mm TABS',2.8,anchor='middle')
     flat = write_svg(folder/'preview/flat_layout.svg', w, h,
         f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+cuts(slots+[stand,base],.16)+labels)
     render(flat, folder/'preview/flat_layout.png', 2.7)
@@ -160,7 +161,7 @@ def build(preset, art):
     cut_text = (folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
     assert cut_text.count('<path ') == cut_text.count(' Z"') == 4
     assert BLUE not in cut_text
-    report = {'design':'full-logo-diorama-v1', 'quantity':1, 'pieces':2, 'preset':preset,
+    report = {'design':'full-logo-diorama-v2-main', 'quantity':1, 'pieces':2, 'preset':preset,
         'canvas_mm':CFG['canvas_mm'], 'base_mm':CFG['base_mm'],
         'art_mm':[art['w'],art['h']], 'source_aspect_ratio':art['provenance']['aspect_ratio'],
         'art_aspect_ratio':art['w']/art['h'], 'original_paths_unchanged':38,
@@ -185,26 +186,28 @@ def build(preset, art):
 
 def assembly(art, geo, preset, folder):
     # Actual cut outlines in an orthographic illustration. No generated logo art.
-    ox,oy,dx,dy=18,76,.38,-.37
     bw,bh=CFG['base_mm'];bt=preset['base_thickness_mm'];pt=preset['part_thickness_mm']
+    sw,sh=art['w']+50,art['h']+76
+    dx,dy=.38,-.37
+    ox,oy=(sw-bw-dx*bh)/2,sh-26
     floor = f'matrix(1 0 {-dx} {-dy} {ox+dx*bh} {oy+dy*bh})'
     top = f'matrix(1 0 {-dx} {-dy} {ox+dx*bh} {oy+dy*bh-bt})'
-    parts=['<rect width="135" height="100" fill="#f7f3eb"/>',
-           '<ellipse cx="68" cy="77.5" rx="53" ry="5.5" fill="#e6ded0"/>',
+    parts=[f'<rect width="{sw}" height="{sh}" fill="#f7f3eb"/>',
+           f'<ellipse cx="{sw/2}" cy="{oy+1.5}" rx="{(bw+dx*bh)/2+5}" ry="5.5" fill="#e6ded0"/>',
            f'<g transform="{floor}">'+path(poly_path(geo['base']),'#d8e2df','#a4b5b1',.25)+'</g>',
            f'<g transform="{top}">'+path(poly_path(geo['base']),'#f9fffc','#a3b7b0',.25)+'</g>']
     X=ox+bw/2+dx*bh/2-art['w']/2
     Y=oy+dy*bh/2-bt-geo['shoulder']
     # Hide the inserted portion behind the base; the source SVG stays unchanged.
-    visible=geo['stand'].intersection(box(-20,-20,150,geo['shoulder']))
+    visible=geo['stand'].intersection(box(-20,-20,art['w']+20,geo['shoulder']))
     body=path(poly_path(visible),'#fafffd','#a5bab2',.28)
     parts.append(f'<g transform="translate({X+dx*pt} {Y+dy*pt})">{body}</g>')
     parts.append(f'<g transform="translate({X} {Y})">{body}{art["ink"]}</g>')
     parts.append(svg_text(10,12,'DANPUNGBARAM',4,'#8d594b'))
-    parts.append(svg_text(10,19,'Original symbol + full wordmark',2.8))
-    parts.append(svg_text(10,90,'90 x 26 mm BASE / ONE DIORAMA',3.1))
-    parts.append(svg_text(10,96,f'{preset["name"]} / assembly illustration',2.6))
-    svg=write_svg(folder/'preview/assembly.svg',135,100,''.join(parts))
+    parts.append(svg_text(10,19,f'MAIN DISPLAY / {art["w"]:g} mm original logo',2.8))
+    parts.append(svg_text(10,sh-10,f'{bw} x {bh} mm BASE / ONE DIORAMA',3.1))
+    parts.append(svg_text(10,sh-4,f'{preset["name"]} / assembly illustration',2.6))
+    svg=write_svg(folder/'preview/assembly.svg',sw,sh,''.join(parts))
     render(svg,folder/'preview/assembly.png',3)
 
 
@@ -212,7 +215,7 @@ def guide(reports):
     register_guide_fonts()
     draft=TMP/'guide_draft.pdf'
     c=canvas.Canvas(str(draft),pagesize=(210*mm,297*mm))
-    c.setTitle('단풍바람 전체 로고 디오라마 - 1세트 제작 안내')
+    c.setTitle('단풍바람 메인 로고 디오라마 V2 - 1세트 제작 안내')
     def text(x,y,s,size=10,bold=False,color='#3f413a'):
         c.setFillColor(color);c.setFont(GUIDE_BOLD if bold else GUIDE_FONT,size);c.drawString(x*mm,y*mm,s)
     def page(title,sub,n):
@@ -223,17 +226,22 @@ def guide(reports):
         text(17,11,'2026.11.20 / 실물 끼움 시험 전 도안 / 제작 수량 1세트',8,color='#76776b')
         text(190,11,str(n),8)
     first=reports[0];folder=OUT/first['preset']['name']
-    page('로고와 이름, 하나의 디오라마','원본 심벌 + 단풍바람 글자 전체를 한 조각으로 세웁니다.',1)
-    c.drawImage(str(folder/'preview/assembly.png'),17*mm,99*mm,width=176*mm,height=176*100/135*mm,mask='auto')
+    bw,bh=CFG['base_mm'];cw,ch=CFG['canvas_mm']
+    aw,ah=first['art_mm']
+    pw,ph=first['stand_width_mm'],first['stand_height_above_base_mm']
+    page('메인으로 세우는 단풍바람','원본 심벌 + 제목 그대로, 기존96 mm에서160 mm로 약1.67배 확대.',1)
+    preview=Image.open(folder/'preview/assembly.png')
+    display_h=176*preview.height/preview.width
+    c.drawImage(str(folder/'preview/assembly.png'),17*mm,(99+(132-display_h)/2)*mm,width=176*mm,height=display_h*mm,mask='auto')
     for y,s in [(88,'구성: 제목 포함 로고판 1개 + 투명 받침대 1개 = 2조각'),
-                (77,'받침대: 90 × 26 mm / 로고 그림: 96 × 33.80 mm'),
-                (66,'로고판 외곽: 약 103.2 × 41.0 mm (끼움 돌기 제외)'),
+                (77,f'받침대: {bw} × {bh} mm / 로고 그림: {aw:g} × {ah:.2f} mm'),
+                (66,f'로고판 외곽: 약 {pw:.1f} × {ph:.1f} mm (끼움 돌기 제외)'),
                 (55,'원본 AI의 38개 벡터 경로·색상·글자 간격·비율을 그대로 유지'),
                 (39,'3T와 5T는 같은 디자인의 두께별 대안입니다. 한 종류만 선택하세요.')]:
         text(17,y,s,10,bold=y==88)
     c.showPage()
     page('두께를 정하고, 시험 후 끼우기','홈 너비는 로고판 두께, 돌기 길이는 받침대 두께를 기준으로 합니다.',2)
-    text(17,226,'공통 돌기 18 mm × 2개 / 중심 간격 44 mm / 홈 길이 18.8 mm',11,True)
+    text(17,226,f'공통 돌기 18 mm × 2개 / 중심 간격 {CFG["tab_center_spacing_mm"]} mm / 홈 길이 18.8 mm',11,True)
     edge=min(r['slot_minimum_edge_margin_mm'] for r in reports)
     text(17,214,f'그림과 외곽은 최소 3.6 mm, 홈과 받침대 가장자리는 최소 {edge:.1f} mm 여유.',9)
     y=199
@@ -254,37 +262,38 @@ def guide(reports):
     c.showPage()
     for i,r in enumerate(reports):
         p=r['preset'];page(f'{p["name"]} 실제 크기 확인', 'A4에 100%로 출력하세요. 이 안내서 페이지 자체는 생산용 파일이 아닙니다.',3+i)
-        text(17,223,'아래 배치: 125 × 105 mm / 상단 로고판, 하단 받침대 / 총 2조각',10,True)
-        text(17,92,f'홈 {r["slot_length_mm"]:.1f} × {p["slot_width_mm"]:.2f} mm / 돌기 길이 {r["tab_depth_mm"]:.2f} mm',10)
-        text(17,80,'그림과 파란 기준선만 인쇄하고, 빨간 선을 커팅 레이어로 사용합니다.',9)
+        text(17,225,f'아래 배치: {cw} × {ch} mm / 상단 로고판, 하단 받침대 / 총 2조각',10,True)
+        text(17,64,f'홈 {r["slot_length_mm"]:.1f} × {p["slot_width_mm"]:.2f} mm / 돌기 길이 {r["tab_depth_mm"]:.2f} mm',10)
+        text(17,52,'그림과 파란 기준선만 인쇄하고, 빨간 선을 커팅 레이어로 사용합니다.',9)
         c.setStrokeColor('#333333');c.setLineWidth(.5)
-        c.line(17*mm,62*mm,67*mm,62*mm)
-        c.line(17*mm,60*mm,17*mm,64*mm);c.line(67*mm,60*mm,67*mm,64*mm)
-        text(17,53,'이 선이 50 mm인지 확인하세요.',9)
+        c.line(17*mm,35*mm,67*mm,35*mm)
+        c.line(17*mm,33*mm,17*mm,37*mm);c.line(67*mm,33*mm,67*mm,37*mm)
+        text(17,26,'이 선이 50 mm인지 확인하세요.',9)
         c.showPage()
     c.save()
     doc=fitz.open(draft)
     for i,r in enumerate(reports):
         source=fitz.open(TMP/f'guide-board-{r["preset"]["name"]}.pdf')
-        # 125 x 105 mm copied at 1:1, without rasterizing original logo paths.
-        doc[2+i].show_pdf_page(fitz.Rect(17*mm,83*mm,142*mm,188*mm),source,0)
+        # Copy at 1:1, centered on A4, without rasterizing original logo paths.
+        left=(210-cw)/2
+        doc[2+i].show_pdf_page(fitz.Rect(left*mm,80*mm,(left+cw)*mm,(80+ch)*mm),source,0)
         source.close()
     doc.save(OUT/'00_ASSEMBLY_GUIDE.pdf',garbage=4,deflate=True)
     doc.close()
 
 
 def readme(reports):
-    text='''# 단풍바람 제목 포함 로고 디오라마
+    text='''# 단풍바람 메인 로고 디오라마 V2
 
 **한 디자인, 1세트 2조각**: 로고판 1개 + 투명 받침대 1개. 3T와 5T는 두께별 대안이며 둘 다 생산하지 않습니다.
 
 ![조립 예상도](3T/preview/assembly.png)
 
-- 받침대 **90×26 mm**, 로고 그림 **96×33.80 mm**.
+- 받침대 **140×38 mm**, 로고 그림 **160×56.33 mm**. 이전96 mm 로고의 가로·높이 약1.67배입니다.
 - 원본 `assets/source_logo.ai`의 `기본` 그룹: 심벌 7개 + 제목 31개 벡터 경로를 그대로 사용했습니다.
 - 글꼴을 새로 입력하지 않았으며 원본 색상·상대 위치·가로세로 비율을 보존했습니다.
-- 로고판 외곽은 약103.2×41.0 mm, 투명 연결판으로 전체 로고가 한 조각이 됩니다.
-- 18 mm 돌기 2개, 중심 간격44 mm. 받침대는 인쇄 없이 투명하게 사용합니다.
+- 로고판 외곽은 약167.2×63.5 mm, 투명 연결판으로 전체 로고가 한 조각이 됩니다.
+- 18 mm 돌기 2개, 중심 간격84 mm. 받침대는 인쇄 없이 투명하게 사용합니다.
 
 ## 파일 선택
 
@@ -313,10 +322,11 @@ python scripts/build_logo_diorama.py --part-thickness 3 --base-thickness 3 --slo
 python scripts/build_logo_diorama.py --part-thickness 3 --base-thickness 5 --slot-width 2.80 --name mixed_3T_5T
 ```
 
-작업영역125×105 mm, 기준선은(4,4)에서117×97 mm의 파란 사각선입니다.
+작업영역200×140 mm, 기준선은(4,4)에서192×132 mm의 파란 사각선입니다.
 파란 선은 위치·방향 맞춤용이며 커팅하지 않습니다. 모든 파일은 같은 원점, 실제 크기100%로 사용합니다.
 UV 백색 잉크 처리는 장비 담당자가 그림의 불투명 부분 기준으로 설정합니다. 투명 여백과 돌기는 인쇄하지 않습니다.
 원본 재추출은 `python scripts/extract_logo_full.py`로 할 수 있습니다.
+이전 작은 버전은 `logo_diorama_v1`에 보관되어 있습니다. 메인 장식용 제작은 이 V2를 사용합니다.
 '''
     if reports[0]['preset']['name']!='3T':
         text=text.replace('(3T/preview/assembly.png)',f'({reports[0]["preset"]["name"]}/preview/assembly.png)')
@@ -337,7 +347,7 @@ def main():
         if not (2<=args.part_thickness<=6 and 2<=args.base_thickness<=6):parser.error('Thickness range: 2 to 6 mm')
         if not (args.part_thickness-.6<=args.slot_width<=args.part_thickness+.6):parser.error('Slot width must be within 0.6 mm of the part thickness')
         if not re.fullmatch(r'[A-Za-z0-9_-]+',args.name):parser.error('Name may contain ASCII letters, numbers, underscore and hyphen')
-        OUT=ROOT/'output'/f'logo_diorama_v1_{args.name}'
+        OUT=ROOT/'output'/f'logo_diorama_v2_{args.name}'
         presets=[{'name':args.name,'part_thickness_mm':args.part_thickness,
                   'base_thickness_mm':args.base_thickness,'slot_width_mm':args.slot_width}]
     else:presets=CFG['presets']
@@ -347,7 +357,7 @@ def main():
     reports=[build(p,art) for p in presets]
     guide(reports);readme(reports)
     (OUT/'validation_summary.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
-    zipname='Danpungbaram_Logo_Diorama_V1_3T_5T.zip' if len(presets)==2 else f'Danpungbaram_Logo_Diorama_V1_{args.name}.zip'
+    zipname='Danpungbaram_Logo_Diorama_V2_MAIN_3T_5T.zip' if len(presets)==2 else f'Danpungbaram_Logo_Diorama_V2_{args.name}.zip'
     with zipfile.ZipFile(OUT.parent/zipname,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in sorted(OUT.rglob('*')):
             if file.is_file():archive.write(file,file.relative_to(OUT.parent))
