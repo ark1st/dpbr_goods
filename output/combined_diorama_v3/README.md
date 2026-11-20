@@ -1,3 +1,5 @@
+> **2026-11-20 칼선 곡선화 수정본입니다. 기존 다운로드를 교체하세요.** [전수 검사·변경 내용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)
+
 # 가람·단팽이·메인 로고 합본 V3 · 간격 3mm 압축 배치 + 카라비너 레이저 타공
 
 **300×175mm, 총 11조각. 조각 사이 최소 간격 3mm.**

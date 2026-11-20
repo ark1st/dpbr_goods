@@ -35,6 +35,12 @@ main은 원본·설정·생성 코드, [output_len/output](https://github.com/ar
 카라비너 장착 구멍은 A=지름1.2/간격4mm, B=1.4/4mm, C=1.6/4mm, D=1.4/5mm입니다.
 구매 부품9×23.5×1mm에 맞는지 실제 조립으로 확인하는 시험값이며, 본체에 레이저 타공이 포함됩니다.
 
+## 칼선 품질 검사
+
+[필수 제작 검사 기준](docs/laser-cut-quality.md) · [수정 전후와 전수 검사](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)
+
+매 배포에서 실제 AI·PDF·SVG·VectorCraft 경로를 검사합니다. 미세 선분·자기교차·중복·열린 경로가 있으면 실패합니다. GitHub에서도 회귀 검사와 게시된 AI/PDF 검사를 실행합니다.
+
 ## 재생성
 
 Python3.11 이상과 [VectorCraft CLI](https://github.com/storytold/vectorcraft/releases)를 사용합니다.

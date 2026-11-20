@@ -29,6 +29,66 @@
       ]
     },
     {
+      "file": "output\\linked_tuiing_v1\\tuiing\\02_MASTER.ai",
+      "size_mm": [
+        55.0000020345052,
+        74.99999788072374
+      ],
+      "path_objects": 3,
+      "closed_contours": 3,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT",
+        "4_WHITE_INK_MASK"
+      ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\golden\\02_MASTER.ai",
+      "size_mm": [
+        55.0000020345052,
+        74.99999788072374
+      ],
+      "path_objects": 3,
+      "closed_contours": 3,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT",
+        "4_WHITE_INK_MASK"
+      ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\burnt\\02_MASTER.ai",
+      "size_mm": [
+        55.0000020345052,
+        74.99999788072374
+      ],
+      "path_objects": 3,
+      "closed_contours": 3,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT",
+        "4_WHITE_INK_MASK"
+      ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\unfried\\02_MASTER.ai",
+      "size_mm": [
+        55.0000020345052,
+        74.99999788072374
+      ],
+      "path_objects": 3,
+      "closed_contours": 3,
+      "layers": [
+        "3_ARTWORK",
+        "2_CORNER_REFERENCE",
+        "1_LASER_CUT",
+        "4_WHITE_INK_MASK"
+      ]
+    },
+    {
       "file": "output\\diorama_v3\\3T\\02_MASTER.ai",
       "size_mm": [
         200.00000152587887,
@@ -220,32 +280,76 @@
         299.9994,
         299.9994
       ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\tuiing\\01_PRINT_300ppi.png",
+      "pixels": [
+        650,
+        886
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\golden\\01_PRINT_300ppi.png",
+      "pixels": [
+        650,
+        886
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\burnt\\01_PRINT_300ppi.png",
+      "pixels": [
+        650,
+        886
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "output\\linked_tuiing_v1\\unfried\\01_PRINT_300ppi.png",
+      "pixels": [
+        650,
+        886
+      ],
+      "ppi": [
+        299.9994,
+        299.9994
+      ]
     }
   ],
   "zip": [
     {
       "file": "Danpungbaram_V4_SMALL_BATCH_16pcs.zip",
-      "bytes": 8114449
+      "bytes": 3407385
     },
     {
       "file": "Danpungbaram_Diorama_V3_3T_5T.zip",
-      "bytes": 1362992
+      "bytes": 1235225
     },
     {
       "file": "Danpungbaram_Logo_Diorama_V3_MAIN_3T_5T.zip",
-      "bytes": 1121733
+      "bytes": 919256
     },
     {
       "file": "Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip",
-      "bytes": 17482162
+      "bytes": 9593227
     },
     {
       "file": "Extra_Sheet_38pcs_3T.zip",
-      "bytes": 53077152
+      "bytes": 52303503
     },
     {
       "file": "Extra_Sheet_38pcs_5T.zip",
-      "bytes": 53068769
+      "bytes": 52294381
     },
     {
       "file": "Tshirt_Fronts_Aing_Changseop_14x16in.zip",
@@ -253,50 +357,315 @@
     },
     {
       "file": "Tuiing_Linked_4_Separate_Plates.zip",
-      "bytes": 3279322
+      "bytes": 2487537
     }
   ],
-  "rendered_pages": 16,
-  "physical_prototype_tested": false,
-  "visual_review": "All 16 rendered PDF pages and final garment previews reviewed.",
-  "latest_revision": {
-    "combined_canvas_mm": [
-      300,
-      175
-    ],
-    "previous_canvas_mm": [
-      310,
-      205
-    ],
-    "minimum_gap_mm": 3,
-    "measured_min_gap_mm": 3.119194657849476,
-    "area_reduction_percent": 17.39,
-    "carabiner_body_mount_holes": 8,
-    "ai_cut_pdf_checked": 3,
-    "body_hole_fit": "trial values; physical assembly not yet verified"
+  "laser_path_audit": {
+    "checked_files": 126,
+    "errors": [],
+    "protected_original_findings": [
+      {
+        "file": "extra_sheet/01_COMBINED_SHEET.pdf",
+        "findings": [
+          {
+            "path": "9:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 2
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "18:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 1
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/03_CUT_ONLY.pdf",
+        "findings": [
+          {
+            "path": "9:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 2
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "18:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 1
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/05_MASTER.ai",
+        "findings": [
+          {
+            "path": "5:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0018095963393268e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "17:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0088131505044637e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/05_MASTER.vectorcraft",
+        "findings": [
+          {
+            "path": "5:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0018095963393268e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "17:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0088131505044637e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/3T/01_COMBINED_SHEET.pdf",
+        "findings": [
+          {
+            "path": "9:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 2
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "18:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 1
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/3T/03_CUT_ONLY.pdf",
+        "findings": [
+          {
+            "path": "9:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 2
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "18:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 1
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/3T/05_MASTER.ai",
+        "findings": [
+          {
+            "path": "5:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0018095963393268e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "17:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0088131505044637e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/3T/05_MASTER.vectorcraft",
+        "findings": [
+          {
+            "path": "5:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0018095963393268e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "17:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0088131505044637e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/5T/01_COMBINED_SHEET.pdf",
+        "findings": [
+          {
+            "path": "9:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 2
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "18:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 1
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/5T/03_CUT_ONLY.pdf",
+        "findings": [
+          {
+            "path": "9:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 2
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "18:0",
+            "notes": [
+              {
+                "kind": "zero_length_no_op",
+                "count": 1
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/5T/05_MASTER.ai",
+        "findings": [
+          {
+            "path": "5:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0018095963393268e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "17:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0088131505044637e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      },
+      {
+        "file": "extra_sheet/5T/05_MASTER.vectorcraft",
+        "findings": [
+          {
+            "path": "5:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0018095963393268e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          },
+          {
+            "path": "17:0",
+            "notes": [
+              {
+                "kind": "export_roundoff_below_0.0001mm",
+                "boundary_difference_mm": 3.0088131505044637e-05
+              }
+            ],
+            "status": "measured_numerical_no_op_original_preserved"
+          }
+        ]
+      }
+    ]
   },
-  "linked_tuiing_revision": {
-    "separate_plates": 4,
-    "pieces_per_plate": 1,
-    "canvas_mm": [
-      55,
-      75
-    ],
-    "art_mm": [
-      30,
-      38.36065573770492
-    ],
-    "acrylic_mm": [
-      35,
-      57.36062227162232
-    ],
-    "holes_per_piece": 2,
-    "hole_diameter_mm": 4,
-    "cut_paths_per_plate": 3,
-    "source_pixel_roundtrip_exact": true,
-    "ai_layers_and_cuts_verified": true,
-    "print_pdfs_rendered_and_reviewed": 4,
-    "validation_file": "linked_tuiing_v1/validation_report.json",
-    "physical_assembly_test": false
-  }
+  "rendered_pages": 16,
+  "physical_cut_test": false
 }

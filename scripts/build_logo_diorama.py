@@ -20,6 +20,7 @@ from shapely.ops import unary_union
 from svgpathtools import parse_path
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
+from laser_paths import cut_path
 from vector_utils import SVG, path, poly_path, layer, runvc
 from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
 # Reuse the existing 18 mm fit coupon and VectorCraft export helpers.
@@ -105,7 +106,7 @@ def position(geo):
 
 
 def cuts(polygons, stroke=.001):
-    return ''.join(path(poly_path(p), 'none', RED, stroke) for p in polygons)
+    return ''.join(path(cut_path(p), 'none', RED, stroke) for p in polygons)
 
 
 def build(preset, art):

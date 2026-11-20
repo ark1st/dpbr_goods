@@ -1,3 +1,5 @@
+> **2026-11-20 칼선 곡선화 수정본입니다. 기존 다운로드를 교체하세요.** [전수 검사·변경 내용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)
+
 # 엑스트라 시트 (김윤양지수) - yun 스탠드 추가38조각
 
 **기존33조각 + 새yun 캐릭터2·받침3 = 총38조각. 527×204mm.**

@@ -1,3 +1,5 @@
+> **2026-11-20 칼선 곡선화 수정본입니다. 기존 다운로드를 교체하세요.** [전수 검사·변경 내용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)
+
 # 단풍바람 카라비너 샘플 4종 + 구멍 시험편 · 본체 레이저 타공 수정판
 
 ![실척 비율 시안](preview.png)

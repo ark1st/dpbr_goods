@@ -6,6 +6,10 @@
   "pieces": 38,
   "existing_pieces": 33,
   "added_pieces": 5,
+  "cut_path_objects": 49,
+  "closed_contours": 95,
+  "outer_contours": 38,
+  "inner_contours": 57,
   "external_30_cut_geometry_unchanged": true,
   "existing_print_pixels_unchanged": true,
   "owned_cut_updates": [
@@ -142,9 +146,5 @@
     "LASER_CUT",
     "CORNER_REFERENCE",
     "PRINT_ARTWORK"
-  ],
-  "cut_path_objects": 49,
-  "closed_contours": 95,
-  "outer_contours": 38,
-  "inner_contours": 57
+  ]
 }

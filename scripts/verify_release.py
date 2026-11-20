@@ -74,6 +74,11 @@ def render_pdf(path,slug):
 
 def main():
     QA.mkdir(parents=True,exist_ok=True);report={'ai':[],'png':[],'zip':[]}
+    # Do not accept dimensions/closed paths alone as a manufacturing preflight.
+    from verify_laser_paths import main as inspect_every_cut_file
+    laser=inspect_every_cut_file()
+    report['laser_path_audit']={'checked_files':laser['checked_files'],'errors':laser['errors'],
+                              'protected_original_findings':laser['protected_original_findings']}
     cases=[('production_v4/02_MASTER.ai',(300,160),32),
            ('carabiner_trials_v1/02_MASTER.ai',(308,72),31)]
     combined_dim=tuple(json.loads((ROOT/'configs/combined_layout.json').read_text(encoding='utf-8'))['board_mm'])
@@ -130,10 +135,21 @@ def main():
                      'Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tshirt_Fronts_Aing_Changseop_14x16in.zip',
                      'Tuiing_Linked_4_Separate_Plates.zip']:
         p=OUT/filename
-        with zipfile.ZipFile(p) as z:assert z.testzip() is None
+        with zipfile.ZipFile(p) as z:
+            assert z.testzip() is None
+            aliases={'Danpungbaram_V4':'production_v4','Danpungbaram_Diorama_V3':'diorama_v3'}
+            import hashlib
+            for name in z.namelist():
+                if name.endswith('/'):continue
+                parts=name.split('/');parts[0]=aliases.get(parts[0],parts[0])
+                current=OUT.joinpath(*parts)
+                assert current.is_file(),(filename,name,'missing current file')
+                assert hashlib.sha256(z.read(name)).digest()==hashlib.sha256(current.read_bytes()).digest(),(filename,name,'stale ZIP entry')
         assert p.stat().st_size<100*1024*1024,(filename,p.stat().st_size)
         report['zip'].append({'file':filename,'bytes':p.stat().st_size})
     report['rendered_pages']=len(pages)
+    report['physical_cut_test']=False
     (QA/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+    (OUT/'RELEASE_VALIDATION.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'ai_checked':len(report['ai']),'png_checked':len(report['png']),'pages':len(pages),'zip_checked':len(report['zip'])}))
 if __name__=='__main__':main()

@@ -1,3 +1,5 @@
+> **2026-11-20 칼선 곡선화 수정본입니다. 기존 다운로드를 교체하세요.** [전수 검사·변경 내용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)
+
 # 내일 출력할 최종 파일 · 2026-11-20
 
 1. [가람·단팽이·메인 로고 합본 V3 + 카라비너 샘플 ·11조각](combined_diorama_v3/README.md)
