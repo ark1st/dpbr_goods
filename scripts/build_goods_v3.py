@@ -16,6 +16,7 @@ from pypdf import PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
 from guide_fonts import GUIDE_FONT, GUIDE_BOLD, register_guide_fonts
+from laser_paths import cut_path
 from vector_utils import runvc,svg_doc,path,poly_path,layer
 
 OUT=ROOT/'output/production_v4'
@@ -111,7 +112,7 @@ def make_layers(assets,shapes,items,board_w,board_h,shift=(0,0),review=False):
         arts.append(f'<g id="{p["id"]}" transform="{t}">{a["inner"].replace("hat_clip",f"hat_clip_{i}")}</g>')
         hx,hy=s['hole']
         holes.append(f'<g transform="{t}"><circle cx="{hx:.6f}" cy="{hy:.6f}" r="2" fill="none" stroke="#ff0000" stroke-width="{sw}"/></g>')
-        outlines.append(f'<g transform="{t}">{path(poly_path(s["poly"]),"none","#ff0000",sw)}</g>')
+        outlines.append(f'<g transform="{t}">{path(cut_path(s["poly"]),"none","#ff0000",sw)}</g>')
     # Match the guide's continuous blue rectangle. It encloses the common work
     # area; no per-character rectangle and no blue strokes in CUT_ONLY.
     x=4+shift[0];y=4+shift[1]
@@ -119,16 +120,9 @@ def make_layers(assets,shapes,items,board_w,board_h,shift=(0,0),review=False):
     return layer('3_ARTWORK',''.join(arts)),layer('2_CORNER_REFERENCE',reference),layer('1_LASER_CUT',''.join(holes+outlines))
 
 def cut_pdf(items,shapes):
-    c=canvas.Canvas(str(OUT/'04_CUT_ONLY.pdf'),pagesize=(W*mm,H*mm));c.setTitle('V4 Small batch - laser cut only 300 x 160 mm')
-    c.transform(mm,0,0,-mm,0,H*mm);c.setStrokeColorRGB(1,0,0);c.setLineWidth(.001)
-    for p in items:
-        hx,hy=shapes[p['name']]['hole'];hx+=p['tx'];hy+=p['ty']
-        d=c.beginPath();d.ellipse(hx-2,hy-2,4,4);d.close();c.drawPath(d,stroke=1,fill=0)
-    for p in items:
-        coords=list(p['poly'].exterior.coords);d=c.beginPath();d.moveTo(*coords[0])
-        for pt in coords[1:-1]:d.lineTo(*pt)
-        d.close();c.drawPath(d,stroke=1,fill=0)
-    c.save()
+    # Use the same checked curves as SVG/AI; do not rebuild polylines here.
+    runvc(['convert',OUT/'04_CUT_ONLY.svg',OUT/'04_CUT_ONLY.pdf'])
+
 
 def files(assets,shapes,items):
     ar,ref,cut=make_layers(assets,shapes,items,W,H)

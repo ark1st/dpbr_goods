@@ -13,6 +13,7 @@ from shapely.geometry import Polygon,Point,LineString,box
 from shapely.ops import unary_union,nearest_points
 from shapely import concave_hull
 from vector_utils import runvc
+from laser_paths import draw_cut_pdf
 from build_extra_sheet import mark_pdf_layers
 MM=72/25.4
 OUT_ROOT=ROOT/'output/extra_sheet'
@@ -57,8 +58,8 @@ def polygon(d):
     return p
 
 def draw_poly(page,p,color=(1,0,0),width=.001):
-    s=page.new_shape();s.draw_polyline([fitz.Point(x*MM,y*MM) for x,y in p.exterior.coords])
-    s.finish(color=color,width=width*MM,closePath=True);s.commit()
+    draw_cut_pdf(page,p,color,width)
+
 
 def normalize_cut(source,indexes=None):
     out=fitz.open();p=out.new_page(width=source[0].rect.width,height=source[0].rect.height)
@@ -110,7 +111,7 @@ def adapt_yun(cut_doc,art_doc,thickness):
     """Keep native artwork size; add flat clear shoulders and thickness tabs."""
     ds=cut_doc[0].get_drawings()
     new=fitz.open();page=new.new_page(width=cut_doc[0].rect.width,height=cut_doc[0].rect.height)
-    reports=[]
+    reports=[];placement_bounds=[]
     for i,d in enumerate(ds):
         poly=polygon(d)
         if i<2:
@@ -135,8 +136,10 @@ def adapt_yun(cut_doc,art_doc,thickness):
         elif i in [3,5,7,8]:
             x0,y0,x1,y1=poly.bounds;cy=(y0+y1)/2
             poly=box(x0,cy-(thickness+.2)/2,x1,cy+(thickness+.2)/2)
+        # Keep the original print origin even if fitting moves a curve extremum.
+        placement_bounds.append([float(np.float32(v*MM)) for v in poly.bounds])
         draw_poly(page,poly)
-    return new,reports
+    return new,reports,placement_bounds
 
 def build(thickness):
     global OUT
@@ -155,7 +158,7 @@ def build(thickness):
     source=ROOT/'assets/external/yun_image_sd_stand.ai'
     yr=PdfReader(source)
     yc=extracted(yr,['/x1']);yw=extracted(yr,['/x2']);yk=normalize_cut(extracted(yr,['/x3']))
-    yk,fit_report=adapt_yun(yk,yc,thickness)
+    yk,fit_report,placement_bounds=adapt_yun(yk,yc,thickness)
     yd=yk[0].get_drawings();assert len(yd)==9
     # Group original cut contours: 2 figures, 2 single bases, 1 double base.
     specs=[('yun_stand_1',[0],(427,8)),('yun_stand_2',[1],(477,8)),
@@ -180,7 +183,7 @@ def build(thickness):
     assert len(old_outers)==33,len(old_outers)
     placed=[];new_polys=[]
     for name,indexes,(x,y) in specs:
-        outer=polygon(yd[indexes[0]]);r=fitz.Rect(yd[indexes[0]]['rect'])
+        outer=polygon(yd[indexes[0]]);r=fitz.Rect(placement_bounds[indexes[0]])
         # 0.2 mm clip bleed preserves the red hairline, no neighbor enters this clip.
         clip=fitz.Rect(r.x0-.2*MM,r.y0-.2*MM,r.x1+.2*MM,r.y1+.2*MM)
         tx=x*MM-r.x0;ty=y*MM-r.y0
