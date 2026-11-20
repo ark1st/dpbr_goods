@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tmp/pylibs'))
 import pymupdf as fitz
 from PIL import Image,ImageDraw
+from artifact_hash import artifact_sha256
 import numpy as np
 OUT=ROOT/'output'
 QA=ROOT/'tmp/release_qa'
@@ -138,13 +139,12 @@ def main():
         with zipfile.ZipFile(p) as z:
             assert z.testzip() is None
             aliases={'Danpungbaram_V4':'production_v4','Danpungbaram_Diorama_V3':'diorama_v3'}
-            import hashlib
             for name in z.namelist():
                 if name.endswith('/'):continue
                 parts=name.split('/');parts[0]=aliases.get(parts[0],parts[0])
                 current=OUT.joinpath(*parts)
                 assert current.is_file(),(filename,name,'missing current file')
-                assert hashlib.sha256(z.read(name)).digest()==hashlib.sha256(current.read_bytes()).digest(),(filename,name,'stale ZIP entry')
+                assert artifact_sha256(current,z.read(name))==artifact_sha256(current),(filename,name,'stale ZIP entry')
         assert p.stat().st_size<100*1024*1024,(filename,p.stat().st_size)
         report['zip'].append({'file':filename,'bytes':p.stat().st_size})
     report['rendered_pages']=len(pages)

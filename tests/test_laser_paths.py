@@ -7,9 +7,14 @@ from shapely.geometry import Point,Polygon,box,LineString
 from shapely.ops import unary_union
 from svgpathtools import parse_path
 from laser_paths import cut_path,audit_path,fitted,MAX_DEVIATION_MM
+from artifact_hash import artifact_sha256
 
 
 class LaserRegression(unittest.TestCase):
+    def test_text_hash_normalizes_only_line_endings(self):
+        self.assertEqual(artifact_sha256('a.svg',b'a\r\nb'),artifact_sha256('a.svg',b'a\nb'))
+        self.assertNotEqual(artifact_sha256('a.pdf',b'a\r\nb'),artifact_sha256('a.pdf',b'a\nb'))
+
     def test_actual_failed_carabiner_is_rejected_then_repaired(self):
         d=(ROOT/'tests/fixtures/carabiner_D_before.txt').read_text()
         with self.assertRaisesRegex(ValueError,'Too many segments|Zero-length'):
