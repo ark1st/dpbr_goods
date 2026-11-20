@@ -5,6 +5,7 @@
 3. [아잉 얼굴 티셔츠 ·시안·DTG 인쇄 파일](tshirt_fronts/aing/README.md)
 4. [신창섭 티셔츠 ·시안·DTG 인쇄 파일](tshirt_fronts/changseop/README.md)
 5. [마스코트·로고 키링 V4 ·16조각](production_v4/README.md)
+6. [연결형 튀잉4종 · 각각 별도 판](linked_tuiing_v1/README.md)
 
 ## 단바 합본
 
@@ -46,7 +47,7 @@
 - [키링 V4 ZIP](Danpungbaram_V4_SMALL_BATCH_16pcs.zip) / [시안·사용 안내](production_v4/00_REVISION_GUIDE.pdf)
 - [가람·단팽이 디오라마 V3](diorama_v3/README.md) / [제목 포함 로고 디오라마 V3](logo_diorama_v3/README.md)
 - [카라비너4종 단독 시트](carabiner_trials_v1/README.md): 단바 합본에 포함된 동일 부품입니다.
-- [연결형 튀잉 키링 기획](linked_keyring_plan/README.md): 참고 기획이며 이번 합본 수량에는 넣지 않았습니다.
+- [연결형 튀잉 키링 제작 파일](linked_tuiing_v1/README.md): 기본·황올·탄·안튀잉 각1개, 각각55×75mm 단독 판. [전체 ZIP](Tuiing_Linked_4_Separate_Plates.zip)
 - [기존 작은 가슴 로고 티셔츠](tshirt/README.txt)
 - [가람 단독55mm·600dpi](garam_55mm_600dpi.png)
 

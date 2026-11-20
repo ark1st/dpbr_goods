@@ -16,6 +16,8 @@ main은 원본·설정·생성 코드, [output_len/output](https://github.com/ar
    - 14×16인치,4200×4800px,300ppi 투명 PNG. 각 README에 시안 포함.
    - 신창섭은 생성형 AI 보정본을 사용하지 않습니다.
 5. [마스코트·로고 키링 V4 - 16조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/production_v4)
+6. [연결형 튀잉 4종 - 각각 별도 판](https://github.com/ark1st/dpbr_goods/tree/output_len/output/linked_tuiing_v1)
+   - 기본·황올·탄·안튀잉, 각55×75mm 판에1개. 상하4mm 연결 구멍 포함.
 
 이전V2 합본과33조각 파일을 대신하는 최신 파일입니다.
 독립 디오라마·카라비너 파일은 합본과 중복되므로 수량을 합산해 출력하지 않습니다.
@@ -47,6 +49,7 @@ python scripts/build_carabiner.py
 python scripts/build_combined_diorama.py
 python scripts/build_extra_sheet_38.py
 python scripts/build_tshirt_fronts.py
+python scripts/build_linked_tuiing.py
 python scripts/verify_release.py
 ```
 

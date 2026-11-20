@@ -9,6 +9,7 @@
 - `masters/logo_symbol.svg`: 이름 없는 심벌만 담은 벡터 소스.
 - `logo_full.svg`: 원본 AI에서 추출한 심벌과 ‘단풍바람’ 전체 제목. 원본 경로와 비율을 유지했습니다.
 - `logo_full_provenance.json`: 전체 로고의 원본·경로 수·검증 정보.
+- `linked_tuiing/`: 기본·황올·탄·안튀잉 원본 PNG와 같은 픽셀·색·투명도를 보존한 벡터 SVG.
 
 편집용 SVG의 캔버스는 소스 기준 크기입니다. 실제 제작 치수와 끼움 규격은 `configs/` 및 `output_len`의 해당 제작 파일을 사용하세요.
 `python scripts/export_art_masters.py`로 `artwork.json`의 편집용 SVG를 다시 만들 수 있습니다.

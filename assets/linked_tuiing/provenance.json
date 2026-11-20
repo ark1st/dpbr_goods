@@ -1,0 +1,125 @@
+{
+  "document": "https://docs.google.com/document/d/1zasgvxLgu7rkULyPR1h_cZRGx2P14C4--0cpYaosGhA",
+  "variants": [
+    {
+      "variant": {
+        "id": "tuiing",
+        "name": "튀잉 기본",
+        "document_image": 1
+      },
+      "file": "tuiing_original.png",
+      "sha256": "bb9e645cc4db86358251b862e602b8a6e223d94dd862ae3f438842c7cbc8bd80",
+      "source_pixels": [
+        308,
+        376
+      ],
+      "original_pixel_grid": [
+        77,
+        94
+      ],
+      "cropped_pixel_grid": [
+        61,
+        78
+      ],
+      "original_bbox_px": [
+        32,
+        32,
+        276,
+        344
+      ],
+      "rgba_colors": 86,
+      "pixel_run_roundtrip_exact": true,
+      "alpha_preserved": true
+    },
+    {
+      "variant": {
+        "id": "golden",
+        "name": "황올튀잉",
+        "document_image": 13
+      },
+      "file": "golden_original.png",
+      "sha256": "663a1ac022db1fc079f6cccebf143d1c0291f945122af0426b7668a8fad7e42b",
+      "source_pixels": [
+        308,
+        376
+      ],
+      "original_pixel_grid": [
+        77,
+        94
+      ],
+      "cropped_pixel_grid": [
+        61,
+        78
+      ],
+      "original_bbox_px": [
+        32,
+        32,
+        276,
+        344
+      ],
+      "rgba_colors": 99,
+      "pixel_run_roundtrip_exact": true,
+      "alpha_preserved": true
+    },
+    {
+      "variant": {
+        "id": "burnt",
+        "name": "탄튀잉",
+        "document_image": 3
+      },
+      "file": "burnt_original.png",
+      "sha256": "9689b47dda2c5613593cb2338d43925b4e58c307dad668d4869c2f7638f656d5",
+      "source_pixels": [
+        308,
+        376
+      ],
+      "original_pixel_grid": [
+        77,
+        94
+      ],
+      "cropped_pixel_grid": [
+        61,
+        78
+      ],
+      "original_bbox_px": [
+        32,
+        32,
+        276,
+        344
+      ],
+      "rgba_colors": 86,
+      "pixel_run_roundtrip_exact": true,
+      "alpha_preserved": true
+    },
+    {
+      "variant": {
+        "id": "unfried",
+        "name": "안튀잉",
+        "document_image": 14
+      },
+      "file": "unfried_original.png",
+      "sha256": "d9e2fb9a54dc5980ceaa3546ead7137b73706f1a4f757b562d8edb9e4f477070",
+      "source_pixels": [
+        308,
+        376
+      ],
+      "original_pixel_grid": [
+        77,
+        94
+      ],
+      "cropped_pixel_grid": [
+        61,
+        78
+      ],
+      "original_bbox_px": [
+        32,
+        32,
+        276,
+        344
+      ],
+      "rgba_colors": 77,
+      "pixel_run_roundtrip_exact": true,
+      "alpha_preserved": true
+    }
+  ]
+}

@@ -77,6 +77,8 @@ def main():
     cases=[('production_v4/02_MASTER.ai',(300,160),32),
            ('carabiner_trials_v1/02_MASTER.ai',(308,72),31)]
     combined_dim=tuple(json.loads((ROOT/'configs/combined_layout.json').read_text(encoding='utf-8'))['board_mm'])
+    linked_names=['tuiing','golden','burnt','unfried']
+    cases.extend((f'linked_tuiing_v1/{name}/02_MASTER.ai',(55,75),3) for name in linked_names)
     for t in ['3T','5T']:
         cases.extend([
           (f'diorama_v3/{t}/02_MASTER.ai',(200,110),5),
@@ -100,6 +102,11 @@ def main():
                     ('tshirt_fronts/aing/01_DTG_14x16in_300ppi.png',(355.6,406.4)),
                     ('tshirt_fronts/changseop/01_DTG_14x16in_300ppi.png',(355.6,406.4))]:
         report['png'].append(check_png(OUT/rel,dim))
+    for name in linked_names:
+        report['png'].append(check_png(OUT/f'linked_tuiing_v1/{name}/01_PRINT_300ppi.png',(55,75)))
+        rep=json.loads((OUT/f'linked_tuiing_v1/{name}/validation_report.json').read_text(encoding='utf-8'))
+        assert rep['quantity']==1 and rep['holes']==2 and rep['closed_cut_paths']==3
+        assert rep['source']['pixel_run_roundtrip_exact'] and rep['source_aspect_ratio_preserved']
     # Review render sheets, including every modified PDF guide page.
     pages=[]
     for rel,slug in [('production_v4/00_REVISION_GUIDE.pdf','keyring-guide'),
@@ -120,7 +127,8 @@ def main():
     contact.save(QA/'all-pages.png')
     for filename in ['Danpungbaram_V4_SMALL_BATCH_16pcs.zip','Danpungbaram_Diorama_V3_3T_5T.zip',
                      'Danpungbaram_Logo_Diorama_V3_MAIN_3T_5T.zip','Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip',
-                     'Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tshirt_Fronts_Aing_Changseop_14x16in.zip']:
+                     'Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tshirt_Fronts_Aing_Changseop_14x16in.zip',
+                     'Tuiing_Linked_4_Separate_Plates.zip']:
         p=OUT/filename
         with zipfile.ZipFile(p) as z:assert z.testzip() is None
         assert p.stat().st_size<100*1024*1024,(filename,p.stat().st_size)
