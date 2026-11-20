@@ -29,6 +29,7 @@
 현재 칼선 파일 126개(SVG·AI·PDF·VectorCraft)의 전수 검사 결과는 [LASER_PATH_AUDIT.json](../LASER_PATH_AUDIT.json)에 있습니다.
 이 보고서의 records에는 각 파일의 해시, 폐곡선·선분·곡선 수, 오류, 조각 간격이 들어 있습니다.
 inventory에는 저장소의 이전 제작본·인쇄 전용 자료까지 분류했습니다.
+SVG 해시는 LF 줄바꿈으로 정규화하며, AI·PDF·PNG·VectorCraft는 원시 바이트로 비교합니다.
 
 외부 캐릭터 30개 원본은 그대로 유지했습니다. 원본 PDF의 길이 0 명령 2개는 이동이 없는 명령이며,
 AI 변환에서 생긴 약0.00003mm 흔적은 수치 반올림입니다. 해당 항목을 별도 기록했습니다.

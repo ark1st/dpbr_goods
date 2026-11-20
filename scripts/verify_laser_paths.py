@@ -10,6 +10,7 @@ sys.path.insert(0,str(ROOT/'tmp/pylibs'))
 import pymupdf as fitz
 from laser_paths import audit_path
 from vector_utils import runvc
+from artifact_hash import artifact_sha256
 
 ACTIVE=['production_v4','diorama_v3','logo_diorama_v3','combined_diorama_v3',
         'carabiner_trials_v1','extra_sheet','linked_tuiing_v1']
@@ -160,7 +161,8 @@ def main(pdf_only=False):
                 if folder=='combined_diorama_v3' and ('COMBINED_MASTER' in file.name or file.name.startswith('03_CUT_ONLY')):
                     if result['outer_contours']!=11 or result['contours']!=42 or result['minimum_piece_gap_mm']<3:
                         result['errors'].append({'reason':'Combined inventory or exported 3 mm gap failed'})
-                result.update(file=rel,sha256=hashlib.sha256(file.read_bytes()).hexdigest())
+                result.update(file=rel,sha256=artifact_sha256(file),
+                              sha256_mode='LF-normalized text' if suffix=='.svg' else 'raw bytes')
                 records.append(result)
                 if result['errors']:errors.append({'file':rel,'errors':result['errors']})
                 print(rel, result['contours'],result['segments'],'FAIL' if result['errors'] else 'OK',flush=True)

@@ -610,7 +610,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/02_MASTER.ai",
-      "sha256": "161f5e4c3fc45932895a563763846fdebb05e232b8b310a68edf80bada6e51df"
+      "sha256": "161f5e4c3fc45932895a563763846fdebb05e232b8b310a68edf80bada6e51df",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -916,7 +917,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/02_MASTER.svg",
-      "sha256": "caaa817eeb2803a0899f83a290fa2256327fa460a48773df657fc35220cce023"
+      "sha256": "078617fe7b4a020034e5d5043b226f1186ff52d6112039a519c284040f8a3ba3",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -1222,7 +1224,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/03_MASTER.vectorcraft",
-      "sha256": "9ea7664c5aa9380f8bc3ce70afc05af60852516aa472d8040eb98b4fe9c1888b"
+      "sha256": "9ea7664c5aa9380f8bc3ce70afc05af60852516aa472d8040eb98b4fe9c1888b",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -1528,7 +1531,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/04_CUT_ONLY.pdf",
-      "sha256": "36e9c2d317cfdedaf40bf954e3b4febbaedd7604f2cca5bc4cfa21375a9d5250"
+      "sha256": "36e9c2d317cfdedaf40bf954e3b4febbaedd7604f2cca5bc4cfa21375a9d5250",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -1834,7 +1838,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/04_CUT_ONLY.svg",
-      "sha256": "33ee330c2ed818e1ecbffbfabb025ffe6736d6ad9795877864522d4d8c3607d2"
+      "sha256": "33ee330c2ed818e1ecbffbfabb025ffe6736d6ad9795877864522d4d8c3607d2",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -2140,7 +2145,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/optional_800x600/800x600_SAME_16_CUT_ONLY.svg",
-      "sha256": "56106ee006246401bf42ff540b657f5ab0ad8ea0e943958a7dd0e5683937cdcf"
+      "sha256": "56106ee006246401bf42ff540b657f5ab0ad8ea0e943958a7dd0e5683937cdcf",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -2446,7 +2452,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/optional_800x600/800x600_SAME_16_MASTER.ai",
-      "sha256": "0545929be76d8f25d21eece8d7f21576358d5019b4b6b02135bbcd7834553e76"
+      "sha256": "0545929be76d8f25d21eece8d7f21576358d5019b4b6b02135bbcd7834553e76",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -2752,7 +2759,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/optional_800x600/800x600_SAME_16_MASTER.svg",
-      "sha256": "cad69ccda38a909f2007a98c55df48f1388bd7fc8780a6915e872fb99a9d3a9d"
+      "sha256": "da4f76fd609fe56c7a0dc3aac46a47b9982183c9209821671002481c69c12d55",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3058,7 +3066,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "production_v4/optional_800x600/800x600_SAME_16_MASTER.vectorcraft",
-      "sha256": "bdfb775343b466273ccf590a9f32117492f485148869da3440b7ebb69e348a39"
+      "sha256": "bdfb775343b466273ccf590a9f32117492f485148869da3440b7ebb69e348a39",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -3121,7 +3130,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/02_MASTER.ai",
-      "sha256": "1d8d8852499645ede7f45ac077a3f7e77473ea4f53ba116ab0e16ef51ae9a843"
+      "sha256": "1d8d8852499645ede7f45ac077a3f7e77473ea4f53ba116ab0e16ef51ae9a843",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -3184,7 +3194,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/02_MASTER.svg",
-      "sha256": "f3064fe516ff825659a006c439d4039ff980ae7a179a82931cb865161a86126a"
+      "sha256": "0b6dd66b383c7d897d8597a2129c41d64fe810dff74937d89c4b5754a3fe51a0",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3247,7 +3258,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/02_MASTER.vectorcraft",
-      "sha256": "d6788ecc2c14acde4de0e2227a6cd0affdef154de01bdbe6a0fcb2220c0c64bb"
+      "sha256": "d6788ecc2c14acde4de0e2227a6cd0affdef154de01bdbe6a0fcb2220c0c64bb",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -3310,7 +3322,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/03_CUT_ONLY.svg",
-      "sha256": "86e7ec072510988d092d2a0ee202d618a7d5494f36b256b24c54f06ed8d00779"
+      "sha256": "86e7ec072510988d092d2a0ee202d618a7d5494f36b256b24c54f06ed8d00779",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3418,7 +3431,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/04_FIT_TEST_BASE_ONLY.svg",
-      "sha256": "6ec4e16efd31511806643cc4c7a34065695452854205d77f506f80ef3f7e86d3"
+      "sha256": "6ec4e16efd31511806643cc4c7a34065695452854205d77f506f80ef3f7e86d3",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3535,7 +3549,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/04_FIT_TEST_CUT_ONLY.svg",
-      "sha256": "83f004b3f8cc129117758186a0712a3f3f5f5c02a0e443e48cb20c13ba1bf8a0"
+      "sha256": "83f004b3f8cc129117758186a0712a3f3f5f5c02a0e443e48cb20c13ba1bf8a0",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3562,7 +3577,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/04_FIT_TEST_KEY_ONLY.svg",
-      "sha256": "93d84e3eaa2af7b31e2889e7c87274a31a0bfc61d0a450740d86f29225c5f922"
+      "sha256": "93d84e3eaa2af7b31e2889e7c87274a31a0bfc61d0a450740d86f29225c5f922",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3679,7 +3695,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/04_FIT_TEST_MASTER.ai",
-      "sha256": "f6bdea6edb6dbc9676372948d24016fdf4d9f925616d3f3539e31148fe222eb6"
+      "sha256": "f6bdea6edb6dbc9676372948d24016fdf4d9f925616d3f3539e31148fe222eb6",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -3796,7 +3813,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/04_FIT_TEST_MASTER.svg",
-      "sha256": "6d84f726e923eee26ada9845c3d44a7417682e43d1aa45db8417f957bb2dcd68"
+      "sha256": "6d84f726e923eee26ada9845c3d44a7417682e43d1aa45db8417f957bb2dcd68",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3913,7 +3931,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/04_FIT_TEST_MASTER.vectorcraft",
-      "sha256": "b8a2d7b950f837fee2b7a906450d31a2e7b865f72206c9e59b570c8fbc5133d5"
+      "sha256": "b8a2d7b950f837fee2b7a906450d31a2e7b865f72206c9e59b570c8fbc5133d5",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -3940,7 +3959,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/05_CHARACTER_TEMPLATE.svg",
-      "sha256": "8e5a9278d2a4546d68cc0fc4ae31059c22815168a367a0e7322a9ccb33aaa782"
+      "sha256": "8e5a9278d2a4546d68cc0fc4ae31059c22815168a367a0e7322a9ccb33aaa782",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -3985,7 +4005,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/06_BASE_ONLY.svg",
-      "sha256": "2e632cd301da1b862613b563b00f029c0dd95db4233755294bed25054167f20f"
+      "sha256": "88b46032545e2e95afab1063a3d8c6f9565ca5ed30199e56f9e38674e0b72841",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4021,7 +4042,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/3T/06_STANDEES_ONLY.svg",
-      "sha256": "9efcd9d657b2f38cf2748762813feb799167387b1e2f2ee96ea4ffb4a6c55748"
+      "sha256": "2bfd2f6ba686d3187c9a5b6df26cd28f56f6e20397cf64755b484ba49d8d3120",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4084,7 +4106,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/02_MASTER.ai",
-      "sha256": "10a19ab06bf518ee02f92d7ef224f767fa52529dc4013fab4b6a88fd527aad84"
+      "sha256": "10a19ab06bf518ee02f92d7ef224f767fa52529dc4013fab4b6a88fd527aad84",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -4147,7 +4170,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/02_MASTER.svg",
-      "sha256": "1543cd201b4d01e686adc2423e458c0aa4e078b2b50bafc4ff0aa80e70a03aa8"
+      "sha256": "4421942ade8327681bdb83deb995e08b006c4dac54e8f0963e42c7a59ce16a15",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4210,7 +4234,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/02_MASTER.vectorcraft",
-      "sha256": "7f195b22c82a03ce56e8e3c71dff41dda2371222fc585db72ce309589d8769df"
+      "sha256": "7f195b22c82a03ce56e8e3c71dff41dda2371222fc585db72ce309589d8769df",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -4273,7 +4298,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/03_CUT_ONLY.svg",
-      "sha256": "622c21846ed70bcb1c59def7e9a2c9cc9342e2f788ba8f09d9b481e965370b4c"
+      "sha256": "622c21846ed70bcb1c59def7e9a2c9cc9342e2f788ba8f09d9b481e965370b4c",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4381,7 +4407,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/04_FIT_TEST_BASE_ONLY.svg",
-      "sha256": "d2f022153f58991711624464bd5d8fc78ac3224a1765cbc7d94c0c8854e7788d"
+      "sha256": "d2f022153f58991711624464bd5d8fc78ac3224a1765cbc7d94c0c8854e7788d",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4498,7 +4525,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/04_FIT_TEST_CUT_ONLY.svg",
-      "sha256": "a4c17508788cb073b7f9911624ec67dc8eff64d85bc8774761bf1587f116e317"
+      "sha256": "a4c17508788cb073b7f9911624ec67dc8eff64d85bc8774761bf1587f116e317",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4525,7 +4553,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/04_FIT_TEST_KEY_ONLY.svg",
-      "sha256": "47945b6d77b1ff8c1ba35bd232f6b8cd045929cb0076375a30d9c099c47c35a4"
+      "sha256": "47945b6d77b1ff8c1ba35bd232f6b8cd045929cb0076375a30d9c099c47c35a4",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4642,7 +4671,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/04_FIT_TEST_MASTER.ai",
-      "sha256": "886b97e1fa446a1d01f2dfc75a82f35c644d622885fcb881e06bc1727b0962dc"
+      "sha256": "886b97e1fa446a1d01f2dfc75a82f35c644d622885fcb881e06bc1727b0962dc",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -4759,7 +4789,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/04_FIT_TEST_MASTER.svg",
-      "sha256": "7d53ff5c8c866993f5f04d3baa08ce81f6689dbff8d98f015f67fe2077fcad4e"
+      "sha256": "7d53ff5c8c866993f5f04d3baa08ce81f6689dbff8d98f015f67fe2077fcad4e",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4876,7 +4907,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/04_FIT_TEST_MASTER.vectorcraft",
-      "sha256": "528c7ca7b95e5414709feeed9cf050cc4fe882aa2fc7242734d15eb3fa9bab24"
+      "sha256": "528c7ca7b95e5414709feeed9cf050cc4fe882aa2fc7242734d15eb3fa9bab24",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -4903,7 +4935,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/05_CHARACTER_TEMPLATE.svg",
-      "sha256": "3a21bcdcda9707f0a7b9506ca96b51a25b149fc4f8fa915e9246da9e80c23195"
+      "sha256": "3a21bcdcda9707f0a7b9506ca96b51a25b149fc4f8fa915e9246da9e80c23195",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4948,7 +4981,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/06_BASE_ONLY.svg",
-      "sha256": "5d0d49edabd7b93a6c7ce19f2f2a0eafbed0d26d281f15a48b785786e7f374ba"
+      "sha256": "601461337369f93e71ecd70f896dccf5f6fc1c679a186370d17ac6acd5d9846d",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -4984,7 +5018,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "diorama_v3/5T/06_STANDEES_ONLY.svg",
-      "sha256": "92f7328fa007f530acdd13afbd7a10b117b937cf0067dc88ebbe4d07f92057f1"
+      "sha256": "22730ef32f9f4ff855fcd40769eee717f4a11dded8824a12226dc36249f5f014",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5038,7 +5073,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/02_MASTER.ai",
-      "sha256": "d222d4849ff212ec48937804c455bbdc507fbdb41005cf7a1e416866e589b362"
+      "sha256": "d222d4849ff212ec48937804c455bbdc507fbdb41005cf7a1e416866e589b362",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -5092,7 +5128,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/02_MASTER.svg",
-      "sha256": "46ce1566f29f992c87fc5cec1b867e12a66f029eae9e05fcabc054f058e2dd1b"
+      "sha256": "afd79f7dc5fb098b30d4e9c2f106019ef1f96b047088f0c2f6f0f430b5391d5b",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5146,7 +5183,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/02_MASTER.vectorcraft",
-      "sha256": "1d78471adf0f43b3ccf9580da6463be9dac1d1a66307b060b4988339984f29f0"
+      "sha256": "1d78471adf0f43b3ccf9580da6463be9dac1d1a66307b060b4988339984f29f0",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -5200,7 +5238,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/03_CUT_ONLY.svg",
-      "sha256": "56343f0f89cf291a1c1bce4551e91321f413ce0f30958682eeec879504be8479"
+      "sha256": "56343f0f89cf291a1c1bce4551e91321f413ce0f30958682eeec879504be8479",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5308,7 +5347,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/04_FIT_TEST_BASE_ONLY.svg",
-      "sha256": "6ec4e16efd31511806643cc4c7a34065695452854205d77f506f80ef3f7e86d3"
+      "sha256": "6ec4e16efd31511806643cc4c7a34065695452854205d77f506f80ef3f7e86d3",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5425,7 +5465,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/04_FIT_TEST_CUT_ONLY.svg",
-      "sha256": "83f004b3f8cc129117758186a0712a3f3f5f5c02a0e443e48cb20c13ba1bf8a0"
+      "sha256": "83f004b3f8cc129117758186a0712a3f3f5f5c02a0e443e48cb20c13ba1bf8a0",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5452,7 +5493,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/04_FIT_TEST_KEY_ONLY.svg",
-      "sha256": "93d84e3eaa2af7b31e2889e7c87274a31a0bfc61d0a450740d86f29225c5f922"
+      "sha256": "93d84e3eaa2af7b31e2889e7c87274a31a0bfc61d0a450740d86f29225c5f922",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5569,7 +5611,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/04_FIT_TEST_MASTER.ai",
-      "sha256": "2d9582fe719a6878c26d1676645b775e13270f2c41b3c441b2eb484ff88ed429"
+      "sha256": "2d9582fe719a6878c26d1676645b775e13270f2c41b3c441b2eb484ff88ed429",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -5686,7 +5729,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/04_FIT_TEST_MASTER.svg",
-      "sha256": "6d84f726e923eee26ada9845c3d44a7417682e43d1aa45db8417f957bb2dcd68"
+      "sha256": "6d84f726e923eee26ada9845c3d44a7417682e43d1aa45db8417f957bb2dcd68",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5803,7 +5847,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/04_FIT_TEST_MASTER.vectorcraft",
-      "sha256": "9b76f850bc4a8c62e7513c7d3224df694328fa99b672e83a1370efda6f79fe30"
+      "sha256": "9b76f850bc4a8c62e7513c7d3224df694328fa99b672e83a1370efda6f79fe30",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -5848,7 +5893,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/05_BASE_ONLY.svg",
-      "sha256": "ac5b9a7c10b538148729a2584427979eadd13e073fff8feabf1cd3174df4a3fa"
+      "sha256": "ac5b9a7c10b538148729a2584427979eadd13e073fff8feabf1cd3174df4a3fa",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5875,7 +5921,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/3T/05_UPRIGHT_ONLY.svg",
-      "sha256": "e549173756b4e931b2d2d6d9d7912c855e8f2e2812ba03a3c3072bcfdc0b20ae"
+      "sha256": "49fa7afcd7baeb7d2b4578efb2c892b139227b14ed92faedec7c6d5e5a36c190",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -5929,7 +5976,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/02_MASTER.ai",
-      "sha256": "c307e6c4766c91ad71672398b769fbc97d8b1ab329c490a3fe4e012458c171e5"
+      "sha256": "c307e6c4766c91ad71672398b769fbc97d8b1ab329c490a3fe4e012458c171e5",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -5983,7 +6031,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/02_MASTER.svg",
-      "sha256": "11ace1f0da82085f531bbe4a09ca7fe77b8a583e305cd0f2627fc5dc636c40a2"
+      "sha256": "ecd5967d20023863b73ef560ec047119620c6feeb491233e963076ef78864770",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6037,7 +6086,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/02_MASTER.vectorcraft",
-      "sha256": "e97d17ebcfd4b4604ee71bf4a6336d55a82f14e0259da82aec2e0cefa43e2643"
+      "sha256": "e97d17ebcfd4b4604ee71bf4a6336d55a82f14e0259da82aec2e0cefa43e2643",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -6091,7 +6141,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/03_CUT_ONLY.svg",
-      "sha256": "6dc840f8d592c95af26f49e4e73c5668aefa77da5118da1049730504b8d743e0"
+      "sha256": "6dc840f8d592c95af26f49e4e73c5668aefa77da5118da1049730504b8d743e0",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6199,7 +6250,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/04_FIT_TEST_BASE_ONLY.svg",
-      "sha256": "d2f022153f58991711624464bd5d8fc78ac3224a1765cbc7d94c0c8854e7788d"
+      "sha256": "d2f022153f58991711624464bd5d8fc78ac3224a1765cbc7d94c0c8854e7788d",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6316,7 +6368,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/04_FIT_TEST_CUT_ONLY.svg",
-      "sha256": "a4c17508788cb073b7f9911624ec67dc8eff64d85bc8774761bf1587f116e317"
+      "sha256": "a4c17508788cb073b7f9911624ec67dc8eff64d85bc8774761bf1587f116e317",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6343,7 +6396,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/04_FIT_TEST_KEY_ONLY.svg",
-      "sha256": "47945b6d77b1ff8c1ba35bd232f6b8cd045929cb0076375a30d9c099c47c35a4"
+      "sha256": "47945b6d77b1ff8c1ba35bd232f6b8cd045929cb0076375a30d9c099c47c35a4",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6460,7 +6514,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/04_FIT_TEST_MASTER.ai",
-      "sha256": "dc99e474d9a768d9232c77e12d9571254c3d2b110dc04c8e09c7fcf6507e2aa6"
+      "sha256": "dc99e474d9a768d9232c77e12d9571254c3d2b110dc04c8e09c7fcf6507e2aa6",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -6577,7 +6632,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/04_FIT_TEST_MASTER.svg",
-      "sha256": "7d53ff5c8c866993f5f04d3baa08ce81f6689dbff8d98f015f67fe2077fcad4e"
+      "sha256": "7d53ff5c8c866993f5f04d3baa08ce81f6689dbff8d98f015f67fe2077fcad4e",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6694,7 +6750,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/04_FIT_TEST_MASTER.vectorcraft",
-      "sha256": "92c266247d5bb719fae30bdea500a9e7c1ae9f017acd97dc51b5ff185e8e0f71"
+      "sha256": "92c266247d5bb719fae30bdea500a9e7c1ae9f017acd97dc51b5ff185e8e0f71",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -6739,7 +6796,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/05_BASE_ONLY.svg",
-      "sha256": "2f7bb9ad9d8507789de7c67186dec7bfd6d75f8d0163e33fb23fec85bb1fe972"
+      "sha256": "2f7bb9ad9d8507789de7c67186dec7bfd6d75f8d0163e33fb23fec85bb1fe972",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -6766,7 +6824,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "logo_diorama_v3/5T/05_UPRIGHT_ONLY.svg",
-      "sha256": "9b77058f792f76f269f5d2162dd732d7468eff1c46c5f281007ffdb5294d6923"
+      "sha256": "1dedd16c6514b487b1b7c20985212b7d44f2b49bdb064b9ac1a691c2a1d1d183",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -7162,7 +7221,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/02_COMBINED_MASTER.ai",
-      "sha256": "38e1b4475e9fe5a29cf39b9d94ee6acc08c5e57b171fe2456b2ca474c71523e5"
+      "sha256": "38e1b4475e9fe5a29cf39b9d94ee6acc08c5e57b171fe2456b2ca474c71523e5",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -7558,7 +7618,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/02_COMBINED_MASTER.svg",
-      "sha256": "928034f7987a408bf869fa122c436fc1d7c65e9a1b8c6697bf7e9a7a9a9843aa"
+      "sha256": "7f151fef34f67f24d11c90b25366a18d643edf9611f6265ee45a37c8a075be9d",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -7954,7 +8015,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/02_COMBINED_MASTER.vectorcraft",
-      "sha256": "d53bda822cf0b638afcc6564f685d8033d4d7855f37f97fe5a6cc400179cf7bd"
+      "sha256": "d53bda822cf0b638afcc6564f685d8033d4d7855f37f97fe5a6cc400179cf7bd",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -8350,7 +8412,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/03_CUT_ONLY.pdf",
-      "sha256": "064c465ff2bfc05fe3a0f25e3e75c195c00f3b0fc85747d3f152fc31968df0b5"
+      "sha256": "064c465ff2bfc05fe3a0f25e3e75c195c00f3b0fc85747d3f152fc31968df0b5",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -8746,7 +8809,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/03_CUT_ONLY.svg",
-      "sha256": "b15f745e23d5f69e43356b4e1555360e194fc895781ca1b807e300a8e4fb3728"
+      "sha256": "b15f745e23d5f69e43356b4e1555360e194fc895781ca1b807e300a8e4fb3728",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -8854,7 +8918,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/04_FIT_TEST_BASE_ONLY.svg",
-      "sha256": "6ec4e16efd31511806643cc4c7a34065695452854205d77f506f80ef3f7e86d3"
+      "sha256": "6ec4e16efd31511806643cc4c7a34065695452854205d77f506f80ef3f7e86d3",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -8971,7 +9036,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/04_FIT_TEST_CUT_ONLY.svg",
-      "sha256": "83f004b3f8cc129117758186a0712a3f3f5f5c02a0e443e48cb20c13ba1bf8a0"
+      "sha256": "83f004b3f8cc129117758186a0712a3f3f5f5c02a0e443e48cb20c13ba1bf8a0",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -8998,7 +9064,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/04_FIT_TEST_KEY_ONLY.svg",
-      "sha256": "93d84e3eaa2af7b31e2889e7c87274a31a0bfc61d0a450740d86f29225c5f922"
+      "sha256": "93d84e3eaa2af7b31e2889e7c87274a31a0bfc61d0a450740d86f29225c5f922",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -9115,7 +9182,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/04_FIT_TEST_MASTER.ai",
-      "sha256": "d6ad1c04dda00572adf81cd78bd67fedfac386e350f1e2577b77850e2aa42052"
+      "sha256": "d6ad1c04dda00572adf81cd78bd67fedfac386e350f1e2577b77850e2aa42052",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -9232,7 +9300,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/04_FIT_TEST_MASTER.svg",
-      "sha256": "6d84f726e923eee26ada9845c3d44a7417682e43d1aa45db8417f957bb2dcd68"
+      "sha256": "6d84f726e923eee26ada9845c3d44a7417682e43d1aa45db8417f957bb2dcd68",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -9349,7 +9418,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/04_FIT_TEST_MASTER.vectorcraft",
-      "sha256": "4809401042a145656bf40fe3e8bbaa33af5967354b40cdf74c4a84bedc957a41"
+      "sha256": "4809401042a145656bf40fe3e8bbaa33af5967354b40cdf74c4a84bedc957a41",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -9421,7 +9491,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/05_BASES_ONLY.svg",
-      "sha256": "ddf8a1ec6e24cc2465331a0c4f300ae6703e4cfe5603ebaa3b45cc9a6c17d039"
+      "sha256": "d35bb14ca03c9485785e265f1dc853745b2d7692df05a38cfe1bcedadf50d6ef",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -9718,7 +9789,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/05_CARABINERS_ONLY.svg",
-      "sha256": "615b74aa39bd93e93815071d6d177bea40a0c3830122c267882dde43e0399fe9"
+      "sha256": "615b74aa39bd93e93815071d6d177bea40a0c3830122c267882dde43e0399fe9",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -9754,7 +9826,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/05_KEYRING_ONLY.svg",
-      "sha256": "59eb8282dea8f881f4368e1eb37c404f85eaaeedf19492de606f4cce7fcbe580"
+      "sha256": "ad8a6c25da7cd149060a20fe639dd849a6183d93450f324c137e04ac51bbe0bc",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -9799,7 +9872,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/3T/05_UPRIGHTS_ONLY.svg",
-      "sha256": "0ee4e7f0ff946262b5ffbfd91ceabc6771eb9d321d5d6c213559cb5d2fe4877c"
+      "sha256": "cb57a8efddf605f35b56938b5023645f63eaab5cf775bb6b7aec4f2f04c49a24",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -10195,7 +10269,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/02_COMBINED_MASTER.ai",
-      "sha256": "c644a194c9f50f6509c56d5108149e15b1dfa917afbd7b51dee6e49283991226"
+      "sha256": "c644a194c9f50f6509c56d5108149e15b1dfa917afbd7b51dee6e49283991226",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -10591,7 +10666,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/02_COMBINED_MASTER.svg",
-      "sha256": "4767eb8f05d8ffe7e88d57dff74a4a6eced7e24339eae655cec9a61f1a27fa4f"
+      "sha256": "2d02052fafe551e56a8aed990603aeb9e087fe5e900837461f8d25c102ebb136",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -10987,7 +11063,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/02_COMBINED_MASTER.vectorcraft",
-      "sha256": "7330017f05c513364b954d7b11d71a57fcef5487eda9cebc353937143ee1167e"
+      "sha256": "7330017f05c513364b954d7b11d71a57fcef5487eda9cebc353937143ee1167e",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -11383,7 +11460,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/03_CUT_ONLY.pdf",
-      "sha256": "fe675012033dac188174471088cd0b912605f2b7e35bb22508e72b3d785d747d"
+      "sha256": "fe675012033dac188174471088cd0b912605f2b7e35bb22508e72b3d785d747d",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -11779,7 +11857,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/03_CUT_ONLY.svg",
-      "sha256": "edd0289a83814c4d4d3b58d7ea06dabc85a79105e17badb748ed21ab9117aa43"
+      "sha256": "edd0289a83814c4d4d3b58d7ea06dabc85a79105e17badb748ed21ab9117aa43",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -11887,7 +11966,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/04_FIT_TEST_BASE_ONLY.svg",
-      "sha256": "d2f022153f58991711624464bd5d8fc78ac3224a1765cbc7d94c0c8854e7788d"
+      "sha256": "d2f022153f58991711624464bd5d8fc78ac3224a1765cbc7d94c0c8854e7788d",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12004,7 +12084,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/04_FIT_TEST_CUT_ONLY.svg",
-      "sha256": "a4c17508788cb073b7f9911624ec67dc8eff64d85bc8774761bf1587f116e317"
+      "sha256": "a4c17508788cb073b7f9911624ec67dc8eff64d85bc8774761bf1587f116e317",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12031,7 +12112,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/04_FIT_TEST_KEY_ONLY.svg",
-      "sha256": "47945b6d77b1ff8c1ba35bd232f6b8cd045929cb0076375a30d9c099c47c35a4"
+      "sha256": "47945b6d77b1ff8c1ba35bd232f6b8cd045929cb0076375a30d9c099c47c35a4",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12148,7 +12230,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/04_FIT_TEST_MASTER.ai",
-      "sha256": "ca10111972f9e41848baa47d16e02068058f20ca696308cd2a10ec366fd095cc"
+      "sha256": "ca10111972f9e41848baa47d16e02068058f20ca696308cd2a10ec366fd095cc",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -12265,7 +12348,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/04_FIT_TEST_MASTER.svg",
-      "sha256": "7d53ff5c8c866993f5f04d3baa08ce81f6689dbff8d98f015f67fe2077fcad4e"
+      "sha256": "7d53ff5c8c866993f5f04d3baa08ce81f6689dbff8d98f015f67fe2077fcad4e",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12382,7 +12466,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/04_FIT_TEST_MASTER.vectorcraft",
-      "sha256": "9657b2f2fcde171a87dc4c57b4bbd2a664277ea0fa01b7ff8d20529d1379a5c6"
+      "sha256": "9657b2f2fcde171a87dc4c57b4bbd2a664277ea0fa01b7ff8d20529d1379a5c6",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -12454,7 +12539,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/05_BASES_ONLY.svg",
-      "sha256": "4a093a6c2a30342b366ad77816b45c8ae384557c2c333fc495fc4d6c32b0b2d8"
+      "sha256": "07b963f270050a78c7699f72dc281f962521718a52701910cbe719f73e733047",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12751,7 +12837,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/05_CARABINERS_ONLY.svg",
-      "sha256": "615b74aa39bd93e93815071d6d177bea40a0c3830122c267882dde43e0399fe9"
+      "sha256": "615b74aa39bd93e93815071d6d177bea40a0c3830122c267882dde43e0399fe9",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12787,7 +12874,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/05_KEYRING_ONLY.svg",
-      "sha256": "59eb8282dea8f881f4368e1eb37c404f85eaaeedf19492de606f4cce7fcbe580"
+      "sha256": "ad8a6c25da7cd149060a20fe639dd849a6183d93450f324c137e04ac51bbe0bc",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -12832,7 +12920,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "combined_diorama_v3/5T/05_UPRIGHTS_ONLY.svg",
-      "sha256": "3f25e216009a9b5acb65fc88117195863f216bc2a1d659a4d63e2b4617c70d2c"
+      "sha256": "46f254770276b867b1e56dc9f6d6bf46ace3c7b9b4b55a85a011fa30314f32b5",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -13129,7 +13218,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "carabiner_trials_v1/02_MASTER.ai",
-      "sha256": "f929d9e72d050742eacb05bf6c825ba44c4c27ecae4fdd1a8f9d2f0ae5b5163f"
+      "sha256": "f929d9e72d050742eacb05bf6c825ba44c4c27ecae4fdd1a8f9d2f0ae5b5163f",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -13426,7 +13516,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "carabiner_trials_v1/02_MASTER.svg",
-      "sha256": "93eb6a5351079c7a7d610f3c1db79f7441fe0bb734d68357e9d4eb0606725c22"
+      "sha256": "93eb6a5351079c7a7d610f3c1db79f7441fe0bb734d68357e9d4eb0606725c22",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -13723,7 +13814,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "carabiner_trials_v1/02_MASTER.vectorcraft",
-      "sha256": "6ab49d7a3090b22925a124c319acfd1972fa1aa1409d41b45386035f6666998d"
+      "sha256": "6ab49d7a3090b22925a124c319acfd1972fa1aa1409d41b45386035f6666998d",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -14020,7 +14112,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "carabiner_trials_v1/03_CUT_ONLY.pdf",
-      "sha256": "0eadaf742f1c91881ba04ddd766b539b8f900d936896350a753c94f1990f138f"
+      "sha256": "0eadaf742f1c91881ba04ddd766b539b8f900d936896350a753c94f1990f138f",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -14317,7 +14410,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "carabiner_trials_v1/03_CUT_ONLY.svg",
-      "sha256": "711dfa91b163ad21422582aa2d03f9b58ace3fb655939c81f5fda2cdfe374526"
+      "sha256": "711dfa91b163ad21422582aa2d03f9b58ace3fb655939c81f5fda2cdfe374526",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -15221,7 +15315,8 @@
         }
       ],
       "file": "extra_sheet/01_COMBINED_SHEET.pdf",
-      "sha256": "6ef79ce6bec034e6a8c514187d7a6fb6f04b1902d21c1f5e474f2cd1328ec781"
+      "sha256": "6ef79ce6bec034e6a8c514187d7a6fb6f04b1902d21c1f5e474f2cd1328ec781",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -16125,7 +16220,8 @@
         }
       ],
       "file": "extra_sheet/03_CUT_ONLY.pdf",
-      "sha256": "47b1fbe786f9e495f1a0a0d7c74fd96e676008a6b89fecb512bac0b4d1624d11"
+      "sha256": "47b1fbe786f9e495f1a0a0d7c74fd96e676008a6b89fecb512bac0b4d1624d11",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -17029,7 +17125,8 @@
         }
       ],
       "file": "extra_sheet/05_MASTER.ai",
-      "sha256": "1c02545a0eeeac83e22ee14ad6111633f0ffa85a9e02622388392221fc2c07f7"
+      "sha256": "1c02545a0eeeac83e22ee14ad6111633f0ffa85a9e02622388392221fc2c07f7",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -17933,7 +18030,8 @@
         }
       ],
       "file": "extra_sheet/05_MASTER.vectorcraft",
-      "sha256": "1c5226c7f2c6b83bd07a95f936f6f7ba6a3f3a6c884cb9fe10a5ae56c4e5e099"
+      "sha256": "1c5226c7f2c6b83bd07a95f936f6f7ba6a3f3a6c884cb9fe10a5ae56c4e5e099",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -18837,7 +18935,8 @@
         }
       ],
       "file": "extra_sheet/3T/01_COMBINED_SHEET.pdf",
-      "sha256": "6ef79ce6bec034e6a8c514187d7a6fb6f04b1902d21c1f5e474f2cd1328ec781"
+      "sha256": "6ef79ce6bec034e6a8c514187d7a6fb6f04b1902d21c1f5e474f2cd1328ec781",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -19741,7 +19840,8 @@
         }
       ],
       "file": "extra_sheet/3T/03_CUT_ONLY.pdf",
-      "sha256": "47b1fbe786f9e495f1a0a0d7c74fd96e676008a6b89fecb512bac0b4d1624d11"
+      "sha256": "47b1fbe786f9e495f1a0a0d7c74fd96e676008a6b89fecb512bac0b4d1624d11",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -20645,7 +20745,8 @@
         }
       ],
       "file": "extra_sheet/3T/05_MASTER.ai",
-      "sha256": "1c02545a0eeeac83e22ee14ad6111633f0ffa85a9e02622388392221fc2c07f7"
+      "sha256": "1c02545a0eeeac83e22ee14ad6111633f0ffa85a9e02622388392221fc2c07f7",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -21549,7 +21650,8 @@
         }
       ],
       "file": "extra_sheet/3T/05_MASTER.vectorcraft",
-      "sha256": "1c5226c7f2c6b83bd07a95f936f6f7ba6a3f3a6c884cb9fe10a5ae56c4e5e099"
+      "sha256": "1c5226c7f2c6b83bd07a95f936f6f7ba6a3f3a6c884cb9fe10a5ae56c4e5e099",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -22453,7 +22555,8 @@
         }
       ],
       "file": "extra_sheet/5T/01_COMBINED_SHEET.pdf",
-      "sha256": "b04c45b635b66f0e34e2875582cd2db4c90897af9cc31aba48ec14bbd118d152"
+      "sha256": "b04c45b635b66f0e34e2875582cd2db4c90897af9cc31aba48ec14bbd118d152",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -23357,7 +23460,8 @@
         }
       ],
       "file": "extra_sheet/5T/03_CUT_ONLY.pdf",
-      "sha256": "b49dc24f2d7e7c880633b015887a09a00c59fb61851a4054f2c0f2d2705d33e8"
+      "sha256": "b49dc24f2d7e7c880633b015887a09a00c59fb61851a4054f2c0f2d2705d33e8",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -24261,7 +24365,8 @@
         }
       ],
       "file": "extra_sheet/5T/05_MASTER.ai",
-      "sha256": "298ce626d142df211d3541fc9cec44ec625ea9aa85d5128191c115c0034de393"
+      "sha256": "298ce626d142df211d3541fc9cec44ec625ea9aa85d5128191c115c0034de393",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25165,7 +25270,8 @@
         }
       ],
       "file": "extra_sheet/5T/05_MASTER.vectorcraft",
-      "sha256": "19a120b584b4fd02aa890784cff065d83210c6d193286e2ae0269cca0160e08f"
+      "sha256": "19a120b584b4fd02aa890784cff065d83210c6d193286e2ae0269cca0160e08f",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25210,7 +25316,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/burnt/02_MASTER.ai",
-      "sha256": "52d0ca3efd0cb8a8d82f8f712a0bb01d207288f039ceb76656583a896da7eb00"
+      "sha256": "52d0ca3efd0cb8a8d82f8f712a0bb01d207288f039ceb76656583a896da7eb00",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25255,7 +25362,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/burnt/02_MASTER.svg",
-      "sha256": "c7ba720743fb4c2d01a37eaebb19f5ea3b97ec7c9128c2e1662ccda3417b683e"
+      "sha256": "c7ba720743fb4c2d01a37eaebb19f5ea3b97ec7c9128c2e1662ccda3417b683e",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25300,7 +25408,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/burnt/02_MASTER.vectorcraft",
-      "sha256": "09704bb4f24ef15b17f5a4fd038f43104047a84826ac6d30fbf5e3c4788c4d7f"
+      "sha256": "09704bb4f24ef15b17f5a4fd038f43104047a84826ac6d30fbf5e3c4788c4d7f",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25345,7 +25454,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/burnt/03_CUT_ONLY.pdf",
-      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1"
+      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25390,7 +25500,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/burnt/03_CUT_ONLY.svg",
-      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae"
+      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25435,7 +25546,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/golden/02_MASTER.ai",
-      "sha256": "5c20351e1d1a8a23b5b5323d60c1632ef07e9ce455f4f354ffd6f997574db57b"
+      "sha256": "5c20351e1d1a8a23b5b5323d60c1632ef07e9ce455f4f354ffd6f997574db57b",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25480,7 +25592,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/golden/02_MASTER.svg",
-      "sha256": "24183f9501546db8333ac3e9b32af05dfd4f5e0d9c3bd20006f1589878953063"
+      "sha256": "24183f9501546db8333ac3e9b32af05dfd4f5e0d9c3bd20006f1589878953063",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25525,7 +25638,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/golden/02_MASTER.vectorcraft",
-      "sha256": "c7a0c67ab0c277f68cd12645308b7968900cc2c45e0d2ccb13d9c450c3ff3b06"
+      "sha256": "c7a0c67ab0c277f68cd12645308b7968900cc2c45e0d2ccb13d9c450c3ff3b06",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25570,7 +25684,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/golden/03_CUT_ONLY.pdf",
-      "sha256": "e7a2707d19ca3ec5087749b57c16f19948bff51c88cf060be350a5ea2fb7d974"
+      "sha256": "e7a2707d19ca3ec5087749b57c16f19948bff51c88cf060be350a5ea2fb7d974",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25615,7 +25730,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/golden/03_CUT_ONLY.svg",
-      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae"
+      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25660,7 +25776,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/tuiing/02_MASTER.ai",
-      "sha256": "494f5dd3c9593ed382130d74d5b803e05adc3d5d539582c6b5d19527c2399e26"
+      "sha256": "494f5dd3c9593ed382130d74d5b803e05adc3d5d539582c6b5d19527c2399e26",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25705,7 +25822,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/tuiing/02_MASTER.svg",
-      "sha256": "1b51383d4e76cfa0a9b4560042ec8433515dbaaa585eac3b8d12ee798e5a1861"
+      "sha256": "1b51383d4e76cfa0a9b4560042ec8433515dbaaa585eac3b8d12ee798e5a1861",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25750,7 +25868,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/tuiing/02_MASTER.vectorcraft",
-      "sha256": "205918b963ca659c85d3135ab56b5edd66c61bd7c6036e022d24a2f39892a1c8"
+      "sha256": "205918b963ca659c85d3135ab56b5edd66c61bd7c6036e022d24a2f39892a1c8",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25795,7 +25914,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/tuiing/03_CUT_ONLY.pdf",
-      "sha256": "47147ba402b67b3df005f9d37df469cec25673e3bccb6901f05f39444fbef7d4"
+      "sha256": "47147ba402b67b3df005f9d37df469cec25673e3bccb6901f05f39444fbef7d4",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25840,7 +25960,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/tuiing/03_CUT_ONLY.svg",
-      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae"
+      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25885,7 +26006,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/unfried/02_MASTER.ai",
-      "sha256": "c63e1170d5c30bcc59c77f55361a8ffc55689da2d97dcc834801f51757d0f077"
+      "sha256": "c63e1170d5c30bcc59c77f55361a8ffc55689da2d97dcc834801f51757d0f077",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -25930,7 +26052,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/unfried/02_MASTER.svg",
-      "sha256": "71f61b5854bac5e1bee1d513447ab0cf08e028203d377d3cfa55a101e32ea6e3"
+      "sha256": "71f61b5854bac5e1bee1d513447ab0cf08e028203d377d3cfa55a101e32ea6e3",
+      "sha256_mode": "LF-normalized text"
     },
     {
       "dimensions_mm": [
@@ -25975,7 +26098,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/unfried/02_MASTER.vectorcraft",
-      "sha256": "baf587c5c8b63ed75202e0c8f09e2fb66dba1ec61b4c9a6dc14fbccb21abc2f4"
+      "sha256": "baf587c5c8b63ed75202e0c8f09e2fb66dba1ec61b4c9a6dc14fbccb21abc2f4",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -26020,7 +26144,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/unfried/03_CUT_ONLY.pdf",
-      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1"
+      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1",
+      "sha256_mode": "raw bytes"
     },
     {
       "dimensions_mm": [
@@ -26065,7 +26190,8 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "linked_tuiing_v1/unfried/03_CUT_ONLY.svg",
-      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae"
+      "sha256": "f5d02c665e406c2936fb883c32f3a6f748963fa03ad4d6433ee5784ca44e4cae",
+      "sha256_mode": "LF-normalized text"
     }
   ],
   "inventory": [
