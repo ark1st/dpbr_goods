@@ -16,3 +16,5 @@
 - Push source/configuration to main and production output to output_len.
 - Do not use image generation for this project unless the user explicitly lifts
   their existing prohibition.
+- Do not generate or include fit-test coupons, sample bases, or test keys in
+  production layouts or packages. The user explicitly rejected all test pieces.

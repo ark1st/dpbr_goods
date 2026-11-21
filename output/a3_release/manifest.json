@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-21-compact-cadena-dot",
+  "revision": "A3-2026-11-21-contour-nested-no-test-pieces",
   "canvas_mm": [
     420.0,
     297.0
@@ -22,15 +22,15 @@
     "05_len/3T": [
       {
         "folder": "a3_release/05_len/3T/sheet_01",
-        "pieces": 14,
-        "contours": 39
+        "pieces": 12,
+        "contours": 28
       }
     ],
     "05_len/5T": [
       {
         "folder": "a3_release/05_len/5T/sheet_01",
-        "pieces": 14,
-        "contours": 39
+        "pieces": 12,
+        "contours": 28
       }
     ],
     "04_ascent_cadena": [
@@ -46,5 +46,18 @@
   "retired_groups": [
     "03_linked_keyrings",
     "04_ascent_original"
+  ],
+  "test_pieces_included": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    }
   ]
 }
