@@ -54,6 +54,8 @@ python scripts/build_tshirt_fronts.py
 python scripts/build_linked_tuiing.py
 python scripts/build_len_diorama.py
 python scripts/build_len_diorama_dot.py
+python scripts/prepare_len_pad_base.py
+python scripts/build_len_diorama_pad.py
 python scripts/verify_release.py
 ```
 
