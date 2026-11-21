@@ -1,3 +1,5 @@
+> **현재 출력은 [A3 총3장 최종본](a3_release)입니다.** 추가 이미지+새튀 / 카데나만 / Len 일반+DOT+튀잉. 아래 이전 링크는 보관 이력입니다.
+
 ## 현재 출력: [A3 최종본 · 추가 이미지 / 줄줄이 키링 / 어센트 / Len](a3_release)
 
 > **2026-11-20 칼선 곡선화 수정본입니다. 기존 다운로드를 교체하세요.** [전수 검사·변경 내용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)

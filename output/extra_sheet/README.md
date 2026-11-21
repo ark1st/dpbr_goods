@@ -1,3 +1,5 @@
+> **퇴역 · 이번 제작에서 사용하지 마세요.** 현재 제작은 [A3 최종본](../a3_release/02_extra_sheet)을 사용합니다. 이 폴더는 원본·조립 참고용입니다.
+
 > **A3 전환으로 구버전 제작 대지는 퇴역했습니다. 현재 출력은 [A3 최종본](../a3_release/02_extra_sheet)을 사용하세요.** 원본과 조립 참고용으로 보관합니다.
 
 > **2026-11-20 칼선 곡선화 수정본입니다. 기존 다운로드를 교체하세요.** [전수 검사·변경 내용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/cut_quality)

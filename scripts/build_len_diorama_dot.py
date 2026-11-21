@@ -22,6 +22,7 @@ from pypdf import PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
 from vector_utils import runvc,path,poly_path,layer
+from laser_paths import cut_path
 from guide_fonts import GUIDE_FONT,GUIDE_BOLD,register_guide_fonts
 from build_diorama import write_svg,render,cut_layer,rounded,svg_text,tab_shape,artwork_layer
 
@@ -336,13 +337,13 @@ def fit_test(preset,folder):
     labels.append(svg_text(138,26,'TEST',4,anchor='middle'))
     labels.append(svg_text(138,33,'18 mm',3.5,anchor='middle'))
     labels.append(svg_text(138,59,f'{preset["name"]}',4,anchor='middle'))
-    cut=''.join(path(poly_path(s),'none',RED,.001) for s in slots+[testbase,key])
+    cut=''.join(path(cut_path(s),'none',RED,.001) for s in slots+[testbase,key])
     label=layer('2_LABELS_PRINT_OR_COPY_BY_HAND',''.join(labels))
     master=write_svg(folder/'04_FIT_TEST_MASTER.svg',160,78,label+layer('1_LASER_CUT',cut))
     write_svg(folder/'04_FIT_TEST_CUT_ONLY.svg',160,78,layer('1_LASER_CUT',cut))
     export_native(master,folder,'04_FIT_TEST_MASTER')
-    write_svg(folder/'04_FIT_TEST_BASE_ONLY.svg',160,78,layer('1_LASER_CUT',''.join(path(poly_path(s),'none',RED,.001) for s in slots+[testbase])))
-    write_svg(folder/'04_FIT_TEST_KEY_ONLY.svg',160,78,layer('1_LASER_CUT',path(poly_path(key),'none',RED,.001)))
+    write_svg(folder/'04_FIT_TEST_BASE_ONLY.svg',160,78,layer('1_LASER_CUT',''.join(path(cut_path(s),'none',RED,.001) for s in slots+[testbase])))
+    write_svg(folder/'04_FIT_TEST_KEY_ONLY.svg',160,78,layer('1_LASER_CUT',path(cut_path(key),'none',RED,.001)))
     review=write_svg(folder/'preview/fit_test.svg',160,78,'<rect width="160" height="78" fill="#fffdf8"/>'+label+cut.replace('stroke-width="0.001"','stroke-width="0.18"'))
     render(review,folder/'preview/fit_test.png',2.2)
     return rows

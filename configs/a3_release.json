@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-21",
+  "revision": "A3-2026-11-21-compact-cadena-dot",
   "canvas_mm": [
     420,
     297
@@ -118,6 +118,68 @@
       "file": "output/linked_tuiing_v1/unfried/04_WHITE_INK_MASK.pdf",
       "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
       "sha256": "b1995c253497ac54d22c395193ae443aeb38600205d21cc4876e0ab8d2b7aad3"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/02_MASTER.ai",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "1b04aeaac1f796c7940a8e024c0c1c2b584035558453873e788ea10ec6f29c17"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "68a718acb43c40c16e2d6564e5a689a14344348db3e3c7ea51d25ebc9d2c792f"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/04_FIT_TEST_MASTER.ai",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "e89a614fb99927de9d49a24493783444560493fc300f0d2ffeb3efcc45445b32"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/5T/02_MASTER.ai",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "a10abd0e02561c96250b9aa0587b93f5185852318177946fc054a75b0299b69c"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "6d8ccb86727ac0989b200263069fb1471050d6278538ef69331cfb24134c87c6"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/5T/04_FIT_TEST_MASTER.ai",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "8aba89c061e75ad8252fe9f14e3f203c82bc9305acfce60036c04453773e8b1d"
     }
-  ]
+  ],
+  "cadena_source_part_ids": [
+    "ascent_01",
+    "ascent_11",
+    "ascent_12",
+    "ascent_13",
+    "ascent_14"
+  ],
+  "current_groups": {
+    "02_extra_sheet/3T": 42,
+    "02_extra_sheet/5T": 42,
+    "04_ascent_cadena": 5,
+    "05_len/3T": 14,
+    "05_len/5T": 14
+  },
+  "retired_groups": [
+    "03_linked_keyrings",
+    "04_ascent_original"
+  ],
+  "linked_allocation": {
+    "02_extra_sheet": [
+      "supplied_saetui_01",
+      "supplied_saetui_02",
+      "supplied_saetui_03",
+      "supplied_saetui_04"
+    ],
+    "05_len": [
+      "tuiing_01",
+      "golden_01",
+      "burnt_01",
+      "unfried_01"
+    ]
+  }
 }
