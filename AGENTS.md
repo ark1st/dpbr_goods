@@ -18,3 +18,6 @@
   their existing prohibition.
 - Do not generate or include fit-test coupons, sample bases, or test keys in
   production layouts or packages. The user explicitly rejected all test pieces.
+
+- Keep current production artifacts registered in configs/a3_release.json. Restore archived inputs only under tmp/source_cache, never under output.
+- Before cleanup, verify all candidates against the pushed raw archive before any deletion. Preserve new remote contributions; do not overwrite concurrent branch updates.

@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-21-contour-nested-no-test-pieces",
+  "revision": "A3-2026-11-22-current-only",
   "canvas_mm": [
     420,
     297
@@ -128,6 +128,26 @@
       "file": "output/len_diorama_dot_v1/5T/03_CUT_ONLY.pdf",
       "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
       "sha256": "6d8ccb86727ac0989b200263069fb1471050d6278538ef69331cfb24134c87c6"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/3T/02_MASTER.ai",
+      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+      "sha256": "b5660e807bade865c81465c775f646277b7ebeda721b402eeb9d412a0c7cfd95"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+      "sha256": "792646a9a65771652bfed400d3829e579108fdc1aa5015bd2933e136214cd508"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/5T/02_MASTER.ai",
+      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+      "sha256": "c96fdfca3e911f68281b9147c6ef4da4e9703614b38e5289b05636750985ebc4"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+      "sha256": "78c7f7f050fba2b65a2fbfd862673c5eb0b40707082f951ded4ce974df3b6c4c"
     }
   ],
   "cadena_source_part_ids": [
@@ -142,7 +162,9 @@
     "02_extra_sheet/5T": 42,
     "04_ascent_cadena": 5,
     "05_len/3T": 12,
-    "05_len/5T": 12
+    "05_len/5T": 12,
+    "06_len_pad/3T": 7,
+    "06_len_pad/5T": 7
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -182,5 +204,53 @@
     "search_grid_mm": 0.75,
     "exact_minimum_gap_mm": 3,
     "test_pieces": 0
-  }
+  },
+  "selected_thickness": "3T",
+  "archived_inputs": [
+    {
+      "file": "assets/external/ascent_original/kimyun_ascent.ai.part001",
+      "git_path": "snapshots/main/assets/external/ascent_original/kimyun_ascent.ai.part001",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "4636f6fa72eeee865a8720176c1fd44c8dc03b99216462e55bf73d7df3840f7c"
+    },
+    {
+      "file": "assets/external/ascent_original/kimyun_ascent.ai.part002",
+      "git_path": "snapshots/main/assets/external/ascent_original/kimyun_ascent.ai.part002",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "b548145cf186af24260861ae148b9583d6e9fc28d2b70b3371264da91412d884"
+    },
+    {
+      "file": "assets/external/ascent_original/kimyun_ascent.ai.part003",
+      "git_path": "snapshots/main/assets/external/ascent_original/kimyun_ascent.ai.part003",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "ae42d2a41417fff5435c24dbdcb87c2dc314145c16fde7d29bf35364a9887555"
+    },
+    {
+      "file": "assets/external/ascent_original/manifest.json",
+      "git_path": "snapshots/main/assets/external/ascent_original/manifest.json",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "56e66e865420571c2f28a9767997479f3d70ec20376c4c56c1256f0b9f839388"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/preview/assembly.png",
+      "git_path": "snapshots/output_len/output/len_diorama_v1/3T/preview/assembly.png",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "729bc964582beba4e433b3913fec3a48373ad57595404aff7f21c9aba2436df7"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/preview/assembly.png",
+      "git_path": "snapshots/output_len/output/len_diorama_dot_v1/3T/preview/assembly.png",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "36cf2303208fd06f2470c287a54cdc15336dc1e6ec7d352ca22b9febc2bf39d0"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/3T/preview/assembly.png",
+      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+      "sha256": "aa89c2bf9827224ba0c4864cfc2b27dec967d0c612efb9b7c9b9f01690aca3a9"
+    }
+  ],
+  "optional_groups": [
+    "06_len_pad/3T",
+    "06_len_pad/5T"
+  ]
 }

@@ -8,6 +8,36 @@ from build_a3_release import pack,shifted_poly,pdf_destination,polygon_of,draw_p
 from nest_contours import rotated
 
 class A3PackingTests(unittest.TestCase):
+    def test_large_source_oblique_cut_avoids_rounded_form_matrix(self):
+        import pymupdf as fitz
+        from build_a3_release import transformed_cut_path
+        from verify_laser_paths import contours
+        source=box(402,102,512,172)
+        place={'piece':{'bounds':source.bounds},'x':8,'y':8,'rotation':195}
+        path='M402 102 L512 102 L512 172 L402 172 Z'
+        mapped=transformed_cut_path(path,place)
+        doc=fitz.open();page=doc.new_page(width=420*MM,height=297*MM)
+        draw_path(page,mapped)
+        actual=polygon_of(contours(page.get_drawings()[0])[0])
+        expected=shifted_poly(source,place)
+        self.assertLess(actual.boundary.hausdorff_distance(expected.boundary),.0001)
+
+    def test_reviewed_layout_rejects_changed_mechanical_dimensions(self):
+        from unittest.mock import patch
+        import tempfile
+        import build_a3_release as builder
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'configs').mkdir()
+            rows=[{'id':'part','source_bounds_mm':[10,20,30,40],'x':8,'y':8,'rotation_degrees':15}]
+            (root/'configs/a3_placements.json').write_text(json.dumps({'groups':{'demo':rows}}))
+            source=box(10,20,30,40)
+            with patch.object(builder,'ROOT',root):
+                result=builder.reviewed_layout('demo',[{'id':'part','bounds':source.bounds,'poly':source}])
+                self.assertEqual(result[0]['placements'][0]['rotation'],15)
+                changed=box(10,20,30.2,40)
+                with self.assertRaisesRegex(AssertionError,'Source dimensions changed'):
+                    builder.reviewed_layout('demo',[{'id':'part','bounds':changed.bounds,'poly':changed}])
+
     def test_oblique_pdf_export_preserves_outline_hole_and_slot(self):
         import pymupdf as fitz
         from verify_laser_paths import contours

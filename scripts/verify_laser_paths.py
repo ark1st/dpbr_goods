@@ -12,8 +12,7 @@ from laser_paths import audit_path
 from vector_utils import runvc
 from artifact_hash import artifact_sha256
 
-ACTIVE=['production_v4','diorama_v3','logo_diorama_v3','combined_diorama_v3',
-        'carabiner_trials_v1','extra_sheet','linked_tuiing_v1','a3_release']
+ACTIVE=['a3_release']
 MM=72/25.4
 
 
@@ -47,7 +46,16 @@ def contours(drawing):
     flush();return result
 
 
-def inspect_pdf(file, extra=False, protected_regions=()):
+def protected_contour(path, expected):
+    # Nesting overlaps bounding boxes. A nearby owned contour must not inherit
+    # permission for original numerical no-ops merely by being inside that box.
+    from build_a3_release import polygon_of
+    actual=polygon_of(path)
+    return any(all(abs(a-b)<=.002 for a,b in zip(actual.bounds,p.bounds)) and
+               actual.boundary.hausdorff_distance(p.boundary)<=.002 for p in expected)
+
+
+def inspect_pdf(file, extra=False, protected_regions=(), protected_paths=()):
     with fitz.open(file) as source:
         ocgs=source.get_ocgs()
         ids=[i for i,g in ocgs.items() if g['name'] in ['1_LASER_CUT','LASER_CUT']]
@@ -67,6 +75,8 @@ def inspect_pdf(file, extra=False, protected_regions=()):
             b[0]-.002<=bounds[0] and b[1]-.002<=bounds[1] and
             b[2]+.002>=bounds[2] and b[3]+.002>=bounds[3] for b in protected_regions)
         for j,path in enumerate(contours(d)):
+            if protected_paths:
+                is_protected=protected_contour(path,protected_paths)
             label=f'{i}:{j}'
             try:
                 stats,poly=audit_path(path,allow_original_numerics=is_protected)
@@ -105,46 +115,11 @@ def native_pdf(file,dest):
 
 
 def inventory_for(records):
-    out=ROOT/'output'
-    import subprocess
-    tracked=set(subprocess.check_output(['git','ls-tree','-r','--name-only','origin/output_len','output'],cwd=ROOT,text=True).splitlines())
-    # Include the newly merged Len release even before its first output_len push.
-    cfg=ROOT/'configs/a3_release.json'
-    if cfg.exists():
-        for rev in {s['commit'] for s in json.loads(cfg.read_text())['sources']}:
-            tracked.update(subprocess.check_output(['git','ls-tree','-r','--name-only',rev,'output'],cwd=ROOT,text=True).splitlines())
-    for folder in ACTIVE+['cut_quality']:
-        tracked.update(p.relative_to(ROOT).as_posix() for p in (out/folder).rglob('*') if p.is_file())
-    tracked.update(['output/LASER_PATH_AUDIT.json','output/RELEASE_VALIDATION.json'])
-    current_zips={'Danpungbaram_V4_SMALL_BATCH_16pcs.zip','Danpungbaram_Diorama_V3_3T_5T.zip',
-        'Danpungbaram_Logo_Diorama_V3_MAIN_3T_5T.zip','Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip',
-        'Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tshirt_Fronts_Aing_Changseop_14x16in.zip',
-        'Tuiing_Linked_4_Separate_Plates.zip'}
-    current_hashes={r['file'] for r in records}
-    a3_file=out/'a3_release/manifest.json'
-    a3_manifest=json.loads(a3_file.read_text()) if a3_file.exists() else {}
-    retired_prefixes=['a3_release/'+x+'/' for x in a3_manifest.get('retired_groups',[])]
-    retired_zips={'a3_release/'+x.replace('/','_')+'_A3.zip' for x in a3_manifest.get('retired_groups',[])}
-    inventory=[]
-    for full in sorted(tracked):
-        rel=full.removeprefix('output/');top=rel.split('/')[0]
-        if any(rel.startswith(p) for p in retired_prefixes) or rel in retired_zips:
-            status='retired_A3_superseded_not_for_current_print'
-        elif top in ['extra_sheet','linked_tuiing_v1']:
-            status='retired_layout_source_geometry_checked' if rel in current_hashes else 'retired_layout_source_not_for_current_print'
-        elif top in ['Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tuiing_Linked_4_Separate_Plates.zip']:
-            status='retired_layout_source_package_checked'
-        elif rel in current_hashes:status='cut_geometry_checked'
-        elif top=='a3_release' and rel.endswith('.zip'):status='current_A3_package_checked_by_release_validator'
-        elif top in ACTIVE:status='current_supporting_artwork_or_documentation'
-        elif top in ['tshirt','tshirt_fronts']:status='print_only_no_laser_path'
-        elif top in current_zips:status='current_package_checked_by_release_validator'
-        elif top.endswith('.zip'):status='retired_archive_not_for_production'
-        elif top=='cut_quality':status='current_cut_quality_report'
-        elif '/' in rel:status='retired_not_for_production'
-        else:status='release_index_or_supporting_asset'
-        inventory.append({'file':rel,'status':status})
-    return inventory
+    from verify_repository import output_inventory
+    checked={r['file'] for r in records}
+    return [{'file':rel,'status':'cut_geometry_checked' if rel in checked else
+             'current_release_package' if rel.endswith('.zip') else 'current_supporting_artwork_or_documentation'}
+            for rel in output_inventory(ROOT/'output')]
 
 
 def main(pdf_only=False):
@@ -184,7 +159,9 @@ def main(pdf_only=False):
                 spec=None
                 if folder=='a3_release':
                     spec=json.loads((file.parent/'validation.json').read_text(encoding='utf-8'))
-                result=inspect_pdf(target,folder=='extra_sheet',spec['protected_regions_mm'] if spec else ())
+                from shapely.geometry import Polygon
+                protected=[Polygon(q) for p in spec['parts'] if p['protected_original'] for q in p['expected_paths']] if spec else []
+                result=inspect_pdf(target,folder=='extra_sheet',(),protected)
                 if result is None:continue
                 if spec:
                     if result['outer_contours']!=spec['pieces'] or result['contours']!=spec['closed_contours']:
@@ -204,11 +181,17 @@ def main(pdf_only=False):
                 print(rel, result['contours'],result['segments'],'FAIL' if result['errors'] else 'OK',flush=True)
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
+    assert len(records)==len(current_a3)*(3 if pdf_only else 5),('Incomplete cutting-format coverage',len(records))
     inventory=inventory_for(records)
-    report={'revision':'A3-2026-11-21-contour-nested-no-test-pieces','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
+    report={'revision':manifest['revision'],'mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
             'protected_original_findings':[{'file':r['file'],'findings':r['protected_original_findings']} for r in records if r['protected_original_findings']],
             'records':records,'inventory':inventory,'physical_cut_test':False,
-            'superseded_releases':manifest.get('superseded_releases',[])}
+            'superseded_releases':manifest.get('superseded_releases',[]),
+            'retired_archive':json.loads((out/'RETIRED.json').read_text()),
+            'coverage':{'current_pages':len(current_a3),'expected_cut_files':len(current_a3)*(3 if pdf_only else 5),
+                        'retired_files_are_not_counted_as_current_passes':True},
+            'limitations':['Raw archive integrity is verified separately; retired files are not re-approved for cutting.',
+                           'Protected external originals are inspected without edits; numerical no-ops are reported separately.']}
     destination=(tmp/'ci-report.json') if pdf_only else (out/'LASER_PATH_AUDIT.json')
     destination.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     if errors:raise SystemExit(f'LASER PREFLIGHT FAILED: {len(errors)} files')
