@@ -1,0 +1,123 @@
+{
+  "revision": "A3-2026-11-21",
+  "canvas_mm": [
+    420,
+    297
+  ],
+  "piece_gap_mm": 3,
+  "page_margin_mm": 8,
+  "reference_inset_mm": 4,
+  "scale": 1,
+  "sources": [
+    {
+      "file": "output/extra_sheet/3T/01_COMBINED_SHEET.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "6ef79ce6bec034e6a8c514187d7a6fb6f04b1902d21c1f5e474f2cd1328ec781"
+    },
+    {
+      "file": "output/extra_sheet/3T/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "47b1fbe786f9e495f1a0a0d7c74fd96e676008a6b89fecb512bac0b4d1624d11"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/02_MASTER.ai",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "e84b0fb2510cbc2c91fa9a39d91c83a4e89ffc774f6f5e64eb1900c3724a6a45"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "17e98332f2dc22875aae42066cb6157f6e46bdf4351bee025e174cb6cbe45f71"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/04_FIT_TEST_MASTER.ai",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "4b20894394a8531d5558fd66ef8cd6fef166ead5e2c4c9f684d4035aef0a3abc"
+    },
+    {
+      "file": "output/extra_sheet/5T/01_COMBINED_SHEET.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "b04c45b635b66f0e34e2875582cd2db4c90897af9cc31aba48ec14bbd118d152"
+    },
+    {
+      "file": "output/extra_sheet/5T/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "b49dc24f2d7e7c880633b015887a09a00c59fb61851a4054f2c0f2d2705d33e8"
+    },
+    {
+      "file": "output/len_diorama_v1/5T/02_MASTER.ai",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "7d5b1decacc6757ce05ec2556b5fc944d71ed316f8bbbc3cea943d571b8b8e5c"
+    },
+    {
+      "file": "output/len_diorama_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "7d3a81f337aae24907ced9f196d7eb7e5aa7f53adc1f836b0b35198cfa2727c1"
+    },
+    {
+      "file": "output/len_diorama_v1/5T/04_FIT_TEST_MASTER.ai",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "52988c6a692d6b030a535e5e9be69ecc52ed18db7dcc5ad91ef24a102bfc4bf8"
+    },
+    {
+      "file": "output/linked_tuiing_v1/tuiing/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "494f5dd3c9593ed382130d74d5b803e05adc3d5d539582c6b5d19527c2399e26"
+    },
+    {
+      "file": "output/linked_tuiing_v1/tuiing/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "47147ba402b67b3df005f9d37df469cec25673e3bccb6901f05f39444fbef7d4"
+    },
+    {
+      "file": "output/linked_tuiing_v1/tuiing/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "00cf732aaa37a3fa7b3adc1bb85a3b95e0dda9ba232b79f66acea00c866f712d"
+    },
+    {
+      "file": "output/linked_tuiing_v1/golden/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "5c20351e1d1a8a23b5b5323d60c1632ef07e9ce455f4f354ffd6f997574db57b"
+    },
+    {
+      "file": "output/linked_tuiing_v1/golden/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "e7a2707d19ca3ec5087749b57c16f19948bff51c88cf060be350a5ea2fb7d974"
+    },
+    {
+      "file": "output/linked_tuiing_v1/golden/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "579eebe675f51e2e4f883d5d8123bae237a21b63b013d791e78a617358c3c90c"
+    },
+    {
+      "file": "output/linked_tuiing_v1/burnt/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "52d0ca3efd0cb8a8d82f8f712a0bb01d207288f039ceb76656583a896da7eb00"
+    },
+    {
+      "file": "output/linked_tuiing_v1/burnt/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1"
+    },
+    {
+      "file": "output/linked_tuiing_v1/burnt/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "41fd947a8ec4e7a744969bc6359029604d18819a6bd5f4df3c492e469036a8b6"
+    },
+    {
+      "file": "output/linked_tuiing_v1/unfried/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "c63e1170d5c30bcc59c77f55361a8ffc55689da2d97dcc834801f51757d0f077"
+    },
+    {
+      "file": "output/linked_tuiing_v1/unfried/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1"
+    },
+    {
+      "file": "output/linked_tuiing_v1/unfried/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "b1995c253497ac54d22c395193ae443aeb38600205d21cc4876e0ab8d2b7aad3"
+    }
+  ]
+}

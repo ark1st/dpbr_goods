@@ -3,24 +3,20 @@
 main은 원본·설정·생성 코드, [output_len/output](https://github.com/ark1st/dpbr_goods/tree/output_len/output)은 인쇄·재단 결과물입니다.
 [2026-11-20 제작 기준 반영 기록](docs/2026-11-20-production-requirements.md)
 
-## 내일 출력할 최신 파일
+## 현재 A3 출력 파일 · 2026-11-21
 
-1. [가람·단팽이·메인 로고 합본 V3 + 카라비너 시험](https://github.com/ark1st/dpbr_goods/tree/output_len/output/combined_diorama_v3)
-   - 300×175mm, 11조각. 조각 사이 3mm 이상, 이전 대지보다 17.4% 축소.
-   - 기존6조각 +카라비너4종 +구멍 시험편. 카라비너 본체마다 레이저 장착 구멍2개 포함.
-   - 3T/5T 대안 중 실제 판 두께에 맞는 한 종류를 선택합니다.
-2. [엑스트라 시트 (김윤양지수) - yun 스탠드 추가38조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/extra_sheet)
-   - 527×204mm. 기존33조각 +캐릭터2·받침3. 외부30조각 크기·칼선 유지.
-3. [아잉 얼굴 티셔츠](https://github.com/ark1st/dpbr_goods/tree/output_len/output/tshirt_fronts/aing)
-4. [신창섭 티셔츠](https://github.com/ark1st/dpbr_goods/tree/output_len/output/tshirt_fronts/changseop)
-   - 14×16인치,4200×4800px,300ppi 투명 PNG. 각 README에 시안 포함.
-   - 신창섭은 생성형 AI 보정본을 사용하지 않습니다.
-5. [마스코트·로고 키링 V4 - 16조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/production_v4)
-6. [연결형 튀잉 4종 - 각각 별도 판](https://github.com/ark1st/dpbr_goods/tree/output_len/output/linked_tuiing_v1)
-   - 기본·황올·탄·안튀잉, 각55×75mm 판에1개. 상하4mm 연결 구멍 포함.
+대지 420×297mm, 실제 크기 100%. 3T/5T 대안 중 하나씩 선택하면 총 A3 5장입니다.
 
-이전V2 합본과33조각 파일을 대신하는 최신 파일입니다.
-독립 디오라마·카라비너 파일은 합본과 중복되므로 수량을 합산해 출력하지 않습니다.
+2. [추가 이미지 시트 · 38조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet)
+3. [줄줄이 키링 · 제공 새튀 4 + 튀잉 4 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/03_linked_keyrings)
+4. [어센트 · 판 26 + 받침 5 / A3 2장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/04_ascent_original)
+5. [Len · 본품 7 + 시험편 2 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len)
+
+[전체 A3 안내·ZIP·시안](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release) · [재생성·병합 기록](docs/a3-release.md)
+어센트는 원본 약 3.2mm 홈을 보존했습니다. 5T용이 아니며 실물 끼움 시험이 필요합니다.
+이전 추가 이미지·개별 튀잉·Len 대지는 참고용으로 퇴역했습니다.
+
+기존 별도 제작물: [단바 합본](https://github.com/ark1st/dpbr_goods/tree/output_len/output/combined_diorama_v3), [마스코트·로고 키링](https://github.com/ark1st/dpbr_goods/tree/output_len/output/production_v4), [티셔츠](https://github.com/ark1st/dpbr_goods/tree/output_len/output/tshirt_fronts).
 
 ## 제작 규격
 

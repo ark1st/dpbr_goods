@@ -13,7 +13,7 @@ from vector_utils import runvc
 from artifact_hash import artifact_sha256
 
 ACTIVE=['production_v4','diorama_v3','logo_diorama_v3','combined_diorama_v3',
-        'carabiner_trials_v1','extra_sheet','linked_tuiing_v1']
+        'carabiner_trials_v1','extra_sheet','linked_tuiing_v1','a3_release']
 MM=72/25.4
 
 
@@ -47,7 +47,7 @@ def contours(drawing):
     flush();return result
 
 
-def inspect_pdf(file, extra=False):
+def inspect_pdf(file, extra=False, protected_regions=()):
     with fitz.open(file) as source:
         ocgs=source.get_ocgs()
         ids=[i for i,g in ocgs.items() if g['name'] in ['1_LASER_CUT','LASER_CUT']]
@@ -62,7 +62,10 @@ def inspect_pdf(file, extra=False):
         if d['fill'] is not None or abs(d['width']/MM-.001)>.00002:
             raise ValueError(f'Incorrect fill/stroke in cutting plate: {i}')
         # The first 34 drawing objects are the unchanged 30 external pieces.
-        is_protected=extra and i<34
+        bounds=[v/MM for v in d['rect']]
+        is_protected=(extra and i<34) or any(
+            b[0]-.002<=bounds[0] and b[1]-.002<=bounds[1] and
+            b[2]+.002>=bounds[2] and b[3]+.002>=bounds[3] for b in protected_regions)
         for j,path in enumerate(contours(d)):
             label=f'{i}:{j}'
             try:
@@ -105,6 +108,11 @@ def inventory_for(records):
     out=ROOT/'output'
     import subprocess
     tracked=set(subprocess.check_output(['git','ls-tree','-r','--name-only','origin/output_len','output'],cwd=ROOT,text=True).splitlines())
+    # Include the newly merged Len release even before its first output_len push.
+    cfg=ROOT/'configs/a3_release.json'
+    if cfg.exists():
+        for rev in {s['commit'] for s in json.loads(cfg.read_text())['sources']}:
+            tracked.update(subprocess.check_output(['git','ls-tree','-r','--name-only',rev,'output'],cwd=ROOT,text=True).splitlines())
     for folder in ACTIVE+['cut_quality']:
         tracked.update(p.relative_to(ROOT).as_posix() for p in (out/folder).rglob('*') if p.is_file())
     tracked.update(['output/LASER_PATH_AUDIT.json','output/RELEASE_VALIDATION.json'])
@@ -116,7 +124,12 @@ def inventory_for(records):
     inventory=[]
     for full in sorted(tracked):
         rel=full.removeprefix('output/');top=rel.split('/')[0]
-        if rel in current_hashes:status='cut_geometry_checked'
+        if top in ['extra_sheet','linked_tuiing_v1']:
+            status='retired_layout_source_geometry_checked' if rel in current_hashes else 'retired_layout_source_not_for_current_print'
+        elif top in ['Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tuiing_Linked_4_Separate_Plates.zip']:
+            status='retired_layout_source_package_checked'
+        elif rel in current_hashes:status='cut_geometry_checked'
+        elif top=='a3_release' and rel.endswith('.zip'):status='current_A3_package_checked_by_release_validator'
         elif top in ACTIVE:status='current_supporting_artwork_or_documentation'
         elif top in ['tshirt','tshirt_fronts']:status='print_only_no_laser_path'
         elif top in current_zips:status='current_package_checked_by_release_validator'
@@ -152,11 +165,21 @@ def main(pdf_only=False):
                 target=tmp/(hashlib.sha256(rel.encode()).hexdigest()[:16]+'.pdf')
                 if not native_pdf(file,target):continue
             elif suffix=='.ai':pass
-            elif suffix=='.pdf' and ('CUT_ONLY' in file.name or file.name=='01_COMBINED_SHEET.pdf'):pass
+            elif suffix=='.pdf' and ('CUT_ONLY' in file.name or file.name in ['01_COMBINED_SHEET.pdf','02_MASTER.pdf']):pass
             else:continue
             try:
-                result=inspect_pdf(target,folder=='extra_sheet')
+                spec=None
+                if folder=='a3_release':
+                    spec=json.loads((file.parent/'validation.json').read_text(encoding='utf-8'))
+                result=inspect_pdf(target,folder=='extra_sheet',spec['protected_regions_mm'] if spec else ())
                 if result is None:continue
+                if spec:
+                    if result['outer_contours']!=spec['pieces'] or result['contours']!=spec['closed_contours']:
+                        result['errors'].append({'reason':'A3 piece/path inventory mismatch'})
+                    if any(abs(a-b)>.01 for a,b in zip(result['dimensions_mm'],[420,297])):
+                        result['errors'].append({'reason':'Not an A3 420 x 297 mm artboard'})
+                    if result['minimum_piece_gap_mm'] is not None and result['minimum_piece_gap_mm']<2.998:
+                        result['errors'].append({'reason':'A3 exported piece gap below 3 mm tolerance'})
                 # Tight production layout: enforce the actual EXPORTED curve gap.
                 if folder=='combined_diorama_v3' and ('COMBINED_MASTER' in file.name or file.name.startswith('03_CUT_ONLY')):
                     if result['outer_contours']!=11 or result['contours']!=42 or result['minimum_piece_gap_mm']<3:
@@ -169,7 +192,7 @@ def main(pdf_only=False):
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
     inventory=inventory_for(records)
-    report={'revision':'smooth-cut-2026-11-20','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
+    report={'revision':'A3-smooth-cut-2026-11-21','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
             'protected_original_findings':[{'file':r['file'],'findings':r['protected_original_findings']} for r in records if r['protected_original_findings']],
             'records':records,'inventory':inventory,'physical_cut_test':False}
     destination=(tmp/'ci-report.json') if pdf_only else (out/'LASER_PATH_AUDIT.json')
