@@ -13,6 +13,7 @@
 5. [마스코트·로고 키링 V4 ·16조각](production_v4/README.md)
 6. [연결형 튀잉4종 · 각각 별도 판](linked_tuiing_v1/README.md)
 7. [렌 아크릴 디오라마 DOT V1 · 캐릭터만 도트 아바타판 ·7조각](len_diorama_dot_v1/README.md)
+8. [렌 아크릴 디오라마 PAD V1 · 분리에셋 원본 그대로 ·7조각](len_diorama_pad_v1/README.md)
 
 ## 단바 합본
 
@@ -60,6 +61,19 @@
 NEW V1과 같은 구성(베이스 275×60mm·홈 8·깊이 행 5·7조각)에서 **캐릭터 판만 본인 캐릭터의 인게임 도트 아바타 렌더(official_avatar_180)로 교체**했습니다.
 도트 계단이 인쇄에서 그대로 보이도록 NEAREST 변환만 했고 재그림은 없습니다. 주 실루엣에서 2.4mm 이상 떨어진 장식 광점 10개는 절단선 밖이라 뺐습니다(알파만 0 처리, 나머지 픽셀 원본과 바이트 동일 — `assets/len/05_도트_캐릭터/provenance.json`), 머리 옆 광점 1개는 살렸습니다.
 참고용으로 퇴역한 len_diorama_v1 대지와 같은 형식입니다. 실물 끼움은 시험 전이며 `04_FIT_TEST`를 먼저 자르세요.
+
+## 렌 디오라마 PAD V1 (분리에셋 마스터판)
+
+![조립 예상도](len_diorama_pad_v1/3T/preview/assembly.png)
+
+[전체 ZIP](Danpungbaram_Len_Diorama_PAD_V1_MAIN_7pcs_3T_5T.zip) ·
+[인쇄 PNG 3T](len_diorama_pad_v1/3T/01_PRINT_300ppi.png) · [5T](len_diorama_pad_v1/5T/01_PRINT_300ppi.png) ·
+[마스터 AI 3T](len_diorama_pad_v1/3T/02_MASTER.ai) · [5T](len_diorama_pad_v1/5T/02_MASTER.ai)
+
+`assets/len_pad` 분리에셋(베이스·배경·장식·캐릭터)을 **재그림 없이 그대로** 마스터했습니다. 베이스 커트 280×71.2mm(아트 275×66.2+사방 2.5mm 투명테), 배경 200×90, 매화 좌·우 76×72/82×66, 은빛 용 79×50, 캐릭터(오라 배경 포함) 58×84, 구름 62×28mm.
+03_장식파츠에 뭉친 네 요소는 알파 섬 단위로 분리했습니다(이웃 섬이 박스 안에 남긴 조각만 알파 0 처리 — 섬 픽셀 무손상).
+베이스 시안의 슬롯 자리 5개(약 32.5×4.1mm로 18mm 탭과 안 맞는 예시)는 인접 무늬 미러 이식으로 봉합하고 실제 홈 8개(행 y 23/34/45/56)를 새로 뚫었습니다(`assets/len_pad/prepared/provenance.json`).
+용(x=95)·캐릭터(x=173)는 달과 서로를 가리지 않게 배치했고, 앞 판이 배경 상단 30%를 17% 이내로만 가립니다. 실물 끼움은 시험 전이며 `04_FIT_TEST`를 먼저 자르세요.
 
 ## 같은 부품의 개별 파일과 추가 자료
 

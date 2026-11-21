@@ -65,7 +65,7 @@ python scripts/verify_release.py
 build_goods_v3.py는 기존 호출 호환성을 위해 파일명을 유지하며 현재 output/production_v4를 생성합니다.
 엑스트라 시트는 저장소의 이전33조각 PDF와 assets/external/yun_image_sd_stand.ai를 사용합니다.
 기존 build_extra_sheet.py는 과거 합본용이며 최신38조각 생성에는 사용하지 않습니다.
-Len 원본 생성기는 `build_len_diorama.py`, DOT 캐릭터 대안은 `build_len_diorama_dot.py`입니다.
+Len 원본 생성기는 `build_len_diorama.py`, DOT 캐릭터 대안은 `build_len_diorama_dot.py`, 분리에셋 PAD 판은 `prepare_len_pad_base.py` 뒤 `build_len_diorama_pad.py`입니다.
 현재 A3 빌더는 고정 커밋·해시의 원본 출력에서 재배치하므로 원본 생성기를 먼저 다시 실행할 필요가 없습니다.
 
 두께 변경 예:
