@@ -1,0 +1,39 @@
+{
+  "art_width_mm": 160,
+  "base_mm": [
+    140,
+    38
+  ],
+  "base_corner_radius_mm": 5,
+  "clear_border_mm": 2.5,
+  "tab_width_mm": 18,
+  "tab_center_spacing_mm": 84,
+  "tab_bottom_clearance_mm": 0.4,
+  "slot_length_mm": 18.8,
+  "slot_corner_radius_mm": 0.35,
+  "canvas_mm": [
+    200,
+    140
+  ],
+  "layout_base_y_mm": 92,
+  "presets": [
+    {
+      "name": "3T",
+      "part_thickness_mm": 3,
+      "base_thickness_mm": 3,
+      "slot_width_mm": 3
+    },
+    {
+      "name": "5T",
+      "part_thickness_mm": 5,
+      "base_thickness_mm": 5,
+      "slot_width_mm": 5
+    }
+  ],
+  "selected_preset": {
+    "name": "5T",
+    "part_thickness_mm": 5,
+    "base_thickness_mm": 5,
+    "slot_width_mm": 5
+  }
+}

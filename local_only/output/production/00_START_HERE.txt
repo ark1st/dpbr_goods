@@ -1,0 +1,16 @@
+﻿단풍바람 제작 파일 / 2026-11-19 목요일
+
+먼저 00_PRINT_GUIDE_KO.pdf를 확인하세요.
+
+티셔츠: 01_tshirt/tshirt_logo_70mm_300ppi.png (70x70mm, 투명 PNG)
+아크릴 기본: 02_acrylic_800x500 (총 149개)
+아크릴 큰 판: 03_acrylic_800x600 (총 182개, 장비 확인 후 사용)
+
+UV 인쇄: *_UV_300ppi.png (기준선 포함, 커팅선 제외)
+커팅: *_CUT_ONLY.svg 또는 PDF (빨강 #FF0000 / 0.001mm)
+편집: *_MASTER.vectorcraft 또는 *_MASTER.ai (레이어 3개)
+
+인쇄/커팅 크기와 원점 동일, 실제 크기 100%, 자동 맞춤 해제.
+PNG는 sRGB. CMYK TIFF는 불투명 배경이므로 백색판은 PNG 알파에서 생성.
+마스코트는 원본 카드뉴스를 참고한 수작업 벡터 재구성본입니다.
+05_preview에서 외형과 배치를 확인하고 1개 시험 후 전체 제작하세요.

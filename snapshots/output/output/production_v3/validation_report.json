@@ -1,0 +1,100 @@
+{
+  "revision": 3,
+  "quantity": 16,
+  "set_count": 4,
+  "standalone_logos": 4,
+  "canvas_mm": [
+    300,
+    160
+  ],
+  "source_measurement": {
+    "garam_bbox_px": [
+      551,
+      579,
+      311,
+      356
+    ],
+    "danpaengi_bbox_px": [
+      884,
+      794,
+      155,
+      135
+    ],
+    "height_ratio": 0.3792134831460674
+  },
+  "min_piece_gap_mm": 7.062871229887529,
+  "hole_diameter_mm": 4,
+  "assets": {
+    "garam": {
+      "art_mm": [
+        48.04775280898876,
+        55.0
+      ],
+      "acrylic_mm": [
+        55.196149661786116,
+        71.84846358416631
+      ],
+      "art_to_cut_mm": 3.573429098364195,
+      "hole_to_art_mm": 5.1,
+      "hole_to_edge_mm": 4.180213850786025
+    },
+    "danpaengi": {
+      "art_mm": [
+        23.946629213483146,
+        20.85674157303371
+      ],
+      "acrylic_mm": [
+        31.102235723098385,
+        37.71251205030766
+      ],
+      "art_to_cut_mm": 3.5681263595444936,
+      "hole_to_art_mm": 5.099999999999999,
+      "hole_to_edge_mm": 4.175281179917225
+    },
+    "mini_logo": {
+      "art_mm": [
+        16.25272769203772,
+        18
+      ],
+      "acrylic_mm": [
+        23.401401456025077,
+        34.84961710505546
+      ],
+      "art_to_cut_mm": 3.576674480962463,
+      "hole_to_art_mm": 5.1,
+      "hole_to_edge_mm": 4.180237946451519
+    },
+    "solo_logo": {
+      "art_mm": [
+        27.087879486729534,
+        30
+      ],
+      "acrylic_mm": [
+        34.23116893111854,
+        46.850622171359795
+      ],
+      "art_to_cut_mm": 3.5756565278809274,
+      "hole_to_art_mm": 5.1,
+      "hole_to_edge_mm": 4.18023794645152
+    }
+  },
+  "checks": {
+    "quantity": 16,
+    "closed_cut_paths": 32,
+    "ai_layers": [
+      "3_ARTWORK",
+      "2_CORNER_REFERENCE",
+      "1_LASER_CUT"
+    ],
+    "png_pixels": [
+      3543,
+      1890
+    ],
+    "png_ppi": [
+      299.9994,
+      299.9994
+    ],
+    "blue_reference_four_sides": true,
+    "physical_print_cut_test": false
+  }
+}

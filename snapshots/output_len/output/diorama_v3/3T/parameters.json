@@ -1,0 +1,55 @@
+{
+  "base_mm": [
+    100,
+    36
+  ],
+  "base_corner_radius_mm": 6,
+  "garam_art_height_mm": 65,
+  "danpaengi_height_ratio": 0.3792134831460674,
+  "clear_border_mm": 2.5,
+  "tab_width_mm": 18,
+  "tab_bottom_clearance_mm": 0.4,
+  "slot_length_mm": 18.8,
+  "slot_corner_radius_mm": 0.35,
+  "mount_centers_mm": {
+    "garam": [
+      34,
+      14
+    ],
+    "danpaengi": [
+      80,
+      24
+    ]
+  },
+  "fit_test_offsets_mm": [
+    -0.4,
+    -0.3,
+    -0.2,
+    -0.1,
+    0,
+    0.1,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "presets": [
+    {
+      "name": "3T",
+      "part_thickness_mm": 3,
+      "base_thickness_mm": 3,
+      "slot_width_mm": 3
+    },
+    {
+      "name": "5T",
+      "part_thickness_mm": 5,
+      "base_thickness_mm": 5,
+      "slot_width_mm": 5
+    }
+  ],
+  "selected_preset": {
+    "name": "3T",
+    "part_thickness_mm": 3,
+    "base_thickness_mm": 3,
+    "slot_width_mm": 3
+  }
+}

@@ -1,0 +1,270 @@
+[
+  {
+    "design": "full-logo-diorama-v3-main",
+    "quantity": 1,
+    "pieces": 2,
+    "preset": {
+      "name": "3T",
+      "part_thickness_mm": 3,
+      "base_thickness_mm": 3,
+      "slot_width_mm": 3
+    },
+    "canvas_mm": [
+      200,
+      140
+    ],
+    "base_mm": [
+      140,
+      38
+    ],
+    "nominal_art_border_mm": 2.5,
+    "art_mm": [
+      160,
+      56.3294797736437
+    ],
+    "source_aspect_ratio": 2.840430990006777,
+    "art_aspect_ratio": 2.8404309900064666,
+    "original_paths_unchanged": 38,
+    "stand_width_mm": 164.9999208896354,
+    "stand_height_above_base_mm": 61.32946586077442,
+    "assembled_height_mm": 64.32946586077442,
+    "minimum_art_to_cut_mm": 2.4996952493508915,
+    "minimum_piece_gap_mm": 17.070534139225586,
+    "tab_count": 2,
+    "tab_width_mm": 18,
+    "tab_depth_mm": 2.6,
+    "tab_center_spacing_mm": 84,
+    "slot_length_mm": 18.8,
+    "slot_width_mm": 3,
+    "slot_minimum_edge_margin_mm": 17.5,
+    "cut_closed_paths": 4,
+    "slots_cut_before_outer_profiles": true,
+    "ai_layers": [
+      "3_ARTWORK",
+      "2_CORNER_REFERENCE",
+      "1_LASER_CUT"
+    ],
+    "rgba_print_300ppi": true,
+    "blue_reference_four_sides": true,
+    "unprinted_tabs_and_base": true,
+    "physical_fit_test": false,
+    "fit_status": "UNTESTED: path dimensions without kerf compensation; test same material and settings first.",
+    "fit_test_slots": [
+      {
+        "id": 1,
+        "path_slot_width_mm": 2.6,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          24,
+          17
+        ]
+      },
+      {
+        "id": 2,
+        "path_slot_width_mm": 2.7,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          60,
+          17
+        ]
+      },
+      {
+        "id": 3,
+        "path_slot_width_mm": 2.8,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          96,
+          17
+        ]
+      },
+      {
+        "id": 4,
+        "path_slot_width_mm": 2.9,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          24,
+          36
+        ]
+      },
+      {
+        "id": 5,
+        "path_slot_width_mm": 3,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          60,
+          36
+        ]
+      },
+      {
+        "id": 6,
+        "path_slot_width_mm": 3.1,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          96,
+          36
+        ]
+      },
+      {
+        "id": 7,
+        "path_slot_width_mm": 3.2,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          24,
+          55
+        ]
+      },
+      {
+        "id": 8,
+        "path_slot_width_mm": 3.3,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          60,
+          55
+        ]
+      },
+      {
+        "id": 9,
+        "path_slot_width_mm": 3.4,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          96,
+          55
+        ]
+      }
+    ]
+  },
+  {
+    "design": "full-logo-diorama-v3-main",
+    "quantity": 1,
+    "pieces": 2,
+    "preset": {
+      "name": "5T",
+      "part_thickness_mm": 5,
+      "base_thickness_mm": 5,
+      "slot_width_mm": 5
+    },
+    "canvas_mm": [
+      200,
+      140
+    ],
+    "base_mm": [
+      140,
+      38
+    ],
+    "nominal_art_border_mm": 2.5,
+    "art_mm": [
+      160,
+      56.3294797736437
+    ],
+    "source_aspect_ratio": 2.840430990006777,
+    "art_aspect_ratio": 2.8404309900064666,
+    "original_paths_unchanged": 38,
+    "stand_width_mm": 164.9999208896354,
+    "stand_height_above_base_mm": 61.32946586077442,
+    "assembled_height_mm": 66.32946586077442,
+    "minimum_art_to_cut_mm": 2.4996952493508915,
+    "minimum_piece_gap_mm": 15.070534139225588,
+    "tab_count": 2,
+    "tab_width_mm": 18,
+    "tab_depth_mm": 4.6,
+    "tab_center_spacing_mm": 84,
+    "slot_length_mm": 18.8,
+    "slot_width_mm": 5,
+    "slot_minimum_edge_margin_mm": 16.5,
+    "cut_closed_paths": 4,
+    "slots_cut_before_outer_profiles": true,
+    "ai_layers": [
+      "3_ARTWORK",
+      "2_CORNER_REFERENCE",
+      "1_LASER_CUT"
+    ],
+    "rgba_print_300ppi": true,
+    "blue_reference_four_sides": true,
+    "unprinted_tabs_and_base": true,
+    "physical_fit_test": false,
+    "fit_status": "UNTESTED: path dimensions without kerf compensation; test same material and settings first.",
+    "fit_test_slots": [
+      {
+        "id": 1,
+        "path_slot_width_mm": 4.6,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          24,
+          17
+        ]
+      },
+      {
+        "id": 2,
+        "path_slot_width_mm": 4.7,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          60,
+          17
+        ]
+      },
+      {
+        "id": 3,
+        "path_slot_width_mm": 4.8,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          96,
+          17
+        ]
+      },
+      {
+        "id": 4,
+        "path_slot_width_mm": 4.9,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          24,
+          36
+        ]
+      },
+      {
+        "id": 5,
+        "path_slot_width_mm": 5,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          60,
+          36
+        ]
+      },
+      {
+        "id": 6,
+        "path_slot_width_mm": 5.1,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          96,
+          36
+        ]
+      },
+      {
+        "id": 7,
+        "path_slot_width_mm": 5.2,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          24,
+          55
+        ]
+      },
+      {
+        "id": 8,
+        "path_slot_width_mm": 5.3,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          60,
+          55
+        ]
+      },
+      {
+        "id": 9,
+        "path_slot_width_mm": 5.4,
+        "path_slot_length_mm": 18.8,
+        "center_mm": [
+          96,
+          55
+        ]
+      }
+    ]
+  }
+]

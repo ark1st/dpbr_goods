@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "board_mm": [
+        800.0000227777778,
+        500.00002305555546
+      ],
+      "layers": [
+        "3_ARTWORK",
+        "2_REFERENCE",
+        "1_LASER_CUT"
+      ],
+      "piece_count": 149,
+      "closed_cut_paths": 298,
+      "min_gap_mm": 3.4779120807743626,
+      "png_px": [
+        9449,
+        5906
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "png_has_transparency": true,
+      "cmyk_tiff_icc": true
+    },
+    {
+      "board_mm": [
+        800.0000227777778,
+        599.9999994444444
+      ],
+      "layers": [
+        "3_ARTWORK",
+        "2_REFERENCE",
+        "1_LASER_CUT"
+      ],
+      "piece_count": 182,
+      "closed_cut_paths": 364,
+      "min_gap_mm": 3.4779120807743626,
+      "png_px": [
+        9449,
+        7087
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "png_has_transparency": true,
+      "cmyk_tiff_icc": true
+    },
+    {
+      "shirt_png_px": [
+        827,
+        827
+      ],
+      "shirt_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "shirt_alpha": [
+        0,
+        255
+      ]
+    }
+  ],
+  "warnings": [
+    "Mascots are manually reconstructed vectors; not original mascot AI.",
+    "800x600 requires confirmation of machine/table/fixture capacity.",
+    "CMYK TIFF is opaque; use PNG alpha for white underbase.",
+    "Physical print/cut test not performed."
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "file": "01_평면인쇄_에셋/01_후면_별밤_달_RGB.png",
+    "role": "flat_background",
+    "width_px": 2286,
+    "height_px": 1370,
+    "mode": "RGB",
+    "sha256": "dbbd8b9eeec505d65fbaf0d07651ff72aa3340c87f7fcd83734ea4f3d80f2896"
+  },
+  {
+    "file": "01_평면인쇄_에셋/02_중경_산맥_구름_RGBA.png",
+    "role": "transparent",
+    "width_px": 1448,
+    "height_px": 615,
+    "mode": "RGBA",
+    "sha256": "a8a78c7c791d9473ccaa01fa4a4272148e9b02e1a064913c9db13ca0d679e285"
+  },
+  {
+    "file": "01_평면인쇄_에셋/03_왼쪽_매화_RGBA.png",
+    "role": "transparent",
+    "width_px": 1012,
+    "height_px": 1254,
+    "mode": "RGBA",
+    "sha256": "4dd9cd2963a8950102d2dfec7b12d7d56359830f8e946188b5aa83efebd09806"
+  },
+  {
+    "file": "01_평면인쇄_에셋/04_오른쪽_매화_RGBA.png",
+    "role": "transparent",
+    "width_px": 1192,
+    "height_px": 1174,
+    "mode": "RGBA",
+    "sha256": "90e9d0666886044b5151a584b6a272c3f91f49021cbb136b3835efd65e25c025"
+  },
+  {
+    "file": "01_평면인쇄_에셋/05_뱀_수호령_RGBA.png",
+    "role": "transparent",
+    "width_px": 1142,
+    "height_px": 879,
+    "mode": "RGBA",
+    "sha256": "55748996a49f1a4e1d6060b585ef46a9373ad4066f62ee15ae5473594252eb40"
+  },
+  {
+    "file": "01_평면인쇄_에셋/06_자캐_검사_발디테일최종_RGBA.png",
+    "role": "transparent",
+    "width_px": 1254,
+    "height_px": 1254,
+    "mode": "RGBA",
+    "sha256": "9c3bc091466922b2076d977648d468c08f5a67b7e493aea96d867db9a3ea828f"
+  },
+  {
+    "file": "02_베이스_디자인참고만/A_베이스_평면_장식문양_참고.png",
+    "role": "reference_only",
+    "width_px": 2200,
+    "height_px": 270,
+    "mode": "RGBA",
+    "sha256": "1288c601ee19cc063d4afd2263abb2d6f4f559134e0d3f11b90b02de5f0922de"
+  },
+  {
+    "file": "02_베이스_디자인참고만/B_베이스_색감_참고.png",
+    "role": "reference_only",
+    "width_px": 2200,
+    "height_px": 470,
+    "mode": "RGBA",
+    "sha256": "5766336171e06a1648dbb7ae656761d4b5dce275b631c2fb2c03ba449326ff44"
+  }
+]

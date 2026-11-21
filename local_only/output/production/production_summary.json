@@ -1,0 +1,40 @@
+{
+  "shirt": {
+    "canvas_mm": [
+      70,
+      70
+    ],
+    "art_mm": [
+      63.205052135702246,
+      70
+    ]
+  },
+  "boards": {
+    "500": {
+      "counts": {
+        "logo_symbol": 50,
+        "garam": 49,
+        "danpaengi": 50
+      },
+      "total": 149,
+      "min_gap_mm": 3.4779120807743626,
+      "material_utilization": 0.5837246122643434,
+      "margin_mm": 8,
+      "hole_diameter_mm": 3,
+      "art_clearance_mm": 1.8
+    },
+    "600": {
+      "counts": {
+        "logo_symbol": 61,
+        "garam": 60,
+        "danpaengi": 61
+      },
+      "total": 182,
+      "min_gap_mm": 3.4779120807743626,
+      "material_utilization": 0.5944442545695438,
+      "margin_mm": 8,
+      "hole_diameter_mm": 3,
+      "art_clearance_mm": 1.8
+    }
+  }
+}

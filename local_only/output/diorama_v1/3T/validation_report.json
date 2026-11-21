@@ -1,0 +1,129 @@
+{
+  "preset": {
+    "name": "3T",
+    "part_thickness_mm": 3,
+    "base_thickness_mm": 3,
+    "slot_width_mm": 3
+  },
+  "canvas_mm": [
+    220,
+    150
+  ],
+  "base_mm": [
+    120,
+    65
+  ],
+  "pieces": 3,
+  "cut_closed_paths": 5,
+  "hole_paths_first": true,
+  "hole_count": 2,
+  "tab_width_mm": 18,
+  "tab_depth_mm": 2.6,
+  "slot_length_mm": 18.8,
+  "slot_width_mm": 3,
+  "dimensions_are": "cut path centerlines; no kerf compensation",
+  "fit_status": "UNTESTED - cut fit coupon from the same sheets first",
+  "physical_fit_test": false,
+  "minimum_piece_gap_mm": 9.429466665083737,
+  "ai_layers": [
+    "3_ARTWORK",
+    "2_CORNER_REFERENCE",
+    "1_LASER_CUT"
+  ],
+  "blue_reference_four_sides": true,
+  "unprinted_tabs_and_slots": true,
+  "slot_ink_clearance_checked_mm": 1.5,
+  "assets": {
+    "garam": {
+      "art_height_mm": 65,
+      "minimum_art_to_cut_mm": 3.584346929344687
+    },
+    "danpaengi": {
+      "art_height_mm": 24.64887640449438,
+      "minimum_art_to_cut_mm": 3.5852280102291583
+    }
+  },
+  "fit_test_slots": [
+    {
+      "id": 1,
+      "path_slot_width_mm": 2.6,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        17
+      ]
+    },
+    {
+      "id": 2,
+      "path_slot_width_mm": 2.7,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        17
+      ]
+    },
+    {
+      "id": 3,
+      "path_slot_width_mm": 2.8,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        17
+      ]
+    },
+    {
+      "id": 4,
+      "path_slot_width_mm": 2.9,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        36
+      ]
+    },
+    {
+      "id": 5,
+      "path_slot_width_mm": 3,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        36
+      ]
+    },
+    {
+      "id": 6,
+      "path_slot_width_mm": 3.1,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        36
+      ]
+    },
+    {
+      "id": 7,
+      "path_slot_width_mm": 3.2,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        55
+      ]
+    },
+    {
+      "id": 8,
+      "path_slot_width_mm": 3.3,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        55
+      ]
+    },
+    {
+      "id": 9,
+      "path_slot_width_mm": 3.4,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        55
+      ]
+    }
+  ]
+}

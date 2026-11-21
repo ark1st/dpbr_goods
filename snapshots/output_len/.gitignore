@@ -1,0 +1,15 @@
+# Production artifacts are committed only on the output branch.
+/output/
+/tmp/
+/.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+# Original working-folder copies and superseded generators stay local.
+/DBPR_LOGO/
+/scripts/build_goods.py
+/scripts/build_goods_v2.py
+/scripts/finish_package.py
+# WSL/Windows web-zone metadata must never enter the repo.
+*:Zone.Identifier

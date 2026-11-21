@@ -1,0 +1,17 @@
+{
+  "aing": {
+    "source": "user attachment",
+    "method": "built-in imagegen restoration accepted by user",
+    "prompt": "Use case: precise-object-edit / faithful pixel graphic restoration. Edit target is this exact MapleStory Aing face. Produce a crisp high-resolution transparent PNG of EXACTLY the same pixel face, no head silhouette, no text, no T-shirt mockup. Preserve the pixel-grid construction, the positions and relative sizes of both eyebrows, both black eyes, all grayscale highlight blocks, and the small W-shaped pixel mouth. Square hard pixel edges, no blur, no rounded corners, no anti-aliased cartoon redraw, no added eyelashes or cheeks. Remove only the white outer background; the two small white square eye highlights should remain opaque white. Keep substantial original blank space around the face within a square canvas. Both eyes identical in size, each has the same left-side white square highlight and lower-right dark/medium gray stepped reflections as the reference. All pixel blocks must align on one square grid. Restore detail by crisp geometric edges, not invented extra pixels. Highest available resolution."
+  },
+  "changseop": {
+    "source_page": "https://soundcloud.com/pp3arbjmwn0p",
+    "image_url": "https://i1.sndcdn.com/avatars-xh80NhoKyDQxTmWG-lPgMhQ-t1080x1080.jpg",
+    "downloaded_pixels": [
+      1080,
+      1080
+    ],
+    "method": "non-generative resampling only; rejected generated portrait excluded",
+    "user_constraint": "Do not use imagegen for Changseop; preserve original soft light and expression"
+  }
+}

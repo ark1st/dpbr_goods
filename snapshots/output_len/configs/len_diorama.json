@@ -1,0 +1,27 @@
+{
+  "revision": 6,
+  "product": "Len Diorama NEW V1",
+  "concept_title": "달빛과 매화, 그리고 뱀의 수호",
+  "finished_size_mm": {"width": 275, "height": 105.2, "depth": 60},
+  "base_mm": [275, 60],
+  "base_corner_radius_mm": 6,
+  "board_mm": [320, 370],
+  "clear_border_mm": 2.5,
+  "tab_width_mm": 18,
+  "tab_bottom_clearance_mm": 0.4,
+  "slot_length_mm": 18.8,
+  "slot_corner_radius_mm": 0.35,
+  "fit_test_offsets_mm": [-0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4],
+  "pieces": [
+    {"id": "sky", "file_prefix": "01_", "art_height_mm": 97.7, "crop_y_frac": [0.0, 0.65], "corner_radius_mm": 8, "mounts_mm": [[112.5, 50], [162.5, 50]], "board_xy_mm": [10.5, 8]},
+    {"id": "mountains", "file_prefix": "02_", "art_height_mm": 52.0, "mounts_mm": [[102.5, 40], [172.5, 40]], "board_xy_mm": [10.5, 218.5]},
+    {"id": "plum_left", "file_prefix": "03_", "art_height_mm": 72.0, "mounts_mm": [[31, 30]], "board_xy_mm": [96, 124]},
+    {"id": "plum_right", "file_prefix": "04_", "art_height_mm": 60.0, "mounts_mm": [[240, 30]], "board_xy_mm": [151, 218.5]},
+    {"id": "serpent", "file_prefix": "05_", "art_height_mm": 50.0, "mounts_mm": [[95, 20]], "board_xy_mm": [164, 124]},
+    {"id": "character", "file_prefix": "캐릭", "art_height_mm": 76.0, "mounts_mm": [[170, 10]], "board_xy_mm": [10.5, 124]}
+  ],
+  "presets": [
+    {"name": "3T", "part_thickness_mm": 3, "base_thickness_mm": 3, "slot_width_mm": 3},
+    {"name": "5T", "part_thickness_mm": 5, "base_thickness_mm": 5, "slot_width_mm": 5}
+  ]
+}

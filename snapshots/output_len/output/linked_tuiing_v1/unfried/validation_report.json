@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "id": "unfried",
+    "name": "안튀잉",
+    "document_image": 14
+  },
+  "canvas_mm": [
+    55,
+    75
+  ],
+  "quantity": 1,
+  "art_mm": [
+    30,
+    38.36065573770492
+  ],
+  "acrylic_mm": [
+    35.0,
+    57.36062227162232
+  ],
+  "holes": 2,
+  "hole_diameter_mm": 4,
+  "hole_centers_mm": [
+    [
+      27.5,
+      13.319672131147541
+    ],
+    [
+      27.5,
+      61.68032786885246
+    ]
+  ],
+  "nominal_art_border_mm": 2.5,
+  "measured_art_border_mm": 2.4986422365466296,
+  "hole_to_edge_mm": [
+    2.4999163347935,
+    2.4999163347934954
+  ],
+  "hole_to_art_mm": [
+    3.0060431144454762,
+    3.0
+  ],
+  "closed_cut_paths": 3,
+  "cut_stroke_mm": 0.001,
+  "source": {
+    "file": "unfried_original.png",
+    "sha256": "d9e2fb9a54dc5980ceaa3546ead7137b73706f1a4f757b562d8edb9e4f477070",
+    "source_pixels": [
+      308,
+      376
+    ],
+    "original_pixel_grid": [
+      77,
+      94
+    ],
+    "cropped_pixel_grid": [
+      61,
+      78
+    ],
+    "original_bbox_px": [
+      32,
+      32,
+      276,
+      344
+    ],
+    "rgba_colors": 77,
+    "pixel_run_roundtrip_exact": true,
+    "alpha_preserved": true
+  },
+  "source_aspect_ratio_preserved": true,
+  "no_generative_edits": true,
+  "physical_assembly_test": false
+}

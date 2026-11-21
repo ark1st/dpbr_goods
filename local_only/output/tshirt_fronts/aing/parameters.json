@@ -1,0 +1,26 @@
+{
+  "art_mm": [
+    320,
+    233.84933333333333
+  ],
+  "source_pixels": [
+    776,
+    567
+  ],
+  "approved_imagegen_version": true,
+  "resampling": "NEAREST, preserve square pixel blocks",
+  "canvas_mm": [
+    355.6,
+    406.4
+  ],
+  "pixels": [
+    4200,
+    4800
+  ],
+  "ppi": 300,
+  "origin_mm": [
+    17.78,
+    48.006
+  ],
+  "shirt": "white or light color"
+}

@@ -1,0 +1,26 @@
+name: Laser path regression and published plate checks
+on:
+  push:
+    branches: [main, output_len]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  laser-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - name: Inspect every published PDF and AI cut plate
+        if: hashFiles('output/combined_diorama_v3/3T/02_COMBINED_MASTER.ai') != ''
+        run: python scripts/verify_laser_paths.py --pdf-only
+      - name: Compare A3 source contours and package identity
+        if: hashFiles('output/a3_release/manifest.json') != ''
+        run: python scripts/verify_a3_release.py --skip-native

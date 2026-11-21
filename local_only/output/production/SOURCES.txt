@@ -1,0 +1,12 @@
+﻿Sources and preparation notes
+
+User supplied guide: E:/OneDrive - gc.gachon.ac.kr/문서/카카오톡 받은 파일/2026-11-16_scan_QuickScanApp.com.pdf
+Logo: DBPR_LOGO/1. logo/단바로고배포용.ai (7 original symbol paths, wordmark excluded)
+Mascots: https://ark1st.notion.site/4199cd9d18388078b431c5573819102d
+Card: image block 4199cd9d-1838-804c-92f8-e348452f533b (1080x1080)
+Garam and Danpaengi artwork is a manual vector reconstruction from the card, not original mascot AI.
+VectorCraft installed version 0.24.1 used for real .ai/.vectorcraft exports and 300ppi raster exports.
+Official docs: https://github.com/storytold/vectorcraft/blob/main/docs/mcp.md
+Production date: 2026-11-19 (Thursday), Asia/Seoul.
+No white-ink spot plate is encoded. Generate from the transparent PRINT PNG alpha in the equipment RIP.
+CMYK TIFF includes a generic ICC and has an opaque white background; it is an optional color-conversion fallback.

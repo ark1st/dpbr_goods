@@ -1,0 +1,101 @@
+{
+  "revision": 4,
+  "nominal_art_border_mm": 2.5,
+  "quantity": 16,
+  "set_count": 4,
+  "standalone_logos": 4,
+  "canvas_mm": [
+    300,
+    160
+  ],
+  "source_measurement": {
+    "garam_bbox_px": [
+      551,
+      579,
+      311,
+      356
+    ],
+    "danpaengi_bbox_px": [
+      884,
+      794,
+      155,
+      135
+    ],
+    "height_ratio": 0.3792134831460674
+  },
+  "min_piece_gap_mm": 6.791317640461017,
+  "hole_diameter_mm": 4,
+  "assets": {
+    "garam": {
+      "art_mm": [
+        48.04775280898876,
+        55.0
+      ],
+      "acrylic_mm": [
+        53.00367230182455,
+        66.9559200748208
+      ],
+      "art_to_cut_mm": 2.498639497755339,
+      "hole_to_art_mm": 3.0,
+      "hole_to_edge_mm": 2.4999529382064996
+    },
+    "danpaengi": {
+      "art_mm": [
+        23.946629213483146,
+        20.85674157303371
+      ],
+      "acrylic_mm": [
+        28.90260967448777,
+        32.81263756961151
+      ],
+      "art_to_cut_mm": 2.4986585641183114,
+      "hole_to_art_mm": 3.0,
+      "hole_to_edge_mm": 2.499952938206499
+    },
+    "mini_logo": {
+      "art_mm": [
+        16.25272769203772,
+        18
+      ],
+      "acrylic_mm": [
+        21.208682359538972,
+        29.955980807690203
+      ],
+      "art_to_cut_mm": 2.4980116997746666,
+      "hole_to_art_mm": 3.0000000000000004,
+      "hole_to_edge_mm": 2.4999529382065004
+    },
+    "solo_logo": {
+      "art_mm": [
+        27.087879486729534,
+        30
+      ],
+      "acrylic_mm": [
+        32.04383415423079,
+        41.95593772420518
+      ],
+      "art_to_cut_mm": 2.4975588204379155,
+      "hole_to_art_mm": 3.0000000000000004,
+      "hole_to_edge_mm": 2.4999529382065
+    }
+  },
+  "checks": {
+    "quantity": 16,
+    "closed_cut_paths": 32,
+    "ai_layers": [
+      "3_ARTWORK",
+      "2_CORNER_REFERENCE",
+      "1_LASER_CUT"
+    ],
+    "png_pixels": [
+      3543,
+      1890
+    ],
+    "png_ppi": [
+      299.9994,
+      299.9994
+    ],
+    "blue_reference_four_sides": true,
+    "physical_print_cut_test": false
+  }
+}
