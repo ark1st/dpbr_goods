@@ -30,6 +30,7 @@ def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
     wanted=CONFIG['current_groups']
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
+    assert CONFIG['include_test_pieces'] is False and manifest['test_pieces_included'] is False
     records=[]
     for group,pages in manifest['groups'].items():
         assert sum(p['pieces'] for p in pages)==wanted[group]
@@ -70,6 +71,7 @@ def main(check_zips=True,check_native=True):
                             'max_export_deviation_mm':changes,'png':images,
                             'sha256':{p.name:artifact_sha256(p) for p in files}})
         assert len(ids)==len(set(ids)),group
+        assert not any('fit' in x.lower() or 'test' in x.lower() for x in ids),(group,'Test pieces are prohibited')
         if 'extra' in group:
             assert protected_count==30
             assert set(CONFIG['linked_allocation']['02_extra_sheet']).issubset(ids)
@@ -78,7 +80,6 @@ def main(check_zips=True,check_native=True):
             t=group.split('/')[-1]
             assert sum(x.startswith(f'len_{t}_') for x in ids)==7
             assert sum(x.startswith(f'len_dot_{t}_') for x in ids)==1
-            assert sum(x.startswith(f'len_fit_{t}_') for x in ids)==2
             assert set(CONFIG['linked_allocation']['05_len']).issubset(ids)
         # Exactly four assigned keyrings on each page, never duplicates or extra designs.
         keyids=sum(CONFIG['linked_allocation'].values(),[])
@@ -99,7 +100,7 @@ def main(check_zips=True,check_native=True):
             packages.append({'file':file.relative_to(out).as_posix(),'bytes':file.stat().st_size,'sha256':artifact_sha256(file)})
         assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
-            'source_artwork_scale':1,'physical_cut_test':False,
+            'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
                            'Only Cadena first-row four panels and one original base are selected; other Ascent pieces are retired from this print run.',
                            'Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.',

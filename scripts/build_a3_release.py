@@ -341,9 +341,6 @@ def inputs(only=None):
         folder=ROOT/'output/len_diorama_v1'/t
         master=folder/'02_MASTER.ai';art=extract_layers(master,['3_ARTWORK']);cut=fitz.open(folder/'03_CUT_ONLY.pdf')
         pieces=pieces_from(cut,art,None,f'len_{t}',smooth=True);assert len(pieces)==7
-        fit=folder/'04_FIT_TEST_MASTER.ai';fc=extract_layers(fit,['1_LASER_CUT']);fa=extract_layers(fit,['2_LABELS_PRINT_OR_COPY_BY_HAND'])
-        pieces+=pieces_from(fc,fa,None,f'len_fit_{t}',smooth=True)
-        assert len(pieces)==9
         dotfolder=ROOT/'output/len_diorama_dot_v1'/t
         dot=pieces_from(fitz.open(dotfolder/'03_CUT_ONLY.pdf'),extract_layers(dotfolder/'02_MASTER.ai',['3_ARTWORK']),None,f'len_dot_{t}',smooth=True)
         # Both source layouts put their character in the same upper-left cell.
@@ -367,11 +364,15 @@ def main():
     manifest_path=OUT/'manifest.json'
     manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {'canvas_mm':list(SIZE),'groups':{},'physical_cut_test':False}
     manifest['revision']=CONFIG['revision']
+    manifest['test_pieces_included']=False
+    manifest['superseded_releases']=CONFIG['superseded_releases']
     manifest['physical_pages_per_selected_thickness']=3
     manifest['retired_groups']=['03_linked_keyrings','04_ascent_original']
     for retired in manifest['retired_groups']:manifest['groups'].pop(retired,None)
     for name,pieces in inputs(args.only):
         if args.only and args.only not in name:continue
+        assert not CONFIG['include_test_pieces']
+        assert not any('fit' in p['id'].lower() or 'test' in p['id'].lower() for p in pieces)
         pages=pack(pieces)
         assert len(pages)==1,(name,'A3 sheet count regression')
         print('PLAN',name,len(pieces),len(pages),[len(p['placements']) for p in pages],flush=True)

@@ -9,7 +9,8 @@ from build_a3_release import pack,shifted_poly,SIZE,MARGIN,GAP
 class A3PackingTests(unittest.TestCase):
     def test_len_dot_and_four_keyrings_5t_still_fit_one_a3(self):
         sizes=json.loads((ROOT/'tests/fixtures/len_dot_linked_5t_sizes.json').read_text())
-        self.assertEqual(len(sizes),14)
+        self.assertEqual(len(sizes),12)
+        self.assertFalse(any('fit' in row['id'] or 'test' in row['id'] for row in sizes))
         pieces=[]
         for row in sizes:
             p=box(0,0,*row['size_mm'])

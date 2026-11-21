@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-21-compact-cadena-dot",
+  "revision": "A3-2026-11-21-no-test-pieces",
   "canvas_mm": [
     420,
     297
@@ -30,11 +30,6 @@
       "sha256": "17e98332f2dc22875aae42066cb6157f6e46bdf4351bee025e174cb6cbe45f71"
     },
     {
-      "file": "output/len_diorama_v1/3T/04_FIT_TEST_MASTER.ai",
-      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
-      "sha256": "4b20894394a8531d5558fd66ef8cd6fef166ead5e2c4c9f684d4035aef0a3abc"
-    },
-    {
       "file": "output/extra_sheet/5T/01_COMBINED_SHEET.pdf",
       "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
       "sha256": "b04c45b635b66f0e34e2875582cd2db4c90897af9cc31aba48ec14bbd118d152"
@@ -53,11 +48,6 @@
       "file": "output/len_diorama_v1/5T/03_CUT_ONLY.pdf",
       "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
       "sha256": "7d3a81f337aae24907ced9f196d7eb7e5aa7f53adc1f836b0b35198cfa2727c1"
-    },
-    {
-      "file": "output/len_diorama_v1/5T/04_FIT_TEST_MASTER.ai",
-      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
-      "sha256": "52988c6a692d6b030a535e5e9be69ecc52ed18db7dcc5ad91ef24a102bfc4bf8"
     },
     {
       "file": "output/linked_tuiing_v1/tuiing/02_MASTER.ai",
@@ -130,11 +120,6 @@
       "sha256": "68a718acb43c40c16e2d6564e5a689a14344348db3e3c7ea51d25ebc9d2c792f"
     },
     {
-      "file": "output/len_diorama_dot_v1/3T/04_FIT_TEST_MASTER.ai",
-      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
-      "sha256": "e89a614fb99927de9d49a24493783444560493fc300f0d2ffeb3efcc45445b32"
-    },
-    {
       "file": "output/len_diorama_dot_v1/5T/02_MASTER.ai",
       "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
       "sha256": "a10abd0e02561c96250b9aa0587b93f5185852318177946fc054a75b0299b69c"
@@ -143,11 +128,6 @@
       "file": "output/len_diorama_dot_v1/5T/03_CUT_ONLY.pdf",
       "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
       "sha256": "6d8ccb86727ac0989b200263069fb1471050d6278538ef69331cfb24134c87c6"
-    },
-    {
-      "file": "output/len_diorama_dot_v1/5T/04_FIT_TEST_MASTER.ai",
-      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
-      "sha256": "8aba89c061e75ad8252fe9f14e3f203c82bc9305acfce60036c04453773e8b1d"
     }
   ],
   "cadena_source_part_ids": [
@@ -161,8 +141,8 @@
     "02_extra_sheet/3T": 42,
     "02_extra_sheet/5T": 42,
     "04_ascent_cadena": 5,
-    "05_len/3T": 14,
-    "05_len/5T": 14
+    "05_len/3T": 12,
+    "05_len/5T": 12
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -181,5 +161,18 @@
       "burnt_01",
       "unfried_01"
     ]
-  }
+  },
+  "include_test_pieces": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    }
+  ]
 }
