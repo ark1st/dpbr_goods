@@ -1,0 +1,219 @@
+{
+  "canvas_mm": [
+    300,
+    175
+  ],
+  "rigid_placements": {
+    "main_logo": {
+      "name": "main_logo",
+      "angle": 0,
+      "tx": 10.649102607450812,
+      "ty": 10.652835335300738
+    },
+    "carabiner_D": {
+      "name": "carabiner_D",
+      "angle": 0,
+      "tx": 182.45337156028546,
+      "ty": 10.61556700278773
+    },
+    "carabiner_B": {
+      "name": "carabiner_B",
+      "angle": 180,
+      "tx": 274.1866105001918,
+      "ty": 55.65439451629274
+    },
+    "carabiner_C": {
+      "name": "carabiner_C",
+      "angle": 0,
+      "tx": 215.2586468632765,
+      "ty": 49.75474147610107
+    },
+    "carabiner_A": {
+      "name": "carabiner_A",
+      "angle": 0,
+      "tx": 158.25230103291463,
+      "ty": 56.925889355081495
+    },
+    "logo_base": {
+      "name": "logo_base",
+      "angle": 0,
+      "tx": 8.159999933137035,
+      "ty": 77.45999999999934
+    },
+    "garam": {
+      "name": "garam",
+      "angle": 90,
+      "tx": 242.815932203396,
+      "ty": 97.92465827104263
+    },
+    "gate_fit_coupon": {
+      "name": "gate_fit_coupon",
+      "angle": 0,
+      "tx": 8.16,
+      "ty": 118.85999999999895
+    },
+    "logo_keyring": {
+      "name": "logo_keyring",
+      "angle": 180,
+      "tx": 288.4994755542432,
+      "ty": 103.01233582299224
+    },
+    "mascot_base": {
+      "name": "mascot_base",
+      "angle": 0,
+      "tx": 63.35999987130403,
+      "ty": 118.85999999999895
+    },
+    "danpaengi": {
+      "name": "danpaengi",
+      "angle": 270,
+      "tx": 250.95999676494426,
+      "ty": 143.01254840747958
+    }
+  },
+  "mascot_config": {
+    "base_mm": [
+      100,
+      36
+    ],
+    "base_corner_radius_mm": 6,
+    "garam_art_height_mm": 65,
+    "danpaengi_height_ratio": 0.3792134831460674,
+    "clear_border_mm": 2.5,
+    "tab_width_mm": 18,
+    "tab_bottom_clearance_mm": 0.4,
+    "slot_length_mm": 18.8,
+    "slot_corner_radius_mm": 0.35,
+    "mount_centers_mm": {
+      "garam": [
+        34,
+        14
+      ],
+      "danpaengi": [
+        80,
+        24
+      ]
+    },
+    "fit_test_offsets_mm": [
+      -0.4,
+      -0.3,
+      -0.2,
+      -0.1,
+      0,
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "presets": [
+      {
+        "name": "3T",
+        "part_thickness_mm": 3,
+        "base_thickness_mm": 3,
+        "slot_width_mm": 3
+      },
+      {
+        "name": "5T",
+        "part_thickness_mm": 5,
+        "base_thickness_mm": 5,
+        "slot_width_mm": 5
+      }
+    ]
+  },
+  "logo_config": {
+    "art_width_mm": 160,
+    "base_mm": [
+      140,
+      38
+    ],
+    "base_corner_radius_mm": 5,
+    "clear_border_mm": 2.5,
+    "tab_width_mm": 18,
+    "tab_center_spacing_mm": 84,
+    "tab_bottom_clearance_mm": 0.4,
+    "slot_length_mm": 18.8,
+    "slot_corner_radius_mm": 0.35,
+    "canvas_mm": [
+      200,
+      140
+    ],
+    "layout_base_y_mm": 92,
+    "presets": [
+      {
+        "name": "3T",
+        "part_thickness_mm": 3,
+        "base_thickness_mm": 3,
+        "slot_width_mm": 3
+      },
+      {
+        "name": "5T",
+        "part_thickness_mm": 5,
+        "base_thickness_mm": 5,
+        "slot_width_mm": 5
+      }
+    ]
+  },
+  "carabiner_config": {
+    "revision": 2,
+    "hardware_external_mm": [
+      9,
+      23.5,
+      1
+    ],
+    "left_arm_shift_mm": [
+      -5.0,
+      -1.5
+    ],
+    "gate_location": "lower_left",
+    "samples": [
+      {
+        "id": "A",
+        "height_mm": 50,
+        "border_mm": 2.0,
+        "mount_diameter_mm": 1.2,
+        "mount_pitch_mm": 4.0
+      },
+      {
+        "id": "B",
+        "height_mm": 50,
+        "border_mm": 2.5,
+        "mount_diameter_mm": 1.4,
+        "mount_pitch_mm": 4.0
+      },
+      {
+        "id": "C",
+        "height_mm": 55,
+        "border_mm": 2.0,
+        "mount_diameter_mm": 1.6,
+        "mount_pitch_mm": 4.0
+      },
+      {
+        "id": "D",
+        "height_mm": 55,
+        "border_mm": 2.5,
+        "mount_diameter_mm": 1.4,
+        "mount_pitch_mm": 5.0
+      }
+    ],
+    "coupon_hole_diameters_mm": [
+      1.2,
+      1.4,
+      1.6
+    ],
+    "coupon_hole_pitches_mm": [
+      3.0,
+      4.0,
+      5.0
+    ],
+    "body_mounting_holes": "two laser-cut through holes per body; prototype dimensions pending physical fit",
+    "mount_edge_min_mm": 2.5,
+    "mount_print_clearance_mm": 0.25,
+    "physical_fit_verified": false
+  },
+  "selected_preset": {
+    "name": "3T",
+    "part_thickness_mm": 3,
+    "base_thickness_mm": 3,
+    "slot_width_mm": 3
+  }
+}
