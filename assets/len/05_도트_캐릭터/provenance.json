@@ -1,0 +1,135 @@
+{
+  "source": "assets/len/official_avatar_180.png",
+  "source_sha256": "f90790a7bd8789ba3019a1227a08cdb21b8c1dca26dc8e5342e1d8ebd60eecb4",
+  "figure_height_mm": 76.0,
+  "mm_per_px": 0.7238,
+  "keep_rule": "main component + components within 2.4 mm of it at print scale",
+  "kept_components": [
+    {
+      "label": 1,
+      "bbox_px": [
+        25,
+        56,
+        102,
+        105
+      ],
+      "area_px": 4612
+    },
+    {
+      "label": 2,
+      "bbox_px": [
+        100,
+        57,
+        12,
+        10
+      ],
+      "area_px": 86
+    }
+  ],
+  "removed_components": [
+    {
+      "label": 5,
+      "bbox_px": [
+        37,
+        69,
+        15,
+        15
+      ],
+      "area_px": 126
+    },
+    {
+      "label": 6,
+      "bbox_px": [
+        131,
+        82,
+        11,
+        11
+      ],
+      "area_px": 89
+    },
+    {
+      "label": 8,
+      "bbox_px": [
+        24,
+        101,
+        11,
+        11
+      ],
+      "area_px": 89
+    },
+    {
+      "label": 9,
+      "bbox_px": [
+        135,
+        102,
+        11,
+        11
+      ],
+      "area_px": 81
+    },
+    {
+      "label": 4,
+      "bbox_px": [
+        53,
+        66,
+        9,
+        11
+      ],
+      "area_px": 67
+    },
+    {
+      "label": 7,
+      "bbox_px": [
+        125,
+        98,
+        9,
+        11
+      ],
+      "area_px": 67
+    },
+    {
+      "label": 10,
+      "bbox_px": [
+        39,
+        109,
+        9,
+        9
+      ],
+      "area_px": 41
+    },
+    {
+      "label": 3,
+      "bbox_px": [
+        48,
+        63,
+        5,
+        5
+      ],
+      "area_px": 24
+    },
+    {
+      "label": 11,
+      "bbox_px": [
+        131,
+        111,
+        5,
+        5
+      ],
+      "area_px": 24
+    },
+    {
+      "label": 12,
+      "bbox_px": [
+        35,
+        117,
+        5,
+        5
+      ],
+      "area_px": 21
+    }
+  ],
+  "removed_count": 10,
+  "pixel_changes": "removed-component alpha zeroed only; every other pixel byte-identical to source",
+  "out": "assets/len/05_도트_캐릭터/캐릭터_도트.png",
+  "out_sha256": "70c351060303c880199395b00814eaffc249da3cfc7cf7650dd899f908819e70"
+}

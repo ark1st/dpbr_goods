@@ -10,6 +10,7 @@
 4. [신창섭 티셔츠 ·시안·DTG 인쇄 파일](tshirt_fronts/changseop/README.md)
 5. [마스코트·로고 키링 V4 ·16조각](production_v4/README.md)
 6. [연결형 튀잉4종 · 각각 별도 판](linked_tuiing_v1/README.md)
+7. [렌 아크릴 디오라마 DOT V1 · 캐릭터만 도트 아바타판 ·7조각](len_diorama_dot_v1/README.md)
 
 ## 단바 합본
 
@@ -45,6 +46,18 @@
 [티셔츠 ZIP](Tshirt_Fronts_Aing_Changseop_14x16in.zip)
 안내문 규격14×16인치,300ppi 투명 PNG. 흰색·밝은색 옷용.
 신창섭은 생성형 보정 없이 원본 분위기를 유지해 확대했습니다.
+
+## 렌 디오라마 DOT V1 (도트 캐릭터판)
+
+![조립 예상도](len_diorama_dot_v1/3T/preview/assembly.png)
+
+[전체 ZIP](Danpungbaram_Len_Diorama_DOT_V1_MAIN_7pcs_3T_5T.zip) ·
+[인쇄 PNG 3T](len_diorama_dot_v1/3T/01_PRINT_300ppi.png) · [5T](len_diorama_dot_v1/5T/01_PRINT_300ppi.png) ·
+[마스터 AI 3T](len_diorama_dot_v1/3T/02_MASTER.ai) · [5T](len_diorama_dot_v1/5T/02_MASTER.ai)
+
+NEW V1과 같은 구성(베이스 275×60mm·홈 8·깊이 행 5·7조각)에서 **캐릭터 판만 본인 캐릭터의 인게임 도트 아바타 렌더(official_avatar_180)로 교체**했습니다.
+도트 계단이 인쇄에서 그대로 보이도록 NEAREST 변환만 했고 재그림은 없습니다. 주 실루엣에서 2.4mm 이상 떨어진 장식 광점 10개는 절단선 밖이라 뺐습니다(알파만 0 처리, 나머지 픽셀 원본과 바이트 동일 — `assets/len/05_도트_캐릭터/provenance.json`), 머리 옆 광점 1개는 살렸습니다.
+참고용으로 퇴역한 len_diorama_v1 대지와 같은 형식입니다. 실물 끼움은 시험 전이며 `04_FIT_TEST`를 먼저 자르세요.
 
 ## 같은 부품의 개별 파일과 추가 자료
 

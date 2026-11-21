@@ -52,6 +52,8 @@ python scripts/build_combined_diorama.py
 python scripts/build_extra_sheet_38.py
 python scripts/build_tshirt_fronts.py
 python scripts/build_linked_tuiing.py
+python scripts/build_len_diorama.py
+python scripts/build_len_diorama_dot.py
 python scripts/verify_release.py
 ```
 
