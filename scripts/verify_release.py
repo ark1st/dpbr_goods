@@ -84,6 +84,8 @@ def main():
           (f'diorama_v3/{t}/02_MASTER.ai',(200,110),5),
           (f'logo_diorama_v3/{t}/02_MASTER.ai',(220,155),4),
           (f'combined_diorama_v3/{t}/02_COMBINED_MASTER.ai',combined_dim,42)])
+    for t in ['3T','5T']:
+        cases.append((f'len_diorama_v1/{t}/02_MASTER.ai',(320,370),15))
     for rel,dim,count in cases:
         if 'logo_diorama' in rel:
             with fitz.open(OUT/rel) as d:dim=(d[0].rect.width/MM,d[0].rect.height/MM)
@@ -107,11 +109,23 @@ def main():
         rep=json.loads((OUT/f'linked_tuiing_v1/{name}/validation_report.json').read_text(encoding='utf-8'))
         assert rep['quantity']==1 and rep['holes']==2 and rep['closed_cut_paths']==3
         assert rep['source']['pixel_run_roundtrip_exact'] and rep['source_aspect_ratio_preserved']
+    for t in ['3T','5T']:
+        rel=f'len_diorama_v1/{t}'
+        report['png'].append(check_png(OUT/f'{rel}/01_PRINT_300ppi.png',(320,370)))
+        rep=json.loads((OUT/rel/'validation_report.json').read_text(encoding='utf-8'))
+        assert rep['pieces']==7 and rep['cut_closed_paths']==15 and rep['slot_count']==8
+        assert rep['base_mm']==[275,60] and rep['slot_ink_clearance_checked_mm']==1.5
+        assert rep['same_row_standing_clearance_mm']>=2
+        assert rep['art_overhang_beyond_base_mm'].get('serpent',0)<=12
+        assert all(v['redrawn'] is False for v in rep['assets'].values())
+        assert len(rep['assets'])==6 and all(v['sha256'] for v in rep['assets'].values())
     # Review render sheets, including every modified PDF guide page.
+    for stale in QA.glob('len-guide-*.png'):stale.unlink()
     pages=[]
     for rel,slug in [('production_v4/00_REVISION_GUIDE.pdf','keyring-guide'),
                      ('diorama_v3/00_ASSEMBLY_GUIDE.pdf','mascot-guide'),
                      ('logo_diorama_v3/00_ASSEMBLY_GUIDE.pdf','logo-guide'),
+                     ('len_diorama_v1/00_ASSEMBLY_GUIDE.pdf','len-guide'),
                      ('extra_sheet/3T/01_COMBINED_SHEET.pdf','extra-3t'),
                      ('extra_sheet/5T/01_COMBINED_SHEET.pdf','extra-5t'),
                      ('tshirt_fronts/aing/03_ACTUAL_SIZE.pdf','aing'),
@@ -128,7 +142,7 @@ def main():
     for filename in ['Danpungbaram_V4_SMALL_BATCH_16pcs.zip','Danpungbaram_Diorama_V3_3T_5T.zip',
                      'Danpungbaram_Logo_Diorama_V3_MAIN_3T_5T.zip','Danpungbaram_Combined_Diorama_V3_TRIALS_11pcs.zip',
                      'Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tshirt_Fronts_Aing_Changseop_14x16in.zip',
-                     'Tuiing_Linked_4_Separate_Plates.zip']:
+                     'Tuiing_Linked_4_Separate_Plates.zip','Danpungbaram_Len_Diorama_V1_MAIN_7pcs_3T_5T.zip']:
         p=OUT/filename
         with zipfile.ZipFile(p) as z:assert z.testzip() is None
         assert p.stat().st_size<100*1024*1024,(filename,p.stat().st_size)

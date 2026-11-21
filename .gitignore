@@ -11,3 +11,5 @@ Thumbs.db
 /scripts/build_goods.py
 /scripts/build_goods_v2.py
 /scripts/finish_package.py
+# WSL/Windows web-zone metadata must never enter the repo.
+*:Zone.Identifier
