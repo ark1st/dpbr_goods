@@ -20,7 +20,8 @@ from svgpathtools import parse_path, Line, CubicBezier
 from laser_paths import audit_path, cut_path, flatten_cubic
 from verify_laser_paths import contours
 from vector_utils import runvc, svg_doc, layer
-from build_extra_sheet import mark_pdf_layers
+from pdf_layers import mark_pdf_layers
+from source_cache import source_path, restore_inputs
 from nest_contours import rotated,contour_nest
 
 MM=72/25.4
@@ -169,6 +170,25 @@ def pdf_destination(placement,pad=.15):
     return fitz.Rect((dx+min(x for x,y in corners))*MM,(dy+min(y for x,y in corners))*MM,
                      (dx+max(x for x,y in corners))*MM,(dy+max(y for x,y in corners))*MM)
 
+def transformed_cut_path(path,placement):
+    """Rigidly map original Bezier controls; avoid rounded PDF Form matrices."""
+    b=placement['piece']['bounds'];a=math.radians(placement['rotation']);c,s=math.cos(a),math.sin(a)
+    origin=placement.get('rotated_origin')
+    if origin is None:
+        corners=[(c*x+s*y,-s*x+c*y) for x,y in [(0,0),(b[2]-b[0],0),(0,b[3]-b[1]),(b[2]-b[0],b[3]-b[1])]]
+        origin=(min(x for x,y in corners),min(y for x,y in corners))
+    def pt(z):
+        x,y=z.real-b[0],z.imag-b[1]
+        return f'{c*x+s*y-origin[0]+placement["x"]:.9f} {-s*x+c*y-origin[1]+placement["y"]:.9f}'
+    result=[]
+    for i,seg in enumerate(parse_path(path)):
+        if i==0:result.append('M'+pt(seg.start))
+        if isinstance(seg,Line):result.append('L'+pt(seg.end))
+        elif isinstance(seg,CubicBezier):result.append('C'+' '.join(pt(z) for z in [seg.control1,seg.control2,seg.end]))
+        else:raise ValueError('Expected original line or cubic contour')
+    return ' '.join(result)+' Z'
+
+
 def clip_art(doc,piece):
     """Isolate the piece with a true vector clip, avoiding adjacent artwork."""
     if doc is None:return None
@@ -198,14 +218,17 @@ def write_page(folder,placements):
         p=place['piece'];b=p['bounds'];pad=.15
         clip=fitz.Rect((b[0]-pad)*MM,(b[1]-pad)*MM,(b[2]+pad)*MM,(b[3]+pad)*MM)
         dest=pdf_destination(place,pad)
-        owncut=fitz.open();cp=owncut.new_page(width=p['source_rect'].width,height=p['source_rect'].height)
-        for entry in p['paths']:draw_path(cp,entry['path'])
-        selected={'PRINT_ARTWORK':clip_art(p['art'],p),'LASER_CUT':owncut,'WHITE_INK_MASK':clip_art(p['white'],p)}
+        selected={'PRINT_ARTWORK':clip_art(p['art'],p),'WHITE_INK_MASK':clip_art(p['white'],p)}
         for name,doc in selected.items():
             if doc is None or not doc[0].get_contents():continue
             mp.show_pdf_page(dest,doc,0,clip=clip,rotate=place['rotation'])
             streams[oc[name]].append(master.xref_stream(mp.get_contents()[-1]))
             docs[name][0].show_pdf_page(dest,doc,0,clip=clip,rotate=place['rotation'])
+        for entry in p['paths']:
+            global_path=transformed_cut_path(entry['path'],place)
+            draw_path(mp,global_path)
+            streams[oc['LASER_CUT']].append(master.xref_stream(mp.get_contents()[-1]))
+            draw_path(docs['LASER_CUT'][0],global_path)
         expected=[shifted_poly(e['poly'],place) for e in p['paths']]
         if any(e['protected'] for e in p['paths']):
             protected_regions.append(list(shifted_poly(p['poly'],place).bounds))
@@ -329,33 +352,27 @@ def supplied_sources():
     return pieces_from(cut,art,white,'supplied_saetui')
 
 def ascent_source():
-    folder=ROOT/'assets/external/ascent_original';m=json.loads((folder/'manifest.json').read_text())
-    raw=b''.join((folder/p).read_bytes() for p in m['parts'])
+    folder='assets/external/ascent_original/';m=json.loads(source_path(folder+'manifest.json').read_text())
+    raw=b''.join(source_path(folder+p).read_bytes() for p in m['parts'])
     assert hashlib.sha256(raw).hexdigest()==m['sha256']
     path=TMP/'kimyun_ascent.ai';path.write_bytes(raw)
     return path
 
 def inputs(only=None):
-    config=json.loads((ROOT/'configs/a3_release.json').read_text(encoding='utf-8'))
-    for source in config['sources']:
-        p=ROOT/source['file']
-        if not p.exists():
-            p.parent.mkdir(parents=True,exist_ok=True)
-            p.write_bytes(subprocess.check_output(['git','show',source['commit']+':'+source['file']],cwd=ROOT))
-        assert hashlib.sha256(p.read_bytes()).hexdigest()==source['sha256'],('Changed source; review before repacking',p)
+    restore_inputs()
     batches=[]
     linked=[]
     if not only or any(only in n for n in ['02_extra_sheet/3T','02_extra_sheet/5T','05_len/3T','05_len/5T']):
         linked=supplied_sources();assert len(linked)==4
         for name in ['tuiing','golden','burnt','unfried']:
-            folder=ROOT/'output/linked_tuiing_v1'/name
+            folder=source_path(f'output/linked_tuiing_v1/{name}/02_MASTER.ai').parent
             art=extract_layers(folder/'02_MASTER.ai',['PRINT_ARTWORK','3_ARTWORK','2_ARTWORK'])
             if not art[0].get_images() and not art[0].get_drawings():raise ValueError(f'No artwork extracted: {name}')
             linked+=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,fitz.open(folder/'04_WHITE_INK_MASK.pdf'),name)
         assert len(linked)==8
     for t in ['3T','5T']:
         if only and only not in f'02_extra_sheet/{t}':continue
-        src=ROOT/f'output/extra_sheet/{t}/02_UNUSED'
+        src=source_path(f'output/extra_sheet/{t}/01_COMBINED_SHEET.pdf').parent/'02_UNUSED'
         master=src.parent/'01_COMBINED_SHEET.pdf'
         art=extract_layers(master,['PRINT_ARTWORK']);white=extract_layers(master,['WHITE_INK_MASK'])
         cut=fitz.open(src.parent/'03_CUT_ONLY.pdf')
@@ -370,10 +387,10 @@ def inputs(only=None):
         batches.append(('04_ascent_cadena',pieces))
     for t in ['3T','5T']:
         if only and only not in f'05_len/{t}':continue
-        folder=ROOT/'output/len_diorama_v1'/t
+        folder=source_path(f'output/len_diorama_v1/{t}/02_MASTER.ai').parent
         master=folder/'02_MASTER.ai';art=extract_layers(master,['3_ARTWORK']);cut=fitz.open(folder/'03_CUT_ONLY.pdf')
         pieces=pieces_from(cut,art,None,f'len_{t}',smooth=True);assert len(pieces)==7
-        dotfolder=ROOT/'output/len_diorama_dot_v1'/t
+        dotfolder=source_path(f'output/len_diorama_dot_v1/{t}/02_MASTER.ai').parent
         dot=pieces_from(fitz.open(dotfolder/'03_CUT_ONLY.pdf'),extract_layers(dotfolder/'02_MASTER.ai',['3_ARTWORK']),None,f'len_dot_{t}',smooth=True)
         # Both source layouts put their character in the same upper-left cell.
         character=lambda p:p['bounds'][0]<15 and 120<p['bounds'][1]<130
@@ -387,7 +404,34 @@ def inputs(only=None):
             for e in p['paths']:
                 assert min(e['poly'].boundary.hausdorff_distance(f['poly'].boundary) for f in q['paths'])<.035
         batches.append((f'05_len/{t}',pieces+dotchar+linked[4:]))
+    for t in ['3T','5T']:
+        if only and only not in f'06_len_pad/{t}':continue
+        folder=source_path(f'output/len_diorama_pad_v1/{t}/02_MASTER.ai').parent
+        art=extract_layers(folder/'02_MASTER.ai',['3_ARTWORK'])
+        pieces=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,None,f'len_pad_{t}')
+        assert len(pieces)==7 and sum(len(p['paths']) for p in pieces)==15
+        batches.append((f'06_len_pad/{t}',pieces))
     return batches
+
+def reviewed_layout(name,pieces):
+    """Replay reviewed rigid placements without searching a new layout on rebuild."""
+    data=json.loads((ROOT/'configs/a3_placements.json').read_text(encoding='utf-8'))
+    rows=data['groups'][name]
+    by_id={p['id']:p for p in pieces}
+    assert set(by_id)=={r['id'] for r in rows} and len(by_id)==len(rows),('Changed part inventory',name)
+    placements=[]
+    for row in rows:
+        piece=by_id[row['id']]
+        assert max(abs(a-b) for a,b in zip(piece['bounds'],row['source_bounds_mm']))<.0001,('Source dimensions changed; review placement',piece['id'])
+        poly,origin=rotated(piece,row['rotation_degrees'])
+        placements.append(dict(piece=piece,x=row['x'],y=row['y'],rotation=row['rotation_degrees'],
+            rotated_origin=origin,w=poly.bounds[2],h=poly.bounds[3]))
+    shapes=[shifted_poly(p['piece']['poly'],p) for p in placements]
+    for i,shape in enumerate(shapes):
+        assert box(MARGIN-.002,MARGIN-.002,SIZE[0]-MARGIN+.002,SIZE[1]-MARGIN+.002).contains(shape)
+        assert all(shape.distance(q)>=GAP-.002 for q in shapes[:i])
+    return [{'placements':placements}]
+
 
 def main():
     import argparse
@@ -405,7 +449,9 @@ def main():
         if args.only and args.only not in name:continue
         assert not CONFIG['include_test_pieces']
         assert not any('fit' in p['id'].lower() or 'test' in p['id'].lower() for p in pieces)
-        if name.startswith('05_len/'):
+        if (ROOT/'configs/a3_placements.json').exists():
+            pages=reviewed_layout(name,pieces)
+        elif name.startswith(('05_len/','06_len_pad/')):
             policy=CONFIG['len_layout']
             assert policy['angle_step_degrees']==15 and policy['exact_minimum_gap_mm']==GAP
             pages=contour_nest(pieces,SIZE,MARGIN,GAP,trials=policy['trials'],resolution=policy['search_grid_mm'])

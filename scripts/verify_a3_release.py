@@ -29,7 +29,9 @@ def compare_geometry(file,spec):
 def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
     wanted=CONFIG['current_groups']
+    reviewed=json.loads((ROOT/'configs/a3_placements.json').read_text(encoding='utf-8'))['groups']
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
+    assert set(reviewed)==set(wanted),'Incomplete reviewed layout inventory'
     assert CONFIG['include_test_pieces'] is False and manifest['test_pieces_included'] is False
     records=[]
     for group,pages in manifest['groups'].items():
@@ -41,7 +43,14 @@ def main(check_zips=True,check_native=True):
             assert spec['canvas_mm']==[420,297] and spec['artwork_scale']==1
             assert spec['pieces']==page['pieces'] and spec['closed_contours']==page['contours']
             assert spec['minimum_gap_mm']>=2.998
-            if group.startswith('05_len/'):
+            planned={r['id']:r for r in reviewed[group]}
+            assert set(planned)=={p['id'] for p in spec['parts']}
+            for p in spec['parts']:
+                r=planned[p['id']]
+                assert p['rotation_degrees']==r['rotation_degrees'],(group,p['id'],'Changed reviewed rotation')
+                assert max(abs(a-b) for a,b in zip(p['placed_bounds_mm'][:2],[r['x'],r['y']]))<.0001
+                assert max(abs(a-b) for a,b in zip(p['source_bounds_mm'],r['source_bounds_mm']))<.0001
+            if group.startswith(('05_len/','06_len_pad/')):
                 assert spec['layout_method']=='15-degree contour nesting'
                 assert all(p['rotation_degrees']%15==0 and p.get('rotated_origin_mm') is not None for p in spec['parts'])
             protected_count+=sum(p['protected_original'] for p in spec['parts'])
@@ -79,6 +88,10 @@ def main(check_zips=True,check_native=True):
             assert protected_count==30
             assert set(CONFIG['linked_allocation']['02_extra_sheet']).issubset(ids)
         if group=='04_ascent_cadena':assert set(ids)==set(CONFIG['cadena_source_part_ids'])
+        if group.startswith('06_len_pad/'):
+            t=group.split('/')[-1]
+            assert set(ids)=={f'len_pad_{t}_{i:02}' for i in range(1,8)}
+            assert sum(p['contours'] for p in pages)==15
         if group.startswith('05_len/'):
             t=group.split('/')[-1]
             assert sum(x.startswith(f'len_{t}_') for x in ids)==7
@@ -94,6 +107,10 @@ def main(check_zips=True,check_native=True):
             file=base/(group.replace('/','_')+'_A3.zip')
             with zipfile.ZipFile(file) as z:
                 assert z.testzip() is None
+                included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
+                expected={'a3_release/README.md','a3_release/'+group.split('/')[0]+'/README.md'}
+                expected.update(p['folder']+'/'+n for p in manifest['groups'][group] for n in included)
+                assert len(z.namelist())==len(expected) and set(z.namelist())==expected,(file,'Missing, duplicate or extra ZIP members')
                 for name in z.namelist():
                     if name.endswith('/'):continue
                     current=out/name
@@ -103,6 +120,7 @@ def main(check_zips=True,check_native=True):
             packages.append({'file':file.relative_to(out).as_posix(),'bytes':file.stat().st_size,'sha256':artifact_sha256(file)})
         assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
+            'selected_primary_pages':3,'selected_thickness':'3T','optional_PAD_pages_per_thickness':1,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
                            'Only Cadena first-row four panels and one original base are selected; other Ascent pieces are retired from this print run.',
