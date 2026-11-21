@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-current-only",
+  "revision": "A3-2026-11-22-two-sheets-dot50",
   "canvas_mm": [
     420,
     297
@@ -158,17 +158,17 @@
     "ascent_14"
   ],
   "current_groups": {
-    "02_extra_sheet/3T": 42,
-    "02_extra_sheet/5T": 42,
-    "04_ascent_cadena": 5,
-    "05_len/3T": 12,
+    "02_extra_sheet/3T": 41,
+    "02_extra_sheet/5T": 39,
+    "05_len/3T": 15,
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7
   },
   "retired_groups": [
     "03_linked_keyrings",
-    "04_ascent_original"
+    "04_ascent_original",
+    "04_ascent_cadena"
   ],
   "linked_allocation": {
     "02_extra_sheet": [
@@ -195,6 +195,12 @@
       ],
       "status": "retired_not_for_current_print",
       "reason": "Contains two test pieces explicitly rejected by the user."
+    },
+    {
+      "commit": "0061b39491f7e70c28060eecd81753eb35c7f779",
+      "revision": "A3-2026-11-22-current-only",
+      "status": "retired_not_for_current_print",
+      "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
     }
   ],
   "len_layout": {
@@ -252,5 +258,100 @@
   "optional_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T"
+  ],
+  "len_dot_revision": {
+    "art_height_mm": 50,
+    "clear_border_mm": 2.25,
+    "foot_center_source_x_px": 90,
+    "tab_width_mm": 18,
+    "tab_bottom_clearance_mm": 0.4,
+    "previous_height_mm": 76,
+    "reason": "User requested smaller DOT and a correctly positioned foot tab; common base and slot remain unchanged."
+  },
+  "excluded_brand_parts": {
+    "3T": [
+      "extra_3T_31",
+      "extra_3T_32",
+      "extra_3T_33"
+    ],
+    "5T": [
+      "extra_5T_31",
+      "extra_5T_32",
+      "extra_5T_33"
+    ]
+  },
+  "cross_sheet_cadena_allocation": {
+    "02_extra_sheet/3T": [
+      "ascent_11",
+      "ascent_12"
+    ],
+    "05_len/3T": [
+      "ascent_01",
+      "ascent_13",
+      "ascent_14"
+    ]
+  },
+  "selected_primary_groups": [
+    "02_extra_sheet/3T",
+    "05_len/3T"
+  ],
+  "selected_primary_parts": 56,
+  "primary_inventory": [
+    "ascent_01",
+    "ascent_11",
+    "ascent_12",
+    "ascent_13",
+    "ascent_14",
+    "burnt_01",
+    "extra_3T_01",
+    "extra_3T_02",
+    "extra_3T_03",
+    "extra_3T_04",
+    "extra_3T_05",
+    "extra_3T_06",
+    "extra_3T_07",
+    "extra_3T_08",
+    "extra_3T_09",
+    "extra_3T_10",
+    "extra_3T_11",
+    "extra_3T_12",
+    "extra_3T_13",
+    "extra_3T_14",
+    "extra_3T_15",
+    "extra_3T_16",
+    "extra_3T_17",
+    "extra_3T_18",
+    "extra_3T_19",
+    "extra_3T_20",
+    "extra_3T_21",
+    "extra_3T_22",
+    "extra_3T_23",
+    "extra_3T_24",
+    "extra_3T_25",
+    "extra_3T_26",
+    "extra_3T_27",
+    "extra_3T_28",
+    "extra_3T_29",
+    "extra_3T_30",
+    "extra_3T_34",
+    "extra_3T_35",
+    "extra_3T_36",
+    "extra_3T_37",
+    "extra_3T_38",
+    "golden_01",
+    "len_3T_01",
+    "len_3T_02",
+    "len_3T_03",
+    "len_3T_04",
+    "len_3T_05",
+    "len_3T_06",
+    "len_3T_07",
+    "len_dot_3T_06",
+    "supplied_saetui_01",
+    "supplied_saetui_02",
+    "supplied_saetui_03",
+    "supplied_saetui_04",
+    "tuiing_01",
+    "unfried_01"
   ]
 }

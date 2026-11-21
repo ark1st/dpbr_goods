@@ -82,7 +82,7 @@ def main():
     report={'date':policy['date'],'errors':[],'archive':archive,'current_output_files':files,
         'pinned_inputs_sha256_checked':len(restored),'preserved_source_assets_sha256_checked':source_assets,
         'retired_source_files':policy['retired_source_files'],
-        'selected_thickness':'3T','selected_pages':3,'selected_parts':59,'physical_cut_test':False,
+        'selected_thickness':'3T','selected_pages':2,'selected_parts':56,'physical_cut_test':False,
         'limitations':['Raw backups are byte-verified archives; obsolete artwork is not approved for cutting.',
         'Temporary generated caches and installed libraries are not repository deliverables.']}
     (ROOT/'output/REPOSITORY_AUDIT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')

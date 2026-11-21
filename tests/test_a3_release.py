@@ -8,6 +8,33 @@ from build_a3_release import pack,shifted_poly,pdf_destination,polygon_of,draw_p
 from nest_contours import rotated
 
 class A3PackingTests(unittest.TestCase):
+    def test_small_dot_keeps_full_size_tab_under_feet(self):
+        from len_dot_part import create_dot_documents
+        from shapely.geometry import LineString
+        from verify_laser_paths import contours
+        cfg=json.loads((ROOT/'configs/a3_release.json').read_text())['len_dot_revision']
+        for t in ['3T','5T']:
+            cut,art,meta=create_dot_documents(ROOT,t,draw_path,MM,cfg)
+            outline=polygon_of(contours(cut[0].get_drawings()[0])[0])
+            y=meta['shoulder_y_mm']+.25
+            section=outline.intersection(LineString([(0,y),(150,y)]))
+            self.assertAlmostEqual(section.length,18,3)
+            self.assertAlmostEqual(section.centroid.x,meta['foot_center_mm'],3)
+            self.assertAlmostEqual(outline.bounds[3]-meta['shoulder_y_mm'],float(t[0])-.4,3)
+            bbox=art[0].get_image_info()[0]['bbox']
+            self.assertAlmostEqual((bbox[3]-bbox[1])/MM,50,3)
+            self.assertEqual(meta['common_base_slot_mm'],[18.8,float(t[0])])
+
+    def test_two_sheet_inventory_excludes_brands_and_keeps_all_cadena(self):
+        cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
+        rows=json.loads((ROOT/'configs/a3_placements.json').read_text())['groups']
+        selected=[r['id'] for group in cfg['selected_primary_groups'] for r in rows[group]]
+        self.assertEqual(len(selected),56)
+        self.assertEqual(len(set(selected)),56)
+        self.assertEqual(sorted(selected),cfg['primary_inventory'])
+        self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
+        self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']))
+
     def test_large_source_oblique_cut_avoids_rounded_form_matrix(self):
         import pymupdf as fitz
         from build_a3_release import transformed_cut_path

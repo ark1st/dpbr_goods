@@ -1,13 +1,14 @@
 {
   "date": "2026-11-22",
-  "raw_commit": "3208908696272232bf8a388313f67e855769fee9",
+  "raw_commit": "2998c858ad3795b930a4c5138c658cea1665e61d",
   "previous_heads": {
     "main": "b0de59b0fd8b70a2a6aec257546dbac07c31b5cd",
     "output_len": "af3ee31d8bb25471a397739eb61e7e79f09cc5b9",
     "origin/output_len_sleeg": "613b89f6665d1d8b7f2188acd85f00338ad25c81",
     "output": "8f162f27877c494168764cd1ab27e8d566993baf",
     "output_len_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-    "output_len_sleeg_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25"
+    "output_len_sleeg_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+    "before_two_sheet": "0061b39491f7e70c28060eecd81753eb35c7f779"
   },
   "retired_source_files": [
     "assets/external/ascent_original/README.md",
@@ -61,7 +62,8 @@
     "verify_a3_release.py",
     "verify_laser_paths.py",
     "verify_release.py",
-    "verify_repository.py"
+    "verify_repository.py",
+    "len_dot_part.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
