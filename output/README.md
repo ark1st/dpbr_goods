@@ -7,6 +7,7 @@
 5. [마스코트·로고 키링 V4 ·16조각](production_v4/README.md)
 6. [연결형 튀잉4종 · 각각 별도 판](linked_tuiing_v1/README.md)
 7. [렌 아크릴 디오라마 NEW V1 · 달빛과 매화, 그리고 뱀의 수호 ·7조각](len_diorama_v1/README.md)
+8. [렌 아크릴 디오라마 DOT V1 · 캐릭터만 도트 아바타판 ·7조각](len_diorama_dot_v1/README.md)
 
 ## 단바 합본
 
@@ -54,6 +55,18 @@
 `assets/len`의 그림 6종을 다시 그리지 않고 그대로 인쇄 아트로 넣었습니다(300ppi 변환만. 별밤 배경판은 원본 상단 65% 띠 — 251×98mm·모서리 R8).
 베이스 275×60mm·홈 8개·깊이 행 5개. 완성 약 W275×H103(3T)·H105(5T)×D60mm.
 매화·뱀·캐릭터·매화가 각자의 폭을 차지해 앞 판이 뒷 판을 가리지 않도록, 시안 규격(약 W150)에서 무대를 W275로 키웠습니다.
+
+## 렌 디오라마 DOT V1 (도트 캐릭터판)
+
+![조립 예상도](len_diorama_dot_v1/3T/preview/assembly.png)
+
+[전체 ZIP](Danpungbaram_Len_Diorama_DOT_V1_MAIN_7pcs_3T_5T.zip) ·
+[인쇄 PNG 3T](len_diorama_dot_v1/3T/01_PRINT_300ppi.png) · [5T](len_diorama_dot_v1/5T/01_PRINT_300ppi.png) ·
+[마스터 AI 3T](len_diorama_dot_v1/3T/02_MASTER.ai) · [5T](len_diorama_dot_v1/5T/02_MASTER.ai)
+
+NEW V1과 같은 구성(베이스 275×60mm·홈 8·깊이 행 5·7조각)에서 **캐릭터 판만 본인 캐릭터의 인게임 도트 아바타 렌더(official_avatar_180)로 교체**했습니다.
+도트 계단이 인쇄에서 그대로 보이도록 NEAREST 변환만 했고 재그림은 없습니다. 주 실루엣에서 2.4mm 이상 떨어진 장식 광점 10개는 절단선 밖이라 뺐습니다(알파만 0 처리, 나머지 픽셀 원본과 바이트 동일 — `assets/len/05_도트_캐릭터/provenance.json`), 머리 옆 광점 1개는 살렸습니다.
+지오메트리·시트 배치·홈·돌기는 NEW V1과 완전히 동일합니다. 실물 끼움은 시험 전이며 `04_FIT_TEST`를 먼저 자르세요.
 
 ## 같은 부품의 개별 파일과 추가 자료
 
