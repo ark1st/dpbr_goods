@@ -41,6 +41,9 @@ def main(check_zips=True,check_native=True):
             assert spec['canvas_mm']==[420,297] and spec['artwork_scale']==1
             assert spec['pieces']==page['pieces'] and spec['closed_contours']==page['contours']
             assert spec['minimum_gap_mm']>=2.998
+            if group.startswith('05_len/'):
+                assert spec['layout_method']=='15-degree contour nesting'
+                assert all(p['rotation_degrees']%15==0 and p.get('rotated_origin_mm') is not None for p in spec['parts'])
             protected_count+=sum(p['protected_original'] for p in spec['parts'])
             ids.extend(p['id'] for p in spec['parts'])
             changes={name:compare_geometry(folder/name,spec) for name in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']}

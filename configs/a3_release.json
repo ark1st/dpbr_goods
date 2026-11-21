@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-21-no-test-pieces",
+  "revision": "A3-2026-11-21-contour-nested-no-test-pieces",
   "canvas_mm": [
     420,
     297
@@ -174,5 +174,13 @@
       "status": "retired_not_for_current_print",
       "reason": "Contains two test pieces explicitly rejected by the user."
     }
-  ]
+  ],
+  "len_layout": {
+    "method": "contour_nesting",
+    "angle_step_degrees": 15,
+    "trials": 48,
+    "search_grid_mm": 0.75,
+    "exact_minimum_gap_mm": 3,
+    "test_pieces": 0
+  }
 }

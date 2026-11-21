@@ -47,7 +47,7 @@ Len은 **공통 배경·받침 한 세트에 일반 캐릭터와 DOT 캐릭터�
 파란 사각형은 가장자리에서 4mm 들어간 위치 기준이며 **자르지 않습니다**.
 대지 원점과 배율을 인쇄·백색·재단에서 동일하게 사용합니다.
 조각 사이 3mm 이상, 대지 가장자리 8mm 이상을 유지합니다.
-그림, 구멍, 홈, 돌기 크기는 원본과 동일합니다. 회전과 이동만 적용했습니다.
+그림, 구멍, 홈, 돌기 크기는 원본과 동일합니다. 회전과 이동만 적용했습니다. Len은 실제 외곽을 기준으로 15도 간격의 회전을 탐색해 배치했습니다.
 보호 대상 외부 캐릭터 30개는 원래 칼선 그대로입니다.
 
 ZIP에는 인쇄 PNG·백색 PNG·재단 PDF/SVG·시안·치수 기록을 넣었습니다.
@@ -71,6 +71,10 @@ ZIP에는 인쇄 PNG·백색 PNG·재단 PDF/SVG·시안·치수 기록을 넣�
     for category,title in [('02_extra_sheet','추가 이미지38 + 제공 새튀4 = 42조각'),('05_len','Len 일반+DOT8 + 튀잉4 = 12조각')]:
         text=f'# {title}\n\n**A3 1장 · 420×297mm · 실제 크기 100%.**\n\n- [3T 제작 파일](3T/sheet_01)\n- [5T 제작 파일](5T/sheet_01)\n\n실제 두께에 맞는 한 가지를 선택합니다. 두 버전을 모두 출력하지 않습니다.\n\n![3T 배치](3T/sheet_01/preview.png)\n\n![5T 배치](5T/sheet_01/preview.png)\n'
         if category=='05_len':
+            for thickness in ['3T','5T']:
+                spec=json.loads((BASE/category/thickness/'sheet_01/validation.json').read_text(encoding='utf-8'))
+                b=spec['occupied_bounds_mm']
+                text+=f'\n{thickness} 조각 배치 영역: **{b[2]-b[0]:.1f}×{b[3]-b[1]:.1f}mm**. 실제 외곽을 기준으로 회전 배치했으며 칼선 간격은 {spec["minimum_gap_mm"]:.2f}mm 이상입니다.\n'
             for product,name in [('len_diorama_v1','assembly.png'),('len_diorama_dot_v1','assembly_dot.png')]:
                 shutil.copy2(OUT/product/'3T/preview/assembly.png',BASE/category/name)
             text+='\n공통 배경·받침 **한 세트**에 일반·DOT 캐릭터 두 종류를 교체합니다. 받침275×60mm, 각 캐릭터 원본 그림 높이76mm와 돌기·홈을 유지했습니다.\n\n![일반 조립 참고](assembly.png)\n\n![DOT 조립 참고](assembly_dot.png)\n\n위 조립 그림은 원격 원본 참고 이미지입니다. 실제 출력 대상은 위 배치도의12조각입니다.\n\n사용자 요청에 따라 시험판·시험키를 모두 제외했습니다. 별도 시험편 파일도 만들지 않습니다. 튀잉4개는 이 대지에 있으므로 별도 키링판은 출력하지 않습니다.\n'

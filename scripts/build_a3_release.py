@@ -21,6 +21,7 @@ from laser_paths import audit_path, cut_path, flatten_cubic
 from verify_laser_paths import contours
 from vector_utils import runvc, svg_doc, layer
 from build_extra_sheet import mark_pdf_layers
+from nest_contours import rotated,contour_nest
 
 MM=72/25.4
 CONFIG=json.loads((ROOT/'configs/a3_release.json').read_text(encoding='utf-8'))
@@ -146,9 +147,27 @@ def pack(pieces):
 def shifted_poly(p,placement):
     x0,y0,x1,y1=placement['piece']['bounds']
     p=affinity.translate(p,-x0,-y0)
-    if placement['rotation']==90:
-        p=affinity.affine_transform(p,[0,1,-1,0,0,x1-x0])
-    return affinity.translate(p,placement['x'],placement['y'])
+    angle=math.radians(placement['rotation']);c,s=math.cos(angle),math.sin(angle)
+    origin=placement.get('rotated_origin')
+    if origin is None:
+        # Legacy rectangular packing uses the rotated source rectangle origin.
+        corners=[(c*x+s*y,-s*x+c*y) for x,y in [(0,0),(x1-x0,0),(0,y1-y0),(x1-x0,y1-y0)]]
+        origin=(min(x for x,y in corners),min(y for x,y in corners))
+    p=affinity.affine_transform(p,[c,s,-s,c,0,0])
+    return affinity.translate(p,placement['x']-origin[0],placement['y']-origin[1])
+
+
+def pdf_destination(placement,pad=.15):
+    b=placement['piece']['bounds'];w,h=b[2]-b[0],b[3]-b[1]
+    a=math.radians(placement['rotation']);c,s=math.cos(a),math.sin(a)
+    corners=[(c*x+s*y,-s*x+c*y) for x,y in [(-pad,-pad),(w+pad,-pad),(-pad,h+pad),(w+pad,h+pad)]]
+    origin=placement.get('rotated_origin')
+    if origin is None:
+        corners0=[(c*x+s*y,-s*x+c*y) for x,y in [(0,0),(w,0),(0,h),(w,h)]]
+        origin=(min(x for x,y in corners0),min(y for x,y in corners0))
+    dx,dy=placement['x']-origin[0],placement['y']-origin[1]
+    return fitz.Rect((dx+min(x for x,y in corners))*MM,(dy+min(y for x,y in corners))*MM,
+                     (dx+max(x for x,y in corners))*MM,(dy+max(y for x,y in corners))*MM)
 
 def clip_art(doc,piece):
     """Isolate the piece with a true vector clip, avoiding adjacent artwork."""
@@ -178,7 +197,7 @@ def write_page(folder,placements):
     for place in placements:
         p=place['piece'];b=p['bounds'];pad=.15
         clip=fitz.Rect((b[0]-pad)*MM,(b[1]-pad)*MM,(b[2]+pad)*MM,(b[3]+pad)*MM)
-        dest=fitz.Rect((place['x']-pad)*MM,(place['y']-pad)*MM,(place['x']+place['w']+pad)*MM,(place['y']+place['h']+pad)*MM)
+        dest=pdf_destination(place,pad)
         owncut=fitz.open();cp=owncut.new_page(width=p['source_rect'].width,height=p['source_rect'].height)
         for entry in p['paths']:draw_path(cp,entry['path'])
         selected={'PRINT_ARTWORK':clip_art(p['art'],p),'LASER_CUT':owncut,'WHITE_INK_MASK':clip_art(p['white'],p)}
@@ -191,6 +210,7 @@ def write_page(folder,placements):
         if any(e['protected'] for e in p['paths']):
             protected_regions.append(list(shifted_poly(p['poly'],place).bounds))
         report.append({'id':p['id'],'source':p['source'],'source_bounds_mm':list(b),
+            'rotated_origin_mm':place.get('rotated_origin'),
             'placed_bounds_mm':[place['x'],place['y'],place['x']+place['w'],place['y']+place['h']],
             'rotation_degrees':place['rotation'],'scale':1,'path_count':len(p['paths']),
             'protected_original':any(e['protected'] for e in p['paths']),
@@ -226,7 +246,15 @@ def write_page(folder,placements):
     for place in placements:
         region=fitz.Rect((place['x']-.2)*MM,(place['y']-.2)*MM,(place['x']+place['w']+.2)*MM,(place['y']+place['h']+.2)*MM)
         for name in ['PRINT_ARTWORK','WHITE_INK_MASK']:
-            pix=docs[name][0].get_pixmap(dpi=600,clip=region,alpha=True)
+            # Nested bounding boxes overlap. Render this piece alone so adjacent
+            # artwork is never duplicated in native editable image objects.
+            piece=place['piece'];b=piece['bounds'];pad=.15
+            source=clip_art(piece['art'] if name=='PRINT_ARTWORK' else piece['white'],piece)
+            if source is None or not source[0].get_contents():continue
+            isolated=fitz.open();ip=isolated.new_page(width=mp.rect.width,height=mp.rect.height)
+            clip=fitz.Rect((b[0]-pad)*MM,(b[1]-pad)*MM,(b[2]+pad)*MM,(b[3]+pad)*MM)
+            ip.show_pdf_page(pdf_destination(place,pad),source,0,clip=clip,rotate=place['rotation'])
+            pix=ip.get_pixmap(dpi=600,clip=region,alpha=True)
             if not any(pix.samples[3::4]):continue
             rect=fitz.Rect(pix.x*72/600,pix.y*72/600,(pix.x+pix.width)*72/600,(pix.y+pix.height)*72/600)
             npag.insert_image(rect,stream=pix.tobytes('png'))
@@ -269,7 +297,11 @@ def write_page(folder,placements):
     zoomscale=min(8,1300/max(zrect.width,zrect.height))
     zp.get_pixmap(matrix=fitz.Matrix(zoomscale,zoomscale),clip=zrect+(-3,-3,3,3),alpha=False).save(folder/'cut_detail.png')
     count=sum(r['path_count'] for r in report)
+    occupied=[min(p.bounds[0] for p in outers),min(p.bounds[1] for p in outers),
+              max(p.bounds[2] for p in outers),max(p.bounds[3] for p in outers)]
     result={'canvas_mm':list(SIZE),'pieces':len(report),'closed_contours':count,'minimum_gap_mm':gap,
+        'occupied_bounds_mm':occupied,'occupied_rectangle_area_mm2':(occupied[2]-occupied[0])*(occupied[3]-occupied[1]),
+        'layout_method':'15-degree contour nesting' if any(p.get('rotated_origin') is not None for p in placements) else 'rectangular packing',
         'minimum_page_margin_mm':MARGIN,'artwork_scale':1,'protected_regions_mm':protected_regions,
         'max_rigid_export_deviation_mm':max(deviations,default=0),'physical_cut_test':False,
         'white_ink_policy':'Provided white plates retained; absent source white is empty. RIP white required for other art.',
@@ -373,7 +405,11 @@ def main():
         if args.only and args.only not in name:continue
         assert not CONFIG['include_test_pieces']
         assert not any('fit' in p['id'].lower() or 'test' in p['id'].lower() for p in pieces)
-        pages=pack(pieces)
+        if name.startswith('05_len/'):
+            policy=CONFIG['len_layout']
+            assert policy['angle_step_degrees']==15 and policy['exact_minimum_gap_mm']==GAP
+            pages=contour_nest(pieces,SIZE,MARGIN,GAP,trials=policy['trials'],resolution=policy['search_grid_mm'])
+        else:pages=pack(pieces)
         assert len(pages)==1,(name,'A3 sheet count regression')
         print('PLAN',name,len(pieces),len(pages),[len(p['placements']) for p in pages],flush=True)
         if args.plan:continue

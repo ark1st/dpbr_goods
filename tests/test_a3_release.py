@@ -4,9 +4,31 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tmp/pylibs'));sys.path.insert(0,str(ROOT/'scripts'))
 from shapely.geometry import box,Point
-from build_a3_release import pack,shifted_poly,SIZE,MARGIN,GAP
+from build_a3_release import pack,shifted_poly,pdf_destination,polygon_of,draw_path,SIZE,MARGIN,GAP,MM
+from nest_contours import rotated
 
 class A3PackingTests(unittest.TestCase):
+    def test_oblique_pdf_export_preserves_outline_hole_and_slot(self):
+        import pymupdf as fitz
+        from verify_laser_paths import contours
+        paths=['M10 20L90 20L90 65L60 65L60 85L10 85Z',
+               'M30 35C30 33.89543 30.89543 33 32 33C33.10457 33 34 33.89543 34 35C34 36.10457 33.10457 37 32 37C30.89543 37 30 36.10457 30 35Z',
+               'M45 40L63.8 40L63.8 43L45 43Z']
+        piece={'bounds':(10,20,90,85),'poly':polygon_of(paths[0])}
+        source=fitz.open();page=source.new_page(width=120*MM,height=100*MM)
+        for path in paths:draw_path(page,path)
+        for angle in [15,105,225,345]:
+            poly,origin=rotated(piece,angle)
+            placement={'piece':piece,'rotation':angle,'rotated_origin':origin,'x':25,'y':30,'w':poly.bounds[2],'h':poly.bounds[3]}
+            output=fitz.open();dest=output.new_page(width=420*MM,height=297*MM)
+            dest.show_pdf_page(pdf_destination(placement),source,0,clip=fitz.Rect(9.85*MM,19.85*MM,90.15*MM,85.15*MM),rotate=angle)
+            actual=[polygon_of(s) for d in dest.get_drawings() for s in contours(d)]
+            self.assertEqual(len(actual),3)
+            for a,path in zip(actual,paths):
+                expected=shifted_poly(polygon_of(path),placement)
+                self.assertLess(a.boundary.hausdorff_distance(expected.boundary),.002)
+                self.assertAlmostEqual(expected.area,polygon_of(path).area,7)
+
     def test_len_dot_and_four_keyrings_5t_still_fit_one_a3(self):
         sizes=json.loads((ROOT/'tests/fixtures/len_dot_linked_5t_sizes.json').read_text())
         self.assertEqual(len(sizes),12)

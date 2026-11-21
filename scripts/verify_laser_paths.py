@@ -205,7 +205,7 @@ def main(pdf_only=False):
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
     inventory=inventory_for(records)
-    report={'revision':'A3-2026-11-21-no-test-pieces','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
+    report={'revision':'A3-2026-11-21-contour-nested-no-test-pieces','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
             'protected_original_findings':[{'file':r['file'],'findings':r['protected_original_findings']} for r in records if r['protected_original_findings']],
             'records':records,'inventory':inventory,'physical_cut_test':False,
             'superseded_releases':manifest.get('superseded_releases',[])}
