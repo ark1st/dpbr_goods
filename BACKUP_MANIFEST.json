@@ -21494,6 +21494,18 @@
       "bytes": 2583,
       "git_blob": "cf27d1c110236f9f3ca2f638feea573dc323217e",
       "sha256": "617ead1cc4cb441954d5ff33902f4c19f038e290d631cf51b8d05d8d63fd6b0f"
+    },
+    {
+      "path": "local_worktree/before_two_sheet/output/a3_release/04_ascent_cadena/sheet_01/README.md",
+      "git_blob": "e74d9bb2657d5536ec2d12ded88b10c036fadd5d",
+      "bytes": 762,
+      "sha256": "884c7fd00b54058c1e91f30326bce3470ed4dccb4a235670247669896fa97295"
+    },
+    {
+      "path": "local_worktree/before_two_sheet/output/a3_release/04_ascent_cadena/sheet_01/validation.json",
+      "git_blob": "a4f10caaeee2978207a2be1fbb2d5064adacb87e",
+      "bytes": 58668,
+      "sha256": "8630fa33a53b19902ea003ba7a5f9c79a08450f0c98389e84afeb805fda35429"
     }
   ],
   "scope": "All tracked files of every pre-cleanup branch; local output differences; DBPR_LOGO; three ignored legacy generators.",
