@@ -1,0 +1,82 @@
+{
+  "revision": "A3-2026-11-22-current-only",
+  "canvas_mm": [
+    420.0,
+    297.0
+  ],
+  "groups": {
+    "02_extra_sheet/3T": [
+      {
+        "folder": "a3_release/02_extra_sheet/3T/sheet_01",
+        "pieces": 42,
+        "contours": 107
+      }
+    ],
+    "02_extra_sheet/5T": [
+      {
+        "folder": "a3_release/02_extra_sheet/5T/sheet_01",
+        "pieces": 42,
+        "contours": 107
+      }
+    ],
+    "05_len/3T": [
+      {
+        "folder": "a3_release/05_len/3T/sheet_01",
+        "pieces": 12,
+        "contours": 28
+      }
+    ],
+    "05_len/5T": [
+      {
+        "folder": "a3_release/05_len/5T/sheet_01",
+        "pieces": 12,
+        "contours": 28
+      }
+    ],
+    "04_ascent_cadena": [
+      {
+        "folder": "a3_release/04_ascent_cadena/sheet_01",
+        "pieces": 5,
+        "contours": 13
+      }
+    ],
+    "06_len_pad/3T": [
+      {
+        "folder": "a3_release/06_len_pad/3T/sheet_01",
+        "pieces": 7,
+        "contours": 15
+      }
+    ],
+    "06_len_pad/5T": [
+      {
+        "folder": "a3_release/06_len_pad/5T/sheet_01",
+        "pieces": 7,
+        "contours": 15
+      }
+    ]
+  },
+  "physical_cut_test": false,
+  "physical_pages_per_selected_thickness": 3,
+  "retired_groups": [
+    "03_linked_keyrings",
+    "04_ascent_original"
+  ],
+  "test_pieces_included": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    }
+  ],
+  "optional_groups": [
+    "06_len_pad/3T",
+    "06_len_pad/5T"
+  ],
+  "selected_thickness": "3T"
+}

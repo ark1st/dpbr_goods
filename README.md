@@ -17,3 +17,7 @@ Git 이력은 재작성하지 않았습니다. 각 스냅샷은 원래 파일 �
 ## 정리 중 추가된 원격 작업
 
 [Len PAD 포함 최신 output 스냅샷](snapshots/output_len_incoming)도 보존했습니다. 해당 원본의 시험편은 현행 제작 대상이 아닙니다.
+
+## A3 두 장 통합 전
+
+[3장 구성·76mm 도트 렌·단풍바람 키링 포함 보관본](snapshots/before_two_sheet)은 퇴역 자료입니다.
