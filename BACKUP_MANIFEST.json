@@ -20185,6 +20185,108 @@
       "bytes": 3202,
       "git_blob": "be7a9d7a4057b021741cbfe84d31b3b3f2586c6c",
       "sha256": "48dd229b9204407e6c4629d8e9eb8fa76fc92af92224505575e6a344ddc5c296"
+    },
+    {
+      "path": "local_worktree/README.md",
+      "bytes": 5714,
+      "git_blob": "5e5bef4443cb6cada9feb6040b26ec77d2ef6497",
+      "sha256": "da9005d7156f4919e60fb40a0fc5d4ac99c53e048d6491367900ee5bbbc98c52"
+    },
+    {
+      "path": "local_worktree/assets/artwork.json",
+      "bytes": 15160,
+      "git_blob": "f2c010c3a18d8145389d8a505f96a5196a5809e0",
+      "sha256": "af5030ff48b49adc6273196a5441d526334a8e35f40f5827f61466c089e45e07"
+    },
+    {
+      "path": "local_worktree/assets/external/ascent_original/manifest.json",
+      "bytes": 269,
+      "git_blob": "9d3a2212fb5b17a9dba387d37e38c69d9a7773b5",
+      "sha256": "7d7183ec26a6e66f86559c3a422f7032cf08908e9d13130caa30656fda628db0"
+    },
+    {
+      "path": "local_worktree/assets/linked_tuiing/provenance.json",
+      "bytes": 2688,
+      "git_blob": "e79d48284189c83b9cdcc8118d78f23f3944b278",
+      "sha256": "9b9e4cc0b142615b76007b971029de41cc8de29d0d20661b289560d8dca95d5a"
+    },
+    {
+      "path": "local_worktree/assets/logo_full.svg",
+      "bytes": 12955,
+      "git_blob": "f22634ba680bd36cff55fcee81906800a8933b60",
+      "sha256": "ad7dfa760506cf39a603234e610d218d4deb5b7a1a42f11c2ee50c5b74ba3b4c"
+    },
+    {
+      "path": "local_worktree/assets/logo_full_provenance.json",
+      "bytes": 556,
+      "git_blob": "395cb371bfded8193b1467725f8f9b7d9cff2965",
+      "sha256": "fa21c8f09938ef0f38a828bf54d98c540eb5866f5e5f6adf6c56100f89eebf5d"
+    },
+    {
+      "path": "local_worktree/assets/masters/danpaengi.svg",
+      "bytes": 2097,
+      "git_blob": "bd53f58d76e80367426191db212c33d1735c7fc9",
+      "sha256": "493eaf7b7a77ab718ccbe240cf8bcd5fac17b0c451d8994adcec2c3bf532a26c"
+    },
+    {
+      "path": "local_worktree/assets/masters/garam.svg",
+      "bytes": 5215,
+      "git_blob": "442cf7ff9d2eacf9482f0ff37240d250cdfdc825",
+      "sha256": "b46b0345f9362237bdcadcfcf7bfcc31e1a92b4184e1f95cd931d1802df797a2"
+    },
+    {
+      "path": "local_worktree/assets/masters/logo_symbol.svg",
+      "bytes": 3878,
+      "git_blob": "e0e991c91877eec097b96e396434329ba7498d27",
+      "sha256": "32d5601a5decd5b1a1b86b0afe59f84eb3e937558cbb92cd467c4d622f4923c0"
+    },
+    {
+      "path": "local_worktree/configs/combined_layout.json",
+      "bytes": 1575,
+      "git_blob": "208a38f02ebebd496374cd6e6c40f895654dc310",
+      "sha256": "47697d3fa0c103ebb3f93914dc959b69b11cacb29e9d5fc726f1076de6ffa177"
+    },
+    {
+      "path": "local_worktree/requirements.txt",
+      "bytes": 128,
+      "git_blob": "272c5313e13a3723aa04726c1507fc01f6a28cd2",
+      "sha256": "de7a50d69084249c9a9f228cd1c749a8a83a4e2625d2a5fbebf73e3e42c36e7f"
+    },
+    {
+      "path": "local_worktree/scripts/build_combined_diorama.py",
+      "bytes": 17897,
+      "git_blob": "1d145e87a9f4c8e3cb9ec08526fa437069ed929b",
+      "sha256": "7444ecc5ce3de5c085c55218685488325ededcb332eb4bda4b6c5993b684c26f"
+    },
+    {
+      "path": "local_worktree/scripts/build_diorama.py",
+      "bytes": 33830,
+      "git_blob": "d0f0722aa31c47fff677b460a8bf6aebc9811575",
+      "sha256": "48b300df42c5dbf36710acf9f3bef69cc40b9ffa552b017cfcbb41b36c656f0b"
+    },
+    {
+      "path": "local_worktree/scripts/build_extra_sheet_38.py",
+      "bytes": 19419,
+      "git_blob": "41d14922b6ab205c2d6314eed0b353a04cc335c1",
+      "sha256": "7d3aa69b97113d5616b6e6f7495b701c2d6d64461e91039852eb281854187cd4"
+    },
+    {
+      "path": "local_worktree/scripts/build_goods_v3.py",
+      "bytes": 25347,
+      "git_blob": "4f3c44e118ce632b702aedf0d836793799b37f38",
+      "sha256": "bf9f95e506999ecffc37ce92bcaefd8388e30aebbf113026ca8748cbaac78727"
+    },
+    {
+      "path": "local_worktree/scripts/build_len_diorama_dot.py",
+      "bytes": 45181,
+      "git_blob": "de5390f6eff56777202f9dbc347a011daa728978",
+      "sha256": "e909145ad87001f71370c0406afe9331ece9e9b70abc7eead12bf1b4e7f07630"
+    },
+    {
+      "path": "local_worktree/scripts/build_logo_diorama.py",
+      "bytes": 22689,
+      "git_blob": "31219ab4a8c0ff65896eaaa557190d6b4089e5b0",
+      "sha256": "d879f2b8a8c7e60b2451c5e2c34c2d3567d7d8144ab9aed6e23c51e9e05b8a4d"
     }
   ],
   "scope": "All tracked files of every pre-cleanup branch; local output differences; DBPR_LOGO; three ignored legacy generators.",
