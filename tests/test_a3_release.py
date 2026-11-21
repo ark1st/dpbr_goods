@@ -1,5 +1,5 @@
 """Regression checks for real-size A3 packing and rigid mechanical dimensions."""
-import sys,unittest
+import sys,unittest,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tmp/pylibs'));sys.path.insert(0,str(ROOT/'scripts'))
@@ -7,6 +7,32 @@ from shapely.geometry import box,Point
 from build_a3_release import pack,shifted_poly,SIZE,MARGIN,GAP
 
 class A3PackingTests(unittest.TestCase):
+    def test_len_dot_and_four_keyrings_5t_still_fit_one_a3(self):
+        sizes=json.loads((ROOT/'tests/fixtures/len_dot_linked_5t_sizes.json').read_text())
+        self.assertEqual(len(sizes),14)
+        pieces=[]
+        for row in sizes:
+            p=box(0,0,*row['size_mm'])
+            pieces.append({'id':row['id'],'bounds':p.bounds,'poly':p})
+        pages=pack(pieces)
+        self.assertEqual(len(pages),1)
+        placed=pages[0]['placements']
+        self.assertEqual({p['piece']['id'] for p in placed},{p['id'] for p in pieces})
+        for i,p in enumerate(placed):
+            actual=shifted_poly(p['piece']['poly'],p)
+            self.assertAlmostEqual(actual.area,p['piece']['poly'].area,6)
+            for q in placed[:i]:self.assertGreaterEqual(actual.distance(shifted_poly(q['piece']['poly'],q)),GAP-.001)
+
+    def test_keyrings_allocated_once_across_selected_pair(self):
+        c=json.loads((ROOT/'configs/a3_release.json').read_text())
+        allocated=sum(c['linked_allocation'].values(),[])
+        expected={f'supplied_saetui_{i:02}' for i in range(1,5)}|{f'{n}_01' for n in ['tuiing','golden','burnt','unfried']}
+        self.assertEqual(set(allocated),expected)
+        self.assertEqual(len(allocated),8)
+        self.assertEqual(c['cadena_source_part_ids'],['ascent_01','ascent_11','ascent_12','ascent_13','ascent_14'])
+        self.assertNotIn('03_linked_keyrings',c['current_groups'])
+        self.assertNotIn('04_ascent_original',c['current_groups'])
+
     def test_ascent_inventory_fits_two_without_scaling(self):
         pieces=[]
         for i in range(31):

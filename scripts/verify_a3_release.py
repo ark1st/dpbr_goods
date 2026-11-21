@@ -6,7 +6,7 @@ sys.path.insert(0,str(ROOT/'tmp/pylibs'))
 import pymupdf as fitz
 from PIL import Image
 from shapely.geometry import Polygon
-from build_a3_release import polygon_of,extract_layers,MM
+from build_a3_release import polygon_of,extract_layers,MM,CONFIG
 from verify_laser_paths import contours,native_pdf
 from artifact_hash import artifact_sha256
 
@@ -28,12 +28,12 @@ def compare_geometry(file,spec):
 
 def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
-    wanted={'02_extra_sheet/3T':38,'02_extra_sheet/5T':38,'03_linked_keyrings':8,'04_ascent_original':31,'05_len/3T':9,'05_len/5T':9}
+    wanted=CONFIG['current_groups']
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
     records=[]
     for group,pages in manifest['groups'].items():
         assert sum(p['pieces'] for p in pages)==wanted[group]
-        assert len(pages)==(2 if 'ascent' in group else 1)
+        assert len(pages)==1
         protected_count=0;ids=[]
         for page in pages:
             folder=out/page['folder'];spec=json.loads((folder/'validation.json').read_text(encoding='utf-8'))
@@ -70,10 +70,24 @@ def main(check_zips=True,check_native=True):
                             'max_export_deviation_mm':changes,'png':images,
                             'sha256':{p.name:artifact_sha256(p) for p in files}})
         assert len(ids)==len(set(ids)),group
-        if 'extra' in group:assert protected_count==30
+        if 'extra' in group:
+            assert protected_count==30
+            assert set(CONFIG['linked_allocation']['02_extra_sheet']).issubset(ids)
+        if group=='04_ascent_cadena':assert set(ids)==set(CONFIG['cadena_source_part_ids'])
+        if group.startswith('05_len/'):
+            t=group.split('/')[-1]
+            assert sum(x.startswith(f'len_{t}_') for x in ids)==7
+            assert sum(x.startswith(f'len_dot_{t}_') for x in ids)==1
+            assert sum(x.startswith(f'len_fit_{t}_') for x in ids)==2
+            assert set(CONFIG['linked_allocation']['05_len']).issubset(ids)
+        # Exactly four assigned keyrings on each page, never duplicates or extra designs.
+        keyids=sum(CONFIG['linked_allocation'].values(),[])
+        expected_keys=CONFIG['linked_allocation'].get(group.split('/')[0],[])
+        assert sorted(x for x in ids if x in keyids)==sorted(expected_keys)
     packages=[]
     if check_zips:
-        for file in sorted(base.glob('*.zip')):
+        for group in sorted(wanted):
+            file=base/(group.replace('/','_')+'_A3.zip')
             with zipfile.ZipFile(file) as z:
                 assert z.testzip() is None
                 for name in z.namelist():
@@ -83,11 +97,11 @@ def main(check_zips=True,check_native=True):
                     assert artifact_sha256(current,z.read(name))==artifact_sha256(current),(file,name,'stale ZIP entry')
             assert file.stat().st_size<100*1024*1024,file
             packages.append({'file':file.relative_to(out).as_posix(),'bytes':file.stat().st_size,'sha256':artifact_sha256(file)})
-        assert len(packages)==6,len(packages)
+        assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
             'source_artwork_scale':1,'physical_cut_test':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
-                           'Ascent original has 26 upright plates but only 5 bases; quantity and interfaces preserved.',
+                           'Only Cadena first-row four panels and one original base are selected; other Ascent pieces are retired from this print run.',
                            'Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.',
                            'Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers.']}
     (base/'A3_VALIDATION.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')

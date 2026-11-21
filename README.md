@@ -5,12 +5,15 @@ main은 원본·설정·생성 코드, [output_len/output](https://github.com/ar
 
 ## 현재 A3 출력 파일 · 2026-11-21
 
-대지 420×297mm, 실제 크기 100%. 3T/5T 대안 중 하나씩 선택하면 총 A3 5장입니다.
+대지 420×297mm, 실제 크기 100%. 3T/5T 대안 중 하나씩 선택하면 총 **A3 3장**입니다.
 
-2. [추가 이미지 시트 · 38조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet)
-3. [줄줄이 키링 · 제공 새튀 4 + 튀잉 4 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/03_linked_keyrings)
-4. [어센트 · 판 26 + 받침 5 / A3 2장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/04_ascent_original)
-5. [Len · 본품 7 + 시험편 2 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len)
+2. [추가 이미지38 + 제공 새튀4 · 42조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet)
+3. [줄줄이 키링8개는 추가 이미지·Len 대지에 분산](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/03_linked_keyrings)
+4. [어센트 카데나만 · 4판 + 받침1 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/04_ascent_cadena)
+5. [Len 일반+DOT 공통세트8 + 시험편2 + 튀잉4 · 14조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len)
+
+Len은 배경·받침 한 세트에 일반/DOT 캐릭터를 교체합니다. 조각 크기는 그대로입니다.
+이전 키링 독립판과 어센트 전체2장 합본은 이번 출력에서 퇴역했습니다.
 
 [전체 A3 안내·ZIP·시안](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release) · [재생성·병합 기록](docs/a3-release.md)
 어센트는 원본 약 3.2mm 홈을 보존했습니다. 5T용이 아니며 실물 끼움 시험이 필요합니다.
@@ -52,6 +55,9 @@ python scripts/build_combined_diorama.py
 python scripts/build_extra_sheet_38.py
 python scripts/build_tshirt_fronts.py
 python scripts/build_linked_tuiing.py
+python scripts/build_a3_release.py
+python scripts/package_a3_release.py
+python -m unittest discover -s tests
 python scripts/verify_release.py
 ```
 
@@ -59,6 +65,8 @@ python scripts/verify_release.py
 build_goods_v3.py는 기존 호출 호환성을 위해 파일명을 유지하며 현재 output/production_v4를 생성합니다.
 엑스트라 시트는 저장소의 이전33조각 PDF와 assets/external/yun_image_sd_stand.ai를 사용합니다.
 기존 build_extra_sheet.py는 과거 합본용이며 최신38조각 생성에는 사용하지 않습니다.
+Len 원본 생성기는 `build_len_diorama.py`, DOT 캐릭터 대안은 `build_len_diorama_dot.py`입니다.
+현재 A3 빌더는 고정 커밋·해시의 원본 출력에서 재배치하므로 원본 생성기를 먼저 다시 실행할 필요가 없습니다.
 
 두께 변경 예:
 ```sh

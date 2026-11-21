@@ -6,7 +6,7 @@ contours are fitted through laser_paths. Original inputs remain recoverable.
 """
 from pathlib import Path
 from io import BytesIO
-import sys, json, math, hashlib, subprocess, zipfile, shutil
+import sys, json, math, hashlib, subprocess, zipfile, shutil, random
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tmp/pylibs'))
 import numpy as np
@@ -131,6 +131,16 @@ def pack(pieces):
     def wh(p):b=p['bounds'];return b[2]-b[0],b[3]-b[1]
     orders=[lambda p:math.prod(wh(p)),lambda p:max(wh(p)),lambda p:min(wh(p)),lambda p:wh(p)[1],lambda p:wh(p)[0]]
     candidates=[pack_once(pieces,key,metric) for key in orders for metric in ['short','area']]
+    # A slightly longer 5T tab can defeat the ten greedy orders despite a valid
+    # one-page arrangement. Explore deterministic size-weighted orders before
+    # accepting an extra sheet; geometry and gap never change.
+    if min(len(p) for p in candidates)>1:
+        rng=random.Random(20261121)
+        for attempt in range(200):
+            ranks={p['id']:math.prod(wh(p))*rng.uniform(.6,1.4) for p in pieces}
+            trial=pack_once(pieces,lambda p:ranks[p['id']],['short','area'][attempt%2])
+            candidates.append(trial)
+            if len(trial)==1:break
     return min(candidates,key=lambda pages:(len(pages),sum(max(q['y']+q['h'] for q in p['placements']) for p in pages)))
 
 def shifted_poly(p,placement):
@@ -302,6 +312,15 @@ def inputs(only=None):
             p.write_bytes(subprocess.check_output(['git','show',source['commit']+':'+source['file']],cwd=ROOT))
         assert hashlib.sha256(p.read_bytes()).hexdigest()==source['sha256'],('Changed source; review before repacking',p)
     batches=[]
+    linked=[]
+    if not only or any(only in n for n in ['02_extra_sheet/3T','02_extra_sheet/5T','05_len/3T','05_len/5T']):
+        linked=supplied_sources();assert len(linked)==4
+        for name in ['tuiing','golden','burnt','unfried']:
+            folder=ROOT/'output/linked_tuiing_v1'/name
+            art=extract_layers(folder/'02_MASTER.ai',['PRINT_ARTWORK','3_ARTWORK','2_ARTWORK'])
+            if not art[0].get_images() and not art[0].get_drawings():raise ValueError(f'No artwork extracted: {name}')
+            linked+=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,fitz.open(folder/'04_WHITE_INK_MASK.pdf'),name)
+        assert len(linked)==8
     for t in ['3T','5T']:
         if only and only not in f'02_extra_sheet/{t}':continue
         src=ROOT/f'output/extra_sheet/{t}/02_UNUSED'
@@ -309,19 +328,14 @@ def inputs(only=None):
         art=extract_layers(master,['PRINT_ARTWORK']);white=extract_layers(master,['WHITE_INK_MASK'])
         cut=fitz.open(src.parent/'03_CUT_ONLY.pdf')
         pieces=pieces_from(cut,art,white,f'extra_{t}',range(34));assert len(pieces)==38
-        batches.append((f'02_extra_sheet/{t}',pieces))
-    if not only or only in '03_linked_keyrings':
-        linked=supplied_sources();assert len(linked)==4
-        for name in ['tuiing','golden','burnt','unfried']:
-            folder=ROOT/'output/linked_tuiing_v1'/name
-            art=extract_layers(folder/'02_MASTER.ai',['PRINT_ARTWORK','3_ARTWORK','2_ARTWORK'])
-            if not art[0].get_images() and not art[0].get_drawings():raise ValueError(f'No artwork extracted: {name}')
-            linked+=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,fitz.open(folder/'04_WHITE_INK_MASK.pdf'),name)
-        assert len(linked)==8;batches.append(('03_linked_keyrings',linked))
-    if not only or only in '04_ascent_original':
+        batches.append((f'02_extra_sheet/{t}',pieces+linked[:4]))
+    if not only or only in '04_ascent_cadena':
         src=ascent_source();art=extract_layers(src,['인쇄']);white=extract_layers(src,['화이트']);cut=extract_layers(src,['받침','칼선'])
         pieces=pieces_from(cut,art,white,'ascent');assert len(pieces)==31,len(pieces)
-        batches.append(('04_ascent_original',pieces))
+        selected=CONFIG['cadena_source_part_ids']
+        pieces=[p for p in pieces if p['id'] in selected]
+        assert {p['id'] for p in pieces}==set(selected) and len(pieces)==5
+        batches.append(('04_ascent_cadena',pieces))
     for t in ['3T','5T']:
         if only and only not in f'05_len/{t}':continue
         folder=ROOT/'output/len_diorama_v1'/t
@@ -329,7 +343,21 @@ def inputs(only=None):
         pieces=pieces_from(cut,art,None,f'len_{t}',smooth=True);assert len(pieces)==7
         fit=folder/'04_FIT_TEST_MASTER.ai';fc=extract_layers(fit,['1_LASER_CUT']);fa=extract_layers(fit,['2_LABELS_PRINT_OR_COPY_BY_HAND'])
         pieces+=pieces_from(fc,fa,None,f'len_fit_{t}',smooth=True)
-        assert len(pieces)==9;batches.append((f'05_len/{t}',pieces))
+        assert len(pieces)==9
+        dotfolder=ROOT/'output/len_diorama_dot_v1'/t
+        dot=pieces_from(fitz.open(dotfolder/'03_CUT_ONLY.pdf'),extract_layers(dotfolder/'02_MASTER.ai',['3_ARTWORK']),None,f'len_dot_{t}',smooth=True)
+        # Both source layouts put their character in the same upper-left cell.
+        character=lambda p:p['bounds'][0]<15 and 120<p['bounds'][1]<130
+        dotchar=[p for p in dot if character(p)]
+        assert len(dotchar)==1 and len([p for p in pieces if character(p) and p['source']==f'len_{t}'])==1
+        # Common parts must really be interchangeable before deduplicating them.
+        for p in dot:
+            if character(p):continue
+            q=min(pieces[:7],key=lambda q:p['poly'].hausdorff_distance(q['poly']))
+            assert len(p['paths'])==len(q['paths'])
+            for e in p['paths']:
+                assert min(e['poly'].boundary.hausdorff_distance(f['poly'].boundary) for f in q['paths'])<.035
+        batches.append((f'05_len/{t}',pieces+dotchar+linked[4:]))
     return batches
 
 def main():
@@ -337,19 +365,15 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--only');parser.add_argument('--plan',action='store_true');args=parser.parse_args()
     OUT.mkdir(parents=True,exist_ok=True)
     manifest_path=OUT/'manifest.json'
-    manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {'revision':'A3-2026-11-21','canvas_mm':list(SIZE),'groups':{},'physical_cut_test':False}
+    manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {'canvas_mm':list(SIZE),'groups':{},'physical_cut_test':False}
+    manifest['revision']=CONFIG['revision']
+    manifest['physical_pages_per_selected_thickness']=3
+    manifest['retired_groups']=['03_linked_keyrings','04_ascent_original']
+    for retired in manifest['retired_groups']:manifest['groups'].pop(retired,None)
     for name,pieces in inputs(args.only):
         if args.only and args.only not in name:continue
         pages=pack(pieces)
-        if name=='03_linked_keyrings':
-            placements=[]
-            # Keep the 8-piece sample compact and easy to compare by color.
-            ordered=pieces[4:]+pieces[:4]
-            y2=MARGIN+max(p['bounds'][3]-p['bounds'][1] for p in ordered[:4])+GAP
-            for i,p in enumerate(ordered):
-                b=p['bounds'];placements.append({'piece':p,'x':MARGIN+(i%4)*42,'y':MARGIN if i<4 else y2,
-                    'w':b[2]-b[0],'h':b[3]-b[1],'rotation':0})
-            pages=[{'placements':placements}]
+        assert len(pages)==1,(name,'A3 sheet count regression')
         print('PLAN',name,len(pieces),len(pages),[len(p['placements']) for p in pages],flush=True)
         if args.plan:continue
         records=[write_page(OUT/name/f'sheet_{i+1:02}',p['placements']) for i,p in enumerate(pages)]

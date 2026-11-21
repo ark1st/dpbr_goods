@@ -121,10 +121,16 @@ def inventory_for(records):
         'Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tshirt_Fronts_Aing_Changseop_14x16in.zip',
         'Tuiing_Linked_4_Separate_Plates.zip'}
     current_hashes={r['file'] for r in records}
+    a3_file=out/'a3_release/manifest.json'
+    a3_manifest=json.loads(a3_file.read_text()) if a3_file.exists() else {}
+    retired_prefixes=['a3_release/'+x+'/' for x in a3_manifest.get('retired_groups',[])]
+    retired_zips={'a3_release/'+x.replace('/','_')+'_A3.zip' for x in a3_manifest.get('retired_groups',[])}
     inventory=[]
     for full in sorted(tracked):
         rel=full.removeprefix('output/');top=rel.split('/')[0]
-        if top in ['extra_sheet','linked_tuiing_v1']:
+        if any(rel.startswith(p) for p in retired_prefixes) or rel in retired_zips:
+            status='retired_A3_superseded_not_for_current_print'
+        elif top in ['extra_sheet','linked_tuiing_v1']:
             status='retired_layout_source_geometry_checked' if rel in current_hashes else 'retired_layout_source_not_for_current_print'
         elif top in ['Extra_Sheet_38pcs_3T.zip','Extra_Sheet_38pcs_5T.zip','Tuiing_Linked_4_Separate_Plates.zip']:
             status='retired_layout_source_package_checked'
@@ -144,10 +150,17 @@ def inventory_for(records):
 def main(pdf_only=False):
     out=ROOT/'output';tmp=ROOT/'tmp/laser_preflight';tmp.mkdir(parents=True,exist_ok=True)
     records=[];errors=[]
+    manifest=json.loads((out/'a3_release/manifest.json').read_text()) if (out/'a3_release/manifest.json').exists() else {'groups':{}}
+    current_a3={p['folder'] for pages in manifest['groups'].values() for p in pages}
+    retired_a3=['a3_release/'+g+'/' for g in manifest.get('retired_groups',[])]
     for folder in ACTIVE:
         for file in sorted((out/folder).rglob('*')):
             if not file.is_file() or 'preview' in file.parts or file.name.startswith('00_'):continue
             rel=file.relative_to(out).as_posix();suffix=file.suffix.lower();target=file
+            if folder=='a3_release':
+                if any(rel.startswith(p) for p in retired_a3):continue
+                if suffix in ['.ai','.vectorcraft'] or file.name.startswith('03_CUT_ONLY'):
+                    assert file.parent.relative_to(out).as_posix() in current_a3,('Unregistered A3 production artifact',rel)
             if pdf_only and suffix not in ['.ai','.pdf']:continue
             if suffix=='.svg':
                 tree=ET.parse(file)
@@ -192,7 +205,7 @@ def main(pdf_only=False):
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
     inventory=inventory_for(records)
-    report={'revision':'A3-smooth-cut-2026-11-21','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
+    report={'revision':'A3-compact-cadena-dot-2026-11-21','mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
             'protected_original_findings':[{'file':r['file'],'findings':r['protected_original_findings']} for r in records if r['protected_original_findings']],
             'records':records,'inventory':inventory,'physical_cut_test':False}
     destination=(tmp/'ci-report.json') if pdf_only else (out/'LASER_PATH_AUDIT.json')
