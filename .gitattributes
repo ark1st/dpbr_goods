@@ -10,3 +10,6 @@
 *.vectorcraft binary
 *.zip binary
 *.tif binary
+*.part001 binary
+*.part002 binary
+*.part003 binary

@@ -148,6 +148,9 @@ def main():
         assert p.stat().st_size<100*1024*1024,(filename,p.stat().st_size)
         report['zip'].append({'file':filename,'bytes':p.stat().st_size})
     report['rendered_pages']=len(pages)
+    if (OUT/'a3_release/manifest.json').exists():
+        from verify_a3_release import main as inspect_a3
+        report['a3_release']=inspect_a3()
     report['physical_cut_test']=False
     (QA/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT/'RELEASE_VALIDATION.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
