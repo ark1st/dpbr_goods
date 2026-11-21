@@ -8,15 +8,15 @@
 
 ## 현재 출력
 
-1. [추가 이미지 + 새튀 4종 · 42조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet/3T/sheet_01)
-2. [어센트 카데나 · 5조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/04_ascent_cadena/sheet_01)
-3. [Len 일반·DOT 공통 세트 + 튀잉 4종 · 12조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len/3T/sheet_01)
+1. [혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet/3T/sheet_01)
+2. [혼합 A3 2 · Len 일반·DOT·튀잉·카데나 나머지3개 · 15조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len/3T/sheet_01)
 
-확정분은 **A3 3장 / 59조각**입니다. 줄줄이 키링8개는 두 시트에 분산되어 있습니다.
-Len은 공통 받침·배경 한 세트에 일반·DOT 캐릭터 두 종류를 교체합니다. 원본 그림 높이76mm, 받침275×60mm를 유지했습니다.
+확정분은 **A3 최소2장 / 56조각**입니다. 세 제작 그룹의 조각을 두 시트에 섞었습니다. 단팽이1개·단풍바람 로고 키링2개는 제외했고 줄줄이 키링8개는 모두 포함합니다.
+Python으로 실제 칼선의 회전·이동·충돌·3mm 간격을 검사했습니다. 구멍을 제외한 조각 면적이 A3 한 장보다 크고 두 장 배치가 성립하므로 최소 장수는2장입니다. 상세 수치는 출력의 `A3_VALIDATION.json`에 있습니다.
+Len은 공통 받침·배경 한 세트에 일반·DOT 캐릭터를 교체합니다. 일반76mm, 도트50mm로 수정했으며 도트 돌기를 발 아래로 옮겼습니다. 공통 받침275×60mm·18.8×3mm 홈을 유지하고, 도트 돌기는18mm 폭·2.6mm 깊이로 새로 만들었습니다.
 
 별도 선택안: [새 Len PAD · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad/3T/sheet_01).
-정리 중 원격에서 들어온 새 디자인도 보존하고, 시험편을 제외해 A3로 옮겼습니다. 이것까지 출력하면4장·66조각입니다.
+시험편을 제외한 별도 디자인입니다. 이것까지 출력하면3장·63조각입니다.
 PAD의 받침은280×71.2235mm로 기존 Len과 다릅니다.
 
 [전체 출력 안내·시안·ZIP](https://github.com/ark1st/dpbr_goods/tree/output_len/output) · [보관본](https://github.com/ark1st/dpbr_goods/tree/raw)
@@ -35,7 +35,7 @@ python -m unittest discover -s tests
 python scripts/verify_release.py
 ```
 
-공유 중간 파일을 사용하므로 생성 명령은 순서대로 실행합니다. 부분 생성은 `--only 02_extra`, `--only 04_ascent`, `--only 05_len`, `--only 06_len_pad`입니다.
+공유 중간 파일을 사용하므로 생성 명령은 순서대로 실행합니다. 부분 생성은 `--only 02_extra`, `--only 05_len`, `--only 06_len_pad`입니다. 카데나는 앞의 두3T 시트에 포함되어 독립 출력하지 않습니다.
 `configs/a3_placements.json`의 검토한 좌표로 같은 배치를 재현합니다. 고정 커밋·SHA-256의 입력은 `tmp/source_cache/`로 복원합니다. 구버전 폴더를 output에 다시 만들지 않습니다.
 가람·단팽이·심벌 SVG는 `python scripts/export_art_masters.py`로 재생성합니다.
 

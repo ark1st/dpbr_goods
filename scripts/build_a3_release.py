@@ -238,7 +238,8 @@ def write_page(folder,placements):
             'rotation_degrees':place['rotation'],'scale':1,'path_count':len(p['paths']),
             'protected_original':any(e['protected'] for e in p['paths']),
             'max_source_curve_deviation_mm':max(e['deviation'] for e in p['paths']),
-            'expected_paths':[list(q.exterior.coords) for q in expected]})
+            'expected_paths':[list(q.exterior.coords) for q in expected],
+            'design_metadata':p.get('design_metadata')})
     for page in [mp,docs['PRINT_ARTWORK'][0]]:
         page.draw_rect(fitz.Rect(4*MM,4*MM,(SIZE[0]-4)*MM,(SIZE[1]-4)*MM),color=(0,0,1),width=.3*MM)
     streams[oc['CORNER_REFERENCE']].append(master.xref_stream(mp.get_contents()[-1]))
@@ -358,7 +359,7 @@ def ascent_source():
     path=TMP/'kimyun_ascent.ai';path.write_bytes(raw)
     return path
 
-def inputs(only=None):
+def source_inputs(only=None):
     restore_inputs()
     batches=[]
     linked=[]
@@ -403,7 +404,11 @@ def inputs(only=None):
             assert len(p['paths'])==len(q['paths'])
             for e in p['paths']:
                 assert min(e['poly'].boundary.hausdorff_distance(f['poly'].boundary) for f in q['paths'])<.035
-        batches.append((f'05_len/{t}',pieces+dotchar+linked[4:]))
+        from len_dot_part import create_dot_documents
+        newcut,newart,meta=create_dot_documents(ROOT,t,draw_path,MM,CONFIG['len_dot_revision'])
+        replacement=pieces_from(newcut,newart,None,f'len_dot_{t}')[0]
+        replacement['id']=dotchar[0]['id'];replacement['design_metadata']=meta
+        batches.append((f'05_len/{t}',pieces+[replacement]+linked[4:]))
     for t in ['3T','5T']:
         if only and only not in f'06_len_pad/{t}':continue
         folder=source_path(f'output/len_diorama_pad_v1/{t}/02_MASTER.ai').parent
@@ -412,6 +417,18 @@ def inputs(only=None):
         assert len(pieces)==7 and sum(len(p['paths']) for p in pieces)==15
         batches.append((f'06_len_pad/{t}',pieces))
     return batches
+
+def inputs(only=None):
+    batches=dict(source_inputs(only if only and '06_len_pad' in only else None))
+    for t in ['3T','5T']:
+        group=f'02_extra_sheet/{t}'
+        if group in batches:
+            batches[group]=[p for p in batches[group] if p['id'] not in CONFIG['excluded_brand_parts'][t]]
+    cadena={p['id']:p for p in batches.pop('04_ascent_cadena',[])}
+    for group,ids in CONFIG['cross_sheet_cadena_allocation'].items():
+        if group in batches:batches[group]+=[cadena[k] for k in ids]
+    return [(group,parts) for group,parts in batches.items() if not only or only in group]
+
 
 def reviewed_layout(name,pieces):
     """Replay reviewed rigid placements without searching a new layout on rebuild."""
@@ -442,8 +459,8 @@ def main():
     manifest['revision']=CONFIG['revision']
     manifest['test_pieces_included']=False
     manifest['superseded_releases']=CONFIG['superseded_releases']
-    manifest['physical_pages_per_selected_thickness']=3
-    manifest['retired_groups']=['03_linked_keyrings','04_ascent_original']
+    manifest['physical_pages_per_selected_thickness']=2
+    manifest['retired_groups']=CONFIG['retired_groups']
     for retired in manifest['retired_groups']:manifest['groups'].pop(retired,None)
     for name,pieces in inputs(args.only):
         if args.only and args.only not in name:continue

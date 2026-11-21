@@ -17,7 +17,7 @@
   "minimum_page_margin_mm": 8,
   "artwork_scale": 1,
   "protected_regions_mm": [],
-  "max_rigid_export_deviation_mm": 0.00196183670514131,
+  "max_rigid_export_deviation_mm": 0.0007143784301878118,
   "physical_cut_test": false,
   "white_ink_policy": "Provided white plates retained; absent source white is empty. RIP white required for other art.",
   "native_artwork_ppi": 600,
@@ -16602,7 +16602,8 @@
             94.0175714
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     },
     {
       "id": "len_pad_3T_07",
@@ -20571,7 +20572,8 @@
             108.5
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     },
     {
       "id": "len_pad_3T_03",
@@ -37860,7 +37862,8 @@
             94.55537746425782
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     },
     {
       "id": "len_pad_3T_04",
@@ -45797,7 +45800,8 @@
             57.104804192594074
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     },
     {
       "id": "len_pad_3T_02",
@@ -65306,7 +65310,8 @@
             179.58984374375
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     },
     {
       "id": "len_pad_3T_05",
@@ -74739,7 +74744,8 @@
             77.48278425629495
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     },
     {
       "id": "len_pad_3T_06",
@@ -80976,7 +80982,8 @@
             104.81677860109862
           ]
         ]
-      ]
+      ],
+      "design_metadata": null
     }
   ]
 }

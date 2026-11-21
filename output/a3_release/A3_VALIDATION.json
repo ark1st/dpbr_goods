@@ -1,11 +1,11 @@
 {
-  "checked_pages": 7,
+  "checked_pages": 6,
   "native_geometry_checked": true,
   "records": [
     {
       "folder": "a3_release/02_extra_sheet/3T/sheet_01",
-      "pieces": 42,
-      "contours": 107,
+      "pieces": 41,
+      "contours": 103,
       "max_export_deviation_mm": {
         "03_CUT_ONLY.pdf": 0.0007421509849329574,
         "02_MASTER.pdf": 0.0007421509849329574,
@@ -29,29 +29,29 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "18620ce2ca2d2da693a528ac3653de1aadbb101d57a8b20b83df22d0010aeb01",
-        "01_PRINT_300ppi.png": "5efad8fb9c7b83bcb4c08e03f634ee6c0494ae06fa71d81ea843eb33a80a43b9",
-        "02_MASTER.ai": "0895c0b8f69c2f9635b2779b7794aeda78c542346be5470217e33c122cd53c79",
-        "02_MASTER.pdf": "7a3032f5e6ceae2b8ee603a4ddd07dd392c9bddbfc1f34f59f5d6413d7d8698b",
-        "02_MASTER.vectorcraft": "c6caa2d0d2105207c5307d819c65a34e753c58571201c029a5ba2432d2900373",
-        "03_CUT_ONLY.pdf": "78d9ad92cf5f1782fcece66d15641bca78c7b1597efc50f0e982e7d74098e208",
-        "03_CUT_ONLY.svg": "a781b63aa1a4fd25882d984b31fd24eee5bd2446d6c5fe535a485e342bea00c5",
-        "04_WHITE_INK_MASK.pdf": "9acbb5b9ac4d6f85381af67077133eef36a5d1bcdc53f014b1775eb87a0a2763",
-        "04_WHITE_INK_MASK_300ppi.png": "6d752f1e7339bc3a8bec852f06f3e5f09855ec72f21f1c43d9079d781836fd51",
+        "01_PRINT.pdf": "aef85286f76f6bd3ec4ab9c83088125f9e3c71587ea6ab426002284057b712aa",
+        "01_PRINT_300ppi.png": "3dc302c709034e6426dfb46bfb9dee380e7f2c94997c5471b3e85f82d7dce409",
+        "02_MASTER.ai": "6aaa42f6b1fbdd80ce621a762f3d499d7c68a0b44315e460ef6076c92bac5f08",
+        "02_MASTER.pdf": "37c83f43630c58951af938db94fb0e7d2ebee345dbe880e019035af6caaf545e",
+        "02_MASTER.vectorcraft": "2dc230c6f184ca424fde51dcac9a20d731f51b0ba94ea7d7717d9383a99ce297",
+        "03_CUT_ONLY.pdf": "3846f39c8f38e9471d0d13b695039baf4b6fea54ad3fe09468404ab0563bc3bf",
+        "03_CUT_ONLY.svg": "bc35b83e3dd0419a558489dea399e5c0577cda236e7098ce1bb371f742c7fd1c",
+        "04_WHITE_INK_MASK.pdf": "07f1397e2566c9328283d3d6e08b2300fac4660e1cbb0a491861d3e34e6a224d",
+        "04_WHITE_INK_MASK_300ppi.png": "4ce03571d7dc89317a36ab7a864b98b1966a0c4e212f52ee9d28a92cea135e0b",
         "cut_detail.png": "ae771b1be3f79e6afad5acd6cb3b522a759603e8ab06d41c8e9d40f7eca7cd13",
-        "preview.png": "0856ee301719edcfaba01cc6283e41927f8e10250833c5ef49be3d9a743393db",
-        "PREVIEW_NOT_FOR_CUT.pdf": "bdcba311efa2bc0f4cda27ba8acc8b01571f369ad38a27ca26737350f3b78e72",
-        "README.md": "e80d3cfdc214c286bc8cf3ccefc8db3de0b15dd5500335d0e9303b852338d1cc",
-        "validation.json": "509296541540af5efaaac0debd8d991d6e426cde6ec342d8ac1fc0cfe1cf8871"
+        "preview.png": "a6e5b69795d97302f4c1bcd2bbbd9dbabf158b6da8594c77619b38a00b4a3836",
+        "PREVIEW_NOT_FOR_CUT.pdf": "91ecd4ec004c980607d60ad0a1520a63c7a6269a12fc83ff7d4980d26fc2c532",
+        "README.md": "955c18fc1b42a66b9f88eaa01dffec95df2b7e64687f25ce55e9397a15ac2121",
+        "validation.json": "2de714c4707163e8538bf47358f56eceae871373d00b5f6048cb5cc8322648e3"
       }
     },
     {
       "folder": "a3_release/02_extra_sheet/5T/sheet_01",
-      "pieces": 42,
-      "contours": 107,
+      "pieces": 39,
+      "contours": 101,
       "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 1.8418379824345318e-05,
-        "02_MASTER.pdf": 1.8418379824345318e-05,
+        "03_CUT_ONLY.pdf": 1.6105620693813227e-05,
+        "02_MASTER.pdf": 1.6105620693813227e-05,
         "02_MASTER.ai": 2.5763480172917074e-05,
         "02_MASTER.vectorcraft": 2.5763480172917074e-05
       },
@@ -72,31 +72,31 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "e90ec2bea4771b325ada1668045a7b53819ce08cd4fd667e6940e4807c00497a",
-        "01_PRINT_300ppi.png": "30ee36c1fc4ad95ab7a46edb3001e07bc04586bf1407827d2f6634101b966771",
-        "02_MASTER.ai": "f15c1bf0b8b9531c5554d7ae5aa365025528ae9bd49328873f7ba5978fb99b5f",
-        "02_MASTER.pdf": "8f45e3b1353629c62a08aafad2d46af69755f2aa36bdb28151026dd9dc4474a7",
-        "02_MASTER.vectorcraft": "d795928cb9f158f122c48cf94efd37a117bbaed335ad6a83330940a64ac1253d",
-        "03_CUT_ONLY.pdf": "3fbb9317eb739fbb83985e17151fe2fa28bf40c68aca47640150a02ac40edee9",
-        "03_CUT_ONLY.svg": "a526ed4d8059575650caa3dadc47a41103f5835f3baf195632e12a13b3d37072",
-        "04_WHITE_INK_MASK.pdf": "f6ca4218897112830d91e5b13af9eb3533b52b11bce08a0747c4598d3bc879eb",
-        "04_WHITE_INK_MASK_300ppi.png": "1c513e560ab6e205b5bd305f2f22e8ee4605cfaac97a861862b9cbec4b1c98fe",
+        "01_PRINT.pdf": "80ad7487b68ad5aafbc52e642474067e2a77f01e71037133bafad96c94d78b6f",
+        "01_PRINT_300ppi.png": "23f0b1da856a933e904c4fc4de4d4604437319684b52318dc267f7475f7a200f",
+        "02_MASTER.ai": "be1df345a700c17e6bf6c2475c7a7189d7bf0820dd162fdeac29cb03676f2a3f",
+        "02_MASTER.pdf": "fbe9d98f8993c1ba7523da4c690ef62abbdc6fed003295dcc9e1799d231c6463",
+        "02_MASTER.vectorcraft": "f359564e1183b1fbb9c48f36f684d6dd9a87ab92483e71190254bf107a5dd5fd",
+        "03_CUT_ONLY.pdf": "b28b01d308fbff2189f17843cb6dc982be88d7a0919a2a88d0069fd1677a1932",
+        "03_CUT_ONLY.svg": "5262923db054b1fd346bbeae4cb6ca52d19bf13bd6efbc12e1008ff9f544454e",
+        "04_WHITE_INK_MASK.pdf": "6d69da5515cc7134b695da1d962f5175d630b029861958e8b5176845356b421a",
+        "04_WHITE_INK_MASK_300ppi.png": "6fdfe8b53bcd7af61c28e453ce5927450441048a01d95c05bfb145c35a919eee",
         "cut_detail.png": "78774bfda9ffb461b4b8fde6c89c4a673d0966f4f0faad8590578608aac72206",
-        "preview.png": "74de6934b3aedec48ca555c414a20e108656b42fd7255526a35a65ea2b6543ad",
-        "PREVIEW_NOT_FOR_CUT.pdf": "8cd0982643da1c1fd2088f59ccb0306c549d0ffcb5986ca76af9c804c1262a39",
-        "README.md": "e80d3cfdc214c286bc8cf3ccefc8db3de0b15dd5500335d0e9303b852338d1cc",
-        "validation.json": "0294ea874ee979018988ba7a94f09cf6e4a497b25e96d1db1cf38d2a5e45f9b6"
+        "preview.png": "8557bdd56eafd4ce4d7f9a8115ad459aa8feb9f4bd55e373107d8790b4368b4e",
+        "PREVIEW_NOT_FOR_CUT.pdf": "28b72db0a32c5dca5e80c893bb18451d95f29dc57ba4a5c53872ad5a8a075ba0",
+        "README.md": "19be2abe39e3feff0e46d8431787e0bc97778c22200ff0985cdada7c87429ff8",
+        "validation.json": "3e9b5705d773bb345fef7ae0643c25ad148d07d58a392eed17335bed8e0be73b"
       }
     },
     {
       "folder": "a3_release/05_len/3T/sheet_01",
-      "pieces": 12,
-      "contours": 28,
+      "pieces": 15,
+      "contours": 39,
       "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 0.0015655225483978065,
-        "02_MASTER.pdf": 0.0015655225483978065,
-        "02_MASTER.ai": 0.0014879144544435975,
-        "02_MASTER.vectorcraft": 0.0014879144544435975
+        "03_CUT_ONLY.pdf": 0.000755849749906903,
+        "02_MASTER.pdf": 0.000755849749906903,
+        "02_MASTER.ai": 0.000755849749906903,
+        "02_MASTER.vectorcraft": 0.000755849749906903
       },
       "png": [
         {
@@ -115,20 +115,20 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "73328c464d4ca015ac7a456854adcf9f46fa084c05bdd4ca1812612ba2f83bb6",
-        "01_PRINT_300ppi.png": "785fd68d86f4804ff0fea4cbd50e4328b4fe282f6ef1521f258d46ff764e6dbe",
-        "02_MASTER.ai": "e29c108e2c72ced6a1ffc3b48ef5f772f64dd5b13af4ad9c1d0fdc0adbbedf5f",
-        "02_MASTER.pdf": "2dea74a6e63dbeb203dae2190967355c67ec02221433ef7cdec3fb1ac1c020ea",
-        "02_MASTER.vectorcraft": "4c630401cd685ce3657f5168bb76a598758fb03288aa540204a5cae244bbd826",
-        "03_CUT_ONLY.pdf": "d0f2b4d58167c39913a3b036473000320822fc2cd764e4fd49787b629932afb9",
-        "03_CUT_ONLY.svg": "ebdf3051194b1b7cca998ccd7e777b614f83fb4fb4406d51a093cb4346f7ed5f",
-        "04_WHITE_INK_MASK.pdf": "47f2d12c0a6b9d49c51d38fd6c10b6f7f21de9987cb1f36474dc0301d9d46147",
-        "04_WHITE_INK_MASK_300ppi.png": "8eaed989bd59668135aaa1a261af52fb223e5f8bb78207bcdee7d0b605eef9b9",
-        "cut_detail.png": "23da2f67c7526fd2412ba7aa66cf2f35c680edd9429e7f8236fd6b21a0a682bf",
-        "preview.png": "83bd25bbecb605a96786e67a22166bcf8ce13b6c6aa5bc0c51e1c6d958fcb4a0",
-        "PREVIEW_NOT_FOR_CUT.pdf": "1a3e2c5f68af2c2a631788aad1ff814af36f3a1ff9071b7bee07491579315e3a",
-        "README.md": "25aafe61ddb2d695d0eba9fc8d0e012f09c35d6aea113ca8aa3e5005c19a4a41",
-        "validation.json": "a5fb6196f33e5297f907bfcc5d1651c36f18fd42f48292f56ad5fd27de6966e2"
+        "01_PRINT.pdf": "c8785dc69646eae563b5d57e5ad6ec672f53481b8d7aaef2e09cc44d73da1aa6",
+        "01_PRINT_300ppi.png": "20926407acdfcdedacd868e56dbb327a7c52dd5745e0e4e3f1686505185795ae",
+        "02_MASTER.ai": "f36b4dcda5aca6b76c76fbf3c4eefe881fa3e06e5d5b6e8830fe0a6133bed937",
+        "02_MASTER.pdf": "67b3d02a20554686020f2b3e76d8d26e3103bf0340a114fb33e3bb0e88d306b2",
+        "02_MASTER.vectorcraft": "fd9c2fe262af1a1a0bcfc138dee47642b1c8807accbb4d98a429e3ae60b4b7c7",
+        "03_CUT_ONLY.pdf": "c400230f0762c182c29210247b0c41335e7592ada767cff57432326f8f665fd0",
+        "03_CUT_ONLY.svg": "1b0b9b8651509e99b70890ac08452e511bf9a8dab6f0e3bdf8e02316244feddd",
+        "04_WHITE_INK_MASK.pdf": "8509c98a9d34af76f9d6f8f7141bbb0ec319f80d8c275733fdacf1c1a8e9edf9",
+        "04_WHITE_INK_MASK_300ppi.png": "b929d33986f87f74a2a77a1547dab4dd7de18c5e836d32808c4e9814a4f9e76a",
+        "cut_detail.png": "b04d3de41c24d73abfb84a6f754ed7a547e4f2eae6be706b1b6d0e4ddcbe5e7b",
+        "preview.png": "8e61283a473e57f8b5dce6a99f555f3e63811e14c7a3dca285a4fad439edc345",
+        "PREVIEW_NOT_FOR_CUT.pdf": "9b4162db9a58e94439b3fa7185968964941e1b946ffe7c84e98b37345137ad5d",
+        "README.md": "fa2fb205a5466f580326a807d019185de2438cfbd18b2a791a2922a2ab3774ce",
+        "validation.json": "709c3dd30f6125000a3ae4879dee3fdbd47fe29438782a589849c263faecbb35"
       }
     },
     {
@@ -136,10 +136,10 @@
       "pieces": 12,
       "contours": 28,
       "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 0.0017916055656697395,
-        "02_MASTER.pdf": 0.0017916055656697395,
-        "02_MASTER.ai": 0.0015226582602538739,
-        "02_MASTER.vectorcraft": 0.0015226582602538739
+        "03_CUT_ONLY.pdf": 0.0007509203224030593,
+        "02_MASTER.pdf": 0.0007509203224030593,
+        "02_MASTER.ai": 0.0007509203224030593,
+        "02_MASTER.vectorcraft": 0.0007509203224030593
       },
       "png": [
         {
@@ -158,63 +158,20 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "ef6ad68659db5be8307345f7eda1de1ab2d2490dc2359cb384c31e327b5971dc",
-        "01_PRINT_300ppi.png": "0d1554c3efc3fe9cf42841ccd1bc17b0faafab8fab202f74eb128251b84677a0",
-        "02_MASTER.ai": "ae3bcf8c394308d08dd6cbbc124d7d8036b666439444400edc9d9638802a24cf",
-        "02_MASTER.pdf": "7cef3063c4d452b3859a2a015dd464584c60b2b4935cd6e657dbeb8955c4768a",
-        "02_MASTER.vectorcraft": "2b3870c493c901390bbca1a62189047e07b5271070909edded4edceba8dc2210",
-        "03_CUT_ONLY.pdf": "0cefeb68b6eb7c1caf66bc7734e29af3ef88401fbaff01b4861c9213f4ade3f5",
-        "03_CUT_ONLY.svg": "6ee5539378fc97710e3e384f185276cec85ec67c024347a94c5342e64fd5ae42",
-        "04_WHITE_INK_MASK.pdf": "a0a0c8609fcef04d4bccea21edb3f861e2bb0836a00b3cb8bdab3a14d323f75a",
+        "01_PRINT.pdf": "c8027a98d8c32f42f8f8fb0d252ade45781b602202cbfdac5c1f48e22b882934",
+        "01_PRINT_300ppi.png": "c76b6e233bf3d77dab3b4f1f1a8a8e99e9614b1730a34e9cd6fe8e16be562093",
+        "02_MASTER.ai": "de5361a9fe0990c6ba146ee6e7e8f77e489db8615d36593723dd58bed1932448",
+        "02_MASTER.pdf": "dc29b66844977848207978b55c7053e094dd94a51f9573e8a573a75a85eda921",
+        "02_MASTER.vectorcraft": "d750d865fd3fb712bfd80e7a88d8fa9f16bd74397841c513c9f5e72fcf62cf68",
+        "03_CUT_ONLY.pdf": "1f983bbe25f122de5c40328855f721ebe06a49ba02a28cee36385f695fbfc981",
+        "03_CUT_ONLY.svg": "6b3a708b705dc99bd6e8e409e865e318f7b0269d7ebb4687d0863e4231b36a95",
+        "04_WHITE_INK_MASK.pdf": "79f05b6879a892ca3ba835ee4ebf8ab56cc59ede9e6f96212a6503f4f0e2072c",
         "04_WHITE_INK_MASK_300ppi.png": "ebd0cd8970a31488d28f472dbcacfb2e62f9f6327d9b1657d25c621757d7a73b",
-        "cut_detail.png": "4ff442b973946f7e39e34d915fb5792c0d1c19ab40325ccb8abb4729c3d1a27a",
-        "preview.png": "c91601852f3ff936dd5ca956d85273f2c85cc86df3d7056ed89b876b25761514",
-        "PREVIEW_NOT_FOR_CUT.pdf": "19c664b643e92be15b81a8ceb2fa5a131461d5d9f9dc4033263886367d2caf8b",
+        "cut_detail.png": "b438ec5d7b846db6fa6745d717c2d450ea24d4774ece83b3c16a49751b2d1665",
+        "preview.png": "d6e71df2451b7fccfbefb3410a66719f3fbcbde518991fad7600cda6a8c885f7",
+        "PREVIEW_NOT_FOR_CUT.pdf": "1f66b7cb9f8437b17463a782d66d8c50a2f844939f7fbae0c2060e3db94ade94",
         "README.md": "25aafe61ddb2d695d0eba9fc8d0e012f09c35d6aea113ca8aa3e5005c19a4a41",
-        "validation.json": "1e78f04aaf2bee082bc9d33b1dc40dacda7f3ca261e10a9aa4977e716abdecac"
-      }
-    },
-    {
-      "folder": "a3_release/04_ascent_cadena/sheet_01",
-      "pieces": 5,
-      "contours": 13,
-      "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 1.4618084376643035e-05,
-        "02_MASTER.pdf": 1.4618084376643035e-05,
-        "02_MASTER.ai": 1.2403628508778628e-05,
-        "02_MASTER.vectorcraft": 1.2403628508778628e-05
-      },
-      "png": [
-        {
-          "file": "a3_release\\04_ascent_cadena\\sheet_01\\01_PRINT_300ppi.png",
-          "pixels": [
-            4961,
-            3508
-          ]
-        },
-        {
-          "file": "a3_release\\04_ascent_cadena\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
-          "pixels": [
-            4961,
-            3508
-          ]
-        }
-      ],
-      "sha256": {
-        "01_PRINT.pdf": "08f8bbee86bd8c8b726681d83aedbbdc605d9da50958a2de85d82f1465e0207c",
-        "01_PRINT_300ppi.png": "240ef3718e2737c1ad4236277e5084cedbb3d1c795491d57829cd4748b1e25d7",
-        "02_MASTER.ai": "79cb057983157b73d568b658570a55b0fd290f2569a7c26e44d79e26e4b59da7",
-        "02_MASTER.pdf": "55f4f997b7b7ada4f8dfff21cb106f0da4f0fe7a0193436bf0c5fb02ecd442b7",
-        "02_MASTER.vectorcraft": "b1fcc574ce6dc04d8f548692f990164e498e8ca2e665c23609ea42fdc8cb33c8",
-        "03_CUT_ONLY.pdf": "52c6a33cd800720709304f5d7882e665e37e9f300d9d22ab2da23ec8d53cda63",
-        "03_CUT_ONLY.svg": "ca35baf6cf4f26ad661cca6c69b469cc8a109b00cb85b39ab099f070fb5a6df0",
-        "04_WHITE_INK_MASK.pdf": "cdc737835edff45034f905f17c50e5e70347b4c9b684ed0ab96146269550f7fb",
-        "04_WHITE_INK_MASK_300ppi.png": "7c79ccd47ae5c16cd9b791650e6634dd656bc2a44af5d5515985e6adb8a75eec",
-        "cut_detail.png": "32563a820815156250c0729c9827fbbc5fd10f68e2d99b49f30ce0560cb23ec7",
-        "preview.png": "55d20f1967c96b313c981996a13205de0b89404a805448cc5d6944e4f5e4a454",
-        "PREVIEW_NOT_FOR_CUT.pdf": "32e18ecf68499a151912a37fa8d671bf7e393708f8781e65e14d5200e7bdb503",
-        "README.md": "6d026589e6a53b3b94d485ef08cde9c522649568d4a0a777270488b23bfc6b0d",
-        "validation.json": "0044540ca30621d442958612ed117e2ce8f0f60b14ad959023a87a5b3cba263e"
+        "validation.json": "8ef41d87da5ac150a771fd1d3d855fba1e0994198694fd22028012201bb555cb"
       }
     },
     {
@@ -222,10 +179,10 @@
       "pieces": 7,
       "contours": 15,
       "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 0.00196183670514131,
-        "02_MASTER.pdf": 0.00196183670514131,
-        "02_MASTER.ai": 0.00198157725981585,
-        "02_MASTER.vectorcraft": 0.00198157725981585
+        "03_CUT_ONLY.pdf": 0.0007143784301878118,
+        "02_MASTER.pdf": 0.0007143784301878118,
+        "02_MASTER.ai": 0.00037189322314079966,
+        "02_MASTER.vectorcraft": 0.00037189322314079966
       },
       "png": [
         {
@@ -244,20 +201,20 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "cdeb48cd9090004312b4480e27e2bd2d24d6f59816d93a830faab7ac62cbb453",
+        "01_PRINT.pdf": "fde6a4a12e07180185be0e1eab22d51fd4dde4aff8b7b4f3df74519025dd023f",
         "01_PRINT_300ppi.png": "07e27b1344708f4d8b29f266f094d2ffe4aa25aeda41945e7b48fbc68ad41b17",
-        "02_MASTER.ai": "595410056ddf69e3a66397262de5c3b08f264f63b0357eb1aa07b8f5ba5c1aff",
-        "02_MASTER.pdf": "04e08928c4da6f09468dac253ac5a2ad483ff6a24092f8f13260fde6f4610dfe",
-        "02_MASTER.vectorcraft": "72c7a805c3f3a4c77f924464ce6b3c4af79feca1ecaa05e474b4d47e401cabf9",
-        "03_CUT_ONLY.pdf": "232afb42902e204600a2f41233aeb3065e874ae467e61a318f69429162d3607f",
-        "03_CUT_ONLY.svg": "0c3a12a15295700bf4f3a915d9a6ba1ba72bcad341f02e7c94c1dad8165ceae1",
-        "04_WHITE_INK_MASK.pdf": "63f32d5bbae020d79c19049e43a1e9dc5e2fc9f9a430ea6d4194f7d86a948572",
+        "02_MASTER.ai": "668573a955c129873f52c331338d63fcb2cede78e0ef8d8900af1e14d323ff6e",
+        "02_MASTER.pdf": "439c78e195a838c6457afd486ed5a6b998af5abb690827780a42d8e3dfd1b280",
+        "02_MASTER.vectorcraft": "4c60b7580863e2a2ae70b7bf48fd9e4777ee8b8463c7c395fabbd153120743db",
+        "03_CUT_ONLY.pdf": "ba49e2e37a7c43d222185e0c8555b3c8d5754011a773c39b3c7c902300458192",
+        "03_CUT_ONLY.svg": "476a4977e1593ad6e64bc91455ea87d9b26af9e06d84bc906276a7b9cbeba49e",
+        "04_WHITE_INK_MASK.pdf": "9121a82c666482441c4b139d0241fe086145cc50d7bb6326b05c77669e4b2b4f",
         "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-        "cut_detail.png": "2c7a990e49757e1b6c1c65fb95a2c26ff1a308a3456b5d404e19f05f0ac64183",
-        "preview.png": "e89a070a4dd028e7b00401ac5d9cc761be95ef9d8b96f5f338ec846e6b6e60ce",
-        "PREVIEW_NOT_FOR_CUT.pdf": "868d06f9c46da3a4a15aee071ae1a854da073a2293b67f08f76545bc5a0b3fe8",
+        "cut_detail.png": "9374d7a4cbeb5476d7f65c1778c1acc365f4c77c7b5a293da1c8b62d75512647",
+        "preview.png": "1600955e29dc10657ff8d258286c272cd053afad978ec3bc7df9780532131b66",
+        "PREVIEW_NOT_FOR_CUT.pdf": "310a45fcea688cf2a16218d121f8fe1b6b216434c920ed748289e9b9d1ea1709",
         "README.md": "a1113fff5c0276111fadfb71fcd706f575526e51ec9156cb9d878682f681bcca",
-        "validation.json": "5ce324f607e537f484a2a4e9277083dc15e06fccf62d0412610d97cde60f51d3"
+        "validation.json": "531e952d803e934b9721e3dcb0df056b6d24af5075e9ba6ca0dedf852c6939a4"
       }
     },
     {
@@ -265,10 +222,10 @@
       "pieces": 7,
       "contours": 15,
       "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 0.0019486269114902092,
-        "02_MASTER.pdf": 0.0019486269114902092,
-        "02_MASTER.ai": 0.0019605171056295773,
-        "02_MASTER.vectorcraft": 0.0019605171056295773
+        "03_CUT_ONLY.pdf": 0.0007260669379376379,
+        "02_MASTER.pdf": 0.0007260669379376379,
+        "02_MASTER.ai": 0.0007242728134168055,
+        "02_MASTER.vectorcraft": 0.0007242728134168055
       },
       "png": [
         {
@@ -287,64 +244,67 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "8486043f9c066771938e0fba9edd9cf2870643485ae40bffc4c5f5b7f1c64436",
+        "01_PRINT.pdf": "aa6037df855d3439460486598fd0958d4dbf73851c97b8e969ba7c4a54bad77b",
         "01_PRINT_300ppi.png": "575f3b0793b3a5f5598e7def72208278afac4464654468490a3e6ca93bc38675",
-        "02_MASTER.ai": "b067166a20a0f5b3f355e0877549b9eb0a1b1a01598740af84391b8c6c682d14",
-        "02_MASTER.pdf": "8a85853d2bbfa31c5b772a8a512df4721c5ee69c666d17b1a16a723353b42ef7",
-        "02_MASTER.vectorcraft": "6c5ce619d9862bf87fd3577faf5248f15eb1d6ac7c1e1a09c76451fc1203e270",
-        "03_CUT_ONLY.pdf": "2eb58e6dcf1ac27ec84d49e763eed7f29c327d008faf0c1621e0b2e45dfeb1e2",
-        "03_CUT_ONLY.svg": "1ba4d6f787a23ae8dbff54f873c5d550f2dce1704d2376624ae10053c0141a96",
-        "04_WHITE_INK_MASK.pdf": "69d6db4e8299043532985c8f1ab12d54c7e98f2fec67ba9f922428d25fffd80b",
+        "02_MASTER.ai": "957412ed1779a2734f96de035e6f6e57290792a9fedf6c59e6538f7f03f0ecaa",
+        "02_MASTER.pdf": "5c10983f290454eca8287a80f354a560790c0d84d69d45189748d561a8dabcf4",
+        "02_MASTER.vectorcraft": "3f86fa7f1439d5a0783d6cff4847b3caab750aafbc3d7a9ad3b3d1e226c0474c",
+        "03_CUT_ONLY.pdf": "22a18f358b985815dfc884af98b6d6ddb718d6428ee428d3f1cc361191a29a60",
+        "03_CUT_ONLY.svg": "1309c68bc6d728f15b9054ac51a82802f385bcb516168ce9ab0ff3b1e471e84f",
+        "04_WHITE_INK_MASK.pdf": "f61d880d1c9800c7770871e519a19f43901a74d5e3d7e9a9b17e134325859f31",
         "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-        "cut_detail.png": "7d54a9da20d42afd2b3bc27cff74910fe76453288c06c9d21fa375cc252b2fb1",
-        "preview.png": "391aa0e75dd51ef9c8c2c72d535dc2e13cfb2e3f1d358555805f87d911f2e370",
-        "PREVIEW_NOT_FOR_CUT.pdf": "19e90df3a9db8387541735652aa4a60964fdb44644c69fc8a7da668c35e4e98f",
+        "cut_detail.png": "8593495eb4de546be8a03990d9bafae228f4f567fee935de19fff7daca25e2b1",
+        "preview.png": "cc44584d042c383eccae7bf8ae69b092c436b143fcdfa8189be685155a5f71ee",
+        "PREVIEW_NOT_FOR_CUT.pdf": "947ffdb80e8833566071ec01afcd7f7a39ce1287f811ef8bcb46fa2dcc4c4a7d",
         "README.md": "a1113fff5c0276111fadfb71fcd706f575526e51ec9156cb9d878682f681bcca",
-        "validation.json": "0428011b8383bf0828c1762318c4f13e8f7427779fd81eb223e0eeb4e3574305"
+        "validation.json": "bce9ba891cd416f91b4ce4747c361266225eab822b6a9435bb3e238587509c70"
       }
     }
   ],
   "packages": [
     {
       "file": "a3_release/02_extra_sheet_3T_A3.zip",
-      "bytes": 10256384,
-      "sha256": "6a174c42988dd522e6d936ca1a9ab9a4544c47843a3cfe2f723176fc0afdd8c6"
+      "bytes": 13984001,
+      "sha256": "4d4caff618c044c15ada55bdaf9716ff627f8bf762cfb310bae33cf9ea625a36"
     },
     {
       "file": "a3_release/02_extra_sheet_5T_A3.zip",
-      "bytes": 10378413,
-      "sha256": "a25c2e3dce8f050f40300066ae0d10206dd5d6afe756a548e511367387d121da"
-    },
-    {
-      "file": "a3_release/04_ascent_cadena_A3.zip",
-      "bytes": 6405075,
-      "sha256": "6849927a6923d33242c846687cddd519f1ca38577837b4329f967f47405519e6"
+      "bytes": 10252669,
+      "sha256": "b36dcb5ec63cad230e76e63c5efda7832d80dce50c0d888b82c9a294c9f9907e"
     },
     {
       "file": "a3_release/05_len_3T_A3.zip",
-      "bytes": 13886380,
-      "sha256": "72998f02b684f541aaf2a4ca7d1cf611d35408ad3ea9c7721cd7b39e0c3234c8"
+      "bytes": 16542637,
+      "sha256": "84025d7c13af8cad44948d64aa52f377ec62199a4dcf868f9649f18f02861b25"
     },
     {
       "file": "a3_release/05_len_5T_A3.zip",
-      "bytes": 14394740,
-      "sha256": "b6d48a9e212128471272d992237590034a891191b4062d8b39d778ed8062898b"
+      "bytes": 13929154,
+      "sha256": "69f7dc560851a7512940547e7d7033a7fe942a665d5e73dd3c34de620d69f126"
     },
     {
       "file": "a3_release/06_len_pad_3T_A3.zip",
-      "bytes": 12584252,
-      "sha256": "a0292aa76bf431e8e0299b156fd251cb57429ff7566a00420d3f29074147cd84"
+      "bytes": 12584174,
+      "sha256": "263f02a5ec9abe47fb15501e5b6e958aa1cda8eaccfb232bfc8eb7e8504df411"
     },
     {
       "file": "a3_release/06_len_pad_5T_A3.zip",
-      "bytes": 12553386,
-      "sha256": "c087bdc2a2ce63b93f41ec3df6c25e17546a968bdf65ac5c43897bc0d4961d06"
+      "bytes": 12553405,
+      "sha256": "1b3ee59a8daea26660944ecffdca9328cc1e46b04b9ba26519bac3be50c4263c"
     }
   ],
   "errors": [],
-  "selected_primary_pages": 3,
+  "selected_primary_pages": 2,
   "selected_thickness": "3T",
   "optional_PAD_pages_per_thickness": 1,
+  "minimum_sheet_proof": {
+    "net_material_area_mm2": 155683.91111209392,
+    "single_A3_area_mm2": 124740,
+    "area_lower_bound_sheets": 2,
+    "feasible_sheets": 2,
+    "optimal_sheet_count_proven": true,
+    "scope": "56 selected 3T pieces; optional PAD and 5T alternatives excluded; no scale reduction except approved DOT redesign."
+  },
   "source_artwork_scale": 1,
   "physical_cut_test": false,
   "test_pieces_included": false,

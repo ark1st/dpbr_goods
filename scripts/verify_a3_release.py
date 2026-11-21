@@ -33,7 +33,7 @@ def main(check_zips=True,check_native=True):
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
     assert set(reviewed)==set(wanted),'Incomplete reviewed layout inventory'
     assert CONFIG['include_test_pieces'] is False and manifest['test_pieces_included'] is False
-    records=[]
+    records=[];selected_parts=[]
     for group,pages in manifest['groups'].items():
         assert sum(p['pieces'] for p in pages)==wanted[group]
         assert len(pages)==1
@@ -55,6 +55,13 @@ def main(check_zips=True,check_native=True):
                 assert all(p['rotation_degrees']%15==0 and p.get('rotated_origin_mm') is not None for p in spec['parts'])
             protected_count+=sum(p['protected_original'] for p in spec['parts'])
             ids.extend(p['id'] for p in spec['parts'])
+            if group in CONFIG['selected_primary_groups']:selected_parts.extend(spec['parts'])
+            for p in spec['parts']:
+                if p['id'].startswith('len_dot_'):
+                    meta=p['design_metadata'];t=float(group.split('/')[-1].removesuffix('T'))
+                    assert meta['art_height_mm']==50 and meta['tab_width_mm']==18
+                    assert abs(meta['tab_depth_mm']-(t-.4))<.0001
+                    assert meta['common_base_slot_mm']==[18.8,t]
             changes={name:compare_geometry(folder/name,spec) for name in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']}
             if check_native:
                 native=folder/'02_MASTER.vectorcraft'
@@ -87,6 +94,7 @@ def main(check_zips=True,check_native=True):
         if 'extra' in group:
             assert protected_count==30
             assert set(CONFIG['linked_allocation']['02_extra_sheet']).issubset(ids)
+            assert not set(ids)&set(CONFIG['excluded_brand_parts'][group.split('/')[-1]])
         if group=='04_ascent_cadena':assert set(ids)==set(CONFIG['cadena_source_part_ids'])
         if group.startswith('06_len_pad/'):
             t=group.split('/')[-1]
@@ -101,6 +109,20 @@ def main(check_zips=True,check_native=True):
         keyids=sum(CONFIG['linked_allocation'].values(),[])
         expected_keys=CONFIG['linked_allocation'].get(group.split('/')[0],[])
         assert sorted(x for x in ids if x in keyids)==sorted(expected_keys)
+        assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(CONFIG['cross_sheet_cadena_allocation'].get(group,[]))
+    selected_ids=[p['id'] for p in selected_parts]
+    assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==56
+    assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids'])
+    # Subtract through-holes: this is physical material area, not bounding boxes.
+    material_area=0
+    for p in selected_parts:
+        areas=[Polygon(q).area for q in p['expected_paths']]
+        material_area+=2*max(areas)-sum(areas)
+    lower_bound=math.ceil(material_area/(420*297))
+    assert lower_bound==2 and len(CONFIG['selected_primary_groups'])==lower_bound
+    minimum_proof={'net_material_area_mm2':material_area,'single_A3_area_mm2':420*297,
+        'area_lower_bound_sheets':lower_bound,'feasible_sheets':2,'optimal_sheet_count_proven':True,
+        'scope':'56 selected 3T pieces; optional PAD and 5T alternatives excluded; no scale reduction except approved DOT redesign.'}
     packages=[]
     if check_zips:
         for group in sorted(wanted):
@@ -120,7 +142,8 @@ def main(check_zips=True,check_native=True):
             packages.append({'file':file.relative_to(out).as_posix(),'bytes':file.stat().st_size,'sha256':artifact_sha256(file)})
         assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
-            'selected_primary_pages':3,'selected_thickness':'3T','optional_PAD_pages_per_thickness':1,
+            'selected_primary_pages':2,'selected_thickness':'3T','optional_PAD_pages_per_thickness':1,
+            'minimum_sheet_proof':minimum_proof,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
                            'Only Cadena first-row four panels and one original base are selected; other Ascent pieces are retired from this print run.',

@@ -1,6 +1,6 @@
 {
   "archive_branch": "raw",
-  "archive_commit": "3208908696272232bf8a388313f67e855769fee9",
+  "archive_commit": "2998c858ad3795b930a4c5138c658cea1665e61d",
   "status": "retired_not_for_current_production",
   "prior_heads": {
     "main": "b0de59b0fd8b70a2a6aec257546dbac07c31b5cd",
@@ -8,7 +8,26 @@
     "origin/output_len_sleeg": "613b89f6665d1d8b7f2188acd85f00338ad25c81",
     "output": "8f162f27877c494168764cd1ab27e8d566993baf",
     "output_len_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-    "output_len_sleeg_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25"
+    "output_len_sleeg_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+    "before_two_sheet": "0061b39491f7e70c28060eecd81753eb35c7f779"
   },
-  "physical_cut_test": false
+  "physical_cut_test": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    },
+    {
+      "commit": "0061b39491f7e70c28060eecd81753eb35c7f779",
+      "revision": "A3-2026-11-22-current-only",
+      "status": "retired_not_for_current_print",
+      "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    }
+  ]
 }
