@@ -1,3 +1,5 @@
+[개별 에셋 · 원본 방향 AI/PDF·그림·칼선](https://github.com/ark1st/dpbr_goods/tree/output_len/output/individual_assets) · [줄줄이 튀잉 연결 예시](https://github.com/ark1st/dpbr_goods/blob/output_len/output/individual_assets/linked_tuiing_assembly.png)
+
 # 단풍바람 굿즈 제작
 
 현재 선택은 **3T / A3 420×297mm / 100% 실척 / 시험편 없음**입니다.
@@ -33,6 +35,7 @@ Python3.11 이상과 설치된 VectorCraft CLI가 필요합니다. CLI가 PATH�
 git fetch origin raw
 python -m pip install -r requirements.txt
 python scripts/build_a3_release.py
+python scripts/build_individual_assets.py
 python scripts/package_a3_release.py
 python -m unittest discover -s tests
 python scripts/verify_release.py

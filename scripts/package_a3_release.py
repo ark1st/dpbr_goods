@@ -1,6 +1,6 @@
 """Package only registered A3 plates; never recreate retired output folders."""
 from pathlib import Path
-import json,zipfile,shutil
+import json,zipfile,shutil,time
 from source_cache import source_path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'output';BASE=OUT/'a3_release'
@@ -61,6 +61,7 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
 
 이전 제작판·시험편·중복 ZIP은 [raw 보관 브랜치](https://github.com/ark1st/dpbr_goods/tree/raw)에 있습니다. 새 제작에 사용하지 마세요.
 '''
+    common='[개별 에셋 · 원본 방향 편집본](../individual_assets) · [줄줄이 튀잉 연결 예시](../individual_assets/linked_tuiing_assembly.png)\n\n'+common
     write(BASE/'README.md','# A3 제작 파일 · 현재 3T\n\n'+common)
     from yanggum_parts import render_final_preview
     render_final_preview(ROOT,BASE/'yanggum_final_preview.png',cfg['yanggum_products'])
@@ -73,6 +74,7 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
         if cat=='02_extra_sheet':
             text+='\n현재3T는41조각(카데나 뒤쪽 판2개 포함), 5T대안은39조각(카데나 제외)입니다. 단팽이·단풍바람 로고 키링은 모두 제외했습니다. 카데나의 나머지3개는 혼합A3 2에 있습니다. 조립 순서는 뒤에서 배경0→효과1→캐릭터2→효과3입니다.\n'
         if cat=='05_len':
+            text+='\n![줄줄이 튀잉 · 실제 조각 연결 참고](../../individual_assets/linked_tuiing_assembly.png)\n'
             for product,name in [('len_diorama_v1','assembly.png')]:
                 shutil.copy2(source_path(f'output/{product}/3T/preview/assembly.png'),BASE/cat/name)
             from len_dot_part import render_comparison
@@ -90,16 +92,32 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
     included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
     for group,pages in m['groups'].items():
         archive=BASE/(group.replace('/','_')+'_A3.zip')
-        with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+        temporary=ROOT/'tmp'/archive.name
+        with zipfile.ZipFile(temporary,'w',zipfile.ZIP_DEFLATED) as z:
             for p in [BASE/'README.md',BASE/group.split('/')[0]/'README.md']:
                 z.write(p,p.relative_to(OUT).as_posix())
             for page in pages:
                 for name in sorted(included):
                     p=OUT/page['folder']/name;z.write(p,p.relative_to(OUT).as_posix())
-        assert archive.stat().st_size<100*1024*1024
+        assert temporary.stat().st_size<100*1024*1024
+        # Windows preview/AV readers can briefly hold an existing ZIP open.
+        # Publish the completed archive atomically, retaining the old one if
+        # replacement is still blocked after bounded retries.
+        for attempt in range(15):
+            try:
+                temporary.replace(archive)
+                break
+            except OSError:
+                if attempt==14:raise
+                time.sleep(1)
     write(OUT/'README.md','''# 현재 제작 파일
 
 **선택 재료 3T · A3 420×297mm · 실제 크기100%. 시험편 없음.**
+
+[개별 에셋 · 원본 방향 AI/PDF·그림·칼선](individual_assets) · [줄줄이 튀잉 완성 예시](individual_assets/linked_tuiing_assembly.png)
+기본 파일은 개별 에셋으로 관리합니다. 아래 A3는 출력할 때 쓰는 배치본입니다.
+
+![줄줄이 튀잉 연결 예시](individual_assets/linked_tuiing_assembly.png)
 
 1. [혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각](a3_release/02_extra_sheet/3T/sheet_01)
 2. [혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 15조각](a3_release/05_len/3T/sheet_01)

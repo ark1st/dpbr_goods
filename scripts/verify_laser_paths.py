@@ -12,7 +12,7 @@ from laser_paths import audit_path
 from vector_utils import runvc
 from artifact_hash import artifact_sha256
 
-ACTIVE=['a3_release']
+ACTIVE=['a3_release','individual_assets']
 MM=72/25.4
 
 
@@ -127,6 +127,9 @@ def main(pdf_only=False):
     records=[];errors=[]
     manifest=json.loads((out/'a3_release/manifest.json').read_text()) if (out/'a3_release/manifest.json').exists() else {'groups':{}}
     current_a3={p['folder'] for pages in manifest['groups'].values() for p in pages}
+    catalog_path=out/'individual_assets/manifest.json'
+    catalog=json.loads(catalog_path.read_text(encoding='utf-8')) if catalog_path.exists() else {'assets':[]}
+    current_assets={a['folder'] for a in catalog['assets']}
     retired_a3=['a3_release/'+g+'/' for g in manifest.get('retired_groups',[])]
     for folder in ACTIVE:
         for file in sorted((out/folder).rglob('*')):
@@ -159,6 +162,9 @@ def main(pdf_only=False):
                 spec=None
                 if folder=='a3_release':
                     spec=json.loads((file.parent/'validation.json').read_text(encoding='utf-8'))
+                elif folder=='individual_assets':
+                    assert file.parent.relative_to(out).as_posix() in current_assets
+                    spec=json.loads((file.parent/'asset.json').read_text(encoding='utf-8'))
                 from shapely.geometry import Polygon
                 protected=[Polygon(q) for p in spec['parts'] if p['protected_original'] for q in p['expected_paths']] if spec else []
                 result=inspect_pdf(target,folder=='extra_sheet',(),protected)
@@ -166,9 +172,9 @@ def main(pdf_only=False):
                 if spec:
                     if result['outer_contours']!=spec['pieces'] or result['contours']!=spec['closed_contours']:
                         result['errors'].append({'reason':'A3 piece/path inventory mismatch'})
-                    if any(abs(a-b)>.01 for a,b in zip(result['dimensions_mm'],[420,297])):
-                        result['errors'].append({'reason':'Not an A3 420 x 297 mm artboard'})
-                    if result['minimum_piece_gap_mm'] is not None and result['minimum_piece_gap_mm']<2.998:
+                    if any(abs(a-b)>.01 for a,b in zip(result['dimensions_mm'],spec['canvas_mm'])):
+                        result['errors'].append({'reason':'Artboard dimensions differ from registered asset'})
+                    if folder=='a3_release' and result['minimum_piece_gap_mm'] is not None and result['minimum_piece_gap_mm']<2.998:
                         result['errors'].append({'reason':'A3 exported piece gap below 3 mm tolerance'})
                 # Tight production layout: enforce the actual EXPORTED curve gap.
                 if folder=='combined_diorama_v3' and ('COMBINED_MASTER' in file.name or file.name.startswith('03_CUT_ONLY')):
@@ -181,14 +187,15 @@ def main(pdf_only=False):
                 print(rel, result['contours'],result['segments'],'FAIL' if result['errors'] else 'OK',flush=True)
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
-    assert len(records)==len(current_a3)*(3 if pdf_only else 5),('Incomplete cutting-format coverage',len(records))
+    expected_count=len(current_a3)*(3 if pdf_only else 5)+len(current_assets)*(3 if pdf_only else 4)
+    assert len(records)==expected_count,('Incomplete cutting-format coverage',len(records),expected_count)
     inventory=inventory_for(records)
     report={'revision':manifest['revision'],'mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
             'protected_original_findings':[{'file':r['file'],'findings':r['protected_original_findings']} for r in records if r['protected_original_findings']],
             'records':records,'inventory':inventory,'physical_cut_test':False,
             'superseded_releases':manifest.get('superseded_releases',[]),
             'retired_archive':json.loads((out/'RETIRED.json').read_text()),
-            'coverage':{'current_pages':len(current_a3),'expected_cut_files':len(current_a3)*(3 if pdf_only else 5),
+            'coverage':{'current_pages':len(current_a3),'individual_assets':len(current_assets),'expected_cut_files':expected_count,
                         'retired_files_are_not_counted_as_current_passes':True},
             'limitations':['Raw archive integrity is verified separately; retired files are not re-approved for cutting.',
                            'Protected external originals are inspected without edits; numerical no-ops are reported separately.']}

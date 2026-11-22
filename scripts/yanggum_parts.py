@@ -240,9 +240,10 @@ def render_final_preview(root, out, spec):
             layer.paste(through, (0, 0), mask)
         return layer
 
-    bold = ImageFont.truetype('/mnt/c/Windows/Fonts/malgunbd.ttf', int(4.6 * pxmm))
-    reg = ImageFont.truetype('/mnt/c/Windows/Fonts/malgun.ttf', int(2.9 * pxmm))
-    small = ImageFont.truetype('/mnt/c/Windows/Fonts/malgun.ttf', int(2.4 * pxmm))
+    font_dir=next(p for p in [Path('C:/Windows/Fonts'),Path('/mnt/c/Windows/Fonts')] if (p/'malgun.ttf').exists())
+    bold = ImageFont.truetype(str(font_dir/'malgunbd.ttf'), int(4.6 * pxmm))
+    reg = ImageFont.truetype(str(font_dir/'malgun.ttf'), int(2.9 * pxmm))
+    small = ImageFont.truetype(str(font_dir/'malgun.ttf'), int(2.4 * pxmm))
     dr.text((10 * pxmm, 8 * pxmm), '양검(yanggum) 최종 미리보기 · 인쇄 데이터 기준 실측', font=bold, fill=(40, 40, 46))
     dr.text((10 * pxmm, 16 * pxmm), '제공 원본 그림을 그대로 인쇄. 실물 재단·인쇄 전 검토용이며 실물 사진이 아닙니다.', font=small, fill=(110, 110, 118))
 

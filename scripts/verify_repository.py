@@ -23,6 +23,14 @@ def output_inventory(out):
         for page in pages:
             required.update(page['folder']+'/'+f for f in PAGE_FILES)
     allowed=required|ROOT_FILES|{'a3_release/A3_VALIDATION.json'}
+    asset_manifest=out/'individual_assets/manifest.json'
+    if asset_manifest.exists():
+        catalog=json.loads(asset_manifest.read_text(encoding='utf-8'))
+        asset_required={'individual_assets/'+f for f in catalog['support_files']}
+        for asset in catalog['assets']:
+            asset_required.update(asset['folder']+'/'+f for f in asset['files'])
+        required.update(asset_required)
+        allowed.update(asset_required|{'individual_assets/VALIDATION.json'})
     actual={p.relative_to(out).as_posix() for p in out.rglob('*') if p.is_file()}
     unexpected=actual-allowed;missing=required-actual
     if unexpected:raise ValueError('Unregistered or retired output artifacts: '+', '.join(sorted(unexpected)))

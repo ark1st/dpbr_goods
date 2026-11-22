@@ -28,3 +28,6 @@ jobs:
       - name: Verify archive integrity and reject retired output files
         if: hashFiles('output/a3_release/manifest.json') != ''
         run: python scripts/verify_repository.py
+      - name: Check individual assets against all A3 placements
+        if: hashFiles('output/individual_assets/manifest.json') != ''
+        run: python scripts/verify_individual_assets.py

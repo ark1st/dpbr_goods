@@ -65,7 +65,9 @@
     "verify_repository.py",
     "len_dot_part.py",
     "prepare_yanggum_character.py",
-    "yanggum_parts.py"
+    "yanggum_parts.py",
+    "build_individual_assets.py",
+    "verify_individual_assets.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
