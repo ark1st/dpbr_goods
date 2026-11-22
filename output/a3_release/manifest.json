@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+  "revision": "A3-2026-11-23-yanggeum-fill-pad-deferred",
   "canvas_mm": [
     420.0,
     297.0
@@ -8,8 +8,8 @@
     "02_extra_sheet/3T": [
       {
         "folder": "a3_release/02_extra_sheet/3T/sheet_01",
-        "pieces": 41,
-        "contours": 103
+        "pieces": 43,
+        "contours": 106
       }
     ],
     "02_extra_sheet/5T": [
@@ -22,8 +22,8 @@
     "05_len/3T": [
       {
         "folder": "a3_release/05_len/3T/sheet_01",
-        "pieces": 15,
-        "contours": 39
+        "pieces": 16,
+        "contours": 41
       }
     ],
     "05_len/5T": [
@@ -93,6 +93,22 @@
       "revision": "A3-2026-11-22-current-only",
       "status": "retired_not_for_current_print",
       "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    },
+    {
+      "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+      "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "status": "superseded_cut_layer_only_do_not_execute",
+      "reason": "Already-printed500x800 layout retained;309920 micro-segment cutting commands replaced by4392 reviewed segments in cut-only recovery."
+    },
+    {
+      "commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+      "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+      "groups": [
+        "02_extra_sheet/3T",
+        "05_len/3T"
+      ],
+      "status": "superseded_mixed_print_layout_only",
+      "reason": "Yanggeum three-piece set now included within the same two mixed A3 pages; original scale and curves preserved. PAD deferred. Existing500x800 recut and separate Ascent unchanged."
     }
   ],
   "optional_groups": [
@@ -103,7 +119,8 @@
   "selected_thickness": "3T",
   "support_files": [
     "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
-    "a3_release/11_ascent_remaining/size_check.png"
+    "a3_release/11_ascent_remaining/size_check.png",
+    "a3_release/OPTIONAL_FILL_ASSESSMENT.json"
   ],
   "recut_recoveries": [
     {

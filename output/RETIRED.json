@@ -34,6 +34,16 @@
       "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
       "status": "superseded_cut_layer_only_do_not_execute",
       "reason": "Already-printed500x800 layout retained;309920 micro-segment cutting commands replaced by4392 reviewed segments in cut-only recovery."
+    },
+    {
+      "commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+      "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+      "groups": [
+        "02_extra_sheet/3T",
+        "05_len/3T"
+      ],
+      "status": "superseded_mixed_print_layout_only",
+      "reason": "Yanggeum three-piece set now included within the same two mixed A3 pages; original scale and curves preserved. PAD deferred. Existing500x800 recut and separate Ascent unchanged."
     }
   ]
 }

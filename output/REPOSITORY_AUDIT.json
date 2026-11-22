@@ -162,6 +162,7 @@
     "a3_release/11_ascent_remaining/size_check.png",
     "a3_release/11_ascent_remaining_3T_A3.zip",
     "a3_release/A3_VALIDATION.json",
+    "a3_release/OPTIONAL_FILL_ASSESSMENT.json",
     "a3_release/README.md",
     "a3_release/manifest.json",
     "a3_release/yanggum_final_preview.png",
@@ -1830,7 +1831,7 @@
   ],
   "selected_thickness": "3T",
   "selected_pages": 4,
-  "selected_parts": 81,
+  "selected_parts": 84,
   "physical_cut_test": false,
   "limitations": [
     "Raw backups are byte-verified archives; obsolete artwork is not approved for cutting.",

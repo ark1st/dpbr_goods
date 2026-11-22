@@ -2,7 +2,7 @@
 
 A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입니다. 각 조각의 그림·백색·벡터 칼선을 따로 편집할 수 있습니다. 외부30개 도안은 원본의 회전 상태도 유지합니다. 받침도 별도 조각입니다. 3T가 현재 선택이고 5T는 대안입니다.
 
-[출력용 A3](../a3_release) · [새 Len PAD 시안](../a3_release/06_len_pad) · [새 양검 시안](../a3_release/09_yanggum) · [단풍바람 원본 소스](../../assets)
+[출력용 A3](../a3_release) · [출력 보류 Len PAD 원본](../a3_release/06_len_pad) · [새 양검 시안](../a3_release/09_yanggum) · [단풍바람 원본 소스](../../assets)
 
 ![줄줄이 튀잉 완성 예시](linked_tuiing_assembly.png)
 
@@ -27,6 +27,7 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 | [len_dot_3T_06](len_dot_3T_06) | 52.606 × 56.626 |
 | [tuiing_01](tuiing_01) | 35.013 × 57.361 |
 | [unfried_01](unfried_01) | 35.013 × 57.361 |
+| [yanggum_stand_02](yanggum_stand_02) | 72.000 × 28.000 |
 
 ![개별 조각 목록](05_len_3T_catalog.png)
 
@@ -107,6 +108,8 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 | [supplied_saetui_02](supplied_saetui_02) | 28.669 × 43.379 |
 | [supplied_saetui_03](supplied_saetui_03) | 28.669 × 43.379 |
 | [supplied_saetui_04](supplied_saetui_04) | 28.669 × 43.379 |
+| [yanggum_keyring_01](yanggum_keyring_01) | 43.131 × 57.960 |
+| [yanggum_stand_01](yanggum_stand_01) | 62.199 × 67.531 |
 
 ![개별 조각 목록](02_extra_sheet_3T_catalog.png)
 

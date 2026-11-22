@@ -9,15 +9,15 @@
 
 ![줄줄이 튀잉 연결 예시](individual_assets/linked_tuiing_assembly.png)
 
-1. [혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각](a3_release/02_extra_sheet/3T/sheet_01)
-2. [혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 15조각](a3_release/05_len/3T/sheet_01)
+1. [혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 43조각](a3_release/02_extra_sheet/3T/sheet_01)
+2. [혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 16조각](a3_release/05_len/3T/sheet_01)
 3. [어센트 · 카데나 제외 · 별도 A3 2장 / 25조각](a3_release/11_ascent_remaining)
 
-현재 확정분 **A3 4장 / 81조각**. 기존 혼합2장56조각 + 별도 어센트2장25조각입니다. 어센트의 카데나와 무인쇄 패널31은 새 두 장에서 제외했습니다. [전체 안내·두께별 대안·검사](a3_release)
+현재 확정분 **A3 4장 / 84조각**. 양검을 포함한 혼합2장59조각 + 별도 어센트2장25조각입니다. 어센트의 카데나와 무인쇄 패널31은 새 두 장에서 제외했습니다. [전체 안내·두께별 대안·검사](a3_release)
 
-별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01).
+출력 보류: [새 Len PAD · 원본7조각 보존](a3_release/06_len_pad). 어센트2장도 유효 배치를 확보하지 못했습니다. 전역 불가능 증명은 아닙니다. [혼합2장 수용 검토](a3_release/OPTIONAL_FILL_ASSESSMENT.json).
 
-별도 선택안: [양검(yanggum) SD 스탠드+키링 결합판 · 캐릭터+받침+키링 3조각 / A3 1장](a3_release/09_yanggum/3T/sheet_01). 제공 원본 그림을 그대로 인쇄합니다.
+양검 캐릭터·키링은 혼합1, 받침은 혼합2에 포함했습니다. [단독 배치 참고본](a3_release/09_yanggum)은 추가 출력하지 않습니다.
 
 [이전 파일·원본 백업(raw)](https://github.com/ark1st/dpbr_goods/tree/raw) · [main 소스](https://github.com/ark1st/dpbr_goods/tree/main)
 

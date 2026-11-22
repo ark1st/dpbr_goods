@@ -22,6 +22,7 @@
   ],
   "source": "yanggum_keyring",
   "a3_groups": [
+    "02_extra_sheet/3T",
     "09_yanggum/3T"
   ],
   "physical_cut_test": false,

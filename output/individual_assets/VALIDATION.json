@@ -2214,7 +2214,7 @@
     {
       "id": "yanggum_keyring_01",
       "max_geometry_deviation_mm": 4.031314769054572e-06,
-      "a3_occurrences": 1,
+      "a3_occurrences": 2,
       "files": {
         "01_PRINT.pdf": "49c06e786a8ce663179e27da2199961fe8ec78429bf644c52c3cc34e466e324a",
         "01_PRINT_300ppi.png": "b7394715b98407ac27cc393177a63e1603642655ed50abf860be632b49d71869",
@@ -2230,7 +2230,7 @@
     {
       "id": "yanggum_stand_01",
       "max_geometry_deviation_mm": 4.724146057143883e-06,
-      "a3_occurrences": 1,
+      "a3_occurrences": 2,
       "files": {
         "01_PRINT.pdf": "b85b9a6b4e5bdc43024188a5ed13ae9d334477cfe0146db14bdf8e6c893fbd61",
         "01_PRINT_300ppi.png": "db3172a677fb74b94eb2ec839a5dd84cbba3b6838b63c80740554659d9c87ef0",
@@ -2246,7 +2246,7 @@
     {
       "id": "yanggum_stand_02",
       "max_geometry_deviation_mm": 2.0429878380553306e-06,
-      "a3_occurrences": 1,
+      "a3_occurrences": 2,
       "files": {
         "01_PRINT.pdf": "71688152f46844470e0019da48231801ec9124f594f60aa1352bcb7f30d56928",
         "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",

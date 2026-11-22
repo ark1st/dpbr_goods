@@ -4,8 +4,8 @@
   "records": [
     {
       "folder": "a3_release/02_extra_sheet/3T/sheet_01",
-      "pieces": 41,
-      "contours": 103,
+      "pieces": 43,
+      "contours": 106,
       "max_export_deviation_mm": {
         "03_CUT_ONLY.pdf": 0.0007421509849329574,
         "02_MASTER.pdf": 0.0007421509849329574,
@@ -29,20 +29,20 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "94529dc274fecebdd0ce6bfd6417b0278f17686b627aafc39851473dccd69eb2",
-        "01_PRINT_300ppi.png": "3dc302c709034e6426dfb46bfb9dee380e7f2c94997c5471b3e85f82d7dce409",
-        "02_MASTER.ai": "272ef9dd7fdf444fd449d2bf80191e075876ddae1f010cd4487df3bf91e3bd77",
-        "02_MASTER.pdf": "0f5696d69a68fe015f5cedf48cce448b6f3c2f4c975373b2097d4c1b3f179121",
-        "02_MASTER.vectorcraft": "3ebf729dd1a34fadc9bccd67c4ad9f2362ad2e091a3c636b0959aa14468a118d",
-        "03_CUT_ONLY.pdf": "8ea48f1334eddb774593a6edbef78b56bc149c2eb30a7eb3b029f606a2765179",
-        "03_CUT_ONLY.svg": "bc35b83e3dd0419a558489dea399e5c0577cda236e7098ce1bb371f742c7fd1c",
-        "04_WHITE_INK_MASK.pdf": "a55836bb7a1c99545672e6288cc4f05f684f92c64237dc62df408cfcebec68c9",
-        "04_WHITE_INK_MASK_300ppi.png": "4ce03571d7dc89317a36ab7a864b98b1966a0c4e212f52ee9d28a92cea135e0b",
+        "01_PRINT.pdf": "ad79ad39fd850a9e90eab6be2db5636bad597d2f2ef744fded7c4d33d525961e",
+        "01_PRINT_300ppi.png": "8a0fdaabfa2a90165029412186c1ecc39daa899e68c1a874643697a02c5055c4",
+        "02_MASTER.ai": "8dae51634a5b7d365b1eb5f41bec529893fe141e8d8f2fab6037c568f4f6495c",
+        "02_MASTER.pdf": "4794b03f65ef24fe8c16c89c59aa709d2eff1da2e33925b804148e2dc1fc655e",
+        "02_MASTER.vectorcraft": "e24b0ed70630007575875266a027c6915ddb9257a26606df96f24b104b5f655e",
+        "03_CUT_ONLY.pdf": "f92d4f11d5f646d60b0057d19c54e646a2219815d9a3335af79ad398209e929d",
+        "03_CUT_ONLY.svg": "2b2593905c348c637cacada7872941a35bfa1c74d314b1d5f51edec74ea21a03",
+        "04_WHITE_INK_MASK.pdf": "f1428ef67a8aaeba70c01d520d6501b603823dab36e313b83d970dcf6bd08e80",
+        "04_WHITE_INK_MASK_300ppi.png": "a160388ff65ef5710ee3ace1a99f43eec1e1b0762dd4f98b2f06a28a31f3cec7",
         "cut_detail.png": "ae771b1be3f79e6afad5acd6cb3b522a759603e8ab06d41c8e9d40f7eca7cd13",
-        "preview.png": "a6e5b69795d97302f4c1bcd2bbbd9dbabf158b6da8594c77619b38a00b4a3836",
-        "PREVIEW_NOT_FOR_CUT.pdf": "07e8f675c119f9c27072e3f54b629938a5544b49af83f47340d377784354c92a",
-        "README.md": "955c18fc1b42a66b9f88eaa01dffec95df2b7e64687f25ce55e9397a15ac2121",
-        "validation.json": "6b9dc67a597d115f086b2f1705dd983bc4c915188ee099ed60e2e806c0b13f58"
+        "preview.png": "f0aa9ae1e0abdbfee8702acf100e1c814db441386e0c3ae06957967170a87931",
+        "PREVIEW_NOT_FOR_CUT.pdf": "5b8851ddb9b71f075b55a1a4d32c1faacbef3637524d74cdfb08fbf476357298",
+        "README.md": "6bea890d0d5b7ccc500fb3f8892b288ac8e1ba23dbd953043f0b0aa7d607375e",
+        "validation.json": "a273c093b29f733d5f5d971dccf81803b4f09b905e8eff4a29cd39b4fe846abb"
       }
     },
     {
@@ -90,8 +90,8 @@
     },
     {
       "folder": "a3_release/05_len/3T/sheet_01",
-      "pieces": 15,
-      "contours": 39,
+      "pieces": 16,
+      "contours": 41,
       "max_export_deviation_mm": {
         "03_CUT_ONLY.pdf": 0.000755849749906903,
         "02_MASTER.pdf": 0.000755849749906903,
@@ -115,20 +115,20 @@
         }
       ],
       "sha256": {
-        "01_PRINT.pdf": "6c887c42ead0f6a47763221edbbd41c43936127394d1d1722b1faf0068bc7511",
+        "01_PRINT.pdf": "ca57a3ec663e1d20b905ba80af7dd0f558a4cd08bc8a3efc21d2f4125763871a",
         "01_PRINT_300ppi.png": "20926407acdfcdedacd868e56dbb327a7c52dd5745e0e4e3f1686505185795ae",
-        "02_MASTER.ai": "e67b1f3b4c9c431935066594b35dfea28fb10eafb81797617237037609f334b1",
-        "02_MASTER.pdf": "91b29ca3cadb955737e84fc6e821bbc310d61d8db3ae5b4bf0c6f495a74a84b9",
-        "02_MASTER.vectorcraft": "cd680e09d4347775494f51ddd4418a334ad728db58fb22fa65c06b9b167390b8",
-        "03_CUT_ONLY.pdf": "d65ea78e7d4fd8e6371ef1bfb3ae40a12eb89fc059eaa3409d2359d6ffd3c07e",
-        "03_CUT_ONLY.svg": "1b0b9b8651509e99b70890ac08452e511bf9a8dab6f0e3bdf8e02316244feddd",
-        "04_WHITE_INK_MASK.pdf": "655f54d30b510229444932792bc2117039f7d2053b23dfec4e940cc83fdf746e",
+        "02_MASTER.ai": "bdaaf7725cd7bb4987aaf7339eba7d4822c917378c81ffccca1382cd7438c49a",
+        "02_MASTER.pdf": "ce95e84a43e0a0b69880e2836c5d7363ed93c85c550725041673898b5154f32e",
+        "02_MASTER.vectorcraft": "c14a0880fdfbba0fcfa7e376c43c71d5c4211c2aee32cdf23f4d92075b019062",
+        "03_CUT_ONLY.pdf": "23bd37787d4176b9d9298abb2dd64a24b92489f3aa80630c8581ea4863b75e4d",
+        "03_CUT_ONLY.svg": "8967dd45a9fbae91230122c5fb0efcae3bfdbe421ea24203942bd1a78052ec61",
+        "04_WHITE_INK_MASK.pdf": "43a29bdf9a308aff3390a257d87f685a2cc16b922e5cf63c32796ec1a99398ea",
         "04_WHITE_INK_MASK_300ppi.png": "b929d33986f87f74a2a77a1547dab4dd7de18c5e836d32808c4e9814a4f9e76a",
         "cut_detail.png": "b04d3de41c24d73abfb84a6f754ed7a547e4f2eae6be706b1b6d0e4ddcbe5e7b",
-        "preview.png": "8e61283a473e57f8b5dce6a99f555f3e63811e14c7a3dca285a4fad439edc345",
-        "PREVIEW_NOT_FOR_CUT.pdf": "c22878dae0594b8a9a7388631795349fe265d9ef82d3a051ad14d65f00a11c4f",
-        "README.md": "fa2fb205a5466f580326a807d019185de2438cfbd18b2a791a2922a2ab3774ce",
-        "validation.json": "0c210c7cf56148b486693dc173a68874bb9c5cc0e07fac60840f2d40f09f92aa"
+        "preview.png": "90953c7bf3ed73bfd6817f5d49f693366cc53166bc52931690f60f8cda659244",
+        "PREVIEW_NOT_FOR_CUT.pdf": "6a9d7a9142b839c71cf4faf9b8109715238731f08aa8e89ea4dd38116c918f88",
+        "README.md": "588f9b37d5357b57f7a0b75553ad89f14e686ac8ae82fa36d08de6b1e9542dd0",
+        "validation.json": "7f93e295b388c4e23b4ee156ea3b078d7095f6fb9dd56411427f2bd4f919f377"
       }
     },
     {
@@ -393,43 +393,43 @@
   "packages": [
     {
       "file": "a3_release/02_extra_sheet_3T_A3.zip",
-      "bytes": 13985637,
-      "sha256": "b329d0a2973487254977d3ec40f9a8fd1c8e5553ba22f060e774a75a7c5f0949"
+      "bytes": 14925902,
+      "sha256": "3cac29e837353e4e93a5535b69316a07e2bc4f8f97d3c900331cae797efeb857"
     },
     {
       "file": "a3_release/02_extra_sheet_5T_A3.zip",
-      "bytes": 10254102,
-      "sha256": "8a8fc510ebd487532351d7f605311bcdfc4a4781a86133e19f008abb5f9d6871"
+      "bytes": 10255196,
+      "sha256": "875269e08838ccbfcecf6e98314d3753af8f11fde85477b26b85307d89655702"
     },
     {
       "file": "a3_release/05_len_3T_A3.zip",
-      "bytes": 16543809,
-      "sha256": "7b54b9518cba07d284f43c7c4bdb86d847e341c18cb87f269c90a662ba19b98e"
+      "bytes": 16554575,
+      "sha256": "f95ef2f1a83fc95455d4f2ed77fca799e9be30579b72ce723f927af2e0f4930e"
     },
     {
       "file": "a3_release/05_len_5T_A3.zip",
-      "bytes": 13930294,
-      "sha256": "40e5e808a2c48e146b99b2c61a92379944f980665ebc24fcd5cf3ac99d75037d"
+      "bytes": 13931399,
+      "sha256": "7b49a2371c4348053ce9f070524c72d61c47bbc913564b5e9fdae602f86a7b8d"
     },
     {
       "file": "a3_release/06_len_pad_3T_A3.zip",
-      "bytes": 12580300,
-      "sha256": "b9bbf620f9c7c56cd476969f8f3f80b90f3ae10cf483ae15bea9469bf42819a0"
+      "bytes": 12581370,
+      "sha256": "b81b2ed3a36770035af9c39d29ce506d0f9329ed425fa3c7433eddb2f400a49d"
     },
     {
       "file": "a3_release/06_len_pad_5T_A3.zip",
-      "bytes": 12549818,
-      "sha256": "d7b6d7b9210a9bada9021b920dc040f374112a8561098463be856eed662ea11c"
+      "bytes": 12550888,
+      "sha256": "93bbaf29063f9ba0b40593beabb9f405ac839660212c3644125b3fd7d0e3cd0d"
     },
     {
       "file": "a3_release/09_yanggum_3T_A3.zip",
-      "bytes": 965663,
-      "sha256": "6687e92955c0b5689aae6733bf327cb2ae3adecfa68dc4af915e3f242759448a"
+      "bytes": 966755,
+      "sha256": "276fd8711449c8ed9c711c29022f963d2bf8a8b95a90b60f1842c65fd0937035"
     },
     {
       "file": "a3_release/11_ascent_remaining_3T_A3.zip",
-      "bytes": 28768201,
-      "sha256": "b237aebc2d72661171695517f6f5b1b737cb55779686264b9e185ee07f045fcf"
+      "bytes": 28769264,
+      "sha256": "dd0ef2a3f21efd8f242dcb1de365f3dd8dadeafcb2ec11c2b32b32b0b7deedbf"
     }
   ],
   "errors": [],
@@ -997,9 +997,75 @@
   },
   "selected_primary_pages": 4,
   "selected_thickness": "3T",
-  "optional_PAD_pages_per_thickness": 1,
+  "optional_fill_assessment": {
+    "maximum_existing_mixed_sheets": 2,
+    "baseline_parts": 56,
+    "candidate_sets": {
+      "yanggum_3T": {
+        "parts": 59,
+        "sheets": 2,
+        "gap_mm": 3,
+        "margin_mm": 8,
+        "expanded_piece_area_lower_mm2": 182816.4161545297,
+        "expanded_container_area_upper_mm2": 231176,
+        "excess_area_mm2": -48359.583845470304,
+        "impossible_proven": false,
+        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+      },
+      "len_pad_3T": {
+        "parts": 63,
+        "sheets": 2,
+        "gap_mm": 3,
+        "margin_mm": 8,
+        "expanded_piece_area_lower_mm2": 231650.3990408355,
+        "expanded_container_area_upper_mm2": 231176,
+        "excess_area_mm2": 474.3990408355021,
+        "impossible_proven": true,
+        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+      }
+    },
+    "allocation": {
+      "02_extra_sheet/3T": [
+        "yanggum_stand_01",
+        "yanggum_keyring_01"
+      ],
+      "05_len/3T": [
+        "yanggum_stand_02"
+      ]
+    },
+    "ascent_with_PAD": {
+      "capacity_bound": {
+        "parts": 32,
+        "sheets": 2,
+        "gap_mm": 3,
+        "margin_mm": 8,
+        "expanded_piece_area_lower_mm2": 214037.93886507142,
+        "expanded_container_area_upper_mm2": 231176,
+        "excess_area_mm2": -17138.061134928575,
+        "impossible_proven": false,
+        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+      },
+      "rectangular_packing_result_pages": 3,
+      "rectangular_core_layouts_examined": 33,
+      "contour_fill_trials": 264,
+      "best_complete_parts_in_core_search": 29,
+      "requested_total_parts": 32,
+      "constructive_first_page_parts": 14,
+      "constructive_remaining_parts": 18,
+      "constructive_contour_trials": 64,
+      "feasible_two_page_layout_found": false,
+      "mathematical_impossibility_proven": false,
+      "decision": "Defer PAD under the no-extra-sheet instruction. Failed finite searches are not a proof that every two-page arrangement is impossible."
+    },
+    "deferred": [
+      "len_pad_3T"
+    ],
+    "production_pages_added": 0,
+    "physical_cut_test": false
+  },
+  "PAD_print_pages": 0,
   "minimum_sheet_proof": {
-    "net_material_area_mm2": 299161.7583459405,
+    "net_material_area_mm2": 305539.3964540969,
     "single_A3_area_mm2": 124740,
     "area_lower_bound_sheets": 4,
     "feasible_sheets": 4,
@@ -1007,8 +1073,8 @@
     "separate_batches": [
       {
         "name": "existing",
-        "parts": 56,
-        "net_material_area_mm2": 155683.91111209392,
+        "parts": 59,
+        "net_material_area_mm2": 162061.5492202503,
         "area_lower_bound_sheets": 2,
         "feasible_sheets": 2
       },
@@ -1020,7 +1086,7 @@
         "feasible_sheets": 2
       }
     ],
-    "scope": "81 selected 3T pieces. Ascent remaining is a separate batch as explicitly requested; minimum proved within that separation. Optional PAD/Yanggum and 5T excluded."
+    "scope": "84 selected 3T pieces. Yanggeum is included in the existing mixed pair, PAD deferred. Ascent remaining stays separate; minimum proved within that separation. 5T and standalone reference layouts excluded."
   },
   "source_artwork_scale": 1,
   "physical_cut_test": false,
