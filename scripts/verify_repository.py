@@ -11,6 +11,7 @@ ROOT_FILES={'README.md','LASER_PATH_AUDIT.json','RELEASE_VALIDATION.json','REPOS
 def output_inventory(out):
     manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
     required={'a3_release/README.md','a3_release/manifest.json','a3_release/05_len/assembly.png','a3_release/05_len/assembly_dot.png'}
+    required.update(manifest.get('support_files',[]))
     if any(g.startswith('06_len_pad/') for g in manifest['groups']):
         required.add('a3_release/06_len_pad/assembly.png')
     if any(g.startswith('09_yanggum/') for g in manifest['groups']):
@@ -94,7 +95,7 @@ def main():
     report={'date':policy['date'],'errors':[],'archive':archive,'current_output_files':files,
         'pinned_inputs_sha256_checked':len(restored),'preserved_source_assets_sha256_checked':source_assets,
         'retired_source_files':policy['retired_source_files'],
-        'selected_thickness':'3T','selected_pages':2,'selected_parts':56,'physical_cut_test':False,
+        'selected_thickness':'3T','selected_pages':policy['physical_sheets'],'selected_parts':policy['physical_parts'],'physical_cut_test':False,
         'limitations':['Raw backups are byte-verified archives; obsolete artwork is not approved for cutting.',
         'Temporary generated caches and installed libraries are not repository deliverables.']}
     (ROOT/'output/REPOSITORY_AUDIT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')

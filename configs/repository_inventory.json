@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "raw_commit": "2998c858ad3795b930a4c5138c658cea1665e61d",
   "previous_heads": {
     "main": "b0de59b0fd8b70a2a6aec257546dbac07c31b5cd",
@@ -67,12 +67,13 @@
     "prepare_yanggum_character.py",
     "yanggum_parts.py",
     "build_individual_assets.py",
-    "verify_individual_assets.py"
+    "verify_individual_assets.py",
+    "ascent_size_audit.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
-  "physical_sheets": 2,
-  "physical_parts": 56,
+  "physical_sheets": 4,
+  "physical_parts": 81,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [
@@ -1219,6 +1220,6 @@
     "06_len_pad/5T",
     "09_yanggum/3T"
   ],
-  "individual_asset_count": 116,
+  "individual_asset_count": 141,
   "canonical_contours_file": "configs/individual_contours.json"
 }

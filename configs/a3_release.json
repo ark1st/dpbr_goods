@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-yanggum-combined",
+  "revision": "A3-2026-11-23-ascent-separate-final",
   "canvas_mm": [
     420,
     297
@@ -168,7 +168,8 @@
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
-    "09_yanggum/3T": 3
+    "09_yanggum/3T": 3,
+    "11_ascent_remaining/3T": 25
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -302,15 +303,41 @@
   },
   "selected_primary_groups": [
     "02_extra_sheet/3T",
-    "05_len/3T"
+    "05_len/3T",
+    "11_ascent_remaining/3T"
   ],
-  "selected_primary_parts": 56,
+  "selected_primary_parts": 81,
   "primary_inventory": [
     "ascent_01",
+    "ascent_02",
+    "ascent_03",
+    "ascent_04",
+    "ascent_05",
+    "ascent_06",
+    "ascent_07",
+    "ascent_08",
+    "ascent_09",
+    "ascent_10",
     "ascent_11",
     "ascent_12",
     "ascent_13",
     "ascent_14",
+    "ascent_15",
+    "ascent_16",
+    "ascent_17",
+    "ascent_18",
+    "ascent_19",
+    "ascent_20",
+    "ascent_21",
+    "ascent_22",
+    "ascent_23",
+    "ascent_24",
+    "ascent_25",
+    "ascent_26",
+    "ascent_27",
+    "ascent_28",
+    "ascent_29",
+    "ascent_30",
     "burnt_01",
     "extra_3T_01",
     "extra_3T_02",
@@ -386,5 +413,65 @@
       "hole_to_edge_min_mm": 4,
       "carrier_width_mm": 13
     }
-  }
+  },
+  "ascent_remaining": {
+    "part_ids": [
+      "ascent_02",
+      "ascent_03",
+      "ascent_04",
+      "ascent_05",
+      "ascent_06",
+      "ascent_07",
+      "ascent_08",
+      "ascent_09",
+      "ascent_10",
+      "ascent_15",
+      "ascent_16",
+      "ascent_17",
+      "ascent_18",
+      "ascent_19",
+      "ascent_20",
+      "ascent_21",
+      "ascent_22",
+      "ascent_23",
+      "ascent_24",
+      "ascent_25",
+      "ascent_26",
+      "ascent_27",
+      "ascent_28",
+      "ascent_29",
+      "ascent_30"
+    ],
+    "excluded_blank_panel": "ascent_31",
+    "excluded_reason": "User explicitly excluded the unprinted panel on 2026-11-23.",
+    "material": "3T",
+    "source_panels_mm": [
+      104,
+      62.80699
+    ],
+    "source_base_mm": [
+      104,
+      30
+    ],
+    "scale": 1,
+    "separate_from_other_print_batches": true,
+    "source_ai_sha256": "a4195ed4c5b1534236915fe66561f1960a22e54636fec4e95895db94816d156e"
+  },
+  "pages_per_group": {
+    "11_ascent_remaining/3T": 2
+  },
+  "selected_primary_pages": 4,
+  "separate_print_batches": {
+    "existing": [
+      "02_extra_sheet/3T",
+      "05_len/3T"
+    ],
+    "ascent_remaining": [
+      "11_ascent_remaining/3T"
+    ]
+  },
+  "support_files": [
+    "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
+    "a3_release/11_ascent_remaining/size_check.png"
+  ]
 }

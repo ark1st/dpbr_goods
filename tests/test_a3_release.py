@@ -8,6 +8,20 @@ from build_a3_release import pack,shifted_poly,pdf_destination,polygon_of,draw_p
 from nest_contours import rotated
 
 class A3PackingTests(unittest.TestCase):
+    def test_supplied_ascent_3t_interfaces_are_measured_without_rebuilding(self):
+        from ascent_size_audit import measure
+        cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
+        data=json.loads((ROOT/'configs/individual_contours.json').read_text())['parts'];pieces=[]
+        for ident in cfg['ascent_remaining']['part_ids']:
+            row=data[ident];paths=[{'poly':polygon_of(path)} for path in row['paths']]
+            pieces.append({'id':ident,'bounds':row['source_bounds_mm'],'paths':paths,'poly':max((p['poly'] for p in paths),key=lambda p:p.area)})
+        report=measure(pieces)
+        self.assertEqual(report['included_parts'],25)
+        self.assertEqual(report['printed_panels'],21)
+        self.assertEqual(report['bases'],4)
+        self.assertEqual(len(report['findings']),4)
+        self.assertFalse(report['physical_cut_or_fit_test'])
+
     def test_small_dot_keeps_full_size_tab_under_feet(self):
         from len_dot_part import create_dot_documents
         from shapely.geometry import LineString
@@ -25,15 +39,19 @@ class A3PackingTests(unittest.TestCase):
             self.assertAlmostEqual((bbox[3]-bbox[1])/MM,50,3)
             self.assertEqual(meta['common_base_slot_mm'],[18.8,float(t[0])])
 
-    def test_two_sheet_inventory_excludes_brands_and_keeps_all_cadena(self):
+    def test_separate_ascent_inventory_excludes_blank_and_keeps_cadena_once(self):
         cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
         rows=json.loads((ROOT/'configs/a3_placements.json').read_text())['groups']
-        selected=[r['id'] for group in cfg['selected_primary_groups'] for r in rows[group]]
-        self.assertEqual(len(selected),56)
-        self.assertEqual(len(set(selected)),56)
+        selected=[r['id'] for group in cfg['selected_primary_groups'] for page in (rows[group] if isinstance(rows[group][0],list) else [rows[group]]) for r in page]
+        self.assertEqual(len(selected),81)
+        self.assertEqual(len(set(selected)),81)
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
-        self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']))
+        self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']+cfg['ascent_remaining']['part_ids']))
+        separate=[r['id'] for page in rows['11_ascent_remaining/3T'] for r in page]
+        self.assertEqual(len(separate),25)
+        self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
+        self.assertNotIn('ascent_31',selected)
 
     def test_large_source_oblique_cut_avoids_rounded_form_matrix(self):
         import pymupdf as fitz

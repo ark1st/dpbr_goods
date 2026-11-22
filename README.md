@@ -1,59 +1,36 @@
-[개별 에셋 · 원본 방향 AI/PDF·그림·칼선](https://github.com/ark1st/dpbr_goods/tree/output_len/output/individual_assets) · [줄줄이 튀잉 연결 예시](https://github.com/ark1st/dpbr_goods/blob/output_len/output/individual_assets/linked_tuiing_assembly.png)
+# 단풍바람 제작 파일
 
-# 단풍바람 굿즈 제작
+현재 선택은 **3T · A3 420×297mm · 실제 크기100%**입니다. 자동 맞춤을 끄고 인쇄·백색·재단의 원점과 배율을 동일하게 사용합니다.
 
-현재 선택은 **3T / A3 420×297mm / 100% 실척 / 시험편 없음**입니다.
+## 내일 최종 출력
 
-- **main**: 마스코트·로고·Len·키링 편집 소스, 현재 A3 생성·검사 코드.
-- **output_len**: 현재 A3 제작 파일, 시안, ZIP과 검사 기록.
-- **raw**: 이전 브랜치 전체, 구버전·사용 중지 시안·중복 원본의 보관본. 제작용이 아닙니다.
+1. [기존 혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 / 41조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet/3T/sheet_01)
+2. [기존 혼합 A3 2 · Len·DOT·튀잉·카데나 나머지 / 15조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len/3T/sheet_01)
+3. [어센트 · 카데나 제외 · 완전히 별도 A3 2장 / 25조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/11_ascent_remaining)
 
-## 현재 출력
+확정 구성은 **4장·81조각**입니다. 어센트는 기존 조각과 섞지 않고, 원본의 무인쇄 패널31도 제외했습니다. 기존56조각과 새25조각은 각각 한 장보다 큰 재료 면적이며 두 장씩 배치되어, 별도 배치 조건에서 최소4장입니다.
+어센트의 인쇄 판은104×62.807mm(돌기3mm 포함), 받침은104×30mm입니다. 홈약20.2×3.2mm·돌기폭20mm를 보존합니다. [치수 검증·실물 검증의 한계](https://github.com/ark1st/dpbr_goods/blob/output_len/output/a3_release/11_ascent_remaining/SIZE_VERIFICATION.json).
 
-1. [혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet/3T/sheet_01)
-2. [혼합 A3 2 · Len 일반·DOT·튀잉·카데나 나머지3개 · 15조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len/3T/sheet_01)
+[별도 선택안 Len PAD](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad)와 [양검 스탠드·키링](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/09_yanggum)은 각각 추가1장입니다. 5T는 대안이며 현재3T와 함께 출력하지 않습니다.
 
-확정분은 **A3 최소2장 / 56조각**입니다. 세 제작 그룹의 조각을 두 시트에 섞었습니다. 단팽이1개·단풍바람 로고 키링2개는 제외했고 줄줄이 키링8개는 모두 포함합니다.
-Python으로 실제 칼선의 회전·이동·충돌·3mm 간격을 검사했습니다. 구멍을 제외한 조각 면적이 A3 한 장보다 크고 두 장 배치가 성립하므로 최소 장수는2장입니다. 상세 수치는 출력의 `A3_VALIDATION.json`에 있습니다.
-Len은 공통 받침·배경 한 세트에 일반·DOT 캐릭터를 교체합니다. 일반76mm, 도트50mm로 수정했으며 도트 돌기를 발 아래로 옮겼습니다. 공통 받침275×60mm·18.8×3mm 홈을 유지하고, 도트 돌기는18mm 폭·2.6mm 깊이로 새로 만들었습니다.
+## 개별 에셋과 재생성
 
-별도 선택안: [새 Len PAD · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad/3T/sheet_01).
-시험편을 제외한 별도 디자인입니다. 이것까지 출력하면3장·63조각입니다.
-PAD의 받침은280×71.2235mm로 기존 Len과 다릅니다.
-
-별도 선택안: [양검 SD 스탠드+키링 결합판 · 캐릭터+받침+키링 3조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/09_yanggum/3T/sheet_01).
-제공 원본 그림을 그대로 인쇄합니다. 스탠드는 그림높이60mm·탙18×2.6mm·받침홈18.8×3.0mm, 키링은 그림높이40mm·구멍⌀4mm입니다. 5T 대안은 아직 만들지 않았습니다.
-
-[전체 출력 안내·시안·ZIP](https://github.com/ark1st/dpbr_goods/tree/output_len/output) · [보관본](https://github.com/ark1st/dpbr_goods/tree/raw)
-5T는 별도 대안입니다. 현재3T와 둘 다 출력하지 않습니다. 카데나는5T용이 아닙니다.
-
-## 재생성
-
-Python3.11 이상과 설치된 VectorCraft CLI가 필요합니다. CLI가 PATH에 없다면 `VECTORCRAFT_CLI`에 실행 파일 경로를 지정합니다.
+[개별141에셋 · 두께 대안 포함](https://github.com/ark1st/dpbr_goods/tree/output_len/output/individual_assets) · [전체 A3 출력판·시안·ZIP](https://github.com/ark1st/dpbr_goods/tree/output_len/output) · [raw 보관본](https://github.com/ark1st/dpbr_goods/tree/raw).
+개별 에셋은 원본 방향·크기로 그림·백색·벡터 칼선을 분리한 파일이고, A3는 출력용 배치입니다. 기준 곡선은 `configs/individual_contours.json`에 고정합니다.
 
 ```sh
-git fetch origin raw
 python -m pip install -r requirements.txt
 python scripts/build_a3_release.py
 python scripts/build_individual_assets.py
+python scripts/ascent_size_audit.py
 python scripts/package_a3_release.py
 python -m unittest discover -s tests
 python scripts/verify_release.py
 ```
 
-공유 중간 파일을 사용하므로 생성 명령은 순서대로 실행합니다. 부분 생성은 `--only 02_extra`, `--only 05_len`, `--only 06_len_pad`, `--only yanggum`입니다. 카데나는 앞의 두3T 시트에 포함되어 독립 출력하지 않습니다. 양검 결합판(스탠드+키링)은 `--only yanggum`로 재생성합니다.
-`configs/a3_placements.json`의 검토한 좌표로 같은 배치를 재현합니다. 고정 커밋·SHA-256의 입력은 `tmp/source_cache/`로 복원합니다. 구버전 폴더를 output에 다시 만들지 않습니다.
-가람·단팽이·심벌 SVG는 `python scripts/export_art_masters.py`로 재생성합니다.
+Python3.11 이상과 설치된 VectorCraft CLI가 필요합니다. `VECTORCRAFT_CLI`로 별도 경로를 지정할 수 있습니다. 입력은 고정 커밋·SHA-256으로 `tmp/source_cache`에 복원합니다. 부분 생성은 `--only 11_ascent_remaining` 등이며, 공유 중간 파일을 쓰므로 생성 명령은 순서대로 실행합니다.
 
-## 검사와 보존
-
-[칼선 규칙](docs/laser-cut-quality.md) · [A3 규격과 원본](docs/a3-release.md) · [저장소 정리 기록](docs/repository-cleanup.md)
-
-모든 현재 SVG·AI·PDF·VectorCraft 칼선, 인쇄 PDF/PNG, ZIP 구성과 해시를 검사합니다.
-보호 대상 외부30조각의 원본은 수정하지 않고 수치상 특이사항을 따로 기록합니다.
-미등록 출력·퇴역 파일·시험편이 현재 목록에 들어오면 검사를 실패시킵니다.
-실물 재단·끼움·커프·인쇄 정합은 소프트웨어 검사만으로 검증되지 않습니다.
-
-[마스코트·로고 소스](assets/README.md) · [제공 원본 보존](assets/external/README.md)
-
-캐릭터·로고 권리는 원저작자에게 있습니다. 별도의 공개 라이선스를 부여하지 않았습니다.
+[칼선 규칙](docs/laser-cut-quality.md) · [A3 배포 규칙](docs/a3-release.md) · [마스코트·로고 소스](assets/README.md).
+시험편·시험키·샘플 받침과 생성형 이미지 편집을 포함하지 않습니다. 보호 외부30개 도안은 원본 곡선을 보존하며 발견 사항을 별도로 기록합니다. 모든 현재 칼선 형식·인쇄·ZIP을 검사합니다. 소프트웨어 검사는 실물 두께·커프·끼움·인쇄 정합을 보증하지 않습니다.
+작업과 배포는 output_len_sleeg에서 진행하고 output_len에 병합합니다. main에는 push하지 않습니다.
+캐릭터·로고 권리는 원저작자에게 있으며 별도 공개 라이선스를 부여하지 않았습니다.

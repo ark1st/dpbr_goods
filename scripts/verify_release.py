@@ -21,7 +21,7 @@ def main():
     renders=[];images=[];tiles=[]
     for group,pages in manifest['groups'].items():
         for page in pages:
-            folder=out/page['folder'];slug=group.replace('/','_')
+            folder=out/page['folder'];slug=group.replace('/','_')+'_'+folder.name
             for file in sorted(folder.iterdir()):
                 if file.suffix.lower() in ['.pdf','.ai']:
                     prefix=qa/(slug+'_'+file.stem+file.suffix.replace('.','_'))

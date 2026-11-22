@@ -33,17 +33,28 @@ def main(check_zips=True,check_native=True):
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
     assert set(reviewed)==set(wanted),'Incomplete reviewed layout inventory'
     assert CONFIG['include_test_pieces'] is False and manifest['test_pieces_included'] is False
-    records=[];selected_parts=[]
+    from ascent_size_audit import measure
+    fixed=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts'];sized=[]
+    for ident in CONFIG['ascent_remaining']['part_ids']:
+        row=fixed[ident];paths=[{'poly':polygon_of(p)} for p in row['paths']]
+        sized.append({'id':ident,'bounds':row['source_bounds_mm'],'paths':paths,'poly':max((p['poly'] for p in paths),key=lambda p:p.area)})
+    source_size_check=measure(sized)
+    saved_size=json.loads((base/'11_ascent_remaining/SIZE_VERIFICATION.json').read_text(encoding='utf-8'))
+    assert not saved_size['geometry_size_errors'] and not saved_size['physical_cut_or_fit_test']
+    assert [p['id'] for p in saved_size['parts']]==[p['id'] for p in source_size_check['parts']]
+    records=[];selected_parts=[];selected_by_group={}
     for group,pages in manifest['groups'].items():
         assert sum(p['pieces'] for p in pages)==wanted[group]
-        assert len(pages)==1
+        assert len(pages)==CONFIG.get('pages_per_group',{}).get(group,1)
         protected_count=0;ids=[]
-        for page in pages:
+        for page_index,page in enumerate(pages):
             folder=out/page['folder'];spec=json.loads((folder/'validation.json').read_text(encoding='utf-8'))
             assert spec['canvas_mm']==[420,297] and spec['artwork_scale']==1
             assert spec['pieces']==page['pieces'] and spec['closed_contours']==page['contours']
             assert spec['minimum_gap_mm'] is None or spec['minimum_gap_mm']>=2.998
-            planned={r['id']:r for r in reviewed[group]}
+            group_rows=reviewed[group]
+            if group_rows and isinstance(group_rows[0],list):group_rows=group_rows[page_index]
+            planned={r['id']:r for r in group_rows}
             assert set(planned)=={p['id'] for p in spec['parts']}
             for p in spec['parts']:
                 r=planned[p['id']]
@@ -55,7 +66,8 @@ def main(check_zips=True,check_native=True):
                 assert all(p['rotation_degrees']%15==0 and p.get('rotated_origin_mm') is not None for p in spec['parts'])
             protected_count+=sum(p['protected_original'] for p in spec['parts'])
             ids.extend(p['id'] for p in spec['parts'])
-            if group in CONFIG['selected_primary_groups']:selected_parts.extend(spec['parts'])
+            if group in CONFIG['selected_primary_groups']:
+                selected_parts.extend(spec['parts']);selected_by_group.setdefault(group,[]).extend(spec['parts'])
             for p in spec['parts']:
                 if p['id'].startswith('len_dot_'):
                     meta=p['design_metadata'];t=float(group.split('/')[-1].removesuffix('T'))
@@ -109,20 +121,30 @@ def main(check_zips=True,check_native=True):
         keyids=sum(CONFIG['linked_allocation'].values(),[])
         expected_keys=CONFIG['linked_allocation'].get(group.split('/')[0],[])
         assert sorted(x for x in ids if x in keyids)==sorted(expected_keys)
-        assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(CONFIG['cross_sheet_cadena_allocation'].get(group,[]))
+        expected_ascent=CONFIG['ascent_remaining']['part_ids'] if group=='11_ascent_remaining/3T' else CONFIG['cross_sheet_cadena_allocation'].get(group,[])
+        assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(expected_ascent)
+        if group=='11_ascent_remaining/3T':
+            assert set(ids)==set(expected_ascent) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
+            assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]
-    assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==56
-    assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids'])
+    assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==CONFIG['selected_primary_parts']
+    assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids']+CONFIG['ascent_remaining']['part_ids'])
     # Subtract through-holes: this is physical material area, not bounding boxes.
     material_area=0
     for p in selected_parts:
         areas=[Polygon(q).area for q in p['expected_paths']]
         material_area+=2*max(areas)-sum(areas)
-    lower_bound=math.ceil(material_area/(420*297))
-    assert lower_bound==2 and len(CONFIG['selected_primary_groups'])==lower_bound
+    batches=[]
+    for name,groups in CONFIG['separate_print_batches'].items():
+        batch_parts=[p for g in groups for p in selected_by_group[g]]
+        net=sum(2*max(areas)-sum(areas) for p in batch_parts for areas in [[Polygon(q).area for q in p['expected_paths']]])
+        feasible=sum(len(manifest['groups'][g]) for g in groups);lower=math.ceil(net/(420*297))
+        assert feasible==lower,(name,'Sheet count not proven minimal')
+        batches.append({'name':name,'parts':len(batch_parts),'net_material_area_mm2':net,'area_lower_bound_sheets':lower,'feasible_sheets':feasible})
+    lower_bound=sum(b['area_lower_bound_sheets'] for b in batches)
     minimum_proof={'net_material_area_mm2':material_area,'single_A3_area_mm2':420*297,
-        'area_lower_bound_sheets':lower_bound,'feasible_sheets':2,'optimal_sheet_count_proven':True,
-        'scope':'56 selected 3T pieces; optional PAD and 5T alternatives excluded; no scale reduction except approved DOT redesign.'}
+        'area_lower_bound_sheets':lower_bound,'feasible_sheets':CONFIG['selected_primary_pages'],'optimal_sheet_count_proven':True,'separate_batches':batches,
+        'scope':'81 selected 3T pieces. Ascent remaining is a separate batch as explicitly requested; minimum proved within that separation. Optional PAD/Yanggum and 5T excluded.'}
     packages=[]
     if check_zips:
         for group in sorted(wanted):
@@ -131,6 +153,7 @@ def main(check_zips=True,check_native=True):
                 assert z.testzip() is None
                 included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
                 expected={'a3_release/README.md','a3_release/'+group.split('/')[0]+'/README.md'}
+                expected.update(rel for rel in CONFIG.get('support_files',[]) if rel.startswith('a3_release/'+group.split('/')[0]+'/'))
                 expected.update(p['folder']+'/'+n for p in manifest['groups'][group] for n in included)
                 assert len(z.namelist())==len(expected) and set(z.namelist())==expected,(file,'Missing, duplicate or extra ZIP members')
                 for name in z.namelist():
@@ -142,11 +165,12 @@ def main(check_zips=True,check_native=True):
             packages.append({'file':file.relative_to(out).as_posix(),'bytes':file.stat().st_size,'sha256':artifact_sha256(file)})
         assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
-            'selected_primary_pages':2,'selected_thickness':'3T','optional_PAD_pages_per_thickness':1,
+            'ascent_source_size_verification':source_size_check,
+            'selected_primary_pages':CONFIG['selected_primary_pages'],'selected_thickness':'3T','optional_PAD_pages_per_thickness':1,
             'minimum_sheet_proof':minimum_proof,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
-                           'Only Cadena first-row four panels and one original base are selected; other Ascent pieces are retired from this print run.',
+                           'All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.',
                            'Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.',
                            'Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers.']}
     (base/'A3_VALIDATION.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')

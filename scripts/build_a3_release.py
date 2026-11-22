@@ -359,6 +359,12 @@ def ascent_source():
     path=TMP/'kimyun_ascent.ai';path.write_bytes(raw)
     return path
 
+
+def ascent_parts():
+    src=ascent_source()
+    return pieces_from(extract_layers(src,['받침','칼선']),extract_layers(src,['인쇄']),
+                       extract_layers(src,['화이트']),'ascent')
+
 def source_inputs(only=None):
     restore_inputs()
     batches=[]
@@ -379,13 +385,14 @@ def source_inputs(only=None):
         cut=fitz.open(src.parent/'03_CUT_ONLY.pdf')
         pieces=pieces_from(cut,art,white,f'extra_{t}',range(34));assert len(pieces)==38
         batches.append((f'02_extra_sheet/{t}',pieces+linked[:4]))
-    if not only or only in '04_ascent_cadena':
-        src=ascent_source();art=extract_layers(src,['인쇄']);white=extract_layers(src,['화이트']);cut=extract_layers(src,['받침','칼선'])
-        pieces=pieces_from(cut,art,white,'ascent');assert len(pieces)==31,len(pieces)
+    if not only or only in '04_ascent_cadena' or '11_ascent_remaining' in only:
+        pieces=ascent_parts();assert len(pieces)==31,len(pieces)
         selected=CONFIG['cadena_source_part_ids']
-        pieces=[p for p in pieces if p['id'] in selected]
-        assert {p['id'] for p in pieces}==set(selected) and len(pieces)==5
-        batches.append(('04_ascent_cadena',pieces))
+        cadena=[p for p in pieces if p['id'] in selected]
+        assert {p['id'] for p in cadena}==set(selected) and len(cadena)==5
+        batches.append(('04_ascent_cadena',cadena))
+        remaining=CONFIG.get('ascent_remaining',{}).get('part_ids',[])
+        if remaining:batches.append(('11_ascent_remaining/3T',[p for p in pieces if p['id'] in remaining]))
     for t in ['3T','5T']:
         if only and only not in f'05_len/{t}':continue
         folder=source_path(f'output/len_diorama_v1/{t}/02_MASTER.ai').parent
@@ -452,7 +459,7 @@ def apply_canonical_contours(piece):
 
 
 def inputs(only=None):
-    batches=dict(source_inputs(only if only and ('06_len_pad' in only or 'yanggum' in only) else None))
+    batches=dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
     for t in ['3T','5T']:
         group=f'02_extra_sheet/{t}'
         if group in batches:
@@ -468,10 +475,18 @@ def inputs(only=None):
     return [(group,parts) for group,parts in batches.items() if not only or only in group]
 
 
-def reviewed_layout(name,pieces):
+def reviewed_layout(name,pieces,rows=None):
     """Replay reviewed rigid placements without searching a new layout on rebuild."""
-    data=json.loads((ROOT/'configs/a3_placements.json').read_text(encoding='utf-8'))
-    rows=data['groups'][name]
+    if rows is None:
+        data=json.loads((ROOT/'configs/a3_placements.json').read_text(encoding='utf-8'))
+        rows=data['groups'][name]
+    if rows and isinstance(rows[0],list):
+        pages=[]
+        for page_rows in rows:
+            page_ids={r['id'] for r in page_rows}
+            pages+=reviewed_layout(name,[p for p in pieces if p['id'] in page_ids],page_rows)
+        assert {p['piece']['id'] for page in pages for p in page['placements']}=={p['id'] for p in pieces}
+        return pages
     by_id={p['id']:p for p in pieces}
     assert set(by_id)=={r['id'] for r in rows} and len(by_id)==len(rows),('Changed part inventory',name)
     placements=[]
@@ -497,7 +512,7 @@ def main():
     manifest['revision']=CONFIG['revision']
     manifest['test_pieces_included']=False
     manifest['superseded_releases']=CONFIG['superseded_releases']
-    manifest['physical_pages_per_selected_thickness']=2
+    manifest['physical_pages_per_selected_thickness']=CONFIG.get('selected_primary_pages',2)
     manifest['retired_groups']=CONFIG['retired_groups']
     for retired in manifest['retired_groups']:manifest['groups'].pop(retired,None)
     for name,pieces in inputs(args.only):
@@ -511,7 +526,7 @@ def main():
             assert policy['angle_step_degrees']==15 and policy['exact_minimum_gap_mm']==GAP
             pages=contour_nest(pieces,SIZE,MARGIN,GAP,trials=policy['trials'],resolution=policy['search_grid_mm'])
         else:pages=pack(pieces)
-        assert len(pages)==1,(name,'A3 sheet count regression')
+        assert len(pages)==CONFIG.get('pages_per_group',{}).get(name,1),(name,'A3 sheet count regression')
         print('PLAN',name,len(pieces),len(pages),[len(p['placements']) for p in pages],flush=True)
         if args.plan:continue
         records=[write_page(OUT/name/f'sheet_{i+1:02}',p['placements']) for i,p in enumerate(pages)]

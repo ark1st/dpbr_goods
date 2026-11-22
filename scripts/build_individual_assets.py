@@ -23,9 +23,9 @@ def write(path,text):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(text,encoding='utf-8',newline='\n')
 
-def collect():
+def collect(only=None):
     assets={}
-    for group,parts in inputs():
+    for group,parts in inputs(only):
         for part in parts:
             if part['id'] not in assets:assets[part['id']]={'piece':part,'groups':[]}
             assets[part['id']]['groups'].append(group)
@@ -181,17 +181,20 @@ def linked_preview():
 
 def main():
     import argparse
-    parser=argparse.ArgumentParser();parser.add_argument('--finish-only',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--finish-only',action='store_true');parser.add_argument('--only-group');args=parser.parse_args()
     records=[]
     OUT.mkdir(parents=True,exist_ok=True)
-    if args.finish_only:
+    if not args.finish_only:
+        for ident,entry in sorted(collect(args.only_group).items()):
+            export_asset(entry);print('ASSET',ident,flush=True)
+    if args.finish_only or args.only_group:
         for file in sorted(OUT.glob('*/asset.json')):
             s=json.loads(file.read_text(encoding='utf-8'))
             records.append({'id':s['id'],'folder':file.parent.relative_to(ROOT/'output').as_posix(),
                 'canvas_mm':s['canvas_mm'],'a3_groups':s['a3_groups'],'files':FILES})
     else:
-        for ident,entry in sorted(collect().items()):
-            records.append(export_asset(entry));print('ASSET',ident,flush=True)
+        for file in sorted(OUT.glob('*/asset.json')):
+            s=json.loads(file.read_text(encoding='utf-8'));records.append({'id':s['id'],'folder':file.parent.relative_to(ROOT/'output').as_posix(),'canvas_mm':s['canvas_mm'],'a3_groups':s['a3_groups'],'files':FILES})
     linked_preview()
     categories={}
     for row in records:
