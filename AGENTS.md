@@ -13,7 +13,7 @@
 - Update `output/LASER_PATH_AUDIT.json`, report exact coverage and limitations,
   and mark superseded files as retired. Do not call a file physically tested
   based only on software checks.
-- Push source/configuration to main and production output to output_len.
+- Publish from the current working branch (output_len_sleeg) and merge production output into output_len. Never push to main; the user rejected a main push on 2026-11-22.
 - Do not use image generation for this project unless the user explicitly lifts
   their existing prohibition.
 - Do not generate or include fit-test coupons, sample bases, or test keys in
