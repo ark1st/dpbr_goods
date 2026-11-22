@@ -18,6 +18,8 @@ def main():
             for p in spec['parts']:locations.setdefault(p['id'],[]).append((group,p))
     assert set(locations)=={a['id'] for a in m['assets']}
     assert len(m['assets'])==m['asset_count']
+    canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']
+    assert set(canonical)==set(locations)
     records=[];tiles=[];rendered=0
     qa=ROOT/'tmp/individual_qa';qa.mkdir(parents=True,exist_ok=True)
     for asset in m['assets']:
@@ -27,6 +29,12 @@ def main():
         for file,sha in s['files'].items():assert artifact_sha256(folder/file)==sha,(s['id'],file,'stale asset')
         expected=[Polygon(q) for q in s['parts'][0]['expected_paths']]
         assert len(expected)==s['closed_contours']
+        from shapely import affinity
+        fixed=canonical[s['id']]
+        assert fixed['source_bounds_mm']==s['source_bounds_mm']
+        for actual,path in zip(expected,fixed['paths']):
+            source=affinity.translate(actual,-s['translation_mm'][0],-s['translation_mm'][1])
+            assert source.boundary.hausdorff_distance(polygon_of(path).boundary)<.002
         worst=0
         for file in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']:
             doc=fitz.open(folder/file) if file.startswith('03') else extract_layers(folder/file,['LASER_CUT'])

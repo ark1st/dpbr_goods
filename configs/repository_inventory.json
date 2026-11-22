@@ -71,8 +71,8 @@
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
-  "physical_sheets": 3,
-  "physical_parts": 59,
+  "physical_sheets": 2,
+  "physical_parts": 56,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [
@@ -1218,5 +1218,7 @@
     "06_len_pad/3T",
     "06_len_pad/5T",
     "09_yanggum/3T"
-  ]
+  ],
+  "individual_asset_count": 116,
+  "canonical_contours_file": "configs/individual_contours.json"
 }

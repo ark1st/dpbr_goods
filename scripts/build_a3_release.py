@@ -428,6 +428,29 @@ def source_inputs(only=None):
         batches.append(('09_yanggum/3T',stand+keyring))
     return batches
 
+def apply_canonical_contours(piece):
+    """Stable reviewed Beziers shared by individual assets and A3 derivatives.
+
+    This removes platform-dependent refitting from the released geometry. The
+    print source remains pinned separately; no image or mechanical scaling occurs.
+    """
+    file=ROOT/'configs/individual_contours.json'
+    if not file.exists():return piece
+    # Cache data only; callers can mutate their independent piece dictionaries.
+    if not hasattr(apply_canonical_contours,'data'):
+        apply_canonical_contours.data=json.loads(file.read_text(encoding='utf-8'))['parts']
+    row=apply_canonical_contours.data[piece['id']]
+    assert max(abs(a-b) for a,b in zip(piece['bounds'],row['source_bounds_mm']))<.0001,('Canonical source dimensions changed',piece['id'])
+    assert len(piece['paths'])==len(row['paths'])
+    for entry,path in zip(piece['paths'],row['paths']):
+        poly=polygon_of(path)
+        delta=entry['poly'].boundary.hausdorff_distance(poly.boundary)
+        assert delta<(.0001 if entry['protected'] else .035),(piece['id'],'Changed reviewed curve',delta)
+        entry.update(path=path,poly=poly,deviation=delta)
+    piece['poly']=max((e['poly'] for e in piece['paths']),key=lambda q:q.area)
+    return piece
+
+
 def inputs(only=None):
     batches=dict(source_inputs(only if only and ('06_len_pad' in only or 'yanggum' in only) else None))
     for t in ['3T','5T']:
@@ -437,6 +460,11 @@ def inputs(only=None):
     cadena={p['id']:p for p in batches.pop('04_ascent_cadena',[])}
     for group,ids in CONFIG['cross_sheet_cadena_allocation'].items():
         if group in batches:batches[group]+=[cadena[k] for k in ids]
+    visited=set()
+    for parts in batches.values():
+        for piece in parts:
+            if id(piece) not in visited:
+                apply_canonical_contours(piece);visited.add(id(piece))
     return [(group,parts) for group,parts in batches.items() if not only or only in group]
 
 

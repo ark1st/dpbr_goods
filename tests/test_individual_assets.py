@@ -10,6 +10,17 @@ from verify_laser_paths import contours
 from build_individual_assets import export_asset
 
 class IndependentAssetRegression(unittest.TestCase):
+    def test_platform_refit_cannot_change_released_base_curves(self):
+        from build_a3_release import ROOT,apply_canonical_contours
+        fixed=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']['yanggum_stand_02']
+        entries=[]
+        for path in fixed['paths']:
+            refitted=cut_path(polygon_of(path))
+            entries.append({'path':refitted,'poly':polygon_of(refitted),'protected':False})
+        piece={'id':'yanggum_stand_02','bounds':fixed['source_bounds_mm'],'paths':entries}
+        apply_canonical_contours(piece)
+        self.assertEqual([e['path'] for e in piece['paths']],fixed['paths'])
+
     def test_extract_isolates_neighbour_and_preserves_slot_and_hole(self):
         art=fitz.open();pg=art.new_page(width=100*MM,height=100*MM)
         pg.draw_rect(fitz.Rect(10*MM,20*MM,25*MM,50*MM),color=None,fill=(0,0,0))
