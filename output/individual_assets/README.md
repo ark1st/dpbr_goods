@@ -30,6 +30,38 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 
 ![개별 조각 목록](05_len_3T_catalog.png)
 
+## 11_ascent_remaining/3T
+
+| 에셋 | 외곽 크기 mm |
+|---|---|
+| [ascent_02](ascent_02) | 104.000 × 30.000 |
+| [ascent_03](ascent_03) | 104.000 × 30.000 |
+| [ascent_04](ascent_04) | 104.000 × 30.000 |
+| [ascent_05](ascent_05) | 104.000 × 30.000 |
+| [ascent_06](ascent_06) | 104.000 × 62.807 |
+| [ascent_07](ascent_07) | 104.000 × 62.807 |
+| [ascent_08](ascent_08) | 104.000 × 62.807 |
+| [ascent_09](ascent_09) | 104.000 × 62.807 |
+| [ascent_10](ascent_10) | 104.000 × 62.807 |
+| [ascent_15](ascent_15) | 104.000 × 62.807 |
+| [ascent_16](ascent_16) | 104.000 × 62.807 |
+| [ascent_17](ascent_17) | 104.000 × 62.807 |
+| [ascent_18](ascent_18) | 104.000 × 62.807 |
+| [ascent_19](ascent_19) | 104.000 × 62.807 |
+| [ascent_20](ascent_20) | 104.000 × 62.807 |
+| [ascent_21](ascent_21) | 104.000 × 62.807 |
+| [ascent_22](ascent_22) | 104.000 × 62.807 |
+| [ascent_23](ascent_23) | 104.000 × 62.807 |
+| [ascent_24](ascent_24) | 104.000 × 62.807 |
+| [ascent_25](ascent_25) | 104.000 × 62.807 |
+| [ascent_26](ascent_26) | 104.000 × 62.807 |
+| [ascent_27](ascent_27) | 104.000 × 62.807 |
+| [ascent_28](ascent_28) | 104.000 × 62.807 |
+| [ascent_29](ascent_29) | 104.000 × 62.807 |
+| [ascent_30](ascent_30) | 104.000 × 62.807 |
+
+![개별 조각 목록](11_ascent_remaining_3T_catalog.png)
+
 ## 02_extra_sheet/3T
 
 | 에셋 | 외곽 크기 mm |

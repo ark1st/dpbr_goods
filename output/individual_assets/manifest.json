@@ -26,6 +26,222 @@
       ]
     },
     {
+      "id": "ascent_02",
+      "folder": "individual_assets/ascent_02",
+      "canvas_mm": [
+        108.00002579999995,
+        33.99997760000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_03",
+      "folder": "individual_assets/ascent_03",
+      "canvas_mm": [
+        108.00002579999995,
+        33.999977599999966
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_04",
+      "folder": "individual_assets/ascent_04",
+      "canvas_mm": [
+        108.00002579999995,
+        33.99997760000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_05",
+      "folder": "individual_assets/ascent_05",
+      "canvas_mm": [
+        108.00002579999995,
+        33.99997760000008
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_06",
+      "folder": "individual_assets/ascent_06",
+      "canvas_mm": [
+        108.0000258,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_07",
+      "folder": "individual_assets/ascent_07",
+      "canvas_mm": [
+        108.00002579999995,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_08",
+      "folder": "individual_assets/ascent_08",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80699749999997
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_09",
+      "folder": "individual_assets/ascent_09",
+      "canvas_mm": [
+        107.99999340000001,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_10",
+      "folder": "individual_assets/ascent_10",
+      "canvas_mm": [
+        108.0000042,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "ascent_11",
       "folder": "individual_assets/ascent_11",
       "canvas_mm": [
@@ -106,6 +322,390 @@
       ],
       "a3_groups": [
         "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_15",
+      "folder": "individual_assets/ascent_15",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_16",
+      "folder": "individual_assets/ascent_16",
+      "canvas_mm": [
+        108.0000042,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_17",
+      "folder": "individual_assets/ascent_17",
+      "canvas_mm": [
+        108.0000258,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_18",
+      "folder": "individual_assets/ascent_18",
+      "canvas_mm": [
+        108.00002579999995,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_19",
+      "folder": "individual_assets/ascent_19",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_20",
+      "folder": "individual_assets/ascent_20",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80697600000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_21",
+      "folder": "individual_assets/ascent_21",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80701909999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_22",
+      "folder": "individual_assets/ascent_22",
+      "canvas_mm": [
+        108.0000042,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_23",
+      "folder": "individual_assets/ascent_23",
+      "canvas_mm": [
+        108.0000042,
+        66.80697600000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_24",
+      "folder": "individual_assets/ascent_24",
+      "canvas_mm": [
+        108.0000042,
+        66.80701909999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_25",
+      "folder": "individual_assets/ascent_25",
+      "canvas_mm": [
+        108.0000258,
+        66.80699749999997
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_26",
+      "folder": "individual_assets/ascent_26",
+      "canvas_mm": [
+        108.00002579999995,
+        66.80699749999997
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_27",
+      "folder": "individual_assets/ascent_27",
+      "canvas_mm": [
+        108.0000258,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_28",
+      "folder": "individual_assets/ascent_28",
+      "canvas_mm": [
+        108.00002579999995,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_29",
+      "folder": "individual_assets/ascent_29",
+      "canvas_mm": [
+        108.0000258,
+        66.80697600000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_30",
+      "folder": "individual_assets/ascent_30",
+      "canvas_mm": [
+        108.0000258,
+        66.80701909999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -2794,7 +3394,7 @@
       ]
     }
   ],
-  "asset_count": 116,
+  "asset_count": 141,
   "files_per_asset": [
     "01_PRINT.pdf",
     "01_PRINT_300ppi.png",
@@ -2814,6 +3414,7 @@
     "linked_tuiing_assembly.png",
     "linked_tuiing_assembly.json",
     "05_len_3T_catalog.png",
+    "11_ascent_remaining_3T_catalog.png",
     "02_extra_sheet_3T_catalog.png",
     "05_len_5T_catalog.png",
     "02_extra_sheet_5T_catalog.png",

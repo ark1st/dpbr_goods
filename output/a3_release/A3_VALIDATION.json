@@ -1,5 +1,5 @@
 {
-  "checked_pages": 7,
+  "checked_pages": 9,
   "native_geometry_checked": true,
   "records": [
     {
@@ -302,63 +302,732 @@
         "README.md": "c13dc919d91fcdc045e93d9dd6b04d7b3885e93961c8dddb8449a2a0992b7856",
         "validation.json": "f97a25089df8aa8f25ed64265b5016602ade4acd77521a12e9a0a15d6c0990ba"
       }
+    },
+    {
+      "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
+      "pieces": 14,
+      "contours": 14,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 1.7890216676276273e-05,
+        "02_MASTER.pdf": 1.7890216676276273e-05,
+        "02_MASTER.ai": 1.7890216676276273e-05,
+        "02_MASTER.vectorcraft": 1.7890216676276273e-05
+      },
+      "png": [
+        {
+          "file": "a3_release\\11_ascent_remaining\\3T\\sheet_01\\01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release\\11_ascent_remaining\\3T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "01_PRINT.pdf": "6f9e5e2ec4da5dbe726aacff2fb3a44e183f4d39713ce0be9f83bd2de696073f",
+        "01_PRINT_300ppi.png": "c515383ce6e65437d16d5227104192a2979c02e5fed296c0532fdb3fa369fab2",
+        "02_MASTER.ai": "0edbf2d11e1327b5a213a361fe7249195bf93f5366e06864e4eb5374f2695ebf",
+        "02_MASTER.pdf": "d754f1e8919ac798761a43a74fe71317736721de16f3bd9395e4dbc93475f9f7",
+        "02_MASTER.vectorcraft": "8ed2f74ade413d07d8406d10a9de256e80fc5109fca5c0761bf7cc70b4a840ed",
+        "03_CUT_ONLY.pdf": "c5d86f4f4604dabaa8630a070f53903abc716b51d18a042950f746e2e2910d2a",
+        "03_CUT_ONLY.svg": "79d6bd621905f20bd548c8b0028733c882da4ed1a927f49d9ca98b711c3b98f1",
+        "04_WHITE_INK_MASK.pdf": "ca4119be727ea56b1ce2955733b5726b9e3fd93fb6e5e9485370c47f0ee78b80",
+        "04_WHITE_INK_MASK_300ppi.png": "95ef65f9310d4ef504eecf1a6bbed4acb01f58aec705a899c98a82b5de39f08f",
+        "cut_detail.png": "8d602c9a16e453483d13b28345435d4c7c8ce42ba9d48e2754c4cc4fb37ee69a",
+        "preview.png": "bd68dc264e62cc9ca550dfd93dc52856e1e65eae9db70062dcd8c3f41f8d5571",
+        "PREVIEW_NOT_FOR_CUT.pdf": "827b860c60ca146ca6690f28f4b6cbfa40e56e692eaedc4cca0bb85ebd60a802",
+        "README.md": "055f38861a8b26f245843282e5d1224a51b1d7b0e7adde406af783538469c55d",
+        "validation.json": "4160fcd168f45cb8fdfc41f625ed6692ba96a5f4ae099ee79e2bad04752c1681"
+      }
+    },
+    {
+      "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
+      "pieces": 11,
+      "contours": 43,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 1.156027682890293e-05,
+        "02_MASTER.pdf": 1.156027682890293e-05,
+        "02_MASTER.ai": 1.4847558715032219e-05,
+        "02_MASTER.vectorcraft": 1.4847558715032219e-05
+      },
+      "png": [
+        {
+          "file": "a3_release\\11_ascent_remaining\\3T\\sheet_02\\01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release\\11_ascent_remaining\\3T\\sheet_02\\04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "01_PRINT.pdf": "c839ff46edb72ca2b8316ab6bf7f2e29cc4aaabab5f5412c2d07d28bba0942e1",
+        "01_PRINT_300ppi.png": "ee3493f6f34d9b5e07c687e19fbc4f232d43e38d97238e56897ee00dc0d208ef",
+        "02_MASTER.ai": "5e4ec1e44dff0586b619e5f1c7484a4e494cafe03e98b74452c2089f69094c0f",
+        "02_MASTER.pdf": "5dc39c437847671702061ed44a106a1194b70b5834846f9da3fa0a54fe33750b",
+        "02_MASTER.vectorcraft": "3fb4b47e12a2dec408b2b45d6b6ecce3ad23e0cd27963e50b5ebc0c7d38730db",
+        "03_CUT_ONLY.pdf": "667da3e969a4992c6b3ff31cd8fe3defe54bdfe3629a77f9324be6b69284fe8a",
+        "03_CUT_ONLY.svg": "310d201a21c35796c12856c8e4264c8d53cb51398bfdf04fef71f7e2991ac32f",
+        "04_WHITE_INK_MASK.pdf": "5271069b53f3fdef3ad6d68fa058e181021e05de80197adc967a82e822c73cd3",
+        "04_WHITE_INK_MASK_300ppi.png": "18bbe48bd39c6b219b32dac52c12f66243b269a65dcf272af99a8ef9972df57a",
+        "cut_detail.png": "b5ae4381b6a61a79bc9c3ba1162c8498a6c9fd93068ec0bc78592f5adc269bed",
+        "preview.png": "a8d5e604808dd6250b1331abd56f5d67dca2b88e9b7724b1a8829eedfb0c5ca8",
+        "PREVIEW_NOT_FOR_CUT.pdf": "476acf26d58cbcab3b65bcb139317d89544c79058e97a4b97befb2088f223634",
+        "README.md": "997e62d20b1ee161d343ed39901bb807aff4b1884c55618b8e94888a5d9e0044",
+        "validation.json": "6835c56962568d320cd28daf8abc000d5106120c2b62f3a1da610df2037a4374"
+      }
     }
   ],
   "packages": [
     {
       "file": "a3_release/02_extra_sheet_3T_A3.zip",
-      "bytes": 13985590,
-      "sha256": "c9511ce8eb27b5cff8b7c00ece61b25b47294c237febf9cf158ccbc28a9d2089"
+      "bytes": 13985637,
+      "sha256": "dbfef1e73ec8583c1d478f3ee126e2a71ef788c196378138b4f8b6c1eaf8e2df"
     },
     {
       "file": "a3_release/02_extra_sheet_5T_A3.zip",
-      "bytes": 10254055,
-      "sha256": "02995fbc5fb1242643809ddf8d1eea209a97a2338f1d49a46bdd867aeda7ecae"
+      "bytes": 10254102,
+      "sha256": "cbe4df28153459dbc3f9243f72ee2e907e90761006ecc5f0be946eccc6724692"
     },
     {
       "file": "a3_release/05_len_3T_A3.zip",
-      "bytes": 16543762,
-      "sha256": "fac29941aa3c06a9c6afb0f44fad00cbf18ce80301de8ae3a118448eb2b87ab0"
+      "bytes": 16543809,
+      "sha256": "2c17e6466de9f5772d4bcbe069a3009c802cab4906ff7f8207b5683ec04b1904"
     },
     {
       "file": "a3_release/05_len_5T_A3.zip",
-      "bytes": 13930247,
-      "sha256": "a628947151c77bea8b3f65aa67df89c51be056f5b1e3f9a3d77d6c82342e7587"
+      "bytes": 13930294,
+      "sha256": "6106ef28363df17010fe3276870e0e314bcb897ea140025dd3ab1f7ca2ed2578"
     },
     {
       "file": "a3_release/06_len_pad_3T_A3.zip",
-      "bytes": 12580253,
-      "sha256": "2d70af8a5fd65ccdbd5ab7ecdc845c5f5320611896829a6bf698f096bbdae7b4"
+      "bytes": 12580300,
+      "sha256": "fcfe66660f1c9aaac0c89949761fffac80b7f5ea77f0d1ba7a88ffe2d7f7245b"
     },
     {
       "file": "a3_release/06_len_pad_5T_A3.zip",
-      "bytes": 12549771,
-      "sha256": "76ed74d3c6e3380151172322441858e5104c2f64cd34645e61afc2440478a437"
+      "bytes": 12549818,
+      "sha256": "99f4939512a12b78a3971052feeee5c1eabaa3b7550d9fd58738964ae37eb658"
     },
     {
       "file": "a3_release/09_yanggum_3T_A3.zip",
-      "bytes": 965616,
-      "sha256": "b4e01b945832167cd7ca35737f9155f03be597922437bf502c4d2a6771ba1602"
+      "bytes": 965663,
+      "sha256": "12c329a7f88ca7ec48fdba1daf0e31a167a883f1756ec9564bf425228d5e8634"
+    },
+    {
+      "file": "a3_release/11_ascent_remaining_3T_A3.zip",
+      "bytes": 28768201,
+      "sha256": "60a53a52ff8143084d0e53c2df187fe5a49d4f0bbd8030a4afead67ab26a3a0d"
     }
   ],
   "errors": [],
-  "selected_primary_pages": 2,
+  "ascent_source_size_verification": {
+    "scale": 1,
+    "unit": "mm",
+    "parts": [
+      {
+        "id": "ascent_02",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.999977600000022
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.1999768999999674
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.1999768999999674
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.999991699999896,
+          39.999991699999896,
+          39.99999169999995,
+          39.99999169999995
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946263499999077,
+          0.1946048999999448,
+          0.19462635000002138,
+          0.1946478999999499
+        ]
+      },
+      {
+        "id": "ascent_03",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.999977599999966
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.199976900000024
+          ],
+          [
+            20.200015899999983,
+            3.19997699999999
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.2000201000000175
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.199976900000024
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.99999169999995,
+          39.999991699999896,
+          39.999991699999896,
+          39.99999169999995
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946478499999671,
+          0.1946478499999671,
+          0.1946479000000636,
+          0.19464790000000676
+        ]
+      },
+      {
+        "id": "ascent_04",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.999977600000022
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200020000000052
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.19997699999999
+          ],
+          [
+            20.200015899999983,
+            3.19997699999999
+          ],
+          [
+            20.199972900000034,
+            3.19997699999999
+          ],
+          [
+            20.200015899999983,
+            3.1999770000000467
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.99999169999984,
+          39.999991699999896,
+          39.99999169999995,
+          39.999991699999896
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946479000000636,
+          0.1946479000000636,
+          0.19464790000012044,
+          0.1946479000000636
+        ]
+      },
+      {
+        "id": "ascent_05",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.99997760000008
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.1999768999999105
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.2000201000000743
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.19997699999999
+          ],
+          [
+            20.200015899999983,
+            3.1999768999999105
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.999991699999896,
+          39.999991699999896,
+          39.99999169999995,
+          39.99999169999995
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946479000000636,
+          0.19464789999983623,
+          0.19464785000002394,
+          0.19464785000002394
+        ]
+      },
+      {
+        "id": "ascent_06",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_07",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_08",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.806997499999966
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.806997499999966
+      },
+      {
+        "id": "ascent_09",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_10",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_15",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_16",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_17",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_18",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_19",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_20",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80697600000002
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697600000002
+      },
+      {
+        "id": "ascent_21",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80701909999999
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80701909999999
+      },
+      {
+        "id": "ascent_22",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_23",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80697600000002
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697600000002
+      },
+      {
+        "id": "ascent_24",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80701909999999
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80701909999999
+      },
+      {
+        "id": "ascent_25",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.806997499999966
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.806997499999966
+      },
+      {
+        "id": "ascent_26",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.806997499999966
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.806997499999966
+      },
+      {
+        "id": "ascent_27",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_28",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_29",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80697600000002
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697600000002
+      },
+      {
+        "id": "ascent_30",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80701909999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80701909999999
+      }
+    ],
+    "geometry_size_errors": [],
+    "source_part_count": 31,
+    "excluded_cadena": [
+      "ascent_01",
+      "ascent_11",
+      "ascent_12",
+      "ascent_13",
+      "ascent_14"
+    ],
+    "excluded_blank_panel": "ascent_31",
+    "included_parts": 25,
+    "printed_panels": 21,
+    "bases": 4,
+    "findings": [
+      {
+        "id": "ascent_02",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.1946478999999499,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      },
+      {
+        "id": "ascent_03",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.1946479000000636,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      },
+      {
+        "id": "ascent_04",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.19464790000012044,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      },
+      {
+        "id": "ascent_05",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.1946479000000636,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      }
+    ],
+    "physical_cut_or_fit_test": false,
+    "status": "digital_dimensions_verified_original_interfaces_preserved",
+    "limitations": [
+      "Nominal3T is not a measurement of the supplied acrylic.",
+      "Software confirms source dimensions and unchanged vector geometry, not physical fit, kerf or cutting quality.",
+      "No fit-test pieces or additional bases were generated."
+    ]
+  },
+  "selected_primary_pages": 4,
   "selected_thickness": "3T",
   "optional_PAD_pages_per_thickness": 1,
   "minimum_sheet_proof": {
-    "net_material_area_mm2": 155683.91111209392,
+    "net_material_area_mm2": 299161.7583459405,
     "single_A3_area_mm2": 124740,
-    "area_lower_bound_sheets": 2,
-    "feasible_sheets": 2,
+    "area_lower_bound_sheets": 4,
+    "feasible_sheets": 4,
     "optimal_sheet_count_proven": true,
-    "scope": "56 selected 3T pieces; optional PAD and 5T alternatives excluded; no scale reduction except approved DOT redesign."
+    "separate_batches": [
+      {
+        "name": "existing",
+        "parts": 56,
+        "net_material_area_mm2": 155683.91111209392,
+        "area_lower_bound_sheets": 2,
+        "feasible_sheets": 2
+      },
+      {
+        "name": "ascent_remaining",
+        "parts": 25,
+        "net_material_area_mm2": 143477.8472338466,
+        "area_lower_bound_sheets": 2,
+        "feasible_sheets": 2
+      }
+    ],
+    "scope": "81 selected 3T pieces. Ascent remaining is a separate batch as explicitly requested; minimum proved within that separation. Optional PAD/Yanggum and 5T excluded."
   },
   "source_artwork_scale": 1,
   "physical_cut_test": false,
   "test_pieces_included": false,
   "limitations": [
     "Software checks do not validate physical kerf, material thickness or printer registration.",
-    "Only Cadena first-row four panels and one original base are selected; other Ascent pieces are retired from this print run.",
+    "All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.",
     "Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.",
     "Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers."
   ]

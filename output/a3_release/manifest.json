@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-yanggum-combined",
+  "revision": "A3-2026-11-23-ascent-separate-final",
   "canvas_mm": [
     420.0,
     297.0
@@ -53,10 +53,22 @@
         "pieces": 3,
         "contours": 5
       }
+    ],
+    "11_ascent_remaining/3T": [
+      {
+        "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
+        "pieces": 14,
+        "contours": 14
+      },
+      {
+        "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
+        "pieces": 11,
+        "contours": 43
+      }
     ]
   },
   "physical_cut_test": false,
-  "physical_pages_per_selected_thickness": 2,
+  "physical_pages_per_selected_thickness": 4,
   "retired_groups": [
     "03_linked_keyrings",
     "04_ascent_original",
@@ -88,5 +100,9 @@
     "06_len_pad/5T",
     "09_yanggum/3T"
   ],
-  "selected_thickness": "3T"
+  "selected_thickness": "3T",
+  "support_files": [
+    "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
+    "a3_release/11_ascent_remaining/size_check.png"
+  ]
 }
