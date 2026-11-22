@@ -2,6 +2,8 @@
 
 **선택 재료 3T · A3 420×297mm · 실제 크기100%. 시험편 없음.**
 
+[이미 인쇄된 500×800mm 판 · 재커팅 전용](recut_only/danbar_500x800) — A3 추가 인쇄 없음. 원본 위치·배율을 유지한 새 칼선입니다.
+
 [개별 에셋 · 원본 방향 AI/PDF·그림·칼선](individual_assets) · [줄줄이 튀잉 완성 예시](individual_assets/linked_tuiing_assembly.png)
 기본 파일은 개별 에셋으로 관리합니다. 아래 A3는 출력할 때 쓰는 배치본입니다.
 

@@ -1728,7 +1728,17 @@
     "individual_assets/yanggum_stand_02/04_WHITE_INK_MASK_300ppi.png",
     "individual_assets/yanggum_stand_02/README.md",
     "individual_assets/yanggum_stand_02/asset.json",
-    "individual_assets/yanggum_stand_02/preview.png"
+    "individual_assets/yanggum_stand_02/preview.png",
+    "recut_only/VALIDATION.json",
+    "recut_only/danbar_500x800/03_CUT_ONLY.ai",
+    "recut_only/danbar_500x800/03_CUT_ONLY.pdf",
+    "recut_only/danbar_500x800/03_CUT_ONLY.svg",
+    "recut_only/danbar_500x800/03_CUT_ONLY.vectorcraft",
+    "recut_only/danbar_500x800/README.md",
+    "recut_only/danbar_500x800/RECUT_ONLY.zip",
+    "recut_only/danbar_500x800/cut_detail.png",
+    "recut_only/danbar_500x800/preview_alignment.png",
+    "recut_only/danbar_500x800/validation.json"
   ],
   "pinned_inputs_sha256_checked": 35,
   "preserved_source_assets_sha256_checked": [
@@ -1777,7 +1787,8 @@
     "assets/masters/garam.svg",
     "assets/masters/logo_symbol.svg",
     "assets/source_logo.ai",
-    "assets/yanggum/아크릴SD스탠드.jpg"
+    "assets/yanggum/아크릴SD스탠드.jpg",
+    "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai"
   ],
   "retired_source_files": [
     "assets/external/ascent_original/README.md",

@@ -394,42 +394,42 @@
     {
       "file": "a3_release/02_extra_sheet_3T_A3.zip",
       "bytes": 13985637,
-      "sha256": "dbfef1e73ec8583c1d478f3ee126e2a71ef788c196378138b4f8b6c1eaf8e2df"
+      "sha256": "b329d0a2973487254977d3ec40f9a8fd1c8e5553ba22f060e774a75a7c5f0949"
     },
     {
       "file": "a3_release/02_extra_sheet_5T_A3.zip",
       "bytes": 10254102,
-      "sha256": "cbe4df28153459dbc3f9243f72ee2e907e90761006ecc5f0be946eccc6724692"
+      "sha256": "8a8fc510ebd487532351d7f605311bcdfc4a4781a86133e19f008abb5f9d6871"
     },
     {
       "file": "a3_release/05_len_3T_A3.zip",
       "bytes": 16543809,
-      "sha256": "2c17e6466de9f5772d4bcbe069a3009c802cab4906ff7f8207b5683ec04b1904"
+      "sha256": "7b54b9518cba07d284f43c7c4bdb86d847e341c18cb87f269c90a662ba19b98e"
     },
     {
       "file": "a3_release/05_len_5T_A3.zip",
       "bytes": 13930294,
-      "sha256": "6106ef28363df17010fe3276870e0e314bcb897ea140025dd3ab1f7ca2ed2578"
+      "sha256": "40e5e808a2c48e146b99b2c61a92379944f980665ebc24fcd5cf3ac99d75037d"
     },
     {
       "file": "a3_release/06_len_pad_3T_A3.zip",
       "bytes": 12580300,
-      "sha256": "fcfe66660f1c9aaac0c89949761fffac80b7f5ea77f0d1ba7a88ffe2d7f7245b"
+      "sha256": "b9bbf620f9c7c56cd476969f8f3f80b90f3ae10cf483ae15bea9469bf42819a0"
     },
     {
       "file": "a3_release/06_len_pad_5T_A3.zip",
       "bytes": 12549818,
-      "sha256": "99f4939512a12b78a3971052feeee5c1eabaa3b7550d9fd58738964ae37eb658"
+      "sha256": "d7b6d7b9210a9bada9021b920dc040f374112a8561098463be856eed662ea11c"
     },
     {
       "file": "a3_release/09_yanggum_3T_A3.zip",
       "bytes": 965663,
-      "sha256": "12c329a7f88ca7ec48fdba1daf0e31a167a883f1756ec9564bf425228d5e8634"
+      "sha256": "6687e92955c0b5689aae6733bf327cb2ae3adecfa68dc4af915e3f242759448a"
     },
     {
       "file": "a3_release/11_ascent_remaining_3T_A3.zip",
       "bytes": 28768201,
-      "sha256": "60a53a52ff8143084d0e53c2df187fe5a49d4f0bbd8030a4afead67ab26a3a0d"
+      "sha256": "b237aebc2d72661171695517f6f5b1b737cb55779686264b9e185ee07f045fcf"
     }
   ],
   "errors": [],
