@@ -25,11 +25,12 @@ def write(path,text):
 
 def collect(only=None):
     assets={}
-    for group,parts in inputs(only):
+    for group,parts in inputs():
         for part in parts:
             if part['id'] not in assets:assets[part['id']]={'piece':part,'groups':[]}
             assets[part['id']]['groups'].append(group)
-    return assets
+    return {ident:entry for ident,entry in assets.items()
+            if not only or any(only in group for group in entry['groups'])}
 
 def isolation(doc,part,size):
     """Return the isolated artwork PDF and transparent pixels, at the same scale."""
@@ -199,7 +200,7 @@ def main():
     categories={}
     for row in records:
         for group in row['a3_groups']:categories.setdefault(group,[]).append(row)
-    text='# 개별 에셋 · 실물 크기\n\nA3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입니다. 각 조각의 그림·백색·벡터 칼선을 따로 편집할 수 있습니다. 외부30개 도안은 원본의 회전 상태도 유지합니다. 받침도 별도 조각입니다. 3T가 현재 선택이고 5T는 대안입니다.\n\n[출력용 A3](../a3_release) · [새 Len PAD 시안](../a3_release/06_len_pad) · [새 양검 시안](../a3_release/09_yanggum) · [단풍바람 원본 소스](../../assets)\n\n![줄줄이 튀잉 완성 예시](linked_tuiing_assembly.png)\n\n링은 참고용 합성이고 아크릴 제작 파일에 포함하지 않습니다. 실물 조립 미검증.\n'
+    text='# 개별 에셋 · 실물 크기\n\nA3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입니다. 각 조각의 그림·백색·벡터 칼선을 따로 편집할 수 있습니다. 외부30개 도안은 원본의 회전 상태도 유지합니다. 받침도 별도 조각입니다. 3T가 현재 선택이고 5T는 대안입니다.\n\n[출력용 A3](../a3_release) · [출력 보류 Len PAD 원본](../a3_release/06_len_pad) · [새 양검 시안](../a3_release/09_yanggum) · [단풍바람 원본 소스](../../assets)\n\n![줄줄이 튀잉 완성 예시](linked_tuiing_assembly.png)\n\n링은 참고용 합성이고 아크릴 제작 파일에 포함하지 않습니다. 실물 조립 미검증.\n'
     gallery=[]
     for group,rows in categories.items():
         tiles=[]

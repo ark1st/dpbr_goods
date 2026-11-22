@@ -43,8 +43,8 @@ class A3PackingTests(unittest.TestCase):
         cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
         rows=json.loads((ROOT/'configs/a3_placements.json').read_text())['groups']
         selected=[r['id'] for group in cfg['selected_primary_groups'] for page in (rows[group] if isinstance(rows[group][0],list) else [rows[group]]) for r in page]
-        self.assertEqual(len(selected),81)
-        self.assertEqual(len(set(selected)),81)
+        self.assertEqual(len(selected),84)
+        self.assertEqual(len(set(selected)),84)
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
         self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']+cfg['ascent_remaining']['part_ids']))
@@ -52,6 +52,22 @@ class A3PackingTests(unittest.TestCase):
         self.assertEqual(len(separate),25)
         self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
         self.assertNotIn('ascent_31',selected)
+
+    def test_clearance_capacity_can_prove_nonfit_when_plain_area_cannot(self):
+        from optional_sheet_policy import capacity_bound
+        pieces=[box(0,0,39,100) for _ in range(5)]
+        self.assertLess(sum(p.area for p in pieces),2*100*100)
+        report=capacity_bound(pieces,[100,100],0,3,2)
+        self.assertTrue(report['impossible_proven'])
+        self.assertGreater(report['expanded_piece_area_lower_mm2'],report['expanded_container_area_upper_mm2'])
+
+    def test_PAD_ascent_failed_search_is_not_reported_as_impossibility(self):
+        from optional_sheet_policy import assess
+        result=assess(ROOT)
+        self.assertTrue(result['candidate_sets']['len_pad_3T']['impossible_proven'])
+        self.assertFalse(result['ascent_with_PAD']['capacity_bound']['impossible_proven'])
+        self.assertFalse(result['ascent_with_PAD']['mathematical_impossibility_proven'])
+        self.assertFalse(result['ascent_with_PAD']['feasible_two_page_layout_found'])
 
     def test_large_source_oblique_cut_avoids_rounded_form_matrix(self):
         import pymupdf as fitz

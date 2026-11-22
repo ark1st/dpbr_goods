@@ -70,12 +70,13 @@
     "verify_individual_assets.py",
     "ascent_size_audit.py",
     "repair_printed_plate.py",
-    "verify_recut.py"
+    "verify_recut.py",
+    "optional_sheet_policy.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
   "physical_sheets": 4,
-  "physical_parts": 81,
+  "physical_parts": 84,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [

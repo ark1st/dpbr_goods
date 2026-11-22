@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+  "revision": "A3-2026-11-23-yanggeum-fill-pad-deferred",
   "canvas_mm": [
     420,
     297
@@ -162,9 +162,9 @@
     "ascent_14"
   ],
   "current_groups": {
-    "02_extra_sheet/3T": 41,
+    "02_extra_sheet/3T": 43,
     "02_extra_sheet/5T": 39,
-    "05_len/3T": 15,
+    "05_len/3T": 16,
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
@@ -215,6 +215,16 @@
       "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
       "status": "superseded_cut_layer_only_do_not_execute",
       "reason": "Already-printed500x800 layout retained;309920 micro-segment cutting commands replaced by4392 reviewed segments in cut-only recovery."
+    },
+    {
+      "commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+      "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+      "groups": [
+        "02_extra_sheet/3T",
+        "05_len/3T"
+      ],
+      "status": "superseded_mixed_print_layout_only",
+      "reason": "Yanggeum three-piece set now included within the same two mixed A3 pages; original scale and curves preserved. PAD deferred. Existing500x800 recut and separate Ascent unchanged."
     }
   ],
   "len_layout": {
@@ -312,7 +322,7 @@
     "05_len/3T",
     "11_ascent_remaining/3T"
   ],
-  "selected_primary_parts": 81,
+  "selected_primary_parts": 84,
   "primary_inventory": [
     "ascent_01",
     "ascent_02",
@@ -394,7 +404,10 @@
     "supplied_saetui_03",
     "supplied_saetui_04",
     "tuiing_01",
-    "unfried_01"
+    "unfried_01",
+    "yanggum_keyring_01",
+    "yanggum_stand_01",
+    "yanggum_stand_02"
   ],
   "yanggum_products": {
     "stand": {
@@ -478,7 +491,8 @@
   },
   "support_files": [
     "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
-    "a3_release/11_ascent_remaining/size_check.png"
+    "a3_release/11_ascent_remaining/size_check.png",
+    "a3_release/OPTIONAL_FILL_ASSESSMENT.json"
   ],
   "recut_recoveries": [
     {
@@ -506,5 +520,115 @@
         "RECUT_ONLY.zip"
       ]
     }
-  ]
+  ],
+  "optional_fill_allocation": {
+    "02_extra_sheet/3T": [
+      "yanggum_stand_01",
+      "yanggum_keyring_01"
+    ],
+    "05_len/3T": [
+      "yanggum_stand_02"
+    ]
+  },
+  "optional_fill_policy": {
+    "maximum_existing_mixed_sheets": 2,
+    "baseline_commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+    "baseline_ids": [
+      "ascent_01",
+      "ascent_11",
+      "ascent_12",
+      "ascent_13",
+      "ascent_14",
+      "burnt_01",
+      "extra_3T_01",
+      "extra_3T_02",
+      "extra_3T_03",
+      "extra_3T_04",
+      "extra_3T_05",
+      "extra_3T_06",
+      "extra_3T_07",
+      "extra_3T_08",
+      "extra_3T_09",
+      "extra_3T_10",
+      "extra_3T_11",
+      "extra_3T_12",
+      "extra_3T_13",
+      "extra_3T_14",
+      "extra_3T_15",
+      "extra_3T_16",
+      "extra_3T_17",
+      "extra_3T_18",
+      "extra_3T_19",
+      "extra_3T_20",
+      "extra_3T_21",
+      "extra_3T_22",
+      "extra_3T_23",
+      "extra_3T_24",
+      "extra_3T_25",
+      "extra_3T_26",
+      "extra_3T_27",
+      "extra_3T_28",
+      "extra_3T_29",
+      "extra_3T_30",
+      "extra_3T_34",
+      "extra_3T_35",
+      "extra_3T_36",
+      "extra_3T_37",
+      "extra_3T_38",
+      "golden_01",
+      "len_3T_01",
+      "len_3T_02",
+      "len_3T_03",
+      "len_3T_04",
+      "len_3T_05",
+      "len_3T_06",
+      "len_3T_07",
+      "len_dot_3T_06",
+      "supplied_saetui_01",
+      "supplied_saetui_02",
+      "supplied_saetui_03",
+      "supplied_saetui_04",
+      "tuiing_01",
+      "unfried_01"
+    ],
+    "candidate_sets": {
+      "yanggum_3T": [
+        "yanggum_stand_01",
+        "yanggum_stand_02",
+        "yanggum_keyring_01"
+      ],
+      "len_pad_3T": [
+        "len_pad_3T_01",
+        "len_pad_3T_02",
+        "len_pad_3T_03",
+        "len_pad_3T_04",
+        "len_pad_3T_05",
+        "len_pad_3T_06",
+        "len_pad_3T_07"
+      ]
+    },
+    "preserve_scale": true,
+    "complete_sets_only": true,
+    "deferred": [
+      "len_pad_3T"
+    ],
+    "standalone_reference_groups": [
+      "06_len_pad/3T",
+      "06_len_pad/5T",
+      "09_yanggum/3T"
+    ],
+    "ascent_PAD_search": {
+      "rectangular_packing_result_pages": 3,
+      "rectangular_core_layouts_examined": 33,
+      "contour_fill_trials": 264,
+      "best_complete_parts_in_core_search": 29,
+      "requested_total_parts": 32,
+      "constructive_first_page_parts": 14,
+      "constructive_remaining_parts": 18,
+      "constructive_contour_trials": 64,
+      "feasible_two_page_layout_found": false,
+      "mathematical_impossibility_proven": false,
+      "decision": "Defer PAD under the no-extra-sheet instruction. Failed finite searches are not a proof that every two-page arrangement is impossible."
+    }
+  }
 }

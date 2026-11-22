@@ -1,6 +1,6 @@
 # 이미 인쇄된 판 재커팅
 
-[500×800mm 단바 판 재커팅 전용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/recut_only/danbar_500x800). 원본 위치·배율·77조각·294폐곡선을 보존한 새 칼선입니다. 새 인쇄나A3대지를 추가하지 않습니다. 아래 기본A3구성은4장, PAD·양검까지 선택하면6장입니다.
+[500×800mm 단바 판 재커팅 전용](https://github.com/ark1st/dpbr_goods/tree/output_len/output/recut_only/danbar_500x800). 원본 위치·배율·77조각·294폐곡선을 보존한 새 칼선입니다. 새 인쇄나A3대지를 추가하지 않습니다. 현재 A3는 양검을 포함한4장이며 Len PAD는 보류합니다.
 
 # 단풍바람 제작 파일
 
@@ -8,14 +8,14 @@
 
 ## 내일 최종 출력
 
-1. [기존 혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 / 41조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet/3T/sheet_01)
-2. [기존 혼합 A3 2 · Len·DOT·튀잉·카데나 나머지 / 15조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len/3T/sheet_01)
+1. [기존 혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 / 43조각 · 양검 캐릭터·키링 포함](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/02_extra_sheet/3T/sheet_01)
+2. [기존 혼합 A3 2 · Len·DOT·튀잉·카데나 나머지 / 16조각 · 양검 받침 포함](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/05_len/3T/sheet_01)
 3. [어센트 · 카데나 제외 · 완전히 별도 A3 2장 / 25조각](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/11_ascent_remaining)
 
-확정 구성은 **4장·81조각**입니다. 어센트는 기존 조각과 섞지 않고, 원본의 무인쇄 패널31도 제외했습니다. 기존56조각과 새25조각은 각각 한 장보다 큰 재료 면적이며 두 장씩 배치되어, 별도 배치 조건에서 최소4장입니다.
+확정 구성은 **4장·84조각**입니다. 어센트는 기존 조각과 섞지 않고, 원본의 무인쇄 패널31도 제외했습니다. 양검을 포함한 혼합59조각과 어센트25조각은 각각 한 장보다 큰 재료 면적이며 두 장씩 배치되어, 별도 배치 조건에서 최소4장입니다.
 어센트의 인쇄 판은104×62.807mm(돌기3mm 포함), 받침은104×30mm입니다. 홈약20.2×3.2mm·돌기폭20mm를 보존합니다. [치수 검증·실물 검증의 한계](https://github.com/ark1st/dpbr_goods/blob/output_len/output/a3_release/11_ascent_remaining/SIZE_VERIFICATION.json).
 
-[별도 선택안 Len PAD](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad)와 [양검 스탠드·키링](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/09_yanggum)은 각각 추가1장입니다. 5T는 대안이며 현재3T와 함께 출력하지 않습니다.
+양검 3조각은 혼합2장에 포함했습니다. [Len PAD 원본](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad)은 출력 보류입니다. 기존 혼합2장은 간격을 포함한 면적 하한상 수용할 수 없고, 어센트2장도 원본 크기의 유효 배치를 찾지 못했습니다. 후자는 불가능 증명이 아닙니다. [검토 기록](https://github.com/ark1st/dpbr_goods/blob/output_len/output/a3_release/OPTIONAL_FILL_ASSESSMENT.json). 5T는 대안이며 현재3T와 함께 출력하지 않습니다.
 
 ## 개별 에셋과 재생성
 

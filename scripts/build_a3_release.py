@@ -467,6 +467,9 @@ def inputs(only=None):
     cadena={p['id']:p for p in batches.pop('04_ascent_cadena',[])}
     for group,ids in CONFIG['cross_sheet_cadena_allocation'].items():
         if group in batches:batches[group]+=[cadena[k] for k in ids]
+    optional={p['id']:p for p in batches.get('09_yanggum/3T',[])}
+    for group,ids in CONFIG.get('optional_fill_allocation',{}).items():
+        if group in batches:batches[group]+=[optional[k] for k in ids]
     visited=set()
     for parts in batches.values():
         for piece in parts:

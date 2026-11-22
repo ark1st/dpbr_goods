@@ -128,6 +128,22 @@ def main(check_zips=True,check_native=True):
             assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]
     assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==CONFIG['selected_primary_parts']
+    from optional_sheet_policy import assess
+    fill=assess(ROOT)
+    saved_fill=json.loads((base/'OPTIONAL_FILL_ASSESSMENT.json').read_text(encoding='utf-8'))
+    assert saved_fill['allocation']==fill['allocation'] and saved_fill['deferred']==fill['deferred'],'Stale optional-fill decision'
+    for old,new in [(saved_fill['candidate_sets'][k],v) for k,v in fill['candidate_sets'].items()]+[(saved_fill['ascent_with_PAD']['capacity_bound'],fill['ascent_with_PAD']['capacity_bound'])]:
+        assert old['impossible_proven']==new['impossible_proven'] and old['parts']==new['parts']
+        for key in ['expanded_piece_area_lower_mm2','expanded_container_area_upper_mm2','excess_area_mm2']:
+            assert abs(old[key]-new[key])<.001,('Stale optional capacity bound',key)
+    assert saved_fill['ascent_with_PAD']['feasible_two_page_layout_found'] is False
+    assert saved_fill['ascent_with_PAD']['mathematical_impossibility_proven'] is False
+    assert len(manifest['groups']['02_extra_sheet/3T'])+len(manifest['groups']['05_len/3T'])==2
+    selected_yanggum=sorted(x for x in selected_ids if x.startswith('yanggum_'))
+    assert selected_yanggum==sorted(CONFIG['optional_fill_policy']['candidate_sets']['yanggum_3T'])
+    assert not any(x.startswith('len_pad_') for x in selected_ids),'Deferred PAD must not enter the print job'
+    for group,ids in CONFIG['optional_fill_allocation'].items():
+        assert sorted(p['id'] for p in selected_by_group[group] if p['id'].startswith('yanggum_'))==sorted(ids)
     assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids']+CONFIG['ascent_remaining']['part_ids'])
     # Subtract through-holes: this is physical material area, not bounding boxes.
     material_area=0
@@ -144,7 +160,7 @@ def main(check_zips=True,check_native=True):
     lower_bound=sum(b['area_lower_bound_sheets'] for b in batches)
     minimum_proof={'net_material_area_mm2':material_area,'single_A3_area_mm2':420*297,
         'area_lower_bound_sheets':lower_bound,'feasible_sheets':CONFIG['selected_primary_pages'],'optimal_sheet_count_proven':True,'separate_batches':batches,
-        'scope':'81 selected 3T pieces. Ascent remaining is a separate batch as explicitly requested; minimum proved within that separation. Optional PAD/Yanggum and 5T excluded.'}
+        'scope':f"{CONFIG['selected_primary_parts']} selected 3T pieces. Yanggeum is included in the existing mixed pair, PAD deferred. Ascent remaining stays separate; minimum proved within that separation. 5T and standalone reference layouts excluded."}
     packages=[]
     if check_zips:
         for group in sorted(wanted):
@@ -153,7 +169,7 @@ def main(check_zips=True,check_native=True):
                 assert z.testzip() is None
                 included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
                 expected={'a3_release/README.md','a3_release/'+group.split('/')[0]+'/README.md'}
-                expected.update(rel for rel in CONFIG.get('support_files',[]) if rel.startswith('a3_release/'+group.split('/')[0]+'/'))
+                expected.update(rel for rel in CONFIG.get('support_files',[]) if rel.startswith('a3_release/'+group.split('/')[0]+'/') or rel=='a3_release/OPTIONAL_FILL_ASSESSMENT.json')
                 expected.update(p['folder']+'/'+n for p in manifest['groups'][group] for n in included)
                 assert len(z.namelist())==len(expected) and set(z.namelist())==expected,(file,'Missing, duplicate or extra ZIP members')
                 for name in z.namelist():
@@ -166,7 +182,7 @@ def main(check_zips=True,check_native=True):
         assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
             'ascent_source_size_verification':source_size_check,
-            'selected_primary_pages':CONFIG['selected_primary_pages'],'selected_thickness':'3T','optional_PAD_pages_per_thickness':1,
+            'selected_primary_pages':CONFIG['selected_primary_pages'],'selected_thickness':'3T','optional_fill_assessment':fill,'PAD_print_pages':0,
             'minimum_sheet_proof':minimum_proof,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
