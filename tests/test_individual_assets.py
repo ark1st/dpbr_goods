@@ -51,6 +51,7 @@ class IndependentAssetRegression(unittest.TestCase):
                 # Isolated artwork must contain no red neighbour pixels.
                 from PIL import Image
                 im=Image.frombytes('RGBA',(pix.width,pix.height),pix.samples)
-                self.assertFalse(any(r>180 and g<30 and a>100 for r,g,b,a in im.get_flattened_data()))
+                pixels=im.tobytes()
+                self.assertFalse(any(r>180 and g<30 and a>100 for r,g,a in zip(pixels[::4],pixels[1::4],pixels[3::4])))
 
 if __name__=='__main__':unittest.main()
