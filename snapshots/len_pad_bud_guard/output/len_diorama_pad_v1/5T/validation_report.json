@@ -1,0 +1,383 @@
+{
+  "revision": 1,
+  "product": "Len Diorama PAD V1",
+  "concept_title": "매화와 은빛 용, 구름 위의 달빛 무대",
+  "character": {
+    "name": "렌",
+    "world": "메이플스토리"
+  },
+  "preset": {
+    "name": "5T",
+    "part_thickness_mm": 5,
+    "base_thickness_mm": 5,
+    "slot_width_mm": 5
+  },
+  "canvas_mm": [
+    320,
+    370
+  ],
+  "base_mm": [
+    280,
+    71.2235
+  ],
+  "base_art_mm": [
+    275,
+    66.2235
+  ],
+  "base_art_inset_mm": 2.5,
+  "base_corner_radius_mm": 14.42,
+  "pieces": 7,
+  "finished_size_mm": {
+    "width": 280,
+    "height": 97.5,
+    "depth": 71.22
+  },
+  "assembled_height_mm": {
+    "bg": 97.5,
+    "plum_left": 79.5,
+    "plum_right": 73.5,
+    "dragon": 57.5,
+    "character": 91.5,
+    "cloud": 35.5
+  },
+  "depth_rows_mm": [
+    23,
+    34,
+    45,
+    56
+  ],
+  "cut_closed_paths": 15,
+  "hole_paths_first": true,
+  "slot_count": 8,
+  "tab_width_mm": 18,
+  "tab_depth_mm": 4.6,
+  "slot_length_mm": 18.8,
+  "slot_width_mm": 5,
+  "dimensions_are": "cut path centerlines; no kerf compensation",
+  "fit_status": "UNTESTED - cut fit coupon from the same sheets first",
+  "physical_fit_test": false,
+  "minimum_piece_gap_mm": 6.466372148977285,
+  "ai_layers": [
+    "3_ARTWORK",
+    "2_CORNER_REFERENCE",
+    "1_LASER_CUT"
+  ],
+  "same_row_standing_clearance_mm": 19.92,
+  "same_row_worst_pair": [
+    "dragon",
+    "character"
+  ],
+  "art_overhang_beyond_base_mm": {
+    "plum_left": 0.6,
+    "plum_right": 3.23
+  },
+  "front_view_coverage_pct": {
+    "bg": {
+      "total_pct": 57.9,
+      "top30_pct": 13.7
+    },
+    "plum_left": {
+      "total_pct": 15.0,
+      "top30_pct": 0.0
+    },
+    "plum_right": {
+      "total_pct": 0.5,
+      "top30_pct": 0.0
+    },
+    "dragon": {
+      "total_pct": 3.0,
+      "top30_pct": 0.0
+    },
+    "character": {
+      "total_pct": 6.9,
+      "top30_pct": 0.0
+    },
+    "cloud": {
+      "total_pct": 0.0,
+      "top30_pct": 0.0
+    }
+  },
+  "load_path_floor_mm": 12.0,
+  "bud_guard_risers": {
+    "character": {
+      "29.23": {
+        "riser_width_mm": 12.25,
+        "riser_top_above_slot_mm": 19.62,
+        "worst_section_before_mm": 2.65,
+        "worst_at_above_slot_mm": 10.12
+      }
+    }
+  },
+  "blue_reference_four_sides": true,
+  "unprinted_tabs_and_slots": true,
+  "slot_ink_clearance_checked_mm": 1.5,
+  "margins_nonblue_ink": true,
+  "base_plate": "supplied raster 01_베이스 printed as-is plus a 2.5 mm clear rim; 5 placeholder slot holes mirror-transplanted shut and 8 real slot windows cleared - assets/len_pad/prepared/provenance.json",
+  "assets": {
+    "bg": {
+      "file": "02_배경.png",
+      "sha256": "faaa4721227328f479949fa8a82230b11d03054bdd12a93fa67afd4bce777d70",
+      "source_bbox_px": [
+        31,
+        120,
+        1610,
+        723
+      ],
+      "source_px": [
+        1610,
+        723
+      ],
+      "resample_px": [
+        1610,
+        723
+      ],
+      "art_width_mm": 200.415,
+      "art_height_mm": 90.0,
+      "minimum_art_to_cut_mm": 2.4850139456777165,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 204,
+      "processing": null
+    },
+    "plum_left": {
+      "file": "03_장식파츠.png",
+      "sha256": "ff15dbc1d3b587900c51f8294dfdf05a413d620a208404d291de928de16dddf0",
+      "source_bbox_px": [
+        19,
+        15,
+        689,
+        651
+      ],
+      "source_px": [
+        689,
+        651
+      ],
+      "resample_px": [
+        689,
+        651
+      ],
+      "art_width_mm": 76.203,
+      "art_height_mm": 72.0,
+      "minimum_art_to_cut_mm": 2.469897317340546,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 230,
+      "processing": "island separated from the bundled parts sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched"
+    },
+    "plum_right": {
+      "file": "03_장식파츠.png",
+      "sha256": "ff15dbc1d3b587900c51f8294dfdf05a413d620a208404d291de928de16dddf0",
+      "source_bbox_px": [
+        590,
+        350,
+        840,
+        679
+      ],
+      "source_px": [
+        840,
+        679
+      ],
+      "resample_px": [
+        840,
+        679
+      ],
+      "art_width_mm": 81.649,
+      "art_height_mm": 66.0,
+      "minimum_art_to_cut_mm": 2.4843951419859778,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 261,
+      "processing": "island separated from the bundled parts sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched"
+    },
+    "dragon": {
+      "file": "03_장식파츠.png",
+      "sha256": "ff15dbc1d3b587900c51f8294dfdf05a413d620a208404d291de928de16dddf0",
+      "source_bbox_px": [
+        813,
+        81,
+        482,
+        304
+      ],
+      "source_px": [
+        482,
+        304
+      ],
+      "resample_px": [
+        482,
+        304
+      ],
+      "art_width_mm": 79.276,
+      "art_height_mm": 50.0,
+      "minimum_art_to_cut_mm": 2.4846388060543405,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 154,
+      "processing": "island separated from the bundled parts sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched"
+    },
+    "character": {
+      "file": "04_렌_캐릭터.png",
+      "sha256": "a6a1262471772c85ade28ad2dd55cb2500cd4c2c18b30cc61e87bec084ac556f",
+      "source_bbox_px": [
+        25,
+        61,
+        984,
+        1414
+      ],
+      "source_px": [
+        984,
+        1414
+      ],
+      "resample_px": [
+        690,
+        992
+      ],
+      "art_width_mm": 58.455,
+      "art_height_mm": 84.0,
+      "minimum_art_to_cut_mm": 2.484328399121322,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 300,
+      "processing": null
+    },
+    "cloud": {
+      "file": "03_장식파츠.png",
+      "sha256": "ff15dbc1d3b587900c51f8294dfdf05a413d620a208404d291de928de16dddf0",
+      "source_bbox_px": [
+        54,
+        723,
+        613,
+        277
+      ],
+      "source_px": [
+        613,
+        277
+      ],
+      "resample_px": [
+        613,
+        277
+      ],
+      "art_width_mm": 61.964,
+      "art_height_mm": 28.0,
+      "minimum_art_to_cut_mm": 2.485138777939571,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 251,
+      "processing": "island separated from the bundled parts sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched"
+    },
+    "base": {
+      "file": "prepared/01_베이스.png",
+      "sha256": "46cbab0f98198411ad88d89157c71b54ddc50c18d56c552562e0ffeb5774790c",
+      "prepared_from_sha256": "d20bca180f84c0651f656379dfae255e1b2911f8f0c7ff09a7e2cce1c59c22c7",
+      "source_px": [
+        2076,
+        500
+      ],
+      "source_bbox_px": [
+        48,
+        111,
+        2076,
+        500
+      ],
+      "resample_px": [
+        2076,
+        500
+      ],
+      "art_width_mm": 275,
+      "art_height_mm": 66.233,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 192,
+      "processing": "placeholder holes closed + slot windows cleared (scripts/prepare_len_pad_base.py, provenance.json)"
+    }
+  },
+  "fit_test_slots": [
+    {
+      "id": 1,
+      "path_slot_width_mm": 4.6,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        17
+      ]
+    },
+    {
+      "id": 2,
+      "path_slot_width_mm": 4.7,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        17
+      ]
+    },
+    {
+      "id": 3,
+      "path_slot_width_mm": 4.8,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        17
+      ]
+    },
+    {
+      "id": 4,
+      "path_slot_width_mm": 4.9,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        36
+      ]
+    },
+    {
+      "id": 5,
+      "path_slot_width_mm": 5,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        36
+      ]
+    },
+    {
+      "id": 6,
+      "path_slot_width_mm": 5.1,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        36
+      ]
+    },
+    {
+      "id": 7,
+      "path_slot_width_mm": 5.2,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        24,
+        55
+      ]
+    },
+    {
+      "id": 8,
+      "path_slot_width_mm": 5.3,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        60,
+        55
+      ]
+    },
+    {
+      "id": 9,
+      "path_slot_width_mm": 5.4,
+      "path_slot_length_mm": 18.8,
+      "center_mm": [
+        96,
+        55
+      ]
+    }
+  ]
+}
