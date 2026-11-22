@@ -131,23 +131,27 @@
     },
     {
       "file": "output/len_diorama_pad_v1/3T/02_MASTER.ai",
-      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-      "sha256": "b5660e807bade865c81465c775f646277b7ebeda721b402eeb9d412a0c7cfd95"
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "0e190825df6ca609ada046cbd3a2d99299f860317c0a9cb4f8a157e3aa0406e4",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/02_MASTER.ai"
     },
     {
       "file": "output/len_diorama_pad_v1/3T/03_CUT_ONLY.pdf",
-      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-      "sha256": "792646a9a65771652bfed400d3829e579108fdc1aa5015bd2933e136214cd508"
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "e2e445cdd7f7667d5c0f08fa9999e3c7ce7f253bd5923a71fefa5aa709e1a89c",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/03_CUT_ONLY.pdf"
     },
     {
       "file": "output/len_diorama_pad_v1/5T/02_MASTER.ai",
-      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-      "sha256": "c96fdfca3e911f68281b9147c6ef4da4e9703614b38e5289b05636750985ebc4"
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "8331d687a8f040c872b765d27b2fa6cacaac7136dea414b2601c23e31156833d",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/02_MASTER.ai"
     },
     {
       "file": "output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf",
-      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-      "sha256": "78c7f7f050fba2b65a2fbfd862673c5eb0b40707082f951ded4ce974df3b6c4c"
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "7ee8cd1586603648beb5848447228a4b18987fe62e0e3692f919db4023b891af",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
     }
   ],
   "cadena_source_part_ids": [
@@ -251,8 +255,9 @@
     },
     {
       "file": "output/len_diorama_pad_v1/3T/preview/assembly.png",
-      "commit": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
-      "sha256": "aa89c2bf9827224ba0c4864cfc2b27dec967d0c612efb9b7c9b9f01690aca3a9"
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "c3f8e4e83bdfaaccbd6663fc5e98ef8eb5e55811b1ff805affb8a9185e1ac6bb",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/preview/assembly.png"
     }
   ],
   "optional_groups": [

@@ -16,7 +16,7 @@
 
 `configs/a3_release.json`의 커밋·SHA-256으로 입력을 고정합니다. `scripts/source_cache.py`는 `tmp/source_cache/<commit>/`에만 복원합니다.
 어센트 전체 AI는 raw의 분할3파일을 합쳐 해시를 확인한 뒤 카데나5조각만 선택합니다.
-Len PAD는 원격bcc9d2e의7조각을 회전·이동합니다. 원래 치수와15폐곡선을 유지하며 과거 시험편은 읽지 않습니다.
+Len PAD는 raw 보관본 스냅샷(len_pad_bud_guard, 23fa338)의7조각을 회전·이동합니다. 캐릭터 허리에 보강 리브가 들어간 마스터이며 원래 치수와15폐곡선을 유지하고 과거 시험편은 읽지 않습니다.
 
 ```sh
 python scripts/build_a3_release.py
