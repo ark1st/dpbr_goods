@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-two-sheets-dot50",
+  "revision": "A3-2026-11-22-yanggum-combined",
   "canvas_mm": [
     420,
     297
@@ -167,12 +167,15 @@
     "05_len/3T": 15,
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
-    "06_len_pad/5T": 7
+    "06_len_pad/5T": 7,
+    "09_yanggum/3T": 3
   },
   "retired_groups": [
     "03_linked_keyrings",
     "04_ascent_original",
-    "04_ascent_cadena"
+    "04_ascent_cadena",
+    "07_yanggum_stand/3T",
+    "08_yanggum_keyring/3T"
   ],
   "linked_allocation": {
     "02_extra_sheet": [
@@ -262,7 +265,8 @@
   ],
   "optional_groups": [
     "06_len_pad/3T",
-    "06_len_pad/5T"
+    "06_len_pad/5T",
+    "09_yanggum/3T"
   ],
   "len_dot_revision": {
     "art_height_mm": 50,
@@ -358,5 +362,29 @@
     "supplied_saetui_04",
     "tuiing_01",
     "unfried_01"
-  ]
+  ],
+  "yanggum_products": {
+    "stand": {
+      "art_height_mm": 60,
+      "clear_border_mm": 2.5,
+      "tab_width_mm": 18,
+      "tab_bottom_clearance_mm": 0.4,
+      "bridge_rise_mm": 9,
+      "base_size_mm": [
+        72,
+        28
+      ],
+      "base_corner_radius_mm": 7,
+      "slot_length_mm": 18.8,
+      "slot_corner_radius_mm": 0.35
+    },
+    "keyring": {
+      "art_height_mm": 40,
+      "clear_border_mm": 2.5,
+      "hole_diameter_mm": 4,
+      "hole_to_art_min_mm": 5,
+      "hole_to_edge_min_mm": 4,
+      "carrier_width_mm": 13
+    }
+  }
 }

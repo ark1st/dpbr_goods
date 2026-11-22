@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-two-sheets-dot50",
+  "revision": "A3-2026-11-22-yanggum-combined",
   "canvas_mm": [
     420.0,
     297.0
@@ -46,6 +46,13 @@
         "pieces": 7,
         "contours": 15
       }
+    ],
+    "09_yanggum/3T": [
+      {
+        "folder": "a3_release/09_yanggum/3T/sheet_01",
+        "pieces": 3,
+        "contours": 5
+      }
     ]
   },
   "physical_cut_test": false,
@@ -53,7 +60,9 @@
   "retired_groups": [
     "03_linked_keyrings",
     "04_ascent_original",
-    "04_ascent_cadena"
+    "04_ascent_cadena",
+    "07_yanggum_stand/3T",
+    "08_yanggum_keyring/3T"
   ],
   "test_pieces_included": false,
   "superseded_releases": [
@@ -76,7 +85,8 @@
   ],
   "optional_groups": [
     "06_len_pad/3T",
-    "06_len_pad/5T"
+    "06_len_pad/5T",
+    "09_yanggum/3T"
   ],
   "selected_thickness": "3T"
 }

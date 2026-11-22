@@ -111,9 +111,28 @@
     "a3_release/06_len_pad/assembly.png",
     "a3_release/06_len_pad_3T_A3.zip",
     "a3_release/06_len_pad_5T_A3.zip",
+    "a3_release/09_yanggum/3T/sheet_01/01_PRINT.pdf",
+    "a3_release/09_yanggum/3T/sheet_01/01_PRINT_300ppi.png",
+    "a3_release/09_yanggum/3T/sheet_01/02_MASTER.ai",
+    "a3_release/09_yanggum/3T/sheet_01/02_MASTER.pdf",
+    "a3_release/09_yanggum/3T/sheet_01/02_MASTER.vectorcraft",
+    "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.pdf",
+    "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.svg",
+    "a3_release/09_yanggum/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+    "a3_release/09_yanggum/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+    "a3_release/09_yanggum/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+    "a3_release/09_yanggum/3T/sheet_01/README.md",
+    "a3_release/09_yanggum/3T/sheet_01/cut_detail.png",
+    "a3_release/09_yanggum/3T/sheet_01/preview.png",
+    "a3_release/09_yanggum/3T/sheet_01/validation.json",
+    "a3_release/09_yanggum/README.md",
+    "a3_release/09_yanggum/assembly.png",
+    "a3_release/09_yanggum/final_preview.png",
+    "a3_release/09_yanggum_3T_A3.zip",
     "a3_release/A3_VALIDATION.json",
     "a3_release/README.md",
-    "a3_release/manifest.json"
+    "a3_release/manifest.json",
+    "a3_release/yanggum_final_preview.png"
   ],
   "pinned_inputs_sha256_checked": 35,
   "preserved_source_assets_sha256_checked": [
@@ -161,7 +180,8 @@
     "assets/masters/danpaengi.svg",
     "assets/masters/garam.svg",
     "assets/masters/logo_symbol.svg",
-    "assets/source_logo.ai"
+    "assets/source_logo.ai",
+    "assets/yanggum/아크릴SD스탠드.jpg"
   ],
   "retired_source_files": [
     "assets/external/ascent_original/README.md",

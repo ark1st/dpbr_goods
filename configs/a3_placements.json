@@ -1,5 +1,5 @@
 {
-  "description": "Two mixed 3T sheets. Rigid rotations only, except explicitly redesigned DOT source.",
+  "description": "Two mixed 3T sheets. Rigid rotations only, except explicitly redesigned DOT source. Optional yanggum combined plate (stand + keyring) at reviewed fixed coordinates.",
   "groups": {
     "02_extra_sheet/3T": [
       {
@@ -1463,6 +1463,44 @@
         "x": 366.04999999999995,
         "y": 109.05000000000001,
         "rotation_degrees": 90
+      }
+    ],
+    "09_yanggum/3T": [
+      {
+        "id": "yanggum_stand_01",
+        "x": 140,
+        "y": 95,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          7.499806,
+          7.498407,
+          69.698421,
+          75.029906
+        ]
+      },
+      {
+        "id": "yanggum_stand_02",
+        "x": 135.1,
+        "y": 170,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          10.000001,
+          95.000005,
+          82.000001,
+          122.999996
+        ]
+      },
+      {
+        "id": "yanggum_keyring_01",
+        "x": 230,
+        "y": 105,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          7.499999,
+          9.500054,
+          50.631326,
+          67.46053
+        ]
       }
     ]
   },

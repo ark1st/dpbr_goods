@@ -19,6 +19,9 @@ Len은 공통 받침·배경 한 세트에 일반·DOT 캐릭터를 교체합니
 시험편을 제외한 별도 디자인입니다. 이것까지 출력하면3장·63조각입니다.
 PAD의 받침은280×71.2235mm로 기존 Len과 다릅니다.
 
+별도 선택안: [양검 SD 스탠드+키링 결합판 · 캐릭터+받침+키링 3조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/09_yanggum/3T/sheet_01).
+제공 원본 그림을 그대로 인쇄합니다. 스탠드는 그림높이60mm·탙18×2.6mm·받침홈18.8×3.0mm, 키링은 그림높이40mm·구멍⌀4mm입니다. 5T 대안은 아직 만들지 않았습니다.
+
 [전체 출력 안내·시안·ZIP](https://github.com/ark1st/dpbr_goods/tree/output_len/output) · [보관본](https://github.com/ark1st/dpbr_goods/tree/raw)
 5T는 별도 대안입니다. 현재3T와 둘 다 출력하지 않습니다. 카데나는5T용이 아닙니다.
 
@@ -35,7 +38,7 @@ python -m unittest discover -s tests
 python scripts/verify_release.py
 ```
 
-공유 중간 파일을 사용하므로 생성 명령은 순서대로 실행합니다. 부분 생성은 `--only 02_extra`, `--only 05_len`, `--only 06_len_pad`입니다. 카데나는 앞의 두3T 시트에 포함되어 독립 출력하지 않습니다.
+공유 중간 파일을 사용하므로 생성 명령은 순서대로 실행합니다. 부분 생성은 `--only 02_extra`, `--only 05_len`, `--only 06_len_pad`, `--only yanggum`입니다. 카데나는 앞의 두3T 시트에 포함되어 독립 출력하지 않습니다. 양검 결합판(스탠드+키링)은 `--only yanggum`로 재생성합니다.
 `configs/a3_placements.json`의 검토한 좌표로 같은 배치를 재현합니다. 고정 커밋·SHA-256의 입력은 `tmp/source_cache/`로 복원합니다. 구버전 폴더를 output에 다시 만들지 않습니다.
 가람·단팽이·심벌 SVG는 `python scripts/export_art_masters.py`로 재생성합니다.
 

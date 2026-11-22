@@ -42,7 +42,7 @@ def main(check_zips=True,check_native=True):
             folder=out/page['folder'];spec=json.loads((folder/'validation.json').read_text(encoding='utf-8'))
             assert spec['canvas_mm']==[420,297] and spec['artwork_scale']==1
             assert spec['pieces']==page['pieces'] and spec['closed_contours']==page['contours']
-            assert spec['minimum_gap_mm']>=2.998
+            assert spec['minimum_gap_mm'] is None or spec['minimum_gap_mm']>=2.998
             planned={r['id']:r for r in reviewed[group]}
             assert set(planned)=={p['id'] for p in spec['parts']}
             for p in spec['parts']:

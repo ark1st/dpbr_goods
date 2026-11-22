@@ -9,6 +9,8 @@
 
 별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01). 이것도 출력하면 총3장·63조각입니다.
 
+별도 선택안: [양검(yanggum) SD 스탠드+키링 결합판 · 캐릭터+받침+키링 3조각 / A3 1장](a3_release/09_yanggum/3T/sheet_01). 제공 원본 그림을 그대로 인쇄합니다.
+
 [이전 파일·원본 백업(raw)](https://github.com/ark1st/dpbr_goods/tree/raw) · [main 소스](https://github.com/ark1st/dpbr_goods/tree/main)
 
 [칼선 전수 검사](LASER_PATH_AUDIT.json) · [전체 제작 검사](RELEASE_VALIDATION.json) · [저장소·보존 검사](REPOSITORY_AUDIT.json) · [퇴역 기록](RETIRED.json)

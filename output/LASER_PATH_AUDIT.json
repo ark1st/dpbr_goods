@@ -1,7 +1,7 @@
 {
-  "revision": "A3-2026-11-22-two-sheets-dot50",
+  "revision": "A3-2026-11-22-yanggum-combined",
   "mode": "all-formats",
-  "checked_files": 30,
+  "checked_files": 35,
   "errors": [],
   "protected_original_findings": [],
   "records": [
@@ -948,7 +948,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/3T/sheet_01/02_MASTER.ai",
-      "sha256": "6aaa42f6b1fbdd80ce621a762f3d499d7c68a0b44315e460ef6076c92bac5f08",
+      "sha256": "272ef9dd7fdf444fd449d2bf80191e075876ddae1f010cd4487df3bf91e3bd77",
       "sha256_mode": "raw bytes"
     },
     {
@@ -1894,7 +1894,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/3T/sheet_01/02_MASTER.pdf",
-      "sha256": "37c83f43630c58951af938db94fb0e7d2ebee345dbe880e019035af6caaf545e",
+      "sha256": "0f5696d69a68fe015f5cedf48cce448b6f3c2f4c975373b2097d4c1b3f179121",
       "sha256_mode": "raw bytes"
     },
     {
@@ -2840,7 +2840,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/3T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "2dc230c6f184ca424fde51dcac9a20d731f51b0ba94ea7d7717d9383a99ce297",
+      "sha256": "3ebf729dd1a34fadc9bccd67c4ad9f2362ad2e091a3c636b0959aa14468a118d",
       "sha256_mode": "raw bytes"
     },
     {
@@ -3786,7 +3786,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/3T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "3846f39c8f38e9471d0d13b695039baf4b6fea54ad3fe09468404ab0563bc3bf",
+      "sha256": "8ea48f1334eddb774593a6edbef78b56bc149c2eb30a7eb3b029f606a2765179",
       "sha256_mode": "raw bytes"
     },
     {
@@ -5660,7 +5660,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/5T/sheet_01/02_MASTER.ai",
-      "sha256": "be1df345a700c17e6bf6c2475c7a7189d7bf0820dd162fdeac29cb03676f2a3f",
+      "sha256": "14029d37cb7f236f6c33621d0481fb13e9ea207c9e08dda1ad1d9d7f0705eb49",
       "sha256_mode": "raw bytes"
     },
     {
@@ -6588,7 +6588,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/5T/sheet_01/02_MASTER.pdf",
-      "sha256": "fbe9d98f8993c1ba7523da4c690ef62abbdc6fed003295dcc9e1799d231c6463",
+      "sha256": "c2dbf862a1535ba486ac529449d5eb4e14b883c7a017e22edaf99fb918dafd49",
       "sha256_mode": "raw bytes"
     },
     {
@@ -7516,7 +7516,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/5T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "f359564e1183b1fbb9c48f36f684d6dd9a87ab92483e71190254bf107a5dd5fd",
+      "sha256": "e47dac91c00e491b9646f2de3edfab602398b250e9775504f6d90ae944ecf15f",
       "sha256_mode": "raw bytes"
     },
     {
@@ -8444,7 +8444,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/02_extra_sheet/5T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "b28b01d308fbff2189f17843cb6dc982be88d7a0919a2a88d0069fd1677a1932",
+      "sha256": "3b8310f3b83f993c51984f2539802d9cc13028ecd0089ec01d81dd2826e747b6",
       "sha256_mode": "raw bytes"
     },
     {
@@ -9742,7 +9742,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/3T/sheet_01/02_MASTER.ai",
-      "sha256": "f36b4dcda5aca6b76c76fbf3c4eefe881fa3e06e5d5b6e8830fe0a6133bed937",
+      "sha256": "e67b1f3b4c9c431935066594b35dfea28fb10eafb81797617237037609f334b1",
       "sha256_mode": "raw bytes"
     },
     {
@@ -10112,7 +10112,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/3T/sheet_01/02_MASTER.pdf",
-      "sha256": "67b3d02a20554686020f2b3e76d8d26e3103bf0340a114fb33e3bb0e88d306b2",
+      "sha256": "91b29ca3cadb955737e84fc6e821bbc310d61d8db3ae5b4bf0c6f495a74a84b9",
       "sha256_mode": "raw bytes"
     },
     {
@@ -10482,7 +10482,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/3T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "fd9c2fe262af1a1a0bcfc138dee47642b1c8807accbb4d98a429e3ae60b4b7c7",
+      "sha256": "cd680e09d4347775494f51ddd4418a334ad728db58fb22fa65c06b9b167390b8",
       "sha256_mode": "raw bytes"
     },
     {
@@ -10852,7 +10852,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/3T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "c400230f0762c182c29210247b0c41335e7592ada767cff57432326f8f665fd0",
+      "sha256": "d65ea78e7d4fd8e6371ef1bfb3ae40a12eb89fc059eaa3409d2359d6ffd3c07e",
       "sha256_mode": "raw bytes"
     },
     {
@@ -11493,7 +11493,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/5T/sheet_01/02_MASTER.ai",
-      "sha256": "de5361a9fe0990c6ba146ee6e7e8f77e489db8615d36593723dd58bed1932448",
+      "sha256": "4a343f38c62e34b4ac87930557d0920eba1ff43c3b4f76756b0c910ceac31005",
       "sha256_mode": "raw bytes"
     },
     {
@@ -11764,7 +11764,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/5T/sheet_01/02_MASTER.pdf",
-      "sha256": "dc29b66844977848207978b55c7053e094dd94a51f9573e8a573a75a85eda921",
+      "sha256": "027a242e601dab12f15fe0137f8cf016c3c8cf1458294cf25689fae82bf16ed0",
       "sha256_mode": "raw bytes"
     },
     {
@@ -12035,7 +12035,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/5T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "d750d865fd3fb712bfd80e7a88d8fa9f16bd74397841c513c9f5e72fcf62cf68",
+      "sha256": "849d7e040f529fc3474b9969016784ade5683cdaf89e9a9e95b9a0a71a13e123",
       "sha256_mode": "raw bytes"
     },
     {
@@ -12306,7 +12306,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/05_len/5T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "1f983bbe25f122de5c40328855f721ebe06a49ba02a28cee36385f695fbfc981",
+      "sha256": "e58cae3738dd3bddc52a7e227e850a6279249663302c442e8feda4d425558327",
       "sha256_mode": "raw bytes"
     },
     {
@@ -12731,7 +12731,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/3T/sheet_01/02_MASTER.ai",
-      "sha256": "5518729bb6868a65ecf5dbe6773858be122e6eafafe32bc8dbe91de30c25d4e5",
+      "sha256": "2713bdb10d150ee0e9f8a118ecc1704e4027d795d7698328f95616faa92000c9",
       "sha256_mode": "raw bytes"
     },
     {
@@ -12885,7 +12885,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/3T/sheet_01/02_MASTER.pdf",
-      "sha256": "2746214010e2c4a409385f0e0f56be461419c67e10af87cf72d3519448f37be2",
+      "sha256": "c1f4b933d6e86984f9836ff361d8f892f73f01888ae99241f3eb30fb964e21a0",
       "sha256_mode": "raw bytes"
     },
     {
@@ -13039,7 +13039,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/3T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "f77b2dcc2ab1fb14a85e92d76a5314a89f5080a47b61648383a290343489d24c",
+      "sha256": "853d6dfce12b597f4fc236015d4439343d1a66bb75fb2dc825fa3fd554e69cae",
       "sha256_mode": "raw bytes"
     },
     {
@@ -13193,7 +13193,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/3T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "c53fb7578f85590a1b64fe600837131e3cd4a69e2456d07afc0956f40efa2dbc",
+      "sha256": "4ce1a0f8816227348c2eb2ca31467ff40821786f1e84c13c91e3dbd7edf284c8",
       "sha256_mode": "raw bytes"
     },
     {
@@ -13501,7 +13501,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/5T/sheet_01/02_MASTER.ai",
-      "sha256": "748f53521d35425dafc143e31a19d545f746d18e937fc8e7a22d0d85a128b8df",
+      "sha256": "160e1f560836ece489d4978b264f82c8a35d70d00548dc793bc4864ad044aa39",
       "sha256_mode": "raw bytes"
     },
     {
@@ -13655,7 +13655,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/5T/sheet_01/02_MASTER.pdf",
-      "sha256": "227339e0e02cbc544f620c6600e22afcd774be6f45e9cd23c4f155a518602dd0",
+      "sha256": "456c7cbd0828d71d8bd7608d6a337b74e09dada73d1b06b0b912883ef5c8977b",
       "sha256_mode": "raw bytes"
     },
     {
@@ -13809,7 +13809,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/5T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "1fa50eff60b0bf19ffa693fbbe364a4ad75098f4a8f5cc0274c96983b88356a1",
+      "sha256": "2542edab643897ed6b5bd326a2c6f440db30632e3436eaa617c214ec1475fd31",
       "sha256_mode": "raw bytes"
     },
     {
@@ -13963,7 +13963,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/5T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "b1c776c11585cf94c497843d5f60f2900f8e8d6e0c24dfdf00749f841ff18982",
+      "sha256": "28b09e58b387a7cb2e2f0c9eeed7f65a2fb9b5edc1872906341b9cd5f2a1a491",
       "sha256_mode": "raw bytes"
     },
     {
@@ -14118,6 +14118,326 @@
       "protected_original_findings": [],
       "file": "a3_release/06_len_pad/5T/sheet_01/03_CUT_ONLY.svg",
       "sha256": "d34f74a81836b50ed991cfd61b6aacae9444144d46a80d0fc926b43840713222",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 5,
+      "contours": 5,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 7.46850409999999,
+      "segments": 409,
+      "curves": 393,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 241,
+          "curves": 235,
+          "perimeter_mm": 215.4593861215593,
+          "minimum_segment_mm": 0.21308153765125845,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504878316401,
+          "minimum_segment_mm": 0.43179234305894576,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865349799053,
+          "minimum_segment_mm": 1.4037530688987148,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542812169397031,
+          "minimum_segment_mm": 3.135691120815004,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 144,
+          "curves": 142,
+          "perimeter_mm": 169.11830925658208,
+          "minimum_segment_mm": 0.24011469177550157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/09_yanggum/3T/sheet_01/02_MASTER.ai",
+      "sha256": "63a72e86145cf0e0d06612474398456bcd932c6ea2ae63ba04c9dd7763040a13",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 5,
+      "contours": 5,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 7.46850409999999,
+      "segments": 409,
+      "curves": 393,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 241,
+          "curves": 235,
+          "perimeter_mm": 215.45938471501609,
+          "minimum_segment_mm": 0.21308153765125845,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504878316401,
+          "minimum_segment_mm": 0.43179234305894576,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865349799053,
+          "minimum_segment_mm": 1.4037530688987148,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282656375323,
+          "minimum_segment_mm": 3.1356983180056157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 144,
+          "curves": 142,
+          "perimeter_mm": 169.11830693134408,
+          "minimum_segment_mm": 0.24011469177550157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/09_yanggum/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "611cf7dfafda63fe472b7c5f5c4c00cc253ea351e25b389c1a18897d6f839d85",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 5,
+      "contours": 5,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 7.46850409999999,
+      "segments": 409,
+      "curves": 393,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 241,
+          "curves": 235,
+          "perimeter_mm": 215.4593861215593,
+          "minimum_segment_mm": 0.21308153765125845,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504878316401,
+          "minimum_segment_mm": 0.43179234305894576,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865349799053,
+          "minimum_segment_mm": 1.4037530688987148,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542812169397031,
+          "minimum_segment_mm": 3.135691120815004,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 144,
+          "curves": 142,
+          "perimeter_mm": 169.11830925658208,
+          "minimum_segment_mm": 0.24011469177550157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/09_yanggum/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "c3966afb612d929e2ced58ed3e9c45235c63e298a41280fc3587dc8aca44d277",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 5,
+      "contours": 5,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 7.46850409999999,
+      "segments": 409,
+      "curves": 393,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 241,
+          "curves": 235,
+          "perimeter_mm": 215.45938471501609,
+          "minimum_segment_mm": 0.21308153765125845,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504878316401,
+          "minimum_segment_mm": 0.43179234305894576,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865349799053,
+          "minimum_segment_mm": 1.4037530688987148,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282656375323,
+          "minimum_segment_mm": 3.1356983180056157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 144,
+          "curves": 142,
+          "perimeter_mm": 169.11830693134408,
+          "minimum_segment_mm": 0.24011469177550157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "3d5949e64c40a3bdfa9a4012e8f996d167e704a05aac7cbbbe5b576f31471574",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 5,
+      "contours": 5,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 7.468504099999989,
+      "segments": 409,
+      "curves": 393,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 241,
+          "curves": 235,
+          "perimeter_mm": 215.45935825134646,
+          "minimum_segment_mm": 0.21309568790971867,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150419030944,
+          "minimum_segment_mm": 0.43179813873328654,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865665714892,
+          "minimum_segment_mm": 1.4037764691679055,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542850582650651,
+          "minimum_segment_mm": 3.135693681550678,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 144,
+          "curves": 142,
+          "perimeter_mm": 169.1182974097537,
+          "minimum_segment_mm": 0.2401219713111138,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "7ba3b597bd20f1e6e3908507ff6b2f509644c88da5fc82377c176630867ad80a",
       "sha256_mode": "LF-normalized text"
     }
   ],
@@ -14527,6 +14847,78 @@
       "status": "current_release_package"
     },
     {
+      "file": "a3_release/09_yanggum/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/assembly.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/09_yanggum_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
       "file": "a3_release/A3_VALIDATION.json",
       "status": "current_supporting_artwork_or_documentation"
     },
@@ -14536,6 +14928,10 @@
     },
     {
       "file": "a3_release/manifest.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/yanggum_final_preview.png",
       "status": "current_supporting_artwork_or_documentation"
     }
   ],
@@ -14592,8 +14988,8 @@
     ]
   },
   "coverage": {
-    "current_pages": 6,
-    "expected_cut_files": 30,
+    "current_pages": 7,
+    "expected_cut_files": 35,
     "retired_files_are_not_counted_as_current_passes": true
   },
   "limitations": [

@@ -416,10 +416,20 @@ def source_inputs(only=None):
         pieces=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,None,f'len_pad_{t}')
         assert len(pieces)==7 and sum(len(p['paths']) for p in pieces)==15
         batches.append((f'06_len_pad/{t}',pieces))
+    if not only or 'yanggum' in only:
+        from yanggum_parts import stand_documents,keyring_documents
+        spec=CONFIG['yanggum_products']
+        cut,art,meta=stand_documents(ROOT,'3T',draw_path,MM,spec['stand'])
+        stand=pieces_from(cut,art,None,'yanggum_stand',smooth=True);assert len(stand)==2
+        stand[0]['design_metadata']=meta['character'];stand[1]['design_metadata']=meta['base']
+        cut,art,kmeta=keyring_documents(ROOT,'3T',draw_path,MM,spec['keyring'])
+        keyring=pieces_from(cut,art,None,'yanggum_keyring',smooth=True);assert len(keyring)==1
+        keyring[0]['design_metadata']=kmeta
+        batches.append(('09_yanggum/3T',stand+keyring))
     return batches
 
 def inputs(only=None):
-    batches=dict(source_inputs(only if only and '06_len_pad' in only else None))
+    batches=dict(source_inputs(only if only and ('06_len_pad' in only or 'yanggum' in only) else None))
     for t in ['3T','5T']:
         group=f'02_extra_sheet/{t}'
         if group in batches:

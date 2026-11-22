@@ -63,7 +63,9 @@
     "verify_laser_paths.py",
     "verify_release.py",
     "verify_repository.py",
-    "len_dot_part.py"
+    "len_dot_part.py",
+    "prepare_yanggum_character.py",
+    "yanggum_parts.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
@@ -1204,10 +1206,15 @@
       "file": "assets/source_logo.ai",
       "archive_path": "snapshots/main/assets/source_logo.ai",
       "sha256": "490e2d49be311f3a5302589295f3b529a2e4c43752305a3a0c945b05abd31546"
+    },
+    {
+      "file": "assets/yanggum/아크릴SD스탠드.jpg",
+      "sha256": "cbbf123d38f7d3d0b779447be7f62b5142065127dca31e7b5350cd76539ce74e"
     }
   ],
   "optional_current_groups": [
     "06_len_pad/3T",
-    "06_len_pad/5T"
+    "06_len_pad/5T",
+    "09_yanggum/3T"
   ]
 }
