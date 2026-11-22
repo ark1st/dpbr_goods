@@ -16,6 +16,8 @@ def main():
     a3=a3_audit()
     from verify_individual_assets import main as asset_audit
     assets=asset_audit() if (ROOT/'output/individual_assets/manifest.json').exists() else None
+    from verify_recut import main as recut_audit
+    recut=recut_audit() if (ROOT/'output/recut_only').exists() else None
     out=ROOT/'output';qa=ROOT/'tmp/release_qa_current';qa.mkdir(parents=True,exist_ok=True)
     manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
     renders=[];images=[];tiles=[]
@@ -40,8 +42,9 @@ def main():
     for i,t in enumerate(tiles):contact.paste(t,((i%2)*620,(i//2)*480))
     contact.save(qa/'contact.png')
     report={'revision':manifest['revision'],'errors':[],'repository':repository,'laser_path_audit':{'checked_files':laser['checked_files'],'errors':laser['errors'],'protected_original_findings':laser['protected_original_findings']},
-        'a3_release':a3,'individual_assets':assets,'rendered_pdf_and_ai_pages':renders,'png_files_checked':images,'physical_cut_test':False,
+        'a3_release':a3,'individual_assets':assets,'existing_print_recut':recut,'rendered_pdf_and_ai_pages':renders,'png_files_checked':images,'physical_cut_test':False,
         'coverage':{'current_pages_including_thickness_alternatives':a3['checked_pages'],'current_cut_formats':laser['checked_files'],'packages':len(a3['packages']),'rendered_pdf_and_ai_pages':len(renders),
+        'existing_print_recovery_cut_files':len(recut['records']) if recut else 0,'recut_print_pages_added':0,
         'archived_previous_cut_files':126,'archive_cut_quality':'retired; not included in current pass count; exact backup bytes checked'},
         'limitations':a3['limitations']}
     (out/'RELEASE_VALIDATION.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')

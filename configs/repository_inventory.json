@@ -68,7 +68,9 @@
     "yanggum_parts.py",
     "build_individual_assets.py",
     "verify_individual_assets.py",
-    "ascent_size_audit.py"
+    "ascent_size_audit.py",
+    "repair_printed_plate.py",
+    "verify_recut.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
@@ -1213,6 +1215,10 @@
     {
       "file": "assets/yanggum/아크릴SD스탠드.jpg",
       "sha256": "cbbf123d38f7d3d0b779447be7f62b5142065127dca31e7b5350cd76539ce74e"
+    },
+    {
+      "file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5"
     }
   ],
   "optional_current_groups": [

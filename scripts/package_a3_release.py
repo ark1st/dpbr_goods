@@ -12,7 +12,7 @@ def main():
     cfg=json.loads((ROOT/'configs/a3_release.json').read_text(encoding='utf-8'))
     m=json.loads((BASE/'manifest.json').read_text(encoding='utf-8'))
     assert set(m['groups'])==set(cfg['current_groups'])
-    m.update(revision=cfg['revision'],selected_thickness='3T',optional_groups=cfg['optional_groups'],test_pieces_included=False,support_files=cfg.get('support_files',[]))
+    m.update(revision=cfg['revision'],selected_thickness='3T',optional_groups=cfg['optional_groups'],test_pieces_included=False,support_files=cfg.get('support_files',[]),recut_recoveries=cfg.get('recut_recoveries',[]))
     write(BASE/'manifest.json',json.dumps(m,ensure_ascii=False,indent=2)+'\n')
     common='''**현재 선택: 3T. A3 가로 420×297mm, 실제 크기 100%, 자동 맞춤 해제.**
 
@@ -120,6 +120,8 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
     write(OUT/'README.md','''# 현재 제작 파일
 
 **선택 재료 3T · A3 420×297mm · 실제 크기100%. 시험편 없음.**
+
+[이미 인쇄된 500×800mm 판 · 재커팅 전용](recut_only/danbar_500x800) — A3 추가 인쇄 없음. 원본 위치·배율을 유지한 새 칼선입니다.
 
 [개별 에셋 · 원본 방향 AI/PDF·그림·칼선](individual_assets) · [줄줄이 튀잉 완성 예시](individual_assets/linked_tuiing_assembly.png)
 기본 파일은 개별 에셋으로 관리합니다. 아래 A3는 출력할 때 쓰는 배치본입니다.

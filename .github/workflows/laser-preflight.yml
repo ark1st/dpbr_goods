@@ -31,3 +31,6 @@ jobs:
       - name: Check individual assets against all A3 placements
         if: hashFiles('output/individual_assets/manifest.json') != ''
         run: python scripts/verify_individual_assets.py
+      - name: Check existing-print recovery alignment and ZIP
+        if: hashFiles('output/recut_only/danbar_500x800/validation.json') != ''
+        run: python scripts/verify_recut.py --pdf-only

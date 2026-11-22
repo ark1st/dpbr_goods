@@ -12,6 +12,8 @@ def output_inventory(out):
     manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
     required={'a3_release/README.md','a3_release/manifest.json','a3_release/05_len/assembly.png','a3_release/05_len/assembly_dot.png'}
     required.update(manifest.get('support_files',[]))
+    recoveries=manifest.get('recut_recoveries',[])
+    for recovery in recoveries:required.update(recovery['folder']+'/'+name for name in recovery['files'])
     if any(g.startswith('06_len_pad/') for g in manifest['groups']):
         required.add('a3_release/06_len_pad/assembly.png')
     if any(g.startswith('09_yanggum/') for g in manifest['groups']):
@@ -24,6 +26,7 @@ def output_inventory(out):
         for page in pages:
             required.update(page['folder']+'/'+f for f in PAGE_FILES)
     allowed=required|ROOT_FILES|{'a3_release/A3_VALIDATION.json'}
+    if recoveries:allowed.add('recut_only/VALIDATION.json')
     asset_manifest=out/'individual_assets/manifest.json'
     if asset_manifest.exists():
         catalog=json.loads(asset_manifest.read_text(encoding='utf-8'))

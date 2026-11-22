@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-ascent-separate-final",
+  "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
   "canvas_mm": [
     420,
     297
@@ -209,6 +209,12 @@
       "revision": "A3-2026-11-22-current-only",
       "status": "retired_not_for_current_print",
       "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    },
+    {
+      "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+      "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "status": "superseded_cut_layer_only_do_not_execute",
+      "reason": "Already-printed500x800 layout retained;309920 micro-segment cutting commands replaced by4392 reviewed segments in cut-only recovery."
     }
   ],
   "len_layout": {
@@ -473,5 +479,32 @@
   "support_files": [
     "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
     "a3_release/11_ascent_remaining/size_check.png"
+  ],
+  "recut_recoveries": [
+    {
+      "folder": "recut_only/danbar_500x800",
+      "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+      "paths_file": "configs/recut_smoothed_paths.json",
+      "canvas_mm": [
+        499.99898105197485,
+        800.0012118869357
+      ],
+      "pieces": 77,
+      "contours": 294,
+      "existing_print_only": true,
+      "print_pages_added": 0,
+      "files": [
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.ai",
+        "03_CUT_ONLY.svg",
+        "03_CUT_ONLY.vectorcraft",
+        "preview_alignment.png",
+        "cut_detail.png",
+        "validation.json",
+        "README.md",
+        "RECUT_ONLY.zip"
+      ]
+    }
   ]
 }
