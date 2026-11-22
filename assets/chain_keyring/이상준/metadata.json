@@ -1,0 +1,51 @@
+{
+  "applicant": "이상준",
+  "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+  "source_column": "스탠드 키링 닉네임 작성",
+  "submitted_at": "2026-11-22 15:45:50",
+  "retrieved_at": "2026-11-22T15:53:27+00:00",
+  "route": {
+    "search": "https://maplestory.nexon.com/N23Ranking/World/Total?c={nickname}&w={world}",
+    "mode": "all-world top match (w=0, fallback w=254)",
+    "avatar": "https://avatar.maplestory.nexon.com/CharacterEx/180/{hex}.png",
+    "render": "https://open.api.nexon.com/static/maplestory/character/look/{hex}?action=A00&emotion=E00&wmotion=W00&width=300&height=300"
+  },
+  "characters": [
+    {
+      "nickname": "귀여운렌군",
+      "note": null,
+      "status": "unique",
+      "matches": [
+        {
+          "world": "스카니아",
+          "w": 0,
+          "icon": 8,
+          "rank": 19483,
+          "level": 296,
+          "job": "렌",
+          "guild": "냥아치",
+          "hex": "COECABDLPPIIHHLFIGANDFBJJBBAPOEKHJMJNOLOGLDHICDCAGOKAMNIPDNPGENJMKHNKDKOGJHCKFMMMICDAEMOCELCHAKCKBNFCCJPGHAMKLMMAHKNMACONGJNDMPNGHNBEDAPHLNCGMKHIPGFLALNLCCBABDHBOGKLOIPIPCIOGLPEDMBPHHLPEAHLCOBOPEKEIHHLJKLGNAEIAOBABPDOELGKACCEFBBAPOENAJBCJIHHKACLJBJDOKHGOFONIEFNJOMEODKNIHEHKECEHFBNCPCGKGIJCDHPJFKJGNMGHBGNGDEDONLEPOEHIELICIKJFLJPFJLBLLKCPKHPCDMDMANLKIPBHGMHNJICIJHGGGHLKIGOMJGBDJIDHLEOOMOGBLOMCNOILNKPKNCKBMBHFABGNKLPHALPPJFCCKMFJPGHFNONJJJDPHFJGEAOJFEMDJDPOPGFODGBJAKEIJNHOPCJBNLALEGOEMJLAJJIDONNPFKKOPBBALPJOMOMLDKFIGAMICHAAKHLBJMHJIGHGKNIOGHMNFCEMNEBBJGJLKGHPPFDKBLFJDKKHHCGHDNMHCDEIOONKIKHCEANJKHAGLCCNAONCGBGNPMGDEHEIKKAKPKGMCPFPLFLFNGNJMMAGALJMEFMBCLJIBPOOMPLLOGOEJFLNKHNAHIJMAAPBBLENNCFLHJKAFPOFCJMMKEOIKKDPHHHPGIAEFMCEOMNPNDHHOLLFEEPPDEANDALPAIJNEKILJFJHOMBDNICHJHHPOCJGHPIJGMIAFKMBGFLHGDEAKCPBLPABBCFGLFHJNACNMGGIFNDIDCLFFPGAIDLDBLMBCPOIFIEMOPHCDAEBMODNPBJBCHIDGEKJLJBGPHFFOFHNBFCFILFBOPGNJMKDPPPGJPPMDNJDNKIPOIGCDIOJPILLFCKNMKOLKBFKBHAHOLGBIPEIMJHDNNMNJAKLNBMIFHEJNPENJHHFNIHOLMIEDLHFNAKFKDFFAEPDEEFJAIDBICEGBPDBJB",
+          "files": {
+            "avatar180": "귀여운렌군__스카니아_avatar180.png",
+            "render300": "귀여운렌군__스카니아_render300.png"
+          },
+          "sha256": {
+            "avatar180": "b666fc01943eedde0f6d20d5b439aba8dd1501b39252da84fe3eeeda3f9fb0a4",
+            "render300": "b640c3b3d7a4e0c6858d6e932177b1fb3ba3747eedbc1ec000650b179848112f"
+          },
+          "dims": {
+            "avatar180": [
+              180,
+              180
+            ],
+            "render300": [
+              300,
+              300
+            ]
+          },
+          "download_errors": []
+        }
+      ]
+    }
+  ]
+}

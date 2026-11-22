@@ -65,7 +65,9 @@
     "verify_repository.py",
     "len_dot_part.py",
     "prepare_yanggum_character.py",
-    "yanggum_parts.py"
+    "yanggum_parts.py",
+    "chain_keyring_parts.py",
+    "prepare_chain_keyring_characters.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
@@ -1210,11 +1212,104 @@
     {
       "file": "assets/yanggum/아크릴SD스탠드.jpg",
       "sha256": "cbbf123d38f7d3d0b779447be7f62b5142065127dca31e7b5350cd76539ce74e"
+    },
+    {
+      "file": "assets/chain_keyring/applicants.json",
+      "sha256": "5a182874ca563096645141d73c867c78d7ab0b5443979494bda2428dfd8e6dd4"
+    },
+    {
+      "file": "assets/chain_keyring/강민/마가다락방__리부트(icon_3)_render300.png",
+      "sha256": "20ea9c0f9d5253fdfba3b1d080f53e351e2f4816dc6885277e206d034f49691e"
+    },
+    {
+      "file": "assets/chain_keyring/강민/마가다락방__리부트(icon_3)_render300_beta.png",
+      "sha256": "3023bdcf3ee201716d5c975984e616f2d544de5132d0e275c843ac009a10189f"
+    },
+    {
+      "file": "assets/chain_keyring/강윤진/청민예__오로라_render300.png",
+      "sha256": "c6782bad31665c99031ff9e7bd77e265697432c21b133b7bc9f4d536bbfefc49"
+    },
+    {
+      "file": "assets/chain_keyring/강윤진/청민예__오로라_render300_beta.png",
+      "sha256": "77722d7b51bbdcbba62acbf1714506e6de433b6baeda881ef121d146f98a892f"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/룃혜__베라_render300.png",
+      "sha256": "390684349a92c9cb9dfd9f564d24520533136bf0a3a6c05e14da6954af4cc9bd"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/믐댕__리부트(icon_3)_render300.png",
+      "sha256": "c0a986029d80f6e8c7925869bacccd1f006755eb538c294130d5603c52a30067"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/안개질무렵__베라_render300.png",
+      "sha256": "21d07b31708692b33de70b6353b716bd208c9e8e047ea2e94a5e5da3e3c55416"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/엔루__베라_render300.png",
+      "sha256": "0e6a76da252958924afdb089fc53f22f81d12181bf79e476653854f721258984"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/타루카루타__베라_render300.png",
+      "sha256": "fcc954b494895ca754fc6e41775f8c2de6335c50359dbf5fc1e6a5bfbeeb4d9a"
+    },
+    {
+      "file": "assets/chain_keyring/김호/걸퍄__리부트(icon_3)_render300.png",
+      "sha256": "bcacba90f5b2465c88ab4012d4447ab4cbaf9481bdba4e15566ec43663812576"
+    },
+    {
+      "file": "assets/chain_keyring/김호/냘됫__리부트(icon_3)_render300.png",
+      "sha256": "6117da4220ad8165711669c6156200ae6ded3b581e421e8feae9b9761af54664"
+    },
+    {
+      "file": "assets/chain_keyring/김호/뿟쥐__리부트(icon_3)_render300.png",
+      "sha256": "cf468a28264a950ebea77e808a18accfcf21a1de5e228f306732ddfbf80670ec"
+    },
+    {
+      "file": "assets/chain_keyring/김호/뿟쥐__리부트(icon_3)_render300_alpha.png",
+      "sha256": "3dc98a7002ac4ef0b008c00d28230e60478bb42ceef91295e27086c2bc3a570f"
+    },
+    {
+      "file": "assets/chain_keyring/김호/씀툿__리부트(icon_3)_render300.png",
+      "sha256": "d59504ebe10612a4f711113ca5f0dd97ea24b1eb545f3b14a06c08965e8ccbd0"
+    },
+    {
+      "file": "assets/chain_keyring/김호/얽빅__리부트(icon_3)_render300.png",
+      "sha256": "f22b3c61604b59603e9be1cdf8b93d787af80fb2c183108b6eb37ec764096adc"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/슬빈띠니__스카니아_render300.png",
+      "sha256": "6b3bb483faa05dbb2c9eafb82a1b1bb0cec619a1f4bf83a0d76ab687287e8bcf"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/아기요우무__스카니아_render300.png",
+      "sha256": "e07ab2cf63cf9816312d06c4fa3e151e3dc265cc97534bbafd3fac366b4506ab"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/체스말보관함__스카니아_render300.png",
+      "sha256": "03b93f675adb94a9b950888c8c1708373c56d273d9d37fca5c154d2a6f83fd90"
+    },
+    {
+      "file": "assets/chain_keyring/이상준/귀여운렌군__스카니아_render300.png",
+      "sha256": "b640c3b3d7a4e0c6858d6e932177b1fb3ba3747eedbc1ec000650b179848112f"
+    },
+    {
+      "file": "assets/chain_keyring/정지영/검마충성77__크로아_render300.png",
+      "sha256": "97121b19b94954c9c323c030e7866ac7c106e8b63efae721c9137f0a5e1fb01c"
     }
   ],
   "optional_current_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T",
-    "09_yanggum/3T"
+    "09_yanggum/3T",
+    "10_강민_스탠드/3T",
+    "11_강윤진_스탠드/3T",
+    "12_김윤_줄줄이/3T",
+    "13_김호_줄줄이/3T",
+    "14_배승민_줄줄이/3T",
+    "15_이상준_스탠드/3T",
+    "16_정지영_스탠드/3T",
+    "17_줄줄이_결합판/3T",
+    "18_스탠드_결합판/3T"
   ]
 }

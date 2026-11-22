@@ -1,0 +1,82 @@
+{
+  "applicant": "강윤진",
+  "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+  "source_column": "줄줄이 키링 닉네임 작성",
+  "submitted_at": "2026-11-22 20:41:36",
+  "retrieved_at": "2026-11-22T15:53:25+00:00",
+  "route": {
+    "search": "https://maplestory.nexon.com/N23Ranking/World/Total?c={nickname}&w={world}",
+    "mode": "all-world top match (w=0, fallback w=254)",
+    "avatar": "https://avatar.maplestory.nexon.com/CharacterEx/180/{hex}.png",
+    "render": "https://open.api.nexon.com/static/maplestory/character/look/{hex}?action=A00&emotion=E00&wmotion=W00&width=300&height=300"
+  },
+  "characters": [
+    {
+      "nickname": "청민예",
+      "note": "사용자 확정(2026-11-23): 스탠드 키링 1인분 — 원본 응답 '청민예( 알파버전, 베타 버전)'대로 알파·베타 두 모드 모두 반입함.",
+      "status": "unique",
+      "matches": [
+        {
+          "world": "오로라",
+          "w": 0,
+          "icon": 4,
+          "rank": 1479889,
+          "level": 273,
+          "job": "제로",
+          "guild": "악몽",
+          "hex": "JOLNCOGALLKGENEAEIPMHCLPKNKPCHFGPONNFAFBFGEFJKDLHLBIOPLDMDIDKBBOLENCPNCNFEJAFOLDOKEIJCECMPFHGJOKBADFOAHBMAJDOLLPAAOAJMGFFOEMCIHNGOPOHCDJGKCJOILMCBOBAIKMNJGEBADHCDFMHKBFDJHCAAHOGEJMAEJPCIAOODNJFIONGJFJABHGJKGKNBANELDPBMLIOOFMJEMHJGNMMGPHOCLAKIOBJNOHCGFHIJFHIJLGJHHCFHHBMMPOMFAJJKKFNAFCICPKDNPHIJCPKKKBPPAIKFBHAOKBKMACKKHCBEBHKIIJAEJMODDCPPHGOIOOHEPGALMCLGONOGKPNNDIBPNCPJALAHODGHALHOAKPNPIGFCEOAAIOOAEBHMMBCBKAOLGNIOAPKBEMIBDBMMGABDMPNGMBMFOBBECADHNAOHPKOBPFCLGKMNDEHKDKCJELFCMMKLPNLMODINLFIECCJFACICDLFLABEAGMKGCNBNPIDIONAFKHKJCKDGJCDGKNFAJADMFEINLFPNELPEKADHCPPJJNFLFFNLDHKPLKOCNBBHMOOFECMLCNCECIOFMNKIMCKNDNENNFCMPAPCMJIKJMNPLJGFOOFCDEEMBGMILLLBADDFKKCFEDNNGNGLOCMCGEIPEAHOEDFFNAGHHANKMMMADDEMOLFNPLMGCKMEEKKJECLFIDFIBPELCJFENFHMONAKKMHLJHLOMEBOCAHIGJBGBKAMKEAJHLIPHMIIADOONMMPGHIDAALIOKMBGGBEDICFFFPGPCKNPMMNBNFEJLPHHMFBAPFHPIGIIFAKEHEONDDJHNLPLJDDDDPPBANJHJFFLKCNCJKOCIBHDFEDHOMMFHOIEAGEMOPHOKGGEFEIBHPDLMMKBNIFIOAHJHBNEOKHIJHNENEAGBMBFEGFMFFGIEDMBOHKMNGALJECOHJPHAFNAEKAECNEIMNNEGKIIBIFAJHHBBHJLPGKKMHJNJIPBGBPHKKNAADJP",
+          "files": {
+            "avatar180": "청민예__오로라_avatar180.png",
+            "render300": "청민예__오로라_render300.png"
+          },
+          "sha256": {
+            "avatar180": "80ca27d90161ed85cde2d082ceb7ed83d9e271a5f893b106be0cfc96d4b07088",
+            "render300": "c6782bad31665c99031ff9e7bd77e265697432c21b133b7bc9f4d536bbfefc49"
+          },
+          "dims": {
+            "avatar180": [
+              180,
+              180
+            ],
+            "render300": [
+              300,
+              300
+            ]
+          },
+          "download_errors": [],
+          "look_mode_today": "1",
+          "zero_modes": {
+            "active_mode_today": "alpha",
+            "note": "제로는 알파·베타 두 몸이 있고 공식 이미지는 '현재 활성 모드'만 렌더함. 반대 모드는 look_mode가 뒤집힌 과거/현재 시점의 공식 character_image로 확보.",
+            "alpha": {
+              "hair": "파란색 다크 포숑 헤어",
+              "face": "차분한 루시드 얼굴",
+              "files": {
+                "avatar180": "청민예__오로라_avatar180.png",
+                "render300": "청민예__오로라_render300.png"
+              },
+              "sha256": {
+                "avatar180": "80ca27d90161ed85cde2d082ceb7ed83d9e271a5f893b106be0cfc96d4b07088",
+                "render300": "c6782bad31665c99031ff9e7bd77e265697432c21b133b7bc9f4d536bbfefc49"
+              },
+              "source": "현재 활성 모드 — 랭킹/공식 이미지(접미사 없는 파일)"
+            },
+            "beta": {
+              "hair": "갈색 포레누아 헤어",
+              "face": "차차 얼굴",
+              "files": {
+                "avatar180": "청민예__오로라_avatar180_beta.png",
+                "render300": "청민예__오로라_render300_beta.png"
+              },
+              "sha256": {
+                "avatar180": "d913fe73c1177547348cc5e46e9e75d2bc71b7d84468d22b6bfb1767049b9d0c",
+                "render300": "77722d7b51bbdcbba62acbf1714506e6de433b6baeda881ef121d146f98a892f"
+              },
+              "source": "Nexon OpenAPI character_basic @2026-08-20 (look_mode=0) — maple.gg 코디 히스토리 hex와 일치"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

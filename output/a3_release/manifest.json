@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-yanggum-combined",
+  "revision": "A3-2026-11-23-chain-keyring",
   "canvas_mm": [
     420.0,
     297.0
@@ -53,6 +53,69 @@
         "pieces": 3,
         "contours": 5
       }
+    ],
+    "12_김윤_줄줄이/3T": [
+      {
+        "folder": "a3_release/12_김윤_줄줄이/3T/sheet_01",
+        "pieces": 5,
+        "contours": 10
+      }
+    ],
+    "13_김호_줄줄이/3T": [
+      {
+        "folder": "a3_release/13_김호_줄줄이/3T/sheet_01",
+        "pieces": 6,
+        "contours": 12
+      }
+    ],
+    "14_배승민_줄줄이/3T": [
+      {
+        "folder": "a3_release/14_배승민_줄줄이/3T/sheet_01",
+        "pieces": 3,
+        "contours": 6
+      }
+    ],
+    "17_줄줄이_결합판/3T": [
+      {
+        "folder": "a3_release/17_줄줄이_결합판/3T/sheet_01",
+        "pieces": 14,
+        "contours": 28
+      }
+    ],
+    "10_강민_스탠드/3T": [
+      {
+        "folder": "a3_release/10_강민_스탠드/3T/sheet_01",
+        "pieces": 4,
+        "contours": 6
+      }
+    ],
+    "11_강윤진_스탠드/3T": [
+      {
+        "folder": "a3_release/11_강윤진_스탠드/3T/sheet_01",
+        "pieces": 4,
+        "contours": 6
+      }
+    ],
+    "15_이상준_스탠드/3T": [
+      {
+        "folder": "a3_release/15_이상준_스탠드/3T/sheet_01",
+        "pieces": 2,
+        "contours": 3
+      }
+    ],
+    "16_정지영_스탠드/3T": [
+      {
+        "folder": "a3_release/16_정지영_스탠드/3T/sheet_01",
+        "pieces": 2,
+        "contours": 3
+      }
+    ],
+    "18_스탠드_결합판/3T": [
+      {
+        "folder": "a3_release/18_스탠드_결합판/3T/sheet_01",
+        "pieces": 12,
+        "contours": 18
+      }
     ]
   },
   "physical_cut_test": false,
@@ -86,7 +149,16 @@
   "optional_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T",
-    "09_yanggum/3T"
+    "09_yanggum/3T",
+    "10_강민_스탠드/3T",
+    "11_강윤진_스탠드/3T",
+    "12_김윤_줄줄이/3T",
+    "13_김호_줄줄이/3T",
+    "14_배승민_줄줄이/3T",
+    "15_이상준_스탠드/3T",
+    "16_정지영_스탠드/3T",
+    "17_줄줄이_결합판/3T",
+    "18_스탠드_결합판/3T"
   ],
   "selected_thickness": "3T"
 }

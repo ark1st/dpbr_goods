@@ -1,0 +1,51 @@
+{
+  "applicant": "정지영",
+  "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+  "source_column": "스탠드 키링 닉네임 작성",
+  "submitted_at": "2026-11-22 15:14:03",
+  "retrieved_at": "2026-11-22T15:53:23+00:00",
+  "route": {
+    "search": "https://maplestory.nexon.com/N23Ranking/World/Total?c={nickname}&w={world}",
+    "mode": "all-world top match (w=0, fallback w=254)",
+    "avatar": "https://avatar.maplestory.nexon.com/CharacterEx/180/{hex}.png",
+    "render": "https://open.api.nexon.com/static/maplestory/character/look/{hex}?action=A00&emotion=E00&wmotion=W00&width=300&height=300"
+  },
+  "characters": [
+    {
+      "nickname": "검마충성77",
+      "note": null,
+      "status": "unique",
+      "matches": [
+        {
+          "world": "크로아",
+          "w": 0,
+          "icon": 11,
+          "rank": 958438,
+          "level": 280,
+          "job": "루미너스",
+          "guild": "봄들",
+          "hex": "GGJLCOIPPJLLLABIICLJKPBKHMHLIEKNCGIGFHEHJIPAOLEKOCIEAIKKFCNAJKBDFCCIAJLCHIJJOALNBJKOFAHKNDBJGLMDFGNEGLAFPINFFJGCJOANHDLJBJBGPHIBGEABHCDKHHPIEJJCLJDBGCMCHKGMBNHIIPLGAHJKPBMIIJAHKGCLEKCPBDPCNPDHCKAHIHAJJLKHMJLHMJLAPAFAPEKIMJLIDCHPCGLEFLDALOEPGIBNKHBOJNFMLJNGHHIOBBJCPCKLAOJKLIGDADDAJAPLMPCPIHDIKKHLHOCPMKFKHPCMPOCGPCAIHNAJFAKGNEPKGDKABIGPCHPAHCKEAHHFLPPLOGDDPECGMAFACLDHOBJLNDCFHCMOOINCHFCCCOBAEOOIGJKFOLKAMIFEHKAABDNHNNHPHDLGLHLEPKBFJEPFCKNCGHIHCFDFHINABEBBJAOJNKMAIJLKIFOKIPNCPKGKGFCOAMMJNCMCCPHJMMGKCNMICIDGFNKCNHCFEOEPCCCBMMBEOJAPDJBPPLCAKBBMKFNHGFKNEEFGJKBGEHMBAFMAMAGNNGFBGCMOKNAEOFEHEJOIAKKDPEDPMEFMGFPBOHGLGEILLCNGEFBBAGPPDOPMICKLPNNOKNEMGEBPMKCBIMIEDOILKGAONOCMIIFJILMEDEFBIBIENONBANOJMBBMADGJODHANJDFBBGEBNFNEFAOJEHFBCBBGBKIOMJAEDBFBEKOIINFONDMOCJOOIIFCCGFNLKAMOJBFFDPEEBNNPBCBGOANAEOEGBMLOOKKDOEJBOPKLCOMANBGPFPCKJJHAJPBKNOPBNFJMFJJMAAJGFLODBLOELAKDHKLJDBFLLCHLCPKPEEGLGOONJCFFDLIDJINOAOBEHBDJBKMKHLCCEGIBDCLAPJKLKFOBGDODMINBFOBOINCINKHPBOICKFNNDGOHJFCJMENBINHFKFLJLFHBFMMDIEMANDCGPNOGILCNMEJNFODJJDBICBAHNLDNEKFKBC",
+          "files": {
+            "avatar180": "검마충성77__크로아_avatar180.png",
+            "render300": "검마충성77__크로아_render300.png"
+          },
+          "sha256": {
+            "avatar180": "17926189e7b3f3d6bb7ac9e1ef15a3b9ea06e9b0893bb3003cb77ee2e4acec46",
+            "render300": "97121b19b94954c9c323c030e7866ac7c106e8b63efae721c9137f0a5e1fb01c"
+          },
+          "dims": {
+            "avatar180": [
+              180,
+              180
+            ],
+            "render300": [
+              300,
+              300
+            ]
+          },
+          "download_errors": []
+        }
+      ]
+    }
+  ]
+}

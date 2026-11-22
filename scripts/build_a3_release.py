@@ -426,10 +426,19 @@ def source_inputs(only=None):
         keyring=pieces_from(cut,art,None,'yanggum_keyring',smooth=True);assert len(keyring)==1
         keyring[0]['design_metadata']=kmeta
         batches.append(('09_yanggum/3T',stand+keyring))
+    from chain_keyring_parts import APPLICANTS as CHAIN_APPLICANTS
+    if not only or any(tok in only for tok in ('줄줄이','스탠드','결합','chain')) or any(a['applicant'] in only for a in CHAIN_APPLICANTS):
+        from chain_keyring_parts import applicant_batches
+        batches+=applicant_batches(only)
     return batches
 
 def inputs(only=None):
-    batches=dict(source_inputs(only if only and ('06_len_pad' in only or 'yanggum' in only) else None))
+    if only:
+        from chain_keyring_parts import APPLICANTS as CHAIN_APPLICANTS
+        chain_only=any(tok in only for tok in ('줄줄이','스탠드','결합','chain')) or any(a['applicant'] in only for a in CHAIN_APPLICANTS)
+    else:
+        chain_only=False
+    batches=dict(source_inputs(only if only and ('06_len_pad' in only or 'yanggum' in only or chain_only) else None))
     for t in ['3T','5T']:
         group=f'02_extra_sheet/{t}'
         if group in batches:

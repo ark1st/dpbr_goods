@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-yanggum-combined",
+  "revision": "A3-2026-11-23-chain-keyring",
   "errors": [],
   "repository": {
     "date": "2026-11-22",
@@ -132,6 +132,159 @@
       "a3_release/09_yanggum/assembly.png",
       "a3_release/09_yanggum/final_preview.png",
       "a3_release/09_yanggum_3T_A3.zip",
+      "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.ai",
+      "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/10_강민_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/10_강민_스탠드/3T/sheet_01/README.md",
+      "a3_release/10_강민_스탠드/3T/sheet_01/cut_detail.png",
+      "a3_release/10_강민_스탠드/3T/sheet_01/preview.png",
+      "a3_release/10_강민_스탠드/3T/sheet_01/validation.json",
+      "a3_release/10_강민_스탠드/README.md",
+      "a3_release/10_강민_스탠드/final_preview.png",
+      "a3_release/10_강민_스탠드_3T_A3.zip",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.ai",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/README.md",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/cut_detail.png",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/preview.png",
+      "a3_release/11_강윤진_스탠드/3T/sheet_01/validation.json",
+      "a3_release/11_강윤진_스탠드/README.md",
+      "a3_release/11_강윤진_스탠드/final_preview.png",
+      "a3_release/11_강윤진_스탠드_3T_A3.zip",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/README.md",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/cut_detail.png",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/preview.png",
+      "a3_release/12_김윤_줄줄이/3T/sheet_01/validation.json",
+      "a3_release/12_김윤_줄줄이/README.md",
+      "a3_release/12_김윤_줄줄이/final_preview.png",
+      "a3_release/12_김윤_줄줄이_3T_A3.zip",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/README.md",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/cut_detail.png",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/preview.png",
+      "a3_release/13_김호_줄줄이/3T/sheet_01/validation.json",
+      "a3_release/13_김호_줄줄이/README.md",
+      "a3_release/13_김호_줄줄이/final_preview.png",
+      "a3_release/13_김호_줄줄이_3T_A3.zip",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/README.md",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/cut_detail.png",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/preview.png",
+      "a3_release/14_배승민_줄줄이/3T/sheet_01/validation.json",
+      "a3_release/14_배승민_줄줄이/README.md",
+      "a3_release/14_배승민_줄줄이/final_preview.png",
+      "a3_release/14_배승민_줄줄이_3T_A3.zip",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.ai",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/README.md",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/cut_detail.png",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/preview.png",
+      "a3_release/15_이상준_스탠드/3T/sheet_01/validation.json",
+      "a3_release/15_이상준_스탠드/README.md",
+      "a3_release/15_이상준_스탠드/final_preview.png",
+      "a3_release/15_이상준_스탠드_3T_A3.zip",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.ai",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/README.md",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/cut_detail.png",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/preview.png",
+      "a3_release/16_정지영_스탠드/3T/sheet_01/validation.json",
+      "a3_release/16_정지영_스탠드/README.md",
+      "a3_release/16_정지영_스탠드/final_preview.png",
+      "a3_release/16_정지영_스탠드_3T_A3.zip",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.ai",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/README.md",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/cut_detail.png",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/preview.png",
+      "a3_release/17_줄줄이_결합판/3T/sheet_01/validation.json",
+      "a3_release/17_줄줄이_결합판/README.md",
+      "a3_release/17_줄줄이_결합판/final_preview.png",
+      "a3_release/17_줄줄이_결합판_3T_A3.zip",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.ai",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/README.md",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/cut_detail.png",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/preview.png",
+      "a3_release/18_스탠드_결합판/3T/sheet_01/validation.json",
+      "a3_release/18_스탠드_결합판/README.md",
+      "a3_release/18_스탠드_결합판/final_preview.png",
+      "a3_release/18_스탠드_결합판_3T_A3.zip",
       "a3_release/A3_VALIDATION.json",
       "a3_release/README.md",
       "a3_release/manifest.json",
@@ -184,7 +337,28 @@
       "assets/masters/garam.svg",
       "assets/masters/logo_symbol.svg",
       "assets/source_logo.ai",
-      "assets/yanggum/아크릴SD스탠드.jpg"
+      "assets/yanggum/아크릴SD스탠드.jpg",
+      "assets/chain_keyring/applicants.json",
+      "assets/chain_keyring/강민/마가다락방__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/강민/마가다락방__리부트(icon_3)_render300_beta.png",
+      "assets/chain_keyring/강윤진/청민예__오로라_render300.png",
+      "assets/chain_keyring/강윤진/청민예__오로라_render300_beta.png",
+      "assets/chain_keyring/김윤/룃혜__베라_render300.png",
+      "assets/chain_keyring/김윤/믐댕__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/김윤/안개질무렵__베라_render300.png",
+      "assets/chain_keyring/김윤/엔루__베라_render300.png",
+      "assets/chain_keyring/김윤/타루카루타__베라_render300.png",
+      "assets/chain_keyring/김호/걸퍄__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/김호/냘됫__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/김호/뿟쥐__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/김호/뿟쥐__리부트(icon_3)_render300_alpha.png",
+      "assets/chain_keyring/김호/씀툿__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/김호/얽빅__리부트(icon_3)_render300.png",
+      "assets/chain_keyring/배승민/슬빈띠니__스카니아_render300.png",
+      "assets/chain_keyring/배승민/아기요우무__스카니아_render300.png",
+      "assets/chain_keyring/배승민/체스말보관함__스카니아_render300.png",
+      "assets/chain_keyring/이상준/귀여운렌군__스카니아_render300.png",
+      "assets/chain_keyring/정지영/검마충성77__크로아_render300.png"
     ],
     "retired_source_files": [
       "assets/external/ascent_original/README.md",
@@ -234,12 +408,12 @@
     ]
   },
   "laser_path_audit": {
-    "checked_files": 35,
+    "checked_files": 80,
     "errors": [],
     "protected_original_findings": []
   },
   "a3_release": {
-    "checked_pages": 7,
+    "checked_pages": 16,
     "native_geometry_checked": true,
     "records": [
       {
@@ -542,43 +716,475 @@
           "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
           "02_MASTER.ai": "63a72e86145cf0e0d06612474398456bcd932c6ea2ae63ba04c9dd7763040a13"
         }
+      },
+      {
+        "folder": "a3_release/12_김윤_줄줄이/3T/sheet_01",
+        "pieces": 5,
+        "contours": 10,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.0007532258504347729,
+          "02_MASTER.pdf": 0.0007532258504347729,
+          "02_MASTER.ai": 0.0007534012959695216,
+          "02_MASTER.vectorcraft": 0.0007534012959695216
+        },
+        "png": [
+          {
+            "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "352d648fe4702533421fba18287503dabbdca149088d89ba3db794845d79fb4c",
+          "01_PRINT_300ppi.png": "bf42e8c3ac38d397dfc4bbefcd5ad4b17b1a6414312831d28d50e8ee902312f4",
+          "cut_detail.png": "d237cf684e3d37861bbf37758348a95bbc7250895086ad00b6eabf634ed4cf99",
+          "03_CUT_ONLY.svg": "f16aa990c058d123097159de6b9f9dabb9940792125bc88c07efb8ea51171f7a",
+          "README.md": "5b49c8af31385c7ee259faeec66de8ded80afd51e558c3bd708e6f10ea70155c",
+          "01_PRINT.pdf": "121aaf5a3283693600d7b961a2cde19f79e288ae613728b2f3bb1a6b88720894",
+          "validation.json": "7b02817c20cb8f335f10aebf29723972acf306cb830e406ac48957a881fac0f2",
+          "03_CUT_ONLY.pdf": "7dcf53659beef9d70f6df8f7f5cb932400c3a60d0107353ea599d95a49448266",
+          "PREVIEW_NOT_FOR_CUT.pdf": "df1ab2b16bdcd2bf0c0df7133f727200781c3e37a854e827050362e561133a2a",
+          "04_WHITE_INK_MASK.pdf": "5ec3a607313111330c6b90e6b27426b6518c8495dd524c17395f0da666ef52f1",
+          "02_MASTER.vectorcraft": "be9d19422a43f168cdb1e05bfbc4fe7d8c7211dffae19413f8566ed857a4b77f",
+          "preview.png": "17a7ce01a66d4d977aacda05808dddfbbaf310417f1063c93c63c36d6dfddc58",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "c361c0b0b16fa60a180bf17981c87773f83720ac286014fbe82305d5b3c09937"
+        }
+      },
+      {
+        "folder": "a3_release/13_김호_줄줄이/3T/sheet_01",
+        "pieces": 6,
+        "contours": 12,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.0005765422101160249,
+          "02_MASTER.pdf": 0.0005765422101160249,
+          "02_MASTER.ai": 2.447231509672372e-05,
+          "02_MASTER.vectorcraft": 2.447231509672372e-05
+        },
+        "png": [
+          {
+            "file": "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "35b7cae3efd11bbabb2ee5fa31c427d630f9e9b3fc34a22e8e43d802624310bf",
+          "01_PRINT_300ppi.png": "4d97101db8c814b6f7784c82a5a9f4b2b06c38a0e1322f37c4daccd0e0908982",
+          "cut_detail.png": "26559dd28f08055ce25b72902484926793ebff7d8a29f4afb2034112deeacc21",
+          "03_CUT_ONLY.svg": "d62d75e58d3ba03e3c6f96ed23c9f36092a53ca2a0a6fe2c8a42cc99f741042e",
+          "README.md": "ef19880d6344dd7a20dbcae9d988adb70721d57cbda2326ade83d59c279f4e10",
+          "01_PRINT.pdf": "dad6aee683202668d892068a3c7c9c34dbccbcb87e282b489a24de9f0a18c875",
+          "validation.json": "6ea5ca94184be7de7b2082e5abc0c2b36c7048a4b2a442f94581edaf30033717",
+          "03_CUT_ONLY.pdf": "6cda4419d0f867e09a77d2de8018a610df3064eb834b50452e97e27ccf71dba0",
+          "PREVIEW_NOT_FOR_CUT.pdf": "2d7214d3f0a246e492fe92ff90a05ebf2fa7072944a6b8854275067715550070",
+          "04_WHITE_INK_MASK.pdf": "921aa9e945a8df2c26fb62e3cad4757d35597a0548b1eeac5503d342925fc780",
+          "02_MASTER.vectorcraft": "192d40db29168836c1b93178808a21bf4d462ce6ce5c1de273f6becb30d7b518",
+          "preview.png": "bd93b0bc4c7358065d3eb156cd676de740e8ee001678ddb9b0b7c6057f115a76",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "070fdd472dad2dece45e7337e76ee6836f4d65ad59447c24089cfb55edb0079f"
+        }
+      },
+      {
+        "folder": "a3_release/14_배승민_줄줄이/3T/sheet_01",
+        "pieces": 3,
+        "contours": 6,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.0007208621949417078,
+          "02_MASTER.pdf": 0.0007208621949417078,
+          "02_MASTER.ai": 0.0007246089116339543,
+          "02_MASTER.vectorcraft": 0.0007246089116339543
+        },
+        "png": [
+          {
+            "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "5390425ac4d17000b9daeb902ba49f288310fc948a4564332126ed9bfe1c3d17",
+          "01_PRINT_300ppi.png": "e9e9ec9f3639fa8e67e67d8e28c9343077ed2e0b2c269182a7cdfdd4cbb88e68",
+          "cut_detail.png": "4a16bf32ded2dd0540d12930ec869c0a68a2af3b2d0eede9bcd5d34b90c8b286",
+          "03_CUT_ONLY.svg": "dbaab4231c554828cd478f0feeaa6c6ed5db054a7a5beeee3b2e6df3cc664853",
+          "README.md": "400941cb536c7593d48a85f7cedeeaa9cc635b359c16f8de9b95370a9ab6ce92",
+          "01_PRINT.pdf": "7ac42be3020f465c46cc676d12f752ed0f365a9fd078253ca1ed1d3aef7f004e",
+          "validation.json": "255c9d1c9a9f290b6cafc49f5bb9c3950d91c9f8194d03100a48006283909ca0",
+          "03_CUT_ONLY.pdf": "428d2a24b3d0c9d74ffc56630fbfc0d7909adbe4f97005275ee0ec98978a5ddd",
+          "PREVIEW_NOT_FOR_CUT.pdf": "7e568ec7a550ff6e479870e82a3dc13560db89d6ab00b11ccd1664ce55237bab",
+          "04_WHITE_INK_MASK.pdf": "20ac641348dec96872ab35b8b6ada30fff0a7c9b5a9fae7a8a80c62aa4bb9220",
+          "02_MASTER.vectorcraft": "562b4494e2dcb78390215914e4d4fb18d4f7cbcc89cc3621c0685789765dd3ae",
+          "preview.png": "d81052c4cf58e6c650098f8f2a1b7232d23d2dbcceb44389d3cb10d6188065c5",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "77da03ae7d701d371ea9cebdf5b80a6a2e66af96ba6636244e3129099e83dc29"
+        }
+      },
+      {
+        "folder": "a3_release/17_줄줄이_결합판/3T/sheet_01",
+        "pieces": 14,
+        "contours": 28,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.0007511264780024639,
+          "02_MASTER.pdf": 0.0007511264780024639,
+          "02_MASTER.ai": 0.0007513019234670555,
+          "02_MASTER.vectorcraft": 0.0007513019234670555
+        },
+        "png": [
+          {
+            "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "7847634f30169fac7fdfdb2f64f66b53dd2ecad57efc215e1bd613d90aebb488",
+          "01_PRINT_300ppi.png": "b83f732c26c5c32eac59ea3700c2889b89c62d5a75f2a71c750e4b4ab954afb9",
+          "cut_detail.png": "d1d65dc55ea6477494aaff102a2c868d7df3dff0ddca990ce2e7761c62dc4571",
+          "03_CUT_ONLY.svg": "b8b1b14a16c90769e289e58beb61e2ddb36be58ac81cd617b1dfd3640ec4eb19",
+          "README.md": "35b42e24ab27e3668acd460f792feea6295c4457be8ee89d725c532f83c8a5a4",
+          "01_PRINT.pdf": "051a0827d5bc2b0d3ff4c77797472c3aba09eb3de9b45c28b4313c32bb626f3b",
+          "validation.json": "40be733675a7c83c261e7a9586bb1a6ec273b9867e6a21fba1352545a5e99abc",
+          "03_CUT_ONLY.pdf": "6b375aebb41642eff4dd62444db13732ed09738d943c53f43688ab1ff6cb629b",
+          "PREVIEW_NOT_FOR_CUT.pdf": "9c2271b06347e028306c84e7391a987bf608027566ba7c9ff5465895119cec15",
+          "04_WHITE_INK_MASK.pdf": "43a1be9597c02119ec4ef85cf1062e347cfcc8dee57ef4b224c9f956daac4b54",
+          "02_MASTER.vectorcraft": "a0d07e4b52455e6ed348307864780fd6f53db8035bc23752f70ace2eb9f33ec8",
+          "preview.png": "719504c34c4e0f52e28226b95acf899d5fe6427f701c83c375483eccca6bc6af",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "746c026537ccc8f5cdd2815fda7a745de88559acd48a24704af834e0d179142a"
+        }
+      },
+      {
+        "folder": "a3_release/10_강민_스탠드/3T/sheet_01",
+        "pieces": 4,
+        "contours": 6,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.00010768893724737922,
+          "02_MASTER.pdf": 0.00010768893724737922,
+          "02_MASTER.ai": 0.00010646905093511032,
+          "02_MASTER.vectorcraft": 0.00010646905093511032
+        },
+        "png": [
+          {
+            "file": "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "339137a0e573b408a299ead108d6afd71df7b8d643e8b7906d068c8d40726ad8",
+          "01_PRINT_300ppi.png": "c3350c4463413b79848d93697c74849f8326350125d7dabe18eb8153fa9b7fef",
+          "cut_detail.png": "7368dc423fbd8bfd301d1697f480e5a340b50e81b0027f37bf4ce463d51efd95",
+          "03_CUT_ONLY.svg": "774c948e3c89367a3ad0d97f053533c42c9be68f70b0d275adcf72b00abbd268",
+          "README.md": "06444162cf11c7ff161b67551680f1a14b83ec4593d2bf6b5527c4c755bde493",
+          "01_PRINT.pdf": "904f9b071e43306a7d8d280f1b586f4047afdbe39570a47d941e7dda677dc1ee",
+          "validation.json": "731a2526d99d2de2284952f60f5c0470fefb052907cae5657f3cfcec600f2ca0",
+          "03_CUT_ONLY.pdf": "96ea10e6294d6f4fdcf8e2d9e7da31885c0d1cb9e8c0a72c7fe8fe16a26aa47b",
+          "PREVIEW_NOT_FOR_CUT.pdf": "a844bd8fd041f603cf8acaa436e65b12957648031e85c10ca640f2173148e7fe",
+          "04_WHITE_INK_MASK.pdf": "5aae320be675cf4ed43187dd91fd377df9289ce23804cc2e71e6c26f5a4ac88f",
+          "02_MASTER.vectorcraft": "c02acffefa7de44dfbb9969c5701aeb4a8d09c644109d3b0f84bcd18f76c4c1e",
+          "preview.png": "5e5f2d5869575d3a8c3bb50ee57e637dd8f0f422d4e11c3cd8ee502db842a332",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "51805eb8e013686a83e3c736a8b8ac0bca6d9e95531d05fda59298b9d53081e3"
+        }
+      },
+      {
+        "folder": "a3_release/11_강윤진_스탠드/3T/sheet_01",
+        "pieces": 4,
+        "contours": 6,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 1.6293219760502874e-05,
+          "02_MASTER.pdf": 1.6293219760502874e-05,
+          "02_MASTER.ai": 2.6000192298048763e-05,
+          "02_MASTER.vectorcraft": 2.6000192298048763e-05
+        },
+        "png": [
+          {
+            "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "89d6f0f7711c67060ac5df37817bc7011bf3fb25ad720870e3614f90595a8bec",
+          "01_PRINT_300ppi.png": "130c4635748934b695936ada8a272173eff10e9642a3a5c7c5dacdd6c9d4fa04",
+          "cut_detail.png": "d0ccab1f0ed1515bffaa1a4a4a67bd03d0e0ade763286456b1a08b370926e311",
+          "03_CUT_ONLY.svg": "f55b678538f75129637e8a8570ef3279b4e0bcb8e6407335c23e923f982b9e15",
+          "README.md": "06444162cf11c7ff161b67551680f1a14b83ec4593d2bf6b5527c4c755bde493",
+          "01_PRINT.pdf": "e46cbeb14769357a9a65c050069ac00a0723adadc3eb6514f2404722dfc3c85f",
+          "validation.json": "485e5882fc5985d25dc59d3d1fef8afeaa9ce7c770695ff90d87632bc1dea610",
+          "03_CUT_ONLY.pdf": "715d50bc98885f8a3317b2d1b2319f62aaa439a72e8df91bb9f9fc915b46dea1",
+          "PREVIEW_NOT_FOR_CUT.pdf": "51c7ad32a0b2363268b943dc27da8e66f9086bb0cb738b356211e1773614b09d",
+          "04_WHITE_INK_MASK.pdf": "2e02ec03086d17dba8d3144edb3575dde40ad75e66161f595e163993c17d8da0",
+          "02_MASTER.vectorcraft": "405cfb6dd44ebf5da2e1eeb2a453ecca2ba4bf365981e6804552373f116ffb75",
+          "preview.png": "a8ee171f81f7f91cebec9e00ab87f1f66ee4f88ce6c28fcbc6d6ccac7b914cf2",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "fffaaceb29d6cf20265a238169e67161fbd46c9f2f968dd06c579699d50f4947"
+        }
+      },
+      {
+        "folder": "a3_release/15_이상준_스탠드/3T/sheet_01",
+        "pieces": 2,
+        "contours": 3,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.0005500964867097939,
+          "02_MASTER.pdf": 0.0005500964867097939,
+          "02_MASTER.ai": 0.0005451961928115917,
+          "02_MASTER.vectorcraft": 0.0005451961928115917
+        },
+        "png": [
+          {
+            "file": "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "876be3337e85dc63f8882803983a6a9929884805d9af5709b1444facdd5dba71",
+          "01_PRINT_300ppi.png": "0731cce01d5e3d8371d4bcc4d8623460a8475992916b932d41c21af70bc7f831",
+          "cut_detail.png": "ede559190c57221ca18399e1080ad1bdf9ffbdca3271f76871a5625469b6ec52",
+          "03_CUT_ONLY.svg": "64d9577ac92f355c80cccafe1f3d07e02a4e37691291c9002e6b98a3b8f3f912",
+          "README.md": "1c41b42b4a819ff1532cec1dabcebd5bd6429edccc027014dfc8564601888431",
+          "01_PRINT.pdf": "6ee9c428c366bc50bfd1e0162e19712856cf25ecf2ea12e64fa3e69ea3b29dac",
+          "validation.json": "c5af8cf093351a9044b109487cfb63eb15ab6088079d8e16304c7987915b6c75",
+          "03_CUT_ONLY.pdf": "5fd99a6f31587f89588ebc9b4f82a1edadb31a6c895dbbce4df36c7c62cf51a9",
+          "PREVIEW_NOT_FOR_CUT.pdf": "15329603d6dfad4a783d49964586486adfd1321bf272c7b37a1c31022b942c01",
+          "04_WHITE_INK_MASK.pdf": "82c6f0ad49f4b5ee887fde2dda0f6e4a1179e9af83bbd272567d2267a563e5bf",
+          "02_MASTER.vectorcraft": "fc98f8c9abb8a4f87e362a2eb2ce525957bbf577c64cc0459eefa0bb0cbb7e21",
+          "preview.png": "cee7fb0d1052d031f11b9d30fc04ba8c9a553f7e56fd0d3c9c82349e406bdba4",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "115e03d821beb508eb56fd6399dbf17ac01dd9f551680a66b1cabeab24dab6fa"
+        }
+      },
+      {
+        "folder": "a3_release/16_정지영_스탠드/3T/sheet_01",
+        "pieces": 2,
+        "contours": 3,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 1.5363460402654777e-05,
+          "02_MASTER.pdf": 1.5363460402654777e-05,
+          "02_MASTER.ai": 2.6148424598246425e-05,
+          "02_MASTER.vectorcraft": 2.6148424598246425e-05
+        },
+        "png": [
+          {
+            "file": "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "704e0c46e12d324d947a9afc8679dabbd882308c0fdfd42a93f309e223f9c550",
+          "01_PRINT_300ppi.png": "382faa4e9d3fcde529d5cec49d76d98364a0819c9b3a46e27fd0bae36f9fbfd2",
+          "cut_detail.png": "5d7dbc156d373dc5e3def0c038fb77ea01444dc5097d7fd1cf0068ae5da1c3db",
+          "03_CUT_ONLY.svg": "37711f055757e02951e26b5611abbb0e650338883ca9d2c587b09a2af41e890e",
+          "README.md": "1c41b42b4a819ff1532cec1dabcebd5bd6429edccc027014dfc8564601888431",
+          "01_PRINT.pdf": "f227dcb5c70d18b55b07dab4fc45cd78cad3dd56c8df6b195be260da45d336e1",
+          "validation.json": "1e46efe70f4e71ed356f2f22c2026017f0f6f00de51ebc02b4463fc0be0589fe",
+          "03_CUT_ONLY.pdf": "e4ce579e7d8133f8419c68c83108771696412b5fada76e877593b665f38e76e8",
+          "PREVIEW_NOT_FOR_CUT.pdf": "929ee0e604a2d26418d23b09568d70eba955c3646727c4db4675ae966eee62b7",
+          "04_WHITE_INK_MASK.pdf": "717daf4ad2c654bb4296bf6a94b0c06c6d3cd3a646ba02f6953f6f6bab1c34f2",
+          "02_MASTER.vectorcraft": "5e374862c3a048bd35170f903a8846fa1b7be963bb9de347342c125a5c5b5f5c",
+          "preview.png": "1e11ccf5be4f0f0d453af48915649a64892385413ce312c55d587772090d99e3",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "59824eeb1ff927670b83402d13631c749be1386d80c0a0ea8ed8b8a6210db81f"
+        }
+      },
+      {
+        "folder": "a3_release/18_스탠드_결합판/3T/sheet_01",
+        "pieces": 12,
+        "contours": 18,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 0.0007488448455505303,
+          "02_MASTER.pdf": 0.0007488448455505303,
+          "02_MASTER.ai": 0.0005563416127735824,
+          "02_MASTER.vectorcraft": 0.0005563416127735824
+        },
+        "png": [
+          {
+            "file": "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "02_MASTER.pdf": "706d1a7542f6d2dbf86414b0c31e6bc9124ec025740158687d426c630623fc31",
+          "01_PRINT_300ppi.png": "86ef2a47357a4c2be09ad4d539871063250d528b3a2cf4f3078cdffdc8737278",
+          "cut_detail.png": "6853f2285350f81c7ee4862ace4cb07388b3e506153ba99f17a9c6985f0e3201",
+          "03_CUT_ONLY.svg": "96ffabccadf21631f1ed7c6fe88c59d644787eac95dca4a4b1d12e9b144f774e",
+          "README.md": "15c0336e2d1fee308e72ca85987bc2ae7ae53d643b0afeb4a96b211d02d83a8d",
+          "01_PRINT.pdf": "bf7b750f09925570dae76953175bd2d0dffb1baf8c45f8b0184454663f560981",
+          "validation.json": "ec8cb5f25ec1afa643138aca7530f514d3c3972974e549e7b1fccb1546ece380",
+          "03_CUT_ONLY.pdf": "43928c8e58a39902e42829f6e2027b69aab458aa608e6cb40290c775551bc434",
+          "PREVIEW_NOT_FOR_CUT.pdf": "94b352f57ecd7f1b65937e1c0ef44ba34fe688472df8c3224ccdc7da17526a24",
+          "04_WHITE_INK_MASK.pdf": "8c95193a1c11a8dae398011092292cd3c6cdc05a01c3ed4eb1eba3da696d7cf8",
+          "02_MASTER.vectorcraft": "afedd38614bfc850b4fe28ce56975849dc207b6698e6ce46e7e563ebcc312dbd",
+          "preview.png": "c54b95cf5fd9cea3014371bdfcf2b3e0f846ced921e0d879b060892aecf5143f",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.ai": "e562352b361303513e6e0f597293252fa90a95caa51f7e4009d8767d50e5b610"
+        }
       }
     ],
     "packages": [
       {
         "file": "a3_release/02_extra_sheet_3T_A3.zip",
-        "bytes": 13985508,
-        "sha256": "d716190b2b501b6f1a1f21d61ced3ceed78eb9a16c81286601a4e221b6520887"
+        "bytes": 13985849,
+        "sha256": "1f9a3b848ca5accde36792ede2cd06a1f3ff9f3b3720e009a16717af678a76e8"
       },
       {
         "file": "a3_release/02_extra_sheet_5T_A3.zip",
-        "bytes": 10253973,
-        "sha256": "979d528cff92c22d74b12536bca8aaf849fa76fbfe1511b4da2c134f3c6f7efa"
+        "bytes": 10254314,
+        "sha256": "709ed1bb06dd4464163031af7d38ca1823393ad79a122e1ca0184abd7b5fa0b0"
       },
       {
         "file": "a3_release/05_len_3T_A3.zip",
-        "bytes": 16543630,
-        "sha256": "bd87a3cbe74fede0786549ae68ee119c61d37c9d07e6b23e5f9f701acd96d759"
+        "bytes": 16543971,
+        "sha256": "234daf92ab9c05d22745b03cc605c6449a5c0cd3a2b3532ae369e47c1934a632"
       },
       {
         "file": "a3_release/05_len_5T_A3.zip",
-        "bytes": 13930115,
-        "sha256": "d270bdf7ade89c83848476b82637684ddfc9b3097cbe9d0fce6765ac24b0eec0"
+        "bytes": 13930456,
+        "sha256": "391eed6d9f90f67dd908c36a2c6145aa119886991b2bc3e226faa8c484ed3275"
       },
       {
         "file": "a3_release/06_len_pad_3T_A3.zip",
-        "bytes": 12580171,
-        "sha256": "0382955dede37e76e33185ad53bc29f82b95966f8ca039f6ad425b0d6ae978a2"
+        "bytes": 12580512,
+        "sha256": "a32106c5e6e8b0772342198a309f3b0f43bad051de6631a6f8c9c7f954c0d4c4"
       },
       {
         "file": "a3_release/06_len_pad_5T_A3.zip",
-        "bytes": 12549689,
-        "sha256": "07df2e8fc6e417fd6a0fea11429bb010b602e3ee31a6692bd0450c8e6dc23e56"
+        "bytes": 12550030,
+        "sha256": "270481a9388be435ac274888771b8c97fdcc24dbed973a781c7835b5e3618b01"
       },
       {
         "file": "a3_release/09_yanggum_3T_A3.zip",
-        "bytes": 965534,
-        "sha256": "c568e4cecea59f529a453c8b2257cb028e39097a7a74f1ab43afd60a7f2a2947"
+        "bytes": 965875,
+        "sha256": "4112f16d101300671a802d6a3916a74c706f8aea321cbe3e578ed17fc6967bd5"
+      },
+      {
+        "file": "a3_release/10_강민_스탠드_3T_A3.zip",
+        "bytes": 299851,
+        "sha256": "f29766fb3cc3303cdba01ceeef853f2f5668df653b48cb47d9fdfeedff5b71f3"
+      },
+      {
+        "file": "a3_release/11_강윤진_스탠드_3T_A3.zip",
+        "bytes": 277904,
+        "sha256": "061be79b2738cf0f3195a4c92a0c3e419a9165600775db00de69fab083109a5e"
+      },
+      {
+        "file": "a3_release/12_김윤_줄줄이_3T_A3.zip",
+        "bytes": 714175,
+        "sha256": "186672b98b6b34bab64488328d39b31106b7c2c0c47212239a61f102d4fa414a"
+      },
+      {
+        "file": "a3_release/13_김호_줄줄이_3T_A3.zip",
+        "bytes": 754603,
+        "sha256": "c6258a82104953c1a31d521032d4210821f430c33d7c76e610bda568779064ea"
+      },
+      {
+        "file": "a3_release/14_배승민_줄줄이_3T_A3.zip",
+        "bytes": 309221,
+        "sha256": "e0591c3661517508e38b957ed91c27e59161d45153c4e22e71dbde99a2373d02"
+      },
+      {
+        "file": "a3_release/15_이상준_스탠드_3T_A3.zip",
+        "bytes": 177827,
+        "sha256": "33f8069662f1550769fa81f25bfd1bb3175e8bd183324a84525610b07ac74f1a"
+      },
+      {
+        "file": "a3_release/16_정지영_스탠드_3T_A3.zip",
+        "bytes": 180984,
+        "sha256": "096e604df021e5059fe2ed00520ea3632cbe293246a7354ad4fd2e724d566625"
+      },
+      {
+        "file": "a3_release/17_줄줄이_결합판_3T_A3.zip",
+        "bytes": 1678192,
+        "sha256": "2bfc431868a45ac6e2884fa0931a25423543874b5ce5396317fdff1a0eba0a41"
+      },
+      {
+        "file": "a3_release/18_스탠드_결합판_3T_A3.zip",
+        "bytes": 795939,
+        "sha256": "385713c3420cb760f150ae0571f08a691355049f4cc38df06c731ab72950ac97"
       }
     ],
     "errors": [],
@@ -771,6 +1377,222 @@
     {
       "file": "a3_release/09_yanggum/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
       "sha256": "471aa10b861d3e93a2a70753ae2c5d7c092893d98deabe0d2fdf9411f0d35114"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "121aaf5a3283693600d7b961a2cde19f79e288ae613728b2f3bb1a6b88720894"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "sha256": "c361c0b0b16fa60a180bf17981c87773f83720ac286014fbe82305d5b3c09937"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "352d648fe4702533421fba18287503dabbdca149088d89ba3db794845d79fb4c"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "7dcf53659beef9d70f6df8f7f5cb932400c3a60d0107353ea599d95a49448266"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "5ec3a607313111330c6b90e6b27426b6518c8495dd524c17395f0da666ef52f1"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "df1ab2b16bdcd2bf0c0df7133f727200781c3e37a854e827050362e561133a2a"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "dad6aee683202668d892068a3c7c9c34dbccbcb87e282b489a24de9f0a18c875"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "sha256": "070fdd472dad2dece45e7337e76ee6836f4d65ad59447c24089cfb55edb0079f"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "35b7cae3efd11bbabb2ee5fa31c427d630f9e9b3fc34a22e8e43d802624310bf"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "6cda4419d0f867e09a77d2de8018a610df3064eb834b50452e97e27ccf71dba0"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "921aa9e945a8df2c26fb62e3cad4757d35597a0548b1eeac5503d342925fc780"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "2d7214d3f0a246e492fe92ff90a05ebf2fa7072944a6b8854275067715550070"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "7ac42be3020f465c46cc676d12f752ed0f365a9fd078253ca1ed1d3aef7f004e"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "sha256": "77da03ae7d701d371ea9cebdf5b80a6a2e66af96ba6636244e3129099e83dc29"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "5390425ac4d17000b9daeb902ba49f288310fc948a4564332126ed9bfe1c3d17"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "428d2a24b3d0c9d74ffc56630fbfc0d7909adbe4f97005275ee0ec98978a5ddd"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "20ac641348dec96872ab35b8b6ada30fff0a7c9b5a9fae7a8a80c62aa4bb9220"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "7e568ec7a550ff6e479870e82a3dc13560db89d6ab00b11ccd1664ce55237bab"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "051a0827d5bc2b0d3ff4c77797472c3aba09eb3de9b45c28b4313c32bb626f3b"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.ai",
+      "sha256": "746c026537ccc8f5cdd2815fda7a745de88559acd48a24704af834e0d179142a"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "7847634f30169fac7fdfdb2f64f66b53dd2ecad57efc215e1bd613d90aebb488"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "6b375aebb41642eff4dd62444db13732ed09738d943c53f43688ab1ff6cb629b"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "43a1be9597c02119ec4ef85cf1062e347cfcc8dee57ef4b224c9f956daac4b54"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "9c2271b06347e028306c84e7391a987bf608027566ba7c9ff5465895119cec15"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "904f9b071e43306a7d8d280f1b586f4047afdbe39570a47d941e7dda677dc1ee"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "51805eb8e013686a83e3c736a8b8ac0bca6d9e95531d05fda59298b9d53081e3"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "339137a0e573b408a299ead108d6afd71df7b8d643e8b7906d068c8d40726ad8"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "96ea10e6294d6f4fdcf8e2d9e7da31885c0d1cb9e8c0a72c7fe8fe16a26aa47b"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "5aae320be675cf4ed43187dd91fd377df9289ce23804cc2e71e6c26f5a4ac88f"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "a844bd8fd041f603cf8acaa436e65b12957648031e85c10ca640f2173148e7fe"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "e46cbeb14769357a9a65c050069ac00a0723adadc3eb6514f2404722dfc3c85f"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "fffaaceb29d6cf20265a238169e67161fbd46c9f2f968dd06c579699d50f4947"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "89d6f0f7711c67060ac5df37817bc7011bf3fb25ad720870e3614f90595a8bec"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "715d50bc98885f8a3317b2d1b2319f62aaa439a72e8df91bb9f9fc915b46dea1"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "2e02ec03086d17dba8d3144edb3575dde40ad75e66161f595e163993c17d8da0"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "51c7ad32a0b2363268b943dc27da8e66f9086bb0cb738b356211e1773614b09d"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "6ee9c428c366bc50bfd1e0162e19712856cf25ecf2ea12e64fa3e69ea3b29dac"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "115e03d821beb508eb56fd6399dbf17ac01dd9f551680a66b1cabeab24dab6fa"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "876be3337e85dc63f8882803983a6a9929884805d9af5709b1444facdd5dba71"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "5fd99a6f31587f89588ebc9b4f82a1edadb31a6c895dbbce4df36c7c62cf51a9"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "82c6f0ad49f4b5ee887fde2dda0f6e4a1179e9af83bbd272567d2267a563e5bf"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "15329603d6dfad4a783d49964586486adfd1321bf272c7b37a1c31022b942c01"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "f227dcb5c70d18b55b07dab4fc45cd78cad3dd56c8df6b195be260da45d336e1"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "59824eeb1ff927670b83402d13631c749be1386d80c0a0ea8ed8b8a6210db81f"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "704e0c46e12d324d947a9afc8679dabbd882308c0fdfd42a93f309e223f9c550"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "e4ce579e7d8133f8419c68c83108771696412b5fada76e877593b665f38e76e8"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "717daf4ad2c654bb4296bf6a94b0c06c6d3cd3a646ba02f6953f6f6bab1c34f2"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "929ee0e604a2d26418d23b09568d70eba955c3646727c4db4675ae966eee62b7"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "bf7b750f09925570dae76953175bd2d0dffb1baf8c45f8b0184454663f560981"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.ai",
+      "sha256": "e562352b361303513e6e0f597293252fa90a95caa51f7e4009d8767d50e5b610"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "706d1a7542f6d2dbf86414b0c31e6bc9124ec025740158687d426c630623fc31"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "43928c8e58a39902e42829f6e2027b69aab458aa608e6cb40290c775551bc434"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "8c95193a1c11a8dae398011092292cd3c6cdc05a01c3ed4eb1eba3da696d7cf8"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "94b352f57ecd7f1b65937e1c0ef44ba34fe688472df8c3224ccdc7da17526a24"
     }
   ],
   "png_files_checked": [
@@ -885,14 +1707,158 @@
     {
       "file": "a3_release/09_yanggum/3T/sheet_01/preview.png",
       "sha256": "b9e09c839975775425c422dec807c6709c6d9bbd33c56f14733f925f1fbe430a"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "bf42e8c3ac38d397dfc4bbefcd5ad4b17b1a6414312831d28d50e8ee902312f4"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/cut_detail.png",
+      "sha256": "d237cf684e3d37861bbf37758348a95bbc7250895086ad00b6eabf634ed4cf99"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/preview.png",
+      "sha256": "17a7ce01a66d4d977aacda05808dddfbbaf310417f1063c93c63c36d6dfddc58"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "4d97101db8c814b6f7784c82a5a9f4b2b06c38a0e1322f37c4daccd0e0908982"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/cut_detail.png",
+      "sha256": "26559dd28f08055ce25b72902484926793ebff7d8a29f4afb2034112deeacc21"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/preview.png",
+      "sha256": "bd93b0bc4c7358065d3eb156cd676de740e8ee001678ddb9b0b7c6057f115a76"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "e9e9ec9f3639fa8e67e67d8e28c9343077ed2e0b2c269182a7cdfdd4cbb88e68"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/cut_detail.png",
+      "sha256": "4a16bf32ded2dd0540d12930ec869c0a68a2af3b2d0eede9bcd5d34b90c8b286"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/preview.png",
+      "sha256": "d81052c4cf58e6c650098f8f2a1b7232d23d2dbcceb44389d3cb10d6188065c5"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "b83f732c26c5c32eac59ea3700c2889b89c62d5a75f2a71c750e4b4ab954afb9"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/cut_detail.png",
+      "sha256": "d1d65dc55ea6477494aaff102a2c868d7df3dff0ddca990ce2e7761c62dc4571"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/preview.png",
+      "sha256": "719504c34c4e0f52e28226b95acf899d5fe6427f701c83c375483eccca6bc6af"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "c3350c4463413b79848d93697c74849f8326350125d7dabe18eb8153fa9b7fef"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/cut_detail.png",
+      "sha256": "7368dc423fbd8bfd301d1697f480e5a340b50e81b0027f37bf4ce463d51efd95"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/preview.png",
+      "sha256": "5e5f2d5869575d3a8c3bb50ee57e637dd8f0f422d4e11c3cd8ee502db842a332"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "130c4635748934b695936ada8a272173eff10e9642a3a5c7c5dacdd6c9d4fa04"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/cut_detail.png",
+      "sha256": "d0ccab1f0ed1515bffaa1a4a4a67bd03d0e0ade763286456b1a08b370926e311"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/preview.png",
+      "sha256": "a8ee171f81f7f91cebec9e00ab87f1f66ee4f88ce6c28fcbc6d6ccac7b914cf2"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "0731cce01d5e3d8371d4bcc4d8623460a8475992916b932d41c21af70bc7f831"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/cut_detail.png",
+      "sha256": "ede559190c57221ca18399e1080ad1bdf9ffbdca3271f76871a5625469b6ec52"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/preview.png",
+      "sha256": "cee7fb0d1052d031f11b9d30fc04ba8c9a553f7e56fd0d3c9c82349e406bdba4"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "382faa4e9d3fcde529d5cec49d76d98364a0819c9b3a46e27fd0bae36f9fbfd2"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/cut_detail.png",
+      "sha256": "5d7dbc156d373dc5e3def0c038fb77ea01444dc5097d7fd1cf0068ae5da1c3db"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/preview.png",
+      "sha256": "1e11ccf5be4f0f0d453af48915649a64892385413ce312c55d587772090d99e3"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "86ef2a47357a4c2be09ad4d539871063250d528b3a2cf4f3078cdffdc8737278"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/cut_detail.png",
+      "sha256": "6853f2285350f81c7ee4862ace4cb07388b3e506153ba99f17a9c6985f0e3201"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/preview.png",
+      "sha256": "c54b95cf5fd9cea3014371bdfcf2b3e0f846ced921e0d879b060892aecf5143f"
     }
   ],
   "physical_cut_test": false,
   "coverage": {
-    "current_pages_including_thickness_alternatives": 7,
-    "current_cut_formats": 35,
-    "packages": 7,
-    "rendered_pdf_and_ai_pages": 42,
+    "current_pages_including_thickness_alternatives": 16,
+    "current_cut_formats": 80,
+    "packages": 16,
+    "rendered_pdf_and_ai_pages": 96,
     "archived_previous_cut_files": 126,
     "archive_cut_quality": "retired; not included in current pass count; exact backup bytes checked"
   },

@@ -1,7 +1,7 @@
 {
-  "revision": "A3-2026-11-22-yanggum-combined",
+  "revision": "A3-2026-11-23-chain-keyring",
   "mode": "all-formats",
-  "checked_files": 35,
+  "checked_files": 80,
   "errors": [],
   "protected_original_findings": [],
   "records": [
@@ -14439,6 +14439,5001 @@
       "file": "a3_release/09_yanggum/3T/sheet_01/03_CUT_ONLY.svg",
       "sha256": "7ba3b597bd20f1e6e3908507ff6b2f509644c88da5fc82377c176630867ad80a",
       "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 3.00001069999999,
+      "segments": 588,
+      "curves": 542,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85950123407363,
+          "minimum_segment_mm": 0.17414439616321128,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015039634241425,
+          "minimum_segment_mm": 0.4317879138987182,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864723227775,
+          "minimum_segment_mm": 1.4037528610168892,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40796874905857,
+          "minimum_segment_mm": 0.11600848651330974,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01492375381905,
+          "minimum_segment_mm": 0.4317859800534516,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458077052304,
+          "minimum_segment_mm": 2.9499222104401537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "51805eb8e013686a83e3c736a8b8ac0bca6d9e95531d05fda59298b9d53081e3",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 3.00001069999999,
+      "segments": 588,
+      "curves": 542,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85952166921976,
+          "minimum_segment_mm": 0.17414390210163505,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504999547481,
+          "minimum_segment_mm": 0.4317879138987058,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864275229688,
+          "minimum_segment_mm": 1.4037529335354404,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40795152944523,
+          "minimum_segment_mm": 0.11600850259910077,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.014933171361676,
+          "minimum_segment_mm": 0.4317839041403785,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93457980128161,
+          "minimum_segment_mm": 2.9499376093256493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "339137a0e573b408a299ead108d6afd71df7b8d643e8b7906d068c8d40726ad8",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 3.00001069999999,
+      "segments": 588,
+      "curves": 542,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85950123407363,
+          "minimum_segment_mm": 0.17414439616321128,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015039634241425,
+          "minimum_segment_mm": 0.4317879138987182,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864723227775,
+          "minimum_segment_mm": 1.4037528610168892,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40796874905857,
+          "minimum_segment_mm": 0.11600848651330974,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01492375381905,
+          "minimum_segment_mm": 0.4317859800534516,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458077052304,
+          "minimum_segment_mm": 2.9499222104401537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "c02acffefa7de44dfbb9969c5701aeb4a8d09c644109d3b0f84bcd18f76c4c1e",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 3.00001069999999,
+      "segments": 588,
+      "curves": 542,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85952166921976,
+          "minimum_segment_mm": 0.17414390210163505,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504999547481,
+          "minimum_segment_mm": 0.4317879138987058,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864275229688,
+          "minimum_segment_mm": 1.4037529335354404,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40795152944523,
+          "minimum_segment_mm": 0.11600850259910077,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.014933171361676,
+          "minimum_segment_mm": 0.4317839041403785,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93457980128161,
+          "minimum_segment_mm": 2.9499376093256493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "96ea10e6294d6f4fdcf8e2d9e7da31885c0d1cb9e8c0a72c7fe8fe16a26aa47b",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 3.0000321999999926,
+      "segments": 588,
+      "curves": 542,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.8594794686681,
+          "minimum_segment_mm": 0.17415445844513577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150297646736,
+          "minimum_segment_mm": 0.4317899765063137,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91861905954786,
+          "minimum_segment_mm": 1.40376368476434,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40789919401408,
+          "minimum_segment_mm": 0.11600727767923603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01493962757477,
+          "minimum_segment_mm": 0.43179684809496555,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458703530192,
+          "minimum_segment_mm": 2.9499449134008753,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "774c948e3c89367a3ad0d97f053533c42c9be68f70b0d275adcf72b00abbd268",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 2.9999890999999934,
+      "segments": 568,
+      "curves": 512,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.60517984192336,
+          "minimum_segment_mm": 0.19286037556346947,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01506665566783,
+          "minimum_segment_mm": 0.4317730436180757,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864728179587,
+          "minimum_segment_mm": 1.403752946459794,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.483916315079,
+          "minimum_segment_mm": 0.1420256002508346,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01492375381905,
+          "minimum_segment_mm": 0.4317859800534516,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458077052304,
+          "minimum_segment_mm": 2.9499222104401537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "fffaaceb29d6cf20265a238169e67161fbd46c9f2f968dd06c579699d50f4947",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 568,
+      "curves": 512,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.6052052542265,
+          "minimum_segment_mm": 0.19285323763344905,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150592179019,
+          "minimum_segment_mm": 0.43177801529090676,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865956103464,
+          "minimum_segment_mm": 1.4037528124237828,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48388013311208,
+          "minimum_segment_mm": 0.14202278630621748,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.014933171361676,
+          "minimum_segment_mm": 0.4317839041403785,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93457980128161,
+          "minimum_segment_mm": 2.9499376093256493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "89d6f0f7711c67060ac5df37817bc7011bf3fb25ad720870e3614f90595a8bec",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 2.9999890999999934,
+      "segments": 568,
+      "curves": 512,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.60517984192336,
+          "minimum_segment_mm": 0.19286037556346947,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01506665566783,
+          "minimum_segment_mm": 0.4317730436180757,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864728179587,
+          "minimum_segment_mm": 1.403752946459794,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.483916315079,
+          "minimum_segment_mm": 0.1420256002508346,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01492375381905,
+          "minimum_segment_mm": 0.4317859800534516,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458077052304,
+          "minimum_segment_mm": 2.9499222104401537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "405cfb6dd44ebf5da2e1eeb2a453ecca2ba4bf365981e6804552373f116ffb75",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 568,
+      "curves": 512,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.6052052542265,
+          "minimum_segment_mm": 0.19285323763344905,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150592179019,
+          "minimum_segment_mm": 0.43177801529090676,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865956103464,
+          "minimum_segment_mm": 1.4037528124237828,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48388013311208,
+          "minimum_segment_mm": 0.14202278630621748,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.014933171361676,
+          "minimum_segment_mm": 0.4317839041403785,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93457980128161,
+          "minimum_segment_mm": 2.9499376093256493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "715d50bc98885f8a3317b2d1b2319f62aaa439a72e8df91bb9f9fc915b46dea1",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 4,
+      "minimum_piece_gap_mm": 2.9999729999999967,
+      "segments": 568,
+      "curves": 512,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.60518138579073,
+          "minimum_segment_mm": 0.19285245610548168,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01502941588584,
+          "minimum_segment_mm": 0.43177482768510955,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186348290861,
+          "minimum_segment_mm": 1.4037421720270957,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48392765692884,
+          "minimum_segment_mm": 0.14200141307974118,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01493962757477,
+          "minimum_segment_mm": 0.43179684809496555,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458703530192,
+          "minimum_segment_mm": 2.9499449134008753,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "f55b678538f75129637e8a8570ef3279b4e0bcb8e6407335c23e923f982b9e15",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 10,
+      "contours": 10,
+      "outer_contours": 5,
+      "minimum_piece_gap_mm": 3.8326118087126235,
+      "segments": 976,
+      "curves": 932,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282606495985,
+          "minimum_segment_mm": 3.135696202670823,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.21784913312482,
+          "minimum_segment_mm": 0.2053897753486749,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542787112662271,
+          "minimum_segment_mm": 3.1356785924258457,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.2433471356873,
+          "minimum_segment_mm": 0.22045565568564543,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542827481942162,
+          "minimum_segment_mm": 3.1357010502468885,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.3370030610587,
+          "minimum_segment_mm": 0.23236515922001125,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542830604178693,
+          "minimum_segment_mm": 3.1357053220556512,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.0271813236662,
+          "minimum_segment_mm": 0.2735592951504566,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54280218017154,
+          "minimum_segment_mm": 3.135688880030944,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.75185063167694,
+          "minimum_segment_mm": 0.05937356895267154,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "sha256": "c361c0b0b16fa60a180bf17981c87773f83720ac286014fbe82305d5b3c09937",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 10,
+      "contours": 10,
+      "outer_contours": 5,
+      "minimum_piece_gap_mm": 3.832613415278797,
+      "segments": 976,
+      "curves": 932,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542807601562412,
+          "minimum_segment_mm": 3.135688703620568,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.217883118345,
+          "minimum_segment_mm": 0.2053896753789005,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542797908366326,
+          "minimum_segment_mm": 3.135683990287256,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.24333479183707,
+          "minimum_segment_mm": 0.22045678893134,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822060589229,
+          "minimum_segment_mm": 3.135698318005623,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.33700516952086,
+          "minimum_segment_mm": 0.23235851532999743,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542821927308005,
+          "minimum_segment_mm": 3.135698318005579,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.0271547803086,
+          "minimum_segment_mm": 0.27355936208669784,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793271962864,
+          "minimum_segment_mm": 3.135679353858063,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.75184660106493,
+          "minimum_segment_mm": 0.05937842380948638,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "352d648fe4702533421fba18287503dabbdca149088d89ba3db794845d79fb4c",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 10,
+      "contours": 10,
+      "outer_contours": 5,
+      "minimum_piece_gap_mm": 3.8326118087126235,
+      "segments": 976,
+      "curves": 932,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282606495985,
+          "minimum_segment_mm": 3.135696202670823,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.21784913312482,
+          "minimum_segment_mm": 0.2053897753486749,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542787112662271,
+          "minimum_segment_mm": 3.1356785924258457,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.2433471356873,
+          "minimum_segment_mm": 0.22045565568564543,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542827481942162,
+          "minimum_segment_mm": 3.1357010502468885,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.3370030610587,
+          "minimum_segment_mm": 0.23236515922001125,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542830604178693,
+          "minimum_segment_mm": 3.1357053220556512,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.0271813236662,
+          "minimum_segment_mm": 0.2735592951504566,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54280218017154,
+          "minimum_segment_mm": 3.135688880030944,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.75185063167694,
+          "minimum_segment_mm": 0.05937356895267154,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "be9d19422a43f168cdb1e05bfbc4fe7d8c7211dffae19413f8566ed857a4b77f",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 10,
+      "contours": 10,
+      "outer_contours": 5,
+      "minimum_piece_gap_mm": 3.832613415278797,
+      "segments": 976,
+      "curves": 932,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542807601562412,
+          "minimum_segment_mm": 3.135688703620568,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.217883118345,
+          "minimum_segment_mm": 0.2053896753789005,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542797908366326,
+          "minimum_segment_mm": 3.135683990287256,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.24333479183707,
+          "minimum_segment_mm": 0.22045678893134,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822060589229,
+          "minimum_segment_mm": 3.135698318005623,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.33700516952086,
+          "minimum_segment_mm": 0.23235851532999743,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542821927308005,
+          "minimum_segment_mm": 3.135698318005579,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.0271547803086,
+          "minimum_segment_mm": 0.27355936208669784,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793271962864,
+          "minimum_segment_mm": 3.135679353858063,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.75184660106493,
+          "minimum_segment_mm": 0.05937842380948638,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "7dcf53659beef9d70f6df8f7f5cb932400c3a60d0107353ea599d95a49448266",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 10,
+      "contours": 10,
+      "outer_contours": 5,
+      "minimum_piece_gap_mm": 3.832613594895439,
+      "segments": 976,
+      "curves": 932,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542805800321908,
+          "minimum_segment_mm": 3.135688791825602,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.21787417612182,
+          "minimum_segment_mm": 0.20538707370630907,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542773174036018,
+          "minimum_segment_mm": 3.1356882582090417,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.24334238642734,
+          "minimum_segment_mm": 0.2204570071190657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542823793291433,
+          "minimum_segment_mm": 3.135678963745203,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.33701053860904,
+          "minimum_segment_mm": 0.23237342534037125,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542857652428626,
+          "minimum_segment_mm": 3.1356983846464033,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.02714118064938,
+          "minimum_segment_mm": 0.27356924736058036,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54280441107436,
+          "minimum_segment_mm": 3.135664636145975,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.7518307484107,
+          "minimum_segment_mm": 0.05939330766052588,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "f16aa990c058d123097159de6b9f9dabb9940792125bc88c07efb8ea51171f7a",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 12,
+      "contours": 12,
+      "outer_contours": 6,
+      "minimum_piece_gap_mm": 2.9999461006955275,
+      "segments": 1180,
+      "curves": 1131,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542812849206927,
+          "minimum_segment_mm": 3.135698384604771,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.74582285336402,
+          "minimum_segment_mm": 0.23601269311542994,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542801948846236,
+          "minimum_segment_mm": 3.1356981249089437,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42967775749275,
+          "minimum_segment_mm": 0.19937399834986047,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542798693314474,
+          "minimum_segment_mm": 3.1356867225429537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78110392572097,
+          "minimum_segment_mm": 0.23198378407435064,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542811692243255,
+          "minimum_segment_mm": 3.135691401157026,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.6597075545857,
+          "minimum_segment_mm": 0.1593240739632586,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542825580169149,
+          "minimum_segment_mm": 3.135679437183489,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18957732109862,
+          "minimum_segment_mm": 0.25733138860380805,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542840480819953,
+          "minimum_segment_mm": 3.135709980033682,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69315652545026,
+          "minimum_segment_mm": 0.23173561595100062,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "sha256": "070fdd472dad2dece45e7337e76ee6836f4d65ad59447c24089cfb55edb0079f",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 12,
+      "contours": 12,
+      "outer_contours": 6,
+      "minimum_piece_gap_mm": 2.9999461006955275,
+      "segments": 1180,
+      "curves": 1131,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54280627000234,
+          "minimum_segment_mm": 3.1356911874555577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.7458142561704,
+          "minimum_segment_mm": 0.2360074361038051,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793271902266,
+          "minimum_segment_mm": 3.1356911208150007,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.4296792839665,
+          "minimum_segment_mm": 0.19937399310408593,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793271946946,
+          "minimum_segment_mm": 3.1356839902872813,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78110494023625,
+          "minimum_segment_mm": 0.23198668661753094,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793228817892,
+          "minimum_segment_mm": 3.135683902082057,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.65969634834295,
+          "minimum_segment_mm": 0.15931867557913656,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542807159697256,
+          "minimum_segment_mm": 3.1356839902872764,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18959934795578,
+          "minimum_segment_mm": 0.25733679842686386,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282188417855,
+          "minimum_segment_mm": 3.1356983180056184,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69319491745958,
+          "minimum_segment_mm": 0.2317279794626508,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "35b7cae3efd11bbabb2ee5fa31c427d630f9e9b3fc34a22e8e43d802624310bf",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 12,
+      "contours": 12,
+      "outer_contours": 6,
+      "minimum_piece_gap_mm": 2.9999461006955275,
+      "segments": 1180,
+      "curves": 1131,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542812849206927,
+          "minimum_segment_mm": 3.135698384604771,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.74582285336402,
+          "minimum_segment_mm": 0.23601269311542994,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542801948846236,
+          "minimum_segment_mm": 3.1356981249089437,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42967775749275,
+          "minimum_segment_mm": 0.19937399834986047,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542798693314474,
+          "minimum_segment_mm": 3.1356867225429537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78110392572097,
+          "minimum_segment_mm": 0.23198378407435064,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542811692243255,
+          "minimum_segment_mm": 3.135691401157026,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.6597075545857,
+          "minimum_segment_mm": 0.1593240739632586,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542825580169149,
+          "minimum_segment_mm": 3.135679437183489,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18957732109862,
+          "minimum_segment_mm": 0.25733138860380805,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542840480819953,
+          "minimum_segment_mm": 3.135709980033682,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69315652545026,
+          "minimum_segment_mm": 0.23173561595100062,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "192d40db29168836c1b93178808a21bf4d462ce6ce5c1de273f6becb30d7b518",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 12,
+      "contours": 12,
+      "outer_contours": 6,
+      "minimum_piece_gap_mm": 2.9999461006955275,
+      "segments": 1180,
+      "curves": 1131,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54280627000234,
+          "minimum_segment_mm": 3.1356911874555577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.7458142561704,
+          "minimum_segment_mm": 0.2360074361038051,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793271902266,
+          "minimum_segment_mm": 3.1356911208150007,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.4296792839665,
+          "minimum_segment_mm": 0.19937399310408593,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793271946946,
+          "minimum_segment_mm": 3.1356839902872813,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78110494023625,
+          "minimum_segment_mm": 0.23198668661753094,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542793228817892,
+          "minimum_segment_mm": 3.135683902082057,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.65969634834295,
+          "minimum_segment_mm": 0.15931867557913656,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542807159697256,
+          "minimum_segment_mm": 3.1356839902872764,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18959934795578,
+          "minimum_segment_mm": 0.25733679842686386,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282188417855,
+          "minimum_segment_mm": 3.1356983180056184,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69319491745958,
+          "minimum_segment_mm": 0.2317279794626508,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "6cda4419d0f867e09a77d2de8018a610df3064eb834b50452e97e27ccf71dba0",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 12,
+      "contours": 12,
+      "outer_contours": 6,
+      "minimum_piece_gap_mm": 2.99992460069553,
+      "segments": 1180,
+      "curves": 1131,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542809257321057,
+          "minimum_segment_mm": 3.135687286959911,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.7457978132616,
+          "minimum_segment_mm": 0.2360074429811665,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542805329780222,
+          "minimum_segment_mm": 3.1356911874555657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42967525871342,
+          "minimum_segment_mm": 0.1993795790530919,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542823660010665,
+          "minimum_segment_mm": 3.135678897104639,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78116738395855,
+          "minimum_segment_mm": 0.2319903877212707,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542791539292123,
+          "minimum_segment_mm": 3.135683990287281,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.659722526938,
+          "minimum_segment_mm": 0.15931867557913656,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542778224142618,
+          "minimum_segment_mm": 3.1356650261780152,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.1896259226406,
+          "minimum_segment_mm": 0.257336753356739,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54285981248072,
+          "minimum_segment_mm": 3.13569831800563,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69320638239583,
+          "minimum_segment_mm": 0.23173976679280575,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "d62d75e58d3ba03e3c6f96ed23c9f36092a53ca2a0a6fe2c8a42cc99f741042e",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 3.000845176705483,
+      "segments": 487,
+      "curves": 463,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542795600991822,
+          "minimum_segment_mm": 3.135683923688159,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23360002366587,
+          "minimum_segment_mm": 0.21501528369502027,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542828169999972,
+          "minimum_segment_mm": 3.135685723081805,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15586521207672,
+          "minimum_segment_mm": 0.230258490636075,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542799212513195,
+          "minimum_segment_mm": 3.135685789577237,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27272721416608,
+          "minimum_segment_mm": 0.23196372854716757,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "sha256": "77da03ae7d701d371ea9cebdf5b80a6a2e66af96ba6636244e3129099e83dc29",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 3.0008451864672248,
+      "segments": 487,
+      "curves": 463,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542809995232755,
+          "minimum_segment_mm": 3.1356911208150016,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23361287981592,
+          "minimum_segment_mm": 0.21502033518137445,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826675468767,
+          "minimum_segment_mm": 3.135698296440622,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15586118187284,
+          "minimum_segment_mm": 0.23026468440853087,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54279804167303,
+          "minimum_segment_mm": 3.1356839902872826,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.2727370504526,
+          "minimum_segment_mm": 0.23196832890072194,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "5390425ac4d17000b9daeb902ba49f288310fc948a4564332126ed9bfe1c3d17",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 3.000845176705483,
+      "segments": 487,
+      "curves": 463,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542795600991822,
+          "minimum_segment_mm": 3.135683923688159,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23360002366587,
+          "minimum_segment_mm": 0.21501528369502027,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542828169999972,
+          "minimum_segment_mm": 3.135685723081805,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15586521207672,
+          "minimum_segment_mm": 0.230258490636075,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542799212513195,
+          "minimum_segment_mm": 3.135685789577237,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27272721416608,
+          "minimum_segment_mm": 0.23196372854716757,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "562b4494e2dcb78390215914e4d4fb18d4f7cbcc89cc3621c0685789765dd3ae",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 3.0008451864672248,
+      "segments": 487,
+      "curves": 463,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542809995232755,
+          "minimum_segment_mm": 3.1356911208150016,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23361287981592,
+          "minimum_segment_mm": 0.21502033518137445,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826675468767,
+          "minimum_segment_mm": 3.135698296440622,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15586118187284,
+          "minimum_segment_mm": 0.23026468440853087,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54279804167303,
+          "minimum_segment_mm": 3.1356839902872826,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.2727370504526,
+          "minimum_segment_mm": 0.23196832890072194,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "428d2a24b3d0c9d74ffc56630fbfc0d7909adbe4f97005275ee0ec98978a5ddd",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 6,
+      "contours": 6,
+      "outer_contours": 3,
+      "minimum_piece_gap_mm": 3.0008351262914705,
+      "segments": 487,
+      "curves": 463,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542812295213722,
+          "minimum_segment_mm": 3.135693516455261,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.2335591724081,
+          "minimum_segment_mm": 0.21501746438575878,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826822565614,
+          "minimum_segment_mm": 3.135678399330261,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15588955195818,
+          "minimum_segment_mm": 0.230243340361229,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542778806314907,
+          "minimum_segment_mm": 3.1356839902872813,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27277842322235,
+          "minimum_segment_mm": 0.2319666817779678,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "dbaab4231c554828cd478f0feeaa6c6ed5db054a7a5beeee3b2e6df3cc664853",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 2.9999569000000004,
+      "segments": 290,
+      "curves": 265,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44789843451917,
+          "minimum_segment_mm": 0.09654759855094548,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015045457429224,
+          "minimum_segment_mm": 0.4317719501649787,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864102011812,
+          "minimum_segment_mm": 1.403776299008086,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "115e03d821beb508eb56fd6399dbf17ac01dd9f551680a66b1cabeab24dab6fa",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 290,
+      "curves": 265,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44790263041313,
+          "minimum_segment_mm": 0.09654247409247105,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015041388789804,
+          "minimum_segment_mm": 0.4317821718369049,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91863793985902,
+          "minimum_segment_mm": 1.403755066682294,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "876be3337e85dc63f8882803983a6a9929884805d9af5709b1444facdd5dba71",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 2.9999569000000004,
+      "segments": 290,
+      "curves": 265,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44789843451917,
+          "minimum_segment_mm": 0.09654759855094548,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015045457429224,
+          "minimum_segment_mm": 0.4317719501649787,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864102011812,
+          "minimum_segment_mm": 1.403776299008086,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "fc98f8c9abb8a4f87e362a2eb2ce525957bbf577c64cc0459eefa0bb0cbb7e21",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 290,
+      "curves": 265,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44790263041313,
+          "minimum_segment_mm": 0.09654247409247105,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015041388789804,
+          "minimum_segment_mm": 0.4317821718369049,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91863793985902,
+          "minimum_segment_mm": 1.403755066682294,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "5fd99a6f31587f89588ebc9b4f82a1edadb31a6c895dbbce4df36c7c62cf51a9",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 290,
+      "curves": 265,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.4479705676963,
+          "minimum_segment_mm": 0.09654256621916876,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015041275663016,
+          "minimum_segment_mm": 0.43177231852573195,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864694656485,
+          "minimum_segment_mm": 1.4037450007383765,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "64d9577ac92f355c80cccafe1f3d07e02a4e37691291c9002e6b98a3b8f3f912",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 3.000048399999997,
+      "segments": 295,
+      "curves": 271,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.69017961123376,
+          "minimum_segment_mm": 0.17388842661677914,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015021900017345,
+          "minimum_segment_mm": 0.4317879406820587,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864083869106,
+          "minimum_segment_mm": 1.4037547260166596,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.ai",
+      "sha256": "59824eeb1ff927670b83402d13631c749be1386d80c0a0ea8ed8b8a6210db81f",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 3.0000321999999926,
+      "segments": 295,
+      "curves": 271,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.6901846115444,
+          "minimum_segment_mm": 0.1738884271074948,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01503226094105,
+          "minimum_segment_mm": 0.43178794068204635,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91863635870877,
+          "minimum_segment_mm": 1.4037547985508851,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "704e0c46e12d324d947a9afc8679dabbd882308c0fdfd42a93f309e223f9c550",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 3.000048399999997,
+      "segments": 295,
+      "curves": 271,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.69017961123376,
+          "minimum_segment_mm": 0.17388842661677914,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015021900017345,
+          "minimum_segment_mm": 0.4317879406820587,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864083869106,
+          "minimum_segment_mm": 1.4037547260166596,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "5e374862c3a048bd35170f903a8846fa1b7be963bb9de347342c125a5c5b5f5c",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 3.0000321999999926,
+      "segments": 295,
+      "curves": 271,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.6901846115444,
+          "minimum_segment_mm": 0.1738884271074948,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01503226094105,
+          "minimum_segment_mm": 0.43178794068204635,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91863635870877,
+          "minimum_segment_mm": 1.4037547985508851,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "e4ce579e7d8133f8419c68c83108771696412b5fada76e877593b665f38e76e8",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 3,
+      "contours": 3,
+      "outer_contours": 2,
+      "minimum_piece_gap_mm": 3.000032200000007,
+      "segments": 295,
+      "curves": 271,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.6900924364467,
+          "minimum_segment_mm": 0.17388183765086543,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015027936332274,
+          "minimum_segment_mm": 0.43177601256664805,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186428022349,
+          "minimum_segment_mm": 1.4037661850194374,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "37711f055757e02951e26b5611abbb0e650338883ca9d2c587b09a2af41e890e",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 28,
+      "contours": 28,
+      "outer_contours": 14,
+      "minimum_piece_gap_mm": 3.000032200695512,
+      "segments": 2643,
+      "curves": 2526,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542821196794618,
+          "minimum_segment_mm": 3.1357003309578277,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.217848301507,
+          "minimum_segment_mm": 0.205389640210331,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542784783638032,
+          "minimum_segment_mm": 3.1356857896084436,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.2433626789761,
+          "minimum_segment_mm": 0.2204556434665445,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542813044476327,
+          "minimum_segment_mm": 3.1356939197039817,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.3370043478325,
+          "minimum_segment_mm": 0.23235699449106148,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542830694330128,
+          "minimum_segment_mm": 3.1357053004909785,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.02718673936528,
+          "minimum_segment_mm": 0.2735592611622428,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542802270322767,
+          "minimum_segment_mm": 3.135688858466021,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.751847646312,
+          "minimum_segment_mm": 0.059373535910655605,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54283323308519,
+          "minimum_segment_mm": 3.135705493571247,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.7458432096756,
+          "minimum_segment_mm": 0.2360107074268441,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542806563766561,
+          "minimum_segment_mm": 3.135690994424696,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42970100081266,
+          "minimum_segment_mm": 0.19937442880118944,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542836733267212,
+          "minimum_segment_mm": 3.1357010286821714,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78108462857176,
+          "minimum_segment_mm": 0.23199232348168053,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542804895389038,
+          "minimum_segment_mm": 3.1356875888685987,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.6597100176206,
+          "minimum_segment_mm": 0.15931337471892268,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542773987947934,
+          "minimum_segment_mm": 3.1356767931415552,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18961558871308,
+          "minimum_segment_mm": 0.2573377590944353,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542814820301647,
+          "minimum_segment_mm": 3.135698296440982,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69313972885328,
+          "minimum_segment_mm": 0.23174816577401314,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822060823518,
+          "minimum_segment_mm": 3.1356875889920737,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.2336871774268,
+          "minimum_segment_mm": 0.2150299487054279,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826795511052,
+          "minimum_segment_mm": 3.1356971535160603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15579618927782,
+          "minimum_segment_mm": 0.23027322257903304,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826795511028,
+          "minimum_segment_mm": 3.1356971535160603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27275795872686,
+          "minimum_segment_mm": 0.23197746622869495,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.ai",
+      "sha256": "746c026537ccc8f5cdd2815fda7a745de88559acd48a24704af834e0d179142a",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 28,
+      "contours": 28,
+      "outer_contours": 14,
+      "minimum_piece_gap_mm": 3.000032200695512,
+      "segments": 2643,
+      "curves": 2526,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542802733379112,
+          "minimum_segment_mm": 3.1356928319054664,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.21788228708394,
+          "minimum_segment_mm": 0.2053895402404908,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54279557933722,
+          "minimum_segment_mm": 3.135691187455557,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.24335033369474,
+          "minimum_segment_mm": 0.22045677675448305,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542807623116119,
+          "minimum_segment_mm": 3.1356911874555466,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.33700645505937,
+          "minimum_segment_mm": 0.2323503505664929,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282201745983,
+          "minimum_segment_mm": 3.135698296440979,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.02716019766285,
+          "minimum_segment_mm": 0.27355932809802486,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54279336211431,
+          "minimum_segment_mm": 3.135679332293212,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.7518436144248,
+          "minimum_segment_mm": 0.059378390769868825,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826653904916,
+          "minimum_segment_mm": 3.1356982964409803,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.74583461520677,
+          "minimum_segment_mm": 0.23600545031572187,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542797886801603,
+          "minimum_segment_mm": 3.135683990287287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42970253333894,
+          "minimum_segment_mm": 0.19937442351850887,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542831311904468,
+          "minimum_segment_mm": 3.135698296440929,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78108564557422,
+          "minimum_segment_mm": 0.23199522621270302,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542802566381503,
+          "minimum_segment_mm": 3.1356839902872844,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.6596812534894,
+          "minimum_segment_mm": 0.15929717956728054,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542795579381941,
+          "minimum_segment_mm": 3.1356839902872844,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18962382917758,
+          "minimum_segment_mm": 0.25733755741056036,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822017459846,
+          "minimum_segment_mm": 3.135698296440982,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69315088266768,
+          "minimum_segment_mm": 0.23174750150486126,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282192730803,
+          "minimum_segment_mm": 3.135698318005607,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23367305406887,
+          "minimum_segment_mm": 0.2150299487054279,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282192730809,
+          "minimum_segment_mm": 3.1356983180056193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.1558131168621,
+          "minimum_segment_mm": 0.23027003866117193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542821927308069,
+          "minimum_segment_mm": 3.1356983180056193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27274632486635,
+          "minimum_segment_mm": 0.23198481930024908,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "7847634f30169fac7fdfdb2f64f66b53dd2ecad57efc215e1bd613d90aebb488",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 28,
+      "contours": 28,
+      "outer_contours": 14,
+      "minimum_piece_gap_mm": 3.000032200695512,
+      "segments": 2643,
+      "curves": 2526,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542821196794618,
+          "minimum_segment_mm": 3.1357003309578277,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.217848301507,
+          "minimum_segment_mm": 0.205389640210331,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542784783638032,
+          "minimum_segment_mm": 3.1356857896084436,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.2433626789761,
+          "minimum_segment_mm": 0.2204556434665445,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542813044476327,
+          "minimum_segment_mm": 3.1356939197039817,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.3370043478325,
+          "minimum_segment_mm": 0.23235699449106148,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542830694330128,
+          "minimum_segment_mm": 3.1357053004909785,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.02718673936528,
+          "minimum_segment_mm": 0.2735592611622428,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542802270322767,
+          "minimum_segment_mm": 3.135688858466021,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.751847646312,
+          "minimum_segment_mm": 0.059373535910655605,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54283323308519,
+          "minimum_segment_mm": 3.135705493571247,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.7458432096756,
+          "minimum_segment_mm": 0.2360107074268441,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542806563766561,
+          "minimum_segment_mm": 3.135690994424696,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42970100081266,
+          "minimum_segment_mm": 0.19937442880118944,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542836733267212,
+          "minimum_segment_mm": 3.1357010286821714,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78108462857176,
+          "minimum_segment_mm": 0.23199232348168053,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542804895389038,
+          "minimum_segment_mm": 3.1356875888685987,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.6597100176206,
+          "minimum_segment_mm": 0.15931337471892268,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542773987947934,
+          "minimum_segment_mm": 3.1356767931415552,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18961558871308,
+          "minimum_segment_mm": 0.2573377590944353,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542814820301647,
+          "minimum_segment_mm": 3.135698296440982,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69313972885328,
+          "minimum_segment_mm": 0.23174816577401314,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822060823518,
+          "minimum_segment_mm": 3.1356875889920737,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.2336871774268,
+          "minimum_segment_mm": 0.2150299487054279,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826795511052,
+          "minimum_segment_mm": 3.1356971535160603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15579618927782,
+          "minimum_segment_mm": 0.23027322257903304,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826795511028,
+          "minimum_segment_mm": 3.1356971535160603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27275795872686,
+          "minimum_segment_mm": 0.23197746622869495,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "a0d07e4b52455e6ed348307864780fd6f53db8035bc23752f70ace2eb9f33ec8",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 28,
+      "contours": 28,
+      "outer_contours": 14,
+      "minimum_piece_gap_mm": 3.000032200695512,
+      "segments": 2643,
+      "curves": 2526,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542802733379112,
+          "minimum_segment_mm": 3.1356928319054664,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.21788228708394,
+          "minimum_segment_mm": 0.2053895402404908,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54279557933722,
+          "minimum_segment_mm": 3.135691187455557,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.24335033369474,
+          "minimum_segment_mm": 0.22045677675448305,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542807623116119,
+          "minimum_segment_mm": 3.1356911874555466,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.33700645505937,
+          "minimum_segment_mm": 0.2323503505664929,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282201745983,
+          "minimum_segment_mm": 3.135698296440979,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.02716019766285,
+          "minimum_segment_mm": 0.27355932809802486,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54279336211431,
+          "minimum_segment_mm": 3.135679332293212,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.7518436144248,
+          "minimum_segment_mm": 0.059378390769868825,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542826653904916,
+          "minimum_segment_mm": 3.1356982964409803,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.74583461520677,
+          "minimum_segment_mm": 0.23600545031572187,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542797886801603,
+          "minimum_segment_mm": 3.135683990287287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42970253333894,
+          "minimum_segment_mm": 0.19937442351850887,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542831311904468,
+          "minimum_segment_mm": 3.135698296440929,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78108564557422,
+          "minimum_segment_mm": 0.23199522621270302,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542802566381503,
+          "minimum_segment_mm": 3.1356839902872844,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.6596812534894,
+          "minimum_segment_mm": 0.15929717956728054,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542795579381941,
+          "minimum_segment_mm": 3.1356839902872844,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.18962382917758,
+          "minimum_segment_mm": 0.25733755741056036,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822017459846,
+          "minimum_segment_mm": 3.135698296440982,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.69315088266768,
+          "minimum_segment_mm": 0.23174750150486126,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282192730803,
+          "minimum_segment_mm": 3.135698318005607,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23367305406887,
+          "minimum_segment_mm": 0.2150299487054279,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282192730809,
+          "minimum_segment_mm": 3.1356983180056193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.1558131168621,
+          "minimum_segment_mm": 0.23027003866117193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542821927308069,
+          "minimum_segment_mm": 3.1356983180056193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27274632486635,
+          "minimum_segment_mm": 0.23198481930024908,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "6b375aebb41642eff4dd62444db13732ed09738d943c53f43688ab1ff6cb629b",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 28,
+      "contours": 28,
+      "outer_contours": 14,
+      "minimum_piece_gap_mm": 3.000032200695512,
+      "segments": 2643,
+      "curves": 2526,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542805806936336,
+          "minimum_segment_mm": 3.1356929201105412,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 248,
+          "curves": 235,
+          "perimeter_mm": 226.21785604218462,
+          "minimum_segment_mm": 0.20538687719141363,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542794997083544,
+          "minimum_segment_mm": 3.1356908189058936,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 204,
+          "curves": 196,
+          "perimeter_mm": 199.24334878658001,
+          "minimum_segment_mm": 0.22045677664069924,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542809398888059,
+          "minimum_segment_mm": 3.1356884232765445,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 171,
+          "curves": 163,
+          "perimeter_mm": 171.33698099318292,
+          "minimum_segment_mm": 0.23234834289405848,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542819590901734,
+          "minimum_segment_mm": 3.1356792656528016,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 167,
+          "curves": 161,
+          "perimeter_mm": 162.0271518791697,
+          "minimum_segment_mm": 0.273566250565925,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542766482585087,
+          "minimum_segment_mm": 3.1356790519501336,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 166,
+          "curves": 157,
+          "perimeter_mm": 183.75182673762112,
+          "minimum_segment_mm": 0.0593792746022667,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542866491258048,
+          "minimum_segment_mm": 3.135697994531032,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 195,
+          "curves": 186,
+          "perimeter_mm": 175.7457880931927,
+          "minimum_segment_mm": 0.23600505241395106,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542800208445797,
+          "minimum_segment_mm": 3.135688648322846,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 209,
+          "curves": 202,
+          "perimeter_mm": 206.42969437120672,
+          "minimum_segment_mm": 0.1993801048271528,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542833044548548,
+          "minimum_segment_mm": 3.1356979278909773,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 192,
+          "curves": 185,
+          "perimeter_mm": 202.78107548371125,
+          "minimum_segment_mm": 0.23199852217274886,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542801492025582,
+          "minimum_segment_mm": 3.1356839687224003,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 217,
+          "curves": 209,
+          "perimeter_mm": 201.65963901383924,
+          "minimum_segment_mm": 0.15929728198386964,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542812324296339,
+          "minimum_segment_mm": 3.1356839902872844,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 174,
+          "curves": 166,
+          "perimeter_mm": 168.1896121749396,
+          "minimum_segment_mm": 0.25732701838741096,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542822017517134,
+          "minimum_segment_mm": 3.135679332293381,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 169,
+          "curves": 159,
+          "perimeter_mm": 181.6931477977604,
+          "minimum_segment_mm": 0.23174345832300866,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.54282192730803,
+          "minimum_segment_mm": 3.135698318005607,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 150,
+          "curves": 141,
+          "perimeter_mm": 171.23367891214457,
+          "minimum_segment_mm": 0.2150326588433935,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542859988841759,
+          "minimum_segment_mm": 3.1356983180056193,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 176,
+          "curves": 169,
+          "perimeter_mm": 161.15581806538185,
+          "minimum_segment_mm": 0.23026882623092357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.542831200300498,
+          "minimum_segment_mm": 3.1357029545018347,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 149,
+          "curves": 141,
+          "perimeter_mm": 161.27271876527158,
+          "minimum_segment_mm": 0.2320087581246107,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "b8b1b14a16c90769e289e58beb61e2ddb36be58ac81cd617b1dfd3640ec4eb19",
+      "sha256_mode": "LF-normalized text"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 18,
+      "contours": 18,
+      "outer_contours": 12,
+      "minimum_piece_gap_mm": 2.999956900000001,
+      "segments": 1741,
+      "curves": 1590,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85949991889552,
+          "minimum_segment_mm": 0.17414959931275265,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01502616350187,
+          "minimum_segment_mm": 0.4317847496467533,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864813411308,
+          "minimum_segment_mm": 1.4037540852448684,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40799120779477,
+          "minimum_segment_mm": 0.11600433796289134,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01492589502026,
+          "minimum_segment_mm": 0.4317888744171291,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458709329425,
+          "minimum_segment_mm": 2.949926689604737,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.6051888130382,
+          "minimum_segment_mm": 0.19286108952490105,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150489213093,
+          "minimum_segment_mm": 0.43177307039872276,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186408881882,
+          "minimum_segment_mm": 1.4037548114825091,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48393271740326,
+          "minimum_segment_mm": 0.14202480619152555,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01493306976401,
+          "minimum_segment_mm": 0.431791722997917,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458320284736,
+          "minimum_segment_mm": 2.9499288678442634,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44782583640406,
+          "minimum_segment_mm": 0.09654641628364136,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150551151031,
+          "minimum_segment_mm": 0.43177768231520064,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186465199187,
+          "minimum_segment_mm": 1.403777019366392,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.6901803802623,
+          "minimum_segment_mm": 0.17389916208753992,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504261523845,
+          "minimum_segment_mm": 0.4317822320341098,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186338657061,
+          "minimum_segment_mm": 1.4037547997921875,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.ai",
+      "sha256": "e562352b361303513e6e0f597293252fa90a95caa51f7e4009d8767d50e5b610",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 18,
+      "contours": 18,
+      "outer_contours": 12,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 1741,
+      "curves": 1590,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85952035598655,
+          "minimum_segment_mm": 0.17414910529665892,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01503652483091,
+          "minimum_segment_mm": 0.43178474964674096,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186436542052,
+          "minimum_segment_mm": 1.4037541577761345,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40797398673425,
+          "minimum_segment_mm": 0.1160043541869238,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.014935312696835,
+          "minimum_segment_mm": 0.43178679842512196,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9345861240083,
+          "minimum_segment_mm": 2.9499420884545158,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.60521422996212,
+          "minimum_segment_mm": 0.1928539512399446,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504148356393,
+          "minimum_segment_mm": 0.4317780420724545,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865316741135,
+          "minimum_segment_mm": 1.4037546774220455,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48389653663034,
+          "minimum_segment_mm": 0.14202199217626948,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01494248737406,
+          "minimum_segment_mm": 0.4317896469278902,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458223357823,
+          "minimum_segment_mm": 2.9499442666680933,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44783003053965,
+          "minimum_segment_mm": 0.09654129161774493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01505104604691,
+          "minimum_segment_mm": 0.4317879039391854,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864343970735,
+          "minimum_segment_mm": 1.403755787050108,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.69018388159054,
+          "minimum_segment_mm": 0.17389916208753992,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504261523845,
+          "minimum_segment_mm": 0.4317822320341098,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186338657061,
+          "minimum_segment_mm": 1.4037547997921875,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "706d1a7542f6d2dbf86414b0c31e6bc9124ec025740158687d426c630623fc31",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 18,
+      "contours": 18,
+      "outer_contours": 12,
+      "minimum_piece_gap_mm": 2.999956900000001,
+      "segments": 1741,
+      "curves": 1590,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85949991889552,
+          "minimum_segment_mm": 0.17414959931275265,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01502616350187,
+          "minimum_segment_mm": 0.4317847496467533,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864813411308,
+          "minimum_segment_mm": 1.4037540852448684,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40799120779477,
+          "minimum_segment_mm": 0.11600433796289134,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01492589502026,
+          "minimum_segment_mm": 0.4317888744171291,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458709329425,
+          "minimum_segment_mm": 2.949926689604737,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.6051888130382,
+          "minimum_segment_mm": 0.19286108952490105,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150489213093,
+          "minimum_segment_mm": 0.43177307039872276,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186408881882,
+          "minimum_segment_mm": 1.4037548114825091,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48393271740326,
+          "minimum_segment_mm": 0.14202480619152555,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01493306976401,
+          "minimum_segment_mm": 0.431791722997917,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458320284736,
+          "minimum_segment_mm": 2.9499288678442634,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44782583640406,
+          "minimum_segment_mm": 0.09654641628364136,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150551151031,
+          "minimum_segment_mm": 0.43177768231520064,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186465199187,
+          "minimum_segment_mm": 1.403777019366392,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.6901803802623,
+          "minimum_segment_mm": 0.17389916208753992,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504261523845,
+          "minimum_segment_mm": 0.4317822320341098,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186338657061,
+          "minimum_segment_mm": 1.4037547997921875,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.vectorcraft",
+      "sha256": "afedd38614bfc850b4fe28ce56975849dc207b6698e6ce46e7e563ebcc312dbd",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        419.9999881320529,
+        297.0000023735894
+      ],
+      "drawing_objects": 18,
+      "contours": 18,
+      "outer_contours": 12,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 1741,
+      "curves": 1590,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85952035598655,
+          "minimum_segment_mm": 0.17414910529665892,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01503652483091,
+          "minimum_segment_mm": 0.43178474964674096,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186436542052,
+          "minimum_segment_mm": 1.4037541577761345,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40797398673425,
+          "minimum_segment_mm": 0.1160043541869238,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.014935312696835,
+          "minimum_segment_mm": 0.43178679842512196,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9345861240083,
+          "minimum_segment_mm": 2.9499420884545158,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.60521422996212,
+          "minimum_segment_mm": 0.1928539512399446,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504148356393,
+          "minimum_segment_mm": 0.4317780420724545,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865316741135,
+          "minimum_segment_mm": 1.4037546774220455,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48389653663034,
+          "minimum_segment_mm": 0.14202199217626948,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01494248737406,
+          "minimum_segment_mm": 0.4317896469278902,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458223357823,
+          "minimum_segment_mm": 2.9499442666680933,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44783003053965,
+          "minimum_segment_mm": 0.09654129161774493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01505104604691,
+          "minimum_segment_mm": 0.4317879039391854,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91864343970735,
+          "minimum_segment_mm": 1.403755787050108,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.69018388159054,
+          "minimum_segment_mm": 0.17389916208753992,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01504261523845,
+          "minimum_segment_mm": 0.4317822320341098,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186338657061,
+          "minimum_segment_mm": 1.4037547997921875,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "43928c8e58a39902e42829f6e2027b69aab458aa608e6cb40290c775551bc434",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        420.0000311957465,
+        297.0000023735894
+      ],
+      "drawing_objects": 18,
+      "contours": 18,
+      "outer_contours": 12,
+      "minimum_piece_gap_mm": 2.999967600000005,
+      "segments": 1741,
+      "curves": 1590,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 276,
+          "curves": 261,
+          "perimeter_mm": 235.85949398377363,
+          "minimum_segment_mm": 0.17414909534992853,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01503835620115,
+          "minimum_segment_mm": 0.431784075352436,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186326356315,
+          "minimum_segment_mm": 1.4037650649066327,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 272,
+          "curves": 257,
+          "perimeter_mm": 238.40797553049634,
+          "minimum_segment_mm": 0.11600969021124202,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01493673998866,
+          "minimum_segment_mm": 0.4317774434110399,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93458130797018,
+          "minimum_segment_mm": 2.9499472295919,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 253,
+          "curves": 231,
+          "perimeter_mm": 246.6052392348415,
+          "minimum_segment_mm": 0.19285760895769286,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.015027589049325,
+          "minimum_segment_mm": 0.4317608647561401,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91865857169614,
+          "minimum_segment_mm": 1.4037446722915865,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 275,
+          "curves": 257,
+          "perimeter_mm": 251.48387143532102,
+          "minimum_segment_mm": 0.1420007105897123,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0149533642044,
+          "minimum_segment_mm": 0.4317954100402921,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.93457272218893,
+          "minimum_segment_mm": 2.949956065724377,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 270,
+          "curves": 253,
+          "perimeter_mm": 230.44781409083663,
+          "minimum_segment_mm": 0.09654138377556636,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.0150341172322,
+          "minimum_segment_mm": 0.4317879039391854,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.91862953213578,
+          "minimum_segment_mm": 1.403745097448672,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 275,
+          "curves": 259,
+          "perimeter_mm": 262.6901315637603,
+          "minimum_segment_mm": 0.17389791028668897,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 43.01503678862936,
+          "minimum_segment_mm": 0.4317869406166142,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 187.9186560480058,
+          "minimum_segment_mm": 1.4037768494335916,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.svg",
+      "sha256": "96ffabccadf21631f1ed7c6fe88c59d644787eac95dca4a4b1d12e9b144f774e",
+      "sha256_mode": "LF-normalized text"
     }
   ],
   "inventory": [
@@ -14919,6 +19914,618 @@
       "status": "current_release_package"
     },
     {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/10_강민_스탠드_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/11_강윤진_스탠드_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/12_김윤_줄줄이_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/13_김호_줄줄이_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/14_배승민_줄줄이_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/15_이상준_스탠드_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/16_정지영_스탠드_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/17_줄줄이_결합판_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/01_PRINT_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/02_MASTER.vectorcraft",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.pdf",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/03_CUT_ONLY.svg",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/cut_detail.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/3T/sheet_01/validation.json",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/README.md",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판/final_preview.png",
+      "status": "current_supporting_artwork_or_documentation"
+    },
+    {
+      "file": "a3_release/18_스탠드_결합판_3T_A3.zip",
+      "status": "current_release_package"
+    },
+    {
       "file": "a3_release/A3_VALIDATION.json",
       "status": "current_supporting_artwork_or_documentation"
     },
@@ -14988,8 +20595,8 @@
     ]
   },
   "coverage": {
-    "current_pages": 7,
-    "expected_cut_files": 35,
+    "current_pages": 16,
+    "expected_cut_files": 80,
     "retired_files_are_not_counted_as_current_passes": true
   },
   "limitations": [

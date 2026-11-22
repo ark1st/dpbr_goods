@@ -1,0 +1,82 @@
+{
+  "applicant": "강민",
+  "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+  "source_column": "스탠드 키링 닉네임 작성",
+  "submitted_at": "2026-11-22 22:05:18",
+  "retrieved_at": "2026-11-22T15:53:50+00:00",
+  "route": {
+    "search": "https://maplestory.nexon.com/N23Ranking/World/Total?c={nickname}&w={world}",
+    "mode": "all-world top match (w=0, fallback w=254)",
+    "avatar": "https://avatar.maplestory.nexon.com/CharacterEx/180/{hex}.png",
+    "render": "https://open.api.nexon.com/static/maplestory/character/look/{hex}?action=A00&emotion=E00&wmotion=W00&width=300&height=300"
+  },
+  "characters": [
+    {
+      "nickname": "마가다락방",
+      "note": null,
+      "status": "unique",
+      "matches": [
+        {
+          "world": "리부트(icon_3)",
+          "w": 254,
+          "icon": 3,
+          "rank": 5260,
+          "level": 292,
+          "job": "제로",
+          "guild": "하모니",
+          "hex": "KJALKPJODGOKEKFBDDFCDEGJHMDPMKBMIPMHOJFOGNMCEFEFGGFLLHEPFOKLBDGOCCIGDEOIJBLNEGLNBALDPHGJPMBLLNCNEBIANNCIGIGKLNJPKFKFMOHMBJGEMCNPAJHDOENKJIMHHCKJJDIJALDJHIDEMBHIJIPKGOIOICOKCDCCHPABPDMPFDGFCKHNGPJAPDKDODMPHAGBDMIEIAACHPKJJKIJKOIHCOKCKHMGHCENMOLABCPIFMMDCKGPHLKACCKJMEDGJDIFIONMDFPPEGNEJGKGHIKIJJHIKBKDJGMDCPALHIINJDOCGAMBNNOAEHDFDBEKELDFBANJKJAGFEBLGDIIFJNPBAECKOOAFAMOHGBFCGLKBEECIPMAHPFMBEPKIOILOLMHCMFKFMEJAHCELJOPLJPHMNDGEDGGCMMJKMPJMGGJPJBGKHMDPCNBCBPODNAJJGPKFJCBCJGDAPDGBGGFJLKMNMIHBLIOHMMIJLGFEKHPJDCCDHHGLGMBBFBEPNINELHLHICFJKNPALPKOGCCINCHFPMKMHNELFPHPPOHPLOCMAGAHPJGHNLNBDBIOJJOBCHJIPEEKMLHOPFAOFKICGOJOJFKGNHCMDDMHACALLJMFGFCBBLPHEFMAEPALFKBIHDFFIGKCFNJCPBCJGDJNKBCIDFINJNBKKGBMJABDIKEGMLJEEMPJHMMAEEDNPJKCKHFNJKOBCCPOBBENNPKIJAHBNOKCEFJGCFPHPEBAOPNAFJPJINLIKMFFNEHEADCOMFFEDMEGAFLDKOBDLCOPGDBGICJDBICILFNKPIEKBBCKMGLALFPDEKHOLIKPJPLAMDGMACOEGNPOBLHDODLIFIBCHKMHICAGCENGFMNONHKGEEBMMKNMNCAGOKLJOHBFDJPLCEAOJCANDCIJLAOFEIKPFOIGBLDOIPNFBLAAGPJCMPDHNCDBLDIIACPEMFKAKDDMDJBHPMCKOKDNIKPFDHAGJEMHMDLLDACLGPPFPOKDNJFMBHG",
+          "files": {
+            "avatar180": "마가다락방__리부트(icon_3)_avatar180.png",
+            "render300": "마가다락방__리부트(icon_3)_render300.png"
+          },
+          "sha256": {
+            "avatar180": "1d2fae6e11d1cb1e5e6e9ba11839f83b034c8aab1550294f7d77938739831eef",
+            "render300": "20ea9c0f9d5253fdfba3b1d080f53e351e2f4816dc6885277e206d034f49691e"
+          },
+          "dims": {
+            "avatar180": [
+              180,
+              180
+            ],
+            "render300": [
+              300,
+              300
+            ]
+          },
+          "download_errors": [],
+          "look_mode_today": "0",
+          "zero_modes": {
+            "active_mode_today": "beta",
+            "note": "제로는 알파·베타 두 몸이 있고 공식 이미지는 '현재 활성 모드'만 렌더함. 반대 모드는 look_mode가 뒤집힌 과거/현재 시점의 공식 character_image로 확보.",
+            "alpha": {
+              "hair": "파란색 포르테 헤어",
+              "face": "냉소적인 아잉 얼굴",
+              "files": {
+                "avatar180": "마가다락방__리부트(icon_3)_avatar180.png",
+                "render300": "마가다락방__리부트(icon_3)_render300.png"
+              },
+              "sha256": {
+                "avatar180": "1d2fae6e11d1cb1e5e6e9ba11839f83b034c8aab1550294f7d77938739831eef",
+                "render300": "20ea9c0f9d5253fdfba3b1d080f53e351e2f4816dc6885277e206d034f49691e"
+              },
+              "source": "랭킹 스냅샷(모드 전환 전 상태) — 공식 look_mode=1 시점(2026-10-20 등) 이미지와 픽셀 일치 확인"
+            },
+            "beta": {
+              "hair": "갈색 홍차소녀 헤어",
+              "face": "냉소적인 아잉 얼굴",
+              "files": {
+                "avatar180": "마가다락방__리부트(icon_3)_avatar180_beta.png",
+                "render300": "마가다락방__리부트(icon_3)_render300_beta.png"
+              },
+              "sha256": {
+                "avatar180": "232554fa9c1780ab2195b1ee18122deafdcc51256bc6b8affe256105c8799bf9",
+                "render300": "3023bdcf3ee201716d5c975984e616f2d544de5132d0e275c843ac009a10189f"
+              },
+              "source": "Nexon OpenAPI character_basic (금일, look_mode=0 현재 활성 모드)"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

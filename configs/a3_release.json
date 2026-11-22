@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-yanggum-combined",
+  "revision": "A3-2026-11-23-chain-keyring",
   "canvas_mm": [
     420,
     297
@@ -168,7 +168,16 @@
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
-    "09_yanggum/3T": 3
+    "09_yanggum/3T": 3,
+    "10_강민_스탠드/3T": 4,
+    "11_강윤진_스탠드/3T": 4,
+    "12_김윤_줄줄이/3T": 5,
+    "13_김호_줄줄이/3T": 6,
+    "14_배승민_줄줄이/3T": 3,
+    "15_이상준_스탠드/3T": 2,
+    "16_정지영_스탠드/3T": 2,
+    "17_줄줄이_결합판/3T": 14,
+    "18_스탠드_결합판/3T": 12
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -266,7 +275,16 @@
   "optional_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T",
-    "09_yanggum/3T"
+    "09_yanggum/3T",
+    "10_강민_스탠드/3T",
+    "11_강윤진_스탠드/3T",
+    "12_김윤_줄줄이/3T",
+    "13_김호_줄줄이/3T",
+    "14_배승민_줄줄이/3T",
+    "15_이상준_스탠드/3T",
+    "16_정지영_스탠드/3T",
+    "17_줄줄이_결합판/3T",
+    "18_스탠드_결합판/3T"
   ],
   "len_dot_revision": {
     "art_height_mm": 50,
@@ -385,6 +403,31 @@
       "hole_to_art_min_mm": 5,
       "hole_to_edge_min_mm": 4,
       "carrier_width_mm": 13
+    }
+  },
+  "chain_keyring_products": {
+    "keyring": {
+      "art_height_mm": 40,
+      "clear_border_mm": 2.5,
+      "hole_diameter_mm": 4,
+      "hole_to_art_min_mm": 5,
+      "hole_to_edge_min_mm": 4,
+      "carrier_width_mm": 13,
+      "art_top_mm": 25
+    },
+    "stand": {
+      "art_height_mm": 60,
+      "clear_border_mm": 2.5,
+      "tab_width_mm": 18,
+      "tab_bottom_clearance_mm": 0.4,
+      "bridge_rise_mm": 9,
+      "base_size_mm": [
+        72,
+        28
+      ],
+      "base_corner_radius_mm": 7,
+      "slot_length_mm": 18.8,
+      "slot_corner_radius_mm": 0.35
     }
   }
 }

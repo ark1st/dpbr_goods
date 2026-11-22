@@ -17,6 +17,10 @@ def output_inventory(out):
         required.add('a3_release/09_yanggum/assembly.png')
         required.add('a3_release/09_yanggum/final_preview.png')
         required.add('a3_release/yanggum_final_preview.png')
+    chain_cats={g.split('/')[0] for g in manifest['groups']
+                if g.split('/')[0].split('_')[0] in ('10','11','12','13','14','15','16','17','18')}
+    for cat in sorted(chain_cats):
+        required.add('a3_release/'+cat+'/final_preview.png')
     for group,pages in manifest['groups'].items():
         required.add('a3_release/'+group.split('/')[0]+'/README.md')
         required.add('a3_release/'+group.replace('/','_')+'_A3.zip')

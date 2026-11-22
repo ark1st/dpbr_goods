@@ -22,12 +22,22 @@ def main():
 | 현재 2 | [혼합 A3 2: Len 일반·DOT + 튀잉 + 카데나 나머지](05_len/3T/sheet_01) | 15조각 |
 | 별도 선택안 | [새 Len PAD](06_len_pad/3T/sheet_01) | 받침 1 + 파츠 6 = 7조각, 별도 A3 1장 |
 | 별도 선택안 | [양검 SD 스탠드+키링 결합판](09_yanggum/3T/sheet_01) | 캐릭터+받침+키링 = 3조각, 별도 A3 1장 |
+| 별도 선택안 | [김호 줄줄이](13_김호_줄줄이/3T/sheet_01) | 6조각 (뿟쥐 알파+베타 포함), A3 1장 |
+| 별도 선택안 | [김윤 줄줄이](12_김윤_줄줄이/3T/sheet_01) | 5조각, A3 1장 |
+| 별도 선택안 | [배승민 줄줄이](14_배승민_줄줄이/3T/sheet_01) | 3조각, A3 1장 |
+| 별도 선택안 | [강민 스탠드](10_강민_스탠드/3T/sheet_01) | 마가다락방 알파+베타 = 4조각, A3 1장 |
+| 별도 선택안 | [강윤진 스탠드](11_강윤진_스탠드/3T/sheet_01) | 청민예 알파+베타 = 4조각, A3 1장 |
+| 별도 선택안 | [이상준 스탠드](15_이상준_스탠드/3T/sheet_01) | 2조각, A3 1장 |
+| 별도 선택안 | [정지영 스탠드](16_정지영_스탠드/3T/sheet_01) | 2조각, A3 1장 |
+| 별도 선택안 | [줄줄이 전원 결합판](17_줄줄이_결합판/3T/sheet_01) | 14조각, A3 1장 |
+| 별도 선택안 | [스탠드 전원 결합판](18_스탠드_결합판/3T/sheet_01) | 12조각, A3 1장 |
 
 양검 두 제품의 최종 모습 미리보기(인쇄 데이터 기준, 실물 사진 아님):
 
 ![양검 최종 미리보기](yanggum_final_preview.png)
 
 현재 확정 목록은 **2장 / 56조각**입니다. PAD까지 별도로 출력하면 **3장 / 63조각**입니다. 양검 스탠드·키링은 한 장의 결합 선택안에 함께 들어 있습니다.
+신청자별 줄줄이·스탠드 키링은 별도 선택안 9대지(신청자별 7장 + 전원 결합 2장)입니다. 제로 신청자(강민·강윤진·김호의 뿟쥐)는 알파·베타 두 모드 조각이 모두 포함되고, 인쇄 원본은 공식 look 렌더(render300)를 그대로 사용합니다.
 단팽이 1개·단풍바람 로고 키링 2개는 제외했습니다. 카데나는 독립 판 없이 두 시트에 나누었습니다.
 Python으로 실제 외곽을 회전·이동해 충돌과 간격을 검사했습니다. 56조각의 구멍을 뺀 재료 면적이 A3 한 장보다 크고 두 장 배치가 성립하므로, 현재 구성의 최소 장수는 2장입니다. 수치는 `A3_VALIDATION.json`의 `minimum_sheet_proof`에 있습니다.
 PAD는 다른 받침·배경을 쓰는 별도 세트이며, 일반·DOT와 공통 받침을 쓰는 것으로 합치지 않았습니다.
@@ -64,9 +74,17 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
     write(BASE/'README.md','# A3 제작 파일 · 현재 3T\n\n'+common)
     from yanggum_parts import render_final_preview
     render_final_preview(ROOT,BASE/'yanggum_final_preview.png',cfg['yanggum_products'])
+    from chain_keyring_parts import build_all as chain_build_all,group_title,render_group_preview
+    chain_records=chain_build_all(None)
+    for rec in chain_records:
+        render_group_preview(rec,BASE/rec['group'].split('/')[0]/'final_preview.png')
+    chain_by_cat={rec['group'].split('/')[0]:rec for rec in chain_records}
+    chain_cats=set(chain_by_cat)
     titles={'02_extra_sheet':'혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각','05_len':'혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 15조각','06_len_pad':'Len PAD · 별도 선택안 7조각','09_yanggum':'양검 SD 스탠드+키링 결합판 · 3조각'}
+    for rec in chain_records:
+        titles[rec['group'].split('/')[0]]=group_title(rec)
     for cat,title in titles.items():
-        if cat=='09_yanggum':
+        if cat=='09_yanggum' or cat in chain_cats:
             text='[현재 3T 제작 파일](3T/sheet_01)\n\n![3T 배치](3T/sheet_01/preview.png)\n'
         else:
             text='[현재 3T 제작 파일](3T/sheet_01) · [선택 대안 5T](5T/sheet_01)\n\n![3T 배치](3T/sheet_01/preview.png)\n\n![5T 대안 배치](5T/sheet_01/preview.png)\n'
@@ -86,6 +104,15 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
             render_assembly(ROOT,BASE/cat/'assembly.png',cfg['yanggum_products']['stand'])
             shutil.copy2(BASE/'yanggum_final_preview.png',BASE/cat/'final_preview.png')
             text+='\n양검(yanggum) SD 스탠드와 키링을 한 장에 담은 결합판입니다. 스탠드: 제공 원본 그림을 그대로 인쇄, 그림 높이 60mm, 컷 62.2×67.5mm. 받침 72×28mm(모서리 R7)는 인쇄 잉크가 없는 투명 아크릴이며, 발 아래 탭 18mm 폭·삽입깊이 2.6mm가 받침 홈 18.8×3.0mm에 끼워집니다. 키링: 그림 높이 40mm, 컷 43.1×58.0mm, 머리 위 캐리어(폭 13mm)에 ⌀4mm 구멍, 구멍까지 그림 6mm·칼선 4.5mm 여유. 줄줄이 키링 8종과는 별개입니다. 5T 대안은 아직 만들지 않았습니다.\n\n![조립 참고](assembly.png)\n\n![최종 모습 미리보기 · 인쇄 데이터 기준, 실물 사진 아님](final_preview.png)\n'
+        if cat in chain_cats:
+            rec=chain_by_cat[cat]
+            if rec['kind']=='줄줄이':
+                text+='\n수요조사 신청 품목(캐릭터 줄줄이 키링 4×4cm)의 조각입니다. 그림 높이 40mm, 캐리어 폭 13mm, 구멍 ⌀4mm — 구멍까지 그림 6mm·칼선 4.5mm 여유. 조각마다 구멍이 있어 링·체인으로 연결하며 링은 별매입니다. 제로 캐릭터는 알파·베타 두 모드 조각이 모두 포함됩니다. 인쇄 원본은 공식 look 렌더(render300)를 재작성 없이 그대로 인쇄합니다.\n'
+            else:
+                text+='\n수요조사 신청 품목(캐릭터 스탠드 키링 6×6cm)의 조각입니다. 캐릭터 그림 높이 60mm, 발 아래 탭 18mm 폭·삽입깊이 2.6mm가 받침 72×28mm(모서리 R7)의 홈 18.8×3.0mm에 끼워집니다. 받침은 무인쇄 투명 아크릴입니다. 제로 캐릭터는 알파·베타 두 모드 스탠드가 모두 포함됩니다.\n'
+            if rec['applicant'] is None:
+                text+='\n신청자 전원의 조각을 한 번에 재단하기 위한 결합판입니다. 신청자별 대지(10–16번)와 같은 조각입니다.\n'
+            text+='\n![최종 모습 미리보기 · 인쇄 데이터 기준, 실물 사진 아님](final_preview.png)\n'
         write(BASE/cat/'README.md',f'# {title}\n\n'+text+'\n실물 검증 전입니다. [전체 출력 안내](../README.md)\n')
     included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
     for group,pages in m['groups'].items():
@@ -109,6 +136,8 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
 별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01). 이것도 출력하면 총3장·63조각입니다.
 
 별도 선택안: [양검(yanggum) SD 스탠드+키링 결합판 · 캐릭터+받침+키링 3조각 / A3 1장](a3_release/09_yanggum/3T/sheet_01). 제공 원본 그림을 그대로 인쇄합니다.
+
+별도 선택안: 수요조사 신청자별 키링 9대지 — [줄줄이 전원 결합판 14조각](a3_release/17_줄줄이_결합판/3T/sheet_01) · [스탠드 전원 결합판 12조각](a3_release/18_스탠드_결합판/3T/sheet_01) · 신청자별: [강민](a3_release/10_강민_스탠드/3T/sheet_01) [강윤진](a3_release/11_강윤진_스탠드/3T/sheet_01) [김윤](a3_release/12_김윤_줄줄이/3T/sheet_01) [김호](a3_release/13_김호_줄줄이/3T/sheet_01) [배승민](a3_release/14_배승민_줄줄이/3T/sheet_01) [이상준](a3_release/15_이상준_스탠드/3T/sheet_01) [정지영](a3_release/16_정지영_스탠드/3T/sheet_01). 제로 신청자는 알파·베타 두 모드 조각 포함, 인쇄 원본은 공식 look 렌더 그대로.
 
 [이전 파일·원본 백업(raw)](https://github.com/ark1st/dpbr_goods/tree/raw) · [main 소스](https://github.com/ark1st/dpbr_goods/tree/main)
 

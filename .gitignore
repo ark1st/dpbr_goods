@@ -8,3 +8,6 @@ __pycache__/
 Thumbs.db
 # OS download metadata is not a source asset.
 *:Zone.Identifier
+# Survey workbook carries respondent PII; applicants.json is the scrubbed index.
+assets/chain_keyring/*.xlsx
+assets/chain_keyring/~$*
