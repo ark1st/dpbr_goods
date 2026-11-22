@@ -1,0 +1,13 @@
+{
+  "ids": [
+    "tuiing_01",
+    "golden_01",
+    "burnt_01",
+    "unfried_01"
+  ],
+  "scale_pixels_per_mm": 7,
+  "linking_holes_per_piece": 2,
+  "preview_hole_center_spacing_mm": 10,
+  "physical_test": false,
+  "rings": "Illustrative hardware only; not acrylic cutting paths"
+}

@@ -2,6 +2,11 @@
 
 **선택 재료 3T · A3 420×297mm · 실제 크기100%. 시험편 없음.**
 
+[개별 에셋 · 원본 방향 AI/PDF·그림·칼선](individual_assets) · [줄줄이 튀잉 완성 예시](individual_assets/linked_tuiing_assembly.png)
+기본 파일은 개별 에셋으로 관리합니다. 아래 A3는 출력할 때 쓰는 배치본입니다.
+
+![줄줄이 튀잉 연결 예시](individual_assets/linked_tuiing_assembly.png)
+
 1. [혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각](a3_release/02_extra_sheet/3T/sheet_01)
 2. [혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 15조각](a3_release/05_len/3T/sheet_01)
 

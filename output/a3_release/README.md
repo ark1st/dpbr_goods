@@ -1,5 +1,7 @@
 # A3 제작 파일 · 현재 3T
 
+[개별 에셋 · 원본 방향 편집본](../individual_assets) · [줄줄이 튀잉 연결 예시](../individual_assets/linked_tuiing_assembly.png)
+
 **현재 선택: 3T. A3 가로 420×297mm, 실제 크기 100%, 자동 맞춤 해제.**
 
 | 구분 | 시트 | 구성 |
