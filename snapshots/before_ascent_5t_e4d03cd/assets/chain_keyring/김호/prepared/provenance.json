@@ -1,0 +1,175 @@
+{
+  "print_source_policy": "인쇄 원본은 OpenAPI look 렌더(render300) 파일뿐이다. 전원 코너 투명·섬 1~2개의 컷아웃으로 실측됐으며 랭킹 아바타180과 픽셀 동일한 캐릭터도 있다. avatar180 파일 중 룃혜(불투명 95%), 믐댕·타루카루타·안개질무렵(불투명 61~78%, 효과 파티클 95~476개)은 배경·효과 캔버스라 인쇄에 쓰지 않고 조회 근거로만 보존한다.",
+  "keep_rule": "clear border 2.5mm 기준, stand 60mm 스케일에서 2.4mm 이내 디테일만 유지하고 나머지는 알파 0 처리",
+  "resample": "NEAREST (도트 그리드 보존, 업스케일 아닌 인쇄 크기 정확화)",
+  "sprites": [
+    {
+      "source": "냘됫__리부트(icon_3)_render300.png",
+      "mode": "현재 모드",
+      "sha256": "6117da4220ad8165711669c6156200ae6ded3b581e421e8feae9b9761af54664",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        78,
+        84
+      ],
+      "outputs_px": {
+        "chain40": [
+          438,
+          472
+        ],
+        "stand60": [
+          658,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    },
+    {
+      "source": "뿟쥐__리부트(icon_3)_render300.png",
+      "mode": "베타 (현재 활성 모드)",
+      "sha256": "cf468a28264a950ebea77e808a18accfcf21a1de5e228f306732ddfbf80670ec",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        95,
+        84
+      ],
+      "outputs_px": {
+        "chain40": [
+          534,
+          472
+        ],
+        "stand60": [
+          802,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    },
+    {
+      "source": "뿟쥐__리부트(icon_3)_render300_alpha.png",
+      "mode": "알파 (공식 과거 이미지)",
+      "sha256": "3dc98a7002ac4ef0b008c00d28230e60478bb42ceef91295e27086c2bc3a570f",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        93,
+        73
+      ],
+      "outputs_px": {
+        "chain40": [
+          601,
+          472
+        ],
+        "stand60": [
+          903,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    },
+    {
+      "source": "걸퍄__리부트(icon_3)_render300.png",
+      "mode": "현재 모드",
+      "sha256": "bcacba90f5b2465c88ab4012d4447ab4cbaf9481bdba4e15566ec43663812576",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        96,
+        90
+      ],
+      "outputs_px": {
+        "chain40": [
+          503,
+          472
+        ],
+        "stand60": [
+          756,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    },
+    {
+      "source": "얽빅__리부트(icon_3)_render300.png",
+      "mode": "현재 모드",
+      "sha256": "f22b3c61604b59603e9be1cdf8b93d787af80fb2c183108b6eb37ec764096adc",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        68,
+        90
+      ],
+      "outputs_px": {
+        "chain40": [
+          357,
+          472
+        ],
+        "stand60": [
+          536,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    },
+    {
+      "source": "씀툿__리부트(icon_3)_render300.png",
+      "mode": "현재 모드",
+      "sha256": "d59504ebe10612a4f711113ca5f0dd97ea24b1eb545f3b14a06c08965e8ccbd0",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        84,
+        81
+      ],
+      "outputs_px": {
+        "chain40": [
+          489,
+          472
+        ],
+        "stand60": [
+          735,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    }
+  ]
+}

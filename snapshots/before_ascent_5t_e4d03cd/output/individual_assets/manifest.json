@@ -1,0 +1,4083 @@
+{
+  "revision": "individual-assets-v1",
+  "assets": [
+    {
+      "id": "ascent_01",
+      "folder": "individual_assets/ascent_01",
+      "canvas_mm": [
+        108.00002579999995,
+        33.999977700000045
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_02",
+      "folder": "individual_assets/ascent_02",
+      "canvas_mm": [
+        108.00002579999995,
+        33.99997760000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_03",
+      "folder": "individual_assets/ascent_03",
+      "canvas_mm": [
+        108.00002579999995,
+        33.999977599999966
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_04",
+      "folder": "individual_assets/ascent_04",
+      "canvas_mm": [
+        108.00002579999995,
+        33.99997760000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_05",
+      "folder": "individual_assets/ascent_05",
+      "canvas_mm": [
+        108.00002579999995,
+        33.99997760000008
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_06",
+      "folder": "individual_assets/ascent_06",
+      "canvas_mm": [
+        108.0000258,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_07",
+      "folder": "individual_assets/ascent_07",
+      "canvas_mm": [
+        108.00002579999995,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_08",
+      "folder": "individual_assets/ascent_08",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80699749999997
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_09",
+      "folder": "individual_assets/ascent_09",
+      "canvas_mm": [
+        107.99999340000001,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_10",
+      "folder": "individual_assets/ascent_10",
+      "canvas_mm": [
+        108.0000042,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_11",
+      "folder": "individual_assets/ascent_11",
+      "canvas_mm": [
+        107.99999340000001,
+        66.8069868
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_12",
+      "folder": "individual_assets/ascent_12",
+      "canvas_mm": [
+        108.0000042,
+        66.8069868
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_13",
+      "folder": "individual_assets/ascent_13",
+      "canvas_mm": [
+        108.0000258,
+        66.8069868
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_14",
+      "folder": "individual_assets/ascent_14",
+      "canvas_mm": [
+        108.00002579999995,
+        66.8069868
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_15",
+      "folder": "individual_assets/ascent_15",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_16",
+      "folder": "individual_assets/ascent_16",
+      "canvas_mm": [
+        108.0000042,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_17",
+      "folder": "individual_assets/ascent_17",
+      "canvas_mm": [
+        108.0000258,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_18",
+      "folder": "individual_assets/ascent_18",
+      "canvas_mm": [
+        108.00002579999995,
+        66.80698679999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_19",
+      "folder": "individual_assets/ascent_19",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80697599999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_20",
+      "folder": "individual_assets/ascent_20",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80697600000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_21",
+      "folder": "individual_assets/ascent_21",
+      "canvas_mm": [
+        107.99999340000001,
+        66.80701909999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_22",
+      "folder": "individual_assets/ascent_22",
+      "canvas_mm": [
+        108.0000042,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_23",
+      "folder": "individual_assets/ascent_23",
+      "canvas_mm": [
+        108.0000042,
+        66.80697600000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_24",
+      "folder": "individual_assets/ascent_24",
+      "canvas_mm": [
+        108.0000042,
+        66.80701909999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_25",
+      "folder": "individual_assets/ascent_25",
+      "canvas_mm": [
+        108.0000258,
+        66.80699749999997
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_26",
+      "folder": "individual_assets/ascent_26",
+      "canvas_mm": [
+        108.00002579999995,
+        66.80699749999997
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_27",
+      "folder": "individual_assets/ascent_27",
+      "canvas_mm": [
+        108.0000258,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_28",
+      "folder": "individual_assets/ascent_28",
+      "canvas_mm": [
+        108.00002579999995,
+        66.8069759
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_29",
+      "folder": "individual_assets/ascent_29",
+      "canvas_mm": [
+        108.0000258,
+        66.80697600000002
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ascent_30",
+      "folder": "individual_assets/ascent_30",
+      "canvas_mm": [
+        108.0000258,
+        66.80701909999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "burnt_01",
+      "folder": "individual_assets/burnt_01",
+      "canvas_mm": [
+        39.01257589902344,
+        61.36111503115234
+      ],
+      "a3_groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "danba_logo_smooth",
+      "folder": "individual_assets/danba_logo_smooth",
+      "canvas_mm": [
+        27.323660265625,
+        34.03909990625
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T",
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_01",
+      "folder": "individual_assets/extra_3T_01",
+      "canvas_mm": [
+        31.49099530000001,
+        20.8014723
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_02",
+      "folder": "individual_assets/extra_3T_02",
+      "canvas_mm": [
+        30.7678698,
+        24.062212200000005
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_03",
+      "folder": "individual_assets/extra_3T_03",
+      "canvas_mm": [
+        31.701378950000006,
+        24.482944400000008
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_04",
+      "folder": "individual_assets/extra_3T_04",
+      "canvas_mm": [
+        23.115543000000002,
+        31.793731750000006
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_05",
+      "folder": "individual_assets/extra_3T_05",
+      "canvas_mm": [
+        31.582225800000003,
+        21.432570700000014
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_06",
+      "folder": "individual_assets/extra_3T_06",
+      "canvas_mm": [
+        78.4863018,
+        27.42986832500003
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_07",
+      "folder": "individual_assets/extra_3T_07",
+      "canvas_mm": [
+        71.91781549999999,
+        39.0095125
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_08",
+      "folder": "individual_assets/extra_3T_08",
+      "canvas_mm": [
+        28.977534324999965,
+        21.380625100000003
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_09",
+      "folder": "individual_assets/extra_3T_09",
+      "canvas_mm": [
+        24.429747300000002,
+        25.1020604
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_10",
+      "folder": "individual_assets/extra_3T_10",
+      "canvas_mm": [
+        87.60308978319921,
+        45.56579380656434
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_11",
+      "folder": "individual_assets/extra_3T_11",
+      "canvas_mm": [
+        20.8014723,
+        31.491006025000004
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_12",
+      "folder": "individual_assets/extra_3T_12",
+      "canvas_mm": [
+        24.06221210000001,
+        30.767858999999987
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_13",
+      "folder": "individual_assets/extra_3T_13",
+      "canvas_mm": [
+        31.70136150000002,
+        24.48294439999998
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_14",
+      "folder": "individual_assets/extra_3T_14",
+      "canvas_mm": [
+        31.793731750000006,
+        23.115543000000002
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_15",
+      "folder": "individual_assets/extra_3T_15",
+      "canvas_mm": [
+        31.58222569999998,
+        21.432581499999998
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_16",
+      "folder": "individual_assets/extra_3T_16",
+      "canvas_mm": [
+        87.60307071759797,
+        45.565796737112436
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_17",
+      "folder": "individual_assets/extra_3T_17",
+      "canvas_mm": [
+        27.727976699999942,
+        22.382997200000005
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_18",
+      "folder": "individual_assets/extra_3T_18",
+      "canvas_mm": [
+        78.4863019,
+        27.429871074999994
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_19",
+      "folder": "individual_assets/extra_3T_19",
+      "canvas_mm": [
+        71.91781279999998,
+        39.009534099999996
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_20",
+      "folder": "individual_assets/extra_3T_20",
+      "canvas_mm": [
+        28.977534399999968,
+        21.380614400000013
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_21",
+      "folder": "individual_assets/extra_3T_21",
+      "canvas_mm": [
+        24.42974054999999,
+        25.1020604
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_22",
+      "folder": "individual_assets/extra_3T_22",
+      "canvas_mm": [
+        27.727992924999967,
+        22.38300799999999
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_23",
+      "folder": "individual_assets/extra_3T_23",
+      "canvas_mm": [
+        76.99859804577636,
+        72.770961075
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_24",
+      "folder": "individual_assets/extra_3T_24",
+      "canvas_mm": [
+        76.9985980468994,
+        72.77096382499998
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_25",
+      "folder": "individual_assets/extra_3T_25",
+      "canvas_mm": [
+        154.704367,
+        88.88066939902343
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_26",
+      "folder": "individual_assets/extra_3T_26",
+      "canvas_mm": [
+        154.8309764018188,
+        89.20993504785844
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_27",
+      "folder": "individual_assets/extra_3T_27",
+      "canvas_mm": [
+        68.87976975683597,
+        46.41805062939454
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_28",
+      "folder": "individual_assets/extra_3T_28",
+      "canvas_mm": [
+        66.41740045290527,
+        44.17043870462953
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_29",
+      "folder": "individual_assets/extra_3T_29",
+      "canvas_mm": [
+        84.0000049,
+        33.99997760000001
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_30",
+      "folder": "individual_assets/extra_3T_30",
+      "canvas_mm": [
+        84.00002640000002,
+        33.9999777
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_34",
+      "folder": "individual_assets/extra_3T_34",
+      "canvas_mm": [
+        46.41727799965207,
+        65.8233151
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_35",
+      "folder": "individual_assets/extra_3T_35",
+      "canvas_mm": [
+        44.171551827395604,
+        64.3913181
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_36",
+      "folder": "individual_assets/extra_3T_36",
+      "canvas_mm": [
+        84.00002640000002,
+        34.00002070000001
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_37",
+      "folder": "individual_assets/extra_3T_37",
+      "canvas_mm": [
+        84.00002640000002,
+        33.99997760000001
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_3T_38",
+      "folder": "individual_assets/extra_3T_38",
+      "canvas_mm": [
+        83.99998339999996,
+        33.999977599999994
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_01",
+      "folder": "individual_assets/extra_5T_01",
+      "canvas_mm": [
+        31.49099530000001,
+        20.8014723
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_02",
+      "folder": "individual_assets/extra_5T_02",
+      "canvas_mm": [
+        30.7678698,
+        24.062212200000005
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_03",
+      "folder": "individual_assets/extra_5T_03",
+      "canvas_mm": [
+        31.701378950000006,
+        24.482944400000008
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_04",
+      "folder": "individual_assets/extra_5T_04",
+      "canvas_mm": [
+        23.115543000000002,
+        31.793731750000006
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_05",
+      "folder": "individual_assets/extra_5T_05",
+      "canvas_mm": [
+        31.582225800000003,
+        21.432570700000014
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_06",
+      "folder": "individual_assets/extra_5T_06",
+      "canvas_mm": [
+        78.4863018,
+        27.42986832500003
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_07",
+      "folder": "individual_assets/extra_5T_07",
+      "canvas_mm": [
+        71.91781549999999,
+        39.0095125
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_08",
+      "folder": "individual_assets/extra_5T_08",
+      "canvas_mm": [
+        28.977534324999965,
+        21.380625100000003
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_09",
+      "folder": "individual_assets/extra_5T_09",
+      "canvas_mm": [
+        24.429747300000002,
+        25.1020604
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_10",
+      "folder": "individual_assets/extra_5T_10",
+      "canvas_mm": [
+        87.60308978319921,
+        45.56579380656434
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_11",
+      "folder": "individual_assets/extra_5T_11",
+      "canvas_mm": [
+        20.8014723,
+        31.491006025000004
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_12",
+      "folder": "individual_assets/extra_5T_12",
+      "canvas_mm": [
+        24.06221210000001,
+        30.767858999999987
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_13",
+      "folder": "individual_assets/extra_5T_13",
+      "canvas_mm": [
+        31.70136150000002,
+        24.48294439999998
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_14",
+      "folder": "individual_assets/extra_5T_14",
+      "canvas_mm": [
+        31.793731750000006,
+        23.115543000000002
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_15",
+      "folder": "individual_assets/extra_5T_15",
+      "canvas_mm": [
+        31.58222569999998,
+        21.432581499999998
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_16",
+      "folder": "individual_assets/extra_5T_16",
+      "canvas_mm": [
+        87.60307071759797,
+        45.565796737112436
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_17",
+      "folder": "individual_assets/extra_5T_17",
+      "canvas_mm": [
+        27.727976699999942,
+        22.382997200000005
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_18",
+      "folder": "individual_assets/extra_5T_18",
+      "canvas_mm": [
+        78.4863019,
+        27.429871074999994
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_19",
+      "folder": "individual_assets/extra_5T_19",
+      "canvas_mm": [
+        71.91781279999998,
+        39.009534099999996
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_20",
+      "folder": "individual_assets/extra_5T_20",
+      "canvas_mm": [
+        28.977534399999968,
+        21.380614400000013
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_21",
+      "folder": "individual_assets/extra_5T_21",
+      "canvas_mm": [
+        24.42974054999999,
+        25.1020604
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_22",
+      "folder": "individual_assets/extra_5T_22",
+      "canvas_mm": [
+        27.727992924999967,
+        22.38300799999999
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_23",
+      "folder": "individual_assets/extra_5T_23",
+      "canvas_mm": [
+        76.99859804577636,
+        72.770961075
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_24",
+      "folder": "individual_assets/extra_5T_24",
+      "canvas_mm": [
+        76.9985980468994,
+        72.77096382499998
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_25",
+      "folder": "individual_assets/extra_5T_25",
+      "canvas_mm": [
+        156.7043742,
+        88.88066939902343
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_26",
+      "folder": "individual_assets/extra_5T_26",
+      "canvas_mm": [
+        156.8309404018188,
+        89.20993504785844
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_27",
+      "folder": "individual_assets/extra_5T_27",
+      "canvas_mm": [
+        68.87976975683597,
+        46.41805062939454
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_28",
+      "folder": "individual_assets/extra_5T_28",
+      "canvas_mm": [
+        66.41740045290527,
+        44.17043870462953
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_29",
+      "folder": "individual_assets/extra_5T_29",
+      "canvas_mm": [
+        84.0000049,
+        33.99997760000001
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_30",
+      "folder": "individual_assets/extra_5T_30",
+      "canvas_mm": [
+        84.00002640000002,
+        33.9999777
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_34",
+      "folder": "individual_assets/extra_5T_34",
+      "canvas_mm": [
+        46.41727799965207,
+        67.8233222
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_35",
+      "folder": "individual_assets/extra_5T_35",
+      "canvas_mm": [
+        44.171482938763404,
+        66.3913252
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_36",
+      "folder": "individual_assets/extra_5T_36",
+      "canvas_mm": [
+        84.00002640000002,
+        34.00002070000001
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_37",
+      "folder": "individual_assets/extra_5T_37",
+      "canvas_mm": [
+        84.00002640000002,
+        33.99997760000001
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "extra_5T_38",
+      "folder": "individual_assets/extra_5T_38",
+      "canvas_mm": [
+        83.99998339999996,
+        33.999977599999994
+      ],
+      "a3_groups": [
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "golden_01",
+      "folder": "individual_assets/golden_01",
+      "canvas_mm": [
+        39.01257589902344,
+        61.36111503115234
+      ],
+      "a3_groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_01",
+      "folder": "individual_assets/len_3T_01",
+      "canvas_mm": [
+        259.94500400000004,
+        109.299996
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_02",
+      "folder": "individual_assets/len_3T_02",
+      "canvas_mm": [
+        137.52684312890628,
+        63.51212450000003
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_03",
+      "folder": "individual_assets/len_3T_03",
+      "canvas_mm": [
+        65.46698425195314,
+        83.543243390625
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_04",
+      "folder": "individual_assets/len_3T_04",
+      "canvas_mm": [
+        69.92068475122068,
+        71.54645186523433
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_05",
+      "folder": "individual_assets/len_3T_05",
+      "canvas_mm": [
+        74.6986613613281,
+        61.54277393749999
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_06",
+      "folder": "individual_assets/len_3T_06",
+      "canvas_mm": [
+        81.15259204296876,
+        87.54002342187499
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_3T_07",
+      "folder": "individual_assets/len_3T_07",
+      "canvas_mm": [
+        278.99998,
+        63.999998000000005
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_01",
+      "folder": "individual_assets/len_5T_01",
+      "canvas_mm": [
+        259.94500400000004,
+        111.300004
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_02",
+      "folder": "individual_assets/len_5T_02",
+      "canvas_mm": [
+        137.52684312890628,
+        65.51213150000001
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_03",
+      "folder": "individual_assets/len_5T_03",
+      "canvas_mm": [
+        65.46698425195314,
+        85.543250390625
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_04",
+      "folder": "individual_assets/len_5T_04",
+      "canvas_mm": [
+        69.92068475122068,
+        73.54645886523437
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_05",
+      "folder": "individual_assets/len_5T_05",
+      "canvas_mm": [
+        74.6986613613281,
+        63.542759937499994
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_06",
+      "folder": "individual_assets/len_5T_06",
+      "canvas_mm": [
+        81.15259204296876,
+        89.540009421875
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_5T_07",
+      "folder": "individual_assets/len_5T_07",
+      "canvas_mm": [
+        278.99998,
+        63.999998000000005
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_dot_3T_06",
+      "folder": "individual_assets/len_dot_3T_06",
+      "canvas_mm": [
+        56.606263025000004,
+        60.625974928125004
+      ],
+      "a3_groups": [
+        "05_len/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_dot_5T_06",
+      "folder": "individual_assets/len_dot_5T_06",
+      "canvas_mm": [
+        56.606263025000004,
+        62.625976628125
+      ],
+      "a3_groups": [
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_01",
+      "folder": "individual_assets/len_pad_3T_01",
+      "canvas_mm": [
+        209.299891725,
+        101.471588
+      ],
+      "a3_groups": [
+        "06_len_pad/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_01_safe",
+      "folder": "individual_assets/len_pad_3T_01_safe",
+      "canvas_mm": [
+        213.2753999355469,
+        103.43643595703125
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_02",
+      "folder": "individual_assets/len_pad_3T_02",
+      "canvas_mm": [
+        85.10324126875003,
+        83.47818142656249
+      ],
+      "a3_groups": [
+        "06_len_pad/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_02_safe",
+      "folder": "individual_assets/len_pad_3T_02_safe",
+      "canvas_mm": [
+        88.924902,
+        85.36303000000001
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_03",
+      "folder": "individual_assets/len_pad_3T_03",
+      "canvas_mm": [
+        90.55537746425782,
+        77.502878071875
+      ],
+      "a3_groups": [
+        "06_len_pad/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_03_safe",
+      "folder": "individual_assets/len_pad_3T_03_safe",
+      "canvas_mm": [
+        92.90577100000002,
+        79.43014090429688
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_04",
+      "folder": "individual_assets/len_pad_3T_04",
+      "canvas_mm": [
+        88.1118448,
+        61.43556474323729
+      ],
+      "a3_groups": [
+        "06_len_pad/3T",
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_05",
+      "folder": "individual_assets/len_pad_3T_05",
+      "canvas_mm": [
+        67.40315352031251,
+        95.54728450781249
+      ],
+      "a3_groups": [
+        "06_len_pad/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_05_safe",
+      "folder": "individual_assets/len_pad_3T_05_safe",
+      "canvas_mm": [
+        70.40298101562499,
+        97.046674
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_06",
+      "folder": "individual_assets/len_pad_3T_06",
+      "canvas_mm": [
+        70.86696732141111,
+        39.50534392480469
+      ],
+      "a3_groups": [
+        "06_len_pad/3T",
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_07",
+      "folder": "individual_assets/len_pad_3T_07",
+      "canvas_mm": [
+        283.9999829,
+        75.22351650000002
+      ],
+      "a3_groups": [
+        "06_len_pad/3T",
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_01",
+      "folder": "individual_assets/len_pad_5T_01",
+      "canvas_mm": [
+        209.299891725,
+        103.4715844
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_02",
+      "folder": "individual_assets/len_pad_5T_02",
+      "canvas_mm": [
+        85.10324126875003,
+        85.47816702656249
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_03",
+      "folder": "individual_assets/len_pad_5T_03",
+      "canvas_mm": [
+        90.55537746425782,
+        79.502874471875
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_04",
+      "folder": "individual_assets/len_pad_5T_04",
+      "canvas_mm": [
+        88.1118448,
+        63.43556114323731
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_05",
+      "folder": "individual_assets/len_pad_5T_05",
+      "canvas_mm": [
+        67.40315352031251,
+        97.54729170781249
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_06",
+      "folder": "individual_assets/len_pad_5T_06",
+      "canvas_mm": [
+        70.86696732141111,
+        41.505351024804696
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_5T_07",
+      "folder": "individual_assets/len_pad_5T_07",
+      "canvas_mm": [
+        283.9999829,
+        75.22351650000002
+      ],
+      "a3_groups": [
+        "06_len_pad/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "supplied_saetui_01",
+      "folder": "individual_assets/supplied_saetui_01",
+      "canvas_mm": [
+        32.66933432255476,
+        47.37861839999999
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T",
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "supplied_saetui_02",
+      "folder": "individual_assets/supplied_saetui_02",
+      "canvas_mm": [
+        32.66933798167058,
+        47.37861839999999
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T",
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "supplied_saetui_03",
+      "folder": "individual_assets/supplied_saetui_03",
+      "canvas_mm": [
+        32.669330438419934,
+        47.37861839999999
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T",
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "supplied_saetui_04",
+      "folder": "individual_assets/supplied_saetui_04",
+      "canvas_mm": [
+        32.66933742698804,
+        47.37861839999999
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T",
+        "02_extra_sheet/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "tuiing_01",
+      "folder": "individual_assets/tuiing_01",
+      "canvas_mm": [
+        39.01257589902344,
+        61.36111503115234
+      ],
+      "a3_groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "unfried_01",
+      "folder": "individual_assets/unfried_01",
+      "canvas_mm": [
+        39.01257589902344,
+        61.36111503115234
+      ],
+      "a3_groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "yanggum_keyring_01",
+      "folder": "individual_assets/yanggum_keyring_01",
+      "canvas_mm": [
+        47.131327,
+        61.9604755
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T",
+        "09_yanggum/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "yanggum_stand_01",
+      "folder": "individual_assets/yanggum_stand_01",
+      "canvas_mm": [
+        66.19861537304686,
+        71.531498765625
+      ],
+      "a3_groups": [
+        "02_extra_sheet/3T",
+        "09_yanggum/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "yanggum_stand_02",
+      "folder": "individual_assets/yanggum_stand_02",
+      "canvas_mm": [
+        76.0,
+        31.999990999999994
+      ],
+      "a3_groups": [
+        "05_len/3T",
+        "09_yanggum/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "강민_stand_01",
+      "folder": "individual_assets/강민_stand_01",
+      "canvas_mm": [
+        98.903435,
+        71.515367
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "강민_stand_02",
+      "folder": "individual_assets/강민_stand_02",
+      "canvas_mm": [
+        76.000001,
+        31.999990999999994
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "강윤진_stand_01",
+      "folder": "individual_assets/강윤진_stand_01",
+      "canvas_mm": [
+        107.481169875,
+        71.89329775
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "강윤진_stand_02",
+      "folder": "individual_assets/강윤진_stand_02",
+      "canvas_mm": [
+        76.000006,
+        31.999990999999994
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김윤_keyring_01",
+      "folder": "individual_assets/김윤_keyring_01",
+      "canvas_mm": [
+        71.89637400000001,
+        75.353984
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김윤_keyring_02",
+      "folder": "individual_assets/김윤_keyring_02",
+      "canvas_mm": [
+        53.259691000000004,
+        75.35413794384765
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김윤_keyring_03",
+      "folder": "individual_assets/김윤_keyring_03",
+      "canvas_mm": [
+        42.497292999999985,
+        75.35392900000001
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김윤_keyring_04",
+      "folder": "individual_assets/김윤_keyring_04",
+      "canvas_mm": [
+        35.63443609375,
+        75.69992261436843
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김윤_keyring_05",
+      "folder": "individual_assets/김윤_keyring_05",
+      "canvas_mm": [
+        51.73390699999999,
+        75.354077
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김호_keyring_01",
+      "folder": "individual_assets/김호_keyring_01",
+      "canvas_mm": [
+        46.748721,
+        75.69965099999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김호_keyring_02",
+      "folder": "individual_assets/김호_keyring_02",
+      "canvas_mm": [
+        54.89145740820312,
+        75.353603
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김호_keyring_03",
+      "folder": "individual_assets/김호_keyring_03",
+      "canvas_mm": [
+        60.57469677343748,
+        75.35378013397218
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김호_keyring_04",
+      "folder": "individual_assets/김호_keyring_04",
+      "canvas_mm": [
+        52.263548863281244,
+        75.35398699999999
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김호_keyring_05",
+      "folder": "individual_assets/김호_keyring_05",
+      "canvas_mm": [
+        39.523494,
+        75.699704
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "김호_keyring_06",
+      "folder": "individual_assets/김호_keyring_06",
+      "canvas_mm": [
+        51.04958887499998,
+        75.70030023281859
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "배승민_keyring_01",
+      "folder": "individual_assets/배승민_keyring_01",
+      "canvas_mm": [
+        42.367063,
+        75.70055651123047
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "배승민_keyring_02",
+      "folder": "individual_assets/배승민_keyring_02",
+      "canvas_mm": [
+        40.186443000000004,
+        75.00026739708328
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "배승민_keyring_03",
+      "folder": "individual_assets/배승민_keyring_03",
+      "canvas_mm": [
+        38.08983399999998,
+        75.699646
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "이상준_stand_01",
+      "folder": "individual_assets/이상준_stand_01",
+      "canvas_mm": [
+        64.514809,
+        71.516730875
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "이상준_stand_02",
+      "folder": "individual_assets/이상준_stand_02",
+      "canvas_mm": [
+        75.999998,
+        31.999990999999994
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "정지영_stand_01",
+      "folder": "individual_assets/정지영_stand_01",
+      "canvas_mm": [
+        67.76477499999999,
+        71.86536699999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "정지영_stand_02",
+      "folder": "individual_assets/정지영_stand_02",
+      "canvas_mm": [
+        75.999998,
+        31.999990999999994
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    }
+  ],
+  "asset_count": 168,
+  "files_per_asset": [
+    "01_PRINT.pdf",
+    "01_PRINT_300ppi.png",
+    "02_MASTER.pdf",
+    "02_MASTER.ai",
+    "03_CUT_ONLY.pdf",
+    "03_CUT_ONLY.svg",
+    "04_WHITE_INK_MASK.pdf",
+    "04_WHITE_INK_MASK_300ppi.png",
+    "preview.png",
+    "asset.json",
+    "README.md"
+  ],
+  "support_files": [
+    "README.md",
+    "manifest.json",
+    "linked_tuiing_assembly.png",
+    "linked_tuiing_assembly.json",
+    "05_len_3T_catalog.png",
+    "11_ascent_remaining_3T_catalog.png",
+    "02_extra_sheet_3T_catalog.png",
+    "05_len_5T_catalog.png",
+    "19_personal_fill_3T_catalog.png",
+    "02_extra_sheet_5T_catalog.png",
+    "06_len_pad_3T_catalog.png",
+    "06_len_pad_5T_catalog.png",
+    "09_yanggum_3T_catalog.png"
+  ],
+  "physical_test": false,
+  "source_policy": "Same canonical pieces as A3, source orientation with translation only; original art rasterized at600ppi for independent editing."
+}

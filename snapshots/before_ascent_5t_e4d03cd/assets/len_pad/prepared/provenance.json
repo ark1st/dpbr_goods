@@ -1,0 +1,262 @@
+{
+  "source": "assets/len_pad/01_베이스.png",
+  "source_sha256": "d20bca180f84c0651f656379dfae255e1b2911f8f0c7ff09a7e2cce1c59c22c7",
+  "out": "assets/len_pad/prepared/01_베이스.png",
+  "out_sha256": "46cbab0f98198411ad88d89157c71b54ddc50c18d56c552562e0ffeb5774790c",
+  "why": "pack README: cut lines / tabs / slots not yet fixed; the five drawn placeholder openings are ~32.5 x 4.1 mm (row 1) and ~23.9 x 4.1 mm (row 2) at the 275 mm print width - no 18 mm tab fits them, so the real slots are placed by configs/len_diorama_pad.json instead.",
+  "placeholder_holes_closed": [
+    {
+      "bbox_px": [
+        298,
+        237,
+        246,
+        31
+      ],
+      "area_px": 7154,
+      "patch_rect_px": [
+        286,
+        225,
+        556,
+        280
+      ],
+      "mirror_side": "right",
+      "source_rect_px": [
+        556,
+        225,
+        826,
+        280
+      ]
+    },
+    {
+      "bbox_px": [
+        963,
+        237,
+        246,
+        31
+      ],
+      "area_px": 7172,
+      "patch_rect_px": [
+        951,
+        225,
+        1221,
+        280
+      ],
+      "mirror_side": "right",
+      "source_rect_px": [
+        1221,
+        225,
+        1491,
+        280
+      ]
+    },
+    {
+      "bbox_px": [
+        1628,
+        237,
+        246,
+        31
+      ],
+      "area_px": 7159,
+      "patch_rect_px": [
+        1616,
+        225,
+        1886,
+        280
+      ],
+      "mirror_side": "left",
+      "source_rect_px": [
+        1346,
+        225,
+        1616,
+        280
+      ]
+    },
+    {
+      "bbox_px": [
+        658,
+        403,
+        181,
+        31
+      ],
+      "area_px": 5316,
+      "patch_rect_px": [
+        646,
+        391,
+        851,
+        446
+      ],
+      "mirror_side": "right",
+      "source_rect_px": [
+        851,
+        391,
+        1056,
+        446
+      ]
+    },
+    {
+      "bbox_px": [
+        1334,
+        403,
+        180,
+        31
+      ],
+      "area_px": 5296,
+      "patch_rect_px": [
+        1322,
+        391,
+        1526,
+        446
+      ],
+      "mirror_side": "left",
+      "source_rect_px": [
+        1118,
+        391,
+        1322,
+        446
+      ]
+    }
+  ],
+  "closure": "mirror transplant of the adjacent clean pattern strip (measured art, no interpolation; the seam at the mirror axis is an exact continuation)",
+  "real_slot_windows_cleared": [
+    {
+      "piece": "bg",
+      "mount_cut_mm": [
+        55.7,
+        56
+      ],
+      "center_art_px": [
+        449.6,
+        207.1
+      ],
+      "window_art_mm": [
+        41.8,
+        8.22,
+        64.6,
+        17.92
+      ]
+    },
+    {
+      "piece": "bg",
+      "mount_cut_mm": [
+        143.8,
+        56
+      ],
+      "center_art_px": [
+        1114.7,
+        207.1
+      ],
+      "window_art_mm": [
+        129.9,
+        8.22,
+        152.7,
+        17.92
+      ]
+    },
+    {
+      "piece": "bg",
+      "mount_cut_mm": [
+        231.7,
+        56
+      ],
+      "center_art_px": [
+        1778.3,
+        207.1
+      ],
+      "window_art_mm": [
+        217.8,
+        8.22,
+        240.6,
+        17.92
+      ]
+    },
+    {
+      "piece": "plum_left",
+      "mount_cut_mm": [
+        40,
+        45
+      ],
+      "center_art_px": [
+        331.1,
+        290.1
+      ],
+      "window_art_mm": [
+        26.1,
+        19.22,
+        48.9,
+        28.92
+      ]
+    },
+    {
+      "piece": "plum_right",
+      "mount_cut_mm": [
+        240,
+        45
+      ],
+      "center_art_px": [
+        1840.9,
+        290.1
+      ],
+      "window_art_mm": [
+        226.1,
+        19.22,
+        248.9,
+        28.92
+      ]
+    },
+    {
+      "piece": "dragon",
+      "mount_cut_mm": [
+        95,
+        34
+      ],
+      "center_art_px": [
+        746.3,
+        373.1
+      ],
+      "window_art_mm": [
+        81.1,
+        30.22,
+        103.9,
+        39.92
+      ]
+    },
+    {
+      "piece": "character",
+      "mount_cut_mm": [
+        173,
+        34
+      ],
+      "center_art_px": [
+        1335.1,
+        373.1
+      ],
+      "window_art_mm": [
+        159.1,
+        30.22,
+        181.9,
+        39.92
+      ]
+    },
+    {
+      "piece": "cloud",
+      "mount_cut_mm": [
+        137,
+        23
+      ],
+      "center_art_px": [
+        1063.4,
+        456.2
+      ],
+      "window_art_mm": [
+        123.1,
+        41.22,
+        145.9,
+        50.92
+      ]
+    }
+  ],
+  "slot_clearance_spec_mm": 1.5,
+  "slot_clearance_clip_mm": 2.0,
+  "changed_pixel_count": 144071,
+  "pixel_changes": "mirror-transplanted hole/ring fills + alpha-zeroed slot windows only; every other pixel byte-identical to source"
+}

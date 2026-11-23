@@ -1,0 +1,63 @@
+{
+  "print_source_policy": "인쇄 원본은 OpenAPI look 렌더(render300) 파일뿐이다. 전원 코너 투명·섬 1~2개의 컷아웃으로 실측됐으며 랭킹 아바타180과 픽셀 동일한 캐릭터도 있다. avatar180 파일 중 룃혜(불투명 95%), 믐댕·타루카루타·안개질무렵(불투명 61~78%, 효과 파티클 95~476개)은 배경·효과 캔버스라 인쇄에 쓰지 않고 조회 근거로만 보존한다.",
+  "keep_rule": "clear border 2.5mm 기준, stand 60mm 스케일에서 2.4mm 이내 디테일만 유지하고 나머지는 알파 0 처리",
+  "resample": "NEAREST (도트 그리드 보존, 업스케일 아닌 인쇄 크기 정확화)",
+  "sprites": [
+    {
+      "source": "마가다락방__리부트(icon_3)_render300.png",
+      "mode": "알파 (랭킹 스냅샷 · 현재 활성 모드는 베타)",
+      "sha256": "20ea9c0f9d5253fdfba3b1d080f53e351e2f4816dc6885277e206d034f49691e",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        70,
+        99
+      ],
+      "outputs_px": {
+        "chain40": [
+          334,
+          472
+        ],
+        "stand60": [
+          501,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    },
+    {
+      "source": "마가다락방__리부트(icon_3)_render300_beta.png",
+      "mode": "베타 (공식 이미지)",
+      "sha256": "3023bdcf3ee201716d5c975984e616f2d544de5132d0e275c843ac009a10189f",
+      "source_px": [
+        300,
+        300
+      ],
+      "islands": 1,
+      "kept_islands": 1,
+      "dropped": [],
+      "changed_px": 0,
+      "crop_px": [
+        61,
+        84
+      ],
+      "outputs_px": {
+        "chain40": [
+          343,
+          472
+        ],
+        "stand60": [
+          515,
+          709
+        ]
+      },
+      "resample": "NEAREST"
+    }
+  ]
+}

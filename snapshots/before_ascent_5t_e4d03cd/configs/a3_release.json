@@ -1,0 +1,2158 @@
+{
+  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+  "canvas_mm": [
+    420,
+    297
+  ],
+  "piece_gap_mm": 3,
+  "page_margin_mm": 8,
+  "reference_inset_mm": 4,
+  "scale": 1,
+  "sources": [
+    {
+      "file": "output/extra_sheet/3T/01_COMBINED_SHEET.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "6ef79ce6bec034e6a8c514187d7a6fb6f04b1902d21c1f5e474f2cd1328ec781"
+    },
+    {
+      "file": "output/extra_sheet/3T/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "47b1fbe786f9e495f1a0a0d7c74fd96e676008a6b89fecb512bac0b4d1624d11"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/02_MASTER.ai",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "e84b0fb2510cbc2c91fa9a39d91c83a4e89ffc774f6f5e64eb1900c3724a6a45"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "17e98332f2dc22875aae42066cb6157f6e46bdf4351bee025e174cb6cbe45f71"
+    },
+    {
+      "file": "output/extra_sheet/5T/01_COMBINED_SHEET.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "b04c45b635b66f0e34e2875582cd2db4c90897af9cc31aba48ec14bbd118d152"
+    },
+    {
+      "file": "output/extra_sheet/5T/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "b49dc24f2d7e7c880633b015887a09a00c59fb61851a4054f2c0f2d2705d33e8"
+    },
+    {
+      "file": "output/len_diorama_v1/5T/02_MASTER.ai",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "7d5b1decacc6757ce05ec2556b5fc944d71ed316f8bbbc3cea943d571b8b8e5c"
+    },
+    {
+      "file": "output/len_diorama_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "d17b590dd325a4b64a5599ca2d739a3b7c815217",
+      "sha256": "7d3a81f337aae24907ced9f196d7eb7e5aa7f53adc1f836b0b35198cfa2727c1"
+    },
+    {
+      "file": "output/linked_tuiing_v1/tuiing/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "494f5dd3c9593ed382130d74d5b803e05adc3d5d539582c6b5d19527c2399e26"
+    },
+    {
+      "file": "output/linked_tuiing_v1/tuiing/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "47147ba402b67b3df005f9d37df469cec25673e3bccb6901f05f39444fbef7d4"
+    },
+    {
+      "file": "output/linked_tuiing_v1/tuiing/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "00cf732aaa37a3fa7b3adc1bb85a3b95e0dda9ba232b79f66acea00c866f712d"
+    },
+    {
+      "file": "output/linked_tuiing_v1/golden/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "5c20351e1d1a8a23b5b5323d60c1632ef07e9ce455f4f354ffd6f997574db57b"
+    },
+    {
+      "file": "output/linked_tuiing_v1/golden/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "e7a2707d19ca3ec5087749b57c16f19948bff51c88cf060be350a5ea2fb7d974"
+    },
+    {
+      "file": "output/linked_tuiing_v1/golden/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "579eebe675f51e2e4f883d5d8123bae237a21b63b013d791e78a617358c3c90c"
+    },
+    {
+      "file": "output/linked_tuiing_v1/burnt/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "52d0ca3efd0cb8a8d82f8f712a0bb01d207288f039ceb76656583a896da7eb00"
+    },
+    {
+      "file": "output/linked_tuiing_v1/burnt/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1"
+    },
+    {
+      "file": "output/linked_tuiing_v1/burnt/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "41fd947a8ec4e7a744969bc6359029604d18819a6bd5f4df3c492e469036a8b6"
+    },
+    {
+      "file": "output/linked_tuiing_v1/unfried/02_MASTER.ai",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "c63e1170d5c30bcc59c77f55361a8ffc55689da2d97dcc834801f51757d0f077"
+    },
+    {
+      "file": "output/linked_tuiing_v1/unfried/03_CUT_ONLY.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "98bbea6b07fb8f8d7caa8b420f58f569235ae3689b65de0e5f3a072eb4206ba1"
+    },
+    {
+      "file": "output/linked_tuiing_v1/unfried/04_WHITE_INK_MASK.pdf",
+      "commit": "6de9a1a240f1bf59b2828e4b9103cb2bb1fa03dd",
+      "sha256": "b1995c253497ac54d22c395193ae443aeb38600205d21cc4876e0ab8d2b7aad3"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/02_MASTER.ai",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "1b04aeaac1f796c7940a8e024c0c1c2b584035558453873e788ea10ec6f29c17"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "68a718acb43c40c16e2d6564e5a689a14344348db3e3c7ea51d25ebc9d2c792f"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/5T/02_MASTER.ai",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "a10abd0e02561c96250b9aa0587b93f5185852318177946fc054a75b0299b69c"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "af8c02c99d9516501f0190984cf907bd52c3d030",
+      "sha256": "6d8ccb86727ac0989b200263069fb1471050d6278538ef69331cfb24134c87c6"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/3T/02_MASTER.ai",
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "0e190825df6ca609ada046cbd3a2d99299f860317c0a9cb4f8a157e3aa0406e4",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/02_MASTER.ai"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "e2e445cdd7f7667d5c0f08fa9999e3c7ce7f253bd5923a71fefa5aa709e1a89c",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/03_CUT_ONLY.pdf"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/5T/02_MASTER.ai",
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "8331d687a8f040c872b765d27b2fa6cacaac7136dea414b2601c23e31156833d",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/02_MASTER.ai"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "7ee8cd1586603648beb5848447228a4b18987fe62e0e3692f919db4023b891af",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
+    }
+  ],
+  "cadena_source_part_ids": [
+    "ascent_01",
+    "ascent_11",
+    "ascent_12",
+    "ascent_13",
+    "ascent_14"
+  ],
+  "current_groups": {
+    "02_extra_sheet/3T": 43,
+    "02_extra_sheet/5T": 39,
+    "05_len/3T": 16,
+    "05_len/5T": 12,
+    "06_len_pad/3T": 7,
+    "06_len_pad/5T": 7,
+    "09_yanggum/3T": 3,
+    "11_ascent_remaining/3T": 42,
+    "19_personal_fill/3T": 33
+  },
+  "retired_groups": [
+    "03_linked_keyrings",
+    "04_ascent_original",
+    "04_ascent_cadena",
+    "07_yanggum_stand/3T",
+    "08_yanggum_keyring/3T"
+  ],
+  "linked_allocation": {
+    "02_extra_sheet": [
+      "supplied_saetui_01",
+      "supplied_saetui_02",
+      "supplied_saetui_03",
+      "supplied_saetui_04"
+    ],
+    "05_len": [
+      "tuiing_01",
+      "golden_01",
+      "burnt_01",
+      "unfried_01"
+    ]
+  },
+  "include_test_pieces": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    },
+    {
+      "commit": "0061b39491f7e70c28060eecd81753eb35c7f779",
+      "revision": "A3-2026-11-22-current-only",
+      "status": "retired_not_for_current_print",
+      "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    },
+    {
+      "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+      "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "status": "superseded_cut_layer_only_do_not_execute",
+      "reason": "Already-printed500x800 layout retained;309920 micro-segment cutting commands replaced by4392 reviewed segments in cut-only recovery."
+    },
+    {
+      "commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+      "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+      "groups": [
+        "02_extra_sheet/3T",
+        "05_len/3T"
+      ],
+      "status": "superseded_mixed_print_layout_only",
+      "reason": "Yanggeum three-piece set now included within the same two mixed A3 pages; original scale and curves preserved. PAD deferred. Existing500x800 recut and separate Ascent unchanged."
+    },
+    {
+      "commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
+      "groups": [
+        "17_줄줄이_결합판/3T"
+      ],
+      "status": "retired_single_hole_keyrings_not_for_serial_linking",
+      "reason": "Each applicant keyring had only one top hole. Current derivative preserves the art and top hole, adds the bottom4mm linking hole and uses offcut placements."
+    },
+    {
+      "commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74",
+      "status": "retired_personal_stand_geometry_and_placements_only",
+      "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
+      "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
+    },
+    {
+      "commit": "9764eb812b81ce5b3849d9f7f361f0a685ffd640",
+      "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+      "status": "superseded_primary_layout_only",
+      "reason": "Len PAD seven-piece set added to the existing fifth A3 at original size; reinforced stands and all source contours remain current."
+    },
+    {
+      "revision": "A3-2026-11-23-final-with-len-pad",
+      "status": "superseded_primary_layout_only",
+      "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
+    }
+  ],
+  "len_layout": {
+    "method": "contour_nesting",
+    "angle_step_degrees": 15,
+    "trials": 48,
+    "search_grid_mm": 0.75,
+    "exact_minimum_gap_mm": 3,
+    "test_pieces": 0
+  },
+  "selected_thickness": "3T",
+  "archived_inputs": [
+    {
+      "file": "assets/external/ascent_original/kimyun_ascent.ai.part001",
+      "git_path": "snapshots/main/assets/external/ascent_original/kimyun_ascent.ai.part001",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "4636f6fa72eeee865a8720176c1fd44c8dc03b99216462e55bf73d7df3840f7c"
+    },
+    {
+      "file": "assets/external/ascent_original/kimyun_ascent.ai.part002",
+      "git_path": "snapshots/main/assets/external/ascent_original/kimyun_ascent.ai.part002",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "b548145cf186af24260861ae148b9583d6e9fc28d2b70b3371264da91412d884"
+    },
+    {
+      "file": "assets/external/ascent_original/kimyun_ascent.ai.part003",
+      "git_path": "snapshots/main/assets/external/ascent_original/kimyun_ascent.ai.part003",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "ae42d2a41417fff5435c24dbdcb87c2dc314145c16fde7d29bf35364a9887555"
+    },
+    {
+      "file": "assets/external/ascent_original/manifest.json",
+      "git_path": "snapshots/main/assets/external/ascent_original/manifest.json",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "56e66e865420571c2f28a9767997479f3d70ec20376c4c56c1256f0b9f839388"
+    },
+    {
+      "file": "output/len_diorama_v1/3T/preview/assembly.png",
+      "git_path": "snapshots/output_len/output/len_diorama_v1/3T/preview/assembly.png",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "729bc964582beba4e433b3913fec3a48373ad57595404aff7f21c9aba2436df7"
+    },
+    {
+      "file": "output/len_diorama_dot_v1/3T/preview/assembly.png",
+      "git_path": "snapshots/output_len/output/len_diorama_dot_v1/3T/preview/assembly.png",
+      "commit": "6cde6c2d034acd2db8bb7b4c85261a88479bdf7d",
+      "sha256": "36cf2303208fd06f2470c287a54cdc15336dc1e6ec7d352ca22b9febc2bf39d0"
+    },
+    {
+      "file": "output/len_diorama_pad_v1/3T/preview/assembly.png",
+      "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
+      "sha256": "c3f8e4e83bdfaaccbd6663fc5e98ef8eb5e55811b1ff805affb8a9185e1ac6bb",
+      "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/preview/assembly.png"
+    }
+  ],
+  "optional_groups": [
+    "06_len_pad/3T",
+    "06_len_pad/5T",
+    "09_yanggum/3T"
+  ],
+  "len_dot_revision": {
+    "art_height_mm": 50,
+    "clear_border_mm": 2.25,
+    "foot_center_source_x_px": 90,
+    "tab_width_mm": 18,
+    "tab_bottom_clearance_mm": 0.4,
+    "previous_height_mm": 76,
+    "reason": "User requested smaller DOT and a correctly positioned foot tab; common base and slot remain unchanged."
+  },
+  "excluded_brand_parts": {
+    "3T": [
+      "extra_3T_31",
+      "extra_3T_32",
+      "extra_3T_33"
+    ],
+    "5T": [
+      "extra_5T_31",
+      "extra_5T_32",
+      "extra_5T_33"
+    ]
+  },
+  "cross_sheet_cadena_allocation": {
+    "02_extra_sheet/3T": [
+      "ascent_11",
+      "ascent_12"
+    ],
+    "05_len/3T": [
+      "ascent_01",
+      "ascent_13",
+      "ascent_14"
+    ]
+  },
+  "selected_primary_groups": [
+    "02_extra_sheet/3T",
+    "05_len/3T",
+    "11_ascent_remaining/3T",
+    "19_personal_fill/3T"
+  ],
+  "selected_primary_parts": 134,
+  "primary_inventory": [
+    "ascent_01",
+    "ascent_02",
+    "ascent_03",
+    "ascent_04",
+    "ascent_05",
+    "ascent_06",
+    "ascent_07",
+    "ascent_08",
+    "ascent_09",
+    "ascent_10",
+    "ascent_11",
+    "ascent_12",
+    "ascent_13",
+    "ascent_14",
+    "ascent_15",
+    "ascent_16",
+    "ascent_17",
+    "ascent_18",
+    "ascent_19",
+    "ascent_20",
+    "ascent_21",
+    "ascent_22",
+    "ascent_23",
+    "ascent_24",
+    "ascent_25",
+    "ascent_26",
+    "ascent_27",
+    "ascent_28",
+    "ascent_29",
+    "ascent_30",
+    "burnt_01",
+    "danba_logo_fill_001",
+    "danba_logo_fill_002",
+    "danba_logo_fill_003",
+    "danba_logo_fill_004",
+    "danba_logo_fill_005",
+    "danba_logo_fill_006",
+    "danba_logo_fill_007",
+    "danba_logo_fill_008",
+    "danba_logo_fill_009",
+    "danba_logo_fill_010",
+    "danba_logo_fill_011",
+    "danba_logo_fill_012",
+    "danba_logo_fill_013",
+    "danba_logo_fill_014",
+    "danba_logo_fill_015",
+    "danba_logo_fill_016",
+    "danba_logo_fill_017",
+    "danba_logo_fill_018",
+    "danba_logo_fill_019",
+    "danba_logo_fill_020",
+    "danba_logo_fill_021",
+    "extra_3T_01",
+    "extra_3T_02",
+    "extra_3T_03",
+    "extra_3T_04",
+    "extra_3T_05",
+    "extra_3T_06",
+    "extra_3T_07",
+    "extra_3T_08",
+    "extra_3T_09",
+    "extra_3T_10",
+    "extra_3T_11",
+    "extra_3T_12",
+    "extra_3T_13",
+    "extra_3T_14",
+    "extra_3T_15",
+    "extra_3T_16",
+    "extra_3T_17",
+    "extra_3T_18",
+    "extra_3T_19",
+    "extra_3T_20",
+    "extra_3T_21",
+    "extra_3T_22",
+    "extra_3T_23",
+    "extra_3T_24",
+    "extra_3T_25",
+    "extra_3T_26",
+    "extra_3T_27",
+    "extra_3T_28",
+    "extra_3T_29",
+    "extra_3T_30",
+    "extra_3T_34",
+    "extra_3T_35",
+    "extra_3T_36",
+    "extra_3T_37",
+    "extra_3T_38",
+    "golden_01",
+    "len_3T_01",
+    "len_3T_02",
+    "len_3T_03",
+    "len_3T_04",
+    "len_3T_05",
+    "len_3T_06",
+    "len_3T_07",
+    "len_dot_3T_06",
+    "len_pad_3T_01_safe",
+    "len_pad_3T_02_safe",
+    "len_pad_3T_03_safe",
+    "len_pad_3T_04",
+    "len_pad_3T_05_safe",
+    "len_pad_3T_06",
+    "len_pad_3T_07",
+    "supplied_saetui_01",
+    "supplied_saetui_02",
+    "supplied_saetui_03",
+    "supplied_saetui_04",
+    "tuiing_01",
+    "unfried_01",
+    "yanggum_keyring_01",
+    "yanggum_stand_01",
+    "yanggum_stand_02",
+    "강민_stand_01",
+    "강민_stand_02",
+    "강윤진_stand_01",
+    "강윤진_stand_02",
+    "김윤_keyring_01",
+    "김윤_keyring_02",
+    "김윤_keyring_03",
+    "김윤_keyring_04",
+    "김윤_keyring_05",
+    "김호_keyring_01",
+    "김호_keyring_02",
+    "김호_keyring_03",
+    "김호_keyring_04",
+    "김호_keyring_05",
+    "김호_keyring_06",
+    "배승민_keyring_01",
+    "배승민_keyring_02",
+    "배승민_keyring_03",
+    "이상준_stand_01",
+    "이상준_stand_02",
+    "정지영_stand_01",
+    "정지영_stand_02"
+  ],
+  "yanggum_products": {
+    "stand": {
+      "art_height_mm": 60,
+      "clear_border_mm": 2.5,
+      "tab_width_mm": 18,
+      "tab_bottom_clearance_mm": 0.4,
+      "bridge_rise_mm": 9,
+      "base_size_mm": [
+        72,
+        28
+      ],
+      "base_corner_radius_mm": 7,
+      "slot_length_mm": 18.8,
+      "slot_corner_radius_mm": 0.35
+    },
+    "keyring": {
+      "art_height_mm": 40,
+      "clear_border_mm": 2.5,
+      "hole_diameter_mm": 4,
+      "hole_to_art_min_mm": 5,
+      "hole_to_edge_min_mm": 4,
+      "carrier_width_mm": 13
+    }
+  },
+  "ascent_remaining": {
+    "part_ids": [
+      "ascent_02",
+      "ascent_03",
+      "ascent_04",
+      "ascent_05",
+      "ascent_06",
+      "ascent_07",
+      "ascent_08",
+      "ascent_09",
+      "ascent_10",
+      "ascent_15",
+      "ascent_16",
+      "ascent_17",
+      "ascent_18",
+      "ascent_19",
+      "ascent_20",
+      "ascent_21",
+      "ascent_22",
+      "ascent_23",
+      "ascent_24",
+      "ascent_25",
+      "ascent_26",
+      "ascent_27",
+      "ascent_28",
+      "ascent_29",
+      "ascent_30"
+    ],
+    "excluded_blank_panel": "ascent_31",
+    "excluded_reason": "User explicitly excluded the unprinted panel on 2026-11-23.",
+    "material": "3T",
+    "source_panels_mm": [
+      104,
+      62.80699
+    ],
+    "source_base_mm": [
+      104,
+      30
+    ],
+    "scale": 1,
+    "separate_from_other_print_batches": false,
+    "source_ai_sha256": "a4195ed4c5b1534236915fe66561f1960a22e54636fec4e95895db94816d156e"
+  },
+  "pages_per_group": {
+    "11_ascent_remaining/3T": 2
+  },
+  "selected_primary_pages": 5,
+  "separate_print_batches": {
+    "existing": [
+      "02_extra_sheet/3T",
+      "05_len/3T"
+    ],
+    "ascent_remaining": [
+      "11_ascent_remaining/3T"
+    ]
+  },
+  "support_files": [
+    "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
+    "a3_release/11_ascent_remaining/size_check.png",
+    "a3_release/OPTIONAL_FILL_ASSESSMENT.json",
+    "a3_release/PERSONAL_FILL_ASSESSMENT.json",
+    "a3_release/19_personal_fill/connection_preview.png",
+    "a3_release/19_personal_fill/stand_preview.png",
+    "a3_release/FINAL_LAYOUT_ASSESSMENT.json",
+    "a3_release/LOGO_FILL_ASSESSMENT.json"
+  ],
+  "recut_recoveries": [
+    {
+      "folder": "recut_only/danbar_500x800",
+      "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+      "paths_file": "configs/recut_smoothed_paths.json",
+      "canvas_mm": [
+        499.99898105197485,
+        800.0012118869357
+      ],
+      "pieces": 77,
+      "contours": 294,
+      "existing_print_only": true,
+      "print_pages_added": 0,
+      "files": [
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.ai",
+        "03_CUT_ONLY.svg",
+        "03_CUT_ONLY.vectorcraft",
+        "preview_alignment.png",
+        "cut_detail.png",
+        "validation.json",
+        "README.md",
+        "RECUT_ONLY.zip"
+      ]
+    }
+  ],
+  "optional_fill_allocation": {
+    "02_extra_sheet/3T": [
+      "yanggum_stand_01",
+      "yanggum_keyring_01"
+    ],
+    "05_len/3T": [
+      "yanggum_stand_02"
+    ]
+  },
+  "optional_fill_policy": {
+    "maximum_existing_mixed_sheets": 2,
+    "baseline_commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+    "baseline_ids": [
+      "ascent_01",
+      "ascent_11",
+      "ascent_12",
+      "ascent_13",
+      "ascent_14",
+      "burnt_01",
+      "extra_3T_01",
+      "extra_3T_02",
+      "extra_3T_03",
+      "extra_3T_04",
+      "extra_3T_05",
+      "extra_3T_06",
+      "extra_3T_07",
+      "extra_3T_08",
+      "extra_3T_09",
+      "extra_3T_10",
+      "extra_3T_11",
+      "extra_3T_12",
+      "extra_3T_13",
+      "extra_3T_14",
+      "extra_3T_15",
+      "extra_3T_16",
+      "extra_3T_17",
+      "extra_3T_18",
+      "extra_3T_19",
+      "extra_3T_20",
+      "extra_3T_21",
+      "extra_3T_22",
+      "extra_3T_23",
+      "extra_3T_24",
+      "extra_3T_25",
+      "extra_3T_26",
+      "extra_3T_27",
+      "extra_3T_28",
+      "extra_3T_29",
+      "extra_3T_30",
+      "extra_3T_34",
+      "extra_3T_35",
+      "extra_3T_36",
+      "extra_3T_37",
+      "extra_3T_38",
+      "golden_01",
+      "len_3T_01",
+      "len_3T_02",
+      "len_3T_03",
+      "len_3T_04",
+      "len_3T_05",
+      "len_3T_06",
+      "len_3T_07",
+      "len_dot_3T_06",
+      "supplied_saetui_01",
+      "supplied_saetui_02",
+      "supplied_saetui_03",
+      "supplied_saetui_04",
+      "tuiing_01",
+      "unfried_01"
+    ],
+    "candidate_sets": {
+      "yanggum_3T": [
+        "yanggum_stand_01",
+        "yanggum_stand_02",
+        "yanggum_keyring_01"
+      ],
+      "len_pad_3T": [
+        "len_pad_3T_01",
+        "len_pad_3T_02",
+        "len_pad_3T_03",
+        "len_pad_3T_04",
+        "len_pad_3T_05",
+        "len_pad_3T_06",
+        "len_pad_3T_07"
+      ]
+    },
+    "preserve_scale": true,
+    "complete_sets_only": true,
+    "deferred": [],
+    "standalone_reference_groups": [
+      "06_len_pad/3T",
+      "06_len_pad/5T",
+      "09_yanggum/3T"
+    ],
+    "ascent_PAD_search": {
+      "rectangular_packing_result_pages": 3,
+      "rectangular_core_layouts_examined": 33,
+      "contour_fill_trials": 264,
+      "best_complete_parts_in_core_search": 29,
+      "requested_total_parts": 32,
+      "constructive_first_page_parts": 14,
+      "constructive_remaining_parts": 18,
+      "constructive_contour_trials": 64,
+      "feasible_two_page_layout_found": false,
+      "mathematical_impossibility_proven": false,
+      "decision": "Defer PAD under the no-extra-sheet instruction. Failed finite searches are not a proof that every two-page arrangement is impossible."
+    },
+    "deferred_if_limited_to_original_mixed_sheets": [
+      "len_pad_3T"
+    ]
+  },
+  "package_archives": false,
+  "retired_package_files": [
+    "a3_release/02_extra_sheet_3T_A3.zip",
+    "a3_release/02_extra_sheet_5T_A3.zip",
+    "a3_release/05_len_3T_A3.zip",
+    "a3_release/05_len_5T_A3.zip",
+    "a3_release/06_len_pad_3T_A3.zip",
+    "a3_release/06_len_pad_5T_A3.zip",
+    "a3_release/09_yanggum_3T_A3.zip",
+    "a3_release/11_ascent_remaining_3T_A3.zip"
+  ],
+  "personal_fill_allocation": {
+    "11_ascent_remaining/3T": [
+      "강민_stand_01",
+      "강윤진_stand_01",
+      "이상준_stand_01",
+      "정지영_stand_01",
+      "강민_stand_02",
+      "강윤진_stand_02",
+      "이상준_stand_02",
+      "정지영_stand_02",
+      "배승민_keyring_01",
+      "배승민_keyring_02",
+      "배승민_keyring_03",
+      "김윤_keyring_04",
+      "김호_keyring_01"
+    ],
+    "19_personal_fill/3T": [
+      "김윤_keyring_01",
+      "김윤_keyring_02",
+      "김윤_keyring_03",
+      "김윤_keyring_05",
+      "김호_keyring_02",
+      "김호_keyring_03",
+      "김호_keyring_04",
+      "김호_keyring_05",
+      "김호_keyring_06"
+    ]
+  },
+  "chain_keyring_products": {
+    "keyring": {
+      "art_height_mm": 40,
+      "clear_border_mm": 2.5,
+      "hole_diameter_mm": 4,
+      "hole_to_art_min_mm": 5,
+      "hole_to_edge_min_mm": 4,
+      "carrier_width_mm": 13,
+      "art_top_mm": 25
+    },
+    "stand": {
+      "art_height_mm": 60,
+      "clear_border_mm": 2.5,
+      "tab_width_mm": 18,
+      "tab_bottom_clearance_mm": 0.4,
+      "bridge_rise_mm": 9,
+      "base_size_mm": [
+        72,
+        28
+      ],
+      "base_corner_radius_mm": 7,
+      "slot_length_mm": 18.8,
+      "slot_corner_radius_mm": 0.35,
+      "support_web_width_mm": 26,
+      "support_anchor_ratio": 0.5,
+      "support_taper_height_mm": 6,
+      "support_round_radius_mm": 3,
+      "pair_art_gap_mm": 4,
+      "combine_zero_modes": true
+    }
+  },
+  "personal_fill_policy": {
+    "baseline_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+    "source_commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
+    "baseline_ids": [
+      "ascent_01",
+      "ascent_02",
+      "ascent_03",
+      "ascent_04",
+      "ascent_05",
+      "ascent_06",
+      "ascent_07",
+      "ascent_08",
+      "ascent_09",
+      "ascent_10",
+      "ascent_11",
+      "ascent_12",
+      "ascent_13",
+      "ascent_14",
+      "ascent_15",
+      "ascent_16",
+      "ascent_17",
+      "ascent_18",
+      "ascent_19",
+      "ascent_20",
+      "ascent_21",
+      "ascent_22",
+      "ascent_23",
+      "ascent_24",
+      "ascent_25",
+      "ascent_26",
+      "ascent_27",
+      "ascent_28",
+      "ascent_29",
+      "ascent_30",
+      "burnt_01",
+      "extra_3T_01",
+      "extra_3T_02",
+      "extra_3T_03",
+      "extra_3T_04",
+      "extra_3T_05",
+      "extra_3T_06",
+      "extra_3T_07",
+      "extra_3T_08",
+      "extra_3T_09",
+      "extra_3T_10",
+      "extra_3T_11",
+      "extra_3T_12",
+      "extra_3T_13",
+      "extra_3T_14",
+      "extra_3T_15",
+      "extra_3T_16",
+      "extra_3T_17",
+      "extra_3T_18",
+      "extra_3T_19",
+      "extra_3T_20",
+      "extra_3T_21",
+      "extra_3T_22",
+      "extra_3T_23",
+      "extra_3T_24",
+      "extra_3T_25",
+      "extra_3T_26",
+      "extra_3T_27",
+      "extra_3T_28",
+      "extra_3T_29",
+      "extra_3T_30",
+      "extra_3T_34",
+      "extra_3T_35",
+      "extra_3T_36",
+      "extra_3T_37",
+      "extra_3T_38",
+      "golden_01",
+      "len_3T_01",
+      "len_3T_02",
+      "len_3T_03",
+      "len_3T_04",
+      "len_3T_05",
+      "len_3T_06",
+      "len_3T_07",
+      "len_dot_3T_06",
+      "supplied_saetui_01",
+      "supplied_saetui_02",
+      "supplied_saetui_03",
+      "supplied_saetui_04",
+      "tuiing_01",
+      "unfried_01",
+      "yanggum_keyring_01",
+      "yanggum_stand_01",
+      "yanggum_stand_02"
+    ],
+    "new_part_ids": [
+      "강민_stand_01",
+      "강민_stand_02",
+      "강윤진_stand_01",
+      "강윤진_stand_02",
+      "김윤_keyring_01",
+      "김윤_keyring_02",
+      "김윤_keyring_03",
+      "김윤_keyring_04",
+      "김윤_keyring_05",
+      "김호_keyring_01",
+      "김호_keyring_02",
+      "김호_keyring_03",
+      "김호_keyring_04",
+      "김호_keyring_05",
+      "김호_keyring_06",
+      "배승민_keyring_01",
+      "배승민_keyring_02",
+      "배승민_keyring_03",
+      "이상준_stand_01",
+      "이상준_stand_02",
+      "정지영_stand_01",
+      "정지영_stand_02"
+    ],
+    "fixed_existing_placements": [
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_26",
+        "x": 10.0,
+        "y": 139.7,
+        "rotation_degrees": 60,
+        "source_bounds_mm": [
+          175.2875349,
+          6.499738539910126,
+          326.1185113018188,
+          91.70967358776856
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_25",
+        "x": 8.0,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          11.9000058,
+          6.5000029625,
+          162.6043728,
+          91.38067236152344
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_10",
+        "x": 115.00000000000001,
+        "y": 142.25,
+        "rotation_degrees": 45,
+        "source_bounds_mm": [
+          330.5267022407101,
+          42.9281396470581,
+          414.1297920239093,
+          84.49393345362245
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_16",
+        "x": 218.64999999999986,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          262.19755774802553,
+          71.35650194637756,
+          345.8006284656235,
+          112.92229868349
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_30",
+        "x": 152.54999999999995,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          333.0000014,
+          6.4999908,
+          413.0000278,
+          36.4999685
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_36",
+        "x": 85.60000000000001,
+        "y": 81.49999999999999,
+        "rotation_degrees": 135,
+        "source_bounds_mm": [
+          431.9999878,
+          81.9999905,
+          512.0000142,
+          112.0000112
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_37",
+        "x": 164.64999999999992,
+        "y": 194.59999999999997,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          431.9999878,
+          119.0000146,
+          512.0000142,
+          148.9999922
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_29",
+        "x": 187.3499999999999,
+        "y": 91.05000000000001,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          172.5000005,
+          98.0000044,
+          252.5000054,
+          127.999982
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_38",
+        "x": 185.5999999999999,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          431.9999447,
+          156.0000387,
+          511.9999281,
+          186.0000163
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_18",
+        "x": 259.14999999999986,
+        "y": 117.30000000000001,
+        "rotation_degrees": 105,
+        "source_bounds_mm": [
+          340.0137205,
+          134.977164325,
+          414.5000224,
+          158.40703539999998
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_06",
+        "x": 280.34999999999985,
+        "y": 8.0,
+        "rotation_degrees": 285,
+        "source_bounds_mm": [
+          173.9999951,
+          173.99997889999997,
+          248.4862969,
+          197.429847225
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_24",
+        "x": 92.85,
+        "y": 213.95,
+        "rotation_degrees": 270,
+        "source_bounds_mm": [
+          6.5000016,
+          116.4999949,
+          79.49859964689941,
+          185.27095872499999
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_23",
+        "x": 80.75,
+        "y": 9.099999999999994,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          92.99836485422364,
+          85.999286125,
+          165.9969629,
+          154.7702472
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_07",
+        "x": 197.69999999999987,
+        "y": 174.0999999999999,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          98.4999981,
+          161.9999954,
+          166.4178136,
+          197.0095079
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_19",
+        "x": 232.69999999999987,
+        "y": 157.64999999999992,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          173.5000041,
+          134.4999836,
+          241.4178169,
+          169.5095177
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_27",
+        "x": 220.39999999999986,
+        "y": 93.85000000000001,
+        "rotation_degrees": 285,
+        "source_bounds_mm": [
+          245.7749852,
+          114.82144727060546,
+          310.654754956836,
+          157.2394979
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_28",
+        "x": 253.09999999999982,
+        "y": 50.7,
+        "rotation_degrees": 255,
+        "source_bounds_mm": [
+          352.0000044,
+          86.49999381503903,
+          414.4174048529053,
+          126.67043251966857
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "supplied_saetui_01",
+        "x": 286.09999999999985,
+        "y": 143.49999999999994,
+        "rotation_degrees": 195,
+        "source_bounds_mm": [
+          129.27998846975095,
+          177.832723,
+          157.9493227923057,
+          221.21134139999998
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "supplied_saetui_02",
+        "x": 8.0,
+        "y": 148.95,
+        "rotation_degrees": 195,
+        "source_bounds_mm": [
+          61.6840879720459,
+          177.832723,
+          90.35342595371648,
+          221.21134139999998
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "supplied_saetui_03",
+        "x": 131.8499999999999,
+        "y": 87.60000000000001,
+        "rotation_degrees": 75,
+        "source_bounds_mm": [
+          162.76075791367185,
+          177.832723,
+          191.4300883520918,
+          221.21134139999998
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "supplied_saetui_04",
+        "x": 267.29999999999984,
+        "y": 189.64999999999992,
+        "rotation_degrees": 105,
+        "source_bounds_mm": [
+          96.80598741367187,
+          177.832723,
+          125.47532484065991,
+          221.21134139999998
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_04",
+        "x": 302.84999999999985,
+        "y": 16.0,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          160.0000098,
+          6.5000151,
+          179.1155528,
+          34.293746850000005
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_14",
+        "x": 41.000000000000014,
+        "y": 161.75,
+        "rotation_degrees": 225,
+        "source_bounds_mm": [
+          6.5000151,
+          178.0000093,
+          34.293746850000005,
+          197.1155523
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_13",
+        "x": 303.99999999999983,
+        "y": 79.25,
+        "rotation_degrees": 75,
+        "source_bounds_mm": [
+          241.5000147,
+          154.4999903,
+          269.2013762,
+          174.9829347
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_05",
+        "x": 8.0,
+        "y": 8.0,
+        "rotation_degrees": 60,
+        "source_bounds_mm": [
+          276.5630984,
+          160.9278817,
+          304.1453242,
+          178.3604524
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_11",
+        "x": 8.0,
+        "y": 262.7,
+        "rotation_degrees": 210,
+        "source_bounds_mm": [
+          78.4999996,
+          83.9999869,
+          95.3014719,
+          111.490992925
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_01",
+        "x": 313.54999999999984,
+        "y": 39.75,
+        "rotation_degrees": 270,
+        "source_bounds_mm": [
+          272.4999959,
+          6.4999935,
+          299.9909912,
+          23.3014658
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_02",
+        "x": 310.49999999999983,
+        "y": 127.9,
+        "rotation_degrees": 105,
+        "source_bounds_mm": [
+          255.4999946,
+          176.9999842,
+          282.2678644,
+          197.0621964
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_12",
+        "x": 8.0,
+        "y": 189.54999999999995,
+        "rotation_degrees": 210,
+        "source_bounds_mm": [
+          78.4999996,
+          149.000003,
+          98.5622117,
+          175.76786199999998
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_08",
+        "x": 320.6499999999998,
+        "y": 152.14999999999998,
+        "rotation_degrees": 255,
+        "source_bounds_mm": [
+          389.500008775,
+          163.9999918,
+          414.4775431,
+          181.3806169
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_17",
+        "x": 158.44999999999987,
+        "y": 117.60000000000001,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          335.5000049,
+          179.0000021,
+          359.22798159999996,
+          197.3829993
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_09",
+        "x": 314.1999999999998,
+        "y": 104.0,
+        "rotation_degrees": 45,
+        "source_bounds_mm": [
+          158.9999847,
+          75.4999889,
+          179.429732,
+          96.6020493
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_21",
+        "x": 307.04999999999984,
+        "y": 181.74999999999994,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          52.000006150000004,
+          88.9999831,
+          72.4297467,
+          110.1020435
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "ascent_11",
+        "x": 345,
+        "y": 8,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          28.0000136,
+          20.0964908,
+          132.000007,
+          82.9034776
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "ascent_12",
+        "x": 345,
+        "y": 116,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          148.0000102,
+          20.0964908,
+          252.0000144,
+          82.9034776
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_34",
+        "x": 197.75,
+        "y": 246.5,
+        "rotation_degrees": 105,
+        "source_bounds_mm": [
+          427.0009254003479,
+          7.9999854,
+          469.4182034,
+          69.8233005
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "yanggum_stand_01",
+        "x": 259.25,
+        "y": 222.5,
+        "rotation_degrees": 75,
+        "source_bounds_mm": [
+          7.499806,
+          7.498407234375,
+          69.69842137304687,
+          75.029906
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "yanggum_keyring_01",
+        "x": 316.25,
+        "y": 243.5,
+        "rotation_degrees": 120,
+        "source_bounds_mm": [
+          7.499999,
+          9.500054484375001,
+          50.631326,
+          67.460529984375
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_35",
+        "x": 370.25,
+        "y": 224.0,
+        "rotation_degrees": 180,
+        "source_bounds_mm": [
+          477.0001695,
+          7.9998562,
+          517.1717213273956,
+          68.3911743
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_20",
+        "x": 259.25,
+        "y": 12.5,
+        "rotation_degrees": 285,
+        "source_bounds_mm": [
+          370.499994925,
+          179.9999949,
+          395.477529325,
+          197.3806093
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_03",
+        "x": 281.75,
+        "y": 112.25,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          63.50002015,
+          176.9999842,
+          91.2013991,
+          197.4829286
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_22",
+        "x": 307.25,
+        "y": 206.75,
+        "rotation_degrees": 15,
+        "source_bounds_mm": [
+          354.99999890000004,
+          160.9999703,
+          378.727991825,
+          179.3829783
+        ]
+      },
+      {
+        "group": "02_extra_sheet/3T",
+        "sheet_index": 0,
+        "id": "extra_3T_15",
+        "x": 324.5,
+        "y": 222.5,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          291.9999846,
+          179.9999841,
+          319.5822103,
+          197.4325656
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_01",
+        "x": 8.0,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          10.500016,
+          8.0,
+          266.44502,
+          113.299996
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_07",
+        "x": 116.35000000000001,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          8.000016,
+          296.999981,
+          282.999996,
+          356.999979
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_02",
+        "x": 179.39999999999992,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          10.489557578125,
+          218.4974785,
+          144.01640070703127,
+          278.009603
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "ascent_13",
+        "x": 179.39999999999992,
+        "y": 145.04999999999995,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          268.0000068,
+          20.0964908,
+          372.0000326,
+          82.9034776
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "ascent_14",
+        "x": 241.94999999999987,
+        "y": 8.0,
+        "rotation_degrees": 270,
+        "source_bounds_mm": [
+          388.0000034,
+          20.0964908,
+          492.0000292,
+          82.9034776
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_06",
+        "x": 242.3499999999999,
+        "y": 184.04999999999995,
+        "rotation_degrees": 45,
+        "source_bounds_mm": [
+          10.49630858203125,
+          123.994875578125,
+          87.64890062500001,
+          207.534899
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "ascent_01",
+        "x": 307.79999999999984,
+        "y": 8.0,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          388.0000034,
+          371.4999769,
+          492.0000292,
+          401.4999546
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_05",
+        "x": 238.7999999999999,
+        "y": 115.05000000000001,
+        "rotation_degrees": 135,
+        "source_bounds_mm": [
+          163.986639125,
+          123.9973290625,
+          234.68530048632812,
+          181.540103
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_04",
+        "x": 298.3499999999999,
+        "y": 153.04999999999995,
+        "rotation_degrees": 225,
+        "source_bounds_mm": [
+          150.99951041479494,
+          218.49592913476565,
+          216.92019516601562,
+          286.042381
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_3T_03",
+        "x": 308.14999999999986,
+        "y": 217.04999999999995,
+        "rotation_degrees": 105,
+        "source_bounds_mm": [
+          95.99194786718749,
+          123.993751609375,
+          157.45893211914063,
+          203.536995
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "len_dot_3T_06",
+        "x": 340.8499999999998,
+        "y": 8.0,
+        "rotation_degrees": 30,
+        "source_bounds_mm": [
+          7.738976875,
+          7.747835871875001,
+          60.3452399,
+          64.3738108
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "burnt_01",
+        "x": 340.8499999999998,
+        "y": 65.65,
+        "rotation_degrees": 330,
+        "source_bounds_mm": [
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "tuiing_01",
+        "x": 314.89999999999986,
+        "y": 115.05000000000001,
+        "rotation_degrees": 75,
+        "source_bounds_mm": [
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "golden_01",
+        "x": 198.4999999999999,
+        "y": 251.04999999999995,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "unfried_01",
+        "x": 354.5499999999999,
+        "y": 150.39999999999998,
+        "rotation_degrees": 0,
+        "source_bounds_mm": [
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
+        ]
+      },
+      {
+        "group": "05_len/3T",
+        "sheet_index": 0,
+        "id": "yanggum_stand_02",
+        "x": 384.0,
+        "y": 83.5,
+        "rotation_degrees": 90,
+        "source_bounds_mm": [
+          10.000001,
+          95.000005,
+          82.000001,
+          122.999996
+        ]
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_19",
+        "source_bounds_mm": [
+          28.0000136,
+          160.096494,
+          132.000007,
+          222.90347
+        ],
+        "x": 8,
+        "y": 8,
+        "rotation_degrees": 90
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_09",
+        "source_bounds_mm": [
+          28.0000136,
+          300.0964973,
+          132.000007,
+          362.9034732
+        ],
+        "x": 8,
+        "y": 114.99999340000001,
+        "rotation_degrees": 90
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_18",
+        "source_bounds_mm": [
+          388.0000034,
+          90.0964924,
+          492.0000292,
+          152.9034792
+        ],
+        "x": 8,
+        "y": 221.99998680000002,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_24",
+        "source_bounds_mm": [
+          148.0000102,
+          440.0964789,
+          252.0000144,
+          502.903498
+        ],
+        "x": 73.80697599999999,
+        "y": 8,
+        "rotation_degrees": 90
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_07",
+        "source_bounds_mm": [
+          388.0000034,
+          160.096494,
+          492.0000292,
+          222.90347
+        ],
+        "x": 73.80697599999999,
+        "y": 115.0000042,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_25",
+        "source_bounds_mm": [
+          268.0000068,
+          230.0964849,
+          372.0000326,
+          292.9034824
+        ],
+        "x": 139.61399509999998,
+        "y": 8,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_16",
+        "source_bounds_mm": [
+          148.0000102,
+          90.0964924,
+          252.0000144,
+          152.9034792
+        ],
+        "x": 115.00002579999995,
+        "y": 180.8069802,
+        "rotation_degrees": 90
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_26",
+        "source_bounds_mm": [
+          388.0000034,
+          230.0964849,
+          492.0000292,
+          292.9034824
+        ],
+        "x": 180.80700179999994,
+        "y": 73.80699749999997,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_20",
+        "source_bounds_mm": [
+          28.0000136,
+          370.0964881,
+          132.000007,
+          432.9034641
+        ],
+        "x": 246.61402089999999,
+        "y": 8,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_10",
+        "source_bounds_mm": [
+          148.0000102,
+          160.096494,
+          252.0000144,
+          222.90347
+        ],
+        "x": 287.80702759999986,
+        "y": 73.80697600000002,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_06",
+        "source_bounds_mm": [
+          268.0000068,
+          160.096494,
+          372.0000326,
+          222.90347
+        ],
+        "x": 287.80702759999986,
+        "y": 139.613952,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_21",
+        "source_bounds_mm": [
+          28.0000136,
+          440.0964789,
+          132.000007,
+          502.903498
+        ],
+        "x": 180.80701259999995,
+        "y": 139.61399499999993,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_29",
+        "source_bounds_mm": [
+          268.0000068,
+          370.0964881,
+          372.0000326,
+          432.9034641
+        ],
+        "x": 287.80700599999994,
+        "y": 205.420928,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 0,
+        "id": "ascent_15",
+        "source_bounds_mm": [
+          28.0000136,
+          90.0964924,
+          132.000007,
+          152.9034792
+        ],
+        "x": 180.80701259999995,
+        "y": 205.42101409999992,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_08",
+        "source_bounds_mm": [
+          28.0000136,
+          230.0964849,
+          132.000007,
+          292.9034824
+        ],
+        "x": 8.0,
+        "y": 8.0,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_17",
+        "source_bounds_mm": [
+          268.0000068,
+          90.0964924,
+          372.0000326,
+          152.9034792
+        ],
+        "x": 115.05,
+        "y": 8.0,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_22",
+        "source_bounds_mm": [
+          148.0000102,
+          300.0964973,
+          252.0000144,
+          362.9034732
+        ],
+        "x": 222.1,
+        "y": 8.0,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_23",
+        "source_bounds_mm": [
+          148.0000102,
+          370.0964881,
+          252.0000144,
+          432.9034641
+        ],
+        "x": 8.0,
+        "y": 73.85699,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_27",
+        "source_bounds_mm": [
+          268.0000068,
+          300.0964973,
+          372.0000326,
+          362.9034732
+        ],
+        "x": 115.05,
+        "y": 73.85699,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_28",
+        "source_bounds_mm": [
+          388.0000034,
+          300.0964973,
+          492.0000292,
+          362.9034732
+        ],
+        "x": 222.1,
+        "y": 73.85699,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_30",
+        "source_bounds_mm": [
+          268.0000068,
+          440.0964789,
+          372.0000326,
+          502.903498
+        ],
+        "x": 8.0,
+        "y": 139.71398,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_02",
+        "source_bounds_mm": [
+          388.0000034,
+          412.0964654,
+          492.0000292,
+          442.096443
+        ],
+        "x": 115.05,
+        "y": 139.71398,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_03",
+        "source_bounds_mm": [
+          388.0000034,
+          450.6929898,
+          492.0000292,
+          480.6929674
+        ],
+        "x": 222.1,
+        "y": 139.71398,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_04",
+        "source_bounds_mm": [
+          388.0000034,
+          487.9034661,
+          492.0000292,
+          517.9034437
+        ],
+        "x": 115.05,
+        "y": 172.76398,
+        "rotation_degrees": 0
+      },
+      {
+        "group": "11_ascent_remaining/3T",
+        "sheet_index": 1,
+        "id": "ascent_05",
+        "source_bounds_mm": [
+          388.0000034,
+          526.4999905,
+          492.0000292,
+          556.4999681
+        ],
+        "x": 222.1,
+        "y": 172.76398,
+        "rotation_degrees": 0
+      }
+    ],
+    "stand_pieces": 8,
+    "keyring_pieces": 14,
+    "keyring_holes_per_piece": 2,
+    "keyring_hole_diameter_mm": 4,
+    "artwork_resize": false,
+    "existing_pages_repositioned": false,
+    "new_pages_added": 1,
+    "minimum_page_count_proven": false,
+    "notes": "Four reinforced stand sets, including two Alpha/Beta combined Zero plates; 8 stand pieces plus14 unchanged keyrings. All84 baseline placements fixed. Five pages feasible; four-page impossibility not proven.",
+    "stand_sets": 4,
+    "combined_zero_stands": [
+      "마가다락방",
+      "청민예"
+    ],
+    "retired_part_ids": [
+      "강민_stand_03",
+      "강민_stand_04",
+      "강윤진_stand_03",
+      "강윤진_stand_04"
+    ],
+    "retired_source_archive": {
+      "commit": "7b09732e0afac66ee737943335d4b0e569765118",
+      "prefix": "snapshots/personal_before_riser_zero_pair_4ffb44c/",
+      "source_commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74"
+    },
+    "layout_search": {
+      "exact_trials": 24,
+      "minimum_new_gap_mm": 3.1399999999999864,
+      "minimum_new_margin_mm": 8.007999999999996,
+      "personal_parts_in_existing_pages": 13,
+      "personal_parts_on_added_page": 9
+    },
+    "baseline_asset_count": 141
+  },
+  "pad_fill_allocation": {
+    "19_personal_fill/3T": [
+      "len_pad_3T_01_safe",
+      "len_pad_3T_02_safe",
+      "len_pad_3T_03_safe",
+      "len_pad_3T_04",
+      "len_pad_3T_05_safe",
+      "len_pad_3T_06",
+      "len_pad_3T_07"
+    ]
+  },
+  "logo_fill_allocation": {
+    "11_ascent_remaining/3T": [
+      "danba_logo_fill_001",
+      "danba_logo_fill_002",
+      "danba_logo_fill_003",
+      "danba_logo_fill_004"
+    ],
+    "19_personal_fill/3T": [
+      "danba_logo_fill_005",
+      "danba_logo_fill_006",
+      "danba_logo_fill_007",
+      "danba_logo_fill_008",
+      "danba_logo_fill_009",
+      "danba_logo_fill_010",
+      "danba_logo_fill_011",
+      "danba_logo_fill_012",
+      "danba_logo_fill_013",
+      "danba_logo_fill_014",
+      "danba_logo_fill_015",
+      "danba_logo_fill_016",
+      "danba_logo_fill_017",
+      "danba_logo_fill_018",
+      "danba_logo_fill_019",
+      "danba_logo_fill_020",
+      "danba_logo_fill_021"
+    ]
+  },
+  "logo_fill_source": "extra_3T_32",
+  "logo_fill_count": 21,
+  "pad_variant_sources": {
+    "len_pad_3T_01_safe": "len_pad_3T_01",
+    "len_pad_3T_03_safe": "len_pad_3T_03",
+    "len_pad_3T_02_safe": "len_pad_3T_02",
+    "len_pad_3T_05_safe": "len_pad_3T_05"
+  }
+}
