@@ -358,5 +358,37 @@
     "supplied_saetui_04",
     "tuiing_01",
     "unfried_01"
-  ]
+  ],
+  "len_slot_fit": {
+    "status": "standard starting values; not physically measured",
+    "reason": "Issue #1: Len slots were drawn at the nominal sheet thickness with no kerf compensation, so parts were loose.",
+    "applies_to": [
+      "05_len",
+      "06_len_pad"
+    ],
+    "source_slot_mm": [
+      18.8,
+      "thickness"
+    ],
+    "tab_width_mm": 18,
+    "corner_radius_mm": 0.35,
+    "thickness": {
+      "3T": {
+        "part_thickness_mm": 3.0,
+        "kerf_mm": 0.15,
+        "thickness_clearance_mm": 0.05,
+        "side_clearance_mm": 0.2
+      },
+      "5T": {
+        "part_thickness_mm": 5.0,
+        "kerf_mm": 0.2,
+        "thickness_clearance_mm": 0.05,
+        "side_clearance_mm": 0.2
+      }
+    },
+    "formula": {
+      "drawn_width": "part_thickness + thickness_clearance - kerf",
+      "drawn_length": "tab_width + side_clearance - 2*kerf (the tab also loses one kerf)"
+    }
+  }
 }

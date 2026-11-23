@@ -73,6 +73,6 @@ def render_comparison(root,out,settings):
     page.draw_line((8*MM,ground*MM),(202*MM,ground*MM),color=(.4,.4,.4),width=.25)
     for x,y,text,size in [(9,10,'LEN / character size and mount review',13),
         (15,119,'Regular artwork: 76 mm',10),(120,119,'DOT artwork: 50 mm',10),
-        (9,131,'3T: tab 18 x 2.6 mm; shared slot 18.8 x 3 mm. Common base unchanged.',9)]:
+        (9,131,'3T: tab 18 x 2.6 mm; base slot drawn 17.9 x 2.9 mm (kerf-compensated, nominal 18.8 x 3).',9)]:
         page.insert_text((x*MM,y*MM),text,fontsize=size)
     page.get_pixmap(dpi=150,alpha=False).save(out)

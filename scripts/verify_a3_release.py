@@ -26,6 +26,20 @@ def compare_geometry(file,spec):
         remaining.remove(i);maximum=max(maximum,delta)
     return maximum
 
+def len_slot_counts(file,thickness):
+    """Count nominal vs kerf-compensated Len slots among the actual cut paths."""
+    import numpy as np
+    from build_a3_release import len_slot_fit
+    doc=fitz.open(file);nominal=(18.8,float(thickness.removesuffix('T')));drawn=len_slot_fit(thickness)
+    counts={'nominal':0,'compensated':0}
+    for d in doc[0].get_drawings():
+        for s in contours(d):
+            c=np.array(polygon_of(s).buffer(0).minimum_rotated_rectangle.exterior.coords)
+            size=sorted([math.hypot(*(c[1]-c[0])),math.hypot(*(c[2]-c[1]))],reverse=True)
+            for key,ref in [('nominal',nominal),('compensated',drawn)]:
+                if all(abs(a-b)<.005 for a,b in zip(size,ref)):counts[key]+=1
+    return counts
+
 def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
     wanted=CONFIG['current_groups']
@@ -62,7 +76,12 @@ def main(check_zips=True,check_native=True):
                     assert meta['art_height_mm']==50 and meta['tab_width_mm']==18
                     assert abs(meta['tab_depth_mm']-(t-.4))<.0001
                     assert meta['common_base_slot_mm']==[18.8,t]
+                    from build_a3_release import len_slot_fit
+                    assert meta['compensated_base_slot_mm']==list(len_slot_fit(group.split('/')[-1]))
             changes={name:compare_geometry(folder/name,spec) for name in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']}
+            if group.startswith(('05_len/','06_len_pad/')):
+                slots=len_slot_counts(folder/'03_CUT_ONLY.pdf',group.split('/')[-1])
+                assert slots=={'nominal':0,'compensated':8},(group,'Len slot fit compensation',slots)
             if check_native:
                 native=folder/'02_MASTER.vectorcraft'
                 rel=native.relative_to(out).as_posix()
