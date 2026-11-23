@@ -1,12 +1,13 @@
 """Validate A3 artifacts against source contours after rigid placement."""
+from collections import Counter
 from pathlib import Path
 import sys,json,zipfile,math,hashlib
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tmp/pylibs'))
 import pymupdf as fitz
 from PIL import Image
-from shapely.geometry import Polygon
-from build_a3_release import polygon_of,extract_layers,MM,CONFIG
+from shapely.geometry import Point, Polygon
+from build_a3_release import polygon_of,extract_layers,shifted_poly,MM,CONFIG
 from verify_laser_paths import contours,native_pdf
 from artifact_hash import artifact_sha256
 
@@ -26,6 +27,107 @@ def compare_geometry(file,spec):
         remaining.remove(i);maximum=max(maximum,delta)
     return maximum
 
+def verify_chain_holes(part):
+    """Verify the metadata against both transformed 4 mm cutting circles."""
+    meta=part['design_metadata'];ident=part['id']
+    centers=meta['hole_centers_mm'];art=meta['art_rect_mm']
+    assert len(centers)==2 and all(len(center)==2 for center in centers),(ident,'Missing top/bottom hole centers')
+    assert meta['hole_diameter_mm']==4,(ident,'Unexpected connector hole diameter')
+    source_top,source_bottom=sorted(centers,key=lambda center:center[1])
+    assert source_top[1]<art[1]<art[3]<source_bottom[1],(ident,'Holes must be above and below the artwork')
+    assert part['path_count']==len(part['expected_paths'])==3,(ident,'Expected one outer and two hole contours')
+    paths=sorted((Polygon(p) for p in part['expected_paths']),key=lambda p:p.area,reverse=True)
+    outer,*holes=paths
+    assert all(outer.contains(hole) for hole in holes) and holes[0].disjoint(holes[1]),(ident,'Uncontained or overlapping connector holes')
+    place={'piece':{'bounds':part['source_bounds_mm']},'rotation':part['rotation_degrees'],
+           'x':part['placed_bounds_mm'][0],'y':part['placed_bounds_mm'][1],
+           'rotated_origin':part.get('rotated_origin_mm')}
+    predicted=[shifted_poly(Point(*center),place).buffer(2,quad_segs=64) for center in centers]
+    for expected in predicted:
+        distance,index=min((hole.boundary.hausdorff_distance(expected.boundary),i) for i,hole in enumerate(holes))
+        assert distance<.025,(ident,'Moved or resized connector hole',distance)
+        holes.pop(index)
+
+def verify_personal_inventory(config,selected_by_group):
+    allocation=config.get('personal_fill_allocation',{})
+    if not allocation:return
+    selected=[p['id'] for parts in selected_by_group.values() for p in parts]
+    assert len(selected)==len(set(selected))==config['selected_primary_parts']==110, 'Primary inventory must contain 84 originals and 26 personal parts exactly once'
+    assert set(allocation)<=set(selected_by_group),'Personal pieces must be on selected primary sheets'
+    personal=[ident for ids in allocation.values() for ident in ids]
+    assert len(personal)==len(set(personal))==26,'Personal allocation must contain 26 unique pieces'
+    policy=config['personal_fill_policy']
+    assert set(personal)==set(policy['new_part_ids']),'Unexpected personal piece IDs'
+    baseline=policy['baseline_ids']
+    assert len(baseline)==len(set(baseline))==84 and set(selected)-set(personal)==set(baseline),'Changed baseline inventory'
+    personal_ids=set(personal);counts=Counter();stand_pairs=Counter()
+    for group,parts in selected_by_group.items():
+        actual=[p for p in parts if p['id'] in personal_ids]
+        assert {p['id'] for p in actual}==set(allocation.get(group,[])),(group,'Changed personal allocation')
+        for p in actual:
+            meta=p['design_metadata'];kind=meta['part']
+            counts[kind]+=1
+            if kind=='keyring':
+                assert p['source'].endswith('_keyring'),(p['id'],'Unexpected keyring source')
+                verify_chain_holes(p)
+            else:
+                assert kind in ('character','base') and p['source'].endswith('_stand'),(p['id'],'Unexpected stand role or source')
+                assert p['path_count']==len(p['expected_paths'])=={'character':1,'base':2}[kind],(p['id'],'Changed stand contours')
+                stand_pairs[(p['source'],meta['nickname'],meta['mode'],kind)]+=1
+    assert counts=={'keyring':14,'character':6,'base':6},counts
+    for (source,nickname,mode,kind),count in stand_pairs.items():
+        assert count==1 and stand_pairs[(source,nickname,mode,{'character':'base','base':'character'}[kind])]==1,(source,nickname,mode,'Unmatched stand pair')
+
+def verify_fixed_placements(config,reviewed):
+    if not config.get('personal_fill_allocation'):return
+    policy=config['personal_fill_policy']
+    fixed=policy['fixed_existing_placements']
+    assert len(fixed)==len(policy['baseline_ids']) and {row['id'] for row in fixed}==set(policy['baseline_ids'])
+    indexed={}
+    for group in config['selected_primary_groups']:
+        rows=reviewed[group]
+        pages=rows if rows and isinstance(rows[0],list) else [rows]
+        for index,page in enumerate(pages):
+            indexed.update({(group,index,row['id']):row for row in page})
+    for expected in fixed:
+        key=(expected['group'],expected['sheet_index'],expected['id'])
+        actual=indexed.get(key)
+        assert actual is not None and all(actual[k]==expected[k] for k in ('x','y','rotation_degrees','source_bounds_mm')),(key,'Changed fixed baseline placement')
+
+def minimum_sheet_proof(config,selected_by_group,manifest):
+    """Compare a global gap-expanded area lower bound with actual reviewed pages."""
+    from optional_sheet_policy import capacity_bound
+
+    def polygons(parts):
+        for p in parts:
+            paths=[Polygon(q) for q in p['expected_paths']]
+            outer=max(paths,key=lambda q:q.area)
+            yield outer, 2*outer.area-sum(q.area for q in paths)
+
+    def bounds(parts,groups):
+        shapes=list(polygons(parts))
+        feasible=sum(len(manifest['groups'][g]) for g in groups)
+        canvas=config['canvas_mm']
+        capacity=capacity_bound([p for p,_ in shapes],canvas,config['page_margin_mm'],config['piece_gap_mm'],1)
+        lower=math.ceil((capacity['expanded_piece_area_lower_mm2']-.01)/capacity['expanded_container_area_upper_mm2'])
+        assert lower<=feasible,('Verified placements contradict the area bound',lower,feasible)
+        return {'parts':len(shapes),'net_material_area_mm2':sum(a for _,a in shapes),
+                'area_lower_bound_sheets':lower,'feasible_sheets':feasible,
+                'expanded_piece_area_lower_mm2':capacity['expanded_piece_area_lower_mm2'],
+                'expanded_single_sheet_area_upper_mm2':capacity['expanded_container_area_upper_mm2']}
+
+    summary=bounds([p for parts in selected_by_group.values() for p in parts],selected_by_group)
+    assert summary['feasible_sheets']==config['selected_primary_pages']
+    batches=[]
+    for name,groups in config.get('separate_print_batches',{}).items():
+        groups=[g for g in groups if g in selected_by_group]
+        if groups:
+            batches.append({'name':name,**bounds([p for g in groups for p in selected_by_group[g]],groups)})
+    return {**summary,'single_A3_area_mm2':math.prod(config['canvas_mm']),
+            'optimal_sheet_count_proven':summary['feasible_sheets']==summary['area_lower_bound_sheets'],
+            'separate_batches':batches,
+            'scope':'Selected 3T inventory. Global lower bound uses the policy clearance, sheet margin and exterior areas. Batch rows describe reviewed placements only.'}
+
 def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
     wanted=CONFIG['current_groups']
@@ -33,6 +135,9 @@ def main(check_zips=True,check_native=True):
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
     assert set(reviewed)==set(wanted),'Incomplete reviewed layout inventory'
     assert CONFIG['include_test_pieces'] is False and manifest['test_pieces_included'] is False
+    assert manifest.get('package_archives',True)==CONFIG.get('package_archives',True),'Manifest archive policy changed'
+    assert manifest['physical_pages_per_selected_thickness']==CONFIG['selected_primary_pages']
+    verify_fixed_placements(CONFIG,reviewed)
     from ascent_size_audit import measure
     fixed=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts'];sized=[]
     for ident in CONFIG['ascent_remaining']['part_ids']:
@@ -124,10 +229,12 @@ def main(check_zips=True,check_native=True):
         expected_ascent=CONFIG['ascent_remaining']['part_ids'] if group=='11_ascent_remaining/3T' else CONFIG['cross_sheet_cadena_allocation'].get(group,[])
         assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(expected_ascent)
         if group=='11_ascent_remaining/3T':
-            assert set(ids)==set(expected_ascent) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
+            fillers=CONFIG.get('personal_fill_allocation',{}).get(group,[])
+            assert set(ids)==set(expected_ascent+fillers) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
             assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]
     assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==CONFIG['selected_primary_parts']
+    verify_personal_inventory(CONFIG,selected_by_group)
     from optional_sheet_policy import assess
     fill=assess(ROOT)
     saved_fill=json.loads((base/'OPTIONAL_FILL_ASSESSMENT.json').read_text(encoding='utf-8'))
@@ -145,24 +252,9 @@ def main(check_zips=True,check_native=True):
     for group,ids in CONFIG['optional_fill_allocation'].items():
         assert sorted(p['id'] for p in selected_by_group[group] if p['id'].startswith('yanggum_'))==sorted(ids)
     assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids']+CONFIG['ascent_remaining']['part_ids'])
-    # Subtract through-holes: this is physical material area, not bounding boxes.
-    material_area=0
-    for p in selected_parts:
-        areas=[Polygon(q).area for q in p['expected_paths']]
-        material_area+=2*max(areas)-sum(areas)
-    batches=[]
-    for name,groups in CONFIG['separate_print_batches'].items():
-        batch_parts=[p for g in groups for p in selected_by_group[g]]
-        net=sum(2*max(areas)-sum(areas) for p in batch_parts for areas in [[Polygon(q).area for q in p['expected_paths']]])
-        feasible=sum(len(manifest['groups'][g]) for g in groups);lower=math.ceil(net/(420*297))
-        assert feasible==lower,(name,'Sheet count not proven minimal')
-        batches.append({'name':name,'parts':len(batch_parts),'net_material_area_mm2':net,'area_lower_bound_sheets':lower,'feasible_sheets':feasible})
-    lower_bound=sum(b['area_lower_bound_sheets'] for b in batches)
-    minimum_proof={'net_material_area_mm2':material_area,'single_A3_area_mm2':420*297,
-        'area_lower_bound_sheets':lower_bound,'feasible_sheets':CONFIG['selected_primary_pages'],'optimal_sheet_count_proven':True,'separate_batches':batches,
-        'scope':f"{CONFIG['selected_primary_parts']} selected 3T pieces. Yanggeum is included in the existing mixed pair, PAD deferred. Ascent remaining stays separate; minimum proved within that separation. 5T and standalone reference layouts excluded."}
+    minimum_proof=minimum_sheet_proof(CONFIG,selected_by_group,manifest)
     packages=[]
-    if check_zips:
+    if check_zips and CONFIG.get('package_archives',True):
         for group in sorted(wanted):
             file=base/(group.replace('/','_')+'_A3.zip')
             with zipfile.ZipFile(file) as z:

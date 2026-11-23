@@ -459,7 +459,7 @@ def apply_canonical_contours(piece):
 
 
 def inputs(only=None):
-    batches=dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
+    batches={} if only and '19_personal_fill' in only else dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
     for t in ['3T','5T']:
         group=f'02_extra_sheet/{t}'
         if group in batches:
@@ -470,6 +470,13 @@ def inputs(only=None):
     optional={p['id']:p for p in batches.get('09_yanggum/3T',[])}
     for group,ids in CONFIG.get('optional_fill_allocation',{}).items():
         if group in batches:batches[group]+=[optional[k] for k in ids]
+    allocation=CONFIG.get('personal_fill_allocation',{})
+    if any(not only or only in group for group in allocation):
+        from chain_keyring_parts import build_all
+        personal={p['id']:p for record in build_all() if record['applicant'] is not None for p in record['pieces']}
+        for group,ids in allocation.items():
+            if not only or only in group:
+                batches.setdefault(group,[]).extend(personal[ident] for ident in ids)
     visited=set()
     for parts in batches.values():
         for piece in parts:

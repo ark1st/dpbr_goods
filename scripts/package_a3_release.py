@@ -8,10 +8,96 @@ OUT=ROOT/'output';BASE=OUT/'a3_release'
 def write(p,text):
     p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text,encoding='utf-8',newline='\n')
 
+def write_personal_release(cfg,manifest):
+    """Publish the reviewed offcut allocation without creating new archives."""
+    assert cfg['package_archives'] is False
+    manifest.update(revision=cfg['revision'],selected_thickness='3T',
+        physical_pages_per_selected_thickness=cfg['selected_primary_pages'],
+        superseded_releases=cfg['superseded_releases'],
+        optional_groups=cfg['optional_groups'],test_pieces_included=False,
+        support_files=cfg.get('support_files',[]),recut_recoveries=cfg.get('recut_recoveries',[]),
+        package_archives=False,retired_package_files=cfg['retired_package_files'])
+    write(BASE/'manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    current=[];locations={};personal={};number=0
+    for group in cfg['selected_primary_groups']:
+        for page in manifest['groups'][group]:
+            number+=1;folder=OUT/page['folder']
+            spec=json.loads((folder/'validation.json').read_text(encoding='utf-8'))
+            current.append(f'| {number} | [{group} · {folder.name}]({page["folder"].removeprefix("a3_release/")}) | {page["pieces"]} |')
+            for p in spec['parts']:
+                locations[p['id']]=number
+                if p['id'] in cfg['personal_fill_policy']['new_part_ids']:personal[p['id']]=p
+    assert len(personal)==26
+    common=f'''**3T · A3 420×297mm · 실제 크기 100% · {number}장 / {cfg['selected_primary_parts']}조각.**
+
+기존 84조각의 위치·크기·칼선은 유지했습니다. 개인별 스탠드 12조각과 상하 연결 키링 2개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 12개는 A3 한 장에 모았습니다. 5장 배치는 검증했지만 4장 배치가 불가능하다고 증명한 것은 아닙니다. Len PAD는 계속 출력 보류이며 양검 단독판은 중복 참고본입니다.
+
+| 출력 순서 | 제작 폴더 | 조각 |
+|---|---|---:|
+'''+ '\n'.join(current)+'''
+
+## 제작 파일
+
+- `01_PRINT.pdf` 또는 `01_PRINT_300ppi.png`: 인쇄. 파란 위치 기준선 포함.
+- `03_CUT_ONLY.pdf` 또는 `.svg`: 재단 전용, 빨강 0.001mm. 안쪽 구멍·홈부터 자릅니다.
+- `02_MASTER.pdf`, `.ai`, `.vectorcraft`: 편집본. AI는 PDF 호환 레이어이며 네이티브 편집은 VectorCraft를 사용합니다.
+- `04_WHITE_INK_MASK`: 제공된 백색판만 유지합니다. 신규 개인별 도안의 백색은 RIP에서 그림 알파 기준으로 설정해야 합니다.
+- `preview.png`, `PREVIEW_NOT_FOR_CUT.pdf`: 검토용입니다.
+
+대지·파란 사각 기준선(가장자리에서 4mm)은 그대로입니다. 조각 간격 3mm 이상, 가장자리 8mm 이상이며 인쇄·백색·칼선의 원점과 배율이 같습니다. 파란 기준선은 자르지 않습니다.
+
+## 개인별 스탠드와 줄줄이 키링
+
+스탠드는 강민 4조각, 강윤진 4조각, 이상준 2조각, 정지영 2조각입니다. 캐릭터 6개와 투명 받침 6개이며 탭 18×2.6mm, 받침 홈 18.8×3.0mm입니다.
+줄줄이 키링 14개 모두 위·아래 ⌀4mm 연결 구멍이 있습니다. 기존 그림 높이 40mm와 상단 연결부를 유지하고 아래 연결부를 추가해 완성 높이는 약71mm입니다. 4×4cm 완성 외곽으로 축소한 파일이 아닙니다.
+연결 금속 링·체인은 제작 칼선에 포함하지 않습니다. 링·체인의 실제 조립 간섭과 아크릴 끼움·커프·인쇄 정합은 실물 미검증입니다.
+
+![상하 두 구멍 · 신규 키링 14개](19_personal_fill/connection_preview.png)
+
+![개인별 스탠드](19_personal_fill/stand_preview.png)
+
+| 개인별 부품 ID | 출력 A3 |
+|---|---:|
+'''+ '\n'.join(f'| {ident} | {locations[ident]} |' for ident in sorted(personal))+'''
+
+이번 출력에는 ZIP을 새로 만들지 않았습니다. 남아 있는 이전 ZIP은 이전 버전의 보관 파일이며 현재 제작용이 아닙니다. 현재 시트 폴더의 파일을 사용하세요.
+
+[배치 검사](A3_VALIDATION.json) · [개인 도안 추가 기록](PERSONAL_FILL_ASSESSMENT.json) · [칼선 검사](../LASER_PATH_AUDIT.json) · [개별 편집 에셋](../individual_assets)
+'''
+    write(BASE/'README.md','# A3 제작 파일 · 개인별 스탠드·상하 연결 키링\n\n'+common)
+    for cat in sorted({g.split('/')[0] for g in manifest['groups']}):
+        rows=[]
+        for group,pages in manifest['groups'].items():
+            if not group.startswith(cat+'/'):continue
+            state='현재 제작' if group in cfg['selected_primary_groups'] else '별도 대안·중복 참고용 / 현재 추가 출력 금지'
+            for page in pages:
+                rel=page['folder'].removeprefix('a3_release/'+cat+'/')
+                rows.append(f'### {state} · {group.split("/")[-1]} · {page["pieces"]}조각\n\n[제작 파일]({rel})\n\n![배치]({rel}/preview.png)\n')
+        write(BASE/cat/'README.md',f'# {cat}\n\n'+'\n'.join(rows)+'\n[전체 제작 순서·개인별 부품 위치](../README.md)\n\nZIP은 새로 만들지 않았습니다. 실물 미검증입니다.\n')
+    from chain_keyring_parts import render_group_preview
+    from build_a3_release import polygon_of
+    fixed=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']
+    for kind,file in [('줄줄이','connection_preview.png'),('스탠드','stand_preview.png')]:
+        pieces=[]
+        for ident,p in sorted(personal.items()):
+            meta=p['design_metadata']
+            if (kind=='줄줄이' and meta['part']!='keyring') or (kind=='스탠드' and meta['part']=='keyring'):continue
+            paths=fixed[ident]['paths'];poly=max((polygon_of(s) for s in paths),key=lambda q:q.area)
+            pieces.append(dict(id=ident,bounds=p['source_bounds_mm'],poly=poly,design_metadata=meta))
+        render_group_preview({'kind':kind,'applicant':None,'pieces':pieces},BASE/'19_personal_fill'/file)
+    assessment={'revision':cfg['revision'],**cfg['personal_fill_policy'],'allocation':cfg['personal_fill_allocation'],
+        'selected_pages':number,'selected_parts':cfg['selected_primary_parts'],'physical_cut_test':False}
+    write(BASE/'PERSONAL_FILL_ASSESSMENT.json',json.dumps(assessment,ensure_ascii=False,indent=2)+'\n')
+    rows='\n'.join(row.replace('](','](a3_release/') for row in current)
+    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+'\n\n[전체 제작 안내·개인별 부품 위치·연결부 시안](a3_release) · [개별 편집 에셋](individual_assets)\n\n기존84조각 위치 유지. 신규 스탠드12조각과 키링2개는 기존 자투리에, 나머지 키링12개는 마지막 A3에 배치했습니다. 4장이 불가능하다고 증명한 것은 아닙니다. Len PAD는 출력 보류, 양검 단독판은 중복 참고용입니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본이므로 제작에 사용하지 않습니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
+    print(f'Published {number} A3 pages; no new ZIP archives',flush=True)
+
 def main():
     cfg=json.loads((ROOT/'configs/a3_release.json').read_text(encoding='utf-8'))
     m=json.loads((BASE/'manifest.json').read_text(encoding='utf-8'))
     assert set(m['groups'])==set(cfg['current_groups'])
+    if cfg.get('personal_fill_allocation'):
+        return write_personal_release(cfg,m)
     m.update(revision=cfg['revision'],selected_thickness='3T',optional_groups=cfg['optional_groups'],test_pieces_included=False,support_files=cfg.get('support_files',[]),recut_recoveries=cfg.get('recut_recoveries',[]))
     write(BASE/'manifest.json',json.dumps(m,ensure_ascii=False,indent=2)+'\n')
     common='''**현재 선택: 3T. A3 가로 420×297mm, 실제 크기 100%, 자동 맞춤 해제.**

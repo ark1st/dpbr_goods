@@ -17,7 +17,7 @@ class RepositoryRegression(unittest.TestCase):
 
     def test_archived_input_stays_in_cache_and_rejects_modified_bytes(self):
         with tempfile.TemporaryDirectory() as d:
-            cache=Path(d)/'cache';data=b'original source'
+            cache=Path(d).resolve()/'cache';data=b'original source'
             spec={'file':'output/old/plate.ai','commit':'1'*40,'sha256':hashlib.sha256(data).hexdigest()}
             with patch('source_cache.subprocess.check_output',return_value=data) as run:
                 p=cached_input(spec,cache);self.assertTrue(p.is_relative_to(cache));self.assertEqual(p.read_bytes(),data)

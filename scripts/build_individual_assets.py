@@ -103,7 +103,9 @@ def export_asset(entry):
             'canvas_mm':size,'a3_groups':entry['groups'],'files':FILES}
 
 def font(size,bold=False):
-    candidates=[Path('C:/Windows/Fonts')/('malgunbd.ttf' if bold else 'malgun.ttf'),
+    candidates=[Path('/System/Library/Fonts/AppleSDGothicNeo.ttc'),
+        Path('/System/Library/Fonts/Supplemental/AppleGothic.ttf'),
+        Path('C:/Windows/Fonts')/('malgunbd.ttf' if bold else 'malgun.ttf'),
         Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')]
     return ImageFont.truetype(str(next(p for p in candidates if p.exists())),size)
 
@@ -207,7 +209,7 @@ def main():
         for row in rows:
             im=Image.open(ROOT/'output'/row['folder']/'preview.png').convert('RGB');im.thumbnail((230,190))
             tile=Image.new('RGB',(250,220),'#f5f4ee');tile.paste(im,((250-im.width)//2,4))
-            ImageDraw.Draw(tile).text((6,202),row['id'],fill='black');tiles.append(tile)
+            ImageDraw.Draw(tile).text((6,202),row['id'],font=font(16),fill='black');tiles.append(tile)
         contact=Image.new('RGB',(1500,220*math.ceil(len(tiles)/6)),'#f5f4ee')
         for i,tile in enumerate(tiles):contact.paste(tile,((i%6)*250,(i//6)*220))
         name=group.replace('/','_')+'_catalog.png';contact.save(OUT/name);gallery.append(name)

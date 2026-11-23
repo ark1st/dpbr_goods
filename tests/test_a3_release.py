@@ -43,15 +43,80 @@ class A3PackingTests(unittest.TestCase):
         cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
         rows=json.loads((ROOT/'configs/a3_placements.json').read_text())['groups']
         selected=[r['id'] for group in cfg['selected_primary_groups'] for page in (rows[group] if isinstance(rows[group][0],list) else [rows[group]]) for r in page]
-        self.assertEqual(len(selected),84)
-        self.assertEqual(len(set(selected)),84)
+        personal=cfg.get('personal_fill_allocation',{})
+        new=[p for ids in personal.values() for p in ids]
+        self.assertEqual(len(selected),84+len(new))
+        self.assertEqual(len(set(selected)),len(selected))
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
         self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']+cfg['ascent_remaining']['part_ids']))
         separate=[r['id'] for page in rows['11_ascent_remaining/3T'] for r in page]
-        self.assertEqual(len(separate),25)
+        self.assertEqual(set(separate),set(cfg['ascent_remaining']['part_ids']+personal.get('11_ascent_remaining/3T',[])))
         self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
         self.assertNotIn('ascent_31',selected)
+        if personal:
+            from verify_a3_release import verify_fixed_placements
+            self.assertEqual(len(new),26)
+            self.assertEqual(set(new),set(cfg['personal_fill_policy']['new_part_ids']))
+            self.assertEqual(set(selected)-set(new),set(cfg['personal_fill_policy']['baseline_ids']))
+            for group in cfg['selected_primary_groups']:
+                pages=rows[group] if isinstance(rows[group][0],list) else [rows[group]]
+                self.assertEqual({r['id'] for page in pages for r in page if r['id'] in new},set(personal.get(group,[])))
+            verify_fixed_placements(cfg,rows)
+            fixed=cfg['personal_fill_policy']['fixed_existing_placements'][0]
+            pages=rows[fixed['group']]
+            page=pages[fixed['sheet_index']] if isinstance(pages[0],list) else pages
+            next(r for r in page if r['id']==fixed['id'])['x']+=.25
+            with self.assertRaisesRegex(AssertionError,'Changed fixed baseline placement'):
+                verify_fixed_placements(cfg,rows)
+
+    def test_chain_requires_two_4_mm_holes_on_opposite_sides_of_artwork(self):
+        from verify_a3_release import verify_chain_holes
+        shell=box(10,20,42,80)
+        pos={'piece':{'bounds':shell.bounds},'x':23,'y':11,'rotation':165}
+        centers=[[26,26],[26,74]]
+        part={'id':'fixture_keyring','source_bounds_mm':shell.bounds,'placed_bounds_mm':[23,11],
+              'rotation_degrees':165,'path_count':3,
+              'expected_paths':[list(shifted_poly(shape,pos).exterior.coords) for shape in
+                                [shell,*(Point(*p).buffer(2,quad_segs=64) for p in centers)]],
+              'design_metadata':{'hole_centers_mm':centers,'hole_diameter_mm':4,'art_rect_mm':[20,32,31,68]}}
+        verify_chain_holes(part)
+        with self.assertRaisesRegex(AssertionError,'two hole contours'):
+            verify_chain_holes({**part,'expected_paths':part['expected_paths'][:2]})
+        paths=[*part['expected_paths'][:2],list(shifted_poly(Point(*centers[-1]).buffer(1.9),pos).exterior.coords)]
+        with self.assertRaisesRegex(AssertionError,'resized connector'):
+            verify_chain_holes({**part,'expected_paths':paths})
+
+    def test_lower_bound_does_not_treat_extra_verified_page_as_minimum(self):
+        from verify_a3_release import minimum_sheet_proof
+        p={'expected_paths':[list(box(10,10,50,50).exterior.coords)]}
+        cfg={'canvas_mm':[100,100],'page_margin_mm':0,'piece_gap_mm':3,'selected_primary_pages':2,
+             'separate_print_batches':{'a':['a'],'b':['b']}}
+        layout={'groups':{'a':[{}],'b':[{}]}}
+        proof=minimum_sheet_proof(cfg,{'a':[p],'b':[p]},layout)
+        self.assertEqual(proof['area_lower_bound_sheets'],1)
+        self.assertEqual(proof['feasible_sheets'],2)
+        self.assertFalse(proof['optimal_sheet_count_proven'])
+
+    def test_no_zip_inventory_accepts_only_declared_retired_archives(self):
+        from verify_repository import output_inventory,PAGE_FILES
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as d:
+            out=Path(d);base=out/'a3_release';page=base/'19_personal_fill/3T/sheet_01'
+            page.mkdir(parents=True);(base/'05_len').mkdir()
+            old='a3_release/05_len_3T_A3.zip'
+            (base/'manifest.json').write_text(json.dumps({
+                'groups':{'19_personal_fill/3T':[{'folder':page.relative_to(out).as_posix()}]},
+                'package_archives':False,'retired_package_files':[old]}))
+            for file in [base/'README.md',base/'05_len/assembly.png',base/'05_len/assembly_dot.png',
+                         base/'19_personal_fill/README.md',*(page/name for name in PAGE_FILES)]:
+                file.touch()
+            self.assertNotIn(old,output_inventory(out))
+            (out/old).touch()
+            self.assertIn(old,output_inventory(out))
+            (base/'19_personal_fill_3T_A3.zip').touch()
+            with self.assertRaisesRegex(ValueError,'Unregistered'):
+                output_inventory(out)
 
     def test_clearance_capacity_can_prove_nonfit_when_plain_area_cannot(self):
         from optional_sheet_policy import capacity_bound

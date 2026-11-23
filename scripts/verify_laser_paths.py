@@ -115,11 +115,15 @@ def native_pdf(file,dest):
 
 
 def inventory_for(records):
-    from verify_repository import output_inventory
+    from verify_repository import output_inventory,retired_package_paths
+    out=ROOT/'output'
+    manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
+    retired=retired_package_paths(manifest)
     checked={r['file'] for r in records}
     return [{'file':rel,'status':'cut_geometry_checked' if rel in checked else
+             'retired_previous_revision_package' if rel in retired else
              'current_release_package' if rel.endswith('.zip') else 'current_supporting_artwork_or_documentation'}
-            for rel in output_inventory(ROOT/'output')]
+            for rel in output_inventory(out)]
 
 
 def main(pdf_only=False):

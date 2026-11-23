@@ -71,12 +71,13 @@
     "ascent_size_audit.py",
     "repair_printed_plate.py",
     "verify_recut.py",
-    "optional_sheet_policy.py"
+    "optional_sheet_policy.py",
+    "chain_keyring_parts.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
-  "physical_sheets": 4,
-  "physical_parts": 84,
+  "physical_sheets": 5,
+  "physical_parts": 110,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [
@@ -1220,6 +1221,118 @@
     {
       "file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
       "sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5"
+    },
+    {
+      "file": "assets/chain_keyring/applicants.json",
+      "sha256": "5a182874ca563096645141d73c867c78d7ab0b5443979494bda2428dfd8e6dd4"
+    },
+    {
+      "file": "assets/chain_keyring/강민/prepared/provenance.json",
+      "sha256": "fd9af915fc08992b68c8c7ebe33f0350e6b623f1410c32cca834c3e84e390f0a"
+    },
+    {
+      "file": "assets/chain_keyring/강민/prepared/마가다락방__리부트(icon_3)_render300_beta_stand60.png",
+      "sha256": "732ef267735fe5a8ce1a57c2bda9aa4a1b185e073782ed28f9f5c6a2e5b3615d"
+    },
+    {
+      "file": "assets/chain_keyring/강민/prepared/마가다락방__리부트(icon_3)_render300_stand60.png",
+      "sha256": "d8664e5c3f5a0451a568868c61e0e64ad7a892f52753bffaca466a0d07854390"
+    },
+    {
+      "file": "assets/chain_keyring/강윤진/prepared/provenance.json",
+      "sha256": "3636df1727c37475a05f5a2c5d4b635e155518d7609fa7288763cf888b11188f"
+    },
+    {
+      "file": "assets/chain_keyring/강윤진/prepared/청민예__오로라_render300_beta_stand60.png",
+      "sha256": "b29ea04df794e9216e0bd2034ad28319e30ae5637ed510822421ecf8de682171"
+    },
+    {
+      "file": "assets/chain_keyring/강윤진/prepared/청민예__오로라_render300_stand60.png",
+      "sha256": "3f7a340bda4b0434506a108ce64fdd766e8b3963e4309f58bc0d08582347a568"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/prepared/provenance.json",
+      "sha256": "ea0d7fce81feaf8b7aeedd773332b2827ed0c6dc464771e6efe14c61308d4ed6"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/prepared/룃혜__베라_render300_chain40.png",
+      "sha256": "52fda51dc4de361ec038b2d9af52362751b114b55cedb2072548e52ca56e9fe8"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/prepared/믐댕__리부트(icon_3)_render300_chain40.png",
+      "sha256": "d2e3bd666aa85e77768df821e2472b92045d971a49891cb5ec82538e2f969461"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/prepared/안개질무렵__베라_render300_chain40.png",
+      "sha256": "1fbebcc1e81f93fd70463b17d90ff04fe445ffc997ef60a725179e68df4a7d0c"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/prepared/엔루__베라_render300_chain40.png",
+      "sha256": "7a88dc3c49712d7f3f9e49ec07494d523a2535ae2e8a47292e305dadd3975cda"
+    },
+    {
+      "file": "assets/chain_keyring/김윤/prepared/타루카루타__베라_render300_chain40.png",
+      "sha256": "3026ff312f70cd4f9e3b5a4d9c9deef4f0ffc2e9a694cc2d3daee33aa4a47f23"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/provenance.json",
+      "sha256": "81b319be0a9f55eccac542302a948e0edc71f47ff746ac3eb271b20e92865965"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/걸퍄__리부트(icon_3)_render300_chain40.png",
+      "sha256": "c4dfad9531441c46297110fee82ca4c1a52eb60c24edf07652fd53559a106b93"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/냘됫__리부트(icon_3)_render300_chain40.png",
+      "sha256": "52c32e4f70d22239419e82b421dd9ab969e1ddacdd02596666e0c250349abf17"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/뿟쥐__리부트(icon_3)_render300_alpha_chain40.png",
+      "sha256": "547d14a816a3237f433084fb1add760cbf605536f2f2bece1a38481fb06c715c"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/뿟쥐__리부트(icon_3)_render300_chain40.png",
+      "sha256": "1050932c14b0c5fb3943269f642f6da2a42b069d70ed5d075beb6756635b52d6"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/씀툿__리부트(icon_3)_render300_chain40.png",
+      "sha256": "310c62e8e2bca07baca4c80547cef11d0678d2975260e952ad67a7e03ebe99d3"
+    },
+    {
+      "file": "assets/chain_keyring/김호/prepared/얽빅__리부트(icon_3)_render300_chain40.png",
+      "sha256": "adc184a73c628f5a78d453f1938ef5bd11bc03b43149e42f393892a62fe8dc53"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/prepared/provenance.json",
+      "sha256": "de37f115f063e0f77fdf1b188b3ce94798a80f723c38a829378a1b0aecbb69d8"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/prepared/슬빈띠니__스카니아_render300_chain40.png",
+      "sha256": "01ed396e4774708cc3220cff8d6419166f3429c0b10c26434df96ecae0b79b1a"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/prepared/아기요우무__스카니아_render300_chain40.png",
+      "sha256": "504ec69bdf64f990e55fbb5a7f608b987484acd1a6bfbacb7302db3d71a4c148"
+    },
+    {
+      "file": "assets/chain_keyring/배승민/prepared/체스말보관함__스카니아_render300_chain40.png",
+      "sha256": "344fa696201bdb8325d22f2b7b965ba2f1ab9d899f62840fd947d7521108538a"
+    },
+    {
+      "file": "assets/chain_keyring/이상준/prepared/provenance.json",
+      "sha256": "8f1032d889183c7b1d6dc906477f83afc1c0ad6cb434d8a4f23c0273917bef81"
+    },
+    {
+      "file": "assets/chain_keyring/이상준/prepared/귀여운렌군__스카니아_render300_stand60.png",
+      "sha256": "6a289b53d9438f5ed1b3c92ca4a1c6c9bc596c0e7bf93fdb900ba1d74cf3d9b7"
+    },
+    {
+      "file": "assets/chain_keyring/정지영/prepared/provenance.json",
+      "sha256": "6baecb786471f9e0b1692fa61ddaa202eedbbd69e45a5eca0e57f75de21912a5"
+    },
+    {
+      "file": "assets/chain_keyring/정지영/prepared/검마충성77__크로아_render300_stand60.png",
+      "sha256": "6401774bde1da070a2b15a915fff90ae595eaabbf3f35b37f6b89e16d6f057ef"
     }
   ],
   "optional_current_groups": [

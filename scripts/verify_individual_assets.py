@@ -1,7 +1,7 @@
 """Check independent pieces against every corresponding A3 placement."""
 import json, math
 from pathlib import Path
-from build_a3_release import ROOT,MM,extract_layers,polygon_of,transformed_cut_path,draw_path
+from build_a3_release import ROOT,MM,CONFIG,extract_layers,polygon_of,transformed_cut_path,draw_path
 from verify_laser_paths import contours
 from artifact_hash import artifact_sha256
 import pymupdf as fitz
@@ -18,6 +18,12 @@ def main():
             for p in spec['parts']:locations.setdefault(p['id'],[]).append((group,p))
     assert set(locations)=={a['id'] for a in m['assets']}
     assert len(m['assets'])==m['asset_count']
+    personal=CONFIG.get('personal_fill_allocation',{})
+    if personal:
+        expected={ident:group for group,ids in personal.items() for ident in ids}
+        assert len(expected)==26 and m['asset_count']==167,'Incomplete catalog of original and personal pieces'
+        for ident,group in expected.items():
+            assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed personal asset placement')
     canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']
     assert set(canonical)==set(locations)
     records=[];tiles=[];rendered=0

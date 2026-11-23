@@ -8,6 +8,14 @@ PAGE_FILES={'01_PRINT.pdf','01_PRINT_300ppi.png','02_MASTER.pdf','02_MASTER.ai',
     'validation.json','README.md'}
 ROOT_FILES={'README.md','LASER_PATH_AUDIT.json','RELEASE_VALIDATION.json','REPOSITORY_AUDIT.json','RETIRED.json'}
 
+def retired_package_paths(manifest):
+    paths=set(manifest.get('retired_package_files',[]))
+    for path in paths:
+        rel=Path(path)
+        if len(rel.parts)!=2 or rel.parts[0]!='a3_release' or not rel.name.endswith('_A3.zip'):
+            raise ValueError('Invalid retired A3 package path: '+path)
+    return paths
+
 def output_inventory(out):
     manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
     required={'a3_release/README.md','a3_release/manifest.json','a3_release/05_len/assembly.png','a3_release/05_len/assembly_dot.png'}
@@ -22,10 +30,13 @@ def output_inventory(out):
         required.add('a3_release/yanggum_final_preview.png')
     for group,pages in manifest['groups'].items():
         required.add('a3_release/'+group.split('/')[0]+'/README.md')
-        required.add('a3_release/'+group.replace('/','_')+'_A3.zip')
+        if manifest.get('package_archives',True):
+            required.add('a3_release/'+group.replace('/','_')+'_A3.zip')
         for page in pages:
             required.update(page['folder']+'/'+f for f in PAGE_FILES)
-    allowed=required|ROOT_FILES|{'a3_release/A3_VALIDATION.json'}
+    retired=retired_package_paths(manifest)
+    if required&retired:raise ValueError('Current archives cannot also be retired')
+    allowed=required|ROOT_FILES|{'a3_release/A3_VALIDATION.json'}|retired
     if recoveries:allowed.add('recut_only/VALIDATION.json')
     asset_manifest=out/'individual_assets/manifest.json'
     if asset_manifest.exists():
@@ -94,15 +105,20 @@ def main():
     from source_cache import restore_inputs,input_records
     restored=restore_inputs()
     assert len(restored)==len(input_records())
-    files=output_inventory(ROOT/'output')
-    report={'date':policy['date'],'errors':[],'archive':archive,'current_output_files':files,
+    out=ROOT/'output'
+    files=output_inventory(out)
+    manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
+    retired=set(files)&retired_package_paths(manifest)
+    current=[f for f in files if f not in retired]
+    report={'date':policy['date'],'errors':[],'archive':archive,'current_output_files':current,
+        'retired_package_files':sorted(retired),
         'pinned_inputs_sha256_checked':len(restored),'preserved_source_assets_sha256_checked':source_assets,
         'retired_source_files':policy['retired_source_files'],
         'selected_thickness':'3T','selected_pages':policy['physical_sheets'],'selected_parts':policy['physical_parts'],'physical_cut_test':False,
         'limitations':['Raw backups are byte-verified archives; obsolete artwork is not approved for cutting.',
         'Temporary generated caches and installed libraries are not repository deliverables.']}
     (ROOT/'output/REPOSITORY_AUDIT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
-    print(json.dumps({'archive_records':archive['file_records'],'pinned_inputs':len(restored),'current_output_files':len(files),'errors':0}),flush=True)
+    print(json.dumps({'archive_records':archive['file_records'],'pinned_inputs':len(restored),'current_output_files':len(current),'retired_packages':len(retired),'errors':0}),flush=True)
     return report
 
 if __name__=='__main__':main()

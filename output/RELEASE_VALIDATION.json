@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-yanggeum-fill-pad-deferred",
+  "revision": "A3-2026-11-23-personal-stands-dual-hole-fill",
   "errors": [],
   "repository": {
     "date": "2026-11-23",
@@ -47,8 +47,6 @@
       "a3_release/02_extra_sheet/5T/sheet_01/preview.png",
       "a3_release/02_extra_sheet/5T/sheet_01/validation.json",
       "a3_release/02_extra_sheet/README.md",
-      "a3_release/02_extra_sheet_3T_A3.zip",
-      "a3_release/02_extra_sheet_5T_A3.zip",
       "a3_release/05_len/3T/sheet_01/01_PRINT.pdf",
       "a3_release/05_len/3T/sheet_01/01_PRINT_300ppi.png",
       "a3_release/05_len/3T/sheet_01/02_MASTER.ai",
@@ -80,8 +78,6 @@
       "a3_release/05_len/README.md",
       "a3_release/05_len/assembly.png",
       "a3_release/05_len/assembly_dot.png",
-      "a3_release/05_len_3T_A3.zip",
-      "a3_release/05_len_5T_A3.zip",
       "a3_release/06_len_pad/3T/sheet_01/01_PRINT.pdf",
       "a3_release/06_len_pad/3T/sheet_01/01_PRINT_300ppi.png",
       "a3_release/06_len_pad/3T/sheet_01/02_MASTER.ai",
@@ -112,8 +108,6 @@
       "a3_release/06_len_pad/5T/sheet_01/validation.json",
       "a3_release/06_len_pad/README.md",
       "a3_release/06_len_pad/assembly.png",
-      "a3_release/06_len_pad_3T_A3.zip",
-      "a3_release/06_len_pad_5T_A3.zip",
       "a3_release/09_yanggum/3T/sheet_01/01_PRINT.pdf",
       "a3_release/09_yanggum/3T/sheet_01/01_PRINT_300ppi.png",
       "a3_release/09_yanggum/3T/sheet_01/02_MASTER.ai",
@@ -131,7 +125,6 @@
       "a3_release/09_yanggum/README.md",
       "a3_release/09_yanggum/assembly.png",
       "a3_release/09_yanggum/final_preview.png",
-      "a3_release/09_yanggum_3T_A3.zip",
       "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT.pdf",
       "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT_300ppi.png",
       "a3_release/11_ascent_remaining/3T/sheet_01/02_MASTER.ai",
@@ -163,9 +156,26 @@
       "a3_release/11_ascent_remaining/README.md",
       "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
       "a3_release/11_ascent_remaining/size_check.png",
-      "a3_release/11_ascent_remaining_3T_A3.zip",
+      "a3_release/19_personal_fill/3T/sheet_01/01_PRINT.pdf",
+      "a3_release/19_personal_fill/3T/sheet_01/01_PRINT_300ppi.png",
+      "a3_release/19_personal_fill/3T/sheet_01/02_MASTER.ai",
+      "a3_release/19_personal_fill/3T/sheet_01/02_MASTER.pdf",
+      "a3_release/19_personal_fill/3T/sheet_01/02_MASTER.vectorcraft",
+      "a3_release/19_personal_fill/3T/sheet_01/03_CUT_ONLY.pdf",
+      "a3_release/19_personal_fill/3T/sheet_01/03_CUT_ONLY.svg",
+      "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "a3_release/19_personal_fill/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "a3_release/19_personal_fill/3T/sheet_01/README.md",
+      "a3_release/19_personal_fill/3T/sheet_01/cut_detail.png",
+      "a3_release/19_personal_fill/3T/sheet_01/preview.png",
+      "a3_release/19_personal_fill/3T/sheet_01/validation.json",
+      "a3_release/19_personal_fill/README.md",
+      "a3_release/19_personal_fill/connection_preview.png",
+      "a3_release/19_personal_fill/stand_preview.png",
       "a3_release/A3_VALIDATION.json",
       "a3_release/OPTIONAL_FILL_ASSESSMENT.json",
+      "a3_release/PERSONAL_FILL_ASSESSMENT.json",
       "a3_release/README.md",
       "a3_release/manifest.json",
       "a3_release/yanggum_final_preview.png",
@@ -177,6 +187,7 @@
       "individual_assets/06_len_pad_5T_catalog.png",
       "individual_assets/09_yanggum_3T_catalog.png",
       "individual_assets/11_ascent_remaining_3T_catalog.png",
+      "individual_assets/19_personal_fill_3T_catalog.png",
       "individual_assets/README.md",
       "individual_assets/VALIDATION.json",
       "individual_assets/ascent_01/01_PRINT.pdf",
@@ -1733,6 +1744,292 @@
       "individual_assets/yanggum_stand_02/README.md",
       "individual_assets/yanggum_stand_02/asset.json",
       "individual_assets/yanggum_stand_02/preview.png",
+      "individual_assets/강민_stand_01/01_PRINT.pdf",
+      "individual_assets/강민_stand_01/01_PRINT_300ppi.png",
+      "individual_assets/강민_stand_01/02_MASTER.ai",
+      "individual_assets/강민_stand_01/02_MASTER.pdf",
+      "individual_assets/강민_stand_01/03_CUT_ONLY.pdf",
+      "individual_assets/강민_stand_01/03_CUT_ONLY.svg",
+      "individual_assets/강민_stand_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강민_stand_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강민_stand_01/README.md",
+      "individual_assets/강민_stand_01/asset.json",
+      "individual_assets/강민_stand_01/preview.png",
+      "individual_assets/강민_stand_02/01_PRINT.pdf",
+      "individual_assets/강민_stand_02/01_PRINT_300ppi.png",
+      "individual_assets/강민_stand_02/02_MASTER.ai",
+      "individual_assets/강민_stand_02/02_MASTER.pdf",
+      "individual_assets/강민_stand_02/03_CUT_ONLY.pdf",
+      "individual_assets/강민_stand_02/03_CUT_ONLY.svg",
+      "individual_assets/강민_stand_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강민_stand_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강민_stand_02/README.md",
+      "individual_assets/강민_stand_02/asset.json",
+      "individual_assets/강민_stand_02/preview.png",
+      "individual_assets/강민_stand_03/01_PRINT.pdf",
+      "individual_assets/강민_stand_03/01_PRINT_300ppi.png",
+      "individual_assets/강민_stand_03/02_MASTER.ai",
+      "individual_assets/강민_stand_03/02_MASTER.pdf",
+      "individual_assets/강민_stand_03/03_CUT_ONLY.pdf",
+      "individual_assets/강민_stand_03/03_CUT_ONLY.svg",
+      "individual_assets/강민_stand_03/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강민_stand_03/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강민_stand_03/README.md",
+      "individual_assets/강민_stand_03/asset.json",
+      "individual_assets/강민_stand_03/preview.png",
+      "individual_assets/강민_stand_04/01_PRINT.pdf",
+      "individual_assets/강민_stand_04/01_PRINT_300ppi.png",
+      "individual_assets/강민_stand_04/02_MASTER.ai",
+      "individual_assets/강민_stand_04/02_MASTER.pdf",
+      "individual_assets/강민_stand_04/03_CUT_ONLY.pdf",
+      "individual_assets/강민_stand_04/03_CUT_ONLY.svg",
+      "individual_assets/강민_stand_04/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강민_stand_04/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강민_stand_04/README.md",
+      "individual_assets/강민_stand_04/asset.json",
+      "individual_assets/강민_stand_04/preview.png",
+      "individual_assets/강윤진_stand_01/01_PRINT.pdf",
+      "individual_assets/강윤진_stand_01/01_PRINT_300ppi.png",
+      "individual_assets/강윤진_stand_01/02_MASTER.ai",
+      "individual_assets/강윤진_stand_01/02_MASTER.pdf",
+      "individual_assets/강윤진_stand_01/03_CUT_ONLY.pdf",
+      "individual_assets/강윤진_stand_01/03_CUT_ONLY.svg",
+      "individual_assets/강윤진_stand_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강윤진_stand_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강윤진_stand_01/README.md",
+      "individual_assets/강윤진_stand_01/asset.json",
+      "individual_assets/강윤진_stand_01/preview.png",
+      "individual_assets/강윤진_stand_02/01_PRINT.pdf",
+      "individual_assets/강윤진_stand_02/01_PRINT_300ppi.png",
+      "individual_assets/강윤진_stand_02/02_MASTER.ai",
+      "individual_assets/강윤진_stand_02/02_MASTER.pdf",
+      "individual_assets/강윤진_stand_02/03_CUT_ONLY.pdf",
+      "individual_assets/강윤진_stand_02/03_CUT_ONLY.svg",
+      "individual_assets/강윤진_stand_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강윤진_stand_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강윤진_stand_02/README.md",
+      "individual_assets/강윤진_stand_02/asset.json",
+      "individual_assets/강윤진_stand_02/preview.png",
+      "individual_assets/강윤진_stand_03/01_PRINT.pdf",
+      "individual_assets/강윤진_stand_03/01_PRINT_300ppi.png",
+      "individual_assets/강윤진_stand_03/02_MASTER.ai",
+      "individual_assets/강윤진_stand_03/02_MASTER.pdf",
+      "individual_assets/강윤진_stand_03/03_CUT_ONLY.pdf",
+      "individual_assets/강윤진_stand_03/03_CUT_ONLY.svg",
+      "individual_assets/강윤진_stand_03/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강윤진_stand_03/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강윤진_stand_03/README.md",
+      "individual_assets/강윤진_stand_03/asset.json",
+      "individual_assets/강윤진_stand_03/preview.png",
+      "individual_assets/강윤진_stand_04/01_PRINT.pdf",
+      "individual_assets/강윤진_stand_04/01_PRINT_300ppi.png",
+      "individual_assets/강윤진_stand_04/02_MASTER.ai",
+      "individual_assets/강윤진_stand_04/02_MASTER.pdf",
+      "individual_assets/강윤진_stand_04/03_CUT_ONLY.pdf",
+      "individual_assets/강윤진_stand_04/03_CUT_ONLY.svg",
+      "individual_assets/강윤진_stand_04/04_WHITE_INK_MASK.pdf",
+      "individual_assets/강윤진_stand_04/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/강윤진_stand_04/README.md",
+      "individual_assets/강윤진_stand_04/asset.json",
+      "individual_assets/강윤진_stand_04/preview.png",
+      "individual_assets/김윤_keyring_01/01_PRINT.pdf",
+      "individual_assets/김윤_keyring_01/01_PRINT_300ppi.png",
+      "individual_assets/김윤_keyring_01/02_MASTER.ai",
+      "individual_assets/김윤_keyring_01/02_MASTER.pdf",
+      "individual_assets/김윤_keyring_01/03_CUT_ONLY.pdf",
+      "individual_assets/김윤_keyring_01/03_CUT_ONLY.svg",
+      "individual_assets/김윤_keyring_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김윤_keyring_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김윤_keyring_01/README.md",
+      "individual_assets/김윤_keyring_01/asset.json",
+      "individual_assets/김윤_keyring_01/preview.png",
+      "individual_assets/김윤_keyring_02/01_PRINT.pdf",
+      "individual_assets/김윤_keyring_02/01_PRINT_300ppi.png",
+      "individual_assets/김윤_keyring_02/02_MASTER.ai",
+      "individual_assets/김윤_keyring_02/02_MASTER.pdf",
+      "individual_assets/김윤_keyring_02/03_CUT_ONLY.pdf",
+      "individual_assets/김윤_keyring_02/03_CUT_ONLY.svg",
+      "individual_assets/김윤_keyring_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김윤_keyring_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김윤_keyring_02/README.md",
+      "individual_assets/김윤_keyring_02/asset.json",
+      "individual_assets/김윤_keyring_02/preview.png",
+      "individual_assets/김윤_keyring_03/01_PRINT.pdf",
+      "individual_assets/김윤_keyring_03/01_PRINT_300ppi.png",
+      "individual_assets/김윤_keyring_03/02_MASTER.ai",
+      "individual_assets/김윤_keyring_03/02_MASTER.pdf",
+      "individual_assets/김윤_keyring_03/03_CUT_ONLY.pdf",
+      "individual_assets/김윤_keyring_03/03_CUT_ONLY.svg",
+      "individual_assets/김윤_keyring_03/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김윤_keyring_03/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김윤_keyring_03/README.md",
+      "individual_assets/김윤_keyring_03/asset.json",
+      "individual_assets/김윤_keyring_03/preview.png",
+      "individual_assets/김윤_keyring_04/01_PRINT.pdf",
+      "individual_assets/김윤_keyring_04/01_PRINT_300ppi.png",
+      "individual_assets/김윤_keyring_04/02_MASTER.ai",
+      "individual_assets/김윤_keyring_04/02_MASTER.pdf",
+      "individual_assets/김윤_keyring_04/03_CUT_ONLY.pdf",
+      "individual_assets/김윤_keyring_04/03_CUT_ONLY.svg",
+      "individual_assets/김윤_keyring_04/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김윤_keyring_04/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김윤_keyring_04/README.md",
+      "individual_assets/김윤_keyring_04/asset.json",
+      "individual_assets/김윤_keyring_04/preview.png",
+      "individual_assets/김윤_keyring_05/01_PRINT.pdf",
+      "individual_assets/김윤_keyring_05/01_PRINT_300ppi.png",
+      "individual_assets/김윤_keyring_05/02_MASTER.ai",
+      "individual_assets/김윤_keyring_05/02_MASTER.pdf",
+      "individual_assets/김윤_keyring_05/03_CUT_ONLY.pdf",
+      "individual_assets/김윤_keyring_05/03_CUT_ONLY.svg",
+      "individual_assets/김윤_keyring_05/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김윤_keyring_05/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김윤_keyring_05/README.md",
+      "individual_assets/김윤_keyring_05/asset.json",
+      "individual_assets/김윤_keyring_05/preview.png",
+      "individual_assets/김호_keyring_01/01_PRINT.pdf",
+      "individual_assets/김호_keyring_01/01_PRINT_300ppi.png",
+      "individual_assets/김호_keyring_01/02_MASTER.ai",
+      "individual_assets/김호_keyring_01/02_MASTER.pdf",
+      "individual_assets/김호_keyring_01/03_CUT_ONLY.pdf",
+      "individual_assets/김호_keyring_01/03_CUT_ONLY.svg",
+      "individual_assets/김호_keyring_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김호_keyring_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김호_keyring_01/README.md",
+      "individual_assets/김호_keyring_01/asset.json",
+      "individual_assets/김호_keyring_01/preview.png",
+      "individual_assets/김호_keyring_02/01_PRINT.pdf",
+      "individual_assets/김호_keyring_02/01_PRINT_300ppi.png",
+      "individual_assets/김호_keyring_02/02_MASTER.ai",
+      "individual_assets/김호_keyring_02/02_MASTER.pdf",
+      "individual_assets/김호_keyring_02/03_CUT_ONLY.pdf",
+      "individual_assets/김호_keyring_02/03_CUT_ONLY.svg",
+      "individual_assets/김호_keyring_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김호_keyring_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김호_keyring_02/README.md",
+      "individual_assets/김호_keyring_02/asset.json",
+      "individual_assets/김호_keyring_02/preview.png",
+      "individual_assets/김호_keyring_03/01_PRINT.pdf",
+      "individual_assets/김호_keyring_03/01_PRINT_300ppi.png",
+      "individual_assets/김호_keyring_03/02_MASTER.ai",
+      "individual_assets/김호_keyring_03/02_MASTER.pdf",
+      "individual_assets/김호_keyring_03/03_CUT_ONLY.pdf",
+      "individual_assets/김호_keyring_03/03_CUT_ONLY.svg",
+      "individual_assets/김호_keyring_03/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김호_keyring_03/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김호_keyring_03/README.md",
+      "individual_assets/김호_keyring_03/asset.json",
+      "individual_assets/김호_keyring_03/preview.png",
+      "individual_assets/김호_keyring_04/01_PRINT.pdf",
+      "individual_assets/김호_keyring_04/01_PRINT_300ppi.png",
+      "individual_assets/김호_keyring_04/02_MASTER.ai",
+      "individual_assets/김호_keyring_04/02_MASTER.pdf",
+      "individual_assets/김호_keyring_04/03_CUT_ONLY.pdf",
+      "individual_assets/김호_keyring_04/03_CUT_ONLY.svg",
+      "individual_assets/김호_keyring_04/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김호_keyring_04/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김호_keyring_04/README.md",
+      "individual_assets/김호_keyring_04/asset.json",
+      "individual_assets/김호_keyring_04/preview.png",
+      "individual_assets/김호_keyring_05/01_PRINT.pdf",
+      "individual_assets/김호_keyring_05/01_PRINT_300ppi.png",
+      "individual_assets/김호_keyring_05/02_MASTER.ai",
+      "individual_assets/김호_keyring_05/02_MASTER.pdf",
+      "individual_assets/김호_keyring_05/03_CUT_ONLY.pdf",
+      "individual_assets/김호_keyring_05/03_CUT_ONLY.svg",
+      "individual_assets/김호_keyring_05/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김호_keyring_05/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김호_keyring_05/README.md",
+      "individual_assets/김호_keyring_05/asset.json",
+      "individual_assets/김호_keyring_05/preview.png",
+      "individual_assets/김호_keyring_06/01_PRINT.pdf",
+      "individual_assets/김호_keyring_06/01_PRINT_300ppi.png",
+      "individual_assets/김호_keyring_06/02_MASTER.ai",
+      "individual_assets/김호_keyring_06/02_MASTER.pdf",
+      "individual_assets/김호_keyring_06/03_CUT_ONLY.pdf",
+      "individual_assets/김호_keyring_06/03_CUT_ONLY.svg",
+      "individual_assets/김호_keyring_06/04_WHITE_INK_MASK.pdf",
+      "individual_assets/김호_keyring_06/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/김호_keyring_06/README.md",
+      "individual_assets/김호_keyring_06/asset.json",
+      "individual_assets/김호_keyring_06/preview.png",
+      "individual_assets/배승민_keyring_01/01_PRINT.pdf",
+      "individual_assets/배승민_keyring_01/01_PRINT_300ppi.png",
+      "individual_assets/배승민_keyring_01/02_MASTER.ai",
+      "individual_assets/배승민_keyring_01/02_MASTER.pdf",
+      "individual_assets/배승민_keyring_01/03_CUT_ONLY.pdf",
+      "individual_assets/배승민_keyring_01/03_CUT_ONLY.svg",
+      "individual_assets/배승민_keyring_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/배승민_keyring_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/배승민_keyring_01/README.md",
+      "individual_assets/배승민_keyring_01/asset.json",
+      "individual_assets/배승민_keyring_01/preview.png",
+      "individual_assets/배승민_keyring_02/01_PRINT.pdf",
+      "individual_assets/배승민_keyring_02/01_PRINT_300ppi.png",
+      "individual_assets/배승민_keyring_02/02_MASTER.ai",
+      "individual_assets/배승민_keyring_02/02_MASTER.pdf",
+      "individual_assets/배승민_keyring_02/03_CUT_ONLY.pdf",
+      "individual_assets/배승민_keyring_02/03_CUT_ONLY.svg",
+      "individual_assets/배승민_keyring_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/배승민_keyring_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/배승민_keyring_02/README.md",
+      "individual_assets/배승민_keyring_02/asset.json",
+      "individual_assets/배승민_keyring_02/preview.png",
+      "individual_assets/배승민_keyring_03/01_PRINT.pdf",
+      "individual_assets/배승민_keyring_03/01_PRINT_300ppi.png",
+      "individual_assets/배승민_keyring_03/02_MASTER.ai",
+      "individual_assets/배승민_keyring_03/02_MASTER.pdf",
+      "individual_assets/배승민_keyring_03/03_CUT_ONLY.pdf",
+      "individual_assets/배승민_keyring_03/03_CUT_ONLY.svg",
+      "individual_assets/배승민_keyring_03/04_WHITE_INK_MASK.pdf",
+      "individual_assets/배승민_keyring_03/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/배승민_keyring_03/README.md",
+      "individual_assets/배승민_keyring_03/asset.json",
+      "individual_assets/배승민_keyring_03/preview.png",
+      "individual_assets/이상준_stand_01/01_PRINT.pdf",
+      "individual_assets/이상준_stand_01/01_PRINT_300ppi.png",
+      "individual_assets/이상준_stand_01/02_MASTER.ai",
+      "individual_assets/이상준_stand_01/02_MASTER.pdf",
+      "individual_assets/이상준_stand_01/03_CUT_ONLY.pdf",
+      "individual_assets/이상준_stand_01/03_CUT_ONLY.svg",
+      "individual_assets/이상준_stand_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/이상준_stand_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/이상준_stand_01/README.md",
+      "individual_assets/이상준_stand_01/asset.json",
+      "individual_assets/이상준_stand_01/preview.png",
+      "individual_assets/이상준_stand_02/01_PRINT.pdf",
+      "individual_assets/이상준_stand_02/01_PRINT_300ppi.png",
+      "individual_assets/이상준_stand_02/02_MASTER.ai",
+      "individual_assets/이상준_stand_02/02_MASTER.pdf",
+      "individual_assets/이상준_stand_02/03_CUT_ONLY.pdf",
+      "individual_assets/이상준_stand_02/03_CUT_ONLY.svg",
+      "individual_assets/이상준_stand_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/이상준_stand_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/이상준_stand_02/README.md",
+      "individual_assets/이상준_stand_02/asset.json",
+      "individual_assets/이상준_stand_02/preview.png",
+      "individual_assets/정지영_stand_01/01_PRINT.pdf",
+      "individual_assets/정지영_stand_01/01_PRINT_300ppi.png",
+      "individual_assets/정지영_stand_01/02_MASTER.ai",
+      "individual_assets/정지영_stand_01/02_MASTER.pdf",
+      "individual_assets/정지영_stand_01/03_CUT_ONLY.pdf",
+      "individual_assets/정지영_stand_01/03_CUT_ONLY.svg",
+      "individual_assets/정지영_stand_01/04_WHITE_INK_MASK.pdf",
+      "individual_assets/정지영_stand_01/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/정지영_stand_01/README.md",
+      "individual_assets/정지영_stand_01/asset.json",
+      "individual_assets/정지영_stand_01/preview.png",
+      "individual_assets/정지영_stand_02/01_PRINT.pdf",
+      "individual_assets/정지영_stand_02/01_PRINT_300ppi.png",
+      "individual_assets/정지영_stand_02/02_MASTER.ai",
+      "individual_assets/정지영_stand_02/02_MASTER.pdf",
+      "individual_assets/정지영_stand_02/03_CUT_ONLY.pdf",
+      "individual_assets/정지영_stand_02/03_CUT_ONLY.svg",
+      "individual_assets/정지영_stand_02/04_WHITE_INK_MASK.pdf",
+      "individual_assets/정지영_stand_02/04_WHITE_INK_MASK_300ppi.png",
+      "individual_assets/정지영_stand_02/README.md",
+      "individual_assets/정지영_stand_02/asset.json",
+      "individual_assets/정지영_stand_02/preview.png",
       "recut_only/VALIDATION.json",
       "recut_only/danbar_500x800/03_CUT_ONLY.ai",
       "recut_only/danbar_500x800/03_CUT_ONLY.pdf",
@@ -1743,6 +2040,16 @@
       "recut_only/danbar_500x800/cut_detail.png",
       "recut_only/danbar_500x800/preview_alignment.png",
       "recut_only/danbar_500x800/validation.json"
+    ],
+    "retired_package_files": [
+      "a3_release/02_extra_sheet_3T_A3.zip",
+      "a3_release/02_extra_sheet_5T_A3.zip",
+      "a3_release/05_len_3T_A3.zip",
+      "a3_release/05_len_5T_A3.zip",
+      "a3_release/06_len_pad_3T_A3.zip",
+      "a3_release/06_len_pad_5T_A3.zip",
+      "a3_release/09_yanggum_3T_A3.zip",
+      "a3_release/11_ascent_remaining_3T_A3.zip"
     ],
     "pinned_inputs_sha256_checked": 35,
     "preserved_source_assets_sha256_checked": [
@@ -1792,7 +2099,35 @@
       "assets/masters/logo_symbol.svg",
       "assets/source_logo.ai",
       "assets/yanggum/아크릴SD스탠드.jpg",
-      "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai"
+      "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "assets/chain_keyring/applicants.json",
+      "assets/chain_keyring/강민/prepared/provenance.json",
+      "assets/chain_keyring/강민/prepared/마가다락방__리부트(icon_3)_render300_beta_stand60.png",
+      "assets/chain_keyring/강민/prepared/마가다락방__리부트(icon_3)_render300_stand60.png",
+      "assets/chain_keyring/강윤진/prepared/provenance.json",
+      "assets/chain_keyring/강윤진/prepared/청민예__오로라_render300_beta_stand60.png",
+      "assets/chain_keyring/강윤진/prepared/청민예__오로라_render300_stand60.png",
+      "assets/chain_keyring/김윤/prepared/provenance.json",
+      "assets/chain_keyring/김윤/prepared/룃혜__베라_render300_chain40.png",
+      "assets/chain_keyring/김윤/prepared/믐댕__리부트(icon_3)_render300_chain40.png",
+      "assets/chain_keyring/김윤/prepared/안개질무렵__베라_render300_chain40.png",
+      "assets/chain_keyring/김윤/prepared/엔루__베라_render300_chain40.png",
+      "assets/chain_keyring/김윤/prepared/타루카루타__베라_render300_chain40.png",
+      "assets/chain_keyring/김호/prepared/provenance.json",
+      "assets/chain_keyring/김호/prepared/걸퍄__리부트(icon_3)_render300_chain40.png",
+      "assets/chain_keyring/김호/prepared/냘됫__리부트(icon_3)_render300_chain40.png",
+      "assets/chain_keyring/김호/prepared/뿟쥐__리부트(icon_3)_render300_alpha_chain40.png",
+      "assets/chain_keyring/김호/prepared/뿟쥐__리부트(icon_3)_render300_chain40.png",
+      "assets/chain_keyring/김호/prepared/씀툿__리부트(icon_3)_render300_chain40.png",
+      "assets/chain_keyring/김호/prepared/얽빅__리부트(icon_3)_render300_chain40.png",
+      "assets/chain_keyring/배승민/prepared/provenance.json",
+      "assets/chain_keyring/배승민/prepared/슬빈띠니__스카니아_render300_chain40.png",
+      "assets/chain_keyring/배승민/prepared/아기요우무__스카니아_render300_chain40.png",
+      "assets/chain_keyring/배승민/prepared/체스말보관함__스카니아_render300_chain40.png",
+      "assets/chain_keyring/이상준/prepared/provenance.json",
+      "assets/chain_keyring/이상준/prepared/귀여운렌군__스카니아_render300_stand60.png",
+      "assets/chain_keyring/정지영/prepared/provenance.json",
+      "assets/chain_keyring/정지영/prepared/검마충성77__크로아_render300_stand60.png"
     ],
     "retired_source_files": [
       "assets/external/ascent_original/README.md",
@@ -1833,8 +2168,8 @@
       "scripts/prepare_len_dot_character.py"
     ],
     "selected_thickness": "3T",
-    "selected_pages": 4,
-    "selected_parts": 84,
+    "selected_pages": 5,
+    "selected_parts": 110,
     "physical_cut_test": false,
     "limitations": [
       "Raw backups are byte-verified archives; obsolete artwork is not approved for cutting.",
@@ -1842,12 +2177,12 @@
     ]
   },
   "laser_path_audit": {
-    "checked_files": 613,
+    "checked_files": 722,
     "errors": [],
     "protected_original_findings": []
   },
   "a3_release": {
-    "checked_pages": 9,
+    "checked_pages": 10,
     "native_geometry_checked": true,
     "records": [
       {
@@ -1862,14 +2197,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\02_extra_sheet\\3T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/02_extra_sheet/3T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\02_extra_sheet\\3T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/02_extra_sheet/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -1877,20 +2212,20 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "ad79ad39fd850a9e90eab6be2db5636bad597d2f2ef744fded7c4d33d525961e",
-          "01_PRINT_300ppi.png": "8a0fdaabfa2a90165029412186c1ecc39daa899e68c1a874643697a02c5055c4",
-          "02_MASTER.ai": "8dae51634a5b7d365b1eb5f41bec529893fe141e8d8f2fab6037c568f4f6495c",
-          "02_MASTER.pdf": "4794b03f65ef24fe8c16c89c59aa709d2eff1da2e33925b804148e2dc1fc655e",
-          "02_MASTER.vectorcraft": "e24b0ed70630007575875266a027c6915ddb9257a26606df96f24b104b5f655e",
-          "03_CUT_ONLY.pdf": "f92d4f11d5f646d60b0057d19c54e646a2219815d9a3335af79ad398209e929d",
-          "03_CUT_ONLY.svg": "2b2593905c348c637cacada7872941a35bfa1c74d314b1d5f51edec74ea21a03",
-          "04_WHITE_INK_MASK.pdf": "f1428ef67a8aaeba70c01d520d6501b603823dab36e313b83d970dcf6bd08e80",
-          "04_WHITE_INK_MASK_300ppi.png": "a160388ff65ef5710ee3ace1a99f43eec1e1b0762dd4f98b2f06a28a31f3cec7",
-          "cut_detail.png": "ae771b1be3f79e6afad5acd6cb3b522a759603e8ab06d41c8e9d40f7eca7cd13",
           "preview.png": "f0aa9ae1e0abdbfee8702acf100e1c814db441386e0c3ae06957967170a87931",
+          "01_PRINT_300ppi.png": "8a0fdaabfa2a90165029412186c1ecc39daa899e68c1a874643697a02c5055c4",
           "PREVIEW_NOT_FOR_CUT.pdf": "5b8851ddb9b71f075b55a1a4d32c1faacbef3637524d74cdfb08fbf476357298",
+          "02_MASTER.vectorcraft": "e24b0ed70630007575875266a027c6915ddb9257a26606df96f24b104b5f655e",
+          "03_CUT_ONLY.svg": "2b2593905c348c637cacada7872941a35bfa1c74d314b1d5f51edec74ea21a03",
+          "03_CUT_ONLY.pdf": "f92d4f11d5f646d60b0057d19c54e646a2219815d9a3335af79ad398209e929d",
+          "04_WHITE_INK_MASK_300ppi.png": "a160388ff65ef5710ee3ace1a99f43eec1e1b0762dd4f98b2f06a28a31f3cec7",
+          "02_MASTER.pdf": "4794b03f65ef24fe8c16c89c59aa709d2eff1da2e33925b804148e2dc1fc655e",
           "README.md": "6bea890d0d5b7ccc500fb3f8892b288ac8e1ba23dbd953043f0b0aa7d607375e",
-          "validation.json": "a273c093b29f733d5f5d971dccf81803b4f09b905e8eff4a29cd39b4fe846abb"
+          "02_MASTER.ai": "8dae51634a5b7d365b1eb5f41bec529893fe141e8d8f2fab6037c568f4f6495c",
+          "04_WHITE_INK_MASK.pdf": "f1428ef67a8aaeba70c01d520d6501b603823dab36e313b83d970dcf6bd08e80",
+          "validation.json": "a273c093b29f733d5f5d971dccf81803b4f09b905e8eff4a29cd39b4fe846abb",
+          "01_PRINT.pdf": "ad79ad39fd850a9e90eab6be2db5636bad597d2f2ef744fded7c4d33d525961e",
+          "cut_detail.png": "ae771b1be3f79e6afad5acd6cb3b522a759603e8ab06d41c8e9d40f7eca7cd13"
         }
       },
       {
@@ -1905,14 +2240,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\02_extra_sheet\\5T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/02_extra_sheet/5T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\02_extra_sheet\\5T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/02_extra_sheet/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -1920,20 +2255,20 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "e72500a7ce238e36b1c43dfe1868add41f7e9e22e2057f00938c791206462c70",
-          "01_PRINT_300ppi.png": "23f0b1da856a933e904c4fc4de4d4604437319684b52318dc267f7475f7a200f",
-          "02_MASTER.ai": "14029d37cb7f236f6c33621d0481fb13e9ea207c9e08dda1ad1d9d7f0705eb49",
-          "02_MASTER.pdf": "c2dbf862a1535ba486ac529449d5eb4e14b883c7a017e22edaf99fb918dafd49",
-          "02_MASTER.vectorcraft": "e47dac91c00e491b9646f2de3edfab602398b250e9775504f6d90ae944ecf15f",
-          "03_CUT_ONLY.pdf": "3b8310f3b83f993c51984f2539802d9cc13028ecd0089ec01d81dd2826e747b6",
-          "03_CUT_ONLY.svg": "5262923db054b1fd346bbeae4cb6ca52d19bf13bd6efbc12e1008ff9f544454e",
-          "04_WHITE_INK_MASK.pdf": "4694c3e73277449bc81961adf06a782604f36b4d679302c6933b6441f2d8d085",
-          "04_WHITE_INK_MASK_300ppi.png": "6fdfe8b53bcd7af61c28e453ce5927450441048a01d95c05bfb145c35a919eee",
-          "cut_detail.png": "78774bfda9ffb461b4b8fde6c89c4a673d0966f4f0faad8590578608aac72206",
           "preview.png": "8557bdd56eafd4ce4d7f9a8115ad459aa8feb9f4bd55e373107d8790b4368b4e",
+          "01_PRINT_300ppi.png": "23f0b1da856a933e904c4fc4de4d4604437319684b52318dc267f7475f7a200f",
           "PREVIEW_NOT_FOR_CUT.pdf": "b73e006bf4a77b9591cbcda43ac82ed614d51a7192c6c9b0f1c8ddc0fe9d8c3c",
+          "02_MASTER.vectorcraft": "e47dac91c00e491b9646f2de3edfab602398b250e9775504f6d90ae944ecf15f",
+          "03_CUT_ONLY.svg": "5262923db054b1fd346bbeae4cb6ca52d19bf13bd6efbc12e1008ff9f544454e",
+          "03_CUT_ONLY.pdf": "3b8310f3b83f993c51984f2539802d9cc13028ecd0089ec01d81dd2826e747b6",
+          "04_WHITE_INK_MASK_300ppi.png": "6fdfe8b53bcd7af61c28e453ce5927450441048a01d95c05bfb145c35a919eee",
+          "02_MASTER.pdf": "c2dbf862a1535ba486ac529449d5eb4e14b883c7a017e22edaf99fb918dafd49",
           "README.md": "19be2abe39e3feff0e46d8431787e0bc97778c22200ff0985cdada7c87429ff8",
-          "validation.json": "233163078cc89b6f550c66a99fb0dcbec964dc903baede898d00be1a4bab44f5"
+          "02_MASTER.ai": "14029d37cb7f236f6c33621d0481fb13e9ea207c9e08dda1ad1d9d7f0705eb49",
+          "04_WHITE_INK_MASK.pdf": "4694c3e73277449bc81961adf06a782604f36b4d679302c6933b6441f2d8d085",
+          "validation.json": "233163078cc89b6f550c66a99fb0dcbec964dc903baede898d00be1a4bab44f5",
+          "01_PRINT.pdf": "e72500a7ce238e36b1c43dfe1868add41f7e9e22e2057f00938c791206462c70",
+          "cut_detail.png": "78774bfda9ffb461b4b8fde6c89c4a673d0966f4f0faad8590578608aac72206"
         }
       },
       {
@@ -1948,14 +2283,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\05_len\\3T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/05_len/3T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\05_len\\3T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/05_len/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -1963,20 +2298,20 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "ca57a3ec663e1d20b905ba80af7dd0f558a4cd08bc8a3efc21d2f4125763871a",
-          "01_PRINT_300ppi.png": "20926407acdfcdedacd868e56dbb327a7c52dd5745e0e4e3f1686505185795ae",
-          "02_MASTER.ai": "bdaaf7725cd7bb4987aaf7339eba7d4822c917378c81ffccca1382cd7438c49a",
-          "02_MASTER.pdf": "ce95e84a43e0a0b69880e2836c5d7363ed93c85c550725041673898b5154f32e",
-          "02_MASTER.vectorcraft": "c14a0880fdfbba0fcfa7e376c43c71d5c4211c2aee32cdf23f4d92075b019062",
-          "03_CUT_ONLY.pdf": "23bd37787d4176b9d9298abb2dd64a24b92489f3aa80630c8581ea4863b75e4d",
-          "03_CUT_ONLY.svg": "8967dd45a9fbae91230122c5fb0efcae3bfdbe421ea24203942bd1a78052ec61",
-          "04_WHITE_INK_MASK.pdf": "43a29bdf9a308aff3390a257d87f685a2cc16b922e5cf63c32796ec1a99398ea",
-          "04_WHITE_INK_MASK_300ppi.png": "b929d33986f87f74a2a77a1547dab4dd7de18c5e836d32808c4e9814a4f9e76a",
-          "cut_detail.png": "b04d3de41c24d73abfb84a6f754ed7a547e4f2eae6be706b1b6d0e4ddcbe5e7b",
           "preview.png": "90953c7bf3ed73bfd6817f5d49f693366cc53166bc52931690f60f8cda659244",
+          "01_PRINT_300ppi.png": "20926407acdfcdedacd868e56dbb327a7c52dd5745e0e4e3f1686505185795ae",
           "PREVIEW_NOT_FOR_CUT.pdf": "6a9d7a9142b839c71cf4faf9b8109715238731f08aa8e89ea4dd38116c918f88",
+          "02_MASTER.vectorcraft": "c14a0880fdfbba0fcfa7e376c43c71d5c4211c2aee32cdf23f4d92075b019062",
+          "03_CUT_ONLY.svg": "8967dd45a9fbae91230122c5fb0efcae3bfdbe421ea24203942bd1a78052ec61",
+          "03_CUT_ONLY.pdf": "23bd37787d4176b9d9298abb2dd64a24b92489f3aa80630c8581ea4863b75e4d",
+          "04_WHITE_INK_MASK_300ppi.png": "b929d33986f87f74a2a77a1547dab4dd7de18c5e836d32808c4e9814a4f9e76a",
+          "02_MASTER.pdf": "ce95e84a43e0a0b69880e2836c5d7363ed93c85c550725041673898b5154f32e",
           "README.md": "588f9b37d5357b57f7a0b75553ad89f14e686ac8ae82fa36d08de6b1e9542dd0",
-          "validation.json": "7f93e295b388c4e23b4ee156ea3b078d7095f6fb9dd56411427f2bd4f919f377"
+          "02_MASTER.ai": "bdaaf7725cd7bb4987aaf7339eba7d4822c917378c81ffccca1382cd7438c49a",
+          "04_WHITE_INK_MASK.pdf": "43a29bdf9a308aff3390a257d87f685a2cc16b922e5cf63c32796ec1a99398ea",
+          "validation.json": "7f93e295b388c4e23b4ee156ea3b078d7095f6fb9dd56411427f2bd4f919f377",
+          "01_PRINT.pdf": "ca57a3ec663e1d20b905ba80af7dd0f558a4cd08bc8a3efc21d2f4125763871a",
+          "cut_detail.png": "b04d3de41c24d73abfb84a6f754ed7a547e4f2eae6be706b1b6d0e4ddcbe5e7b"
         }
       },
       {
@@ -1991,14 +2326,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\05_len\\5T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/05_len/5T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\05_len\\5T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/05_len/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -2006,20 +2341,20 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "43316a35297bd219f797b505a01168822aeb151d1d5c64f91c91a6e76fbb4770",
-          "01_PRINT_300ppi.png": "c76b6e233bf3d77dab3b4f1f1a8a8e99e9614b1730a34e9cd6fe8e16be562093",
-          "02_MASTER.ai": "4a343f38c62e34b4ac87930557d0920eba1ff43c3b4f76756b0c910ceac31005",
-          "02_MASTER.pdf": "027a242e601dab12f15fe0137f8cf016c3c8cf1458294cf25689fae82bf16ed0",
-          "02_MASTER.vectorcraft": "849d7e040f529fc3474b9969016784ade5683cdaf89e9a9e95b9a0a71a13e123",
-          "03_CUT_ONLY.pdf": "e58cae3738dd3bddc52a7e227e850a6279249663302c442e8feda4d425558327",
-          "03_CUT_ONLY.svg": "6b3a708b705dc99bd6e8e409e865e318f7b0269d7ebb4687d0863e4231b36a95",
-          "04_WHITE_INK_MASK.pdf": "a79323cb4d4abadaa002db89c1e4d510501337bbc94931f6fbd4731fc9630698",
-          "04_WHITE_INK_MASK_300ppi.png": "ebd0cd8970a31488d28f472dbcacfb2e62f9f6327d9b1657d25c621757d7a73b",
-          "cut_detail.png": "b438ec5d7b846db6fa6745d717c2d450ea24d4774ece83b3c16a49751b2d1665",
           "preview.png": "d6e71df2451b7fccfbefb3410a66719f3fbcbde518991fad7600cda6a8c885f7",
+          "01_PRINT_300ppi.png": "c76b6e233bf3d77dab3b4f1f1a8a8e99e9614b1730a34e9cd6fe8e16be562093",
           "PREVIEW_NOT_FOR_CUT.pdf": "d16c078c76979bcec5a6840f34a57bcfeea78ba5d20e231486f817842046adf6",
+          "02_MASTER.vectorcraft": "849d7e040f529fc3474b9969016784ade5683cdaf89e9a9e95b9a0a71a13e123",
+          "03_CUT_ONLY.svg": "6b3a708b705dc99bd6e8e409e865e318f7b0269d7ebb4687d0863e4231b36a95",
+          "03_CUT_ONLY.pdf": "e58cae3738dd3bddc52a7e227e850a6279249663302c442e8feda4d425558327",
+          "04_WHITE_INK_MASK_300ppi.png": "ebd0cd8970a31488d28f472dbcacfb2e62f9f6327d9b1657d25c621757d7a73b",
+          "02_MASTER.pdf": "027a242e601dab12f15fe0137f8cf016c3c8cf1458294cf25689fae82bf16ed0",
           "README.md": "25aafe61ddb2d695d0eba9fc8d0e012f09c35d6aea113ca8aa3e5005c19a4a41",
-          "validation.json": "6cc606bb3ac3a7ae0437c5f5d96ceabe39b31e8c0993add1d0ed866014585c17"
+          "02_MASTER.ai": "4a343f38c62e34b4ac87930557d0920eba1ff43c3b4f76756b0c910ceac31005",
+          "04_WHITE_INK_MASK.pdf": "a79323cb4d4abadaa002db89c1e4d510501337bbc94931f6fbd4731fc9630698",
+          "validation.json": "6cc606bb3ac3a7ae0437c5f5d96ceabe39b31e8c0993add1d0ed866014585c17",
+          "01_PRINT.pdf": "43316a35297bd219f797b505a01168822aeb151d1d5c64f91c91a6e76fbb4770",
+          "cut_detail.png": "b438ec5d7b846db6fa6745d717c2d450ea24d4774ece83b3c16a49751b2d1665"
         }
       },
       {
@@ -2034,14 +2369,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\06_len_pad\\3T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/06_len_pad/3T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\06_len_pad\\3T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/06_len_pad/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -2049,20 +2384,20 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "e0557ada1f9f4d0ace76a95cf083cbcaa8e1c79ed8208ed3514205cec4f78a18",
-          "01_PRINT_300ppi.png": "f522df5aca02e920b5060dce9229170b4db576759047174e16cda69de3a72bbc",
-          "02_MASTER.ai": "2713bdb10d150ee0e9f8a118ecc1704e4027d795d7698328f95616faa92000c9",
-          "02_MASTER.pdf": "c1f4b933d6e86984f9836ff361d8f892f73f01888ae99241f3eb30fb964e21a0",
-          "02_MASTER.vectorcraft": "853d6dfce12b597f4fc236015d4439343d1a66bb75fb2dc825fa3fd554e69cae",
-          "03_CUT_ONLY.pdf": "4ce1a0f8816227348c2eb2ca31467ff40821786f1e84c13c91e3dbd7edf284c8",
-          "03_CUT_ONLY.svg": "c66628522b7bbe7ec8d303406945b9cd421bb14fb63512b48030087f8d40f110",
-          "04_WHITE_INK_MASK.pdf": "e340073adf5f00679c9fa2e6487a30e3f6ec72c3e198db64c3dcc7fe5859a86c",
-          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-          "cut_detail.png": "9374d7a4cbeb5476d7f65c1778c1acc365f4c77c7b5a293da1c8b62d75512647",
           "preview.png": "64d28fa7ea9123ad39c4bc9a093648b5b4fa9b64a59e06d40b4b5ca1162e3e36",
+          "01_PRINT_300ppi.png": "f522df5aca02e920b5060dce9229170b4db576759047174e16cda69de3a72bbc",
           "PREVIEW_NOT_FOR_CUT.pdf": "db4e75423620878dde25a0c0ec8c6f6394fc0502fc0f6b68699497922f2f45db",
+          "02_MASTER.vectorcraft": "853d6dfce12b597f4fc236015d4439343d1a66bb75fb2dc825fa3fd554e69cae",
+          "03_CUT_ONLY.svg": "c66628522b7bbe7ec8d303406945b9cd421bb14fb63512b48030087f8d40f110",
+          "03_CUT_ONLY.pdf": "4ce1a0f8816227348c2eb2ca31467ff40821786f1e84c13c91e3dbd7edf284c8",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.pdf": "c1f4b933d6e86984f9836ff361d8f892f73f01888ae99241f3eb30fb964e21a0",
           "README.md": "a1113fff5c0276111fadfb71fcd706f575526e51ec9156cb9d878682f681bcca",
-          "validation.json": "0e880d6792e477afb46c795794cf953cf977ca5698f963463d7d5bd9d5854e41"
+          "02_MASTER.ai": "2713bdb10d150ee0e9f8a118ecc1704e4027d795d7698328f95616faa92000c9",
+          "04_WHITE_INK_MASK.pdf": "e340073adf5f00679c9fa2e6487a30e3f6ec72c3e198db64c3dcc7fe5859a86c",
+          "validation.json": "0e880d6792e477afb46c795794cf953cf977ca5698f963463d7d5bd9d5854e41",
+          "01_PRINT.pdf": "e0557ada1f9f4d0ace76a95cf083cbcaa8e1c79ed8208ed3514205cec4f78a18",
+          "cut_detail.png": "9374d7a4cbeb5476d7f65c1778c1acc365f4c77c7b5a293da1c8b62d75512647"
         }
       },
       {
@@ -2077,14 +2412,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\06_len_pad\\5T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/06_len_pad/5T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\06_len_pad\\5T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/06_len_pad/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -2092,20 +2427,20 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "1a110e4ed8d4e9742fffd3d7cd1aeeb23d087faee01728d1f4e2801b11ed3834",
-          "01_PRINT_300ppi.png": "2ed161415379ff7b93428f9706cf48831439386e3d2a829a09d84e1a8f759ecf",
-          "02_MASTER.ai": "160e1f560836ece489d4978b264f82c8a35d70d00548dc793bc4864ad044aa39",
-          "02_MASTER.pdf": "456c7cbd0828d71d8bd7608d6a337b74e09dada73d1b06b0b912883ef5c8977b",
-          "02_MASTER.vectorcraft": "2542edab643897ed6b5bd326a2c6f440db30632e3436eaa617c214ec1475fd31",
-          "03_CUT_ONLY.pdf": "28b09e58b387a7cb2e2f0c9eeed7f65a2fb9b5edc1872906341b9cd5f2a1a491",
-          "03_CUT_ONLY.svg": "d34f74a81836b50ed991cfd61b6aacae9444144d46a80d0fc926b43840713222",
-          "04_WHITE_INK_MASK.pdf": "430b10b965dd9a6f4204c3db764c3e48b3f727f62c4cf96012ac773e26a89e8e",
-          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-          "cut_detail.png": "8593495eb4de546be8a03990d9bafae228f4f567fee935de19fff7daca25e2b1",
           "preview.png": "6a6c6db64bd8c7c2202d741be1b56c322e03226da1b9c5f0b91c36f3a8f4f19f",
+          "01_PRINT_300ppi.png": "2ed161415379ff7b93428f9706cf48831439386e3d2a829a09d84e1a8f759ecf",
           "PREVIEW_NOT_FOR_CUT.pdf": "12c8d4be40783590102fc07198be43991db9a1e41c6444e983603324a670fdb2",
+          "02_MASTER.vectorcraft": "2542edab643897ed6b5bd326a2c6f440db30632e3436eaa617c214ec1475fd31",
+          "03_CUT_ONLY.svg": "d34f74a81836b50ed991cfd61b6aacae9444144d46a80d0fc926b43840713222",
+          "03_CUT_ONLY.pdf": "28b09e58b387a7cb2e2f0c9eeed7f65a2fb9b5edc1872906341b9cd5f2a1a491",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.pdf": "456c7cbd0828d71d8bd7608d6a337b74e09dada73d1b06b0b912883ef5c8977b",
           "README.md": "a1113fff5c0276111fadfb71fcd706f575526e51ec9156cb9d878682f681bcca",
-          "validation.json": "2a1240ea898d182ea8acd8da86e3496b5d56f66e75d24e6d99540f8472f7008d"
+          "02_MASTER.ai": "160e1f560836ece489d4978b264f82c8a35d70d00548dc793bc4864ad044aa39",
+          "04_WHITE_INK_MASK.pdf": "430b10b965dd9a6f4204c3db764c3e48b3f727f62c4cf96012ac773e26a89e8e",
+          "validation.json": "2a1240ea898d182ea8acd8da86e3496b5d56f66e75d24e6d99540f8472f7008d",
+          "01_PRINT.pdf": "1a110e4ed8d4e9742fffd3d7cd1aeeb23d087faee01728d1f4e2801b11ed3834",
+          "cut_detail.png": "8593495eb4de546be8a03990d9bafae228f4f567fee935de19fff7daca25e2b1"
         }
       },
       {
@@ -2120,14 +2455,14 @@
         },
         "png": [
           {
-            "file": "a3_release\\09_yanggum\\3T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/09_yanggum/3T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\09_yanggum\\3T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/09_yanggum/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -2135,42 +2470,42 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "9fd146f15b19b91c2c5eb4cafe5a7705bfb7f19359c0b6c691ab4e64213f2ea0",
-          "01_PRINT_300ppi.png": "e1aedd998887b7d3f6fab5b91bffb4632ad553f4f3f6cdf7a58b46a9837ec552",
-          "02_MASTER.ai": "63a72e86145cf0e0d06612474398456bcd932c6ea2ae63ba04c9dd7763040a13",
-          "02_MASTER.pdf": "611cf7dfafda63fe472b7c5f5c4c00cc253ea351e25b389c1a18897d6f839d85",
-          "02_MASTER.vectorcraft": "c3966afb612d929e2ced58ed3e9c45235c63e298a41280fc3587dc8aca44d277",
-          "03_CUT_ONLY.pdf": "3d5949e64c40a3bdfa9a4012e8f996d167e704a05aac7cbbbe5b576f31471574",
-          "03_CUT_ONLY.svg": "7ba3b597bd20f1e6e3908507ff6b2f509644c88da5fc82377c176630867ad80a",
-          "04_WHITE_INK_MASK.pdf": "e765bc98517a756be1e3c5517dc133c733e58dc17dd2ced1581a182c8970d75a",
-          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-          "cut_detail.png": "30df1197c721a6c1725348108155b1197d7aa68fa7fc072061c9fcddaeb0a88e",
           "preview.png": "b9e09c839975775425c422dec807c6709c6d9bbd33c56f14733f925f1fbe430a",
+          "01_PRINT_300ppi.png": "e1aedd998887b7d3f6fab5b91bffb4632ad553f4f3f6cdf7a58b46a9837ec552",
           "PREVIEW_NOT_FOR_CUT.pdf": "471aa10b861d3e93a2a70753ae2c5d7c092893d98deabe0d2fdf9411f0d35114",
+          "02_MASTER.vectorcraft": "c3966afb612d929e2ced58ed3e9c45235c63e298a41280fc3587dc8aca44d277",
+          "03_CUT_ONLY.svg": "7ba3b597bd20f1e6e3908507ff6b2f509644c88da5fc82377c176630867ad80a",
+          "03_CUT_ONLY.pdf": "3d5949e64c40a3bdfa9a4012e8f996d167e704a05aac7cbbbe5b576f31471574",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.pdf": "611cf7dfafda63fe472b7c5f5c4c00cc253ea351e25b389c1a18897d6f839d85",
           "README.md": "c13dc919d91fcdc045e93d9dd6b04d7b3885e93961c8dddb8449a2a0992b7856",
-          "validation.json": "f97a25089df8aa8f25ed64265b5016602ade4acd77521a12e9a0a15d6c0990ba"
+          "02_MASTER.ai": "63a72e86145cf0e0d06612474398456bcd932c6ea2ae63ba04c9dd7763040a13",
+          "04_WHITE_INK_MASK.pdf": "e765bc98517a756be1e3c5517dc133c733e58dc17dd2ced1581a182c8970d75a",
+          "validation.json": "f97a25089df8aa8f25ed64265b5016602ade4acd77521a12e9a0a15d6c0990ba",
+          "01_PRINT.pdf": "9fd146f15b19b91c2c5eb4cafe5a7705bfb7f19359c0b6c691ab4e64213f2ea0",
+          "cut_detail.png": "30df1197c721a6c1725348108155b1197d7aa68fa7fc072061c9fcddaeb0a88e"
         }
       },
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
-        "pieces": 14,
-        "contours": 14,
+        "pieces": 15,
+        "contours": 17,
         "max_export_deviation_mm": {
-          "03_CUT_ONLY.pdf": 1.7890216676276273e-05,
-          "02_MASTER.pdf": 1.7890216676276273e-05,
-          "02_MASTER.ai": 1.7890216676276273e-05,
-          "02_MASTER.vectorcraft": 1.7890216676276273e-05
+          "03_CUT_ONLY.pdf": 2.267286603864239e-05,
+          "02_MASTER.pdf": 2.267286603864239e-05,
+          "02_MASTER.ai": 0.000569779092003146,
+          "02_MASTER.vectorcraft": 0.000569779092003146
         },
         "png": [
           {
-            "file": "a3_release\\11_ascent_remaining\\3T\\sheet_01\\01_PRINT_300ppi.png",
+            "file": "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\11_ascent_remaining\\3T\\sheet_01\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/11_ascent_remaining/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -2178,42 +2513,42 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "6f9e5e2ec4da5dbe726aacff2fb3a44e183f4d39713ce0be9f83bd2de696073f",
-          "01_PRINT_300ppi.png": "c515383ce6e65437d16d5227104192a2979c02e5fed296c0532fdb3fa369fab2",
-          "02_MASTER.ai": "0edbf2d11e1327b5a213a361fe7249195bf93f5366e06864e4eb5374f2695ebf",
-          "02_MASTER.pdf": "d754f1e8919ac798761a43a74fe71317736721de16f3bd9395e4dbc93475f9f7",
-          "02_MASTER.vectorcraft": "8ed2f74ade413d07d8406d10a9de256e80fc5109fca5c0761bf7cc70b4a840ed",
-          "03_CUT_ONLY.pdf": "c5d86f4f4604dabaa8630a070f53903abc716b51d18a042950f746e2e2910d2a",
-          "03_CUT_ONLY.svg": "79d6bd621905f20bd548c8b0028733c882da4ed1a927f49d9ca98b711c3b98f1",
-          "04_WHITE_INK_MASK.pdf": "ca4119be727ea56b1ce2955733b5726b9e3fd93fb6e5e9485370c47f0ee78b80",
+          "preview.png": "6cf1d1a2d8ae8af0269b57d960d5bc08a3bae2d0f9c3ddda1a01eaec6e061c0c",
+          "01_PRINT_300ppi.png": "7796aabf97d6168fa07bd7297a342f68d3c403417bdffe7170fbbcf262bf9b41",
+          "PREVIEW_NOT_FOR_CUT.pdf": "b641043330e9ed914fa71b7902a3b5212e2cde88dc14d90c97514a1308e9bd39",
+          "02_MASTER.vectorcraft": "f3bb9483efc8ed39d48fac6a389e7192b06ef155eecc37a829abb54d3d4fdce2",
+          "03_CUT_ONLY.svg": "75a2e1060f9fb018f68c9943bd371779ae2abbccb4f92e7f213ed55accb30bae",
+          "03_CUT_ONLY.pdf": "88a2d5a8f698cc64d48d792a5977a9848683f2c5c93e64dc59fa9881cac55d6b",
           "04_WHITE_INK_MASK_300ppi.png": "95ef65f9310d4ef504eecf1a6bbed4acb01f58aec705a899c98a82b5de39f08f",
-          "cut_detail.png": "8d602c9a16e453483d13b28345435d4c7c8ce42ba9d48e2754c4cc4fb37ee69a",
-          "preview.png": "bd68dc264e62cc9ca550dfd93dc52856e1e65eae9db70062dcd8c3f41f8d5571",
-          "PREVIEW_NOT_FOR_CUT.pdf": "827b860c60ca146ca6690f28f4b6cbfa40e56e692eaedc4cca0bb85ebd60a802",
-          "README.md": "055f38861a8b26f245843282e5d1224a51b1d7b0e7adde406af783538469c55d",
-          "validation.json": "4160fcd168f45cb8fdfc41f625ed6692ba96a5f4ae099ee79e2bad04752c1681"
+          "02_MASTER.pdf": "1addd71bbbc9517f532ccc5bce8cc1e874ec248185244e77ae2d5cbf1e0495d0",
+          "README.md": "c19031151525207605ece1250f9b05663306c6cb7a2b26f256e05667a003f9f8",
+          "02_MASTER.ai": "8ee6f8a8fc63219a218160db5cd794ef75cef7d8d89d6caec72fe676c4ad7321",
+          "04_WHITE_INK_MASK.pdf": "c0afd93202cc6f1b0920e239738646cf452033d29179b9e239367a5c4a64e58d",
+          "validation.json": "f6fd511ac1f6e3b00f42daaa4fc5226b6de8082eb68eed2bceafcc40b09b90b8",
+          "01_PRINT.pdf": "a2164241c86f8f587aa1e868f137f0213fe8fb12ec803b0d897fec8808995c44",
+          "cut_detail.png": "8d602c9a16e453483d13b28345435d4c7c8ce42ba9d48e2754c4cc4fb37ee69a"
         }
       },
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
-        "pieces": 11,
-        "contours": 43,
+        "pieces": 24,
+        "contours": 64,
         "max_export_deviation_mm": {
-          "03_CUT_ONLY.pdf": 1.156027682890293e-05,
-          "02_MASTER.pdf": 1.156027682890293e-05,
-          "02_MASTER.ai": 1.4847558715032219e-05,
-          "02_MASTER.vectorcraft": 1.4847558715032219e-05
+          "03_CUT_ONLY.pdf": 2.356887020914995e-05,
+          "02_MASTER.pdf": 2.356887020914995e-05,
+          "02_MASTER.ai": 2.4653865112624572e-05,
+          "02_MASTER.vectorcraft": 2.4653865112624572e-05
         },
         "png": [
           {
-            "file": "a3_release\\11_ascent_remaining\\3T\\sheet_02\\01_PRINT_300ppi.png",
+            "file": "a3_release/11_ascent_remaining/3T/sheet_02/01_PRINT_300ppi.png",
             "pixels": [
               4961,
               3508
             ]
           },
           {
-            "file": "a3_release\\11_ascent_remaining\\3T\\sheet_02\\04_WHITE_INK_MASK_300ppi.png",
+            "file": "a3_release/11_ascent_remaining/3T/sheet_02/04_WHITE_INK_MASK_300ppi.png",
             "pixels": [
               4961,
               3508
@@ -2221,65 +2556,67 @@
           }
         ],
         "sha256": {
-          "01_PRINT.pdf": "c839ff46edb72ca2b8316ab6bf7f2e29cc4aaabab5f5412c2d07d28bba0942e1",
-          "01_PRINT_300ppi.png": "ee3493f6f34d9b5e07c687e19fbc4f232d43e38d97238e56897ee00dc0d208ef",
-          "02_MASTER.ai": "5e4ec1e44dff0586b619e5f1c7484a4e494cafe03e98b74452c2089f69094c0f",
-          "02_MASTER.pdf": "5dc39c437847671702061ed44a106a1194b70b5834846f9da3fa0a54fe33750b",
-          "02_MASTER.vectorcraft": "3fb4b47e12a2dec408b2b45d6b6ecce3ad23e0cd27963e50b5ebc0c7d38730db",
-          "03_CUT_ONLY.pdf": "667da3e969a4992c6b3ff31cd8fe3defe54bdfe3629a77f9324be6b69284fe8a",
-          "03_CUT_ONLY.svg": "310d201a21c35796c12856c8e4264c8d53cb51398bfdf04fef71f7e2991ac32f",
-          "04_WHITE_INK_MASK.pdf": "5271069b53f3fdef3ad6d68fa058e181021e05de80197adc967a82e822c73cd3",
+          "preview.png": "e473a9e8db7df39b1dce6cd6de66f8245979f51b6db67ac3444d071b7c17d66e",
+          "01_PRINT_300ppi.png": "996f10f308de0f486344c842518742923dc4c27701f8061e3e7e6f76686633bf",
+          "PREVIEW_NOT_FOR_CUT.pdf": "74d7d5670211f69797a40c703519364a5d7fa19c43dd2e8113d62e24b7e80a88",
+          "02_MASTER.vectorcraft": "15463547fedc33acd7a620f4d69910f284b463c0e67bf7c587a4467c2d375010",
+          "03_CUT_ONLY.svg": "eb71941c966b586414241c352d566a7dc04defc1f69a60d29174a6600dd34005",
+          "03_CUT_ONLY.pdf": "cd1042d2e135fce5e9bebf1801c23938b8b75fe57054d00a934bb7d0c264ef7b",
           "04_WHITE_INK_MASK_300ppi.png": "18bbe48bd39c6b219b32dac52c12f66243b269a65dcf272af99a8ef9972df57a",
-          "cut_detail.png": "b5ae4381b6a61a79bc9c3ba1162c8498a6c9fd93068ec0bc78592f5adc269bed",
-          "preview.png": "a8d5e604808dd6250b1331abd56f5d67dca2b88e9b7724b1a8829eedfb0c5ca8",
-          "PREVIEW_NOT_FOR_CUT.pdf": "476acf26d58cbcab3b65bcb139317d89544c79058e97a4b97befb2088f223634",
-          "README.md": "997e62d20b1ee161d343ed39901bb807aff4b1884c55618b8e94888a5d9e0044",
-          "validation.json": "6835c56962568d320cd28daf8abc000d5106120c2b62f3a1da610df2037a4374"
+          "02_MASTER.pdf": "c80fb3fff74e774a1f59267ddfc670344ebbbc7ea6135ab51720a386c792dc2d",
+          "README.md": "8878029121f306812695dce53905a6fa62b7cf2fdb90e0e572e32effff53d934",
+          "02_MASTER.ai": "7ccebf8ef29cbc0143ec9342b658ce3067810658e120bdc34dfc08abe63531ed",
+          "04_WHITE_INK_MASK.pdf": "afe7b7a62e0d43be89c834e963f8562a939b5deb72b86cb92bd9dd649adb5aee",
+          "validation.json": "cd37f993b40d36961075f672ffe57da1050e6d08915a19e6603d8dcd599ee40f",
+          "01_PRINT.pdf": "0c2fba07ecf22e80050fb8cc09b2ed22e04261bcfdc97bde94b8347cd21978a1",
+          "cut_detail.png": "b5ae4381b6a61a79bc9c3ba1162c8498a6c9fd93068ec0bc78592f5adc269bed"
+        }
+      },
+      {
+        "folder": "a3_release/19_personal_fill/3T/sheet_01",
+        "pieces": 12,
+        "contours": 36,
+        "max_export_deviation_mm": {
+          "03_CUT_ONLY.pdf": 2.1194074653112245e-05,
+          "02_MASTER.pdf": 2.1194074653112245e-05,
+          "02_MASTER.ai": 2.544101050042284e-05,
+          "02_MASTER.vectorcraft": 2.544101050042284e-05
+        },
+        "png": [
+          {
+            "file": "a3_release/19_personal_fill/3T/sheet_01/01_PRINT_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          },
+          {
+            "file": "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+            "pixels": [
+              4961,
+              3508
+            ]
+          }
+        ],
+        "sha256": {
+          "preview.png": "93376ed602f06f38011046e9c7e1b02614fce9822b01cefa93d792f3274bc20a",
+          "01_PRINT_300ppi.png": "1caf70ab747e206f5635e40e0b51f2493b92fe64235762b22abedcccc2f70315",
+          "PREVIEW_NOT_FOR_CUT.pdf": "13625204c236eefb211899b50961ac7c24d80f4dfd21dc7ddf3d5dc33af6b064",
+          "02_MASTER.vectorcraft": "117db57311e9df2034c49ed632af9062ef7926c8cb715788d0ada6e52512bfbc",
+          "03_CUT_ONLY.svg": "a8e628eb4327c4dc3f4f75d9987c7a735b112b60b9b794d3faec6b6249c2a9ba",
+          "03_CUT_ONLY.pdf": "d64c8a05806e189b4deeec92ed524dfd07ae1425bc03a572a00b83669d1de00b",
+          "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+          "02_MASTER.pdf": "e43cc0a57c220a7213bc99881db95e8671726d164d3259a3e098cccdbf4c386e",
+          "README.md": "caf274f519477d5a169ba1a6a23c3d02fc8e5d28883c0a32351b706eb4a4afbb",
+          "02_MASTER.ai": "8d45552a3f16d5c4dff56d13a67280922546a697c16c5ba5620af53f88c2d404",
+          "04_WHITE_INK_MASK.pdf": "df5a8c25b56288b180211b9a9a4d400391020017ba35b1287fd39f6a76411397",
+          "validation.json": "eaedf9cc869e490d89debd4e805e00bc9cca25c9188cce360e8c7c455b38a514",
+          "01_PRINT.pdf": "c194cd739be7881c04f5206765407c58b67665c5c0802b581c67c2d76741cfd9",
+          "cut_detail.png": "66db48049f6dd6bde344f8fe8a44bd639611bc030d97d225ad6478ae5492eb2c"
         }
       }
     ],
-    "packages": [
-      {
-        "file": "a3_release/02_extra_sheet_3T_A3.zip",
-        "bytes": 14925902,
-        "sha256": "3cac29e837353e4e93a5535b69316a07e2bc4f8f97d3c900331cae797efeb857"
-      },
-      {
-        "file": "a3_release/02_extra_sheet_5T_A3.zip",
-        "bytes": 10255196,
-        "sha256": "875269e08838ccbfcecf6e98314d3753af8f11fde85477b26b85307d89655702"
-      },
-      {
-        "file": "a3_release/05_len_3T_A3.zip",
-        "bytes": 16554575,
-        "sha256": "f95ef2f1a83fc95455d4f2ed77fca799e9be30579b72ce723f927af2e0f4930e"
-      },
-      {
-        "file": "a3_release/05_len_5T_A3.zip",
-        "bytes": 13931399,
-        "sha256": "7b49a2371c4348053ce9f070524c72d61c47bbc913564b5e9fdae602f86a7b8d"
-      },
-      {
-        "file": "a3_release/06_len_pad_3T_A3.zip",
-        "bytes": 12581370,
-        "sha256": "b81b2ed3a36770035af9c39d29ce506d0f9329ed425fa3c7433eddb2f400a49d"
-      },
-      {
-        "file": "a3_release/06_len_pad_5T_A3.zip",
-        "bytes": 12550888,
-        "sha256": "93bbaf29063f9ba0b40593beabb9f405ac839660212c3644125b3fd7d0e3cd0d"
-      },
-      {
-        "file": "a3_release/09_yanggum_3T_A3.zip",
-        "bytes": 966755,
-        "sha256": "276fd8711449c8ed9c711c29022f963d2bf8a8b95a90b60f1842c65fd0937035"
-      },
-      {
-        "file": "a3_release/11_ascent_remaining_3T_A3.zip",
-        "bytes": 28769264,
-        "sha256": "dd0ef2a3f21efd8f242dcb1de365f3dd8dadeafcb2ec11c2b32b32b0b7deedbf"
-      }
-    ],
+    "packages": [],
     "errors": [],
     "ascent_source_size_verification": {
       "scale": 1,
@@ -2843,7 +3180,7 @@
         "No fit-test pieces or additional bases were generated."
       ]
     },
-    "selected_primary_pages": 4,
+    "selected_primary_pages": 5,
     "selected_thickness": "3T",
     "optional_fill_assessment": {
       "maximum_existing_mixed_sheets": 2,
@@ -2913,28 +3250,35 @@
     },
     "PAD_print_pages": 0,
     "minimum_sheet_proof": {
-      "net_material_area_mm2": 305539.3964540969,
-      "single_A3_area_mm2": 124740,
+      "parts": 110,
+      "net_material_area_mm2": 354454.0989662232,
       "area_lower_bound_sheets": 4,
-      "feasible_sheets": 4,
-      "optimal_sheet_count_proven": true,
+      "feasible_sheets": 5,
+      "expanded_piece_area_lower_mm2": 398610.3392381642,
+      "expanded_single_sheet_area_upper_mm2": 115588,
+      "single_A3_area_mm2": 124740,
+      "optimal_sheet_count_proven": false,
       "separate_batches": [
         {
           "name": "existing",
           "parts": 59,
           "net_material_area_mm2": 162061.5492202503,
           "area_lower_bound_sheets": 2,
-          "feasible_sheets": 2
+          "feasible_sheets": 2,
+          "expanded_piece_area_lower_mm2": 182816.41615452964,
+          "expanded_single_sheet_area_upper_mm2": 115588
         },
         {
           "name": "ascent_remaining",
-          "parts": 25,
-          "net_material_area_mm2": 143477.8472338466,
+          "parts": 39,
+          "net_material_area_mm2": 173479.89700063516,
           "area_lower_bound_sheets": 2,
-          "feasible_sheets": 2
+          "feasible_sheets": 2,
+          "expanded_piece_area_lower_mm2": 192875.33963526893,
+          "expanded_single_sheet_area_upper_mm2": 115588
         }
       ],
-      "scope": "84 selected 3T pieces. Yanggeum is included in the existing mixed pair, PAD deferred. Ascent remaining stays separate; minimum proved within that separation. 5T and standalone reference layouts excluded."
+      "scope": "Selected 3T inventory. Global lower bound uses the policy clearance, sheet margin and exterior areas. Batch rows describe reviewed placements only."
     },
     "source_artwork_scale": 1,
     "physical_cut_test": false,
@@ -2947,9 +3291,9 @@
     ]
   },
   "individual_assets": {
-    "individual_assets": 141,
+    "individual_assets": 167,
     "cut_formats_per_asset": 4,
-    "rendered_pdf_ai_pages": 705,
+    "rendered_pdf_ai_pages": 835,
     "records": [
       {
         "id": "ascent_01",
@@ -5206,6 +5550,422 @@
           "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
           "preview.png": "a9e8f5012e2b62674789fbaf791c158c2040fc2b64ac9acaac0ba4777582e72b"
         }
+      },
+      {
+        "id": "강민_stand_01",
+        "max_geometry_deviation_mm": 3.9345320445179056e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "700043f66ecd4fbe921f5b771a130f001d77b0619ae44f9b6cc67471795f673e",
+          "01_PRINT_300ppi.png": "7b4990b6c90a5652101a12661fcb7dec25a7f82e7d1019af08999eade63bbe2b",
+          "02_MASTER.pdf": "07fa2d63a435defa49e79e245e36102e28e0edf6dff1c57aac0491cf03044fef",
+          "02_MASTER.ai": "07fa2d63a435defa49e79e245e36102e28e0edf6dff1c57aac0491cf03044fef",
+          "03_CUT_ONLY.pdf": "3c3fbe3868b95478ff4c260a1a4dc074639c9c65e10fc30390e2e67faf62384f",
+          "03_CUT_ONLY.svg": "7b87069f6dbc5d71a4f57ab524b4d1c25461f21baa0b0c20a348810bd4c002f7",
+          "04_WHITE_INK_MASK.pdf": "1e6d2f346698e4835a75dc3b3a12f34c6f655cc683870ba86567a16847e6b419",
+          "04_WHITE_INK_MASK_300ppi.png": "5d3b93c73b3438dc5d6c8068afc4490dda7ff8eaff673dfb56886281997a314f",
+          "preview.png": "1ba96beea5224412063c83c1b905cbc8166045cbf59b7da39ea5770d34f5ec21"
+        }
+      },
+      {
+        "id": "강민_stand_02",
+        "max_geometry_deviation_mm": 2.4693741345636102e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "e09a7d5afbf1bb3ec865719c85672c7acf9d76d0bf7db8389225c890d00ccf28",
+          "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "02_MASTER.pdf": "75da851ef540f123058124bfae2ba3ceea7111ac67fcee84b48a6439f7309aff",
+          "02_MASTER.ai": "75da851ef540f123058124bfae2ba3ceea7111ac67fcee84b48a6439f7309aff",
+          "03_CUT_ONLY.pdf": "4fab473b38f04c2545d946251a8ece671385b4993bcdaf090786a2a2aef132c7",
+          "03_CUT_ONLY.svg": "ece4b33a572132a749d2e03a8f54ddb837e226a025404ba2bc49f63526c204b4",
+          "04_WHITE_INK_MASK.pdf": "7b3ad6b97e38b55cb07c73e468ed64824b460af57c770f093d5931d31a9dcfc9",
+          "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "preview.png": "f935d26a9bd806d0929ec9eb6a21f3274234d740e88f16db3001e617a6a51f58"
+        }
+      },
+      {
+        "id": "강민_stand_03",
+        "max_geometry_deviation_mm": 4.084881190594177e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "89c95a45b532c47ad52d899fbafae6f75c88851301a90e55d6fb4290e185f67c",
+          "01_PRINT_300ppi.png": "bbafe32b2e063d1c92545094236af4b232af6d8913a1911127996651ad28d689",
+          "02_MASTER.pdf": "9b2e843058a465d181a7aecc64655753632b73d551e4510e0b432457b8561d95",
+          "02_MASTER.ai": "9b2e843058a465d181a7aecc64655753632b73d551e4510e0b432457b8561d95",
+          "03_CUT_ONLY.pdf": "0c0020e3e5fa1cba1e4c46a63ed737ecb96917ef6574675f6ecbe33e90d201be",
+          "03_CUT_ONLY.svg": "a15348f09e325596b744534dec5c9e80379e5edc2dd5e63e1b35df9b5555b900",
+          "04_WHITE_INK_MASK.pdf": "3d21780ba05b056ac837411227d829c65ab6d5daabf213109d2ec66a16c2c247",
+          "04_WHITE_INK_MASK_300ppi.png": "a24f8817285c6f8e410efea4a05c1dc060646bc1345cb570500c809cf16d17d5",
+          "preview.png": "bfb239e23d416afc49148f6aa0f50f77bc1655d4109e5b5def750a2d1b982676"
+        }
+      },
+      {
+        "id": "강민_stand_04",
+        "max_geometry_deviation_mm": 2.7062885835590947e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "43e7b8e36bdc74b247303a7f0d972c77b6f9212560ccf0c98b9ccd25099f38ef",
+          "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "02_MASTER.pdf": "0a8b80674d64453a9a4374bd00fbca177002f89aa0a057186589fd2c026686cc",
+          "02_MASTER.ai": "0a8b80674d64453a9a4374bd00fbca177002f89aa0a057186589fd2c026686cc",
+          "03_CUT_ONLY.pdf": "6407d9479327e5cc0e95559c51f1e055a70e9ef3050835fa26c4986317ff7035",
+          "03_CUT_ONLY.svg": "f116beb4b9f8f033265c7b1c97ce7a8afabf032b2778c0fafd7677516ba989a9",
+          "04_WHITE_INK_MASK.pdf": "68fcd406532a81eb0612ccafbd07912fa24d0625e475de8435597419cedcbc11",
+          "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "preview.png": "b0bf9b9a6ed194f8b80f78acddee6aa5c8b6b898e58c9c49cf4a6615dd084784"
+        }
+      },
+      {
+        "id": "강윤진_stand_01",
+        "max_geometry_deviation_mm": 7.399733362111329e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "235b0f192a2218f35914d8693c54914141b9ca650cd14cb2b22abf1a9d60331c",
+          "01_PRINT_300ppi.png": "a4736fc80b31d0af8990c5a21d4a437720bb240482db9480096ebb06f38ffbfa",
+          "02_MASTER.pdf": "e583441347febd85c20d0ec454f9f431aab4e331d4a54521190f44893900c3e9",
+          "02_MASTER.ai": "e583441347febd85c20d0ec454f9f431aab4e331d4a54521190f44893900c3e9",
+          "03_CUT_ONLY.pdf": "9910569b25bf40f58d4ad84645fa84b9fe702169aeec991e47118d60355f8056",
+          "03_CUT_ONLY.svg": "85658b4cd877dab228ead5bd75a0726d013fbf490891d64a1e35eb3b30994e64",
+          "04_WHITE_INK_MASK.pdf": "1ffc3f31c56376ee3b0b89384ed19688aec828714e5042b5211dceae63f586c7",
+          "04_WHITE_INK_MASK_300ppi.png": "997fd8d9357d054676f7ab4a81b86432d13727bb632f528b6523ddcdf2a64718",
+          "preview.png": "3364b010615526f7901a1377ef84097c7ee8fba5019c27d473c454e66f5acf84"
+        }
+      },
+      {
+        "id": "강윤진_stand_02",
+        "max_geometry_deviation_mm": 2.4693741345636102e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "d004ae54ffaa31a5f061a68b24c174c1fc174b206becac860e794edbcc0ce20f",
+          "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "02_MASTER.pdf": "915f7fab3e97e0407632323452a40b62bc0e121d326d38f3dc1fcce88442d7a8",
+          "02_MASTER.ai": "915f7fab3e97e0407632323452a40b62bc0e121d326d38f3dc1fcce88442d7a8",
+          "03_CUT_ONLY.pdf": "09bddbed6decec888a14e60dbf80b4aca3b491f48f29b5932b2bc048fe3981c7",
+          "03_CUT_ONLY.svg": "ece4b33a572132a749d2e03a8f54ddb837e226a025404ba2bc49f63526c204b4",
+          "04_WHITE_INK_MASK.pdf": "b57f95af7ba06f3b67ff2907ee48d7090a81ffb064d4aa2560141c524449b8b4",
+          "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "preview.png": "f935d26a9bd806d0929ec9eb6a21f3274234d740e88f16db3001e617a6a51f58"
+        }
+      },
+      {
+        "id": "강윤진_stand_03",
+        "max_geometry_deviation_mm": 5.14131541660506e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "9c3418c77fe6ebb1f16df7b9568b3935fee27f1abab081abfac6568bd5ede6ea",
+          "01_PRINT_300ppi.png": "4727d02504793c98d0a74f8f5ee425aef437d68a720167021130a33d6798dbc7",
+          "02_MASTER.pdf": "2c7084b7cd2d6938ec89a3b8431f176b81028b823f4c53a206b7d12a6256f881",
+          "02_MASTER.ai": "2c7084b7cd2d6938ec89a3b8431f176b81028b823f4c53a206b7d12a6256f881",
+          "03_CUT_ONLY.pdf": "2dab63c1aae81831381a2e3e7a4ccb0ece7c560847402f79251776601d00b464",
+          "03_CUT_ONLY.svg": "f461606485ca89479ddc77328d9304f8ad591e7075fd36c9b8972072634b1bfc",
+          "04_WHITE_INK_MASK.pdf": "f9cb1000c6b9f1008927977385dcc22db0f7a0900fae5d16e09f792017661eb2",
+          "04_WHITE_INK_MASK_300ppi.png": "600785cbf544f53b5b1b0b645b5e0ba7acac02c8366a2c357fd35662381a453f",
+          "preview.png": "9779e9e97782b6d25f88ea194e36ea7836586347702c7f2e92a79f67025238f0"
+        }
+      },
+      {
+        "id": "강윤진_stand_04",
+        "max_geometry_deviation_mm": 2.7062885835590947e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "fcc367c4196cf72bbe98a0fff902bb129ccde75759fd3d4b814f4e75153fe0c4",
+          "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "02_MASTER.pdf": "f97261fb09eb44f2dc80f52c989c5f0c885e795a4cc85045ea6ba35eccf889e4",
+          "02_MASTER.ai": "f97261fb09eb44f2dc80f52c989c5f0c885e795a4cc85045ea6ba35eccf889e4",
+          "03_CUT_ONLY.pdf": "90f810af7845ed8889d17a6a7ef34b3f6d9679c058010b1196a2e3fa379b43ae",
+          "03_CUT_ONLY.svg": "f116beb4b9f8f033265c7b1c97ce7a8afabf032b2778c0fafd7677516ba989a9",
+          "04_WHITE_INK_MASK.pdf": "6729b8facc1b0bd08f8d2a4d3483abd0f3f9972c41529850e3d5aa26b672dd6a",
+          "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "preview.png": "b0bf9b9a6ed194f8b80f78acddee6aa5c8b6b898e58c9c49cf4a6615dd084784"
+        }
+      },
+      {
+        "id": "김윤_keyring_01",
+        "max_geometry_deviation_mm": 4.052159916916211e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "d72d4c0d5bb063fff753fb04782e32d68f3f9df0e295f515520c2f32388e4ea0",
+          "01_PRINT_300ppi.png": "ee376db770b22e01c039407f93f0e94217255d7ae81f6923e57e2635cf053965",
+          "02_MASTER.pdf": "ef50ce8f7d5ac2059c891372e9c40e364bfe867c8db98f3e00fb5fa8bddbecf9",
+          "02_MASTER.ai": "ef50ce8f7d5ac2059c891372e9c40e364bfe867c8db98f3e00fb5fa8bddbecf9",
+          "03_CUT_ONLY.pdf": "a76afaf76c964954ee6605dfeb0a60260eabe25febec95479557d02f317a8d2b",
+          "03_CUT_ONLY.svg": "e840c9a2876be70267654acee8a8471fbea7dee58cb6223de0ef67b45a0e94bf",
+          "04_WHITE_INK_MASK.pdf": "9a8d18e61363c4e23e664e2590bc2d96ccbd8b8a3f79b8110fd7ef539cde3d23",
+          "04_WHITE_INK_MASK_300ppi.png": "6df5dec3e7d1ff07039ef809dfd57174ddb0cd483fa97692f83d86c10561f314",
+          "preview.png": "c447eec57c315de87d8c3fc2901ff0b37b99411d1926ff20c2d697dc240116c7"
+        }
+      },
+      {
+        "id": "김윤_keyring_02",
+        "max_geometry_deviation_mm": 0.0007512038963036117,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "7ed5abde6474fa28a5e9d1983d267575e4c32434d82f0a7883ca1c0f1b4e53f4",
+          "01_PRINT_300ppi.png": "959accc5306e4084bd3cc7228cc717a4dd171f0b6a2f82cadf7c0131dd5970dc",
+          "02_MASTER.pdf": "994d91fb653022ac9bf5e638324c99c6a97d4ded66672628b55de7a9b1de2880",
+          "02_MASTER.ai": "994d91fb653022ac9bf5e638324c99c6a97d4ded66672628b55de7a9b1de2880",
+          "03_CUT_ONLY.pdf": "4769e8086d1c712f15941f4aed914771125b0720ffc7c7c5315b85000689dac7",
+          "03_CUT_ONLY.svg": "cc0f4abbfdc76c1d36edb9cd9b6fe100536445de10802ae0300cd2bec80fb3f3",
+          "04_WHITE_INK_MASK.pdf": "79e82ef1e4027c216addfd7b0c96329f6e36820325139a991813cf1d4e4db0c9",
+          "04_WHITE_INK_MASK_300ppi.png": "78dd049175fe35636291d4bfcedc595e18337e9b48595d9635964b636344ec0d",
+          "preview.png": "76e95464db50a9e55d48771eac54ab0d31853ae5250eb8e7730c3ceaf5ee0bcf"
+        }
+      },
+      {
+        "id": "김윤_keyring_03",
+        "max_geometry_deviation_mm": 4.3743008377446395e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "1f417e7e9038191cfc97011a1e7e242ffe918c7820ccbd733f94f671c8d72eaa",
+          "01_PRINT_300ppi.png": "f90aa6d1f398c132adede7c9504de3a44ca5132d14f78b3b28673e58ffcf2262",
+          "02_MASTER.pdf": "fe946cdb693b25592d6475533642e6d3071a1aad515119ae66120173c35940e2",
+          "02_MASTER.ai": "fe946cdb693b25592d6475533642e6d3071a1aad515119ae66120173c35940e2",
+          "03_CUT_ONLY.pdf": "67cb96c197e76e57cedae11a8b34b567b545b135a8afb4c9877702686dcc3e6d",
+          "03_CUT_ONLY.svg": "42f53014132020fc411e5e6b9fd1dc10fb2126498a414cd53949f8e4c6bf70fe",
+          "04_WHITE_INK_MASK.pdf": "4b1a5385c83829ddf0be0d4060c76be041fb29751206ac1d1f11ff083eb52618",
+          "04_WHITE_INK_MASK_300ppi.png": "17c6da22a29af43c5b6107673d424f532922b7387014a805d9b1f70e810d2d81",
+          "preview.png": "f2d7771e7ae0fc71f2651e7d49f0d93abf09f3bee24cb24e4075e040cb9f3e04"
+        }
+      },
+      {
+        "id": "김윤_keyring_04",
+        "max_geometry_deviation_mm": 4.111289586228184e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "62445d4bdcf986c570aca9aed00d92edb57aa2eefc3fe38ccea9a5edd3dcd969",
+          "01_PRINT_300ppi.png": "6a01bb746284dc1183c3bb2701a9cf470ae0f13b34d7f05c335c30ab8e34b1f1",
+          "02_MASTER.pdf": "8b2634a66b0a9b07487460c3824280877ca46cb3c1b494557c7ddfb9126008fc",
+          "02_MASTER.ai": "8b2634a66b0a9b07487460c3824280877ca46cb3c1b494557c7ddfb9126008fc",
+          "03_CUT_ONLY.pdf": "a358257c8fbee62ccf51a25454282d3a5f41eacd121ba4da914380b4ab0cdaab",
+          "03_CUT_ONLY.svg": "0f0675437ae680a589c494ff578ebcebf8fff2461c592e4c277af541b8d5a27c",
+          "04_WHITE_INK_MASK.pdf": "2b7556ac9a3f87f3aac975e322f8f488e6840eb5fa30c9e285191012963fd5cb",
+          "04_WHITE_INK_MASK_300ppi.png": "0b0af80e3f3c24dfe75d7d05cd509460779ba2e06c50eaf255a6bb4b3b0be42c",
+          "preview.png": "e22e7695a63fde4e8162e036f952ff1ddfa8d594f5b9e2700bc2998ef125200f"
+        }
+      },
+      {
+        "id": "김윤_keyring_05",
+        "max_geometry_deviation_mm": 4.972524071736509e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "d8670ea40f4114bac3f632a0517989a076c1f429da2e01ee3a13a19e726c107b",
+          "01_PRINT_300ppi.png": "2b481a57b51195531b3984ab016de3b797dfe7201cc4319e77b8de5c84736775",
+          "02_MASTER.pdf": "93e470995c5b12214d4b799fa6d0785b2f97525482136c9a29ebe944e8aa915c",
+          "02_MASTER.ai": "93e470995c5b12214d4b799fa6d0785b2f97525482136c9a29ebe944e8aa915c",
+          "03_CUT_ONLY.pdf": "06e8cfb0c6a355e55248bf0542877384ba0f12e52d339c2ffeac2efb69248a5d",
+          "03_CUT_ONLY.svg": "8b99bff69e4102028b99bda06aa20d688fc1987ca9856107b03ebb34f85c6033",
+          "04_WHITE_INK_MASK.pdf": "5321b28e8173bfb02a96e82bd2e89685eca85c39fb456ee03608f5dbe643f239",
+          "04_WHITE_INK_MASK_300ppi.png": "cb802e113c12288e03544278aff417b12af099f8d49442dc00761f0b383c881c",
+          "preview.png": "c49e4d4af34e571b8d2355ec7740e7aa2c6d21c0f395755d83ba48861ce893f4"
+        }
+      },
+      {
+        "id": "김호_keyring_01",
+        "max_geometry_deviation_mm": 3.556626162796682e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "f15f9fbf1eda8acca64c5f2e9a583c3b61f92d9c60ac2fc230c046a1f536163f",
+          "01_PRINT_300ppi.png": "fcbc8444e5e90595dbd721ce85db788adbc8d21bb12857e24caf39822f0dd19f",
+          "02_MASTER.pdf": "97fde4350008c170454dfc71545ae3cfd3cb3bc1eea5b753bc70aa9e1913cc9a",
+          "02_MASTER.ai": "97fde4350008c170454dfc71545ae3cfd3cb3bc1eea5b753bc70aa9e1913cc9a",
+          "03_CUT_ONLY.pdf": "4a380cbae78cb6c55a4ff73586fddfcb9f8fc9537dc3f3a44d1328ca8eba9663",
+          "03_CUT_ONLY.svg": "af8e5b635369885e2cf48577787d2fcd48412f32d53dd25986c35b8747ce028f",
+          "04_WHITE_INK_MASK.pdf": "ec2e41a6f70a79506e1b6f0d0f9d473399df4d932a797b07efc4870a3c4125d4",
+          "04_WHITE_INK_MASK_300ppi.png": "f44cbddca7d73be43fcab89f481620abd7b58c412868a6693b553bf5374e2e62",
+          "preview.png": "61625b20f7ad0db081b08178832ff1a3a887b5a346ab2573b96485fe7e5e4afe"
+        }
+      },
+      {
+        "id": "김호_keyring_02",
+        "max_geometry_deviation_mm": 8.020137712691719e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "9e0d4c571357e7d08d2187f5fa2ae39a8cf3b4758bb026294bc0fd56f6e73604",
+          "01_PRINT_300ppi.png": "349a5f246c8198684717152ced9c3997753594e396437759f9b833d69afb7224",
+          "02_MASTER.pdf": "d661eb47accc1a2cb08b568200ce1a313b5c717df01979f53bf7f71f5b24af28",
+          "02_MASTER.ai": "d661eb47accc1a2cb08b568200ce1a313b5c717df01979f53bf7f71f5b24af28",
+          "03_CUT_ONLY.pdf": "a4c39c2e7b5d1f8583483229e72b4661bdbde031bd2304561f698397748ad68e",
+          "03_CUT_ONLY.svg": "de06c65a3ffe2039edd6c904e5bb37c7f058694cdad0d5816d993604a7af2b81",
+          "04_WHITE_INK_MASK.pdf": "cf968f15da5569f39acf85af3d3b5ea0bd4a9a7597e5c6502b0356679e2dae88",
+          "04_WHITE_INK_MASK_300ppi.png": "7eb9ab44f999108515c738c0e7f0115f964505c46c633a39a362f048fd021ad8",
+          "preview.png": "f6cc3f0567e827000a011db5e858fab270f6e87176a90f57db66ef61f0eb6ef6"
+        }
+      },
+      {
+        "id": "김호_keyring_03",
+        "max_geometry_deviation_mm": 6.44139298720804e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "9b3ccfa6fc5b029165b078acc8dd9b8ef3f0a3adaf7cf7015e21645a979a9efa",
+          "01_PRINT_300ppi.png": "d35d0ece2b252523f516ca01a988049cb83bba8fa11970d62e85e78946bc2d3d",
+          "02_MASTER.pdf": "aee91e760b808c44036ab6333e1776d8842a7b4934f758ffdf7ceaa65451e2fc",
+          "02_MASTER.ai": "aee91e760b808c44036ab6333e1776d8842a7b4934f758ffdf7ceaa65451e2fc",
+          "03_CUT_ONLY.pdf": "45eafcc928fe4df22d392f303e2c5bd03cc2d563a935d2fb688b935ec7677732",
+          "03_CUT_ONLY.svg": "be141858955146dc866f8b17c1af03ed6c3dc308f95e021ac29f8a4bfe5978d6",
+          "04_WHITE_INK_MASK.pdf": "7c5ff6d592fc2ad7bfe3f20c932510a2e68b7c2a09baf6e3a6e042fb275ecdb7",
+          "04_WHITE_INK_MASK_300ppi.png": "42450beaf39320d57940b8d7cc83ddeef02f951a0d4e47c4f9a8e7b2613c3d70",
+          "preview.png": "5926a04965085b7ff6413b1c995de119eb4b61c9a5d2eefd3adfd5ab0cd8a6cc"
+        }
+      },
+      {
+        "id": "김호_keyring_04",
+        "max_geometry_deviation_mm": 6.149596653989419e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "e6ab21be4a5cce290e3cab3e0ffeb24c2899810c72a389e6c32e9e90d9aae380",
+          "01_PRINT_300ppi.png": "7726ad95747a2ef273f6ddf617a42f22d8d5315a574165293a286bbb75a77dff",
+          "02_MASTER.pdf": "ae59779f1bf479b1767966759d3cd25d72532f26575e5b6414b38966bebfe1cf",
+          "02_MASTER.ai": "ae59779f1bf479b1767966759d3cd25d72532f26575e5b6414b38966bebfe1cf",
+          "03_CUT_ONLY.pdf": "c751b0bce218b37a05d9560dc9b9cba06fec13b7219e065dc1645338af504a70",
+          "03_CUT_ONLY.svg": "ed0a6f5940625bc6ee8dfc3dabb262e3573483ce0066b7b2bca8f8824de2af58",
+          "04_WHITE_INK_MASK.pdf": "231c36f68ad25491df171ae39e67f1ab154a3e4840d145125c38040af814c36f",
+          "04_WHITE_INK_MASK_300ppi.png": "262a59fcaae1b80e5245568687cc8a683ed2d259d7463d8a63c7907e6b30472c",
+          "preview.png": "9faedcca5e83405baa73be977cb7dbda3d2b6be37c846115d24e72e938813a4a"
+        }
+      },
+      {
+        "id": "김호_keyring_05",
+        "max_geometry_deviation_mm": 4.144792261844609e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "e3f7c6cd9a591df1e90f81ca036149882e433c585722edfbfbd649ebd53c694c",
+          "01_PRINT_300ppi.png": "50ac1dd6a980eb9b490d755db5b39abc917078033eae21c1932920c1f01d27ed",
+          "02_MASTER.pdf": "778b762bebd4b56956dbdeb35b0186d56e3c5c18d82fa3d8e6c44489d25a2a19",
+          "02_MASTER.ai": "778b762bebd4b56956dbdeb35b0186d56e3c5c18d82fa3d8e6c44489d25a2a19",
+          "03_CUT_ONLY.pdf": "f7d808b0cf92c45c26c5fb35874cca0c2ca65d3b4a9fa4a10a08b9710bec6ac1",
+          "03_CUT_ONLY.svg": "a479d6a2a45c1d44cff648b37b1e3f7c52235a03f585139340f7018dccf3f3a0",
+          "04_WHITE_INK_MASK.pdf": "c0d090f6b1aa3f38a24f14f31dccc68357b5ecc1fa692fee504776f0dd67fbae",
+          "04_WHITE_INK_MASK_300ppi.png": "e67abdc7ba26cf6c201675057d541c6dfa6bba5df375703d074af8f35150dbb2",
+          "preview.png": "52adf220b5d39863732766426435b5289fd37a516a01f182d39d08a66a066a44"
+        }
+      },
+      {
+        "id": "김호_keyring_06",
+        "max_geometry_deviation_mm": 7.84771699167702e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "f1f259c9da377e3fd9c006e7854634dfe86a10647351fc308a343677b7ed3eb5",
+          "01_PRINT_300ppi.png": "316ec9a9495da0d9a6b90fa047071740f59f3475c1f296affcdfa55bb5ff66f6",
+          "02_MASTER.pdf": "e4a33850bfa8e47a034a1289335bd84eefa3d0522bcda7cc9540abbfadb94753",
+          "02_MASTER.ai": "e4a33850bfa8e47a034a1289335bd84eefa3d0522bcda7cc9540abbfadb94753",
+          "03_CUT_ONLY.pdf": "db6c8e5faad0d8b42e35da48dc96b4e2b5d895d3d4d56fe86a6cf846c1f2a359",
+          "03_CUT_ONLY.svg": "11e7bbc9919b8e5cd87899515032a8f2a5ed123a7bcffa292ae092c466173093",
+          "04_WHITE_INK_MASK.pdf": "a9c2dcb1c3ccb4265bbb669a2918da4d85f6ef7798e01223a632a8d8fb0ed682",
+          "04_WHITE_INK_MASK_300ppi.png": "067bc868f20e70da9313da9a8a473988a0e6464ea39d8a41583f1aa044b6a150",
+          "preview.png": "fbde8b592ec6c18857c8c52aada616c59e07936706310ed3326e8fc525818965"
+        }
+      },
+      {
+        "id": "배승민_keyring_01",
+        "max_geometry_deviation_mm": 5.58900302585387e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "b1c5b50bfba938aeab66fda219996363c893bd01db9f5dbd8cef49d4eeceae7e",
+          "01_PRINT_300ppi.png": "bc621ce3db78c797dcb14b7eea2049c27cfddd9b4c1901370fef3e976e541b9a",
+          "02_MASTER.pdf": "88f59b48cf12c8c290702ecb6adca6d3ac3fa51f15e11d16f7d7d743a7b6fed0",
+          "02_MASTER.ai": "88f59b48cf12c8c290702ecb6adca6d3ac3fa51f15e11d16f7d7d743a7b6fed0",
+          "03_CUT_ONLY.pdf": "4b8c4795668d4ae6fa4712ebefdc361c8714c425c3386d0b939069015b75af43",
+          "03_CUT_ONLY.svg": "bf9518c98b4bed97f657c0815154e4c85e8408ec8292a8e858868191337d21b6",
+          "04_WHITE_INK_MASK.pdf": "3304cbed926939394a35ea0935d4408e3c09c6dc3ec0fc1508a7012765ded8d3",
+          "04_WHITE_INK_MASK_300ppi.png": "46bfe6664c66442cd093a0af032fb01ae9f5dd2512fff858391ddf2bb5300361",
+          "preview.png": "34199f2f19ce6d08341ce585774f48850b4ed643308261ff56fa8b01558fb40a"
+        }
+      },
+      {
+        "id": "배승민_keyring_02",
+        "max_geometry_deviation_mm": 4.674638918868924e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "659ff206d0d644a70df7f8873c2902dd260479af922bab5fddc5f43ac79e9401",
+          "01_PRINT_300ppi.png": "723fde5b9d0026f2fb2b8e945f3883e1c74836859aa8b2e4c0ef5c6c2f239cc8",
+          "02_MASTER.pdf": "6a7016cd76276674298f7e9c0691e7874d3d7186b42be85ae8afd2e3046ff61f",
+          "02_MASTER.ai": "6a7016cd76276674298f7e9c0691e7874d3d7186b42be85ae8afd2e3046ff61f",
+          "03_CUT_ONLY.pdf": "dd10b948516de5fa1c71d7c2805de20c9e439a41d471ce892d3a8909393b20c7",
+          "03_CUT_ONLY.svg": "d8252af0136f1f851775a764b5d4f67610ea215ca4c6ae010051aae1bd563180",
+          "04_WHITE_INK_MASK.pdf": "28f37512f7c463a7a611f10588db7e51868dbb0d7f6bc5c79e235f8d4b9a68da",
+          "04_WHITE_INK_MASK_300ppi.png": "53cb989c0bae93ec67bbb44b8844af7d133f5bbc28b9c87c3a65a012a8f2e49f",
+          "preview.png": "aabed6dff3c2aa3c0cca3fd92bfdc6ce331ad96463b0f8079306374ff874ff37"
+        }
+      },
+      {
+        "id": "배승민_keyring_03",
+        "max_geometry_deviation_mm": 6.052759259347645e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "e0927a407c827afa727d50b1ad574e57ad51d9a7c998d74b4e9c2d5f69b1f6b9",
+          "01_PRINT_300ppi.png": "06b854bb2e19337bb3b13ae1ab508b03cc733a2995a6ed1fe30674a71badf8a0",
+          "02_MASTER.pdf": "87bb14b9f63f499c5926e689ec8a530aa58323f6cf5992feb118afbdb6ddfad1",
+          "02_MASTER.ai": "87bb14b9f63f499c5926e689ec8a530aa58323f6cf5992feb118afbdb6ddfad1",
+          "03_CUT_ONLY.pdf": "11584d1908fef21919b5f47b3b5f29a43d1e5fd136cbfca6ef156c71a9d130aa",
+          "03_CUT_ONLY.svg": "45da646be883b6f761a7bbe2d1da93606713626fdb54e91fe1ff33ef8e431465",
+          "04_WHITE_INK_MASK.pdf": "081ed2c46f2188fe36b620d0cde5aa8ac076c284a44034443b57dfcf6f7ab9e3",
+          "04_WHITE_INK_MASK_300ppi.png": "e086d60cb61067a9c76e854278779c9d7175ce6a20f94e1d142217bcde2bf35f",
+          "preview.png": "d9a41e70feef7aba06434a7c5f8e78ba6e1b440bf449fcd1109e754a1ed80501"
+        }
+      },
+      {
+        "id": "이상준_stand_01",
+        "max_geometry_deviation_mm": 4.458389903054319e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "4e5ba61fe30da5100af57cf2e8ba55efee9bdd49f380ca15ab716a419bd07fa3",
+          "01_PRINT_300ppi.png": "bdb8f560b09d259176ab4fe8d98a9a756ee4775fd53160276c064f716cb66e4d",
+          "02_MASTER.pdf": "1fe33b838167d64e31da5cc1675e817f7b3121b979b55306f5d80b43eaa1c999",
+          "02_MASTER.ai": "1fe33b838167d64e31da5cc1675e817f7b3121b979b55306f5d80b43eaa1c999",
+          "03_CUT_ONLY.pdf": "0eb6eff8d0ffdd7a5f97b163ec7e6fbd72a9d3c75fc21b6e3e6eda4222829984",
+          "03_CUT_ONLY.svg": "ee5a2f286999535382633ec5138ab19d0bff45b6c3f8a52add565afe640918ac",
+          "04_WHITE_INK_MASK.pdf": "b3b86d72e0fb770c7b87e3bb0f7b835639a2e4ae017a2ddb2de38ef95faaa468",
+          "04_WHITE_INK_MASK_300ppi.png": "2a392f59d37754aa8d67faff7e519717517a37d1d183a190d82cfcf45095d8bf",
+          "preview.png": "3521981a5b562b14ddd3e47eba446c8ab76351374a9f6ef7ec86225c3ac1bc19"
+        }
+      },
+      {
+        "id": "이상준_stand_02",
+        "max_geometry_deviation_mm": 2.4693741345636102e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "11785af21f39d4bc20ab3c160d0764c55679af57092abcf2d2988421412aceee",
+          "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "02_MASTER.pdf": "f4d514050b5c305fd833cdd3d62cc8ddb37b990ffbfc956a7db3d4e2e1caae38",
+          "02_MASTER.ai": "f4d514050b5c305fd833cdd3d62cc8ddb37b990ffbfc956a7db3d4e2e1caae38",
+          "03_CUT_ONLY.pdf": "4716a445546307735c0c3634fdb8c1d950ff957bca138e8e19c2b7d625ca6758",
+          "03_CUT_ONLY.svg": "ece4b33a572132a749d2e03a8f54ddb837e226a025404ba2bc49f63526c204b4",
+          "04_WHITE_INK_MASK.pdf": "47f4b97a96b81234c17e722026b6df75a68586d30645b0af765d5c9804cf9979",
+          "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "preview.png": "f935d26a9bd806d0929ec9eb6a21f3274234d740e88f16db3001e617a6a51f58"
+        }
+      },
+      {
+        "id": "정지영_stand_01",
+        "max_geometry_deviation_mm": 3.8029593772516545e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "9d11e526042cfbf3170e6600a3313628971013c50871f93a796b2b3f2e0999ab",
+          "01_PRINT_300ppi.png": "5f2a84283c86ea6b4eab22f83745915f6d101c0e9ca229acf1628a4679437f5e",
+          "02_MASTER.pdf": "f695f3f7873b38e772f1f187576d0e503a0e997432149f44408e281e736b0503",
+          "02_MASTER.ai": "f695f3f7873b38e772f1f187576d0e503a0e997432149f44408e281e736b0503",
+          "03_CUT_ONLY.pdf": "41db6c18b925fca02f27ecc5a6492d62928562b1fd0eb66145227d917f65ea43",
+          "03_CUT_ONLY.svg": "1691233629eb895d8c7eb3d4716efc425d1bd20e9f1c3caaf8716229e4d53243",
+          "04_WHITE_INK_MASK.pdf": "8f13457723f1c368e308dc2f143a10f08950a550a9589181f02b37682477291d",
+          "04_WHITE_INK_MASK_300ppi.png": "e46f8c076792c75a16735c1ef86af980b5c4834067d31b6ef7a2ee35838e68c2",
+          "preview.png": "701611c17610afaca2f715002a36c1413bf095715fc2ddd0e4f6251a0f9d0d90"
+        }
+      },
+      {
+        "id": "정지영_stand_02",
+        "max_geometry_deviation_mm": 2.4693741345636102e-06,
+        "a3_occurrences": 1,
+        "files": {
+          "01_PRINT.pdf": "79641a1c515791f21f7235c97db3c11144569a1c5ac697ddc1e1b4e2e07cd0ea",
+          "01_PRINT_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "02_MASTER.pdf": "9f87cbbe7c71f4b459a18a9b210dfd94d8ae55de1e64e1319509ebf7dde52e97",
+          "02_MASTER.ai": "9f87cbbe7c71f4b459a18a9b210dfd94d8ae55de1e64e1319509ebf7dde52e97",
+          "03_CUT_ONLY.pdf": "24f582487b99764cafa469d2fc4fbcfc6177767bfb67f3232642e00ce738a211",
+          "03_CUT_ONLY.svg": "ece4b33a572132a749d2e03a8f54ddb837e226a025404ba2bc49f63526c204b4",
+          "04_WHITE_INK_MASK.pdf": "1a2c2d04b2119ca86d19fd691fd06c6b8982ddc188a0092e633752f34964396f",
+          "04_WHITE_INK_MASK_300ppi.png": "039898c914e8491d18ba176f36880aaf12daa4a9293c10247ae7f10407411b0a",
+          "preview.png": "f935d26a9bd806d0929ec9eb6a21f3274234d740e88f16db3001e617a6a51f58"
+        }
       }
     ],
     "errors": [],
@@ -5450,51 +6210,75 @@
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT.pdf",
-      "sha256": "6f9e5e2ec4da5dbe726aacff2fb3a44e183f4d39713ce0be9f83bd2de696073f"
+      "sha256": "a2164241c86f8f587aa1e868f137f0213fe8fb12ec803b0d897fec8808995c44"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/02_MASTER.ai",
-      "sha256": "0edbf2d11e1327b5a213a361fe7249195bf93f5366e06864e4eb5374f2695ebf"
+      "sha256": "8ee6f8a8fc63219a218160db5cd794ef75cef7d8d89d6caec72fe676c4ad7321"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/02_MASTER.pdf",
-      "sha256": "d754f1e8919ac798761a43a74fe71317736721de16f3bd9395e4dbc93475f9f7"
+      "sha256": "1addd71bbbc9517f532ccc5bce8cc1e874ec248185244e77ae2d5cbf1e0495d0"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "c5d86f4f4604dabaa8630a070f53903abc716b51d18a042950f746e2e2910d2a"
+      "sha256": "88a2d5a8f698cc64d48d792a5977a9848683f2c5c93e64dc59fa9881cac55d6b"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/04_WHITE_INK_MASK.pdf",
-      "sha256": "ca4119be727ea56b1ce2955733b5726b9e3fd93fb6e5e9485370c47f0ee78b80"
+      "sha256": "c0afd93202cc6f1b0920e239738646cf452033d29179b9e239367a5c4a64e58d"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
-      "sha256": "827b860c60ca146ca6690f28f4b6cbfa40e56e692eaedc4cca0bb85ebd60a802"
+      "sha256": "b641043330e9ed914fa71b7902a3b5212e2cde88dc14d90c97514a1308e9bd39"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/01_PRINT.pdf",
-      "sha256": "c839ff46edb72ca2b8316ab6bf7f2e29cc4aaabab5f5412c2d07d28bba0942e1"
+      "sha256": "0c2fba07ecf22e80050fb8cc09b2ed22e04261bcfdc97bde94b8347cd21978a1"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/02_MASTER.ai",
-      "sha256": "5e4ec1e44dff0586b619e5f1c7484a4e494cafe03e98b74452c2089f69094c0f"
+      "sha256": "7ccebf8ef29cbc0143ec9342b658ce3067810658e120bdc34dfc08abe63531ed"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/02_MASTER.pdf",
-      "sha256": "5dc39c437847671702061ed44a106a1194b70b5834846f9da3fa0a54fe33750b"
+      "sha256": "c80fb3fff74e774a1f59267ddfc670344ebbbc7ea6135ab51720a386c792dc2d"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/03_CUT_ONLY.pdf",
-      "sha256": "667da3e969a4992c6b3ff31cd8fe3defe54bdfe3629a77f9324be6b69284fe8a"
+      "sha256": "cd1042d2e135fce5e9bebf1801c23938b8b75fe57054d00a934bb7d0c264ef7b"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/04_WHITE_INK_MASK.pdf",
-      "sha256": "5271069b53f3fdef3ad6d68fa058e181021e05de80197adc967a82e822c73cd3"
+      "sha256": "afe7b7a62e0d43be89c834e963f8562a939b5deb72b86cb92bd9dd649adb5aee"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/PREVIEW_NOT_FOR_CUT.pdf",
-      "sha256": "476acf26d58cbcab3b65bcb139317d89544c79058e97a4b97befb2088f223634"
+      "sha256": "74d7d5670211f69797a40c703519364a5d7fa19c43dd2e8113d62e24b7e80a88"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/01_PRINT.pdf",
+      "sha256": "c194cd739be7881c04f5206765407c58b67665c5c0802b581c67c2d76741cfd9"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/02_MASTER.ai",
+      "sha256": "8d45552a3f16d5c4dff56d13a67280922546a697c16c5ba5620af53f88c2d404"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/02_MASTER.pdf",
+      "sha256": "e43cc0a57c220a7213bc99881db95e8671726d164d3259a3e098cccdbf4c386e"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/03_CUT_ONLY.pdf",
+      "sha256": "d64c8a05806e189b4deeec92ed524dfd07ae1425bc03a572a00b83669d1de00b"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+      "sha256": "df5a8c25b56288b180211b9a9a4d400391020017ba35b1287fd39f6a76411397"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
+      "sha256": "13625204c236eefb211899b50961ac7c24d80f4dfd21dc7ddf3d5dc33af6b064"
     }
   ],
   "png_files_checked": [
@@ -5612,7 +6396,7 @@
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT_300ppi.png",
-      "sha256": "c515383ce6e65437d16d5227104192a2979c02e5fed296c0532fdb3fa369fab2"
+      "sha256": "7796aabf97d6168fa07bd7297a342f68d3c403417bdffe7170fbbcf262bf9b41"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
@@ -5624,11 +6408,11 @@
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_01/preview.png",
-      "sha256": "bd68dc264e62cc9ca550dfd93dc52856e1e65eae9db70062dcd8c3f41f8d5571"
+      "sha256": "6cf1d1a2d8ae8af0269b57d960d5bc08a3bae2d0f9c3ddda1a01eaec6e061c0c"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/01_PRINT_300ppi.png",
-      "sha256": "ee3493f6f34d9b5e07c687e19fbc4f232d43e38d97238e56897ee00dc0d208ef"
+      "sha256": "996f10f308de0f486344c842518742923dc4c27701f8061e3e7e6f76686633bf"
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/04_WHITE_INK_MASK_300ppi.png",
@@ -5640,15 +6424,31 @@
     },
     {
       "file": "a3_release/11_ascent_remaining/3T/sheet_02/preview.png",
-      "sha256": "a8d5e604808dd6250b1331abd56f5d67dca2b88e9b7724b1a8829eedfb0c5ca8"
+      "sha256": "e473a9e8db7df39b1dce6cd6de66f8245979f51b6db67ac3444d071b7c17d66e"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/01_PRINT_300ppi.png",
+      "sha256": "1caf70ab747e206f5635e40e0b51f2493b92fe64235762b22abedcccc2f70315"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+      "sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/cut_detail.png",
+      "sha256": "66db48049f6dd6bde344f8fe8a44bd639611bc030d97d225ad6478ae5492eb2c"
+    },
+    {
+      "file": "a3_release/19_personal_fill/3T/sheet_01/preview.png",
+      "sha256": "93376ed602f06f38011046e9c7e1b02614fce9822b01cefa93d792f3274bc20a"
     }
   ],
   "physical_cut_test": false,
   "coverage": {
-    "current_pages_including_thickness_alternatives": 9,
-    "current_cut_formats": 613,
-    "packages": 8,
-    "rendered_pdf_and_ai_pages": 54,
+    "current_pages_including_thickness_alternatives": 10,
+    "current_cut_formats": 722,
+    "packages": 0,
+    "rendered_pdf_and_ai_pages": 60,
     "existing_print_recovery_cut_files": 4,
     "recut_print_pages_added": 0,
     "archived_previous_cut_files": 126,
@@ -5659,5 +6459,76 @@
     "All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.",
     "Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.",
     "Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers."
-  ]
+  ],
+  "additional_verification": {
+    "personal_print_and_white_png_matches_pdf": {
+      "records": [
+        {
+          "pdf": "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT.pdf",
+          "png": "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT_300ppi.png",
+          "exact_pixels": true,
+          "pixel_sha256": "143b54bcef148a53058f50e460e5a260e2f6d895fff60be67d0cc0b270bfbd5b",
+          "pdf_sha256": "a2164241c86f8f587aa1e868f137f0213fe8fb12ec803b0d897fec8808995c44",
+          "png_sha256": "7796aabf97d6168fa07bd7297a342f68d3c403417bdffe7170fbbcf262bf9b41"
+        },
+        {
+          "pdf": "a3_release/11_ascent_remaining/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+          "png": "a3_release/11_ascent_remaining/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "exact_pixels": true,
+          "pixel_sha256": "f142548329b2b3430a7d8bcf5b7047d0c2b808e9466937b11e54939937d76f88",
+          "pdf_sha256": "c0afd93202cc6f1b0920e239738646cf452033d29179b9e239367a5c4a64e58d",
+          "png_sha256": "95ef65f9310d4ef504eecf1a6bbed4acb01f58aec705a899c98a82b5de39f08f"
+        },
+        {
+          "pdf": "a3_release/11_ascent_remaining/3T/sheet_02/01_PRINT.pdf",
+          "png": "a3_release/11_ascent_remaining/3T/sheet_02/01_PRINT_300ppi.png",
+          "exact_pixels": true,
+          "pixel_sha256": "9ecf0d7da9ba07727ed30a4533481566129b74972e15a887f191bb7ad552a0e9",
+          "pdf_sha256": "0c2fba07ecf22e80050fb8cc09b2ed22e04261bcfdc97bde94b8347cd21978a1",
+          "png_sha256": "996f10f308de0f486344c842518742923dc4c27701f8061e3e7e6f76686633bf"
+        },
+        {
+          "pdf": "a3_release/11_ascent_remaining/3T/sheet_02/04_WHITE_INK_MASK.pdf",
+          "png": "a3_release/11_ascent_remaining/3T/sheet_02/04_WHITE_INK_MASK_300ppi.png",
+          "exact_pixels": true,
+          "pixel_sha256": "bd0889c1398bf35037a1076289ee4918d7858851b4b121cb40f70fa0812bafeb",
+          "pdf_sha256": "afe7b7a62e0d43be89c834e963f8562a939b5deb72b86cb92bd9dd649adb5aee",
+          "png_sha256": "18bbe48bd39c6b219b32dac52c12f66243b269a65dcf272af99a8ef9972df57a"
+        },
+        {
+          "pdf": "a3_release/19_personal_fill/3T/sheet_01/01_PRINT.pdf",
+          "png": "a3_release/19_personal_fill/3T/sheet_01/01_PRINT_300ppi.png",
+          "exact_pixels": true,
+          "pixel_sha256": "f38d321bfca1b4c34931cb204ff3554889c51ae55b1a5f66674c7a703871b355",
+          "pdf_sha256": "c194cd739be7881c04f5206765407c58b67665c5c0802b581c67c2d76741cfd9",
+          "png_sha256": "1caf70ab747e206f5635e40e0b51f2493b92fe64235762b22abedcccc2f70315"
+        },
+        {
+          "pdf": "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK.pdf",
+          "png": "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "exact_pixels": true,
+          "pixel_sha256": "7e1e7bf2208a9be2ec9b25ad29f298d3d073e4b3a02a17b5a381f79661c21f20",
+          "pdf_sha256": "df5a8c25b56288b180211b9a9a4d400391020017ba35b1287fd39f6a76411397",
+          "png_sha256": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9"
+        }
+      ],
+      "errors": [],
+      "alpha_representation": "Decoded straight-alpha RGBA for both images",
+      "physical_test": false
+    },
+    "unit_tests": {
+      "command": ".venv/bin/python -m unittest discover -s tests",
+      "passed": 35,
+      "errors": 0
+    },
+    "visual_review": {
+      "changed_sheets": [
+        "a3_release/11_ascent_remaining/3T/sheet_01",
+        "a3_release/11_ascent_remaining/3T/sheet_02",
+        "a3_release/19_personal_fill/3T/sheet_01"
+      ],
+      "full_layouts_and_enlarged_cut_paths_reviewed": true,
+      "physical_cut_test": false
+    }
+  }
 }

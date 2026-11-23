@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-yanggeum-fill-pad-deferred",
+  "revision": "A3-2026-11-23-personal-stands-dual-hole-fill",
   "canvas_mm": [
     420.0,
     297.0
@@ -57,18 +57,25 @@
     "11_ascent_remaining/3T": [
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
-        "pieces": 14,
-        "contours": 14
+        "pieces": 15,
+        "contours": 17
       },
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
-        "pieces": 11,
-        "contours": 43
+        "pieces": 24,
+        "contours": 64
+      }
+    ],
+    "19_personal_fill/3T": [
+      {
+        "folder": "a3_release/19_personal_fill/3T/sheet_01",
+        "pieces": 12,
+        "contours": 36
       }
     ]
   },
   "physical_cut_test": false,
-  "physical_pages_per_selected_thickness": 4,
+  "physical_pages_per_selected_thickness": 5,
   "retired_groups": [
     "03_linked_keyrings",
     "04_ascent_original",
@@ -109,6 +116,14 @@
       ],
       "status": "superseded_mixed_print_layout_only",
       "reason": "Yanggeum three-piece set now included within the same two mixed A3 pages; original scale and curves preserved. PAD deferred. Existing500x800 recut and separate Ascent unchanged."
+    },
+    {
+      "commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
+      "groups": [
+        "17_줄줄이_결합판/3T"
+      ],
+      "status": "retired_single_hole_keyrings_not_for_serial_linking",
+      "reason": "Each applicant keyring had only one top hole. Current derivative preserves the art and top hole, adds the bottom4mm linking hole and uses offcut placements."
     }
   ],
   "optional_groups": [
@@ -120,7 +135,10 @@
   "support_files": [
     "a3_release/11_ascent_remaining/SIZE_VERIFICATION.json",
     "a3_release/11_ascent_remaining/size_check.png",
-    "a3_release/OPTIONAL_FILL_ASSESSMENT.json"
+    "a3_release/OPTIONAL_FILL_ASSESSMENT.json",
+    "a3_release/PERSONAL_FILL_ASSESSMENT.json",
+    "a3_release/19_personal_fill/connection_preview.png",
+    "a3_release/19_personal_fill/stand_preview.png"
   ],
   "recut_recoveries": [
     {
@@ -148,5 +166,16 @@
         "RECUT_ONLY.zip"
       ]
     }
+  ],
+  "package_archives": false,
+  "retired_package_files": [
+    "a3_release/02_extra_sheet_3T_A3.zip",
+    "a3_release/02_extra_sheet_5T_A3.zip",
+    "a3_release/05_len_3T_A3.zip",
+    "a3_release/05_len_5T_A3.zip",
+    "a3_release/06_len_pad_3T_A3.zip",
+    "a3_release/06_len_pad_5T_A3.zip",
+    "a3_release/09_yanggum_3T_A3.zip",
+    "a3_release/11_ascent_remaining_3T_A3.zip"
   ]
 }
