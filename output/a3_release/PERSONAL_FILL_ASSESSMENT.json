@@ -1,38 +1,8 @@
 {
-  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+  "revision": "A3-2026-11-23-ascent-5t-migration",
   "baseline_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
   "source_commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
   "baseline_ids": [
-    "ascent_01",
-    "ascent_02",
-    "ascent_03",
-    "ascent_04",
-    "ascent_05",
-    "ascent_06",
-    "ascent_07",
-    "ascent_08",
-    "ascent_09",
-    "ascent_10",
-    "ascent_11",
-    "ascent_12",
-    "ascent_13",
-    "ascent_14",
-    "ascent_15",
-    "ascent_16",
-    "ascent_17",
-    "ascent_18",
-    "ascent_19",
-    "ascent_20",
-    "ascent_21",
-    "ascent_22",
-    "ascent_23",
-    "ascent_24",
-    "ascent_25",
-    "ascent_26",
-    "ascent_27",
-    "ascent_28",
-    "ascent_29",
-    "ascent_30",
     "burnt_01",
     "extra_3T_01",
     "extra_3T_02",
@@ -578,34 +548,6 @@
     {
       "group": "02_extra_sheet/3T",
       "sheet_index": 0,
-      "id": "ascent_11",
-      "x": 345,
-      "y": 8,
-      "rotation_degrees": 90,
-      "source_bounds_mm": [
-        28.0000136,
-        20.0964908,
-        132.000007,
-        82.9034776
-      ]
-    },
-    {
-      "group": "02_extra_sheet/3T",
-      "sheet_index": 0,
-      "id": "ascent_12",
-      "x": 345,
-      "y": 116,
-      "rotation_degrees": 90,
-      "source_bounds_mm": [
-        148.0000102,
-        20.0964908,
-        252.0000144,
-        82.9034776
-      ]
-    },
-    {
-      "group": "02_extra_sheet/3T",
-      "sheet_index": 0,
       "id": "extra_3T_34",
       "x": 197.75,
       "y": 246.5,
@@ -760,34 +702,6 @@
     {
       "group": "05_len/3T",
       "sheet_index": 0,
-      "id": "ascent_13",
-      "x": 179.39999999999992,
-      "y": 145.04999999999995,
-      "rotation_degrees": 90,
-      "source_bounds_mm": [
-        268.0000068,
-        20.0964908,
-        372.0000326,
-        82.9034776
-      ]
-    },
-    {
-      "group": "05_len/3T",
-      "sheet_index": 0,
-      "id": "ascent_14",
-      "x": 241.94999999999987,
-      "y": 8.0,
-      "rotation_degrees": 270,
-      "source_bounds_mm": [
-        388.0000034,
-        20.0964908,
-        492.0000292,
-        82.9034776
-      ]
-    },
-    {
-      "group": "05_len/3T",
-      "sheet_index": 0,
       "id": "len_3T_06",
       "x": 242.3499999999999,
       "y": 184.04999999999995,
@@ -797,20 +711,6 @@
         123.994875578125,
         87.64890062500001,
         207.534899
-      ]
-    },
-    {
-      "group": "05_len/3T",
-      "sheet_index": 0,
-      "id": "ascent_01",
-      "x": 307.79999999999984,
-      "y": 8.0,
-      "rotation_degrees": 90,
-      "source_bounds_mm": [
-        388.0000034,
-        371.4999769,
-        492.0000292,
-        401.4999546
       ]
     },
     {
@@ -938,356 +838,6 @@
         82.000001,
         122.999996
       ]
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_19",
-      "source_bounds_mm": [
-        28.0000136,
-        160.096494,
-        132.000007,
-        222.90347
-      ],
-      "x": 8,
-      "y": 8,
-      "rotation_degrees": 90
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_09",
-      "source_bounds_mm": [
-        28.0000136,
-        300.0964973,
-        132.000007,
-        362.9034732
-      ],
-      "x": 8,
-      "y": 114.99999340000001,
-      "rotation_degrees": 90
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_18",
-      "source_bounds_mm": [
-        388.0000034,
-        90.0964924,
-        492.0000292,
-        152.9034792
-      ],
-      "x": 8,
-      "y": 221.99998680000002,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_24",
-      "source_bounds_mm": [
-        148.0000102,
-        440.0964789,
-        252.0000144,
-        502.903498
-      ],
-      "x": 73.80697599999999,
-      "y": 8,
-      "rotation_degrees": 90
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_07",
-      "source_bounds_mm": [
-        388.0000034,
-        160.096494,
-        492.0000292,
-        222.90347
-      ],
-      "x": 73.80697599999999,
-      "y": 115.0000042,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_25",
-      "source_bounds_mm": [
-        268.0000068,
-        230.0964849,
-        372.0000326,
-        292.9034824
-      ],
-      "x": 139.61399509999998,
-      "y": 8,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_16",
-      "source_bounds_mm": [
-        148.0000102,
-        90.0964924,
-        252.0000144,
-        152.9034792
-      ],
-      "x": 115.00002579999995,
-      "y": 180.8069802,
-      "rotation_degrees": 90
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_26",
-      "source_bounds_mm": [
-        388.0000034,
-        230.0964849,
-        492.0000292,
-        292.9034824
-      ],
-      "x": 180.80700179999994,
-      "y": 73.80699749999997,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_20",
-      "source_bounds_mm": [
-        28.0000136,
-        370.0964881,
-        132.000007,
-        432.9034641
-      ],
-      "x": 246.61402089999999,
-      "y": 8,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_10",
-      "source_bounds_mm": [
-        148.0000102,
-        160.096494,
-        252.0000144,
-        222.90347
-      ],
-      "x": 287.80702759999986,
-      "y": 73.80697600000002,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_06",
-      "source_bounds_mm": [
-        268.0000068,
-        160.096494,
-        372.0000326,
-        222.90347
-      ],
-      "x": 287.80702759999986,
-      "y": 139.613952,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_21",
-      "source_bounds_mm": [
-        28.0000136,
-        440.0964789,
-        132.000007,
-        502.903498
-      ],
-      "x": 180.80701259999995,
-      "y": 139.61399499999993,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_29",
-      "source_bounds_mm": [
-        268.0000068,
-        370.0964881,
-        372.0000326,
-        432.9034641
-      ],
-      "x": 287.80700599999994,
-      "y": 205.420928,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 0,
-      "id": "ascent_15",
-      "source_bounds_mm": [
-        28.0000136,
-        90.0964924,
-        132.000007,
-        152.9034792
-      ],
-      "x": 180.80701259999995,
-      "y": 205.42101409999992,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_08",
-      "source_bounds_mm": [
-        28.0000136,
-        230.0964849,
-        132.000007,
-        292.9034824
-      ],
-      "x": 8.0,
-      "y": 8.0,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_17",
-      "source_bounds_mm": [
-        268.0000068,
-        90.0964924,
-        372.0000326,
-        152.9034792
-      ],
-      "x": 115.05,
-      "y": 8.0,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_22",
-      "source_bounds_mm": [
-        148.0000102,
-        300.0964973,
-        252.0000144,
-        362.9034732
-      ],
-      "x": 222.1,
-      "y": 8.0,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_23",
-      "source_bounds_mm": [
-        148.0000102,
-        370.0964881,
-        252.0000144,
-        432.9034641
-      ],
-      "x": 8.0,
-      "y": 73.85699,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_27",
-      "source_bounds_mm": [
-        268.0000068,
-        300.0964973,
-        372.0000326,
-        362.9034732
-      ],
-      "x": 115.05,
-      "y": 73.85699,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_28",
-      "source_bounds_mm": [
-        388.0000034,
-        300.0964973,
-        492.0000292,
-        362.9034732
-      ],
-      "x": 222.1,
-      "y": 73.85699,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_30",
-      "source_bounds_mm": [
-        268.0000068,
-        440.0964789,
-        372.0000326,
-        502.903498
-      ],
-      "x": 8.0,
-      "y": 139.71398,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_02",
-      "source_bounds_mm": [
-        388.0000034,
-        412.0964654,
-        492.0000292,
-        442.096443
-      ],
-      "x": 115.05,
-      "y": 139.71398,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_03",
-      "source_bounds_mm": [
-        388.0000034,
-        450.6929898,
-        492.0000292,
-        480.6929674
-      ],
-      "x": 222.1,
-      "y": 139.71398,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_04",
-      "source_bounds_mm": [
-        388.0000034,
-        487.9034661,
-        492.0000292,
-        517.9034437
-      ],
-      "x": 115.05,
-      "y": 172.76398,
-      "rotation_degrees": 0
-    },
-    {
-      "group": "11_ascent_remaining/3T",
-      "sheet_index": 1,
-      "id": "ascent_05",
-      "source_bounds_mm": [
-        388.0000034,
-        526.4999905,
-        492.0000292,
-        556.4999681
-      ],
-      "x": 222.1,
-      "y": 172.76398,
-      "rotation_degrees": 0
     }
   ],
   "stand_pieces": 8,
@@ -1336,8 +886,7 @@
       "배승민_keyring_01",
       "배승민_keyring_02",
       "배승민_keyring_03",
-      "김윤_keyring_04",
-      "김호_keyring_01"
+      "김윤_keyring_04"
     ],
     "19_personal_fill/3T": [
       "김윤_keyring_01",
@@ -1349,9 +898,12 @@
       "김호_keyring_04",
       "김호_keyring_05",
       "김호_keyring_06"
+    ],
+    "02_extra_sheet/3T": [
+      "김호_keyring_01"
     ]
   },
-  "selected_pages": 5,
-  "selected_parts": 134,
+  "selected_pages": 4,
+  "selected_parts": 83,
   "physical_cut_test": false
 }

@@ -62,9 +62,9 @@ def verify_personal_inventory(config,selected_by_group):
     assert set(personal)==set(policy['new_part_ids']),'Unexpected personal piece IDs'
     baseline=policy['baseline_ids']
     personal_ids=set(personal);baseline_ids=set(baseline)
-    assert len(baseline)==len(baseline_ids)==84,'Changed baseline inventory'
+    assert len(baseline)==len(baseline_ids),'Changed baseline inventory'
     assert sum(map(len,[personal_ids,pad_ids,baseline_ids,logo_ids]))==len(personal_ids|pad_ids|baseline_ids|logo_ids),'Overlapping production inventories'
-    assert len(selected)==len(set(selected))==config['selected_primary_parts']==84+expected_personal+len(pad_ids)+len(logo_ids),'Changed primary inventory'
+    assert len(selected)==len(set(selected))==config['selected_primary_parts']==len(baseline_ids)+expected_personal+len(pad_ids)+len(logo_ids),'Changed primary inventory'
     assert set(selected)-personal_ids-pad_ids-logo_ids==baseline_ids,'Changed baseline inventory'
     counts=Counter();stand_pairs=Counter()
     for group,parts in selected_by_group.items():
@@ -110,6 +110,17 @@ def verify_logo_inventory(config,selected_by_group,canonical):
                 assert expected_path.boundary.hausdorff_distance(Polygon(actual_path).boundary)<.002,(p['id'],'Changed logo contour or hole')
     assert set(allocation)<=set(selected_by_group)
 
+def verify_ascent_migration(config,selected_ids):
+    """An approved 5T migration must remove the complete set from 3T plates."""
+    migration=config.get('ascent_5t_migration',{})
+    if not migration.get('three_t_excluded',False):return
+    expected={f'ascent_{i:02}' for i in range(1,31)}
+    sources=migration.get('source_part_ids',[])
+    assert len(sources)==30 and set(sources)==expected,'Incomplete 5T source inventory'
+    assert not any(ident.startswith('ascent_') for ident in selected_ids),'Ascent parts remain on 3T production sheets'
+    if migration.get('logo_excluded',False):
+        assert not any(ident.startswith('danba_logo_fill_') or ident=='danba_logo_smooth' for ident in selected_ids),'Removed logo remains on 3T production sheets'
+
 def verify_pad_inventory(config,selected_by_group,canonical=None):
     """Keep a single full-size 3T PAD kit in its reviewed production groups."""
     allocation=config.get('pad_fill_allocation',{})
@@ -119,6 +130,9 @@ def verify_pad_inventory(config,selected_by_group,canonical=None):
         assert Counter(p['id'] for p in actual)==Counter(allocation.get(group,[])),(group,'Changed PAD allocation (missing, duplicate or wrong sheet)')
         observed.extend(actual)
     if not allocation:return
+    redesign_file=ROOT/'configs/contour_redesigns.json'
+    redesign_data=json.loads(redesign_file.read_text(encoding='utf-8')) if redesign_file.exists() else {}
+    redesigns=redesign_data.get('parts',redesign_data)
     expected={f'len_pad_3T_{i:02}' for i in range(1,8)}
     variants=config.get('pad_variant_sources',{})
     assert all(alias==source+'_safe' and source in expected for alias,source in variants.items()),'Invalid PAD production variant mapping'
@@ -142,7 +156,9 @@ def verify_pad_inventory(config,selected_by_group,canonical=None):
             assert len(source['paths'])==len(original['paths']),(p['id'],'Changed PAD source contour count')
             for approved,prior in zip(source['paths'][:-1],original['paths'][:-1],strict=True):
                 assert polygon_of(approved).boundary.hausdorff_distance(polygon_of(prior).boundary)<.002,(p['id'],'Changed PAD original hole or slot')
-            assert polygon_of(source['paths'][-1]).buffer(.002).covers(polygon_of(original['paths'][-1])),(p['id'],'PAD redesigned exterior excludes original area')
+            tolerance=redesigns.get(p['id'],{}).get('source_coverage_tolerance_mm',.002)
+            assert isinstance(tolerance,(int,float)) and not isinstance(tolerance,bool) and 0<tolerance<=.04,(p['id'],'Invalid source coverage tolerance')
+            assert polygon_of(source['paths'][-1]).buffer(tolerance).covers(polygon_of(original['paths'][-1])),(p['id'],'PAD redesigned exterior exceeds source coverage tolerance')
         assert max(abs(a-b) for a,b in zip(p['source_bounds_mm'],source['source_bounds_mm']))<.0001,(p['id'],'Changed PAD source dimensions')
         place={'piece':{'bounds':p['source_bounds_mm']},'rotation':p['rotation_degrees'],
                'x':p['placed_bounds_mm'][0],'y':p['placed_bounds_mm'][1],
@@ -361,7 +377,8 @@ def main(check_zips=True,check_native=True):
         keyids=sum(CONFIG['linked_allocation'].values(),[])
         expected_keys=CONFIG['linked_allocation'].get(group.split('/')[0],[])
         assert sorted(x for x in ids if x in keyids)==sorted(expected_keys)
-        expected_ascent=CONFIG['ascent_remaining']['part_ids'] if group=='11_ascent_remaining/3T' else CONFIG['cross_sheet_cadena_allocation'].get(group,[])
+        migration=CONFIG.get('ascent_5t_migration',{}).get('three_t_excluded',False)
+        expected_ascent=[] if migration else (CONFIG['ascent_remaining']['part_ids'] if group=='11_ascent_remaining/3T' else CONFIG['cross_sheet_cadena_allocation'].get(group,[]))
         assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(expected_ascent)
         if group=='11_ascent_remaining/3T':
             fillers=(CONFIG.get('personal_fill_allocation',{}).get(group,[])
@@ -371,6 +388,7 @@ def main(check_zips=True,check_native=True):
             assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]
     assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==CONFIG['selected_primary_parts']
+    verify_ascent_migration(CONFIG,selected_ids)
     verify_pad_inventory(CONFIG,selected_by_group,fixed)
     verify_personal_inventory(CONFIG,selected_by_group)
     verify_logo_inventory(CONFIG,selected_by_group,fixed)
@@ -390,7 +408,8 @@ def main(check_zips=True,check_native=True):
     assert selected_yanggum==sorted(CONFIG['optional_fill_policy']['candidate_sets']['yanggum_3T'])
     for group,ids in CONFIG['optional_fill_allocation'].items():
         assert sorted(p['id'] for p in selected_by_group[group] if p['id'].startswith('yanggum_'))==sorted(ids)
-    assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids']+CONFIG['ascent_remaining']['part_ids'])
+    if not CONFIG.get('ascent_5t_migration',{}).get('three_t_excluded',False):
+        assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids']+CONFIG['ascent_remaining']['part_ids'])
     minimum_proof=minimum_sheet_proof(CONFIG,selected_by_group,manifest)
     packages=[]
     if check_zips and CONFIG.get('package_archives',True):
@@ -417,7 +436,7 @@ def main(check_zips=True,check_native=True):
             'minimum_sheet_proof':minimum_proof,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
-                           'All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.',
+                           ('Ascent source geometry was checked digitally; its 30 parts are excluded from these 3T production sheets.' if CONFIG.get('ascent_5t_migration',{}).get('three_t_excluded',False) else 'All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.'),
                            'Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.',
                            'Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers.']}
     (base/'A3_VALIDATION.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')

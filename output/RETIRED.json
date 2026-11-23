@@ -69,6 +69,14 @@
       "revision": "A3-2026-11-23-final-with-len-pad",
       "status": "superseded_primary_layout_only",
       "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
+    },
+    {
+      "commit": "e4d03cdfa6d1a2656505a08bc59e41c6b806767b",
+      "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+      "status": "retired_previous_3T_placements",
+      "reason": "All Ascent parts moved to 5T and remaining 3T artwork compacted forward.",
+      "archive_commit": "d177b28f2543074621890eb116360f5279a38d68",
+      "archive_path": "snapshots/before_ascent_5t_e4d03cd"
     }
   ],
   "retired_package_files": [

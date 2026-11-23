@@ -12,7 +12,7 @@ from laser_paths import audit_path
 from vector_utils import runvc
 from artifact_hash import artifact_sha256
 
-ACTIVE=['a3_release','individual_assets','recut_only']
+ACTIVE=['a3_release','individual_assets','recut_only','large_format']
 MM=72/25.4
 
 
@@ -135,6 +135,7 @@ def main(pdf_only=False):
     catalog=json.loads(catalog_path.read_text(encoding='utf-8')) if catalog_path.exists() else {'assets':[]}
     current_assets={a['folder'] for a in catalog['assets']}
     current_recut={a['folder'] for a in manifest.get('recut_recoveries',[])}
+    current_large={a['folder'] for a in manifest.get('large_format_plates',[])}
     retired_a3=['a3_release/'+g+'/' for g in manifest.get('retired_groups',[])]
     for folder in ACTIVE:
         for file in sorted((out/folder).rglob('*')):
@@ -167,6 +168,9 @@ def main(pdf_only=False):
                 spec=None
                 if folder=='a3_release':
                     spec=json.loads((file.parent/'validation.json').read_text(encoding='utf-8'))
+                elif folder=='large_format':
+                    assert file.parent.relative_to(out).as_posix() in current_large,('Unregistered large-format artifact',rel)
+                    spec=json.loads((file.parent/'validation.json').read_text(encoding='utf-8'))
                 elif folder=='individual_assets':
                     assert file.parent.relative_to(out).as_posix() in current_assets
                     spec=json.loads((file.parent/'asset.json').read_text(encoding='utf-8'))
@@ -182,7 +186,7 @@ def main(pdf_only=False):
                         result['errors'].append({'reason':'A3 piece/path inventory mismatch'})
                     if any(abs(a-b)>.01 for a,b in zip(result['dimensions_mm'],spec['canvas_mm'])):
                         result['errors'].append({'reason':'Artboard dimensions differ from registered asset'})
-                    if folder=='a3_release' and result['minimum_piece_gap_mm'] is not None and result['minimum_piece_gap_mm']<2.998:
+                    if folder in ('a3_release','large_format') and result['minimum_piece_gap_mm'] is not None and result['minimum_piece_gap_mm']<2.998:
                         result['errors'].append({'reason':'A3 exported piece gap below 3 mm tolerance'})
                 # Tight production layout: enforce the actual EXPORTED curve gap.
                 if folder=='combined_diorama_v3' and ('COMBINED_MASTER' in file.name or file.name.startswith('03_CUT_ONLY')):
@@ -195,7 +199,7 @@ def main(pdf_only=False):
                 print(rel, result['contours'],result['segments'],'FAIL' if result['errors'] else 'OK',flush=True)
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
-    expected_count=len(current_a3)*(3 if pdf_only else 5)+len(current_assets)*(3 if pdf_only else 4)+len(current_recut)*(2 if pdf_only else 4)
+    expected_count=(len(current_a3)+len(current_large))*(3 if pdf_only else 5)+len(current_assets)*(3 if pdf_only else 4)+len(current_recut)*(2 if pdf_only else 4)
     assert len(records)==expected_count,('Incomplete cutting-format coverage',len(records),expected_count)
     inventory=inventory_for(records)
     report={'revision':manifest['revision'],'mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
@@ -203,7 +207,7 @@ def main(pdf_only=False):
             'records':records,'inventory':inventory,'physical_cut_test':False,
             'superseded_releases':manifest.get('superseded_releases',[]),
             'retired_archive':json.loads((out/'RETIRED.json').read_text()),
-            'coverage':{'current_pages':len(current_a3),'individual_assets':len(current_assets),'existing_print_recovery_plates':len(current_recut),'expected_cut_files':expected_count,
+            'coverage':{'current_pages':len(current_a3),'large_format_plates':len(current_large),'individual_assets':len(current_assets),'existing_print_recovery_plates':len(current_recut),'expected_cut_files':expected_count,
                         'retired_files_are_not_counted_as_current_passes':True},
             'limitations':['Raw archive integrity is verified separately; retired files are not re-approved for cutting.',
                            'Protected external originals are inspected without edits; numerical no-ops are reported separately.']}

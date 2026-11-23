@@ -1,18 +1,17 @@
 # A3 제작 파일 · 개인별 스탠드·상하 연결 키링
 
-**3T · A3 420×297mm · 실제 크기 100% · 5장 / 134조각.**
+**3T · A3 420×297mm · 실제 크기 100% · 4장 / 83조각.**
 
-기존 84조각의 위치·크기·칼선은 유지했습니다. 보강한 개인별 스탠드 8조각과 상하 연결 키링 5개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 9개와 Len PAD 7조각은 남은 공간에 배치했습니다. Len PAD는 출력 A3 5번에 포함됩니다. 양검 3조각도 기존 혼합판에 들어 있어 별도 원본판을 중복 출력하지 않습니다. 5장 배치는 검증했지만 더 적은 장수가 불가능하다고 증명한 것은 아닙니다.
+어센트 30조각은 3T에서 제외해 [5T 800×500mm 별도 판](../large_format/ascent_5T_800x500)에 모았습니다. 나머지 도안의 위치와 크기는 유지합니다. 개인별 스탠드 8조각, 연결 키링 14개, Len PAD 7조각, 양검을 아래 A3에 포함합니다. Len PAD는 A3 4번에 있습니다. 더 적은 장수가 불가능하다고 증명한 것은 아닙니다.
 
-3~5번 판의 남는 공간에 원본 그림 크기의 단바 로고 키링 21개를 추가했습니다. 로고 외곽은 크게 단순화하고 원본 구멍을 유지했습니다. 각 판의 수량은 아래 표를 따릅니다.
+단바 로고 키링은 이번 제작판에서 제외했습니다. 각 판의 수량은 아래 표를 따릅니다.
 
 | 출력 순서 | 제작 폴더 | 조각 |
 |---|---|---:|
-| 1 | [02_extra_sheet/3T · sheet_01](02_extra_sheet/3T/sheet_01) | 43 |
-| 2 | [05_len/3T · sheet_01](05_len/3T/sheet_01) | 16 |
-| 3 | [11_ascent_remaining/3T · sheet_01](11_ascent_remaining/3T/sheet_01) | 18 |
-| 4 | [11_ascent_remaining/3T · sheet_02](11_ascent_remaining/3T/sheet_02) | 24 |
-| 5 | [19_personal_fill/3T · sheet_01](19_personal_fill/3T/sheet_01) | 33 |
+| 1 | [02_extra_sheet/3T · sheet_01](02_extra_sheet/3T/sheet_01) | 42 |
+| 2 | [05_len/3T · sheet_01](05_len/3T/sheet_01) | 13 |
+| 3 | [11_ascent_remaining/3T · sheet_01](11_ascent_remaining/3T/sheet_01) | 12 |
+| 4 | [19_personal_fill/3T · sheet_01](19_personal_fill/3T/sheet_01) | 16 |
 
 ## 제작 파일
 
@@ -37,35 +36,35 @@
 
 | 개인별 부품 ID | 출력 A3 |
 |---|---:|
-| len_pad_3T_01_safe | 5 |
-| len_pad_3T_02_safe | 5 |
-| len_pad_3T_03_safe | 5 |
-| len_pad_3T_04 | 5 |
-| len_pad_3T_05_safe | 5 |
-| len_pad_3T_06 | 5 |
-| len_pad_3T_07 | 5 |
-| 강민_stand_01 | 4 |
-| 강민_stand_02 | 4 |
-| 강윤진_stand_01 | 4 |
-| 강윤진_stand_02 | 4 |
-| 김윤_keyring_01 | 5 |
-| 김윤_keyring_02 | 5 |
-| 김윤_keyring_03 | 5 |
-| 김윤_keyring_04 | 4 |
-| 김윤_keyring_05 | 5 |
-| 김호_keyring_01 | 3 |
-| 김호_keyring_02 | 5 |
-| 김호_keyring_03 | 5 |
-| 김호_keyring_04 | 5 |
-| 김호_keyring_05 | 5 |
-| 김호_keyring_06 | 5 |
-| 배승민_keyring_01 | 4 |
-| 배승민_keyring_02 | 4 |
-| 배승민_keyring_03 | 4 |
-| 이상준_stand_01 | 4 |
-| 이상준_stand_02 | 4 |
-| 정지영_stand_01 | 4 |
-| 정지영_stand_02 | 4 |
+| len_pad_3T_01_safe | 4 |
+| len_pad_3T_02_safe | 4 |
+| len_pad_3T_03_safe | 4 |
+| len_pad_3T_04 | 4 |
+| len_pad_3T_05_safe | 4 |
+| len_pad_3T_06 | 4 |
+| len_pad_3T_07 | 4 |
+| 강민_stand_01 | 3 |
+| 강민_stand_02 | 3 |
+| 강윤진_stand_01 | 3 |
+| 강윤진_stand_02 | 3 |
+| 김윤_keyring_01 | 4 |
+| 김윤_keyring_02 | 4 |
+| 김윤_keyring_03 | 4 |
+| 김윤_keyring_04 | 3 |
+| 김윤_keyring_05 | 4 |
+| 김호_keyring_01 | 1 |
+| 김호_keyring_02 | 4 |
+| 김호_keyring_03 | 4 |
+| 김호_keyring_04 | 4 |
+| 김호_keyring_05 | 4 |
+| 김호_keyring_06 | 4 |
+| 배승민_keyring_01 | 3 |
+| 배승민_keyring_02 | 3 |
+| 배승민_keyring_03 | 3 |
+| 이상준_stand_01 | 3 |
+| 이상준_stand_02 | 3 |
+| 정지영_stand_01 | 3 |
+| 정지영_stand_02 | 3 |
 
 Len PAD의 원래 크기와 280×71.2235mm 받침·8개 홈을 유지했습니다. `06_len_pad`의 단독판은 원본 참고용이며 위 출력 순서에 더해 인쇄하지 않습니다.
 

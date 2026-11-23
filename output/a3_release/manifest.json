@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+  "revision": "A3-2026-11-23-ascent-5t-migration",
   "canvas_mm": [
     420.0,
     297.0
@@ -8,8 +8,8 @@
     "02_extra_sheet/3T": [
       {
         "folder": "a3_release/02_extra_sheet/3T/sheet_01",
-        "pieces": 43,
-        "contours": 106
+        "pieces": 42,
+        "contours": 107
       }
     ],
     "02_extra_sheet/5T": [
@@ -22,8 +22,8 @@
     "05_len/3T": [
       {
         "folder": "a3_release/05_len/3T/sheet_01",
-        "pieces": 16,
-        "contours": 41
+        "pieces": 13,
+        "contours": 30
       }
     ],
     "05_len/5T": [
@@ -57,25 +57,20 @@
     "11_ascent_remaining/3T": [
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
-        "pieces": 18,
-        "contours": 23
-      },
-      {
-        "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
-        "pieces": 24,
-        "contours": 69
+        "pieces": 12,
+        "contours": 24
       }
     ],
     "19_personal_fill/3T": [
       {
         "folder": "a3_release/19_personal_fill/3T/sheet_01",
-        "pieces": 33,
-        "contours": 76
+        "pieces": 16,
+        "contours": 42
       }
     ]
   },
   "physical_cut_test": false,
-  "physical_pages_per_selected_thickness": 5,
+  "physical_pages_per_selected_thickness": 4,
   "retired_groups": [
     "03_linked_keyrings",
     "04_ascent_original",
@@ -141,6 +136,14 @@
       "revision": "A3-2026-11-23-final-with-len-pad",
       "status": "superseded_primary_layout_only",
       "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
+    },
+    {
+      "commit": "e4d03cdfa6d1a2656505a08bc59e41c6b806767b",
+      "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+      "status": "retired_previous_3T_placements",
+      "reason": "All Ascent parts moved to 5T and remaining 3T artwork compacted forward.",
+      "archive_commit": "d177b28f2543074621890eb116360f5279a38d68",
+      "archive_path": "snapshots/before_ascent_5t_e4d03cd"
     }
   ],
   "optional_groups": [
@@ -196,5 +199,34 @@
     "a3_release/06_len_pad_5T_A3.zip",
     "a3_release/09_yanggum_3T_A3.zip",
     "a3_release/11_ascent_remaining_3T_A3.zip"
+  ],
+  "large_format_plates": [
+    {
+      "folder": "large_format/ascent_5T_800x500",
+      "canvas_mm": [
+        800,
+        500
+      ],
+      "pieces": 30,
+      "contours": 70,
+      "material": "5T",
+      "canonical_config": "configs/ascent_5t_contours.json",
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.ai",
+        "02_MASTER.pdf",
+        "02_MASTER.vectorcraft",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "PREVIEW_NOT_FOR_CUT.pdf",
+        "README.md",
+        "cut_detail.png",
+        "preview.png",
+        "validation.json"
+      ]
+    }
   ]
 }

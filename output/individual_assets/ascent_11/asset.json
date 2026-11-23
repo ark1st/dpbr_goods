@@ -21,9 +21,7 @@
     82.9034776
   ],
   "source": "ascent",
-  "a3_groups": [
-    "02_extra_sheet/3T"
-  ],
+  "a3_groups": [],
   "physical_cut_test": false,
   "pieces": 1,
   "closed_contours": 1,

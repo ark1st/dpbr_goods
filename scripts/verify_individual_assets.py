@@ -19,6 +19,18 @@ def main():
             for p in spec['parts']:
                 ident='danba_logo_smooth' if p['id'] in aliases else p['id']
                 locations.setdefault(ident,[]).append((group,p))
+    logo_archived=CONFIG.get('logo_template_archived',False)
+    if logo_archived:
+        assert not aliases and 'danba_logo_smooth' not in locations,'Archived logo still has an A3 placement'
+        locations['danba_logo_smooth']=[]
+    migration=CONFIG.get('ascent_5t_migration',{})
+    if migration.get('three_t_excluded',False):
+        sources=migration['source_part_ids']
+        assert len(sources)==30 and set(sources)=={f'ascent_{i:02}' for i in range(1,31)}
+        assert not set(sources)&set(locations),'Migrated Ascent originals remain in the A3 catalog'
+        # Keep source-oriented originals as reference assets for the separate
+        # 5T plate. They have no 3T A3 locations and are not production sheets.
+        locations.update({ident:[] for ident in sources})
     assert set(locations)=={a['id'] for a in m['assets']}
     assert len(m['assets'])==m['asset_count']
     personal=CONFIG.get('personal_fill_allocation',{})
@@ -27,7 +39,7 @@ def main():
         policy=CONFIG['personal_fill_policy']
         expected_count=policy['stand_pieces']+policy['keyring_pieces']
         assert len(expected)==expected_count and set(expected)==set(policy['new_part_ids']),'Incomplete personal catalog'
-        assert m['asset_count']==policy['baseline_asset_count']+expected_count+bool(aliases)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
+        assert m['asset_count']==policy['baseline_asset_count']+expected_count+bool(aliases or logo_archived)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
         for ident,group in expected.items():
             assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed personal asset placement')
     canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']

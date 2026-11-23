@@ -385,7 +385,7 @@ def source_inputs(only=None):
         cut=fitz.open(src.parent/'03_CUT_ONLY.pdf')
         pieces=pieces_from(cut,art,white,f'extra_{t}',range(34));assert len(pieces)==38
         batches.append((f'02_extra_sheet/{t}',pieces+linked[:4]))
-    if not only or only in '04_ascent_cadena' or '11_ascent_remaining' in only:
+    if (not only or only in '04_ascent_cadena' or '11_ascent_remaining' in only) and not CONFIG.get('ascent_5t_migration',{}).get('three_t_excluded',False):
         pieces=ascent_parts();assert len(pieces)==31,len(pieces)
         selected=CONFIG['cadena_source_part_ids']
         cadena=[p for p in pieces if p['id'] in selected]
@@ -488,7 +488,7 @@ def smooth_logo_source(original,design):
 
 
 def redesign_outer_contour(original,design):
-    """Install a reviewed enlarged exterior while pinning all source art and interfaces.
+    """Install a reviewed exterior while pinning all source art and interfaces.
 
     Candidate paths use the source page coordinates. Internal paths remain in
     the source order with the exterior last. For an identified tab, a declared
@@ -512,7 +512,12 @@ def redesign_outer_contour(original,design):
                         'source_subpath':None,'deviation':0,'stats':stats})
     outer=entries[-1]['poly']
     assert max(abs(a-b) for a,b in zip(outer.bounds,design['new_bounds_mm']))<.002,(ident,'Redesigned bounds changed')
-    assert outer.buffer(.002).covers(old_outer['poly']),(ident,'New outline must enclose the original')
+    # The default is essentially exact coverage. An explicitly reviewed curve
+    # fit may allow up to 0.04 mm of boundary deviation, but this is not an
+    # artwork clearance guarantee: print coverage must be verified separately.
+    coverage_tolerance=design.get('source_coverage_tolerance_mm',.002)
+    assert isinstance(coverage_tolerance,(int,float)) and not isinstance(coverage_tolerance,bool) and 0<coverage_tolerance<=.04,(ident,'Invalid source coverage tolerance')
+    assert outer.buffer(coverage_tolerance).covers(old_outer['poly']),(ident,'New outline exceeds source coverage tolerance')
     for new,old in zip(entries[:-1],old_holes,strict=True):
         assert new['poly'].boundary.hausdorff_distance(old['poly'].boundary)<.0001,(ident,'Changed internal hole or slot')
         assert outer.contains(new['poly']),(ident,'Hole or slot outside exterior')

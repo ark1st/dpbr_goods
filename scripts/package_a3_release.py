@@ -37,9 +37,9 @@ def write_personal_release(cfg,manifest):
     logo_count=sum(len(ids) for ids in cfg.get('logo_fill_allocation',{}).values())
     common=f'''**3T · A3 420×297mm · 실제 크기 100% · {number}장 / {cfg['selected_primary_parts']}조각.**
 
-기존 84조각의 위치·크기·칼선은 유지했습니다. 보강한 개인별 스탠드 {policy['stand_pieces']}조각과 상하 연결 키링 {offcut_keys}개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 {added_keys}개와 Len PAD {len(pad_ids)}조각은 남은 공간에 배치했습니다. Len PAD는 출력 A3 {pad_pages}번에 포함됩니다. 양검 3조각도 기존 혼합판에 들어 있어 별도 원본판을 중복 출력하지 않습니다. {number}장 배치는 검증했지만 더 적은 장수가 불가능하다고 증명한 것은 아닙니다.
+어센트 30조각은 3T에서 제외해 [5T 800×500mm 별도 판](../large_format/ascent_5T_800x500)에 모았습니다. 나머지 도안의 위치와 크기는 유지합니다. 개인별 스탠드 {policy['stand_pieces']}조각, 연결 키링 {offcut_keys+added_keys}개, Len PAD {len(pad_ids)}조각, 양검을 아래 A3에 포함합니다. Len PAD는 A3 {pad_pages}번에 있습니다. 더 적은 장수가 불가능하다고 증명한 것은 아닙니다.
 
-3~5번 판의 남는 공간에 원본 그림 크기의 단바 로고 키링 {logo_count}개를 추가했습니다. 로고 외곽은 크게 단순화하고 원본 구멍을 유지했습니다. 각 판의 수량은 아래 표를 따릅니다.
+단바 로고 키링은 이번 제작판에서 제외했습니다. 각 판의 수량은 아래 표를 따릅니다.
 
 | 출력 순서 | 제작 폴더 | 조각 |
 |---|---|---:|
@@ -101,7 +101,7 @@ Len PAD의 원래 크기와 280×71.2235mm 받침·8개 홈을 유지했습니�
         'selected_pages':number,'selected_parts':cfg['selected_primary_parts'],'physical_cut_test':False}
     write(BASE/'PERSONAL_FILL_ASSESSMENT.json',json.dumps(assessment,ensure_ascii=False,indent=2)+'\n')
     rows='\n'.join(row.replace('](','](a3_release/') for row in current)
-    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+f'\n\n[전체 제작 안내·부품 위치·보강 시안](a3_release) · [개별 편집 에셋](individual_assets)\n\n기존113조각 위치 유지. 남는 공간에 기존 원본 크기의 단바 로고 키링{logo_count}개를 추가했습니다. 양검과 Len PAD도 포함되어 단독 원본판은 추가 출력하지 않습니다. 더 적은 장수의 불가능을 증명한 것은 아닙니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본이므로 제작에 사용하지 않습니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
+    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+f'\n\n[3T 안내](a3_release) · [어센트 5T 800×500mm](large_format/ascent_5T_800x500) · [개별 편집 에셋](individual_assets)\n\n어센트와 단바 로고는 3T에서 전부 제외했습니다. 양검과 Len PAD는 A3에 포함되어 단독 원본판은 추가 출력하지 않습니다.\n\n**백색 인쇄:** 3T 3·4번의 백색 마스크는 비어 있습니다. 인쇄소에서 그림 알파를 기준으로 백색을 생성해야 합니다(파란 기준선 제외). 5T 어센트의 백색 마스크는 RIP에서 백색 잉크로 지정해야 합니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본입니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
     print(f'Published {number} A3 pages; no new ZIP archives',flush=True)
 
 def main():

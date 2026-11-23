@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+  "revision": "A3-2026-11-23-ascent-5t-migration",
   "canvas_mm": [
     420,
     297
@@ -162,15 +162,15 @@
     "ascent_14"
   ],
   "current_groups": {
-    "02_extra_sheet/3T": 43,
+    "02_extra_sheet/3T": 42,
     "02_extra_sheet/5T": 39,
-    "05_len/3T": 16,
+    "05_len/3T": 13,
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
     "09_yanggum/3T": 3,
-    "11_ascent_remaining/3T": 42,
-    "19_personal_fill/3T": 33
+    "11_ascent_remaining/3T": 12,
+    "19_personal_fill/3T": 16
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -251,6 +251,14 @@
       "revision": "A3-2026-11-23-final-with-len-pad",
       "status": "superseded_primary_layout_only",
       "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
+    },
+    {
+      "commit": "e4d03cdfa6d1a2656505a08bc59e41c6b806767b",
+      "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
+      "status": "retired_previous_3T_placements",
+      "reason": "All Ascent parts moved to 5T and remaining 3T artwork compacted forward.",
+      "archive_commit": "d177b28f2543074621890eb116360f5279a38d68",
+      "archive_path": "snapshots/before_ascent_5t_e4d03cd"
     }
   ],
   "len_layout": {
@@ -333,15 +341,8 @@
     ]
   },
   "cross_sheet_cadena_allocation": {
-    "02_extra_sheet/3T": [
-      "ascent_11",
-      "ascent_12"
-    ],
-    "05_len/3T": [
-      "ascent_01",
-      "ascent_13",
-      "ascent_14"
-    ]
+    "02_extra_sheet/3T": [],
+    "05_len/3T": []
   },
   "selected_primary_groups": [
     "02_extra_sheet/3T",
@@ -349,60 +350,9 @@
     "11_ascent_remaining/3T",
     "19_personal_fill/3T"
   ],
-  "selected_primary_parts": 134,
+  "selected_primary_parts": 83,
   "primary_inventory": [
-    "ascent_01",
-    "ascent_02",
-    "ascent_03",
-    "ascent_04",
-    "ascent_05",
-    "ascent_06",
-    "ascent_07",
-    "ascent_08",
-    "ascent_09",
-    "ascent_10",
-    "ascent_11",
-    "ascent_12",
-    "ascent_13",
-    "ascent_14",
-    "ascent_15",
-    "ascent_16",
-    "ascent_17",
-    "ascent_18",
-    "ascent_19",
-    "ascent_20",
-    "ascent_21",
-    "ascent_22",
-    "ascent_23",
-    "ascent_24",
-    "ascent_25",
-    "ascent_26",
-    "ascent_27",
-    "ascent_28",
-    "ascent_29",
-    "ascent_30",
     "burnt_01",
-    "danba_logo_fill_001",
-    "danba_logo_fill_002",
-    "danba_logo_fill_003",
-    "danba_logo_fill_004",
-    "danba_logo_fill_005",
-    "danba_logo_fill_006",
-    "danba_logo_fill_007",
-    "danba_logo_fill_008",
-    "danba_logo_fill_009",
-    "danba_logo_fill_010",
-    "danba_logo_fill_011",
-    "danba_logo_fill_012",
-    "danba_logo_fill_013",
-    "danba_logo_fill_014",
-    "danba_logo_fill_015",
-    "danba_logo_fill_016",
-    "danba_logo_fill_017",
-    "danba_logo_fill_018",
-    "danba_logo_fill_019",
-    "danba_logo_fill_020",
-    "danba_logo_fill_021",
     "extra_3T_01",
     "extra_3T_02",
     "extra_3T_03",
@@ -554,9 +504,9 @@
     "source_ai_sha256": "a4195ed4c5b1534236915fe66561f1960a22e54636fec4e95895db94816d156e"
   },
   "pages_per_group": {
-    "11_ascent_remaining/3T": 2
+    "11_ascent_remaining/3T": 1
   },
-  "selected_primary_pages": 5,
+  "selected_primary_pages": 4,
   "separate_print_batches": {
     "existing": [
       "02_extra_sheet/3T",
@@ -738,8 +688,7 @@
       "배승민_keyring_01",
       "배승민_keyring_02",
       "배승민_keyring_03",
-      "김윤_keyring_04",
-      "김호_keyring_01"
+      "김윤_keyring_04"
     ],
     "19_personal_fill/3T": [
       "김윤_keyring_01",
@@ -751,6 +700,9 @@
       "김호_keyring_04",
       "김호_keyring_05",
       "김호_keyring_06"
+    ],
+    "02_extra_sheet/3T": [
+      "김호_keyring_01"
     ]
   },
   "chain_keyring_products": {
@@ -788,36 +740,6 @@
     "baseline_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
     "source_commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
     "baseline_ids": [
-      "ascent_01",
-      "ascent_02",
-      "ascent_03",
-      "ascent_04",
-      "ascent_05",
-      "ascent_06",
-      "ascent_07",
-      "ascent_08",
-      "ascent_09",
-      "ascent_10",
-      "ascent_11",
-      "ascent_12",
-      "ascent_13",
-      "ascent_14",
-      "ascent_15",
-      "ascent_16",
-      "ascent_17",
-      "ascent_18",
-      "ascent_19",
-      "ascent_20",
-      "ascent_21",
-      "ascent_22",
-      "ascent_23",
-      "ascent_24",
-      "ascent_25",
-      "ascent_26",
-      "ascent_27",
-      "ascent_28",
-      "ascent_29",
-      "ascent_30",
       "burnt_01",
       "extra_3T_01",
       "extra_3T_02",
@@ -1363,34 +1285,6 @@
       {
         "group": "02_extra_sheet/3T",
         "sheet_index": 0,
-        "id": "ascent_11",
-        "x": 345,
-        "y": 8,
-        "rotation_degrees": 90,
-        "source_bounds_mm": [
-          28.0000136,
-          20.0964908,
-          132.000007,
-          82.9034776
-        ]
-      },
-      {
-        "group": "02_extra_sheet/3T",
-        "sheet_index": 0,
-        "id": "ascent_12",
-        "x": 345,
-        "y": 116,
-        "rotation_degrees": 90,
-        "source_bounds_mm": [
-          148.0000102,
-          20.0964908,
-          252.0000144,
-          82.9034776
-        ]
-      },
-      {
-        "group": "02_extra_sheet/3T",
-        "sheet_index": 0,
         "id": "extra_3T_34",
         "x": 197.75,
         "y": 246.5,
@@ -1545,34 +1439,6 @@
       {
         "group": "05_len/3T",
         "sheet_index": 0,
-        "id": "ascent_13",
-        "x": 179.39999999999992,
-        "y": 145.04999999999995,
-        "rotation_degrees": 90,
-        "source_bounds_mm": [
-          268.0000068,
-          20.0964908,
-          372.0000326,
-          82.9034776
-        ]
-      },
-      {
-        "group": "05_len/3T",
-        "sheet_index": 0,
-        "id": "ascent_14",
-        "x": 241.94999999999987,
-        "y": 8.0,
-        "rotation_degrees": 270,
-        "source_bounds_mm": [
-          388.0000034,
-          20.0964908,
-          492.0000292,
-          82.9034776
-        ]
-      },
-      {
-        "group": "05_len/3T",
-        "sheet_index": 0,
         "id": "len_3T_06",
         "x": 242.3499999999999,
         "y": 184.04999999999995,
@@ -1582,20 +1448,6 @@
           123.994875578125,
           87.64890062500001,
           207.534899
-        ]
-      },
-      {
-        "group": "05_len/3T",
-        "sheet_index": 0,
-        "id": "ascent_01",
-        "x": 307.79999999999984,
-        "y": 8.0,
-        "rotation_degrees": 90,
-        "source_bounds_mm": [
-          388.0000034,
-          371.4999769,
-          492.0000292,
-          401.4999546
         ]
       },
       {
@@ -1723,356 +1575,6 @@
           82.000001,
           122.999996
         ]
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_19",
-        "source_bounds_mm": [
-          28.0000136,
-          160.096494,
-          132.000007,
-          222.90347
-        ],
-        "x": 8,
-        "y": 8,
-        "rotation_degrees": 90
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_09",
-        "source_bounds_mm": [
-          28.0000136,
-          300.0964973,
-          132.000007,
-          362.9034732
-        ],
-        "x": 8,
-        "y": 114.99999340000001,
-        "rotation_degrees": 90
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_18",
-        "source_bounds_mm": [
-          388.0000034,
-          90.0964924,
-          492.0000292,
-          152.9034792
-        ],
-        "x": 8,
-        "y": 221.99998680000002,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_24",
-        "source_bounds_mm": [
-          148.0000102,
-          440.0964789,
-          252.0000144,
-          502.903498
-        ],
-        "x": 73.80697599999999,
-        "y": 8,
-        "rotation_degrees": 90
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_07",
-        "source_bounds_mm": [
-          388.0000034,
-          160.096494,
-          492.0000292,
-          222.90347
-        ],
-        "x": 73.80697599999999,
-        "y": 115.0000042,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_25",
-        "source_bounds_mm": [
-          268.0000068,
-          230.0964849,
-          372.0000326,
-          292.9034824
-        ],
-        "x": 139.61399509999998,
-        "y": 8,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_16",
-        "source_bounds_mm": [
-          148.0000102,
-          90.0964924,
-          252.0000144,
-          152.9034792
-        ],
-        "x": 115.00002579999995,
-        "y": 180.8069802,
-        "rotation_degrees": 90
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_26",
-        "source_bounds_mm": [
-          388.0000034,
-          230.0964849,
-          492.0000292,
-          292.9034824
-        ],
-        "x": 180.80700179999994,
-        "y": 73.80699749999997,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_20",
-        "source_bounds_mm": [
-          28.0000136,
-          370.0964881,
-          132.000007,
-          432.9034641
-        ],
-        "x": 246.61402089999999,
-        "y": 8,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_10",
-        "source_bounds_mm": [
-          148.0000102,
-          160.096494,
-          252.0000144,
-          222.90347
-        ],
-        "x": 287.80702759999986,
-        "y": 73.80697600000002,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_06",
-        "source_bounds_mm": [
-          268.0000068,
-          160.096494,
-          372.0000326,
-          222.90347
-        ],
-        "x": 287.80702759999986,
-        "y": 139.613952,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_21",
-        "source_bounds_mm": [
-          28.0000136,
-          440.0964789,
-          132.000007,
-          502.903498
-        ],
-        "x": 180.80701259999995,
-        "y": 139.61399499999993,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_29",
-        "source_bounds_mm": [
-          268.0000068,
-          370.0964881,
-          372.0000326,
-          432.9034641
-        ],
-        "x": 287.80700599999994,
-        "y": 205.420928,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "id": "ascent_15",
-        "source_bounds_mm": [
-          28.0000136,
-          90.0964924,
-          132.000007,
-          152.9034792
-        ],
-        "x": 180.80701259999995,
-        "y": 205.42101409999992,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_08",
-        "source_bounds_mm": [
-          28.0000136,
-          230.0964849,
-          132.000007,
-          292.9034824
-        ],
-        "x": 8.0,
-        "y": 8.0,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_17",
-        "source_bounds_mm": [
-          268.0000068,
-          90.0964924,
-          372.0000326,
-          152.9034792
-        ],
-        "x": 115.05,
-        "y": 8.0,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_22",
-        "source_bounds_mm": [
-          148.0000102,
-          300.0964973,
-          252.0000144,
-          362.9034732
-        ],
-        "x": 222.1,
-        "y": 8.0,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_23",
-        "source_bounds_mm": [
-          148.0000102,
-          370.0964881,
-          252.0000144,
-          432.9034641
-        ],
-        "x": 8.0,
-        "y": 73.85699,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_27",
-        "source_bounds_mm": [
-          268.0000068,
-          300.0964973,
-          372.0000326,
-          362.9034732
-        ],
-        "x": 115.05,
-        "y": 73.85699,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_28",
-        "source_bounds_mm": [
-          388.0000034,
-          300.0964973,
-          492.0000292,
-          362.9034732
-        ],
-        "x": 222.1,
-        "y": 73.85699,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_30",
-        "source_bounds_mm": [
-          268.0000068,
-          440.0964789,
-          372.0000326,
-          502.903498
-        ],
-        "x": 8.0,
-        "y": 139.71398,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_02",
-        "source_bounds_mm": [
-          388.0000034,
-          412.0964654,
-          492.0000292,
-          442.096443
-        ],
-        "x": 115.05,
-        "y": 139.71398,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_03",
-        "source_bounds_mm": [
-          388.0000034,
-          450.6929898,
-          492.0000292,
-          480.6929674
-        ],
-        "x": 222.1,
-        "y": 139.71398,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_04",
-        "source_bounds_mm": [
-          388.0000034,
-          487.9034661,
-          492.0000292,
-          517.9034437
-        ],
-        "x": 115.05,
-        "y": 172.76398,
-        "rotation_degrees": 0
-      },
-      {
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 1,
-        "id": "ascent_05",
-        "source_bounds_mm": [
-          388.0000034,
-          526.4999905,
-          492.0000292,
-          556.4999681
-        ],
-        "x": 222.1,
-        "y": 172.76398,
-        "rotation_degrees": 0
       }
     ],
     "stand_pieces": 8,
@@ -2111,48 +1613,103 @@
   },
   "pad_fill_allocation": {
     "19_personal_fill/3T": [
+      "len_pad_3T_07",
       "len_pad_3T_01_safe",
-      "len_pad_3T_02_safe",
       "len_pad_3T_03_safe",
-      "len_pad_3T_04",
+      "len_pad_3T_02_safe",
       "len_pad_3T_05_safe",
-      "len_pad_3T_06",
-      "len_pad_3T_07"
+      "len_pad_3T_04",
+      "len_pad_3T_06"
     ]
   },
-  "logo_fill_allocation": {
-    "11_ascent_remaining/3T": [
-      "danba_logo_fill_001",
-      "danba_logo_fill_002",
-      "danba_logo_fill_003",
-      "danba_logo_fill_004"
-    ],
-    "19_personal_fill/3T": [
-      "danba_logo_fill_005",
-      "danba_logo_fill_006",
-      "danba_logo_fill_007",
-      "danba_logo_fill_008",
-      "danba_logo_fill_009",
-      "danba_logo_fill_010",
-      "danba_logo_fill_011",
-      "danba_logo_fill_012",
-      "danba_logo_fill_013",
-      "danba_logo_fill_014",
-      "danba_logo_fill_015",
-      "danba_logo_fill_016",
-      "danba_logo_fill_017",
-      "danba_logo_fill_018",
-      "danba_logo_fill_019",
-      "danba_logo_fill_020",
-      "danba_logo_fill_021"
-    ]
-  },
+  "logo_fill_allocation": {},
   "logo_fill_source": "extra_3T_32",
-  "logo_fill_count": 21,
+  "logo_fill_count": 0,
   "pad_variant_sources": {
     "len_pad_3T_01_safe": "len_pad_3T_01",
     "len_pad_3T_03_safe": "len_pad_3T_03",
     "len_pad_3T_02_safe": "len_pad_3T_02",
     "len_pad_3T_05_safe": "len_pad_3T_05"
-  }
+  },
+  "ascent_5t_migration": {
+    "source_part_ids": [
+      "ascent_01",
+      "ascent_02",
+      "ascent_03",
+      "ascent_04",
+      "ascent_05",
+      "ascent_06",
+      "ascent_07",
+      "ascent_08",
+      "ascent_09",
+      "ascent_10",
+      "ascent_11",
+      "ascent_12",
+      "ascent_13",
+      "ascent_14",
+      "ascent_15",
+      "ascent_16",
+      "ascent_17",
+      "ascent_18",
+      "ascent_19",
+      "ascent_20",
+      "ascent_21",
+      "ascent_22",
+      "ascent_23",
+      "ascent_24",
+      "ascent_25",
+      "ascent_26",
+      "ascent_27",
+      "ascent_28",
+      "ascent_29",
+      "ascent_30"
+    ],
+    "three_t_excluded": true,
+    "base_choice_pending": false,
+    "previous_release_archive": {
+      "commit": "d177b28f2543074621890eb116360f5279a38d68",
+      "path": "snapshots/before_ascent_5t_e4d03cd"
+    },
+    "base_size_mm": [
+      104,
+      38
+    ],
+    "slot_size_mm": [
+      20.2,
+      5.2
+    ],
+    "base_slot_pitch_mm": 8.5,
+    "physical_fit_test": false,
+    "logo_excluded": true
+  },
+  "large_format_plates": [
+    {
+      "folder": "large_format/ascent_5T_800x500",
+      "canvas_mm": [
+        800,
+        500
+      ],
+      "pieces": 30,
+      "contours": 70,
+      "material": "5T",
+      "canonical_config": "configs/ascent_5t_contours.json",
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.ai",
+        "02_MASTER.pdf",
+        "02_MASTER.vectorcraft",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "PREVIEW_NOT_FOR_CUT.pdf",
+        "README.md",
+        "cut_detail.png",
+        "preview.png",
+        "validation.json"
+      ]
+    }
+  ],
+  "logo_template_archived": true
 }

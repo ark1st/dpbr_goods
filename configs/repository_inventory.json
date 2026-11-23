@@ -76,8 +76,8 @@
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
-  "physical_sheets": 5,
-  "physical_parts": 134,
+  "physical_sheets": 4,
+  "physical_parts": 83,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [

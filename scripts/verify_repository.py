@@ -22,6 +22,15 @@ def output_inventory(out):
     required.update(manifest.get('support_files',[]))
     recoveries=manifest.get('recut_recoveries',[])
     for recovery in recoveries:required.update(recovery['folder']+'/'+name for name in recovery['files'])
+    large_plates=manifest.get('large_format_plates',[])
+    for plate in large_plates:
+        folder=Path(plate['folder'])
+        if len(folder.parts)<2 or folder.parts[0]!='large_format' or '..' in folder.parts:
+            raise ValueError('Invalid large-format folder: '+plate['folder'])
+        files=set(plate['files'])
+        if files!=PAGE_FILES:
+            raise ValueError('Large-format plate must register all production files: '+plate['folder'])
+        required.update(plate['folder']+'/'+name for name in files)
     if any(g.startswith('06_len_pad/') for g in manifest['groups']):
         required.add('a3_release/06_len_pad/assembly.png')
     if any(g.startswith('09_yanggum/') for g in manifest['groups']):

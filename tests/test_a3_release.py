@@ -49,13 +49,16 @@ class A3PackingTests(unittest.TestCase):
         pad_ids=[p for ids in pad.values() for p in ids]
         logo=cfg.get('logo_fill_allocation',{})
         logo_ids=[p for ids in logo.values() for p in ids]
-        self.assertEqual(len(selected),84+len(new)+len(pad_ids)+len(logo_ids))
+        self.assertEqual(len(selected),len(cfg['personal_fill_policy']['baseline_ids'])+len(new)+len(pad_ids)+len(logo_ids))
         self.assertEqual(len(set(selected)),len(selected))
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
-        self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']+cfg['ascent_remaining']['part_ids']))
-        separate=[r['id'] for page in rows['11_ascent_remaining/3T'] for r in page]
-        self.assertEqual(set(separate),set(cfg['ascent_remaining']['part_ids']
+        migration=cfg.get('ascent_5t_migration',{}).get('three_t_excluded',False)
+        self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),[] if migration else sorted(cfg['cadena_source_part_ids']+cfg['ascent_remaining']['part_ids']))
+        separate_rows=rows['11_ascent_remaining/3T']
+        separate_pages=separate_rows if isinstance(separate_rows[0],list) else [separate_rows]
+        separate=[r['id'] for page in separate_pages for r in page]
+        self.assertEqual(set(separate),set(([] if migration else cfg['ascent_remaining']['part_ids'])
                                           +personal.get('11_ascent_remaining/3T',[])+pad.get('11_ascent_remaining/3T',[])+logo.get('11_ascent_remaining/3T',[])))
         self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
         self.assertNotIn('ascent_31',selected)
@@ -74,6 +77,21 @@ class A3PackingTests(unittest.TestCase):
             next(r for r in page if r['id']==fixed['id'])['x']+=.25
             with self.assertRaisesRegex(AssertionError,'Changed fixed baseline placement'):
                 verify_fixed_placements(cfg,rows)
+
+    def test_ascent_migration_excludes_every_source_piece_from_three_t(self):
+        from verify_a3_release import verify_ascent_migration
+        expected=[f'ascent_{i:02}' for i in range(1,31)]
+        config={'ascent_5t_migration':{'three_t_excluded':True,'source_part_ids':expected}}
+        verify_ascent_migration(config,['a','b'])
+        with self.assertRaisesRegex(AssertionError,'remain on 3T'):
+            verify_ascent_migration(config,['a','ascent_01'])
+        with self.assertRaisesRegex(AssertionError,'Incomplete 5T source inventory'):
+            verify_ascent_migration({'ascent_5t_migration':{'three_t_excluded':True,'source_part_ids':expected[:-1]}},['a'])
+        no_logo={'ascent_5t_migration':{'three_t_excluded':True,'source_part_ids':expected,'logo_excluded':True}}
+        verify_ascent_migration(no_logo,['a','b'])
+        for ident in ['danba_logo_fill_001','danba_logo_smooth']:
+            with self.assertRaisesRegex(AssertionError,'Removed logo remains on 3T'):
+                verify_ascent_migration(no_logo,['a',ident])
 
     def test_logo_aliases_preserve_both_contours_and_unique_allocation(self):
         from verify_a3_release import verify_logo_inventory
@@ -150,6 +168,29 @@ class A3PackingTests(unittest.TestCase):
                                              'tab_geometry_proof':{'regions_mm':[[17.8,30.2,22.7,34.9]],'tolerance_mm':.002}})
         with self.assertRaisesRegex(AssertionError,'Protected original'):
             redesign_outer_contour({**original,'paths':[{**original['paths'][0],'protected':True},original['paths'][1]]},design)
+
+    def test_reviewed_small_contour_fit_requires_explicit_bounded_tolerance(self):
+        import pymupdf as fitz
+        from build_a3_release import redesign_outer_contour
+        from laser_paths import cut_path,audit_path
+        doc=fitz.open();self.addCleanup(doc.close);doc.new_page(width=50*MM,height=50*MM)
+        old=box(10,10,30,30);old_path=cut_path(old);_,old_poly=audit_path(old_path)
+        original={'id':'fit_fixture','bounds':old_poly.bounds,'poly':old_poly,'art':doc,'white':None,
+                  'paths':[{'path':old_path,'poly':old_poly,'protected':False}]}
+        new_path=cut_path(box(10.02,10,30,30));_,new_poly=audit_path(new_path)
+        design={'source_bounds_mm':list(old_poly.bounds),'new_bounds_mm':list(new_poly.bounds),
+                'paths':[new_path],'pin_original_art':True}
+        with self.assertRaisesRegex(AssertionError,'source coverage tolerance'):
+            redesign_outer_contour(original,design)
+        accepted=redesign_outer_contour(original,{**design,'source_coverage_tolerance_mm':.04})
+        self.addCleanup(accepted['art'].close)
+        for invalid in [.04001,0,-.01,True]:
+            with self.assertRaisesRegex(AssertionError,'Invalid source coverage tolerance'):
+                redesign_outer_contour(original,{**design,'source_coverage_tolerance_mm':invalid})
+        too_far=cut_path(box(10.05,10,30,30));_,too_far_poly=audit_path(too_far)
+        with self.assertRaisesRegex(AssertionError,'exceeds source coverage tolerance'):
+            redesign_outer_contour(original,{**design,'paths':[too_far],
+                'new_bounds_mm':list(too_far_poly.bounds),'source_coverage_tolerance_mm':.04})
 
     def test_redesigned_fixed_piece_keeps_original_artwork_affine_transform(self):
         import math

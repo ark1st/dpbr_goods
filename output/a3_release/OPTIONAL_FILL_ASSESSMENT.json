@@ -61,13 +61,13 @@
   "capacity_proof_scope": "Historical two-sheet comparisons. Current production PAD placements are reported separately.",
   "current_pad_allocation": {
     "19_personal_fill/3T": [
+      "len_pad_3T_07",
       "len_pad_3T_01_safe",
-      "len_pad_3T_02_safe",
       "len_pad_3T_03_safe",
-      "len_pad_3T_04",
+      "len_pad_3T_02_safe",
       "len_pad_3T_05_safe",
-      "len_pad_3T_06",
-      "len_pad_3T_07"
+      "len_pad_3T_04",
+      "len_pad_3T_06"
     ]
   },
   "deferred": [],
