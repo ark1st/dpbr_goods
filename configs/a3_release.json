@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-personal-stands-dual-hole-fill",
+  "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
   "canvas_mm": [
     420,
     297
@@ -169,8 +169,8 @@
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
     "09_yanggum/3T": 3,
-    "11_ascent_remaining/3T": 39,
-    "19_personal_fill/3T": 12
+    "11_ascent_remaining/3T": 38,
+    "19_personal_fill/3T": 9
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -234,6 +234,12 @@
       ],
       "status": "retired_single_hole_keyrings_not_for_serial_linking",
       "reason": "Each applicant keyring had only one top hole. Current derivative preserves the art and top hole, adds the bottom4mm linking hole and uses offcut placements."
+    },
+    {
+      "commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74",
+      "status": "retired_personal_stand_geometry_and_placements_only",
+      "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
+      "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
     }
   ],
   "len_layout": {
@@ -332,7 +338,7 @@
     "11_ascent_remaining/3T",
     "19_personal_fill/3T"
   ],
-  "selected_primary_parts": 110,
+  "selected_primary_parts": 106,
   "primary_inventory": [
     "ascent_01",
     "ascent_02",
@@ -420,12 +426,8 @@
     "yanggum_stand_02",
     "강민_stand_01",
     "강민_stand_02",
-    "강민_stand_03",
-    "강민_stand_04",
     "강윤진_stand_01",
     "강윤진_stand_02",
-    "강윤진_stand_03",
-    "강윤진_stand_04",
     "김윤_keyring_01",
     "김윤_keyring_02",
     "김윤_keyring_03",
@@ -683,34 +685,30 @@
   ],
   "personal_fill_allocation": {
     "11_ascent_remaining/3T": [
-      "정지영_stand_01",
-      "이상준_stand_01",
-      "강윤진_stand_01",
       "강민_stand_01",
-      "이상준_stand_02",
-      "강윤진_stand_04",
-      "정지영_stand_02",
-      "강윤진_stand_03",
+      "강윤진_stand_01",
+      "이상준_stand_01",
+      "정지영_stand_01",
       "강민_stand_02",
-      "강민_stand_03",
       "강윤진_stand_02",
-      "강민_stand_04",
-      "김윤_keyring_01",
+      "이상준_stand_02",
+      "정지영_stand_02",
+      "배승민_keyring_01",
+      "배승민_keyring_02",
+      "배승민_keyring_03",
+      "김윤_keyring_04",
       "김호_keyring_01"
     ],
     "19_personal_fill/3T": [
+      "김윤_keyring_01",
       "김윤_keyring_02",
       "김윤_keyring_03",
-      "김윤_keyring_04",
       "김윤_keyring_05",
       "김호_keyring_02",
       "김호_keyring_03",
       "김호_keyring_04",
       "김호_keyring_05",
-      "김호_keyring_06",
-      "배승민_keyring_01",
-      "배승민_keyring_02",
-      "배승민_keyring_03"
+      "김호_keyring_06"
     ]
   },
   "chain_keyring_products": {
@@ -735,7 +733,13 @@
       ],
       "base_corner_radius_mm": 7,
       "slot_length_mm": 18.8,
-      "slot_corner_radius_mm": 0.35
+      "slot_corner_radius_mm": 0.35,
+      "support_web_width_mm": 26,
+      "support_anchor_ratio": 0.5,
+      "support_taper_height_mm": 6,
+      "support_round_radius_mm": 3,
+      "pair_art_gap_mm": 4,
+      "combine_zero_modes": true
     }
   },
   "personal_fill_policy": {
@@ -830,12 +834,8 @@
     "new_part_ids": [
       "강민_stand_01",
       "강민_stand_02",
-      "강민_stand_03",
-      "강민_stand_04",
       "강윤진_stand_01",
       "강윤진_stand_02",
-      "강윤진_stand_03",
-      "강윤진_stand_04",
       "김윤_keyring_01",
       "김윤_keyring_02",
       "김윤_keyring_03",
@@ -2033,7 +2033,7 @@
         "rotation_degrees": 0
       }
     ],
-    "stand_pieces": 12,
+    "stand_pieces": 8,
     "keyring_pieces": 14,
     "keyring_holes_per_piece": 2,
     "keyring_hole_diameter_mm": 4,
@@ -2041,6 +2041,30 @@
     "existing_pages_repositioned": false,
     "new_pages_added": 1,
     "minimum_page_count_proven": false,
-    "notes": "User requested top and bottom connecting holes; existing artwork height and all 84 original placements retained. Five pages are feasible; four-page impossibility is not proven."
+    "notes": "Four reinforced stand sets, including two Alpha/Beta combined Zero plates; 8 stand pieces plus14 unchanged keyrings. All84 baseline placements fixed. Five pages feasible; four-page impossibility not proven.",
+    "stand_sets": 4,
+    "combined_zero_stands": [
+      "마가다락방",
+      "청민예"
+    ],
+    "retired_part_ids": [
+      "강민_stand_03",
+      "강민_stand_04",
+      "강윤진_stand_03",
+      "강윤진_stand_04"
+    ],
+    "retired_source_archive": {
+      "commit": "7b09732e0afac66ee737943335d4b0e569765118",
+      "prefix": "snapshots/personal_before_riser_zero_pair_4ffb44c/",
+      "source_commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74"
+    },
+    "layout_search": {
+      "exact_trials": 24,
+      "minimum_new_gap_mm": 3.1399999999999864,
+      "minimum_new_margin_mm": 8.007999999999996,
+      "personal_parts_in_existing_pages": 13,
+      "personal_parts_on_added_page": 9
+    },
+    "baseline_asset_count": 141
   }
 }

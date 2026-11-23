@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-personal-stands-dual-hole-fill",
+  "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
   "canvas_mm": [
     420.0,
     297.0
@@ -62,15 +62,15 @@
       },
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
-        "pieces": 24,
-        "contours": 64
+        "pieces": 23,
+        "contours": 67
       }
     ],
     "19_personal_fill/3T": [
       {
         "folder": "a3_release/19_personal_fill/3T/sheet_01",
-        "pieces": 12,
-        "contours": 36
+        "pieces": 9,
+        "contours": 27
       }
     ]
   },
@@ -124,6 +124,12 @@
       ],
       "status": "retired_single_hole_keyrings_not_for_serial_linking",
       "reason": "Each applicant keyring had only one top hole. Current derivative preserves the art and top hole, adds the bottom4mm linking hole and uses offcut placements."
+    },
+    {
+      "commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74",
+      "status": "retired_personal_stand_geometry_and_placements_only",
+      "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
+      "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
     }
   ],
   "optional_groups": [

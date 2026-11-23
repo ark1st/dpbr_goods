@@ -21,7 +21,10 @@ def main():
     personal=CONFIG.get('personal_fill_allocation',{})
     if personal:
         expected={ident:group for group,ids in personal.items() for ident in ids}
-        assert len(expected)==26 and m['asset_count']==167,'Incomplete catalog of original and personal pieces'
+        policy=CONFIG['personal_fill_policy']
+        expected_count=policy['stand_pieces']+policy['keyring_pieces']
+        assert len(expected)==expected_count and set(expected)==set(policy['new_part_ids']),'Incomplete personal catalog'
+        assert m['asset_count']==policy['baseline_asset_count']+expected_count,'Incomplete catalog of original and personal pieces'
         for ident,group in expected.items():
             assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed personal asset placement')
     canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']

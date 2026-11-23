@@ -9774,13 +9774,13 @@
   "ai_format": "PDF-compatible layers; image artwork and original vector contours",
   "white_ink_policy": "Source white only; absent white requires RIP setup",
   "files": {
-    "01_PRINT.pdf": "9e0d4c571357e7d08d2187f5fa2ae39a8cf3b4758bb026294bc0fd56f6e73604",
+    "01_PRINT.pdf": "64c83b8b51d5efce8af6379e57f61f3ea8934a62c1ec82137c781f645736b0b8",
     "01_PRINT_300ppi.png": "349a5f246c8198684717152ced9c3997753594e396437759f9b833d69afb7224",
-    "02_MASTER.pdf": "d661eb47accc1a2cb08b568200ce1a313b5c717df01979f53bf7f71f5b24af28",
-    "02_MASTER.ai": "d661eb47accc1a2cb08b568200ce1a313b5c717df01979f53bf7f71f5b24af28",
-    "03_CUT_ONLY.pdf": "a4c39c2e7b5d1f8583483229e72b4661bdbde031bd2304561f698397748ad68e",
+    "02_MASTER.pdf": "6b102a04c827ef2c6e84b01d4ed6c64ab4226d4adb9babb3926cf632fbb27bc8",
+    "02_MASTER.ai": "6b102a04c827ef2c6e84b01d4ed6c64ab4226d4adb9babb3926cf632fbb27bc8",
+    "03_CUT_ONLY.pdf": "e65558b198bb18d80fe65d4e8bfe96f57c0114bc18b9621ea1b9dc5738d4b5f2",
     "03_CUT_ONLY.svg": "de06c65a3ffe2039edd6c904e5bb37c7f058694cdad0d5816d993604a7af2b81",
-    "04_WHITE_INK_MASK.pdf": "cf968f15da5569f39acf85af3d3b5ea0bd4a9a7597e5c6502b0356679e2dae88",
+    "04_WHITE_INK_MASK.pdf": "7adbb5454722bfc6d7fb93c13ae03b87f982053ab32ef7615223eaef5817b641",
     "04_WHITE_INK_MASK_300ppi.png": "7eb9ab44f999108515c738c0e7f0115f964505c46c633a39a362f048fd021ad8",
     "preview.png": "f6cc3f0567e827000a011db5e858fab270f6e87176a90f57db66ef61f0eb6ef6"
   }

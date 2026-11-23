@@ -56,7 +56,7 @@ class A3PackingTests(unittest.TestCase):
         self.assertNotIn('ascent_31',selected)
         if personal:
             from verify_a3_release import verify_fixed_placements
-            self.assertEqual(len(new),26)
+            self.assertEqual(len(new),cfg['personal_fill_policy']['stand_pieces']+cfg['personal_fill_policy']['keyring_pieces'])
             self.assertEqual(set(new),set(cfg['personal_fill_policy']['new_part_ids']))
             self.assertEqual(set(selected)-set(new),set(cfg['personal_fill_policy']['baseline_ids']))
             for group in cfg['selected_primary_groups']:
@@ -86,6 +86,27 @@ class A3PackingTests(unittest.TestCase):
         paths=[*part['expected_paths'][:2],list(shifted_poly(Point(*centers[-1]).buffer(1.9),pos).exterior.coords)]
         with self.assertRaisesRegex(AssertionError,'resized connector'):
             verify_chain_holes({**part,'expected_paths':paths})
+
+    def test_rotated_stand_cannot_rely_on_a_narrow_weapon_bridge(self):
+        from shapely.ops import unary_union
+        from verify_a3_release import verify_stand_support
+        meta={'part':'character','tab_width_mm':18,'tab_depth_mm':2.6,
+              'tab_center_mm':[22.5,72],
+              'components':[{'art_height_mm':60,'art_rect_mm':[0,10,45,70]}],
+              'support_web':{'anchor_y_mm':30,'width_per_body_mm':26,'body_contact_mm2':[80]}}
+        strong=unary_union([box(0,0,45,72),box(13.5,72,31.5,74.6)])
+        weak=unary_union([box(0,0,45,40),box(21.5,40,23.5,72),box(13.5,72,31.5,74.6)])
+        for shape,good in [(strong,True),(weak,False)]:
+            piece={'bounds':shape.bounds,'poly':shape}
+            _,origin=rotated(piece,165)
+            place={'piece':piece,'x':50,'y':20,'rotation':165,'rotated_origin':origin}
+            row={'id':'stand_fixture','source_bounds_mm':shape.bounds,'placed_bounds_mm':[50,20],
+                 'rotation_degrees':165,'rotated_origin_mm':origin,
+                 'expected_paths':[list(shifted_poly(shape,place).exterior.coords)],'design_metadata':meta}
+            if good:verify_stand_support(row)
+            else:
+                with self.assertRaisesRegex(AssertionError,'Narrow support'):
+                    verify_stand_support(row)
 
     def test_lower_bound_does_not_treat_extra_verified_page_as_minimum(self):
         from verify_a3_release import minimum_sheet_proof

@@ -52,11 +52,12 @@ def verify_personal_inventory(config,selected_by_group):
     allocation=config.get('personal_fill_allocation',{})
     if not allocation:return
     selected=[p['id'] for parts in selected_by_group.values() for p in parts]
-    assert len(selected)==len(set(selected))==config['selected_primary_parts']==110, 'Primary inventory must contain 84 originals and 26 personal parts exactly once'
+    policy=config['personal_fill_policy']
+    expected_personal=policy['stand_pieces']+policy['keyring_pieces']
+    assert len(selected)==len(set(selected))==config['selected_primary_parts']==len(policy['baseline_ids'])+expected_personal, 'Changed primary inventory'
     assert set(allocation)<=set(selected_by_group),'Personal pieces must be on selected primary sheets'
     personal=[ident for ids in allocation.values() for ident in ids]
-    assert len(personal)==len(set(personal))==26,'Personal allocation must contain 26 unique pieces'
-    policy=config['personal_fill_policy']
+    assert len(personal)==len(set(personal))==expected_personal,'Changed personal allocation'
     assert set(personal)==set(policy['new_part_ids']),'Unexpected personal piece IDs'
     baseline=policy['baseline_ids']
     assert len(baseline)==len(set(baseline))==84 and set(selected)-set(personal)==set(baseline),'Changed baseline inventory'
@@ -73,10 +74,45 @@ def verify_personal_inventory(config,selected_by_group):
             else:
                 assert kind in ('character','base') and p['source'].endswith('_stand'),(p['id'],'Unexpected stand role or source')
                 assert p['path_count']==len(p['expected_paths'])=={'character':1,'base':2}[kind],(p['id'],'Changed stand contours')
+                verify_stand_support(p)
                 stand_pairs[(p['source'],meta['nickname'],meta['mode'],kind)]+=1
-    assert counts=={'keyring':14,'character':6,'base':6},counts
+    stand_sets=policy['stand_pieces']//2
+    assert counts=={'keyring':policy['keyring_pieces'],'character':stand_sets,'base':stand_sets},counts
     for (source,nickname,mode,kind),count in stand_pairs.items():
         assert count==1 and stand_pairs[(source,nickname,mode,{'character':'base','base':'character'}[kind])]==1,(source,nickname,mode,'Unmatched stand pair')
+    paired=[p for parts in selected_by_group.values() for p in parts if p['id'] in personal_ids
+            and p['design_metadata']['part']=='character' and len(p['design_metadata'].get('components',[]))==2]
+    assert {p['design_metadata']['nickname'] for p in paired}==set(policy['combined_zero_stands']),'Changed Zero pair inventory'
+
+def verify_stand_support(part):
+    """Measure the exported load path and mechanical interfaces in source axes."""
+    from shapely import affinity
+    from chain_keyring_parts import stand_axis_width
+    meta=part['design_metadata'];ident=part['id']
+    x0,y0,_,_=part['source_bounds_mm'];rx,ry=part['rotated_origin_mm']
+    px,py=part['placed_bounds_mm'][:2]
+    paths=[affinity.translate(affinity.rotate(affinity.translate(Polygon(q),-px+rx,-py+ry),
+            part['rotation_degrees'],origin=(0,0)),x0,y0) for q in part['expected_paths']]
+    paths.sort(key=lambda p:p.area,reverse=True);outer=paths[0]
+    if meta['part']=='base':
+        assert len(paths)==2 and meta['size_mm']==[72,28] and meta['slot_mm']==[18.8,3],(ident,'Changed base interface')
+        slot=paths[1];sx,sy=meta['slot_center_mm']
+        assert abs(slot.centroid.x-sx)<.002 and abs(slot.centroid.y-sy)<.002,(ident,'Moved stand slot')
+        assert max(abs(a-b) for a,b in zip([slot.bounds[2]-slot.bounds[0],slot.bounds[3]-slot.bounds[1]],[18.8,3]))<.005,(ident,'Resized stand slot')
+        return
+    assert len(paths)==1 and meta['tab_width_mm']==18 and abs(meta['tab_depth_mm']-2.6)<.0001,(ident,'Changed stand tab')
+    components=meta['components']
+    assert len(components) in (1,2) and all(c['art_height_mm']==60 for c in components),(ident,'Changed original image height')
+    if len(components)==2:
+        assert {c['mode'].split(' ')[0] for c in components}=={'알파','베타'},(ident,'Missing Zero mode')
+        assert components[1]['art_rect_mm'][0]-components[0]['art_rect_mm'][2]>=3.99,(ident,'Overlapping Zero artwork')
+    web=meta['support_web'];cx,shoulder=meta['tab_center_mm'];anchor=web['anchor_y_mm']
+    assert web['width_per_body_mm']>=26 and min(web['body_contact_mm2'])>=26,(ident,'Insufficient body connection')
+    samples=max(1,math.ceil((shoulder-anchor)/.25))
+    widths=[stand_axis_width(outer,cx,anchor+.02+(shoulder-anchor-.02)*i/samples) for i in range(samples+1)]
+    assert min(widths)>=17.97,(ident,'Narrow support load path',min(widths))
+    for y in [shoulder+.2,shoulder+2.0]:
+        assert abs(stand_axis_width(outer,cx,y)-18)<.005,(ident,'Resized insertion tab')
 
 def verify_fixed_placements(config,reviewed):
     if not config.get('personal_fill_allocation'):return

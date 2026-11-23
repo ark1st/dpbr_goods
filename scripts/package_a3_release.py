@@ -27,14 +27,18 @@ def write_personal_release(cfg,manifest):
             for p in spec['parts']:
                 locations[p['id']]=number
                 if p['id'] in cfg['personal_fill_policy']['new_part_ids']:personal[p['id']]=p
-    assert len(personal)==26
+    policy=cfg['personal_fill_policy']
+    assert len(personal)==policy['stand_pieces']+policy['keyring_pieces']
+    on_added=set(cfg['personal_fill_allocation'].get('19_personal_fill/3T',[]))
+    offcut_keys=sum(p['design_metadata']['part']=='keyring' and ident not in on_added for ident,p in personal.items())
+    added_keys=sum(p['design_metadata']['part']=='keyring' and ident in on_added for ident,p in personal.items())
     common=f'''**3T · A3 420×297mm · 실제 크기 100% · {number}장 / {cfg['selected_primary_parts']}조각.**
 
-기존 84조각의 위치·크기·칼선은 유지했습니다. 개인별 스탠드 12조각과 상하 연결 키링 2개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 12개는 A3 한 장에 모았습니다. 5장 배치는 검증했지만 4장 배치가 불가능하다고 증명한 것은 아닙니다. Len PAD는 계속 출력 보류이며 양검 단독판은 중복 참고본입니다.
+기존 84조각의 위치·크기·칼선은 유지했습니다. 보강한 개인별 스탠드 {policy['stand_pieces']}조각과 상하 연결 키링 {offcut_keys}개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 {added_keys}개는 A3 한 장에 모았습니다. {number}장 배치는 검증했지만 더 적은 장수가 불가능하다고 증명한 것은 아닙니다. Len PAD는 계속 출력 보류이며 양검 단독판은 중복 참고본입니다.
 
 | 출력 순서 | 제작 폴더 | 조각 |
 |---|---|---:|
-'''+ '\n'.join(current)+'''
+'''+ '\n'.join(current)+f'''
 
 ## 제작 파일
 
@@ -48,7 +52,8 @@ def write_personal_release(cfg,manifest):
 
 ## 개인별 스탠드와 줄줄이 키링
 
-스탠드는 강민 4조각, 강윤진 4조각, 이상준 2조각, 정지영 2조각입니다. 캐릭터 6개와 투명 받침 6개이며 탭 18×2.6mm, 받침 홈 18.8×3.0mm입니다.
+스탠드는 강민·강윤진·이상준·정지영 각각 캐릭터 판 1개와 받침 1개, 총 4세트·8조각입니다. 마가다락방과 청민예는 각각 알파·베타 원본 두 개를 한 판에 함께 인쇄합니다. 각 그림의 높이 60mm와 원래 비율은 그대로이며 합본 외곽 폭은 약95mm·103mm입니다.
+몸통 중심 아래에 캐릭터당 폭26mm의 투명 보강부를 연결했습니다. 넓은 지지부가 부드러운 곡면으로 폭18mm 돌기에 이어지며, 무기 효과 쪽의 얇은 길에만 의존하지 않습니다. 탭18×2.6mm, 받침72×28mm, 홈18.8×3.0mm는 유지합니다. 자동 검사는 연속 지지 폭과 접합 면적을 확인하며 실제 강도 시험은 아닙니다.
 줄줄이 키링 14개 모두 위·아래 ⌀4mm 연결 구멍이 있습니다. 기존 그림 높이 40mm와 상단 연결부를 유지하고 아래 연결부를 추가해 완성 높이는 약71mm입니다. 4×4cm 완성 외곽으로 축소한 파일이 아닙니다.
 연결 금속 링·체인은 제작 칼선에 포함하지 않습니다. 링·체인의 실제 조립 간섭과 아크릴 끼움·커프·인쇄 정합은 실물 미검증입니다.
 
@@ -89,7 +94,7 @@ def write_personal_release(cfg,manifest):
         'selected_pages':number,'selected_parts':cfg['selected_primary_parts'],'physical_cut_test':False}
     write(BASE/'PERSONAL_FILL_ASSESSMENT.json',json.dumps(assessment,ensure_ascii=False,indent=2)+'\n')
     rows='\n'.join(row.replace('](','](a3_release/') for row in current)
-    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+'\n\n[전체 제작 안내·개인별 부품 위치·연결부 시안](a3_release) · [개별 편집 에셋](individual_assets)\n\n기존84조각 위치 유지. 신규 스탠드12조각과 키링2개는 기존 자투리에, 나머지 키링12개는 마지막 A3에 배치했습니다. 4장이 불가능하다고 증명한 것은 아닙니다. Len PAD는 출력 보류, 양검 단독판은 중복 참고용입니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본이므로 제작에 사용하지 않습니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
+    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+f'\n\n[전체 제작 안내·개인별 부품 위치·보강 시안](a3_release) · [개별 편집 에셋](individual_assets)\n\n기존84조각 위치 유지. 보강 스탠드8조각과 키링{offcut_keys}개는 기존 자투리에, 나머지 키링{added_keys}개는 마지막 A3에 배치했습니다. 제로 스탠드2종은 각각 알파·베타를 한 판에 합쳤습니다. 더 적은 장수의 불가능을 증명한 것은 아닙니다. Len PAD는 출력 보류, 양검 단독판은 중복 참고용입니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본이므로 제작에 사용하지 않습니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
     print(f'Published {number} A3 pages; no new ZIP archives',flush=True)
 
 def main():

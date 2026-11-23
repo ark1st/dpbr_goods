@@ -22,7 +22,7 @@
   ],
   "source": "배승민_keyring",
   "a3_groups": [
-    "19_personal_fill/3T"
+    "11_ascent_remaining/3T"
   ],
   "physical_cut_test": false,
   "pieces": 1,
@@ -7946,13 +7946,13 @@
   "ai_format": "PDF-compatible layers; image artwork and original vector contours",
   "white_ink_policy": "Source white only; absent white requires RIP setup",
   "files": {
-    "01_PRINT.pdf": "659ff206d0d644a70df7f8873c2902dd260479af922bab5fddc5f43ac79e9401",
+    "01_PRINT.pdf": "eeecace7eb5eebb90635395a84d223718712ecab92c8b58e186aa2623c9e6076",
     "01_PRINT_300ppi.png": "723fde5b9d0026f2fb2b8e945f3883e1c74836859aa8b2e4c0ef5c6c2f239cc8",
-    "02_MASTER.pdf": "6a7016cd76276674298f7e9c0691e7874d3d7186b42be85ae8afd2e3046ff61f",
-    "02_MASTER.ai": "6a7016cd76276674298f7e9c0691e7874d3d7186b42be85ae8afd2e3046ff61f",
-    "03_CUT_ONLY.pdf": "dd10b948516de5fa1c71d7c2805de20c9e439a41d471ce892d3a8909393b20c7",
+    "02_MASTER.pdf": "186d5dd7f71f9c24d312fd6b02d40c4f9a49dcf13ad66ddcb494209cdf8fa620",
+    "02_MASTER.ai": "186d5dd7f71f9c24d312fd6b02d40c4f9a49dcf13ad66ddcb494209cdf8fa620",
+    "03_CUT_ONLY.pdf": "0140760bd77acd7800d0f2e514b23c22fe9f976c13d6ecefc8d36ba4dbc5b4a1",
     "03_CUT_ONLY.svg": "d8252af0136f1f851775a764b5d4f67610ea215ca4c6ae010051aae1bd563180",
-    "04_WHITE_INK_MASK.pdf": "28f37512f7c463a7a611f10588db7e51868dbb0d7f6bc5c79e235f8d4b9a68da",
+    "04_WHITE_INK_MASK.pdf": "9520c199a41cab6aa17abed37a10106caee54092c23cdd4d29e3c89616f7b5cb",
     "04_WHITE_INK_MASK_300ppi.png": "53cb989c0bae93ec67bbb44b8844af7d133f5bbc28b9c87c3a65a012a8f2e49f",
     "preview.png": "aabed6dff3c2aa3c0cca3fd92bfdc6ce331ad96463b0f8079306374ff874ff37"
   }

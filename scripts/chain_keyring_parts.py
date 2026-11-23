@@ -17,7 +17,7 @@ import cv2
 import pymupdf as fitz
 from PIL import Image
 from shapely.geometry import Polygon, box, LineString, Point
-from shapely.ops import unary_union
+from shapely.ops import linemerge, unary_union
 from shapely import affinity
 from laser_paths import cut_path
 
@@ -27,6 +27,7 @@ MM = 72 / 25.4
 APPLICANTS = json.loads((ASSETS / 'applicants.json').read_text(encoding='utf-8'))['applicants']
 CHAIN_COMBINED = '17_줄줄이_결합판/3T'
 STAND_COMBINED = '18_스탠드_결합판/3T'
+COMBINED_ZERO_STANDS = frozenset({'마가다락방', '청민예'})
 
 
 def kind_of(app):
@@ -99,21 +100,6 @@ def character_documents(im, height_mm, clear_border, origin_mm):
     art = affinity.translate(art, *origin_mm)
     body = affinity.translate(Polygon(body.exterior), *origin_mm)
     return art, body, scale
-
-
-def section_report(poly, y0, y1, step=.25):
-    """Minimum horizontal section widths between y0 and y1, ligaments split."""
-    widths = []
-    y = y0
-    while y <= y1:
-        cut = poly.intersection(LineString([(poly.bounds[0] - 1, y), (poly.bounds[2] + 1, y)]))
-        if cut.geom_type == 'MultiLineString':
-            parts = sorted(c.length for c in cut.geoms)
-            widths.append((y, parts, sum(parts)))
-        elif not cut.is_empty:
-            widths.append((y, [cut.length], cut.length))
-        y += step
-    return widths
 
 
 def chain_documents(entries, settings, draw_path):
@@ -192,94 +178,194 @@ def chain_documents(entries, settings, draw_path):
     return cut, art, entries
 
 
+def stand_sprite_sets(entries, combine_zero_modes):
+    """Combine the two requested Alpha/Beta stands only, preserving roster order."""
+    groups = {}
+    for i, entry in enumerate(entries):
+        nickname = entry['nickname']
+        key = nickname if combine_zero_modes and nickname in COMBINED_ZERO_STANDS else i
+        groups.setdefault(key, []).append(entry)
+    for key, group in groups.items():
+        if isinstance(key, str):
+            group.sort(key=lambda e: _mode_short(e['mode']) == '베타')
+            assert [_mode_short(e['mode']) for e in group] == ['알파', '베타'], key
+    return list(groups.values())
+
+
+def stand_body_axis(im):
+    """Center of the thick core in the head/torso band, in source pixels."""
+    alpha = np.asarray(im)[:, :, 3]
+    mask = (alpha >= 128).astype('uint8')
+    if not mask.any():
+        mask = (alpha > 8).astype('uint8')
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
+    assert count > 1, 'empty stand sprite'
+    primary = (labels == 1 + stats[1:, cv2.CC_STAT_AREA].argmax()).astype('uint8')
+    # Thin weapons and glow are low-weight even when connected to the torso.
+    thickness = cv2.distanceTransform(np.pad(primary, 1), cv2.DIST_L2, cv2.DIST_MASK_PRECISE)[1:-1, 1:-1]
+    band = thickness[round(im.height * .22):round(im.height * .62)]
+    if not band.any():
+        band = thickness
+    columns = np.square(band).sum(axis=0).cumsum()
+    return float(np.searchsorted(columns, columns[-1] / 2)) + .5
+
+
+def stand_web(axes, anchor, shoulder, width, taper, radius, tab_width, depth):
+    """Round the crown and join the sides to the tab with a tangent cubic."""
+    center = (axes[0] + axes[-1]) / 2
+    left, right = axes[0] - width / 2, axes[-1] + width / 2
+    tab_left, tab_right = center - tab_width / 2, center + tab_width / 2
+    flare = shoulder - taper
+    assert width > tab_width and 0 < radius < min(width / 2, flare - anchor)
+    top = []
+    for cx, start in [(left + radius, np.pi), (right - radius, 1.5 * np.pi)]:
+        top.extend((cx + radius * np.cos(angle), anchor + radius + radius * np.sin(angle))
+                   for angle in np.linspace(start, start + np.pi / 2, 25))
+
+    def side(outer, tab):
+        control = np.array([(outer, flare), (outer, shoulder - taper * .2),
+                            (tab, shoulder - .035), (tab, shoulder)])
+        t = np.linspace(0, 1, 49)[:, None]
+        return ((1 - t)**3 * control[0] + 3 * (1 - t)**2 * t * control[1]
+                + 3 * (1 - t) * t**2 * control[2] + t**3 * control[3]).tolist()
+
+    tip = .5
+    bottom = [(tab_right, shoulder + depth - tip), (tab_right - tip, shoulder + depth),
+              (tab_left + tip, shoulder + depth), (tab_left, shoulder + depth - tip)]
+    return Polygon(top + side(right, tab_right) + bottom + side(left, tab_left)[::-1])
+
+
+def stand_axis_width(poly, axis, y):
+    """Width of the one horizontal ligament actually carrying the tab."""
+    cut = poly.intersection(LineString([(poly.bounds[0] - 1, y), (poly.bounds[2] + 1, y)]))
+    segments = [line for line in getattr(cut, 'geoms', (cut,)) if line.geom_type == 'LineString']
+    if len(segments) > 1:
+        # GEOS splits contiguous runs at vertices along the section line.
+        cut = linemerge(segments)
+    return next((line.length for line in getattr(cut, 'geoms', (cut,))
+                 if line.geom_type == 'LineString' and not line.is_empty
+                 and line.bounds[0] <= axis <= line.bounds[2]), 0.0)
+
+
 def stand_documents(entries, settings, draw_path, thickness='3T'):
-    """One cut doc + one art doc holding char+base pairs of one applicant."""
-    n = len(entries)
-    ims = [Image.open(e['prepared']).convert('RGBA') for e in entries]
-    widths = [im.width * (settings['art_height_mm'] / im.height) for im in ims]
-    xs = []
-    x = 10.0
-    for w in widths:
-        xs.append(round(x, 4))
-        x += max(w + 2 * settings['clear_border_mm'], settings['base_size_mm'][0]) + 10
-    page_w, page_h = round(x + 5), 130
-    cut = fitz.open()
-    cpage = cut.new_page(width=page_w * MM, height=page_h * MM)
-    art = fitz.open()
-    apage = art.new_page(width=page_w * MM, height=page_h * MM)
-    chars = []
-    depth = float(thickness.removesuffix('T')) - settings['tab_bottom_clearance_mm']
-    half = settings['tab_width_mm'] / 2
-    for i, e in enumerate(entries):
-        im = ims[i]
-        x = xs[i]
-        ink, body, scale = character_documents(im, settings['art_height_mm'], settings['clear_border_mm'], (x, 10))
-        height = settings['art_height_mm']
-        width = widths[i]
-        cx = x + width / 2
-        shoulder = body.bounds[3]
-        rise = settings['bridge_rise_mm']
-        bridge = box(cx - half - 1, shoulder - rise, cx + half + 1, shoulder)
-        tip = .5
-        tab = Polygon([(cx - half, shoulder - .1), (cx + half, shoulder - .1),
-                       (cx + half, shoulder + depth - tip), (cx + half - tip, shoulder + depth),
-                       (cx - half + tip, shoulder + depth), (cx - half, shoulder + depth - tip)])
-        solid = unary_union([body, bridge, tab])
-        assert solid.geom_type == 'Polygon' and solid.is_valid and not solid.interiors, e['nickname']
+    """One reinforced character and matching base per stand set."""
+    height = settings['art_height_mm']
+    border = settings['clear_border_mm']
+    top = 10
+    sw = float(thickness.removesuffix('T'))
+    depth = sw - settings['tab_bottom_clearance_mm']
+    tab_width = settings['tab_width_mm']
+    web_width = settings.get('support_web_width_mm', 26)
+    anchor = top + height * settings.get('support_anchor_ratio', .5)
+    taper = settings.get('support_taper_height_mm', 6)
+    radius = settings.get('support_round_radius_mm', 3)
+    art_gap = settings.get('pair_art_gap_mm', 4)
+    bw, bh = settings['base_size_mm']
+    br = settings['base_corner_radius_mm']
+    sl = settings['slot_length_mm']
+    sr = settings['slot_corner_radius_mm']
+    sets = []
+    column = 8.0
+    for group in stand_sprite_sets(entries, settings.get('combine_zero_modes', False)):
+        art_x = 0.0
+        artworks, bodies, inks, axes = [], [], [], []
+        for entry in group:
+            with Image.open(entry['prepared']) as source:
+                im = source.convert('RGBA')
+            ink, body, scale = character_documents(im, height, border, (art_x, top))
+            width = im.width * scale
+            axes.append(art_x + stand_body_axis(im) * scale)
+            bodies.append(body)
+            inks.append(ink)
+            artwork = {
+                'nickname': entry['nickname'], 'world': entry['world'], 'mode': entry['mode'],
+                'art_height_mm': height, 'art_width_mm': width,
+                'source_ink_px': entry['source_ink_px'], 'print_px': [im.width, im.height],
+                'effective_source_ppi': round(entry['source_ink_px'][1] / height * 25.4, 1),
+                'art_rect_mm': [art_x, top, art_x + width, top + height],
+                'prepared_source': entry['source'], 'prepared_path': entry['prepared_rel'],
+                'dropped_components': entry['dropped_components'], 'changed_px': entry['changed_px'],
+            }
+            artworks.append((entry['prepared'], artwork))
+            art_x += width + art_gap
+
+        center = (axes[0] + axes[-1]) / 2
+        shoulder = max(body.bounds[3] for body in bodies)
+        web = stand_web(axes, anchor, shoulder, web_width, taper, radius, tab_width, depth)
+        # The web contacts each printed body and fills the clear lower plate.
+        contact = [web.intersection(ink).area for ink in inks]
+        assert min(contact) >= web_width, (group[0]['nickname'], 'insufficient body contact', contact)
+        solid = unary_union([web, *bodies])
+        assert solid.geom_type == 'Polygon' and solid.is_valid, group[0]['nickname']
         solid = Polygon(solid.exterior)
+        weakest_y, weakest = min(((y, stand_axis_width(solid, center, y))
+                                  for y in np.linspace(anchor, shoulder, 129)), key=lambda row: row[1])
+        assert weakest >= tab_width - .002, (group[0]['nickname'], 'interrupted support', weakest)
         for y in [shoulder + .2, shoulder + depth - .6]:
-            section = solid.intersection(LineString([(0, y), (page_w + 10, y)]))
-            assert abs(section.length - settings['tab_width_mm']) < .002, (e['nickname'], y, section.length)
+            section = stand_axis_width(solid, center, y)
+            assert abs(section - tab_width) < .002, (group[0]['nickname'], y, section)
+        seat_y = shoulder - settings['tab_bottom_clearance_mm']
+        assert stand_axis_width(solid, center, seat_y) > sl, (group[0]['nickname'], 'insufficient seat width')
 
-        bw, bh = settings['base_size_mm']
-        bx, by = x, 95
-        br = settings['base_corner_radius_mm']
-        base = Polygon(box(bx + br, by + br, bx + bw - br, by + bh - br).buffer(br, quad_segs=32).exterior)
-        scx, scy = bx + bw / 2, by + bh / 2
-        sl = settings['slot_length_mm']
-        sw = float(thickness.removesuffix('T'))
-        sr = settings['slot_corner_radius_mm']
-        slot = box(scx - (sl - 2 * sr) / 2, scy - (sw - 2 * sr) / 2,
-                   scx + (sl - 2 * sr) / 2, scy + (sw - 2 * sr) / 2).buffer(sr, quad_segs=16)
-        assert slot.within(base) and base.boundary.distance(slot) > 8, (e['nickname'], base.boundary.distance(slot))
+        by = max(95, shoulder + depth + 10)
+        scy = by + bh / 2
+        base = box(center - bw / 2 + br, by + br, center + bw / 2 - br, by + bh - br).buffer(br, quad_segs=32)
+        slot = box(center - sl / 2 + sr, scy - sw / 2 + sr,
+                   center + sl / 2 - sr, scy + sw / 2 - sr).buffer(sr, quad_segs=16)
+        assert slot.within(base) and base.boundary.distance(slot) > 8, group[0]['nickname']
+        shift = column - min(solid.bounds[0], base.bounds[0])
+        column = max(solid.bounds[2], base.bounds[2]) + shift + 10
+        for _, item in artworks:
+            x0, y0, x1, y1 = item['art_rect_mm']
+            item['art_rect_mm'] = [round(x0 + shift, 4), y0, round(x1 + shift, 4), y1]
 
-        draw_path(cpage, cut_path(solid))
-        draw_path(cpage, cut_path(base))
-        draw_path(cpage, cut_path(slot))
-        buffer = io.BytesIO()
-        im.save(buffer, format='PNG')
-        apage.insert_image(fitz.Rect(x * MM, 10 * MM, (x + width) * MM, (10 + height) * MM), stream=buffer.getvalue())
-        chars.append(solid)
-
-        above = section_report(solid, shoulder - rise, shoulder + 25)
-        weakest = min(above, key=lambda r: r[2])
-        e['char_meta'] = {
-            'part': 'character', 'nickname': e['nickname'], 'world': e['world'], 'mode': e['mode'],
-            'art_height_mm': height, 'art_width_mm': width,
-            'source_ink_px': e['source_ink_px'], 'print_px': [im.width, im.height],
-            'effective_source_ppi': round(e['source_ink_px'][1] / height * 25.4, 1),
-            'clear_border_mm': settings['clear_border_mm'], 'tab_width_mm': settings['tab_width_mm'],
-            'tab_depth_mm': depth, 'slot_target_mm': [sl, sw], 'bridge_rise_mm': rise,
-            'weakest_section_mm': {'y_mm': round(weakest[0], 2),
-                                   'ligament_widths_mm': [round(w, 2) for w in weakest[1]],
-                                   'total_mm': round(weakest[2], 2)},
-            'art_rect_mm': [round(x, 4), 10, round(x + width, 4), round(10 + height, 4)],
-            'prepared_source': e['source'], 'prepared_path': e['prepared_rel'],
-            'dropped_components': e['dropped_components'], 'changed_px': e['changed_px'],
+        components = [item for _, item in artworks]
+        first, last = components[0], components[-1]
+        mode = first['mode'] if len(components) == 1 else '알파·베타'
+        center_x = round(center + shift, 4)
+        single_source = first if len(components) == 1 else {}
+        char_meta = {
+            **single_source, 'part': 'character', 'nickname': first['nickname'],
+            'world': first['world'], 'mode': mode, 'components': components,
+            'art_height_mm': height, 'art_width_mm': art_x - art_gap,
+            'art_rect_mm': [first['art_rect_mm'][0], top, last['art_rect_mm'][2], top + height],
+            'effective_source_ppi': min(item['effective_source_ppi'] for item in components),
+            'clear_border_mm': border, 'tab_width_mm': tab_width, 'tab_depth_mm': depth,
+            'slot_target_mm': [sl, sw], 'tab_center_mm': [center_x, round(shoulder, 4)],
+            'bridge_rise_mm': round(shoulder - anchor, 4),
+            'support_web': {'anchor_y_mm': anchor, 'full_width_mm': round(axes[-1] - axes[0] + web_width, 4),
+                            'width_per_body_mm': web_width,
+                            'body_axes_mm': [round(x + shift, 4) for x in axes],
+                            'taper_height_mm': taper, 'round_radius_mm': radius,
+                            'body_contact_mm2': [round(area, 2) for area in contact]},
+            'weakest_section_mm': {'y_mm': round(weakest_y, 2),
+                                   'ligament_widths_mm': [round(weakest, 2)], 'total_mm': round(weakest, 2)},
             'physical_fit_test': False,
         }
-        e['base_meta'] = {
-            'part': 'base', 'nickname': e['nickname'], 'mode': e['mode'],
+        base_meta = {
+            'part': 'base', 'nickname': first['nickname'], 'mode': mode,
             'size_mm': [bw, bh], 'corner_radius_mm': br,
             'slot_mm': [sl, sw], 'slot_corner_radius_mm': sr,
-            'slot_center_mm': [round(scx, 4), round(scy, 4)],
+            'slot_center_mm': [center_x, round(scy, 4)],
             'slot_to_edge_mm': round(base.boundary.distance(slot), 2),
             'material_thickness_mm': sw, 'physical_fit_test': False,
         }
-    for i in range(n):
-        for j in range(i + 1, n):
-            assert chars[i].distance(chars[j]) >= 5, ('stand document overlap', i, j)
-    return cut, art, entries
+        result = {**group[0], 'mode': mode, 'char_meta': char_meta, 'base_meta': base_meta}
+        sets.append((affinity.translate(solid, xoff=shift), affinity.translate(base, xoff=shift),
+                     affinity.translate(slot, xoff=shift), artworks, result))
+
+    page_w = round(column + 5)
+    page_h = max((base.bounds[3] + 7 for _, base, _, _, _ in sets), default=130)
+    cut, art = fitz.open(), fitz.open()
+    cpage = cut.new_page(width=page_w * MM, height=page_h * MM)
+    apage = art.new_page(width=page_w * MM, height=page_h * MM)
+    for solid, base, slot, artworks, _ in sets:
+        for outline in [solid, base, slot]:
+            draw_path(cpage, cut_path(outline))
+        for source, item in artworks:
+            rect = fitz.Rect(*(v * MM for v in item['art_rect_mm']))
+            apage.insert_image(rect, filename=str(source))
+    return cut, art, [result for _, _, _, _, result in sets]
 
 
 def build_all(only=None):
@@ -414,6 +500,8 @@ def group_title(record):
 
 
 def _mode_short(mode):
+    if mode == '알파·베타':
+        return mode
     if mode.startswith('알파'):
         return '알파'
     if mode.startswith('베타'):
@@ -444,8 +532,13 @@ def render_group_preview(record, out):
         it = iter(record['pieces'])
         for char, base in zip(it, it):
             cb, bb = char['bounds'], base['bounds']
-            cw = max(cb[2] - cb[0], bb[2] - bb[0])
+            axis = char['design_metadata']['tab_center_mm'][0]
+            slot = base['design_metadata']['slot_center_mm'][0]
+            char_left, base_left = axis - cb[0], slot - bb[0]
+            left = max(char_left, base_left)
+            cw = left + max(cb[2] - axis, bb[2] - slot)
             cells.append({'items': [(char, cb), (base, bb)], 'w': cw,
+                          'offsets': (left - char_left, left - base_left),
                           'h': (cb[3] - cb[1]) + gap + (bb[3] - bb[1]),
                           'label': _preview_label(char['design_metadata'])})
     rows = _wrap([(c, c['w'], c['h']) for c in cells], 410.0, gap)
@@ -477,12 +570,14 @@ def render_group_preview(record, out):
         pts = [((x - b[0] + px) * pxmm, (y - b[1] + py) * pxmm) for x, y in p['poly'].exterior.coords]
         dr.polygon(pts, fill=(255, 255, 255, 46))
         if meta['part'] != 'base':
-            ax, ay, _, _ = meta['art_rect_mm']
-            sprite = Image.open(ROOT / meta['prepared_path']).convert('RGBA')
-            tw = max(1, round(meta['art_width_mm'] * pxmm))
-            th = max(1, round(meta['art_height_mm'] * pxmm))
-            sprite = sprite.resize((tw, th), Image.NEAREST)
-            img.paste(sprite, (round((ax - b[0] + px) * pxmm), round((ay - b[1] + py) * pxmm)), sprite)
+            for component in meta.get('components', [meta]):
+                ax, ay, _, _ = component['art_rect_mm']
+                with Image.open(ROOT / component['prepared_path']) as source:
+                    sprite = source.convert('RGBA')
+                tw = max(1, round(component['art_width_mm'] * pxmm))
+                th = max(1, round(component['art_height_mm'] * pxmm))
+                sprite = sprite.resize((tw, th), Image.NEAREST)
+                img.paste(sprite, (round((ax - b[0] + px) * pxmm), round((ay - b[1] + py) * pxmm)), sprite)
         dr.polygon(pts, outline=(206, 208, 214, 255), width=2)
         if meta['part'] == 'keyring':
             for hx, hy in meta['hole_centers_mm']:
@@ -507,8 +602,9 @@ def render_group_preview(record, out):
                 piece_at(p, b, x, y0)
             else:
                 (char, cb), (base, bb) = cell['items']
-                piece_at(char, cb, x + (cw - (cb[2] - cb[0])) / 2, y0)
-                piece_at(base, bb, x + (cw - (bb[2] - bb[0])) / 2, y0 + (cb[3] - cb[1]) + gap)
+                char_x, base_x = cell['offsets']
+                piece_at(char, cb, x + char_x, y0)
+                piece_at(base, bb, x + base_x, y0 + (cb[3] - cb[1]) + gap)
             dr.text((x * pxmm, (y0 + row_h + 2) * pxmm), cell['label'], font=reg, fill=(60, 60, 68))
             x += cw + gap
 

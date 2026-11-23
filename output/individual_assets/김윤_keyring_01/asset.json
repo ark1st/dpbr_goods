@@ -22,7 +22,7 @@
   ],
   "source": "김윤_keyring",
   "a3_groups": [
-    "11_ascent_remaining/3T"
+    "19_personal_fill/3T"
   ],
   "physical_cut_test": false,
   "pieces": 1,
@@ -9566,13 +9566,13 @@
   "ai_format": "PDF-compatible layers; image artwork and original vector contours",
   "white_ink_policy": "Source white only; absent white requires RIP setup",
   "files": {
-    "01_PRINT.pdf": "d72d4c0d5bb063fff753fb04782e32d68f3f9df0e295f515520c2f32388e4ea0",
+    "01_PRINT.pdf": "a532811b37d2c44131a31b99a4f0b0e06be9622e10af333974deb90a9a7f08ce",
     "01_PRINT_300ppi.png": "ee376db770b22e01c039407f93f0e94217255d7ae81f6923e57e2635cf053965",
-    "02_MASTER.pdf": "ef50ce8f7d5ac2059c891372e9c40e364bfe867c8db98f3e00fb5fa8bddbecf9",
-    "02_MASTER.ai": "ef50ce8f7d5ac2059c891372e9c40e364bfe867c8db98f3e00fb5fa8bddbecf9",
-    "03_CUT_ONLY.pdf": "a76afaf76c964954ee6605dfeb0a60260eabe25febec95479557d02f317a8d2b",
+    "02_MASTER.pdf": "ef9d165b1888bc122839f78d5bc7720bb30c82919ba4dc5bc2828510ec65854a",
+    "02_MASTER.ai": "ef9d165b1888bc122839f78d5bc7720bb30c82919ba4dc5bc2828510ec65854a",
+    "03_CUT_ONLY.pdf": "1ff84db27ec7d2e38fef0bb147b236960c4bf1241eca30a3bce6339f26289807",
     "03_CUT_ONLY.svg": "e840c9a2876be70267654acee8a8471fbea7dee58cb6223de0ef67b45a0e94bf",
-    "04_WHITE_INK_MASK.pdf": "9a8d18e61363c4e23e664e2590bc2d96ccbd8b8a3f79b8110fd7ef539cde3d23",
+    "04_WHITE_INK_MASK.pdf": "4e2051657b59ba338004014209f34e478babafa56e363a7271723d70f9704ba7",
     "04_WHITE_INK_MASK_300ppi.png": "6df5dec3e7d1ff07039ef809dfd57174ddb0cd483fa97692f83d86c10561f314",
     "preview.png": "c447eec57c315de87d8c3fc2901ff0b37b99411d1926ff20c2d697dc240116c7"
   }

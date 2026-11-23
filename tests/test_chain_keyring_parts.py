@@ -1,4 +1,4 @@
-"""Regression tests for the two-hole applicant keyring design."""
+"""Regression tests for applicant keyrings and reinforced stands."""
 import importlib.util
 from pathlib import Path
 import sys
@@ -114,6 +114,106 @@ class ChainKeyringTests(unittest.TestCase):
         neck = outline.intersection(LineString([(0, 53), (65, 53)]))
         self.assertTrue(any(part.length >= 12.9 for part in neck.geoms))
         self.assertEqual(metadata['hole_clearances_mm']['bottom']['to_edge'], 4.5)
+
+
+class ApplicantStandTests(unittest.TestCase):
+    settings = {
+        'art_height_mm': 60, 'clear_border_mm': 2.5,
+        'tab_width_mm': 18, 'tab_bottom_clearance_mm': .4,
+        'base_size_mm': [72, 28], 'base_corner_radius_mm': 7,
+        'slot_length_mm': 18.8, 'slot_corner_radius_mm': .35,
+        'support_web_width_mm': 26, 'support_anchor_ratio': .5,
+        'support_taper_height_mm': 6, 'support_round_radius_mm': 3,
+        'combine_zero_modes': True, 'pair_art_gap_mm': 4,
+    }
+
+    @classmethod
+    def setUpClass(cls):
+        cls.chain = load_geometry_module()
+
+    def render_fixture(self, sprites, nickname):
+        workspace = tempfile.TemporaryDirectory()
+        self.addCleanup(workspace.cleanup)
+        entries = []
+        for i, (mode, image) in enumerate(sprites):
+            source = Path(workspace.name) / f'stand_{i}.png'
+            image.save(source)
+            entries.append({
+                'prepared': source, 'nickname': nickname, 'world': 'fixture', 'mode': mode,
+                'source_ink_px': [image.width, image.height], 'source': source.name,
+                'prepared_rel': source.name, 'dropped_components': 0, 'changed_px': 0,
+            })
+        paths = []
+        cut, art, result = self.chain.stand_documents(entries, self.settings,
+                                                      lambda page, path: paths.append(path))
+        self.addCleanup(cut.close)
+        self.addCleanup(art.close)
+        return cut, art, entries, result, [audit_path(p)[1] for p in paths]
+
+    def assert_mechanical_pair(self, result, shapes):
+        self.assertEqual(len(result), 1)
+        self.assertEqual(len(shapes), 3)
+        outline, base, slot = shapes
+        meta = result[0]['char_meta']
+        x, shoulder = meta['tab_center_mm']
+        self.assertAlmostEqual(outline.bounds[3] - shoulder, 2.6, places=3)
+        self.assertTrue(outline.is_valid)
+        self.assertFalse(outline.interiors)
+        for y in [shoulder + .25, shoulder + 1.9]:
+            self.assertAlmostEqual(self.chain.stand_axis_width(outline, x, y), 18, places=2)
+        for step in range(61):
+            anchor = meta['support_web']['anchor_y_mm']
+            y = anchor + .1 + (shoulder - anchor - .15) * step / 60
+            self.assertGreaterEqual(self.chain.stand_axis_width(outline, x, y), 17.965)
+        self.assertGreater(self.chain.stand_axis_width(outline, x, shoulder - .4), 18.8)
+        self.assertAlmostEqual(slot.bounds[2] - slot.bounds[0], 18.8, delta=.005)
+        self.assertAlmostEqual(slot.bounds[3] - slot.bounds[1], 3, delta=.005)
+        self.assertTrue(base.contains(slot))
+        self.assertAlmostEqual(slot.centroid.x, x, places=3)
+        self.assertAlmostEqual(base.bounds[2] - base.bounds[0], 72, delta=.005)
+        self.assertAlmostEqual(base.bounds[3] - base.bounds[1], 28, delta=.005)
+
+    def test_weapon_wing_does_not_determine_the_mechanical_axis(self):
+        sprite = Image.new('RGBA', (120, 100))
+        draw = ImageDraw.Draw(sprite)
+        draw.rounded_rectangle((4, 8, 33, 82), radius=8, fill=(121, 78, 45, 255))
+        draw.rectangle((23, 66, 116, 70), fill=(243, 152, 10, 255))
+        draw.rectangle((112, 66, 119, 99), fill=(243, 152, 10, 255))
+        _, _, _, result, shapes = self.render_fixture([('현재 모드', sprite)], 'fixture')
+        self.assert_mechanical_pair(result, shapes)
+        metadata = result[0]['char_meta']
+        tab_x = metadata['tab_center_mm'][0]
+        x0, _, x1, _ = metadata['art_rect_mm']
+        self.assertGreater((x0 + x1) / 2 - tab_x, 20)
+        self.assertLess(abs(tab_x - (x0 + 19 * .6)), 2)
+        self.assertEqual(metadata['support_web']['full_width_mm'], 26)
+        self.assertGreater(metadata['support_web']['body_contact_mm2'][0], 150)
+
+    def test_zero_modes_keep_two_distinct_images_on_one_stand(self):
+        alpha = Image.new('RGBA', (60, 100))
+        beta = Image.new('RGBA', (90, 100))
+        ImageDraw.Draw(alpha).rounded_rectangle((1, 0, 50, 99), radius=10, fill=(8, 133, 96, 255))
+        ImageDraw.Draw(beta).rounded_rectangle((32, 2, 88, 99), radius=12, fill=(88, 53, 213, 255))
+        _, art, entries, result, shapes = self.render_fixture(
+            [('베타 (공식 이미지)', beta), ('알파 (현재 활성 모드)', alpha)], '청민예')
+        self.assert_mechanical_pair(result, shapes)
+        self.assertEqual(self.chain.stand_sprite_sets(entries, False), [[entries[0]], [entries[1]]])
+        meta = result[0]['char_meta']
+        self.assertEqual(meta['mode'], result[0]['base_meta']['mode'])
+        self.assertEqual(meta['mode'], '알파·베타')
+        components = meta['components']
+        self.assertEqual([c['mode'] for c in components], ['알파 (현재 활성 모드)', '베타 (공식 이미지)'])
+        self.assertEqual([c['art_width_mm'] for c in components], [36, 54])
+        self.assertEqual([c['art_height_mm'] for c in components], [60, 60])
+        self.assertAlmostEqual(components[1]['art_rect_mm'][0] - components[0]['art_rect_mm'][2], 4)
+        images = art[0].get_image_info()
+        self.assertEqual([(im['width'], im['height']) for im in images], [(60, 100), (90, 100)])
+        with fitz.open() as independent:
+            page = independent.new_page(width=art[0].rect.width, height=art[0].rect.height)
+            for component, entry in zip(components, reversed(entries)):
+                rect = fitz.Rect(*(v * self.chain.MM for v in component['art_rect_mm']))
+                page.insert_image(rect, filename=str(entry['prepared']))
+            self.assertEqual(page.get_pixmap(alpha=True).samples, art[0].get_pixmap(alpha=True).samples)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-personal-stands-dual-hole-fill",
+  "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
   "baseline_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
   "source_commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
   "baseline_ids": [
@@ -91,12 +91,8 @@
   "new_part_ids": [
     "강민_stand_01",
     "강민_stand_02",
-    "강민_stand_03",
-    "강민_stand_04",
     "강윤진_stand_01",
     "강윤진_stand_02",
-    "강윤진_stand_03",
-    "강윤진_stand_04",
     "김윤_keyring_01",
     "김윤_keyring_02",
     "김윤_keyring_03",
@@ -1294,7 +1290,7 @@
       "rotation_degrees": 0
     }
   ],
-  "stand_pieces": 12,
+  "stand_pieces": 8,
   "keyring_pieces": 14,
   "keyring_holes_per_piece": 2,
   "keyring_hole_diameter_mm": 4,
@@ -1302,40 +1298,60 @@
   "existing_pages_repositioned": false,
   "new_pages_added": 1,
   "minimum_page_count_proven": false,
-  "notes": "User requested top and bottom connecting holes; existing artwork height and all 84 original placements retained. Five pages are feasible; four-page impossibility is not proven.",
+  "notes": "Four reinforced stand sets, including two Alpha/Beta combined Zero plates; 8 stand pieces plus14 unchanged keyrings. All84 baseline placements fixed. Five pages feasible; four-page impossibility not proven.",
+  "stand_sets": 4,
+  "combined_zero_stands": [
+    "마가다락방",
+    "청민예"
+  ],
+  "retired_part_ids": [
+    "강민_stand_03",
+    "강민_stand_04",
+    "강윤진_stand_03",
+    "강윤진_stand_04"
+  ],
+  "retired_source_archive": {
+    "commit": "7b09732e0afac66ee737943335d4b0e569765118",
+    "prefix": "snapshots/personal_before_riser_zero_pair_4ffb44c/",
+    "source_commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74"
+  },
+  "layout_search": {
+    "exact_trials": 24,
+    "minimum_new_gap_mm": 3.1399999999999864,
+    "minimum_new_margin_mm": 8.007999999999996,
+    "personal_parts_in_existing_pages": 13,
+    "personal_parts_on_added_page": 9
+  },
   "allocation": {
     "11_ascent_remaining/3T": [
-      "정지영_stand_01",
-      "이상준_stand_01",
-      "강윤진_stand_01",
       "강민_stand_01",
-      "이상준_stand_02",
-      "강윤진_stand_04",
-      "정지영_stand_02",
-      "강윤진_stand_03",
+      "강윤진_stand_01",
+      "이상준_stand_01",
+      "정지영_stand_01",
       "강민_stand_02",
-      "강민_stand_03",
       "강윤진_stand_02",
-      "강민_stand_04",
-      "김윤_keyring_01",
+      "이상준_stand_02",
+      "정지영_stand_02",
+      "배승민_keyring_01",
+      "배승민_keyring_02",
+      "배승민_keyring_03",
+      "김윤_keyring_04",
       "김호_keyring_01"
     ],
     "19_personal_fill/3T": [
+      "김윤_keyring_01",
       "김윤_keyring_02",
       "김윤_keyring_03",
-      "김윤_keyring_04",
       "김윤_keyring_05",
       "김호_keyring_02",
       "김호_keyring_03",
       "김호_keyring_04",
       "김호_keyring_05",
-      "김호_keyring_06",
-      "배승민_keyring_01",
-      "배승민_keyring_02",
-      "배승민_keyring_03"
+      "김호_keyring_06"
     ]
   },
   "selected_pages": 5,
-  "selected_parts": 110,
-  "physical_cut_test": false
+  "selected_parts": 106,
+  "physical_cut_test": false,
+  "baseline_asset_count": 141
 }

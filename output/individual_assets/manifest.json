@@ -3400,7 +3400,7 @@
       "id": "강민_stand_01",
       "folder": "individual_assets/강민_stand_01",
       "canvas_mm": [
-        51.33454048046875,
+        98.903435,
         71.515367
       ],
       "a3_groups": [
@@ -3424,55 +3424,7 @@
       "id": "강민_stand_02",
       "folder": "individual_assets/강민_stand_02",
       "canvas_mm": [
-        76.0,
-        31.999990999999994
-      ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
-      "files": [
-        "01_PRINT.pdf",
-        "01_PRINT_300ppi.png",
-        "02_MASTER.pdf",
-        "02_MASTER.ai",
-        "03_CUT_ONLY.pdf",
-        "03_CUT_ONLY.svg",
-        "04_WHITE_INK_MASK.pdf",
-        "04_WHITE_INK_MASK_300ppi.png",
-        "preview.png",
-        "asset.json",
-        "README.md"
-      ]
-    },
-    {
-      "id": "강민_stand_03",
-      "folder": "individual_assets/강민_stand_03",
-      "canvas_mm": [
-        52.49891507812501,
-        71.515367
-      ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
-      "files": [
-        "01_PRINT.pdf",
-        "01_PRINT_300ppi.png",
-        "02_MASTER.pdf",
-        "02_MASTER.ai",
-        "03_CUT_ONLY.pdf",
-        "03_CUT_ONLY.svg",
-        "04_WHITE_INK_MASK.pdf",
-        "04_WHITE_INK_MASK_300ppi.png",
-        "preview.png",
-        "asset.json",
-        "README.md"
-      ]
-    },
-    {
-      "id": "강민_stand_04",
-      "folder": "individual_assets/강민_stand_04",
-      "canvas_mm": [
-        75.999997,
+        76.000001,
         31.999990999999994
       ],
       "a3_groups": [
@@ -3496,8 +3448,8 @@
       "id": "강윤진_stand_01",
       "folder": "individual_assets/강윤진_stand_01",
       "canvas_mm": [
-        57.321922625,
-        71.52313335546874
+        106.76621250000001,
+        71.525676125
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3520,55 +3472,7 @@
       "id": "강윤진_stand_02",
       "folder": "individual_assets/강윤진_stand_02",
       "canvas_mm": [
-        76.0,
-        31.999990999999994
-      ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
-      "files": [
-        "01_PRINT.pdf",
-        "01_PRINT_300ppi.png",
-        "02_MASTER.pdf",
-        "02_MASTER.ai",
-        "03_CUT_ONLY.pdf",
-        "03_CUT_ONLY.svg",
-        "04_WHITE_INK_MASK.pdf",
-        "04_WHITE_INK_MASK_300ppi.png",
-        "preview.png",
-        "asset.json",
-        "README.md"
-      ]
-    },
-    {
-      "id": "강윤진_stand_03",
-      "folder": "individual_assets/강윤진_stand_03",
-      "canvas_mm": [
-        54.35988549999999,
-        71.515367
-      ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
-      "files": [
-        "01_PRINT.pdf",
-        "01_PRINT_300ppi.png",
-        "02_MASTER.pdf",
-        "02_MASTER.ai",
-        "03_CUT_ONLY.pdf",
-        "03_CUT_ONLY.svg",
-        "04_WHITE_INK_MASK.pdf",
-        "04_WHITE_INK_MASK_300ppi.png",
-        "preview.png",
-        "asset.json",
-        "README.md"
-      ]
-    },
-    {
-      "id": "강윤진_stand_04",
-      "folder": "individual_assets/강윤진_stand_04",
-      "canvas_mm": [
-        75.999997,
+        76.000006,
         31.999990999999994
       ],
       "a3_groups": [
@@ -3596,7 +3500,7 @@
         75.0
       ],
       "a3_groups": [
-        "11_ascent_remaining/3T"
+        "19_personal_fill/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3668,7 +3572,7 @@
         74.99994374054336
       ],
       "a3_groups": [
-        "19_personal_fill/3T"
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3860,7 +3764,7 @@
         74.99981646215821
       ],
       "a3_groups": [
-        "19_personal_fill/3T"
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3884,7 +3788,7 @@
         75.00026739708328
       ],
       "a3_groups": [
-        "19_personal_fill/3T"
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3908,7 +3812,7 @@
         74.99966302709961
       ],
       "a3_groups": [
-        "19_personal_fill/3T"
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3928,7 +3832,7 @@
       "id": "이상준_stand_01",
       "folder": "individual_assets/이상준_stand_01",
       "canvas_mm": [
-        64.514032,
+        64.514809,
         71.516730875
       ],
       "a3_groups": [
@@ -3952,7 +3856,7 @@
       "id": "이상준_stand_02",
       "folder": "individual_assets/이상준_stand_02",
       "canvas_mm": [
-        76.0,
+        75.999998,
         31.999990999999994
       ],
       "a3_groups": [
@@ -3976,7 +3880,7 @@
       "id": "정지영_stand_01",
       "folder": "individual_assets/정지영_stand_01",
       "canvas_mm": [
-        67.31542215039062,
+        67.31589199999999,
         71.515367
       ],
       "a3_groups": [
@@ -4000,7 +3904,7 @@
       "id": "정지영_stand_02",
       "folder": "individual_assets/정지영_stand_02",
       "canvas_mm": [
-        76.0,
+        75.999998,
         31.999990999999994
       ],
       "a3_groups": [
@@ -4021,7 +3925,7 @@
       ]
     }
   ],
-  "asset_count": 167,
+  "asset_count": 163,
   "files_per_asset": [
     "01_PRINT.pdf",
     "01_PRINT_300ppi.png",

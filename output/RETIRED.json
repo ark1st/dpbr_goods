@@ -52,6 +52,12 @@
       ],
       "status": "retired_single_hole_keyrings_not_for_serial_linking",
       "reason": "Each applicant keyring had only one top hole. Current derivative preserves the art and top hole, adds the bottom4mm linking hole and uses offcut placements."
+    },
+    {
+      "commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74",
+      "status": "retired_personal_stand_geometry_and_placements_only",
+      "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
+      "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
     }
   ],
   "retired_package_files": [
@@ -95,5 +101,19 @@
       "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
       "status": "previous_revision_archive_not_current_production"
     }
-  ]
+  ],
+  "retired_personal_parts": {
+    "ids": [
+      "강민_stand_03",
+      "강민_stand_04",
+      "강윤진_stand_03",
+      "강윤진_stand_04"
+    ],
+    "archive": {
+      "commit": "7b09732e0afac66ee737943335d4b0e569765118",
+      "prefix": "snapshots/personal_before_riser_zero_pair_4ffb44c/",
+      "source_commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74"
+    },
+    "reason": "Zero modes now share one plate and one base per applicant; old thin supports superseded."
+  }
 }
