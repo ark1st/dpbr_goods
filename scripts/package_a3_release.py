@@ -35,6 +35,13 @@ def write_personal_release(cfg,manifest):
     pad_ids=[ident for ids in cfg.get('pad_fill_allocation',{}).values() for ident in ids]
     pad_pages=', '.join(map(str,sorted({locations[ident] for ident in pad_ids})))
     logo_count=sum(len(ids) for ids in cfg.get('logo_fill_allocation',{}).values())
+    guide_groups=cfg.get('guide_stand_allocation',{})
+    guide_note=''
+    if guide_groups:
+        guide_group,=guide_groups
+        guide_page,=manifest['groups'][guide_group]
+        guide_folder=guide_page['folder'].removeprefix('a3_release/')
+        guide_note=f'\n\n[렘샤 가이드 규격 비교판]({guide_folder})은 3T 선택판 한 세트입니다. 완성 높이 60mm, 지름 40mm 받침이며 별도 비교가 필요할 때만 출력합니다.'
     common=f'''**3T · A3 420×297mm · 실제 크기 100% · {number}장 / {cfg['selected_primary_parts']}조각.**
 
 어센트 30조각은 3T에서 제외해 [5T 800×500mm 별도 판](../large_format/ascent_5T_800x500)에 모았습니다. 나머지 도안의 위치와 크기는 유지합니다. 개인별 스탠드 {policy['stand_pieces']}조각, 연결 키링 {offcut_keys+added_keys}개, Len PAD {len(pad_ids)}조각, 양검을 아래 A3에 포함합니다. Len PAD는 A3 {pad_pages}번에 있습니다. 더 적은 장수가 불가능하다고 증명한 것은 아닙니다.
@@ -43,7 +50,7 @@ def write_personal_release(cfg,manifest):
 
 | 출력 순서 | 제작 폴더 | 조각 |
 |---|---|---:|
-'''+ '\n'.join(current)+f'''
+'''+ '\n'.join(current)+guide_note+f'''
 
 ## 제작 파일
 
@@ -57,7 +64,7 @@ def write_personal_release(cfg,manifest):
 
 ## 개인별 스탠드와 줄줄이 키링
 
-스탠드는 강민·강윤진·이상준·정지영 각각 캐릭터 판 1개와 받침 1개, 총 4세트·8조각입니다. 마가다락방과 청민예는 각각 알파·베타 원본 두 개를 한 판에 함께 인쇄합니다. 각 그림의 높이 60mm와 원래 비율은 그대로이며 합본 외곽 폭은 약95mm·103mm입니다.
+스탠드는 강민·강윤진·이상준·정지영 각각 캐릭터 판 1개와 받침 1개, 총 4세트·8조각입니다. 적매화검·렘샤 스탠드2세트·4조각도3번에 추가했습니다. 마가다락방과 청민예는 각각 알파·베타 원본 두 개를 한 판에 함께 인쇄합니다. 원본 픽셀 기준 공통 배율로 몸 크기와 발선을 맞추고 몸통 중심 간격을25mm로 좁혔습니다. 무기·효과는 일부 겹칩니다.
 몸통 중심 아래에 캐릭터당 폭26mm의 투명 보강부를 연결했습니다. 넓은 지지부가 부드러운 곡면으로 폭18mm 돌기에 이어지며, 무기 효과 쪽의 얇은 길에만 의존하지 않습니다. 탭18×2.6mm, 받침72×28mm, 홈18.8×3.0mm는 유지합니다. 자동 검사는 연속 지지 폭과 접합 면적을 확인하며 실제 강도 시험은 아닙니다.
 줄줄이 키링 14개 모두 위·아래 ⌀4mm 연결 구멍이 있습니다. 기존 그림 높이 40mm와 상단 연결부를 유지하고 아래 연결부를 추가해 완성 높이는 약71mm입니다. 4×4cm 완성 외곽으로 축소한 파일이 아닙니다.
 연결 금속 링·체인은 제작 칼선에 포함하지 않습니다. 링·체인의 실제 조립 간섭과 아크릴 끼움·커프·인쇄 정합은 실물 미검증입니다.
@@ -82,6 +89,8 @@ Len PAD의 원래 크기와 280×71.2235mm 받침·8개 홈을 유지했습니�
         for group,pages in manifest['groups'].items():
             if not group.startswith(cat+'/'):continue
             state='현재 제작' if group in cfg['selected_primary_groups'] else '별도 대안·중복 참고용 / 현재 추가 출력 금지'
+            if group in guide_groups:
+                state='렘샤 가이드 규격 비교판 · 선택 출력'
             for page in pages:
                 rel=page['folder'].removeprefix('a3_release/'+cat+'/')
                 rows.append(f'### {state} · {group.split("/")[-1]} · {page["pieces"]}조각\n\n[제작 파일]({rel})\n\n![배치]({rel}/preview.png)\n')
@@ -101,7 +110,8 @@ Len PAD의 원래 크기와 280×71.2235mm 받침·8개 홈을 유지했습니�
         'selected_pages':number,'selected_parts':cfg['selected_primary_parts'],'physical_cut_test':False}
     write(BASE/'PERSONAL_FILL_ASSESSMENT.json',json.dumps(assessment,ensure_ascii=False,indent=2)+'\n')
     rows='\n'.join(row.replace('](','](a3_release/') for row in current)
-    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+f'\n\n[3T 안내](a3_release) · [어센트 5T 800×500mm](large_format/ascent_5T_800x500) · [개별 편집 에셋](individual_assets)\n\n어센트와 단바 로고는 3T에서 전부 제외했습니다. 양검과 Len PAD는 A3에 포함되어 단독 원본판은 추가 출력하지 않습니다.\n\n**백색 인쇄:** 3T 3·4번의 백색 마스크는 비어 있습니다. 인쇄소에서 그림 알파를 기준으로 백색을 생성해야 합니다(파란 기준선 제외). 5T 어센트의 백색 마스크는 RIP에서 백색 잉크로 지정해야 합니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본입니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
+    guide_note=guide_note.replace('](','](a3_release/')
+    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+guide_note+f'\n\n[3T 안내](a3_release) · [어센트 5T 800×500mm](large_format/ascent_5T_800x500) · [개별 편집 에셋](individual_assets)\n\n어센트와 단바 로고는 3T에서 전부 제외했습니다. 양검과 Len PAD는 A3에 포함되어 단독 원본판은 추가 출력하지 않습니다.\n\n**백색 인쇄:** 3T 3·4번의 백색 마스크는 비어 있습니다. 인쇄소에서 그림 알파를 기준으로 백색을 생성해야 합니다(파란 기준선 제외). 5T 어센트의 백색 마스크는 RIP에서 백색 잉크로 지정해야 합니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본입니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
     print(f'Published {number} A3 pages; no new ZIP archives',flush=True)
 
 def main():

@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-ascent-5t-migration",
+  "revision": "A3-2026-11-24-fit-close-zero",
   "canvas_mm": [
     420.0,
     297.0
@@ -57,15 +57,22 @@
     "11_ascent_remaining/3T": [
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
-        "pieces": 12,
-        "contours": 24
+        "pieces": 26,
+        "contours": 58
       }
     ],
     "19_personal_fill/3T": [
       {
         "folder": "a3_release/19_personal_fill/3T/sheet_01",
-        "pieces": 16,
-        "contours": 42
+        "pieces": 6,
+        "contours": 14
+      }
+    ],
+    "20_guide_stand_comparison/3T": [
+      {
+        "folder": "a3_release/20_guide_stand_comparison/3T/sheet_01",
+        "pieces": 2,
+        "contours": 4
       }
     ]
   },
@@ -149,7 +156,8 @@
   "optional_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T",
-    "09_yanggum/3T"
+    "09_yanggum/3T",
+    "20_guide_stand_comparison/3T"
   ],
   "selected_thickness": "3T",
   "support_files": [

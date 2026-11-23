@@ -8,6 +8,32 @@ from build_a3_release import pack,shifted_poly,pdf_destination,polygon_of,draw_p
 from nest_contours import rotated
 
 class A3PackingTests(unittest.TestCase):
+    def test_master_default_layers_show_cut_and_hide_white(self):
+        import tempfile
+        import pymupdf as fitz
+        from verify_release import verify_editor_cut_visible
+        with tempfile.TemporaryDirectory() as tmp:
+            file=Path(tmp)/'master.pdf'
+            def create(cut_on,white_on):
+                doc=fitz.open();page=doc.new_page()
+                art=doc.add_ocg('PRINT_ARTWORK',on=True)
+                cut=doc.add_ocg('LASER_CUT',on=cut_on)
+                white=doc.add_ocg('WHITE_INK_MASK',on=white_on)
+                page.draw_line((20,20),(80,20),color=(1,0,0),oc=cut)
+                states={art:True,cut:cut_on,white:white_on}
+                doc.set_layer(-1,basestate='OFF',on=[i for i,v in states.items() if v],off=[i for i,v in states.items() if not v])
+                doc.save(file);doc.close()
+            create(True,False)
+            with fitz.open(file) as doc:self.assertEqual(verify_editor_cut_visible(doc,file),1)
+            file.unlink();create(False,False)
+            with fitz.open(file) as doc:
+                with self.assertRaisesRegex(AssertionError,'LASER_CUT hidden'):
+                    verify_editor_cut_visible(doc,file)
+            file.unlink();create(True,True)
+            with fitz.open(file) as doc:
+                with self.assertRaisesRegex(AssertionError,'WHITE_INK_MASK visible'):
+                    verify_editor_cut_visible(doc,file)
+
     def test_supplied_ascent_3t_interfaces_are_measured_without_rebuilding(self):
         from ascent_size_audit import measure
         cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
@@ -49,7 +75,9 @@ class A3PackingTests(unittest.TestCase):
         pad_ids=[p for ids in pad.values() for p in ids]
         logo=cfg.get('logo_fill_allocation',{})
         logo_ids=[p for ids in logo.values() for p in ids]
-        self.assertEqual(len(selected),len(cfg['personal_fill_policy']['baseline_ids'])+len(new)+len(pad_ids)+len(logo_ids))
+        stands=cfg.get('additional_stand_allocation',{})
+        stand_ids=[p for ids in stands.values() for p in ids]
+        self.assertEqual(len(selected),len(cfg['personal_fill_policy']['baseline_ids'])+len(new)+len(pad_ids)+len(logo_ids)+len(stand_ids))
         self.assertEqual(len(set(selected)),len(selected))
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
@@ -59,14 +87,14 @@ class A3PackingTests(unittest.TestCase):
         separate_pages=separate_rows if isinstance(separate_rows[0],list) else [separate_rows]
         separate=[r['id'] for page in separate_pages for r in page]
         self.assertEqual(set(separate),set(([] if migration else cfg['ascent_remaining']['part_ids'])
-                                          +personal.get('11_ascent_remaining/3T',[])+pad.get('11_ascent_remaining/3T',[])+logo.get('11_ascent_remaining/3T',[])))
+                                          +personal.get('11_ascent_remaining/3T',[])+pad.get('11_ascent_remaining/3T',[])+logo.get('11_ascent_remaining/3T',[])+stands.get('11_ascent_remaining/3T',[])))
         self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
         self.assertNotIn('ascent_31',selected)
         if personal:
             from verify_a3_release import verify_fixed_placements
             self.assertEqual(len(new),cfg['personal_fill_policy']['stand_pieces']+cfg['personal_fill_policy']['keyring_pieces'])
             self.assertEqual(set(new),set(cfg['personal_fill_policy']['new_part_ids']))
-            self.assertEqual(set(selected)-set(new)-set(pad_ids)-set(logo_ids),set(cfg['personal_fill_policy']['baseline_ids']))
+            self.assertEqual(set(selected)-set(new)-set(pad_ids)-set(logo_ids)-set(stand_ids),set(cfg['personal_fill_policy']['baseline_ids']))
             for group in cfg['selected_primary_groups']:
                 pages=rows[group] if isinstance(rows[group][0],list) else [rows[group]]
                 self.assertEqual({r['id'] for page in pages for r in page if r['id'] in new},set(personal.get(group,[])))

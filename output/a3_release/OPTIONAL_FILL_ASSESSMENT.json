@@ -65,9 +65,11 @@
       "len_pad_3T_01_safe",
       "len_pad_3T_03_safe",
       "len_pad_3T_02_safe",
-      "len_pad_3T_05_safe",
       "len_pad_3T_04",
       "len_pad_3T_06"
+    ],
+    "11_ascent_remaining/3T": [
+      "len_pad_3T_05_safe"
     ]
   },
   "deferred": [],

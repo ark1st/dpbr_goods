@@ -205,7 +205,8 @@ class ApplicantStandTests(unittest.TestCase):
         self.assertEqual([c['mode'] for c in components], ['알파 (현재 활성 모드)', '베타 (공식 이미지)'])
         self.assertEqual([c['art_width_mm'] for c in components], [36, 54])
         self.assertEqual([c['art_height_mm'] for c in components], [60, 60])
-        self.assertAlmostEqual(components[1]['art_rect_mm'][0] - components[0]['art_rect_mm'][2], 4)
+        self.assertLess(components[1]['art_rect_mm'][0], components[0]['art_rect_mm'][2])
+        self.assertEqual(meta['pair_body_alignment']['body_center_distance_mm'], 25)
         images = art[0].get_image_info()
         self.assertEqual([(im['width'], im['height']) for im in images], [(60, 100), (90, 100)])
         with fitz.open() as independent:
@@ -214,6 +215,23 @@ class ApplicantStandTests(unittest.TestCase):
                 rect = fitz.Rect(*(v * self.chain.MM for v in component['art_rect_mm']))
                 page.insert_image(rect, filename=str(entry['prepared']))
             self.assertEqual(page.get_pixmap(alpha=True).samples, art[0].get_pixmap(alpha=True).samples)
+
+    def test_zero_pair_uses_equal_source_pixel_scale_not_equal_effect_bounds(self):
+        alpha = Image.new('RGBA', (70, 100))
+        beta = Image.new('RGBA', (70, 80))
+        ImageDraw.Draw(alpha).rectangle((15, 5, 54, 74), fill=(230, 80, 65, 255))
+        ImageDraw.Draw(alpha).rectangle((33, 75, 35, 99), fill=(230, 80, 65, 255))
+        ImageDraw.Draw(beta).rectangle((15, 5, 54, 74), fill=(70, 100, 230, 255))
+        _, _, _, result, shapes = self.render_fixture(
+            [('알파', alpha), ('베타', beta)], '청민예')
+        self.assert_mechanical_pair(result, shapes)
+        meta=result[0]['char_meta'];a,b=meta['components'];align=meta['pair_body_alignment']
+        self.assertAlmostEqual(a['art_height_mm'],60)
+        self.assertAlmostEqual(b['art_height_mm'],48)
+        self.assertAlmostEqual(a['art_width_mm'],b['art_width_mm'])
+        for item,landmark in zip((a,b),align['landmarks_px'],strict=True):
+            self.assertAlmostEqual(item['art_rect_mm'][1]+landmark['foot_y']*align['source_pixel_mm'],
+                                   align['foot_y_mm'],places=3)
 
 
 if __name__ == '__main__':

@@ -77,6 +77,13 @@
       "reason": "All Ascent parts moved to 5T and remaining 3T artwork compacted forward.",
       "archive_commit": "d177b28f2543074621890eb116360f5279a38d68",
       "archive_path": "snapshots/before_ascent_5t_e4d03cd"
+    },
+    {
+      "commit": "57456d7845aed43b1ff3b29e7c1785f4784401de",
+      "archive_commit": "0afad48363a722cc19cb2c24a4b75e501fec94ab",
+      "archive_path": "snapshots/before_pr_fit_zero_57456d7",
+      "status": "retired_not_for_current_print",
+      "reason": "Replaced by corrected Len slots, close-aligned Zero pairs, consolidated characters and two additional stands; editor cutting layers visible."
     }
   ],
   "retired_package_files": [

@@ -14,10 +14,10 @@ import pymupdf as fitz
 from PIL import Image, ImageDraw
 from pypdf import PdfReader, PdfWriter
 from pypdf.generic import ContentStream, NameObject
-from shapely.geometry import Polygon, box
+from shapely.geometry import Polygon, Point, box
 from shapely import affinity
 from svgpathtools import parse_path, Line, CubicBezier
-from laser_paths import audit_path, cut_path, flatten_cubic
+from laser_paths import audit_path, cut_path, flatten_cubic, slot_path
 from verify_laser_paths import contours
 from vector_utils import runvc, svg_doc, layer
 from pdf_layers import mark_pdf_layers
@@ -95,6 +95,44 @@ def pieces_from(cut,art,white,slug,protected_drawings=(),smooth=False):
             paths=members,art=art,white=white,source_rect=cut[0].rect,source=slug))
     assert sum(len(p['paths']) for p in result)==len(entries)
     return result
+
+def len_slot_fit(thickness):
+    """Drawn slot (length, width) after kerf and fit compensation (issue #1)."""
+    fit=CONFIG['len_slot_fit'];t=fit['thickness'][thickness]
+    width=t['part_thickness_mm']+t['thickness_clearance_mm']-t['kerf_mm']
+    length=fit['tab_width_mm']+t['side_clearance_mm']-2*t['kerf_mm']
+    return round(length,6),round(width,6)
+
+def compensate_len_slots(pieces,thickness):
+    """Replace nominal 18.8 x T Len mounting slots by kerf-compensated slots.
+
+    Only interior slots matching the nominal Len slot are changed. Outer
+    contours, artwork, tabs and other holes (e.g. Cadena 3.2 x 20.2) are kept.
+    """
+    fit=CONFIG['len_slot_fit'];nominal=(fit['source_slot_mm'][0],float(thickness.removesuffix('T')))
+    length,width=len_slot_fit(thickness);radius=fit['corner_radius_mm'];changed=0
+    for piece in pieces:
+        outer=max(piece['paths'],key=lambda e:e['poly'].area)
+        for e in piece['paths']:
+            if e is outer or e['protected']:continue
+            rect=np.array(e['poly'].minimum_rotated_rectangle.exterior.coords)
+            a,b=rect[1]-rect[0],rect[2]-rect[1]
+            long,short=(a,b) if np.hypot(*a)>=np.hypot(*b) else (b,a)
+            if abs(np.hypot(*long)-nominal[0])>.01 or abs(np.hypot(*short)-nominal[1])>.01:continue
+            angle=math.degrees(math.atan2(long[1],long[0]))
+            # Source slots sit on the 15-degree layout grid; snap fitting noise.
+            snapped=round(angle/15)*15
+            if abs(angle-snapped)<.1:angle=float(snapped)
+            aligned=affinity.rotate(e['poly'],-angle,origin=(0,0)).bounds
+            mid=affinity.rotate(Point((aligned[0]+aligned[2])/2,(aligned[1]+aligned[3])/2),angle,origin=(0,0))
+            center=(mid.x,mid.y)
+            path=slot_path(center,angle,length,width,radius)
+            stats,poly=audit_path(path)
+            assert outer['poly'].contains(poly)
+            e.update(path=path,poly=poly,stats=stats,slot_fit={'nominal_mm':list(nominal),
+                'drawn_mm':[length,width],'center_mm':list(center),'angle_degrees':angle})
+            changed+=1
+    return changed
 
 def pack_once(pieces,order,metric):
     pages=[]
@@ -293,11 +331,12 @@ def write_page(folder,placements):
     layers={g['name']:g['id'] for g in info['layers']};assert set(layers)==set(names)
     job=[{'command':'document.setUnits','params':{'units':'Millimeters'}},
          {'command':'document.export','params':{'path':str(folder/'02_MASTER.ai'),'format':'pdf','createLayers':True,'preserveEditing':False}},
-         {'command':'layer.setProps','params':{'ids':[layers[n] for n in ['LASER_CUT','WHITE_INK_MASK']],'visible':False,'printable':False}},
+         {'command':'layer.setProps','params':{'ids':[layers['WHITE_INK_MASK']],'visible':False,'printable':False}},
+         {'command':'layer.setProps','params':{'ids':[layers['LASER_CUT']],'visible':True,'printable':False}},
          {'command':'document.save','params':{'path':str(folder/'02_MASTER.vectorcraft'),'format':'vectorcraft','compress':False}}]
     jf=TMP/'export.json';jf.write_text(json.dumps(job));runvc(['run','--in',nativepath,'--commands',jf])
     with fitz.open(folder/'02_MASTER.ai') as ai:
-        groups=ai.get_ocgs();on=[i for i,g in groups.items() if g['name'] in ['PRINT_ARTWORK','CORNER_REFERENCE']]
+        groups=ai.get_ocgs();on=[i for i,g in groups.items() if g['name'] in ['PRINT_ARTWORK','CORNER_REFERENCE','LASER_CUT']]
         ai.set_layer(-1,basestate='OFF',on=on,off=[i for i in groups if i not in on])
         # The exporter serializes off-clip source objects repeatedly into its
         # Illustrator private payload (hundreds of MB). Keep the PDF-compatible
@@ -306,7 +345,7 @@ def write_page(folder,placements):
         ai.xref_set_key(ai.pdf_catalog(),'Names/EmbeddedFiles','null')
         ai.save(TMP/'hidden.ai',garbage=4,deflate=True)
     shutil.copy2(TMP/'hidden.ai',folder/'02_MASTER.ai')
-    master.set_layer(-1,basestate='OFF',on=[oc[n] for n in ['PRINT_ARTWORK','CORNER_REFERENCE']],off=[oc[n] for n in ['LASER_CUT','WHITE_INK_MASK']])
+    master.set_layer(-1,basestate='OFF',on=[oc[n] for n in ['PRINT_ARTWORK','CORNER_REFERENCE','LASER_CUT']],off=[oc['WHITE_INK_MASK']])
     master.save(folder/'02_MASTER.pdf',garbage=4,deflate=True)
     # Review only: visible 0.13-mm red cut outlines; production stroke stays .001.
     review=fitz.open();rp=review.new_page(width=mp.rect.width,height=mp.rect.height)
@@ -415,6 +454,8 @@ def source_inputs(only=None):
         newcut,newart,meta=create_dot_documents(ROOT,t,draw_path,MM,CONFIG['len_dot_revision'])
         replacement=pieces_from(newcut,newart,None,f'len_dot_{t}')[0]
         replacement['id']=dotchar[0]['id'];replacement['design_metadata']=meta
+        meta['compensated_base_slot_mm']=list(len_slot_fit(t));meta['slot_fit_status']=CONFIG['len_slot_fit']['status']
+        assert compensate_len_slots(pieces,t)==8,('Len slot count changed',t)
         batches.append((f'05_len/{t}',pieces+[replacement]+linked[4:]))
     for t in ['3T','5T']:
         if only and only not in f'06_len_pad/{t}':continue
@@ -422,6 +463,7 @@ def source_inputs(only=None):
         art=extract_layers(folder/'02_MASTER.ai',['3_ARTWORK'])
         pieces=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,None,f'len_pad_{t}')
         assert len(pieces)==7 and sum(len(p['paths']) for p in pieces)==15
+        assert compensate_len_slots(pieces,t)==8,('Len PAD slot count changed',t)
         batches.append((f'06_len_pad/{t}',pieces))
     if not only or 'yanggum' in only:
         from yanggum_parts import stand_documents,keyring_documents
@@ -567,7 +609,8 @@ def pad_production_piece(source,ident,variants):
 
 
 def inputs(only=None):
-    batches={} if only and '19_personal_fill' in only else dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
+    standalone=only and any(name in only for name in ('19_personal_fill','20_guide_stand_comparison'))
+    batches={} if standalone else dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
     logo_allocation=CONFIG.get('logo_fill_allocation',{})
     logo_source=None
     if any(not only or only in group for group in logo_allocation):
@@ -611,6 +654,20 @@ def inputs(only=None):
         for group,ids in allocation.items():
             if not only or only in group:
                 batches.setdefault(group,[]).extend(personal[ident] for ident in ids)
+    additional_allocation=CONFIG.get('additional_stand_allocation',{})
+    if any(not only or only in group for group in additional_allocation):
+        from additional_stands import build_stands
+        additional={p['id']:p for p in build_stands()}
+        for group,ids in additional_allocation.items():
+            if not only or only in group:
+                batches.setdefault(group,[]).extend(additional[ident] for ident in ids)
+    guide_allocation=CONFIG.get('guide_stand_allocation',{})
+    if any(not only or only in group for group in guide_allocation):
+        from guide_stand_variant import build_variant
+        guide={p['id']:p for p in build_variant()}
+        for group,ids in guide_allocation.items():
+            if not only or only in group:
+                batches.setdefault(group,[]).extend(guide[ident] for ident in ids)
     redesign_file=ROOT/'configs/contour_redesigns.json'
     redesigns=json.loads(redesign_file.read_text(encoding='utf-8')) if redesign_file.exists() else {}
     if 'parts' in redesigns:redesigns=redesigns['parts']

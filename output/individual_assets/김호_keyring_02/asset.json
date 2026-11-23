@@ -22,7 +22,7 @@
   ],
   "source": "김호_keyring",
   "a3_groups": [
-    "19_personal_fill/3T"
+    "11_ascent_remaining/3T"
   ],
   "physical_cut_test": false,
   "pieces": 1,
@@ -7920,8 +7920,8 @@
   "files": {
     "01_PRINT.pdf": "5a19805fb1f6df1f0e9615d50b9bdcd293130c8da53a65e50cdd96f3a78ccd23",
     "01_PRINT_300ppi.png": "349a5f246c8198684717152ced9c3997753594e396437759f9b833d69afb7224",
-    "02_MASTER.pdf": "a2c831ccb207b6ad6765a3e6565948b6bec02ae7db7691102865540ae6970c5e",
-    "02_MASTER.ai": "a2c831ccb207b6ad6765a3e6565948b6bec02ae7db7691102865540ae6970c5e",
+    "02_MASTER.pdf": "94946d86bb690a8a8cc8fbe0181c3746f50c7463b6e453aae2c06ce082772fdb",
+    "02_MASTER.ai": "dee80bafaf42e027d3d9a403eff6a71af34611c9a5816d0f662841c5be96eb41",
     "03_CUT_ONLY.pdf": "81899a4996c436d30bf80b946e9b8a18ade289348a4f50a3f9f974a522ace005",
     "03_CUT_ONLY.svg": "40d8550db488900515f28cef3202988a6e43aadf82a1291a11255e08bc06ba1e",
     "04_WHITE_INK_MASK.pdf": "a10f10b03c2a595b5fbae977c08e4bfb8531d6bccd2dc9c091024aa74cc95669",

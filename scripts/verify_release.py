@@ -7,6 +7,24 @@ import pymupdf as fitz
 from PIL import Image,ImageDraw
 from artifact_hash import artifact_sha256
 
+def verify_editor_cut_visible(doc,file):
+    """Editable masters open with cut geometry visible and white mask hidden."""
+    groups=doc.get_ocgs()
+    names={group['name']:xref for xref,group in groups.items()}
+    assert len(names)==len(groups) and {'LASER_CUT','WHITE_INK_MASK'}<=set(names),(file,'Missing cut/white OCG layers')
+    setting=doc.get_layer() or {};base=setting.get('basestate','ON')
+    assert base in ('ON','OFF'),(file,'Unknown OCG default state')
+    on,off=set(setting.get('on',[])),set(setting.get('off',[]))
+    def visible(name):
+        ident=names[name]
+        return ident in on or (ident not in off and base=='ON')
+    assert visible('LASER_CUT'),(file,'LASER_CUT hidden by default')
+    assert not visible('WHITE_INK_MASK'),(file,'WHITE_INK_MASK visible by default')
+    red=[d for d in doc[0].get_drawings() if d.get('color') and d['color'][0]>.99
+         and d['color'][1]<.01 and d['color'][2]<.01]
+    assert red,(file,'No visible red cut geometry')
+    return len(red)
+
 def verify_large_plate(out,plate):
     """Check production geometry and 5T mechanical interfaces independently."""
     from shapely.geometry import Polygon, box, LineString
@@ -121,6 +139,17 @@ def main():
     manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
     configured=json.loads((ROOT/'configs/a3_release.json').read_text(encoding='utf-8'))
     assert manifest.get('large_format_plates',[])==configured.get('large_format_plates',[]),'Unregistered large-format release or stale manifest'
+    editor_visibility=[]
+    catalog=json.loads((out/'individual_assets/manifest.json').read_text(encoding='utf-8'))
+    editor_folders=[out/p['folder'] for pages in manifest['groups'].values() for p in pages]
+    editor_folders.extend(out/p['folder'] for p in manifest.get('large_format_plates',[]))
+    editor_folders.extend(out/a['folder'] for a in catalog['assets'])
+    for folder in editor_folders:
+        for name in ('02_MASTER.ai','02_MASTER.pdf'):
+            file=folder/name
+            with fitz.open(file) as doc:
+                count=verify_editor_cut_visible(doc,file)
+            editor_visibility.append({'file':file.relative_to(out).as_posix(),'visible_red_drawing_objects':count})
     renders=[];images=[];tiles=[]
     for group,pages in manifest['groups'].items():
         for page in pages:
@@ -161,7 +190,7 @@ def main():
     for i,t in enumerate(tiles):contact.paste(t,((i%2)*620,(i//2)*480))
     contact.save(qa/'contact.png')
     report={'revision':manifest['revision'],'errors':[],'repository':repository,'laser_path_audit':{'checked_files':laser['checked_files'],'errors':laser['errors'],'protected_original_findings':laser['protected_original_findings']},
-        'a3_release':a3,'large_format_plates':large_records,'individual_assets':assets,'existing_print_recut':recut,'rendered_pdf_and_ai_pages':renders,'png_files_checked':images,'physical_cut_test':False,
+        'a3_release':a3,'large_format_plates':large_records,'individual_assets':assets,'existing_print_recut':recut,'rendered_pdf_and_ai_pages':renders,'png_files_checked':images,'editor_cut_visibility':editor_visibility,'physical_cut_test':False,
         'coverage':{'current_pages_including_thickness_alternatives':a3['checked_pages'],'current_cut_formats':laser['checked_files'],'packages':len(a3['packages']),'rendered_pdf_and_ai_pages':len(renders),
         'large_format_plates':len(large_records),
         'existing_print_recovery_cut_files':len(recut['records']) if recut else 0,'recut_print_pages_added':0,

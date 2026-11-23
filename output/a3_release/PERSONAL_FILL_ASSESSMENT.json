@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-ascent-5t-migration",
+  "revision": "A3-2026-11-24-fit-close-zero",
   "baseline_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
   "source_commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
   "baseline_ids": [
@@ -848,7 +848,7 @@
   "existing_pages_repositioned": false,
   "new_pages_added": 1,
   "minimum_page_count_proven": false,
-  "notes": "Four reinforced stand sets, including two Alpha/Beta combined Zero plates; 8 stand pieces plus14 unchanged keyrings. All84 baseline placements fixed. Five pages feasible; four-page impossibility not proven.",
+  "notes": "Four original stand sets use body support under the artwork. The reviewed transfer moves nine personal keyrings from sheet 4 to sheet 3 at original scale and keeps first- and second-sheet placements fixed.",
   "stand_sets": 4,
   "combined_zero_stands": [
     "마가다락방",
@@ -886,9 +886,7 @@
       "배승민_keyring_01",
       "배승민_keyring_02",
       "배승민_keyring_03",
-      "김윤_keyring_04"
-    ],
-    "19_personal_fill/3T": [
+      "김윤_keyring_04",
       "김윤_keyring_01",
       "김윤_keyring_02",
       "김윤_keyring_03",
@@ -904,6 +902,6 @@
     ]
   },
   "selected_pages": 4,
-  "selected_parts": 83,
+  "selected_parts": 87,
   "physical_cut_test": false
 }

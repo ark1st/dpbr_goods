@@ -33,13 +33,17 @@ def main():
         locations.update({ident:[] for ident in sources})
     assert set(locations)=={a['id'] for a in m['assets']}
     assert len(m['assets'])==m['asset_count']
+    stand_catalog={ident:group for allocation in ('additional_stand_allocation','guide_stand_allocation')
+                   for group,ids in CONFIG.get(allocation,{}).items() for ident in ids}
+    for ident,group in stand_catalog.items():
+        assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed stand placement')
     personal=CONFIG.get('personal_fill_allocation',{})
     if personal:
         expected={ident:group for group,ids in personal.items() for ident in ids}
         policy=CONFIG['personal_fill_policy']
         expected_count=policy['stand_pieces']+policy['keyring_pieces']
         assert len(expected)==expected_count and set(expected)==set(policy['new_part_ids']),'Incomplete personal catalog'
-        assert m['asset_count']==policy['baseline_asset_count']+expected_count+bool(aliases or logo_archived)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
+        assert m['asset_count']==policy['baseline_asset_count']+expected_count+len(stand_catalog)+bool(aliases or logo_archived)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
         for ident,group in expected.items():
             assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed personal asset placement')
     canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']

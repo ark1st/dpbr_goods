@@ -62,14 +62,14 @@ def export_asset(entry):
     write(folder/'03_CUT_ONLY.svg',svg_doc(*size,layer('LASER_CUT',''.join(
         f'<path d="{path}" fill="none" stroke="#ff0000" stroke-width="0.001"/>' for path in paths))))
     master=fitz.open();mp=master.new_page(width=size[0]*MM,height=size[1]*MM)
-    oc={n:master.add_ocg(n,on=n=='PRINT_ARTWORK') for n in ['PRINT_ARTWORK','WHITE_INK_MASK','LASER_CUT']}
+    oc={n:master.add_ocg(n,on=n in ('PRINT_ARTWORK','LASER_CUT')) for n in ['PRINT_ARTWORK','WHITE_INK_MASK','LASER_CUT']}
     streams={v:[] for v in oc.values()}
     for doc,name in [(art,'PRINT_ARTWORK'),(white,'WHITE_INK_MASK'),(cut,'LASER_CUT')]:
         if doc[0].get_contents():
             mp.show_pdf_page(mp.rect,doc,0)
             streams[oc[name]].append(master.xref_stream(mp.get_contents()[-1]))
     mark_pdf_layers(mp,streams)
-    master.set_layer(-1,basestate='OFF',on=[oc['PRINT_ARTWORK']],off=[oc['WHITE_INK_MASK'],oc['LASER_CUT']])
+    master.set_layer(-1,basestate='OFF',on=[oc['PRINT_ARTWORK'],oc['LASER_CUT']],off=[oc['WHITE_INK_MASK']])
     master.save(folder/'02_MASTER.pdf',garbage=4,deflate=True)
     shutil.copy2(folder/'02_MASTER.pdf',folder/'02_MASTER.ai')
     review=fitz.open();rp=review.new_page(width=mp.rect.width,height=mp.rect.height)

@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "raw_commit": "2998c858ad3795b930a4c5138c658cea1665e61d",
   "previous_heads": {
     "main": "b0de59b0fd8b70a2a6aec257546dbac07c31b5cd",
@@ -72,12 +72,14 @@
     "repair_printed_plate.py",
     "verify_recut.py",
     "optional_sheet_policy.py",
-    "chain_keyring_parts.py"
+    "chain_keyring_parts.py",
+    "additional_stands.py",
+    "guide_stand_variant.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
   "physical_sheets": 4,
-  "physical_parts": 83,
+  "physical_parts": 87,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [
@@ -1333,13 +1335,50 @@
     {
       "file": "assets/chain_keyring/정지영/prepared/검마충성77__크로아_render300_stand60.png",
       "sha256": "6401774bde1da070a2b15a915fff90ae595eaabbf3f35b37f6b89e16d6f057ef"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/provenance.json",
+      "sha256": "9c5f221daec3550c8e1f965f77938ed8ed9c735e583cd4243d82c612d8c858ee"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/렘샤_fly300.png",
+      "sha256": "aef057bd5cee4e97a217548876c518f0bb4b1855316a24ae3eb955473cb468d2"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/렘샤_profile180.png",
+      "sha256": "8c3d455a30d992839e8e0c76007e3f12cb4ceb1f4daed3bec99584ec5b6e1fcf"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/렘샤_stand300.png",
+      "sha256": "aec5c74f6091e9f48c590c889dee271889cfe556363fe61336cf2f9d6fa20b21"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/렘샤_stand60_prepared.png",
+      "sha256": "101fe435209f6b5212599c3057aadcc6735b060a2b8f69fa54cccacec72003c1"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/적매화검_fly300.png",
+      "sha256": "a9a38bbcf75f45b9bdb3c882a9336b331f927917f279e44ad9f8216246db1cd8"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/적매화검_profile180.png",
+      "sha256": "3d11dafd20a482605d2fbe07ab1d23153f2fd21dba14ba66c0f08c979d2fd146"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/적매화검_stand300.png",
+      "sha256": "e3da7f60bc1580c6017c1f5aa3558b06bac80bab206073c33669db3460e4128d"
+    },
+    {
+      "file": "assets/chain_keyring/추가스탠드/적매화검_stand60_prepared.png",
+      "sha256": "9ace98d2f9ea105ccd3452a40b10e37f6c56d76d3044e89c652f129fc2713a6a"
     }
   ],
   "optional_current_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T",
-    "09_yanggum/3T"
+    "09_yanggum/3T",
+    "20_guide_stand_comparison/3T"
   ],
-  "individual_asset_count": 141,
+  "individual_asset_count": 174,
   "canonical_contours_file": "configs/individual_contours.json"
 }

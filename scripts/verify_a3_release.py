@@ -56,6 +56,7 @@ def verify_personal_inventory(config,selected_by_group):
     expected_personal=policy['stand_pieces']+policy['keyring_pieces']
     pad_ids={ident for ids in config.get('pad_fill_allocation',{}).values() for ident in ids}
     logo_ids={ident for ids in config.get('logo_fill_allocation',{}).values() for ident in ids}
+    stand_ids=verify_additional_stand_inventory(config,selected_by_group)
     assert set(allocation)<=set(selected_by_group),'Personal pieces must be on selected primary sheets'
     personal=[ident for ids in allocation.values() for ident in ids]
     assert len(personal)==len(set(personal))==expected_personal,'Changed personal allocation'
@@ -63,9 +64,11 @@ def verify_personal_inventory(config,selected_by_group):
     baseline=policy['baseline_ids']
     personal_ids=set(personal);baseline_ids=set(baseline)
     assert len(baseline)==len(baseline_ids),'Changed baseline inventory'
-    assert sum(map(len,[personal_ids,pad_ids,baseline_ids,logo_ids]))==len(personal_ids|pad_ids|baseline_ids|logo_ids),'Overlapping production inventories'
-    assert len(selected)==len(set(selected))==config['selected_primary_parts']==len(baseline_ids)+expected_personal+len(pad_ids)+len(logo_ids),'Changed primary inventory'
-    assert set(selected)-personal_ids-pad_ids-logo_ids==baseline_ids,'Changed baseline inventory'
+    inventories=(personal_ids,pad_ids,baseline_ids,logo_ids,stand_ids)
+    inventory=set.union(*inventories)
+    assert sum(map(len,inventories))==len(inventory),'Overlapping production inventories'
+    assert len(selected)==len(set(selected))==config['selected_primary_parts']==len(inventory),'Changed primary inventory'
+    assert set(selected)==inventory,'Changed primary inventory'
     counts=Counter();stand_pairs=Counter()
     for group,parts in selected_by_group.items():
         actual=[p for p in parts if p['id'] in personal_ids]
@@ -88,6 +91,31 @@ def verify_personal_inventory(config,selected_by_group):
     paired=[p for parts in selected_by_group.values() for p in parts if p['id'] in personal_ids
             and p['design_metadata']['part']=='character' and len(p['design_metadata'].get('components',[]))==2]
     assert {p['design_metadata']['nickname'] for p in paired}==set(policy['combined_zero_stands']),'Changed Zero pair inventory'
+
+def verify_additional_stand_inventory(config,selected_by_group):
+    allocation=config.get('additional_stand_allocation',{})
+    if not allocation:return set()
+    from additional_stands import NAMES
+    expected={f'extra_stand_{name}_{i:02}' for name,_ in NAMES for i in (1,2)}
+    assigned=[ident for ids in allocation.values() for ident in ids]
+    assert len(assigned)==len(expected) and set(assigned)==expected,'Expected both additional stand sets exactly once'
+    assert set(allocation)<=set(selected_by_group),'Additional stands must be on selected 3T sheets'
+    assert all(group.endswith('/3T') and len(set(ids))==len(ids) for group,ids in allocation.items())
+    for name,_ in NAMES:
+        pair={f'extra_stand_{name}_01',f'extra_stand_{name}_02'}
+        assert any(pair<=set(ids) for ids in allocation.values()),(name,'Separated stand and base')
+    for group,parts in selected_by_group.items():
+        actual=[p for p in parts if p['id'].startswith('extra_stand_')]
+        assert Counter(p['id'] for p in actual)==Counter(allocation.get(group,[])),(group,'Changed additional stand allocation')
+        for p in actual:
+            stem,index=p['id'].rsplit('_',1)
+            role={'01':'character','02':'base'}[index]
+            meta=p['design_metadata']
+            assert p['source']==stem and stem=='extra_stand_'+meta['nickname'],(p['id'],'Changed stand source')
+            assert meta['part']==role and p['scale']==1
+            assert p['path_count']==len(p['expected_paths'])=={'character':1,'base':2}[role]
+            verify_stand_support(p)
+    return expected
 
 def verify_logo_inventory(config,selected_by_group,canonical):
     allocation=config.get('logo_fill_allocation',{})
@@ -139,8 +167,18 @@ def verify_pad_inventory(config,selected_by_group,canonical=None):
     assert len(set(variants.values()))==len(variants),'Multiple variants of the same PAD piece'
     allocated=[ident for ids in allocation.values() for ident in ids]
     assert set(variants)<=set(allocated),'Unallocated PAD production variant'
-    policy=config['optional_fill_policy']['candidate_sets']['len_pad_3T']
-    assert len(policy)==7 and set(policy)==expected,'PAD policy must identify the seven original 3T pieces'
+    policy=config['optional_fill_policy']
+    original_kit=policy['candidate_sets']['len_pad_3T']
+    assert len(original_kit)==7 and set(original_kit)==expected,'PAD policy must identify the seven original 3T pieces'
+    transfer=policy.get('pad_character_transfer')
+    if transfer is None:
+        assert len(allocation)==1,'Keep the PAD kit on one sheet without an approved character transfer'
+    else:
+        part=transfer['part']
+        group=transfer['group']
+        kit_group=transfer['kit_group']
+        assert group!=kit_group and set(allocation)=={group,kit_group},'Changed PAD transfer groups'
+        assert variants.get(part,part)=='len_pad_3T_05' and allocation[group]==[part],'Only the PAD character can move to the other sheet'
     assert all(group in selected_by_group and group.endswith('/3T') and not group.startswith('06_len_pad/')
                for group in allocation),'PAD fillers must appear on selected mixed 3T sheets'
     assert Counter(variants.get(p['id'],p['id']) for p in observed)==Counter(expected),'Print the full 3T PAD kit exactly once'
@@ -167,16 +205,47 @@ def verify_pad_inventory(config,selected_by_group,canonical=None):
             expected_path=shifted_poly(polygon_of(path),place)
             assert expected_path.boundary.hausdorff_distance(Polygon(actual).boundary)<.002,(p['id'],'Changed original PAD geometry')
 
-def verify_stand_support(part):
-    """Measure the exported load path and mechanical interfaces in source axes."""
+def stand_source_paths(part):
     from shapely import affinity
-    from chain_keyring_parts import stand_axis_width
-    meta=part['design_metadata'];ident=part['id']
     x0,y0,_,_=part['source_bounds_mm'];rx,ry=part['rotated_origin_mm']
     px,py=part['placed_bounds_mm'][:2]
     paths=[affinity.translate(affinity.rotate(affinity.translate(Polygon(q),-px+rx,-py+ry),
             part['rotation_degrees'],origin=(0,0)),x0,y0) for q in part['expected_paths']]
-    paths.sort(key=lambda p:p.area,reverse=True);outer=paths[0]
+    return sorted(paths,key=lambda p:p.area,reverse=True)
+
+def verify_guide_stand(config,group,parts):
+    """Measure a guide-size comparison set independently of its source generator."""
+    from chain_keyring_parts import stand_axis_width
+    assert group in config['optional_groups'] and group not in config['selected_primary_groups']
+    by_id={part['id']:part for part in parts}
+    expected={'guide_stand_렘샤_01','guide_stand_렘샤_02'}
+    assert len(parts)==2 and set(by_id)==expected==set(config['guide_stand_allocation'][group])
+    character=by_id['guide_stand_렘샤_01']
+    base=by_id['guide_stand_렘샤_02']
+    assert all(p['scale']==1 and p['design_metadata']['guide_comparison_only'] for p in parts)
+    panel,=stand_source_paths(character)
+    outer,slot,ring=stand_source_paths(base)
+    char_meta=character['design_metadata']
+    base_meta=base['design_metadata']
+    center,shoulder=char_meta['tab_center_mm']
+    panel_height=panel.bounds[3]-panel.bounds[1]
+    tab_depth=panel.bounds[3]-shoulder
+    assert abs(panel_height-59.6)<.005 and abs(tab_depth-2.6)<.005
+    assert all(abs(stand_axis_width(panel,center,shoulder+y)-18)<.005 for y in (.25,2))
+    assert base_meta['material_thickness_mm']==3 and abs(3+panel_height-tab_depth-60)<.005
+    assert outer.contains(slot) and outer.contains(ring) and slot.disjoint(ring)
+    assert abs(slot.bounds[2]-slot.bounds[0]-18.8)<.005
+    assert abs(slot.bounds[3]-slot.bounds[1]-3)<.005
+    assert slot.centroid.distance(Point(base_meta['slot_center_mm']))<.005
+    assert outer.boundary.hausdorff_distance(Point(base_meta['slot_center_mm']).buffer(20,quad_segs=128).boundary)<.01
+    assert ring.boundary.hausdorff_distance(Point(base_meta['ring_hole_center_mm']).buffer(2,quad_segs=64).boundary)<.005
+    assert ring.boundary.distance(outer.boundary)>3.99 and ring.boundary.distance(slot.boundary)>10
+
+def verify_stand_support(part):
+    """Measure the exported load path and mechanical interfaces in source axes."""
+    from chain_keyring_parts import stand_axis_width
+    meta=part['design_metadata'];ident=part['id']
+    paths=stand_source_paths(part);outer=paths[0]
     if meta['part']=='base':
         assert len(paths)==2 and meta['size_mm']==[72,28] and meta['slot_mm']==[18.8,3],(ident,'Changed base interface')
         slot=paths[1];sx,sy=meta['slot_center_mm']
@@ -185,10 +254,24 @@ def verify_stand_support(part):
         return
     assert len(paths)==1 and meta['tab_width_mm']==18 and abs(meta['tab_depth_mm']-2.6)<.0001,(ident,'Changed stand tab')
     components=meta['components']
-    assert len(components) in (1,2) and all(c['art_height_mm']==60 for c in components),(ident,'Changed original image height')
+    assert len(components) in (1,2),(ident,'Changed stand component count')
     if len(components)==2:
         assert {c['mode'].split(' ')[0] for c in components}=={'알파','베타'},(ident,'Missing Zero mode')
-        assert components[1]['art_rect_mm'][0]-components[0]['art_rect_mm'][2]>=3.99,(ident,'Overlapping Zero artwork')
+        alignment=meta['pair_body_alignment'];scale=alignment['source_pixel_mm']
+        landmarks=alignment['landmarks_px'];assert len(landmarks)==2
+        assert abs(scale*max(c['source_ink_px'][1] for c in components)-60)<.002,(ident,'Changed pair source scale')
+        assert alignment['body_center_distance_mm']>=20,(ident,'Overlapping character centers')
+        axes=[]
+        for component,landmark in zip(components,landmarks,strict=True):
+            rect=component['art_rect_mm'];w,h=component['source_ink_px']
+            assert abs(component['art_height_mm']-h*scale)<.002,(ident,'Changed individual source scale')
+            assert abs((rect[3]-rect[1])-component['art_height_mm'])<.002,(ident,'Stretched source art')
+            assert abs((rect[2]-rect[0])-w*scale)<.1,(ident,'Changed aspect ratio')
+            assert abs(rect[1]+landmark['foot_y']*scale-alignment['foot_y_mm'])<.002,(ident,'Misaligned character feet')
+            axes.append(rect[0]+landmark['body_axis']*scale)
+        assert abs(axes[1]-axes[0]-alignment['body_center_distance_mm'])<.002,(ident,'Changed character center spacing')
+    else:
+        assert components[0]['art_height_mm']==60,(ident,'Changed original image height')
     web=meta['support_web'];cx,shoulder=meta['tab_center_mm'];anchor=web['anchor_y_mm']
     assert web['width_per_body_mm']>=26 and min(web['body_contact_mm2'])>=26,(ident,'Insufficient body connection')
     samples=max(1,math.ceil((shoulder-anchor)/.25))
@@ -278,6 +361,34 @@ def minimum_sheet_proof(config,selected_by_group,manifest):
             'separate_batches':batches,
             'scope':'Selected 3T inventory. Global lower bound uses the policy clearance, sheet margin and exterior areas. Batch rows describe reviewed placements only.'}
 
+def len_slot_counts(file,thickness,spec,owner_source):
+    """Measure only exported paths belonging to the designated Len source.
+
+    Mixed sheets may contain other objects with identical nominal dimensions;
+    match each owned path to the actual exported path before counting slots.
+    """
+    import numpy as np
+    from build_a3_release import len_slot_fit
+    with fitz.open(file) as doc:
+        actual=[polygon_of(s).buffer(0) for d in doc[0].get_drawings() for s in contours(d)]
+    owned=[Polygon(q) for part in spec['parts'] if part['source']==owner_source for q in part['expected_paths']]
+    assert owned,(file,'No paths from Len source',owner_source)
+    remaining=set(range(len(actual)));matched=[]
+    for expected in owned:
+        choices=[i for i in remaining if all(abs(a-b)<.01 for a,b in zip(expected.bounds,actual[i].bounds))]
+        assert choices,(file,'Missing owned Len path',owner_source,expected.bounds)
+        delta,index=min((expected.boundary.hausdorff_distance(actual[i].boundary),i) for i in choices)
+        assert delta<=.002,(file,'Changed owned Len path',owner_source,delta)
+        remaining.remove(index);matched.append(actual[index])
+    nominal=(18.8,float(thickness.removesuffix('T')));drawn=len_slot_fit(thickness)
+    counts={'nominal':0,'compensated':0}
+    for poly in matched:
+        c=np.array(poly.minimum_rotated_rectangle.exterior.coords)
+        size=sorted([math.hypot(*(c[1]-c[0])),math.hypot(*(c[2]-c[1]))],reverse=True)
+        for key,ref in [('nominal',nominal),('compensated',drawn)]:
+            if all(abs(a-b)<.005 for a,b in zip(size,ref)):counts[key]+=1
+    return counts
+
 def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
     wanted=CONFIG['current_groups']
@@ -324,13 +435,22 @@ def main(check_zips=True,check_native=True):
             if group in CONFIG['selected_primary_groups']:
                 selected_parts.extend(spec['parts']);selected_by_group.setdefault(group,[]).extend(spec['parts'])
                 if any(p['id'].startswith('len_pad_') for p in spec['parts']):pad_print_pages+=1
+            if group in CONFIG.get('guide_stand_allocation',{}):
+                verify_guide_stand(CONFIG,group,spec['parts'])
             for p in spec['parts']:
                 if p['id'].startswith('len_dot_'):
                     meta=p['design_metadata'];t=float(group.split('/')[-1].removesuffix('T'))
                     assert meta['art_height_mm']==50 and meta['tab_width_mm']==18
                     assert abs(meta['tab_depth_mm']-(t-.4))<.0001
                     assert meta['common_base_slot_mm']==[18.8,t]
+                    from build_a3_release import len_slot_fit
+                    assert meta['compensated_base_slot_mm']==list(len_slot_fit(group.split('/')[-1]))
             changes={name:compare_geometry(folder/name,spec) for name in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']}
+            if group.startswith(('05_len/','06_len_pad/')):
+                thickness=group.split('/')[-1]
+                owner=('len_pad_' if group.startswith('06_len_pad/') else 'len_')+thickness
+                slots=len_slot_counts(folder/'03_CUT_ONLY.pdf',thickness,spec,owner)
+                assert slots=={'nominal':0,'compensated':8},(group,'Len slot fit compensation',slots)
             if check_native:
                 native=folder/'02_MASTER.vectorcraft'
                 rel=native.relative_to(out).as_posix()
@@ -383,7 +503,8 @@ def main(check_zips=True,check_native=True):
         if group=='11_ascent_remaining/3T':
             fillers=(CONFIG.get('personal_fill_allocation',{}).get(group,[])
                      +CONFIG.get('pad_fill_allocation',{}).get(group,[])
-                     +CONFIG.get('logo_fill_allocation',{}).get(group,[]))
+                     +CONFIG.get('logo_fill_allocation',{}).get(group,[])
+                     +CONFIG.get('additional_stand_allocation',{}).get(group,[]))
             assert set(ids)==set(expected_ascent+fillers) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
             assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]

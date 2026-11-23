@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-ascent-5t-migration",
+  "revision": "A3-2026-11-24-fit-close-zero",
   "canvas_mm": [
     420,
     297
@@ -169,8 +169,9 @@
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
     "09_yanggum/3T": 3,
-    "11_ascent_remaining/3T": 12,
-    "19_personal_fill/3T": 16
+    "11_ascent_remaining/3T": 26,
+    "19_personal_fill/3T": 6,
+    "20_guide_stand_comparison/3T": 2
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -317,7 +318,8 @@
   "optional_groups": [
     "06_len_pad/3T",
     "06_len_pad/5T",
-    "09_yanggum/3T"
+    "09_yanggum/3T",
+    "20_guide_stand_comparison/3T"
   ],
   "len_dot_revision": {
     "art_height_mm": 50,
@@ -350,7 +352,7 @@
     "11_ascent_remaining/3T",
     "19_personal_fill/3T"
   ],
-  "selected_primary_parts": 83,
+  "selected_primary_parts": 87,
   "primary_inventory": [
     "burnt_01",
     "extra_3T_01",
@@ -388,6 +390,10 @@
     "extra_3T_36",
     "extra_3T_37",
     "extra_3T_38",
+    "extra_stand_렘샤_01",
+    "extra_stand_렘샤_02",
+    "extra_stand_적매화검_01",
+    "extra_stand_적매화검_02",
     "golden_01",
     "len_3T_01",
     "len_3T_02",
@@ -662,7 +668,12 @@
     },
     "deferred_if_limited_to_original_mixed_sheets": [
       "len_pad_3T"
-    ]
+    ],
+    "pad_character_transfer": {
+      "part": "len_pad_3T_05_safe",
+      "group": "11_ascent_remaining/3T",
+      "kit_group": "19_personal_fill/3T"
+    }
   },
   "package_archives": false,
   "retired_package_files": [
@@ -688,9 +699,7 @@
       "배승민_keyring_01",
       "배승민_keyring_02",
       "배승민_keyring_03",
-      "김윤_keyring_04"
-    ],
-    "19_personal_fill/3T": [
+      "김윤_keyring_04",
       "김윤_keyring_01",
       "김윤_keyring_02",
       "김윤_keyring_03",
@@ -733,7 +742,8 @@
       "support_taper_height_mm": 6,
       "support_round_radius_mm": 3,
       "pair_art_gap_mm": 4,
-      "combine_zero_modes": true
+      "combine_zero_modes": true,
+      "pair_body_distance_mm": 25
     }
   },
   "personal_fill_policy": {
@@ -1585,7 +1595,7 @@
     "existing_pages_repositioned": false,
     "new_pages_added": 1,
     "minimum_page_count_proven": false,
-    "notes": "Four reinforced stand sets, including two Alpha/Beta combined Zero plates; 8 stand pieces plus14 unchanged keyrings. All84 baseline placements fixed. Five pages feasible; four-page impossibility not proven.",
+    "notes": "Four original stand sets use body support under the artwork. The reviewed transfer moves nine personal keyrings from sheet 4 to sheet 3 at original scale and keeps first- and second-sheet placements fixed.",
     "stand_sets": 4,
     "combined_zero_stands": [
       "마가다락방",
@@ -1617,9 +1627,11 @@
       "len_pad_3T_01_safe",
       "len_pad_3T_03_safe",
       "len_pad_3T_02_safe",
-      "len_pad_3T_05_safe",
       "len_pad_3T_04",
       "len_pad_3T_06"
+    ],
+    "11_ascent_remaining/3T": [
+      "len_pad_3T_05_safe"
     ]
   },
   "logo_fill_allocation": {},
@@ -1711,5 +1723,56 @@
       ]
     }
   ],
-  "logo_template_archived": true
+  "logo_template_archived": true,
+  "len_slot_fit": {
+    "status": "standard starting values; not physically measured",
+    "reason": "Issue #1: Len slots were drawn at the nominal sheet thickness with no kerf compensation, so parts were loose.",
+    "applies_to": [
+      "05_len",
+      "06_len_pad"
+    ],
+    "source_slot_mm": [
+      18.8,
+      "thickness"
+    ],
+    "tab_width_mm": 18,
+    "corner_radius_mm": 0.35,
+    "thickness": {
+      "3T": {
+        "part_thickness_mm": 3.0,
+        "kerf_mm": 0.15,
+        "thickness_clearance_mm": 0.05,
+        "side_clearance_mm": 0.2
+      },
+      "5T": {
+        "part_thickness_mm": 5.0,
+        "kerf_mm": 0.2,
+        "thickness_clearance_mm": 0.05,
+        "side_clearance_mm": 0.2
+      }
+    },
+    "formula": {
+      "drawn_width": "part_thickness + thickness_clearance - kerf",
+      "drawn_length": "tab_width + side_clearance - 2*kerf (the tab also loses one kerf)"
+    }
+  },
+  "additional_stand_allocation": {
+    "11_ascent_remaining/3T": [
+      "extra_stand_렘샤_01",
+      "extra_stand_렘샤_02",
+      "extra_stand_적매화검_01",
+      "extra_stand_적매화검_02"
+    ]
+  },
+  "previous_production_release": {
+    "commit": "57456d7845aed43b1ff3b29e7c1785f4784401de",
+    "archive_commit": "0afad48363a722cc19cb2c24a4b75e501fec94ab",
+    "archive_path": "snapshots/before_pr_fit_zero_57456d7"
+  },
+  "guide_stand_allocation": {
+    "20_guide_stand_comparison/3T": [
+      "guide_stand_렘샤_01",
+      "guide_stand_렘샤_02"
+    ]
+  }
 }

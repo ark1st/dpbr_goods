@@ -210,6 +210,33 @@ def stand_body_axis(im):
     return float(np.searchsorted(columns, columns[-1] / 2)) + .5
 
 
+def stand_body_landmarks(im, source_size):
+    """Locate the opaque torso and foot in the original cropped pixel scale.
+
+    FindCenter's head/torso-density approach motivates measuring the figure
+    rather than the weapon/effect bounding box. Pixels remain untouched in the
+    print; this reduced copy is used only for measuring landmarks.
+    """
+    native = im.resize(tuple(source_size), Image.Resampling.NEAREST)
+    alpha = np.asarray(native)[:, :, 3]
+    core = (alpha >= 250).astype('uint8')
+    if not core.any():
+        core = (alpha > 8).astype('uint8')
+    axis = stand_body_axis(native)
+    x = int(axis)
+    strip = core[:, max(0, x - 10):min(native.width, x + 10)]
+    counts = strip.sum(axis=1)
+    # Starting within the thick upper-body mass, find the end of its contiguous
+    # lower body; a thin sword continuing below the feet must not set the line.
+    start = min(len(counts) - 1, round(native.height * .45))
+    active = np.flatnonzero(counts[:start + 1] >= 3)
+    assert len(active), 'Cannot locate the opaque torso'
+    y = int(active[-1])
+    while y + 1 < len(counts) and counts[y + 1] >= 3:
+        y += 1
+    return axis, float(y + 1)
+
+
 def stand_web(axes, anchor, shoulder, width, taper, radius, tab_width, depth):
     """Round the crown and join the sides to the tab with a tangent cubic."""
     center = (axes[0] + axes[-1]) / 2
@@ -269,25 +296,43 @@ def stand_documents(entries, settings, draw_path, thickness='3T'):
     for group in stand_sprite_sets(entries, settings.get('combine_zero_modes', False)):
         art_x = 0.0
         artworks, bodies, inks, axes = [], [], [], []
+        images = []
         for entry in group:
             with Image.open(entry['prepared']) as source:
-                im = source.convert('RGBA')
-            ink, body, scale = character_documents(im, height, border, (art_x, top))
+                images.append(source.convert('RGBA'))
+        pair = len(group) == 2
+        if pair:
+            # All Nexon look PNGs have a common source-pixel character scale;
+            # resizing each full crop to 60 mm made effect-heavy art smaller.
+            native_mm = height / max(e['source_ink_px'][1] for e in group)
+            landmarks = [stand_body_landmarks(im, e['source_ink_px'])
+                         for im, e in zip(images, group, strict=True)]
+            body_distance_mm = settings.get('pair_body_distance_mm', 25.0)
+            assert body_distance_mm >= 20, 'Pair body centers are too close'
+            baseline = top + landmarks[0][1] * native_mm
+            positions = [(i * body_distance_mm - axis * native_mm,
+                          baseline - foot * native_mm,
+                          e['source_ink_px'][1] * native_mm)
+                         for i, ((axis, foot), e) in enumerate(zip(landmarks, group, strict=True))]
+        else:
+            positions = [(art_x, top, height)]
+        for entry, im, (sprite_x, sprite_top, sprite_height) in zip(group, images, positions, strict=True):
+            ink, body, scale = character_documents(im, sprite_height, border, (sprite_x, sprite_top))
             width = im.width * scale
-            axes.append(art_x + stand_body_axis(im) * scale)
+            axes.append(sprite_x + stand_body_axis(im) * scale)
             bodies.append(body)
             inks.append(ink)
             artwork = {
                 'nickname': entry['nickname'], 'world': entry['world'], 'mode': entry['mode'],
-                'art_height_mm': height, 'art_width_mm': width,
+                'art_height_mm': sprite_height, 'art_width_mm': width,
                 'source_ink_px': entry['source_ink_px'], 'print_px': [im.width, im.height],
-                'effective_source_ppi': round(entry['source_ink_px'][1] / height * 25.4, 1),
-                'art_rect_mm': [art_x, top, art_x + width, top + height],
+                'effective_source_ppi': round(entry['source_ink_px'][1] / sprite_height * 25.4, 1),
+                'art_rect_mm': [sprite_x, sprite_top, sprite_x + width, sprite_top + sprite_height],
                 'prepared_source': entry['source'], 'prepared_path': entry['prepared_rel'],
                 'dropped_components': entry['dropped_components'], 'changed_px': entry['changed_px'],
             }
             artworks.append((entry['prepared'], artwork))
-            art_x += width + art_gap
+            art_x = max(art_x, sprite_x + width + art_gap)
 
         center = (axes[0] + axes[-1]) / 2
         shoulder = max(body.bounds[3] for body in bodies)
@@ -317,7 +362,7 @@ def stand_documents(entries, settings, draw_path, thickness='3T'):
         column = max(solid.bounds[2], base.bounds[2]) + shift + 10
         for _, item in artworks:
             x0, y0, x1, y1 = item['art_rect_mm']
-            item['art_rect_mm'] = [round(x0 + shift, 4), y0, round(x1 + shift, 4), y1]
+            item['art_rect_mm'] = [round(x0 + shift, 4), round(y0, 4), round(x1 + shift, 4), round(y1, 4)]
 
         components = [item for _, item in artworks]
         first, last = components[0], components[-1]
@@ -327,8 +372,10 @@ def stand_documents(entries, settings, draw_path, thickness='3T'):
         char_meta = {
             **single_source, 'part': 'character', 'nickname': first['nickname'],
             'world': first['world'], 'mode': mode, 'components': components,
-            'art_height_mm': height, 'art_width_mm': art_x - art_gap,
-            'art_rect_mm': [first['art_rect_mm'][0], top, last['art_rect_mm'][2], top + height],
+            'art_height_mm': height,
+            'art_width_mm': max(c['art_rect_mm'][2] for c in components) - min(c['art_rect_mm'][0] for c in components),
+            'art_rect_mm': [min(c['art_rect_mm'][0] for c in components), min(c['art_rect_mm'][1] for c in components),
+                            max(c['art_rect_mm'][2] for c in components), max(c['art_rect_mm'][3] for c in components)],
             'effective_source_ppi': min(item['effective_source_ppi'] for item in components),
             'clear_border_mm': border, 'tab_width_mm': tab_width, 'tab_depth_mm': depth,
             'slot_target_mm': [sl, sw], 'tab_center_mm': [center_x, round(shoulder, 4)],
@@ -342,6 +389,14 @@ def stand_documents(entries, settings, draw_path, thickness='3T'):
                                    'ligament_widths_mm': [round(weakest, 2)], 'total_mm': round(weakest, 2)},
             'physical_fit_test': False,
         }
+        if pair:
+            char_meta['pair_body_alignment'] = {
+                'source_pixel_mm': native_mm,
+                'body_center_distance_mm': body_distance_mm,
+                'landmarks_px': [{'body_axis': axis, 'foot_y': foot} for axis, foot in landmarks],
+                'foot_y_mm': baseline,
+                'method': 'opaque torso density and contiguous foot line',
+            }
         base_meta = {
             'part': 'base', 'nickname': first['nickname'], 'mode': mode,
             'size_mm': [bw, bh], 'corner_radius_mm': br,
