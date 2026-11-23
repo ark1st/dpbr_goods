@@ -1,0 +1,99 @@
+{
+  "archive_branch": "raw",
+  "archive_commit": "2998c858ad3795b930a4c5138c658cea1665e61d",
+  "status": "retired_not_for_current_production",
+  "prior_heads": {
+    "main": "b0de59b0fd8b70a2a6aec257546dbac07c31b5cd",
+    "output_len": "af3ee31d8bb25471a397739eb61e7e79f09cc5b9",
+    "origin/output_len_sleeg": "613b89f6665d1d8b7f2188acd85f00338ad25c81",
+    "output": "8f162f27877c494168764cd1ab27e8d566993baf",
+    "output_len_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+    "output_len_sleeg_incoming": "bcc9d2eb6efa992ee3ed6ed1cc2ec406b0410b25",
+    "before_two_sheet": "0061b39491f7e70c28060eecd81753eb35c7f779"
+  },
+  "physical_cut_test": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    },
+    {
+      "commit": "0061b39491f7e70c28060eecd81753eb35c7f779",
+      "revision": "A3-2026-11-22-current-only",
+      "status": "retired_not_for_current_print",
+      "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    },
+    {
+      "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+      "source_file": "assets/external/recut_input/02_COMBINED_MASTER_SOURCE_NOT_FOR_CUT.ai",
+      "status": "superseded_cut_layer_only_do_not_execute",
+      "reason": "Already-printed500x800 layout retained;309920 micro-segment cutting commands replaced by4392 reviewed segments in cut-only recovery."
+    },
+    {
+      "commit": "7cb53141c373b4e6dc7daff22ffeae7d5d12ef62",
+      "revision": "A3-2026-11-23-ascent-and-existing-print-recut",
+      "groups": [
+        "02_extra_sheet/3T",
+        "05_len/3T"
+      ],
+      "status": "superseded_mixed_print_layout_only",
+      "reason": "Yanggeum three-piece set now included within the same two mixed A3 pages; original scale and curves preserved. PAD deferred. Existing500x800 recut and separate Ascent unchanged."
+    },
+    {
+      "commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
+      "groups": [
+        "17_줄줄이_결합판/3T"
+      ],
+      "status": "retired_single_hole_keyrings_not_for_serial_linking",
+      "reason": "Each applicant keyring had only one top hole. Current derivative preserves the art and top hole, adds the bottom4mm linking hole and uses offcut placements."
+    }
+  ],
+  "retired_package_files": [
+    {
+      "file": "a3_release/02_extra_sheet_3T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/02_extra_sheet_5T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/05_len_3T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/05_len_5T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/06_len_pad_3T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/06_len_pad_5T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/09_yanggum_3T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    },
+    {
+      "file": "a3_release/11_ascent_remaining_3T_A3.zip",
+      "source_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
+      "status": "previous_revision_archive_not_current_production"
+    }
+  ]
+}

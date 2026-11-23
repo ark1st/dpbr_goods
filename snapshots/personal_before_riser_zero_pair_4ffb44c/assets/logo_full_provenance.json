@@ -1,0 +1,17 @@
+{
+  "source": "assets/source_logo.ai",
+  "source_sha256": "490e2d49be311f3a5302589295f3b529a2e4c43752305a3a0c945b05abd31546",
+  "extracted_svg_sha256_lf": "efe05d8c9101d5b2cc8a3e88ffe0418b42589a3e276ac56d319ae32b5ef1dff1",
+  "source_group": "기본",
+  "path_count": 38,
+  "symbol_paths": 7,
+  "outlined_wordmark_paths": 31,
+  "source_viewbox": [
+    182.38101194581606,
+    350.0,
+    1682.338988054184,
+    592.283
+  ],
+  "aspect_ratio": 2.840430990006777,
+  "changes": "None: original path data, fills and relative positions retained."
+}

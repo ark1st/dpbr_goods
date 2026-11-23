@@ -1,0 +1,294 @@
+{
+  "title": "줄줄이/스탠드 키링 신청자별 메이플 캐릭터 에셋",
+  "generated_at": "2026-11-23T00:00:00+00:00",
+  "survey_source": "굿즈 수요조사 (응답).xlsx (assets/chain_keyring에 원본 유지)",
+  "lookup_route": "maplestory.nexon.com 랭킹 검색(전월드 상위매치 w=0, 매치 없을 때 리부트 전체 w=254) → CharacterEx/180 아바타 + OpenAPI look 300",
+  "privacy": "전화번호·학번은 기록하지 않음",
+  "applicants": [
+    {
+      "applicant": "강민",
+      "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+      "source_column": "스탠드 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 22:05:18",
+      "characters": [
+        {
+          "nickname": "마가다락방",
+          "note": "제로 — 접미사 없는 파일=알파(랭킹 스냅샷, 모드 전환 전), _beta=현재 활성 베타(공식 금일 이미지).",
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 292,
+          "job": "제로",
+          "guild": "하모니",
+          "files": [
+            "마가다락방__리부트(icon_3)_avatar180.png",
+            "마가다락방__리부트(icon_3)_render300.png",
+            "마가다락방__리부트(icon_3)_avatar180_beta.png",
+            "마가다락방__리부트(icon_3)_render300_beta.png"
+          ]
+        }
+      ]
+    },
+    {
+      "applicant": "강윤진",
+      "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+      "source_column": "줄줄이 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 20:41:36",
+      "characters": [
+        {
+          "nickname": "청민예",
+          "note": "사용자 확정(2026-11-23): 스탠드 키링(단일 캐릭터). 알파·베타 두 모드 모두 반입 — files에 _beta 추가, 접미사 없는 파일=알파(현재 활성 모드).",
+          "status": "unique",
+          "world": "오로라",
+          "level": 273,
+          "job": "제로",
+          "guild": "악몽",
+          "files": [
+            "청민예__오로라_avatar180.png",
+            "청민예__오로라_render300.png",
+            "청민예__오로라_avatar180_beta.png",
+            "청민예__오로라_render300_beta.png"
+          ]
+        }
+      ]
+    },
+    {
+      "applicant": "김윤",
+      "product": "캐릭터 줄줄이 키링 (4cm x 4cm)",
+      "source_column": "줄줄이 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 22:54:03",
+      "characters": [
+        {
+          "nickname": "타루카루타",
+          "note": null,
+          "status": "unique",
+          "world": "베라",
+          "level": 287,
+          "job": "카데나",
+          "guild": "눈꽃",
+          "files": [
+            "타루카루타__베라_avatar180.png",
+            "타루카루타__베라_render300.png"
+          ]
+        },
+        {
+          "nickname": "믐댕",
+          "note": null,
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 270,
+          "job": "카데나",
+          "guild": "",
+          "files": [
+            "믐댕__리부트(icon_3)_avatar180.png",
+            "믐댕__리부트(icon_3)_render300.png"
+          ]
+        },
+        {
+          "nickname": "안개질무렵",
+          "note": null,
+          "status": "unique",
+          "world": "베라",
+          "level": 291,
+          "job": "카인",
+          "guild": "눈꽃",
+          "files": [
+            "안개질무렵__베라_avatar180.png",
+            "안개질무렵__베라_render300.png"
+          ]
+        },
+        {
+          "nickname": "엔루",
+          "note": null,
+          "status": "unique",
+          "world": "베라",
+          "level": 289,
+          "job": "키네시스",
+          "guild": "눈꽃",
+          "files": [
+            "엔루__베라_avatar180.png",
+            "엔루__베라_render300.png"
+          ]
+        },
+        {
+          "nickname": "룃혜",
+          "note": null,
+          "status": "unique",
+          "world": "베라",
+          "level": 286,
+          "job": "아란",
+          "guild": "눈꽃",
+          "files": [
+            "룃혜__베라_avatar180.png",
+            "룃혜__베라_render300.png"
+          ]
+        }
+      ]
+    },
+    {
+      "applicant": "김호",
+      "product": "캐릭터 줄줄이 키링 (4cm x 4cm)",
+      "source_column": "줄줄이 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 18:44:04",
+      "characters": [
+        {
+          "nickname": "냘됫",
+          "note": null,
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 294,
+          "job": "아델",
+          "guild": "MINT",
+          "files": [
+            "냘됫__리부트(icon_3)_avatar180.png",
+            "냘됫__리부트(icon_3)_render300.png"
+          ]
+        },
+        {
+          "nickname": "뿟쥐",
+          "note": "제로 — 접미사 없는 파일=베타(현재 활성 모드), _alpha=2026-09-20 공식 이미지.",
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 285,
+          "job": "제로",
+          "guild": "MINT",
+          "files": [
+            "뿟쥐__리부트(icon_3)_avatar180.png",
+            "뿟쥐__리부트(icon_3)_render300.png",
+            "뿟쥐__리부트(icon_3)_avatar180_alpha.png",
+            "뿟쥐__리부트(icon_3)_render300_alpha.png"
+          ]
+        },
+        {
+          "nickname": "걸퍄",
+          "note": null,
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 285,
+          "job": "렌",
+          "guild": "MINT",
+          "files": [
+            "걸퍄__리부트(icon_3)_avatar180.png",
+            "걸퍄__리부트(icon_3)_render300.png"
+          ]
+        },
+        {
+          "nickname": "얽빅",
+          "note": null,
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 285,
+          "job": "일리움",
+          "guild": "MINT",
+          "files": [
+            "얽빅__리부트(icon_3)_avatar180.png",
+            "얽빅__리부트(icon_3)_render300.png"
+          ]
+        },
+        {
+          "nickname": "씀툿",
+          "note": null,
+          "status": "unique",
+          "world": "리부트(icon_3)",
+          "level": 281,
+          "job": "레테",
+          "guild": "MINT",
+          "files": [
+            "씀툿__리부트(icon_3)_avatar180.png",
+            "씀툿__리부트(icon_3)_render300.png"
+          ]
+        }
+      ]
+    },
+    {
+      "applicant": "배승민",
+      "product": "캐릭터 줄줄이 키링 (4cm x 4cm)",
+      "source_column": "줄줄이 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 15:14:25",
+      "characters": [
+        {
+          "nickname": "아기요우무",
+          "note": null,
+          "status": "unique",
+          "world": "스카니아",
+          "level": 288,
+          "job": "렌",
+          "guild": "반지",
+          "files": [
+            "아기요우무__스카니아_avatar180.png",
+            "아기요우무__스카니아_render300.png"
+          ]
+        },
+        {
+          "nickname": "슬빈띠니",
+          "note": null,
+          "status": "unique",
+          "world": "스카니아",
+          "level": 282,
+          "job": "레테",
+          "guild": "반지",
+          "files": [
+            "슬빈띠니__스카니아_avatar180.png",
+            "슬빈띠니__스카니아_render300.png"
+          ]
+        },
+        {
+          "nickname": "체스말보관함",
+          "note": null,
+          "status": "unique",
+          "world": "스카니아",
+          "level": 280,
+          "job": "키네시스",
+          "guild": "",
+          "files": [
+            "체스말보관함__스카니아_avatar180.png",
+            "체스말보관함__스카니아_render300.png"
+          ]
+        }
+      ]
+    },
+    {
+      "applicant": "이상준",
+      "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+      "source_column": "스탠드 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 15:45:50",
+      "characters": [
+        {
+          "nickname": "귀여운렌군",
+          "note": null,
+          "status": "unique",
+          "world": "스카니아",
+          "level": 296,
+          "job": "렌",
+          "guild": "냥아치",
+          "files": [
+            "귀여운렌군__스카니아_avatar180.png",
+            "귀여운렌군__스카니아_render300.png"
+          ]
+        }
+      ]
+    },
+    {
+      "applicant": "정지영",
+      "product": "캐릭터 스탠드 키링 (6cm x 6cm)",
+      "source_column": "스탠드 키링 닉네임 작성",
+      "submitted_at": "2026-11-22 15:14:03",
+      "characters": [
+        {
+          "nickname": "검마충성77",
+          "note": null,
+          "status": "unique",
+          "world": "크로아",
+          "level": 280,
+          "job": "루미너스",
+          "guild": "봄들",
+          "files": [
+            "검마충성77__크로아_avatar180.png",
+            "검마충성77__크로아_render300.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "preview": "characters_preview.png",
+  "zeros_modes_preview": "zeros_modes_preview.png"
+}

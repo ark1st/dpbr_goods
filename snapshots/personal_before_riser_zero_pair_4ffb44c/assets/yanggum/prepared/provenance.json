@@ -1,0 +1,15 @@
+{
+  "source_file": "assets/yanggum/아크릴SD스탠드.jpg",
+  "source_sha256": "cbbf123d38f7d3d0b779447be7f62b5142065127dca31e7b5350cd76539ce74e",
+  "method": "corner flood-fill on min(RGB)>=245; figure kept opaque, background transparent",
+  "rgb_pixels_modified": 0,
+  "alpha_islands_over_200px": 1,
+  "alpha_specks_discarded": 0,
+  "crop_px": [
+    288,
+    300,
+    1105,
+    1156
+  ],
+  "print_note": "RGB bytes are the supplied JPG cropped; no redraw, no retouch, no generative step."
+}

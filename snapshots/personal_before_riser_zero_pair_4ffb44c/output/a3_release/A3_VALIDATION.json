@@ -1,0 +1,1109 @@
+{
+  "checked_pages": 10,
+  "native_geometry_checked": true,
+  "records": [
+    {
+      "folder": "a3_release/02_extra_sheet/3T/sheet_01",
+      "pieces": 43,
+      "contours": 106,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 0.0007421509849329574,
+        "02_MASTER.pdf": 0.0007421509849329574,
+        "02_MASTER.ai": 0.0007421509849329574,
+        "02_MASTER.vectorcraft": 0.0007421509849329574
+      },
+      "png": [
+        {
+          "file": "a3_release/02_extra_sheet/3T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/02_extra_sheet/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "f0aa9ae1e0abdbfee8702acf100e1c814db441386e0c3ae06957967170a87931",
+        "01_PRINT_300ppi.png": "8a0fdaabfa2a90165029412186c1ecc39daa899e68c1a874643697a02c5055c4",
+        "PREVIEW_NOT_FOR_CUT.pdf": "5b8851ddb9b71f075b55a1a4d32c1faacbef3637524d74cdfb08fbf476357298",
+        "02_MASTER.vectorcraft": "e24b0ed70630007575875266a027c6915ddb9257a26606df96f24b104b5f655e",
+        "03_CUT_ONLY.svg": "2b2593905c348c637cacada7872941a35bfa1c74d314b1d5f51edec74ea21a03",
+        "03_CUT_ONLY.pdf": "f92d4f11d5f646d60b0057d19c54e646a2219815d9a3335af79ad398209e929d",
+        "04_WHITE_INK_MASK_300ppi.png": "a160388ff65ef5710ee3ace1a99f43eec1e1b0762dd4f98b2f06a28a31f3cec7",
+        "02_MASTER.pdf": "4794b03f65ef24fe8c16c89c59aa709d2eff1da2e33925b804148e2dc1fc655e",
+        "README.md": "6bea890d0d5b7ccc500fb3f8892b288ac8e1ba23dbd953043f0b0aa7d607375e",
+        "02_MASTER.ai": "8dae51634a5b7d365b1eb5f41bec529893fe141e8d8f2fab6037c568f4f6495c",
+        "04_WHITE_INK_MASK.pdf": "f1428ef67a8aaeba70c01d520d6501b603823dab36e313b83d970dcf6bd08e80",
+        "validation.json": "a273c093b29f733d5f5d971dccf81803b4f09b905e8eff4a29cd39b4fe846abb",
+        "01_PRINT.pdf": "ad79ad39fd850a9e90eab6be2db5636bad597d2f2ef744fded7c4d33d525961e",
+        "cut_detail.png": "ae771b1be3f79e6afad5acd6cb3b522a759603e8ab06d41c8e9d40f7eca7cd13"
+      }
+    },
+    {
+      "folder": "a3_release/02_extra_sheet/5T/sheet_01",
+      "pieces": 39,
+      "contours": 101,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 1.6105620693813227e-05,
+        "02_MASTER.pdf": 1.6105620693813227e-05,
+        "02_MASTER.ai": 2.5763480172917074e-05,
+        "02_MASTER.vectorcraft": 2.5763480172917074e-05
+      },
+      "png": [
+        {
+          "file": "a3_release/02_extra_sheet/5T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/02_extra_sheet/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "8557bdd56eafd4ce4d7f9a8115ad459aa8feb9f4bd55e373107d8790b4368b4e",
+        "01_PRINT_300ppi.png": "23f0b1da856a933e904c4fc4de4d4604437319684b52318dc267f7475f7a200f",
+        "PREVIEW_NOT_FOR_CUT.pdf": "b73e006bf4a77b9591cbcda43ac82ed614d51a7192c6c9b0f1c8ddc0fe9d8c3c",
+        "02_MASTER.vectorcraft": "e47dac91c00e491b9646f2de3edfab602398b250e9775504f6d90ae944ecf15f",
+        "03_CUT_ONLY.svg": "5262923db054b1fd346bbeae4cb6ca52d19bf13bd6efbc12e1008ff9f544454e",
+        "03_CUT_ONLY.pdf": "3b8310f3b83f993c51984f2539802d9cc13028ecd0089ec01d81dd2826e747b6",
+        "04_WHITE_INK_MASK_300ppi.png": "6fdfe8b53bcd7af61c28e453ce5927450441048a01d95c05bfb145c35a919eee",
+        "02_MASTER.pdf": "c2dbf862a1535ba486ac529449d5eb4e14b883c7a017e22edaf99fb918dafd49",
+        "README.md": "19be2abe39e3feff0e46d8431787e0bc97778c22200ff0985cdada7c87429ff8",
+        "02_MASTER.ai": "14029d37cb7f236f6c33621d0481fb13e9ea207c9e08dda1ad1d9d7f0705eb49",
+        "04_WHITE_INK_MASK.pdf": "4694c3e73277449bc81961adf06a782604f36b4d679302c6933b6441f2d8d085",
+        "validation.json": "233163078cc89b6f550c66a99fb0dcbec964dc903baede898d00be1a4bab44f5",
+        "01_PRINT.pdf": "e72500a7ce238e36b1c43dfe1868add41f7e9e22e2057f00938c791206462c70",
+        "cut_detail.png": "78774bfda9ffb461b4b8fde6c89c4a673d0966f4f0faad8590578608aac72206"
+      }
+    },
+    {
+      "folder": "a3_release/05_len/3T/sheet_01",
+      "pieces": 16,
+      "contours": 41,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 0.000755849749906903,
+        "02_MASTER.pdf": 0.000755849749906903,
+        "02_MASTER.ai": 0.000755849749906903,
+        "02_MASTER.vectorcraft": 0.000755849749906903
+      },
+      "png": [
+        {
+          "file": "a3_release/05_len/3T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/05_len/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "90953c7bf3ed73bfd6817f5d49f693366cc53166bc52931690f60f8cda659244",
+        "01_PRINT_300ppi.png": "20926407acdfcdedacd868e56dbb327a7c52dd5745e0e4e3f1686505185795ae",
+        "PREVIEW_NOT_FOR_CUT.pdf": "6a9d7a9142b839c71cf4faf9b8109715238731f08aa8e89ea4dd38116c918f88",
+        "02_MASTER.vectorcraft": "c14a0880fdfbba0fcfa7e376c43c71d5c4211c2aee32cdf23f4d92075b019062",
+        "03_CUT_ONLY.svg": "8967dd45a9fbae91230122c5fb0efcae3bfdbe421ea24203942bd1a78052ec61",
+        "03_CUT_ONLY.pdf": "23bd37787d4176b9d9298abb2dd64a24b92489f3aa80630c8581ea4863b75e4d",
+        "04_WHITE_INK_MASK_300ppi.png": "b929d33986f87f74a2a77a1547dab4dd7de18c5e836d32808c4e9814a4f9e76a",
+        "02_MASTER.pdf": "ce95e84a43e0a0b69880e2836c5d7363ed93c85c550725041673898b5154f32e",
+        "README.md": "588f9b37d5357b57f7a0b75553ad89f14e686ac8ae82fa36d08de6b1e9542dd0",
+        "02_MASTER.ai": "bdaaf7725cd7bb4987aaf7339eba7d4822c917378c81ffccca1382cd7438c49a",
+        "04_WHITE_INK_MASK.pdf": "43a29bdf9a308aff3390a257d87f685a2cc16b922e5cf63c32796ec1a99398ea",
+        "validation.json": "7f93e295b388c4e23b4ee156ea3b078d7095f6fb9dd56411427f2bd4f919f377",
+        "01_PRINT.pdf": "ca57a3ec663e1d20b905ba80af7dd0f558a4cd08bc8a3efc21d2f4125763871a",
+        "cut_detail.png": "b04d3de41c24d73abfb84a6f754ed7a547e4f2eae6be706b1b6d0e4ddcbe5e7b"
+      }
+    },
+    {
+      "folder": "a3_release/05_len/5T/sheet_01",
+      "pieces": 12,
+      "contours": 28,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 0.0007509203224030593,
+        "02_MASTER.pdf": 0.0007509203224030593,
+        "02_MASTER.ai": 0.0007509203224030593,
+        "02_MASTER.vectorcraft": 0.0007509203224030593
+      },
+      "png": [
+        {
+          "file": "a3_release/05_len/5T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/05_len/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "d6e71df2451b7fccfbefb3410a66719f3fbcbde518991fad7600cda6a8c885f7",
+        "01_PRINT_300ppi.png": "c76b6e233bf3d77dab3b4f1f1a8a8e99e9614b1730a34e9cd6fe8e16be562093",
+        "PREVIEW_NOT_FOR_CUT.pdf": "d16c078c76979bcec5a6840f34a57bcfeea78ba5d20e231486f817842046adf6",
+        "02_MASTER.vectorcraft": "849d7e040f529fc3474b9969016784ade5683cdaf89e9a9e95b9a0a71a13e123",
+        "03_CUT_ONLY.svg": "6b3a708b705dc99bd6e8e409e865e318f7b0269d7ebb4687d0863e4231b36a95",
+        "03_CUT_ONLY.pdf": "e58cae3738dd3bddc52a7e227e850a6279249663302c442e8feda4d425558327",
+        "04_WHITE_INK_MASK_300ppi.png": "ebd0cd8970a31488d28f472dbcacfb2e62f9f6327d9b1657d25c621757d7a73b",
+        "02_MASTER.pdf": "027a242e601dab12f15fe0137f8cf016c3c8cf1458294cf25689fae82bf16ed0",
+        "README.md": "25aafe61ddb2d695d0eba9fc8d0e012f09c35d6aea113ca8aa3e5005c19a4a41",
+        "02_MASTER.ai": "4a343f38c62e34b4ac87930557d0920eba1ff43c3b4f76756b0c910ceac31005",
+        "04_WHITE_INK_MASK.pdf": "a79323cb4d4abadaa002db89c1e4d510501337bbc94931f6fbd4731fc9630698",
+        "validation.json": "6cc606bb3ac3a7ae0437c5f5d96ceabe39b31e8c0993add1d0ed866014585c17",
+        "01_PRINT.pdf": "43316a35297bd219f797b505a01168822aeb151d1d5c64f91c91a6e76fbb4770",
+        "cut_detail.png": "b438ec5d7b846db6fa6745d717c2d450ea24d4774ece83b3c16a49751b2d1665"
+      }
+    },
+    {
+      "folder": "a3_release/06_len_pad/3T/sheet_01",
+      "pieces": 7,
+      "contours": 15,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 0.0007143784301878118,
+        "02_MASTER.pdf": 0.0007143784301878118,
+        "02_MASTER.ai": 0.00037195754687354294,
+        "02_MASTER.vectorcraft": 0.00037195754687354294
+      },
+      "png": [
+        {
+          "file": "a3_release/06_len_pad/3T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/06_len_pad/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "64d28fa7ea9123ad39c4bc9a093648b5b4fa9b64a59e06d40b4b5ca1162e3e36",
+        "01_PRINT_300ppi.png": "f522df5aca02e920b5060dce9229170b4db576759047174e16cda69de3a72bbc",
+        "PREVIEW_NOT_FOR_CUT.pdf": "db4e75423620878dde25a0c0ec8c6f6394fc0502fc0f6b68699497922f2f45db",
+        "02_MASTER.vectorcraft": "853d6dfce12b597f4fc236015d4439343d1a66bb75fb2dc825fa3fd554e69cae",
+        "03_CUT_ONLY.svg": "c66628522b7bbe7ec8d303406945b9cd421bb14fb63512b48030087f8d40f110",
+        "03_CUT_ONLY.pdf": "4ce1a0f8816227348c2eb2ca31467ff40821786f1e84c13c91e3dbd7edf284c8",
+        "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+        "02_MASTER.pdf": "c1f4b933d6e86984f9836ff361d8f892f73f01888ae99241f3eb30fb964e21a0",
+        "README.md": "a1113fff5c0276111fadfb71fcd706f575526e51ec9156cb9d878682f681bcca",
+        "02_MASTER.ai": "2713bdb10d150ee0e9f8a118ecc1704e4027d795d7698328f95616faa92000c9",
+        "04_WHITE_INK_MASK.pdf": "e340073adf5f00679c9fa2e6487a30e3f6ec72c3e198db64c3dcc7fe5859a86c",
+        "validation.json": "0e880d6792e477afb46c795794cf953cf977ca5698f963463d7d5bd9d5854e41",
+        "01_PRINT.pdf": "e0557ada1f9f4d0ace76a95cf083cbcaa8e1c79ed8208ed3514205cec4f78a18",
+        "cut_detail.png": "9374d7a4cbeb5476d7f65c1778c1acc365f4c77c7b5a293da1c8b62d75512647"
+      }
+    },
+    {
+      "folder": "a3_release/06_len_pad/5T/sheet_01",
+      "pieces": 7,
+      "contours": 15,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 0.0007260669379376379,
+        "02_MASTER.pdf": 0.0007260669379376379,
+        "02_MASTER.ai": 0.0007242728134168055,
+        "02_MASTER.vectorcraft": 0.0007242728134168055
+      },
+      "png": [
+        {
+          "file": "a3_release/06_len_pad/5T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/06_len_pad/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "6a6c6db64bd8c7c2202d741be1b56c322e03226da1b9c5f0b91c36f3a8f4f19f",
+        "01_PRINT_300ppi.png": "2ed161415379ff7b93428f9706cf48831439386e3d2a829a09d84e1a8f759ecf",
+        "PREVIEW_NOT_FOR_CUT.pdf": "12c8d4be40783590102fc07198be43991db9a1e41c6444e983603324a670fdb2",
+        "02_MASTER.vectorcraft": "2542edab643897ed6b5bd326a2c6f440db30632e3436eaa617c214ec1475fd31",
+        "03_CUT_ONLY.svg": "d34f74a81836b50ed991cfd61b6aacae9444144d46a80d0fc926b43840713222",
+        "03_CUT_ONLY.pdf": "28b09e58b387a7cb2e2f0c9eeed7f65a2fb9b5edc1872906341b9cd5f2a1a491",
+        "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+        "02_MASTER.pdf": "456c7cbd0828d71d8bd7608d6a337b74e09dada73d1b06b0b912883ef5c8977b",
+        "README.md": "a1113fff5c0276111fadfb71fcd706f575526e51ec9156cb9d878682f681bcca",
+        "02_MASTER.ai": "160e1f560836ece489d4978b264f82c8a35d70d00548dc793bc4864ad044aa39",
+        "04_WHITE_INK_MASK.pdf": "430b10b965dd9a6f4204c3db764c3e48b3f727f62c4cf96012ac773e26a89e8e",
+        "validation.json": "2a1240ea898d182ea8acd8da86e3496b5d56f66e75d24e6d99540f8472f7008d",
+        "01_PRINT.pdf": "1a110e4ed8d4e9742fffd3d7cd1aeeb23d087faee01728d1f4e2801b11ed3834",
+        "cut_detail.png": "8593495eb4de546be8a03990d9bafae228f4f567fee935de19fff7daca25e2b1"
+      }
+    },
+    {
+      "folder": "a3_release/09_yanggum/3T/sheet_01",
+      "pieces": 3,
+      "contours": 5,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 1.58896893001083e-05,
+        "02_MASTER.pdf": 1.58896893001083e-05,
+        "02_MASTER.ai": 2.635771746986034e-05,
+        "02_MASTER.vectorcraft": 2.635771746986034e-05
+      },
+      "png": [
+        {
+          "file": "a3_release/09_yanggum/3T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/09_yanggum/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "b9e09c839975775425c422dec807c6709c6d9bbd33c56f14733f925f1fbe430a",
+        "01_PRINT_300ppi.png": "e1aedd998887b7d3f6fab5b91bffb4632ad553f4f3f6cdf7a58b46a9837ec552",
+        "PREVIEW_NOT_FOR_CUT.pdf": "471aa10b861d3e93a2a70753ae2c5d7c092893d98deabe0d2fdf9411f0d35114",
+        "02_MASTER.vectorcraft": "c3966afb612d929e2ced58ed3e9c45235c63e298a41280fc3587dc8aca44d277",
+        "03_CUT_ONLY.svg": "7ba3b597bd20f1e6e3908507ff6b2f509644c88da5fc82377c176630867ad80a",
+        "03_CUT_ONLY.pdf": "3d5949e64c40a3bdfa9a4012e8f996d167e704a05aac7cbbbe5b576f31471574",
+        "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+        "02_MASTER.pdf": "611cf7dfafda63fe472b7c5f5c4c00cc253ea351e25b389c1a18897d6f839d85",
+        "README.md": "c13dc919d91fcdc045e93d9dd6b04d7b3885e93961c8dddb8449a2a0992b7856",
+        "02_MASTER.ai": "63a72e86145cf0e0d06612474398456bcd932c6ea2ae63ba04c9dd7763040a13",
+        "04_WHITE_INK_MASK.pdf": "e765bc98517a756be1e3c5517dc133c733e58dc17dd2ced1581a182c8970d75a",
+        "validation.json": "f97a25089df8aa8f25ed64265b5016602ade4acd77521a12e9a0a15d6c0990ba",
+        "01_PRINT.pdf": "9fd146f15b19b91c2c5eb4cafe5a7705bfb7f19359c0b6c691ab4e64213f2ea0",
+        "cut_detail.png": "30df1197c721a6c1725348108155b1197d7aa68fa7fc072061c9fcddaeb0a88e"
+      }
+    },
+    {
+      "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
+      "pieces": 15,
+      "contours": 17,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 2.267286603864239e-05,
+        "02_MASTER.pdf": 2.267286603864239e-05,
+        "02_MASTER.ai": 0.000569779092003146,
+        "02_MASTER.vectorcraft": 0.000569779092003146
+      },
+      "png": [
+        {
+          "file": "a3_release/11_ascent_remaining/3T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/11_ascent_remaining/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "6cf1d1a2d8ae8af0269b57d960d5bc08a3bae2d0f9c3ddda1a01eaec6e061c0c",
+        "01_PRINT_300ppi.png": "7796aabf97d6168fa07bd7297a342f68d3c403417bdffe7170fbbcf262bf9b41",
+        "PREVIEW_NOT_FOR_CUT.pdf": "b641043330e9ed914fa71b7902a3b5212e2cde88dc14d90c97514a1308e9bd39",
+        "02_MASTER.vectorcraft": "f3bb9483efc8ed39d48fac6a389e7192b06ef155eecc37a829abb54d3d4fdce2",
+        "03_CUT_ONLY.svg": "75a2e1060f9fb018f68c9943bd371779ae2abbccb4f92e7f213ed55accb30bae",
+        "03_CUT_ONLY.pdf": "88a2d5a8f698cc64d48d792a5977a9848683f2c5c93e64dc59fa9881cac55d6b",
+        "04_WHITE_INK_MASK_300ppi.png": "95ef65f9310d4ef504eecf1a6bbed4acb01f58aec705a899c98a82b5de39f08f",
+        "02_MASTER.pdf": "1addd71bbbc9517f532ccc5bce8cc1e874ec248185244e77ae2d5cbf1e0495d0",
+        "README.md": "c19031151525207605ece1250f9b05663306c6cb7a2b26f256e05667a003f9f8",
+        "02_MASTER.ai": "8ee6f8a8fc63219a218160db5cd794ef75cef7d8d89d6caec72fe676c4ad7321",
+        "04_WHITE_INK_MASK.pdf": "c0afd93202cc6f1b0920e239738646cf452033d29179b9e239367a5c4a64e58d",
+        "validation.json": "f6fd511ac1f6e3b00f42daaa4fc5226b6de8082eb68eed2bceafcc40b09b90b8",
+        "01_PRINT.pdf": "a2164241c86f8f587aa1e868f137f0213fe8fb12ec803b0d897fec8808995c44",
+        "cut_detail.png": "8d602c9a16e453483d13b28345435d4c7c8ce42ba9d48e2754c4cc4fb37ee69a"
+      }
+    },
+    {
+      "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
+      "pieces": 24,
+      "contours": 64,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 2.356887020914995e-05,
+        "02_MASTER.pdf": 2.356887020914995e-05,
+        "02_MASTER.ai": 2.4653865112624572e-05,
+        "02_MASTER.vectorcraft": 2.4653865112624572e-05
+      },
+      "png": [
+        {
+          "file": "a3_release/11_ascent_remaining/3T/sheet_02/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/11_ascent_remaining/3T/sheet_02/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "e473a9e8db7df39b1dce6cd6de66f8245979f51b6db67ac3444d071b7c17d66e",
+        "01_PRINT_300ppi.png": "996f10f308de0f486344c842518742923dc4c27701f8061e3e7e6f76686633bf",
+        "PREVIEW_NOT_FOR_CUT.pdf": "74d7d5670211f69797a40c703519364a5d7fa19c43dd2e8113d62e24b7e80a88",
+        "02_MASTER.vectorcraft": "15463547fedc33acd7a620f4d69910f284b463c0e67bf7c587a4467c2d375010",
+        "03_CUT_ONLY.svg": "eb71941c966b586414241c352d566a7dc04defc1f69a60d29174a6600dd34005",
+        "03_CUT_ONLY.pdf": "cd1042d2e135fce5e9bebf1801c23938b8b75fe57054d00a934bb7d0c264ef7b",
+        "04_WHITE_INK_MASK_300ppi.png": "18bbe48bd39c6b219b32dac52c12f66243b269a65dcf272af99a8ef9972df57a",
+        "02_MASTER.pdf": "c80fb3fff74e774a1f59267ddfc670344ebbbc7ea6135ab51720a386c792dc2d",
+        "README.md": "8878029121f306812695dce53905a6fa62b7cf2fdb90e0e572e32effff53d934",
+        "02_MASTER.ai": "7ccebf8ef29cbc0143ec9342b658ce3067810658e120bdc34dfc08abe63531ed",
+        "04_WHITE_INK_MASK.pdf": "afe7b7a62e0d43be89c834e963f8562a939b5deb72b86cb92bd9dd649adb5aee",
+        "validation.json": "cd37f993b40d36961075f672ffe57da1050e6d08915a19e6603d8dcd599ee40f",
+        "01_PRINT.pdf": "0c2fba07ecf22e80050fb8cc09b2ed22e04261bcfdc97bde94b8347cd21978a1",
+        "cut_detail.png": "b5ae4381b6a61a79bc9c3ba1162c8498a6c9fd93068ec0bc78592f5adc269bed"
+      }
+    },
+    {
+      "folder": "a3_release/19_personal_fill/3T/sheet_01",
+      "pieces": 12,
+      "contours": 36,
+      "max_export_deviation_mm": {
+        "03_CUT_ONLY.pdf": 2.1194074653112245e-05,
+        "02_MASTER.pdf": 2.1194074653112245e-05,
+        "02_MASTER.ai": 2.544101050042284e-05,
+        "02_MASTER.vectorcraft": 2.544101050042284e-05
+      },
+      "png": [
+        {
+          "file": "a3_release/19_personal_fill/3T/sheet_01/01_PRINT_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        },
+        {
+          "file": "a3_release/19_personal_fill/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
+          "pixels": [
+            4961,
+            3508
+          ]
+        }
+      ],
+      "sha256": {
+        "preview.png": "93376ed602f06f38011046e9c7e1b02614fce9822b01cefa93d792f3274bc20a",
+        "01_PRINT_300ppi.png": "1caf70ab747e206f5635e40e0b51f2493b92fe64235762b22abedcccc2f70315",
+        "PREVIEW_NOT_FOR_CUT.pdf": "13625204c236eefb211899b50961ac7c24d80f4dfd21dc7ddf3d5dc33af6b064",
+        "02_MASTER.vectorcraft": "117db57311e9df2034c49ed632af9062ef7926c8cb715788d0ada6e52512bfbc",
+        "03_CUT_ONLY.svg": "a8e628eb4327c4dc3f4f75d9987c7a735b112b60b9b794d3faec6b6249c2a9ba",
+        "03_CUT_ONLY.pdf": "d64c8a05806e189b4deeec92ed524dfd07ae1425bc03a572a00b83669d1de00b",
+        "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
+        "02_MASTER.pdf": "e43cc0a57c220a7213bc99881db95e8671726d164d3259a3e098cccdbf4c386e",
+        "README.md": "caf274f519477d5a169ba1a6a23c3d02fc8e5d28883c0a32351b706eb4a4afbb",
+        "02_MASTER.ai": "8d45552a3f16d5c4dff56d13a67280922546a697c16c5ba5620af53f88c2d404",
+        "04_WHITE_INK_MASK.pdf": "df5a8c25b56288b180211b9a9a4d400391020017ba35b1287fd39f6a76411397",
+        "validation.json": "eaedf9cc869e490d89debd4e805e00bc9cca25c9188cce360e8c7c455b38a514",
+        "01_PRINT.pdf": "c194cd739be7881c04f5206765407c58b67665c5c0802b581c67c2d76741cfd9",
+        "cut_detail.png": "66db48049f6dd6bde344f8fe8a44bd639611bc030d97d225ad6478ae5492eb2c"
+      }
+    }
+  ],
+  "packages": [],
+  "errors": [],
+  "ascent_source_size_verification": {
+    "scale": 1,
+    "unit": "mm",
+    "parts": [
+      {
+        "id": "ascent_02",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.999977600000022
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.1999768999999674
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.1999768999999674
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.999991699999896,
+          39.999991699999896,
+          39.99999169999995,
+          39.99999169999995
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946263499999077,
+          0.1946048999999448,
+          0.19462635000002138,
+          0.1946478999999499
+        ]
+      },
+      {
+        "id": "ascent_03",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.999977599999966
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.199976900000024
+          ],
+          [
+            20.200015899999983,
+            3.19997699999999
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.2000201000000175
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.199976900000024
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.99999169999995,
+          39.999991699999896,
+          39.999991699999896,
+          39.99999169999995
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946478499999671,
+          0.1946478499999671,
+          0.1946479000000636,
+          0.19464790000000676
+        ]
+      },
+      {
+        "id": "ascent_04",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.999977600000022
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200020000000052
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.19997699999999
+          ],
+          [
+            20.200015899999983,
+            3.19997699999999
+          ],
+          [
+            20.199972900000034,
+            3.19997699999999
+          ],
+          [
+            20.200015899999983,
+            3.1999770000000467
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.99999169999984,
+          39.999991699999896,
+          39.99999169999995,
+          39.999991699999896
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946479000000636,
+          0.1946479000000636,
+          0.19464790000012044,
+          0.1946479000000636
+        ]
+      },
+      {
+        "id": "ascent_05",
+        "type": "base",
+        "outer_size_mm": [
+          104.00002579999995,
+          29.99997760000008
+        ],
+        "slots_mm": [
+          [
+            20.199972900000034,
+            3.1999768999999105
+          ],
+          [
+            20.200015899999983,
+            3.199976900000024
+          ],
+          [
+            20.199972900000034,
+            3.200019999999995
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.2000201000000743
+          ],
+          [
+            20.200015899999983,
+            3.200019999999995
+          ],
+          [
+            20.199972900000034,
+            3.19997699999999
+          ],
+          [
+            20.200015899999983,
+            3.1999768999999105
+          ]
+        ],
+        "paired_slot_center_pitch_mm": [
+          39.999991699999896,
+          39.999991699999896,
+          39.99999169999995,
+          39.99999169999995
+        ],
+        "paired_slot_depth_stagger_mm": [
+          0.1946479000000636,
+          0.19464789999983623,
+          0.19464785000002394,
+          0.19464785000002394
+        ]
+      },
+      {
+        "id": "ascent_06",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_07",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_08",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.806997499999966
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.806997499999966
+      },
+      {
+        "id": "ascent_09",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_10",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_15",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_16",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_17",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_18",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.80698679999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80698679999999
+      },
+      {
+        "id": "ascent_19",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80697599999999
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697599999999
+      },
+      {
+        "id": "ascent_20",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80697600000002
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697600000002
+      },
+      {
+        "id": "ascent_21",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          103.99999340000001,
+          62.80701909999999
+        ],
+        "tab_widths_mm": [
+          19.999995800000008,
+          19.999995900000002
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80701909999999
+      },
+      {
+        "id": "ascent_22",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_23",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80697600000002
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697600000002
+      },
+      {
+        "id": "ascent_24",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000042,
+          62.80701909999999
+        ],
+        "tab_widths_mm": [
+          19.999985099999975,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80701909999999
+      },
+      {
+        "id": "ascent_25",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.806997499999966
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.806997499999966
+      },
+      {
+        "id": "ascent_26",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.806997499999966
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.806997499999966
+      },
+      {
+        "id": "ascent_27",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_28",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.00002579999995,
+          62.8069759
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.00002810000001
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.8069759
+      },
+      {
+        "id": "ascent_29",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80697600000002
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80697600000002
+      },
+      {
+        "id": "ascent_30",
+        "type": "printed_panel",
+        "outer_size_mm": [
+          104.0000258,
+          62.80701909999999
+        ],
+        "tab_widths_mm": [
+          19.999985100000004,
+          20.000006600000006
+        ],
+        "tab_depth_mm": 3,
+        "nominal_visible_height_above_base_mm": 59.80701909999999
+      }
+    ],
+    "geometry_size_errors": [],
+    "source_part_count": 31,
+    "excluded_cadena": [
+      "ascent_01",
+      "ascent_11",
+      "ascent_12",
+      "ascent_13",
+      "ascent_14"
+    ],
+    "excluded_blank_panel": "ascent_31",
+    "included_parts": 25,
+    "printed_panels": 21,
+    "bases": 4,
+    "findings": [
+      {
+        "id": "ascent_02",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.1946478999999499,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      },
+      {
+        "id": "ascent_03",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.1946479000000636,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      },
+      {
+        "id": "ascent_04",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.19464790000012044,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      },
+      {
+        "id": "ascent_05",
+        "status": "original_preserved_physical_fit_unverified",
+        "max_slot_depth_stagger_mm": 0.1946479000000636,
+        "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+      }
+    ],
+    "physical_cut_or_fit_test": false,
+    "status": "digital_dimensions_verified_original_interfaces_preserved",
+    "limitations": [
+      "Nominal3T is not a measurement of the supplied acrylic.",
+      "Software confirms source dimensions and unchanged vector geometry, not physical fit, kerf or cutting quality.",
+      "No fit-test pieces or additional bases were generated."
+    ]
+  },
+  "selected_primary_pages": 5,
+  "selected_thickness": "3T",
+  "optional_fill_assessment": {
+    "maximum_existing_mixed_sheets": 2,
+    "baseline_parts": 56,
+    "candidate_sets": {
+      "yanggum_3T": {
+        "parts": 59,
+        "sheets": 2,
+        "gap_mm": 3,
+        "margin_mm": 8,
+        "expanded_piece_area_lower_mm2": 182816.4161545297,
+        "expanded_container_area_upper_mm2": 231176,
+        "excess_area_mm2": -48359.583845470304,
+        "impossible_proven": false,
+        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+      },
+      "len_pad_3T": {
+        "parts": 63,
+        "sheets": 2,
+        "gap_mm": 3,
+        "margin_mm": 8,
+        "expanded_piece_area_lower_mm2": 231650.3990408355,
+        "expanded_container_area_upper_mm2": 231176,
+        "excess_area_mm2": 474.3990408355021,
+        "impossible_proven": true,
+        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+      }
+    },
+    "allocation": {
+      "02_extra_sheet/3T": [
+        "yanggum_stand_01",
+        "yanggum_keyring_01"
+      ],
+      "05_len/3T": [
+        "yanggum_stand_02"
+      ]
+    },
+    "ascent_with_PAD": {
+      "capacity_bound": {
+        "parts": 32,
+        "sheets": 2,
+        "gap_mm": 3,
+        "margin_mm": 8,
+        "expanded_piece_area_lower_mm2": 214037.93886507142,
+        "expanded_container_area_upper_mm2": 231176,
+        "excess_area_mm2": -17138.061134928575,
+        "impossible_proven": false,
+        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+      },
+      "rectangular_packing_result_pages": 3,
+      "rectangular_core_layouts_examined": 33,
+      "contour_fill_trials": 264,
+      "best_complete_parts_in_core_search": 29,
+      "requested_total_parts": 32,
+      "constructive_first_page_parts": 14,
+      "constructive_remaining_parts": 18,
+      "constructive_contour_trials": 64,
+      "feasible_two_page_layout_found": false,
+      "mathematical_impossibility_proven": false,
+      "decision": "Defer PAD under the no-extra-sheet instruction. Failed finite searches are not a proof that every two-page arrangement is impossible."
+    },
+    "deferred": [
+      "len_pad_3T"
+    ],
+    "production_pages_added": 0,
+    "physical_cut_test": false
+  },
+  "PAD_print_pages": 0,
+  "minimum_sheet_proof": {
+    "parts": 110,
+    "net_material_area_mm2": 354454.0989662232,
+    "area_lower_bound_sheets": 4,
+    "feasible_sheets": 5,
+    "expanded_piece_area_lower_mm2": 398610.3392381642,
+    "expanded_single_sheet_area_upper_mm2": 115588,
+    "single_A3_area_mm2": 124740,
+    "optimal_sheet_count_proven": false,
+    "separate_batches": [
+      {
+        "name": "existing",
+        "parts": 59,
+        "net_material_area_mm2": 162061.5492202503,
+        "area_lower_bound_sheets": 2,
+        "feasible_sheets": 2,
+        "expanded_piece_area_lower_mm2": 182816.41615452964,
+        "expanded_single_sheet_area_upper_mm2": 115588
+      },
+      {
+        "name": "ascent_remaining",
+        "parts": 39,
+        "net_material_area_mm2": 173479.89700063516,
+        "area_lower_bound_sheets": 2,
+        "feasible_sheets": 2,
+        "expanded_piece_area_lower_mm2": 192875.33963526893,
+        "expanded_single_sheet_area_upper_mm2": 115588
+      }
+    ],
+    "scope": "Selected 3T inventory. Global lower bound uses the policy clearance, sheet margin and exterior areas. Batch rows describe reviewed placements only."
+  },
+  "source_artwork_scale": 1,
+  "physical_cut_test": false,
+  "test_pieces_included": false,
+  "limitations": [
+    "Software checks do not validate physical kerf, material thickness or printer registration.",
+    "All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.",
+    "Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.",
+    "Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers."
+  ]
+}
