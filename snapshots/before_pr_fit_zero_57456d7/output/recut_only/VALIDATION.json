@@ -1,0 +1,64 @@
+{
+  "mode": "all-formats",
+  "source_sha256": "95cdbc9a73ee2ee93f28adf66042ed62e90b16b5e785d4f7a9b468ce590d11b5",
+  "records": [
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY.pdf",
+      "sha256": "b4fb8330d2a117c3224b0e2b2b4dc4ba422e41ab93cb9aab0dff8e16e86621e5",
+      "max_format_deviation_mm": 0.0007235298687695383,
+      "max_printed_source_deviation_mm": 0.01857171981977045,
+      "max_hole_bounds_deviation_mm": 0.00019380000026103517,
+      "contours": 294,
+      "pieces": 77
+    },
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY.ai",
+      "sha256": "a3374ef69eadda87221e095badbebb6750e4d71a4bfb9e2648c8e18f6b6bde0c",
+      "max_format_deviation_mm": 0.000721294635182349,
+      "max_printed_source_deviation_mm": 0.01857171981977045,
+      "max_hole_bounds_deviation_mm": 0.00019380000026103517,
+      "contours": 294,
+      "pieces": 77
+    },
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY.svg",
+      "sha256": "6ee33a97b1287b29299d534e5862eb934ca7ffa1b2f327fa794895a1d8f9a53a",
+      "max_format_deviation_mm": 0.00070602051297336,
+      "max_printed_source_deviation_mm": 0.018562172165112488,
+      "max_hole_bounds_deviation_mm": 0.00021529999986569237,
+      "contours": 294,
+      "pieces": 77
+    },
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY.vectorcraft",
+      "sha256": "eb9c3fcc850aa5acea34fe7dddde2616adf0eba03be8778a947439d02cebb879",
+      "max_format_deviation_mm": 0.000721294635182349,
+      "max_printed_source_deviation_mm": 0.01857171981977045,
+      "max_hole_bounds_deviation_mm": 0.00019380000026103517,
+      "contours": 294,
+      "pieces": 77
+    }
+  ],
+  "packages": [
+    {
+      "file": "recut_only/danbar_500x800/RECUT_ONLY.zip",
+      "sha256": "9e529fbee4c06d7b7ff836d44d865cefeeb5438f07d067fe52cc56d2b443fcdd"
+    }
+  ],
+  "rendered_formats": [
+    "03_CUT_ONLY.pdf",
+    "03_CUT_ONLY.ai",
+    "03_CUT_ONLY.svg",
+    "03_CUT_ONLY.vectorcraft"
+  ],
+  "pieces": 77,
+  "contours": 294,
+  "print_pages_added": 0,
+  "existing_print_only": true,
+  "errors": [],
+  "physical_cut_test": false,
+  "limitations": [
+    "This recovers the explicitly supplied already-printed layout, including its existing trial designs; no new test pieces or print layout are generated.",
+    "Machine alignment, kerf and the previously completed cut sections cannot be validated from the file alone."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "maximum_existing_mixed_sheets": 2,
+  "baseline_parts": 56,
+  "candidate_sets": {
+    "yanggum_3T": {
+      "parts": 59,
+      "sheets": 2,
+      "gap_mm": 3,
+      "margin_mm": 8,
+      "expanded_piece_area_lower_mm2": 182816.4161545297,
+      "expanded_container_area_upper_mm2": 231176,
+      "excess_area_mm2": -48359.583845470304,
+      "impossible_proven": false,
+      "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+    },
+    "len_pad_3T": {
+      "parts": 63,
+      "sheets": 2,
+      "gap_mm": 3,
+      "margin_mm": 8,
+      "expanded_piece_area_lower_mm2": 231650.3990408355,
+      "expanded_container_area_upper_mm2": 231176,
+      "excess_area_mm2": 474.3990408355021,
+      "impossible_proven": true,
+      "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+    }
+  },
+  "allocation": {
+    "02_extra_sheet/3T": [
+      "yanggum_stand_01",
+      "yanggum_keyring_01"
+    ],
+    "05_len/3T": [
+      "yanggum_stand_02"
+    ]
+  },
+  "ascent_with_PAD": {
+    "capacity_bound": {
+      "parts": 32,
+      "sheets": 2,
+      "gap_mm": 3,
+      "margin_mm": 8,
+      "expanded_piece_area_lower_mm2": 214037.93886507142,
+      "expanded_container_area_upper_mm2": 231176,
+      "excess_area_mm2": -17138.061134928575,
+      "impossible_proven": false,
+      "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
+    },
+    "rectangular_packing_result_pages": 3,
+    "rectangular_core_layouts_examined": 33,
+    "contour_fill_trials": 264,
+    "best_complete_parts_in_core_search": 29,
+    "requested_total_parts": 32,
+    "constructive_first_page_parts": 14,
+    "constructive_remaining_parts": 18,
+    "constructive_contour_trials": 64,
+    "feasible_two_page_layout_found": false,
+    "mathematical_impossibility_proven": false,
+    "decision": "This earlier search concerned only the two Ascent sheets; current PAD placements follow current_pad_allocation."
+  },
+  "capacity_proof_scope": "Historical two-sheet comparisons. Current production PAD placements are reported separately.",
+  "current_pad_allocation": {
+    "19_personal_fill/3T": [
+      "len_pad_3T_07",
+      "len_pad_3T_01_safe",
+      "len_pad_3T_03_safe",
+      "len_pad_3T_02_safe",
+      "len_pad_3T_05_safe",
+      "len_pad_3T_04",
+      "len_pad_3T_06"
+    ]
+  },
+  "deferred": [],
+  "production_pages_added": 0,
+  "physical_cut_test": false
+}

@@ -1,0 +1,10 @@
+# Production artifacts are committed only on the output branch.
+/output/
+/tmp/
+/.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+# OS download metadata is not a source asset.
+*:Zone.Identifier
