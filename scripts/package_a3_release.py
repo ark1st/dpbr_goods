@@ -32,9 +32,14 @@ def write_personal_release(cfg,manifest):
     on_added=set(cfg['personal_fill_allocation'].get('19_personal_fill/3T',[]))
     offcut_keys=sum(p['design_metadata']['part']=='keyring' and ident not in on_added for ident,p in personal.items())
     added_keys=sum(p['design_metadata']['part']=='keyring' and ident in on_added for ident,p in personal.items())
+    pad_ids=[ident for ids in cfg.get('pad_fill_allocation',{}).values() for ident in ids]
+    pad_pages=', '.join(map(str,sorted({locations[ident] for ident in pad_ids})))
+    logo_count=sum(len(ids) for ids in cfg.get('logo_fill_allocation',{}).values())
     common=f'''**3T · A3 420×297mm · 실제 크기 100% · {number}장 / {cfg['selected_primary_parts']}조각.**
 
-기존 84조각의 위치·크기·칼선은 유지했습니다. 보강한 개인별 스탠드 {policy['stand_pieces']}조각과 상하 연결 키링 {offcut_keys}개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 {added_keys}개는 A3 한 장에 모았습니다. {number}장 배치는 검증했지만 더 적은 장수가 불가능하다고 증명한 것은 아닙니다. Len PAD는 계속 출력 보류이며 양검 단독판은 중복 참고본입니다.
+기존 84조각의 위치·크기·칼선은 유지했습니다. 보강한 개인별 스탠드 {policy['stand_pieces']}조각과 상하 연결 키링 {offcut_keys}개를 기존 어센트 대지의 자투리에 넣고, 나머지 키링 {added_keys}개와 Len PAD {len(pad_ids)}조각은 남은 공간에 배치했습니다. Len PAD는 출력 A3 {pad_pages}번에 포함됩니다. 양검 3조각도 기존 혼합판에 들어 있어 별도 원본판을 중복 출력하지 않습니다. {number}장 배치는 검증했지만 더 적은 장수가 불가능하다고 증명한 것은 아닙니다.
+
+3~5번 판의 남는 공간에 원본 그림 크기의 단바 로고 키링 {logo_count}개를 추가했습니다. 로고 외곽은 크게 단순화하고 원본 구멍을 유지했습니다. 각 판의 수량은 아래 표를 따릅니다.
 
 | 출력 순서 | 제작 폴더 | 조각 |
 |---|---|---:|
@@ -63,7 +68,9 @@ def write_personal_release(cfg,manifest):
 
 | 개인별 부품 ID | 출력 A3 |
 |---|---:|
-'''+ '\n'.join(f'| {ident} | {locations[ident]} |' for ident in sorted(personal))+'''
+'''+ '\n'.join(f'| {ident} | {locations[ident]} |' for ident in sorted([*personal,*pad_ids]))+'''
+
+Len PAD의 원래 크기와 280×71.2235mm 받침·8개 홈을 유지했습니다. `06_len_pad`의 단독판은 원본 참고용이며 위 출력 순서에 더해 인쇄하지 않습니다.
 
 이번 출력에는 ZIP을 새로 만들지 않았습니다. 남아 있는 이전 ZIP은 이전 버전의 보관 파일이며 현재 제작용이 아닙니다. 현재 시트 폴더의 파일을 사용하세요.
 
@@ -94,7 +101,7 @@ def write_personal_release(cfg,manifest):
         'selected_pages':number,'selected_parts':cfg['selected_primary_parts'],'physical_cut_test':False}
     write(BASE/'PERSONAL_FILL_ASSESSMENT.json',json.dumps(assessment,ensure_ascii=False,indent=2)+'\n')
     rows='\n'.join(row.replace('](','](a3_release/') for row in current)
-    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+f'\n\n[전체 제작 안내·개인별 부품 위치·보강 시안](a3_release) · [개별 편집 에셋](individual_assets)\n\n기존84조각 위치 유지. 보강 스탠드8조각과 키링{offcut_keys}개는 기존 자투리에, 나머지 키링{added_keys}개는 마지막 A3에 배치했습니다. 제로 스탠드2종은 각각 알파·베타를 한 판에 합쳤습니다. 더 적은 장수의 불가능을 증명한 것은 아닙니다. Len PAD는 출력 보류, 양검 단독판은 중복 참고용입니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본이므로 제작에 사용하지 않습니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
+    write(OUT/'README.md',f'# 현재 제작 파일\n\n**3T · A3 420×297mm · 100% · {number}장 / {cfg["selected_primary_parts"]}조각.**\n\n| 출력 순서 | 제작 폴더 | 조각 |\n|---|---|---:|\n'+rows+f'\n\n[전체 제작 안내·부품 위치·보강 시안](a3_release) · [개별 편집 에셋](individual_assets)\n\n기존113조각 위치 유지. 남는 공간에 기존 원본 크기의 단바 로고 키링{logo_count}개를 추가했습니다. 양검과 Len PAD도 포함되어 단독 원본판은 추가 출력하지 않습니다. 더 적은 장수의 불가능을 증명한 것은 아닙니다.\n\n신규 ZIP 없음. 이전 ZIP은 퇴역 보관본이므로 제작에 사용하지 않습니다. 실물 미검증입니다.\n\n[이미 인쇄된 판의 재커팅 전용](recut_only/danbar_500x800) · [전체 검사](RELEASE_VALIDATION.json) · [칼선 검사](LASER_PATH_AUDIT.json)\n')
     print(f'Published {number} A3 pages; no new ZIP archives',flush=True)
 
 def main():

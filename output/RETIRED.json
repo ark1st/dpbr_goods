@@ -58,6 +58,17 @@
       "status": "retired_personal_stand_geometry_and_placements_only",
       "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
       "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
+    },
+    {
+      "commit": "9764eb812b81ce5b3849d9f7f361f0a685ffd640",
+      "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+      "status": "superseded_primary_layout_only",
+      "reason": "Len PAD seven-piece set added to the existing fifth A3 at original size; reinforced stands and all source contours remain current."
+    },
+    {
+      "revision": "A3-2026-11-23-final-with-len-pad",
+      "status": "superseded_primary_layout_only",
+      "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
     }
   ],
   "retired_package_files": [

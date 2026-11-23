@@ -45,20 +45,25 @@ class A3PackingTests(unittest.TestCase):
         selected=[r['id'] for group in cfg['selected_primary_groups'] for page in (rows[group] if isinstance(rows[group][0],list) else [rows[group]]) for r in page]
         personal=cfg.get('personal_fill_allocation',{})
         new=[p for ids in personal.values() for p in ids]
-        self.assertEqual(len(selected),84+len(new))
+        pad=cfg.get('pad_fill_allocation',{})
+        pad_ids=[p for ids in pad.values() for p in ids]
+        logo=cfg.get('logo_fill_allocation',{})
+        logo_ids=[p for ids in logo.values() for p in ids]
+        self.assertEqual(len(selected),84+len(new)+len(pad_ids)+len(logo_ids))
         self.assertEqual(len(set(selected)),len(selected))
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
         self.assertEqual(sorted(x for x in selected if x.startswith('ascent_')),sorted(cfg['cadena_source_part_ids']+cfg['ascent_remaining']['part_ids']))
         separate=[r['id'] for page in rows['11_ascent_remaining/3T'] for r in page]
-        self.assertEqual(set(separate),set(cfg['ascent_remaining']['part_ids']+personal.get('11_ascent_remaining/3T',[])))
+        self.assertEqual(set(separate),set(cfg['ascent_remaining']['part_ids']
+                                          +personal.get('11_ascent_remaining/3T',[])+pad.get('11_ascent_remaining/3T',[])+logo.get('11_ascent_remaining/3T',[])))
         self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
         self.assertNotIn('ascent_31',selected)
         if personal:
             from verify_a3_release import verify_fixed_placements
             self.assertEqual(len(new),cfg['personal_fill_policy']['stand_pieces']+cfg['personal_fill_policy']['keyring_pieces'])
             self.assertEqual(set(new),set(cfg['personal_fill_policy']['new_part_ids']))
-            self.assertEqual(set(selected)-set(new),set(cfg['personal_fill_policy']['baseline_ids']))
+            self.assertEqual(set(selected)-set(new)-set(pad_ids)-set(logo_ids),set(cfg['personal_fill_policy']['baseline_ids']))
             for group in cfg['selected_primary_groups']:
                 pages=rows[group] if isinstance(rows[group][0],list) else [rows[group]]
                 self.assertEqual({r['id'] for page in pages for r in page if r['id'] in new},set(personal.get(group,[])))
@@ -69,6 +74,171 @@ class A3PackingTests(unittest.TestCase):
             next(r for r in page if r['id']==fixed['id'])['x']+=.25
             with self.assertRaisesRegex(AssertionError,'Changed fixed baseline placement'):
                 verify_fixed_placements(cfg,rows)
+
+    def test_logo_aliases_preserve_both_contours_and_unique_allocation(self):
+        from verify_a3_release import verify_logo_inventory
+        paths=['M10 10L30 10L30 40L10 40Z','M15 13L18 13L18 16L15 16Z']
+        canonical={'danba_logo_smooth':{'source_bounds_mm':[10,10,30,40],'paths':paths}}
+        part={'id':'danba_logo_fill_001','scale':1,'path_count':2,'source_bounds_mm':[10,10,30,40],
+              'placed_bounds_mm':[20,30,40,60],'rotation_degrees':0,'rotated_origin_mm':[0,0],
+              'expected_paths':[list(shifted_poly(polygon_of(p),{'piece':{'bounds':[10,10,30,40]},'x':20,'y':30,'rotation':0,'rotated_origin':[0,0]}).exterior.coords) for p in paths]}
+        cfg={'logo_fill_allocation':{'g':['danba_logo_fill_001']}}
+        verify_logo_inventory(cfg,{'g':[part]},canonical)
+        with self.assertRaisesRegex(AssertionError,'Changed logo allocation'):
+            verify_logo_inventory(cfg,{'g':[part,part]},canonical)
+        with self.assertRaisesRegex(AssertionError,'Changed logo contour or hole'):
+            verify_logo_inventory(cfg,{'g':[{**part,'expected_paths':[part['expected_paths'][0],part['expected_paths'][0]]}]},canonical)
+
+    def test_smooth_logo_keeps_original_hole_and_excludes_neighbor_art(self):
+        import pymupdf as fitz
+        from build_a3_release import smooth_logo_source,clip_art
+        from laser_paths import cut_path
+        page_doc=fitz.open();self.addCleanup(page_doc.close)
+        page=page_doc.new_page(width=60*MM,height=60*MM)
+        page.draw_rect(fitz.Rect(15*MM,15*MM,18*MM,18*MM),fill=(1,0,0))
+        page.draw_rect(fitz.Rect(31*MM,15*MM,33*MM,18*MM),fill=(0,0,1))
+        from laser_paths import audit_path
+        old=box(0,0,30,30);hole_path=cut_path(Point(5,5).buffer(2,quad_segs=64));_,hole=audit_path(hole_path)
+        original={'id':'extra_3T_32','bounds':old.bounds,'poly':old,'art':page_doc,'white':None,
+                  'paths':[{'path':hole_path,'poly':hole},{'path':cut_path(old),'poly':old}]}
+        outline=box(-4,-4,34,34)
+        design={'source_id':'extra_3T_32','new_bounds_mm':outline.bounds,'paths':[hole_path,cut_path(outline)]}
+        smooth=smooth_logo_source(original,design)
+        expected=clip_art(page_doc,original)
+        self.addCleanup(expected.close);self.addCleanup(smooth['art'].close)
+        self.assertEqual(expected[0].get_pixmap(dpi=144,alpha=True).samples,
+                         smooth['art'][0].get_pixmap(dpi=144,alpha=True).samples)
+        self.assertLess(smooth['paths'][0]['poly'].boundary.hausdorff_distance(hole.boundary),.001)
+        changed={**design,'paths':[cut_path(Point(5,5).buffer(1.9,quad_segs=64)),design['paths'][1]]}
+        with self.assertRaisesRegex(AssertionError,'Changed original logo hole'):
+            smooth_logo_source(original,changed)
+
+    def test_enlarged_contour_pins_art_holes_and_tab(self):
+        import pymupdf as fitz
+        from shapely.ops import unary_union
+        from build_a3_release import redesign_outer_contour,clip_art
+        from laser_paths import cut_path,audit_path
+        source_doc=fitz.open();self.addCleanup(source_doc.close)
+        page=source_doc.new_page(width=60*MM,height=60*MM)
+        page.draw_rect(fitz.Rect(15*MM,15*MM,18*MM,18*MM),fill=(1,0,0))
+        page.draw_rect(fitz.Rect(31*MM,15*MM,32*MM,18*MM),fill=(0,0,1))
+        old=unary_union([box(10,10,30,30),box(18,30,22,35)])
+        enlarged=unary_union([box(8,8,32,30),box(18,30,22,35)])
+        hp=cut_path(Point(15,15).buffer(2,quad_segs=64));_,hole=audit_path(hp)
+        op=cut_path(old);_,old_poly=audit_path(op)
+        np=cut_path(enlarged);_,new_poly=audit_path(np)
+        original={'id':'fixture','bounds':old_poly.bounds,'poly':old_poly,'art':source_doc,'white':None,
+                  'paths':[{'path':hp,'poly':hole,'protected':False},{'path':op,'poly':old_poly,'protected':False}],
+                  'design_metadata':{'tab_width_mm':4}}
+        design={'source_bounds_mm':list(old_poly.bounds),'new_bounds_mm':list(new_poly.bounds),
+                'paths':[hp,np],'pin_original_art':True,
+                'tab_geometry_proof':{'regions_mm':[[17.9,30.2,22.1,34.9]],'tolerance_mm':.002}}
+        result=redesign_outer_contour(original,design)
+        expected=clip_art(source_doc,original)
+        self.addCleanup(expected.close);self.addCleanup(result['art'].close)
+        self.assertEqual(expected[0].get_pixmap(dpi=144,alpha=True).samples,
+                         result['art'][0].get_pixmap(dpi=144,alpha=True).samples)
+        altered={**design,'paths':[cut_path(Point(15,15).buffer(1.9,quad_segs=64)),np]}
+        with self.assertRaisesRegex(AssertionError,'Changed internal hole'):
+            redesign_outer_contour(original,altered)
+        with self.assertRaisesRegex(AssertionError,'Missing tab preservation region'):
+            redesign_outer_contour(original,{**design,'tab_geometry_proof':{'regions_mm':[]}})
+        bad=unary_union([box(8,8,32,30),box(18,30,22.5,35)])
+        bp=cut_path(bad);_,bad_poly=audit_path(bp)
+        with self.assertRaisesRegex(AssertionError,'Changed tab geometry'):
+            redesign_outer_contour(original,{**design,'paths':[hp,bp],'new_bounds_mm':list(bad_poly.bounds),
+                                             'tab_geometry_proof':{'regions_mm':[[17.8,30.2,22.7,34.9]],'tolerance_mm':.002}})
+        with self.assertRaisesRegex(AssertionError,'Protected original'):
+            redesign_outer_contour({**original,'paths':[{**original['paths'][0],'protected':True},original['paths'][1]]},design)
+
+    def test_redesigned_fixed_piece_keeps_original_artwork_affine_transform(self):
+        import math
+        from verify_a3_release import verify_fixed_placements
+        from laser_paths import cut_path
+        old=box(10,20,30,40);new=box(8,18,32,42);angle=60
+        original={'source_bounds_mm':list(old.bounds),'paths':[cut_path(old)]}
+        current={'source_bounds_mm':list(new.bounds),'paths':[cut_path(new)]}
+        _,old_origin=rotated({'bounds':old.bounds,'poly':old},angle)
+        _,new_origin=rotated({'bounds':new.bounds,'poly':new},angle)
+        c,s=math.cos(math.radians(angle)),math.sin(math.radians(angle))
+        dx,dy=new.bounds[0]-old.bounds[0],new.bounds[1]-old.bounds[1]
+        expected={'id':'p','group':'g','sheet_index':0,'x':50,'y':60,
+                  'rotation_degrees':angle,'source_bounds_mm':list(old.bounds)}
+        actual={'id':'p','x':50+new_origin[0]-old_origin[0]+c*dx+s*dy,
+                'y':60+new_origin[1]-old_origin[1]-s*dx+c*dy,
+                'rotation_degrees':angle,'source_bounds_mm':list(new.bounds)}
+        config={'selected_primary_groups':['g'],'personal_fill_allocation':{'g':['other']},
+                'personal_fill_policy':{'baseline_ids':['p'],'fixed_existing_placements':[expected]}}
+        reviewed={'g':[actual]};redesign={'p':{'original_paths':original['paths']}}
+        verify_fixed_placements(config,reviewed,redesign,{'p':current},{'p':original})
+        with self.assertRaisesRegex(AssertionError,'Changed fixed baseline placement of artwork'):
+            verify_fixed_placements(config,{'g':[{**actual,'x':actual['x']+.25}]},redesign,{'p':current},{'p':original})
+        with self.assertRaisesRegex(AssertionError,'Changed independent original contours'):
+            verify_fixed_placements(config,reviewed,{'p':{'original_paths':current['paths']}},{'p':current},{'p':original})
+
+    def test_pad_kit_cannot_drop_or_duplicate_an_allocated_part(self):
+        from verify_a3_release import verify_pad_inventory
+        ids=[f'len_pad_3T_{i:02}' for i in range(1,8)]
+        group='19_personal_fill/3T'
+        config={'pad_fill_allocation':{group:ids},
+                'optional_fill_policy':{'candidate_sets':{'len_pad_3T':ids}}}
+        parts=[
+            {'id':ident,'scale':1,'path_count':count,'expected_paths':[None]*count}
+            for ident,count in zip(ids,[3,2,2,2,2,2,2])
+        ]
+        verify_pad_inventory(config,{group:parts})
+        with self.assertRaisesRegex(AssertionError,'Changed PAD allocation'):
+            verify_pad_inventory(config,{group:parts[:-1]})
+        with self.assertRaisesRegex(AssertionError,'Changed PAD allocation'):
+            verify_pad_inventory(config,{group:[*parts[:-1],parts[0]]})
+
+    def test_pad_variant_preserves_reference_and_cannot_duplicate_source(self):
+        from build_a3_release import pad_production_piece
+        from verify_a3_release import verify_pad_inventory
+        source={'id':'len_pad_3T_01','paths':[{'path':'original'}],
+                'bounds':[0,0,10,10],'design_metadata':None}
+        alias='len_pad_3T_01_safe';mapping={alias:source['id']}
+        variant=pad_production_piece(source,alias,mapping)
+        self.assertEqual(source['id'],'len_pad_3T_01')
+        self.assertEqual(variant['design_metadata']['redesign_source_id'],source['id'])
+        variant['paths'][0]['path']='revised'
+        self.assertEqual(source['paths'][0]['path'],'original')
+        with self.assertRaisesRegex(AssertionError,'Wrong PAD variant source'):
+            pad_production_piece(source,alias,{alias:'len_pad_3T_02'})
+        ids=[f'len_pad_3T_{i:02}' for i in range(1,8)]
+        selected=[alias,*ids[1:]];group='19_personal_fill/3T'
+        cfg={'pad_fill_allocation':{group:selected},'pad_variant_sources':mapping,
+             'optional_fill_policy':{'candidate_sets':{'len_pad_3T':ids}}}
+        pieces=[{'id':ident,'scale':1,'path_count':count,'expected_paths':[None]*count}
+                for ident,count in zip(selected,[3,2,2,2,2,2,2])]
+        verify_pad_inventory(cfg,{group:pieces})
+        duplicate={**cfg,'pad_fill_allocation':{group:[*selected,ids[0]]}}
+        with self.assertRaisesRegex(AssertionError,'full 3T PAD kit exactly once'):
+            verify_pad_inventory(duplicate,{group:[*pieces,{'id':ids[0],'scale':1,'path_count':1,'expected_paths':[None]}]})
+
+    def test_pad_variant_canonical_keeps_source_holes(self):
+        from verify_a3_release import verify_pad_inventory
+        outer='M0 0L20 0L20 20L0 20Z';wide='M-2 -2L22 -2L22 22L-2 22Z'
+        hole1='M3 3L5 3L5 5L3 5Z';hole2='M10 10L12 10L12 12L10 12Z'
+        ids=[f'len_pad_3T_{i:02}' for i in range(1,8)];alias=ids[0]+'_safe';group='19_personal_fill/3T'
+        mapping={alias:ids[0]};selected=[alias,*ids[1:]]
+        original={'source_bounds_mm':[0,0,20,20],'paths':[hole1,hole2,outer]}
+        variant={'source_bounds_mm':[-2,-2,22,22],'paths':[hole1,hole2,wide]}
+        canonical={ids[0]:original,alias:variant}
+        canonical.update({ident:{'source_bounds_mm':[0,0,20,20],'paths':[hole1,outer]} for ident in ids[1:]})
+        cfg={'pad_fill_allocation':{group:selected},'pad_variant_sources':mapping,
+             'optional_fill_policy':{'candidate_sets':{'len_pad_3T':ids}}}
+        parts=[]
+        for ident in selected:
+            source=canonical[ident];bounds=source['source_bounds_mm']
+            parts.append({'id':ident,'scale':1,'path_count':len(source['paths']),
+                          'source_bounds_mm':bounds,'placed_bounds_mm':bounds,'rotated_origin_mm':[0,0],
+                          'rotation_degrees':0,'expected_paths':[list(polygon_of(path).exterior.coords) for path in source['paths']],
+                          'design_metadata':{'redesign_source_id':ids[0]} if ident==alias else None})
+        verify_pad_inventory(cfg,{group:parts},canonical)
+        altered={**canonical,alias:{**variant,'paths':['M3 3L5.2 3L5.2 5L3 5Z',hole2,wide]}}
+        with self.assertRaisesRegex(AssertionError,'Changed PAD original hole or slot'):
+            verify_pad_inventory(cfg,{group:parts},altered)
 
     def test_chain_requires_two_4_mm_holes_on_opposite_sides_of_artwork(self):
         from verify_a3_release import verify_chain_holes
@@ -149,11 +319,14 @@ class A3PackingTests(unittest.TestCase):
 
     def test_PAD_ascent_failed_search_is_not_reported_as_impossibility(self):
         from optional_sheet_policy import assess
+        cfg=json.loads((ROOT/'configs/a3_release.json').read_text())
         result=assess(ROOT)
         self.assertTrue(result['candidate_sets']['len_pad_3T']['impossible_proven'])
         self.assertFalse(result['ascent_with_PAD']['capacity_bound']['impossible_proven'])
         self.assertFalse(result['ascent_with_PAD']['mathematical_impossibility_proven'])
         self.assertFalse(result['ascent_with_PAD']['feasible_two_page_layout_found'])
+        self.assertEqual(result['current_pad_allocation'],cfg.get('pad_fill_allocation',{}))
+        self.assertEqual(result['deferred'],[] if result['current_pad_allocation'] else ['len_pad_3T'])
 
     def test_large_source_oblique_cut_avoids_rounded_form_matrix(self):
         import pymupdf as fitz

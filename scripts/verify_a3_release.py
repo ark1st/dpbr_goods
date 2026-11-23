@@ -54,14 +54,19 @@ def verify_personal_inventory(config,selected_by_group):
     selected=[p['id'] for parts in selected_by_group.values() for p in parts]
     policy=config['personal_fill_policy']
     expected_personal=policy['stand_pieces']+policy['keyring_pieces']
-    assert len(selected)==len(set(selected))==config['selected_primary_parts']==len(policy['baseline_ids'])+expected_personal, 'Changed primary inventory'
+    pad_ids={ident for ids in config.get('pad_fill_allocation',{}).values() for ident in ids}
+    logo_ids={ident for ids in config.get('logo_fill_allocation',{}).values() for ident in ids}
     assert set(allocation)<=set(selected_by_group),'Personal pieces must be on selected primary sheets'
     personal=[ident for ids in allocation.values() for ident in ids]
     assert len(personal)==len(set(personal))==expected_personal,'Changed personal allocation'
     assert set(personal)==set(policy['new_part_ids']),'Unexpected personal piece IDs'
     baseline=policy['baseline_ids']
-    assert len(baseline)==len(set(baseline))==84 and set(selected)-set(personal)==set(baseline),'Changed baseline inventory'
-    personal_ids=set(personal);counts=Counter();stand_pairs=Counter()
+    personal_ids=set(personal);baseline_ids=set(baseline)
+    assert len(baseline)==len(baseline_ids)==84,'Changed baseline inventory'
+    assert sum(map(len,[personal_ids,pad_ids,baseline_ids,logo_ids]))==len(personal_ids|pad_ids|baseline_ids|logo_ids),'Overlapping production inventories'
+    assert len(selected)==len(set(selected))==config['selected_primary_parts']==84+expected_personal+len(pad_ids)+len(logo_ids),'Changed primary inventory'
+    assert set(selected)-personal_ids-pad_ids-logo_ids==baseline_ids,'Changed baseline inventory'
+    counts=Counter();stand_pairs=Counter()
     for group,parts in selected_by_group.items():
         actual=[p for p in parts if p['id'] in personal_ids]
         assert {p['id'] for p in actual}==set(allocation.get(group,[])),(group,'Changed personal allocation')
@@ -83,6 +88,68 @@ def verify_personal_inventory(config,selected_by_group):
     paired=[p for parts in selected_by_group.values() for p in parts if p['id'] in personal_ids
             and p['design_metadata']['part']=='character' and len(p['design_metadata'].get('components',[]))==2]
     assert {p['design_metadata']['nickname'] for p in paired}==set(policy['combined_zero_stands']),'Changed Zero pair inventory'
+
+def verify_logo_inventory(config,selected_by_group,canonical):
+    allocation=config.get('logo_fill_allocation',{})
+    aliases=[ident for ids in allocation.values() for ident in ids]
+    assert len(aliases)==len(set(aliases)) and all(i.startswith('danba_logo_fill_') for i in aliases)
+    if not aliases:return
+    source=canonical['danba_logo_smooth']
+    assert len(source['paths'])==2
+    for group,parts in selected_by_group.items():
+        actual=[p for p in parts if p['id'] in aliases]
+        assert Counter(p['id'] for p in actual)==Counter(allocation.get(group,[])),(group,'Changed logo allocation')
+        for p in actual:
+            assert p['scale']==1 and p['path_count']==len(p['expected_paths'])==2
+            assert max(abs(a-b) for a,b in zip(p['source_bounds_mm'],source['source_bounds_mm']))<.0001
+            place={'piece':{'bounds':p['source_bounds_mm']},'rotation':p['rotation_degrees'],
+                   'x':p['placed_bounds_mm'][0],'y':p['placed_bounds_mm'][1],
+                   'rotated_origin':p.get('rotated_origin_mm')}
+            for path,actual_path in zip(source['paths'],p['expected_paths'],strict=True):
+                expected_path=shifted_poly(polygon_of(path),place)
+                assert expected_path.boundary.hausdorff_distance(Polygon(actual_path).boundary)<.002,(p['id'],'Changed logo contour or hole')
+    assert set(allocation)<=set(selected_by_group)
+
+def verify_pad_inventory(config,selected_by_group,canonical=None):
+    """Keep a single full-size 3T PAD kit in its reviewed production groups."""
+    allocation=config.get('pad_fill_allocation',{})
+    observed=[]
+    for group,parts in selected_by_group.items():
+        actual=[p for p in parts if p['id'].startswith('len_pad_')]
+        assert Counter(p['id'] for p in actual)==Counter(allocation.get(group,[])),(group,'Changed PAD allocation (missing, duplicate or wrong sheet)')
+        observed.extend(actual)
+    if not allocation:return
+    expected={f'len_pad_3T_{i:02}' for i in range(1,8)}
+    variants=config.get('pad_variant_sources',{})
+    assert all(alias==source+'_safe' and source in expected for alias,source in variants.items()),'Invalid PAD production variant mapping'
+    assert len(set(variants.values()))==len(variants),'Multiple variants of the same PAD piece'
+    allocated=[ident for ids in allocation.values() for ident in ids]
+    assert set(variants)<=set(allocated),'Unallocated PAD production variant'
+    policy=config['optional_fill_policy']['candidate_sets']['len_pad_3T']
+    assert len(policy)==7 and set(policy)==expected,'PAD policy must identify the seven original 3T pieces'
+    assert all(group in selected_by_group and group.endswith('/3T') and not group.startswith('06_len_pad/')
+               for group in allocation),'PAD fillers must appear on selected mixed 3T sheets'
+    assert Counter(variants.get(p['id'],p['id']) for p in observed)==Counter(expected),'Print the full 3T PAD kit exactly once'
+    assert all(p['scale']==1 and p['path_count']==len(p['expected_paths']) for p in observed),'PAD scale or contour count changed'
+    assert sum(p['path_count'] for p in observed)==15,'Expected 15 original PAD cut contours'
+    if canonical is None:return
+    for p in observed:
+        source=canonical[p['id']]
+        if p['id'] in variants:
+            assert variants[p['id']] in canonical,(p['id'],'Missing independent PAD original')
+            assert (p.get('design_metadata') or {}).get('redesign_source_id')==variants[p['id']],(p['id'],'Changed PAD source identity')
+            original=canonical[variants[p['id']]]
+            assert len(source['paths'])==len(original['paths']),(p['id'],'Changed PAD source contour count')
+            for approved,prior in zip(source['paths'][:-1],original['paths'][:-1],strict=True):
+                assert polygon_of(approved).boundary.hausdorff_distance(polygon_of(prior).boundary)<.002,(p['id'],'Changed PAD original hole or slot')
+            assert polygon_of(source['paths'][-1]).buffer(.002).covers(polygon_of(original['paths'][-1])),(p['id'],'PAD redesigned exterior excludes original area')
+        assert max(abs(a-b) for a,b in zip(p['source_bounds_mm'],source['source_bounds_mm']))<.0001,(p['id'],'Changed PAD source dimensions')
+        place={'piece':{'bounds':p['source_bounds_mm']},'rotation':p['rotation_degrees'],
+               'x':p['placed_bounds_mm'][0],'y':p['placed_bounds_mm'][1],
+               'rotated_origin':p.get('rotated_origin_mm')}
+        for path,actual in zip(source['paths'],p['expected_paths'],strict=True):
+            expected_path=shifted_poly(polygon_of(path),place)
+            assert expected_path.boundary.hausdorff_distance(Polygon(actual).boundary)<.002,(p['id'],'Changed original PAD geometry')
 
 def verify_stand_support(part):
     """Measure the exported load path and mechanical interfaces in source axes."""
@@ -114,11 +181,22 @@ def verify_stand_support(part):
     for y in [shoulder+.2,shoulder+2.0]:
         assert abs(stand_axis_width(outer,cx,y)-18)<.005,(ident,'Resized insertion tab')
 
-def verify_fixed_placements(config,reviewed):
+def verify_fixed_placements(config,reviewed,redesigns=None,canonical=None,original_canonical=None):
     if not config.get('personal_fill_allocation'):return
     policy=config['personal_fill_policy']
     fixed=policy['fixed_existing_placements']
     assert len(fixed)==len(policy['baseline_ids']) and {row['id'] for row in fixed}==set(policy['baseline_ids'])
+    if redesigns is None:
+        file=ROOT/'configs/contour_redesigns.json'
+        redesigns=json.loads(file.read_text(encoding='utf-8')) if file.exists() else {}
+        if 'parts' in redesigns:redesigns=redesigns['parts']
+    fixed_redesigns={row['id'] for row in fixed}&set(redesigns)
+    if fixed_redesigns:
+        import subprocess
+        if canonical is None:canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']
+        if original_canonical is None:
+            raw=subprocess.check_output(['git','show',policy['baseline_commit']+':configs/individual_contours.json'],cwd=ROOT)
+            original_canonical=json.loads(raw)['parts']
     indexed={}
     for group in config['selected_primary_groups']:
         rows=reviewed[group]
@@ -128,7 +206,27 @@ def verify_fixed_placements(config,reviewed):
     for expected in fixed:
         key=(expected['group'],expected['sheet_index'],expected['id'])
         actual=indexed.get(key)
-        assert actual is not None and all(actual[k]==expected[k] for k in ('x','y','rotation_degrees','source_bounds_mm')),(key,'Changed fixed baseline placement')
+        assert actual is not None,(key,'Changed fixed baseline placement')
+        ident=expected['id']
+        if ident not in fixed_redesigns:
+            assert all(actual[k]==expected[k] for k in ('x','y','rotation_degrees','source_bounds_mm')),(key,'Changed fixed baseline placement')
+            continue
+        # Verify the source-image affine transform, since a larger outline
+        # changes its bounding origin and therefore its placement coordinates.
+        from nest_contours import rotated
+        old=original_canonical[ident];new=canonical[ident];design=redesigns[ident]
+        assert old['paths']==design['original_paths'],(key,'Changed independent original contours')
+        assert max(abs(a-b) for a,b in zip(old['source_bounds_mm'],expected['source_bounds_mm']))<.0001,(key,'Changed original source bounds')
+        assert max(abs(a-b) for a,b in zip(actual['source_bounds_mm'],new['source_bounds_mm']))<.0001,(key,'Changed redesigned source bounds')
+        assert actual['rotation_degrees']==expected['rotation_degrees'],(key,'Changed fixed baseline placement rotation')
+        def translation(row,source):
+            poly=max((polygon_of(path) for path in source['paths']),key=lambda q:q.area)
+            _,origin=rotated({'bounds':source['source_bounds_mm'],'poly':poly},row['rotation_degrees'])
+            x,y=source['source_bounds_mm'][:2]
+            a=math.radians(row['rotation_degrees']);c,s=math.cos(a),math.sin(a)
+            return row['x']-origin[0]-c*x-s*y,row['y']-origin[1]+s*x-c*y
+        old_translation=translation(expected,old);new_translation=translation(actual,new)
+        assert max(abs(a-b) for a,b in zip(old_translation,new_translation))<.002,(key,'Changed fixed baseline placement of artwork')
 
 def minimum_sheet_proof(config,selected_by_group,manifest):
     """Compare a global gap-expanded area lower bound with actual reviewed pages."""
@@ -183,7 +281,7 @@ def main(check_zips=True,check_native=True):
     saved_size=json.loads((base/'11_ascent_remaining/SIZE_VERIFICATION.json').read_text(encoding='utf-8'))
     assert not saved_size['geometry_size_errors'] and not saved_size['physical_cut_or_fit_test']
     assert [p['id'] for p in saved_size['parts']]==[p['id'] for p in source_size_check['parts']]
-    records=[];selected_parts=[];selected_by_group={}
+    records=[];selected_parts=[];selected_by_group={};pad_print_pages=0
     for group,pages in manifest['groups'].items():
         assert sum(p['pieces'] for p in pages)==wanted[group]
         assert len(pages)==CONFIG.get('pages_per_group',{}).get(group,1)
@@ -209,6 +307,7 @@ def main(check_zips=True,check_native=True):
             ids.extend(p['id'] for p in spec['parts'])
             if group in CONFIG['selected_primary_groups']:
                 selected_parts.extend(spec['parts']);selected_by_group.setdefault(group,[]).extend(spec['parts'])
+                if any(p['id'].startswith('len_pad_') for p in spec['parts']):pad_print_pages+=1
             for p in spec['parts']:
                 if p['id'].startswith('len_dot_'):
                     meta=p['design_metadata'];t=float(group.split('/')[-1].removesuffix('T'))
@@ -265,16 +364,21 @@ def main(check_zips=True,check_native=True):
         expected_ascent=CONFIG['ascent_remaining']['part_ids'] if group=='11_ascent_remaining/3T' else CONFIG['cross_sheet_cadena_allocation'].get(group,[])
         assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(expected_ascent)
         if group=='11_ascent_remaining/3T':
-            fillers=CONFIG.get('personal_fill_allocation',{}).get(group,[])
+            fillers=(CONFIG.get('personal_fill_allocation',{}).get(group,[])
+                     +CONFIG.get('pad_fill_allocation',{}).get(group,[])
+                     +CONFIG.get('logo_fill_allocation',{}).get(group,[]))
             assert set(ids)==set(expected_ascent+fillers) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
             assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]
     assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==CONFIG['selected_primary_parts']
+    verify_pad_inventory(CONFIG,selected_by_group,fixed)
     verify_personal_inventory(CONFIG,selected_by_group)
+    verify_logo_inventory(CONFIG,selected_by_group,fixed)
     from optional_sheet_policy import assess
     fill=assess(ROOT)
     saved_fill=json.loads((base/'OPTIONAL_FILL_ASSESSMENT.json').read_text(encoding='utf-8'))
     assert saved_fill['allocation']==fill['allocation'] and saved_fill['deferred']==fill['deferred'],'Stale optional-fill decision'
+    assert saved_fill.get('current_pad_allocation',{})==fill['current_pad_allocation'],'Stale PAD allocation'
     for old,new in [(saved_fill['candidate_sets'][k],v) for k,v in fill['candidate_sets'].items()]+[(saved_fill['ascent_with_PAD']['capacity_bound'],fill['ascent_with_PAD']['capacity_bound'])]:
         assert old['impossible_proven']==new['impossible_proven'] and old['parts']==new['parts']
         for key in ['expanded_piece_area_lower_mm2','expanded_container_area_upper_mm2','excess_area_mm2']:
@@ -284,7 +388,6 @@ def main(check_zips=True,check_native=True):
     assert len(manifest['groups']['02_extra_sheet/3T'])+len(manifest['groups']['05_len/3T'])==2
     selected_yanggum=sorted(x for x in selected_ids if x.startswith('yanggum_'))
     assert selected_yanggum==sorted(CONFIG['optional_fill_policy']['candidate_sets']['yanggum_3T'])
-    assert not any(x.startswith('len_pad_') for x in selected_ids),'Deferred PAD must not enter the print job'
     for group,ids in CONFIG['optional_fill_allocation'].items():
         assert sorted(p['id'] for p in selected_by_group[group] if p['id'].startswith('yanggum_'))==sorted(ids)
     assert sorted(x for x in selected_ids if x.startswith('ascent_'))==sorted(CONFIG['cadena_source_part_ids']+CONFIG['ascent_remaining']['part_ids'])
@@ -310,7 +413,7 @@ def main(check_zips=True,check_native=True):
         assert len(packages)==len(wanted),len(packages)
     result={'checked_pages':len(records),'native_geometry_checked':check_native,'records':records,'packages':packages,'errors':[],
             'ascent_source_size_verification':source_size_check,
-            'selected_primary_pages':CONFIG['selected_primary_pages'],'selected_thickness':'3T','optional_fill_assessment':fill,'PAD_print_pages':0,
+            'selected_primary_pages':CONFIG['selected_primary_pages'],'selected_thickness':'3T','optional_fill_assessment':fill,'PAD_print_pages':pad_print_pages,
             'minimum_sheet_proof':minimum_proof,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',

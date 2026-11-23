@@ -46,7 +46,9 @@ def output_inventory(out):
             asset_required.update(asset['folder']+'/'+f for f in asset['files'])
         required.update(asset_required)
         allowed.update(asset_required|{'individual_assets/VALIDATION.json'})
-    actual={p.relative_to(out).as_posix() for p in out.rglob('*') if p.is_file()}
+    # Finder may add local folder metadata when a user opens output. It is not
+    # artwork and need not be deleted or registered as a production deliverable.
+    actual={p.relative_to(out).as_posix() for p in out.rglob('*') if p.is_file() and p.name!='.DS_Store'}
     unexpected=actual-allowed;missing=required-actual
     if unexpected:raise ValueError('Unregistered or retired output artifacts: '+', '.join(sorted(unexpected)))
     if missing:raise ValueError('Missing release artifacts: '+', '.join(sorted(missing)))

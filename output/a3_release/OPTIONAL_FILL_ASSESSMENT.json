@@ -56,11 +56,21 @@
     "constructive_contour_trials": 64,
     "feasible_two_page_layout_found": false,
     "mathematical_impossibility_proven": false,
-    "decision": "Defer PAD under the no-extra-sheet instruction. Failed finite searches are not a proof that every two-page arrangement is impossible."
+    "decision": "This earlier search concerned only the two Ascent sheets; current PAD placements follow current_pad_allocation."
   },
-  "deferred": [
-    "len_pad_3T"
-  ],
+  "capacity_proof_scope": "Historical two-sheet comparisons. Current production PAD placements are reported separately.",
+  "current_pad_allocation": {
+    "19_personal_fill/3T": [
+      "len_pad_3T_01_safe",
+      "len_pad_3T_02_safe",
+      "len_pad_3T_03_safe",
+      "len_pad_3T_04",
+      "len_pad_3T_05_safe",
+      "len_pad_3T_06",
+      "len_pad_3T_07"
+    ]
+  },
+  "deferred": [],
   "production_pages_added": 0,
   "physical_cut_test": false
 }

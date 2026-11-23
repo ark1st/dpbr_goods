@@ -2,7 +2,7 @@
 
 A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입니다. 각 조각의 그림·백색·벡터 칼선을 따로 편집할 수 있습니다. 외부30개 도안은 원본의 회전 상태도 유지합니다. 받침도 별도 조각입니다. 3T가 현재 선택이고 5T는 대안입니다.
 
-[출력용 A3](../a3_release) · [출력 보류 Len PAD 원본](../a3_release/06_len_pad) · [새 양검 시안](../a3_release/09_yanggum) · [단풍바람 원본 소스](../../assets)
+[출력용 A3](../a3_release) · [Len PAD 단독 원본·중복 출력 금지](../a3_release/06_len_pad) · [양검 단독 원본·중복 출력 금지](../a3_release/09_yanggum) · [단풍바람 원본 소스](../../assets)
 
 ![줄줄이 튀잉 완성 예시](linked_tuiing_assembly.png)
 
@@ -60,18 +60,19 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 | [ascent_28](ascent_28) | 104.000 × 62.807 |
 | [ascent_29](ascent_29) | 104.000 × 62.807 |
 | [ascent_30](ascent_30) | 104.000 × 62.807 |
+| [danba_logo_smooth](danba_logo_smooth) | 23.324 × 30.039 |
 | [강민_stand_01](강민_stand_01) | 94.903 × 67.515 |
 | [강민_stand_02](강민_stand_02) | 72.000 × 28.000 |
-| [강윤진_stand_01](강윤진_stand_01) | 102.766 × 67.526 |
+| [강윤진_stand_01](강윤진_stand_01) | 103.481 × 67.893 |
 | [강윤진_stand_02](강윤진_stand_02) | 72.000 × 28.000 |
-| [김윤_keyring_04](김윤_keyring_04) | 30.932 × 71.000 |
-| [김호_keyring_01](김호_keyring_01) | 42.038 × 71.000 |
-| [배승민_keyring_01](배승민_keyring_01) | 38.066 × 71.000 |
+| [김윤_keyring_04](김윤_keyring_04) | 31.634 × 71.700 |
+| [김호_keyring_01](김호_keyring_01) | 42.749 × 71.700 |
+| [배승민_keyring_01](배승민_keyring_01) | 38.367 × 71.701 |
 | [배승민_keyring_02](배승민_keyring_02) | 36.186 × 71.000 |
-| [배승민_keyring_03](배승민_keyring_03) | 33.390 × 71.000 |
+| [배승민_keyring_03](배승민_keyring_03) | 34.090 × 71.700 |
 | [이상준_stand_01](이상준_stand_01) | 60.515 × 67.517 |
 | [이상준_stand_02](이상준_stand_02) | 72.000 × 28.000 |
-| [정지영_stand_01](정지영_stand_01) | 63.316 × 67.515 |
+| [정지영_stand_01](정지영_stand_01) | 63.765 × 67.865 |
 | [정지영_stand_02](정지영_stand_02) | 72.000 × 28.000 |
 
 ![개별 조각 목록](11_ascent_remaining_3T_catalog.png)
@@ -144,6 +145,30 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 | [unfried_01](unfried_01) | 35.013 × 57.361 |
 
 ![개별 조각 목록](05_len_5T_catalog.png)
+
+## 19_personal_fill/3T
+
+| 에셋 | 외곽 크기 mm |
+|---|---|
+| [danba_logo_smooth](danba_logo_smooth) | 23.324 × 30.039 |
+| [len_pad_3T_01_safe](len_pad_3T_01_safe) | 209.275 × 99.436 |
+| [len_pad_3T_02_safe](len_pad_3T_02_safe) | 84.925 × 81.363 |
+| [len_pad_3T_03_safe](len_pad_3T_03_safe) | 88.906 × 75.430 |
+| [len_pad_3T_04](len_pad_3T_04) | 84.112 × 57.436 |
+| [len_pad_3T_05_safe](len_pad_3T_05_safe) | 66.403 × 93.047 |
+| [len_pad_3T_06](len_pad_3T_06) | 66.867 × 35.505 |
+| [len_pad_3T_07](len_pad_3T_07) | 280.000 × 71.224 |
+| [김윤_keyring_01](김윤_keyring_01) | 67.896 × 71.354 |
+| [김윤_keyring_02](김윤_keyring_02) | 49.260 × 71.354 |
+| [김윤_keyring_03](김윤_keyring_03) | 38.497 × 71.354 |
+| [김윤_keyring_05](김윤_keyring_05) | 47.734 × 71.354 |
+| [김호_keyring_02](김호_keyring_02) | 50.891 × 71.354 |
+| [김호_keyring_03](김호_keyring_03) | 56.575 × 71.354 |
+| [김호_keyring_04](김호_keyring_04) | 48.264 × 71.354 |
+| [김호_keyring_05](김호_keyring_05) | 35.523 × 71.700 |
+| [김호_keyring_06](김호_keyring_06) | 47.050 × 71.700 |
+
+![개별 조각 목록](19_personal_fill_3T_catalog.png)
 
 ## 02_extra_sheet/5T
 
@@ -228,19 +253,3 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 | [yanggum_stand_02](yanggum_stand_02) | 72.000 × 28.000 |
 
 ![개별 조각 목록](09_yanggum_3T_catalog.png)
-
-## 19_personal_fill/3T
-
-| 에셋 | 외곽 크기 mm |
-|---|---|
-| [김윤_keyring_01](김윤_keyring_01) | 67.542 × 71.000 |
-| [김윤_keyring_02](김윤_keyring_02) | 48.560 × 71.000 |
-| [김윤_keyring_03](김윤_keyring_03) | 37.797 × 71.000 |
-| [김윤_keyring_05](김윤_keyring_05) | 47.034 × 71.000 |
-| [김호_keyring_02](김호_keyring_02) | 50.175 × 71.000 |
-| [김호_keyring_03](김호_keyring_03) | 55.864 × 71.000 |
-| [김호_keyring_04](김호_keyring_04) | 47.563 × 71.000 |
-| [김호_keyring_05](김호_keyring_05) | 35.169 × 71.000 |
-| [김호_keyring_06](김호_keyring_06) | 46.360 × 71.000 |
-
-![개별 조각 목록](19_personal_fill_3T_catalog.png)

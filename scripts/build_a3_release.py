@@ -446,7 +446,7 @@ def apply_canonical_contours(piece):
     # Cache data only; callers can mutate their independent piece dictionaries.
     if not hasattr(apply_canonical_contours,'data'):
         apply_canonical_contours.data=json.loads(file.read_text(encoding='utf-8'))['parts']
-    row=apply_canonical_contours.data[piece['id']]
+    row=apply_canonical_contours.data[piece.get('canonical_id',piece['id'])]
     assert max(abs(a-b) for a,b in zip(piece['bounds'],row['source_bounds_mm']))<.0001,('Canonical source dimensions changed',piece['id'])
     assert len(piece['paths'])==len(row['paths'])
     for entry,path in zip(piece['paths'],row['paths']):
@@ -458,8 +458,119 @@ def apply_canonical_contours(piece):
     return piece
 
 
+def smooth_logo_source(original,design):
+    """New exterior, exact original hole; isolate source artwork before widening its clip."""
+    assert original['id']==design['source_id']=='extra_3T_32'
+    assert len(original['paths'])==len(design['paths'])==2
+    original_hole=min(original['paths'],key=lambda entry:entry['poly'].area)
+    hole_stats,hole=audit_path(design['paths'][0])
+    assert hole.boundary.hausdorff_distance(original_hole['poly'].boundary)<.00001,'Changed original logo hole'
+    stats,outer=audit_path(design['paths'][1])
+    assert outer.is_valid and outer.contains(hole)
+    assert outer.boundary.distance(hole.boundary)>=3.0,'Insufficient material around logo hole'
+    assert max(abs(a-b) for a,b in zip(outer.bounds,design['new_bounds_mm']))<.002
+    # Never let the expanded silhouette expose adjacent art on the original
+    # combined sheet: isolate using the original outline while coordinates stay
+    # in the original page's coordinate system.
+    art=clip_art(original['art'],original)
+    white=clip_art(original['white'],original)
+    def entry(path,poly,quality):
+        return {'path':path,'poly':poly,'protected':False,'source_draw':None,
+                'source_subpath':None,'deviation':0,'stats':quality}
+    return {**original,'id':'danba_logo_smooth','canonical_id':'danba_logo_smooth',
+            'bounds':outer.bounds,'poly':outer,
+            'paths':[entry(design['paths'][0],hole,hole_stats),entry(design['paths'][1],outer,stats)],
+            'art':art,'white':white,
+            'design_metadata':{'source_id':original['id'],
+                'exterior':'intentionally redesigned smooth contour',
+                'art_clip':'original source exterior',
+                'hole_diameter_mm':4}}
+
+
+def redesign_outer_contour(original,design):
+    """Install a reviewed enlarged exterior while pinning all source art and interfaces.
+
+    Candidate paths use the source page coordinates. Internal paths remain in
+    the source order with the exterior last. For an identified tab, a declared
+    rectangular region must retain the original material geometry exactly.
+    """
+    from shapely.geometry import box
+    ident=original['id']
+    assert design.get('pin_original_art') is True,(ident,'Source artwork must stay isolated')
+    assert not any(entry.get('protected') for entry in original['paths']),(ident,'Protected original may not be redesigned')
+    assert max(abs(a-b) for a,b in zip(original['bounds'],design['source_bounds_mm']))<.0001,(ident,'Original bounds changed')
+    paths=design['paths'];original_paths=original['paths']
+    assert len(paths)==len(original_paths),(ident,'Changed path count')
+    old_outer=max(original_paths,key=lambda entry:entry['poly'].area)
+    old_holes=[entry for entry in original_paths if entry is not old_outer]
+    assert len(old_holes)==len(paths)-1
+    entries=[]
+    for path in paths:
+        stats,poly=audit_path(path)
+        assert poly.is_valid,(ident,'Invalid redesigned contour')
+        entries.append({'path':path,'poly':poly,'protected':False,'source_draw':None,
+                        'source_subpath':None,'deviation':0,'stats':stats})
+    outer=entries[-1]['poly']
+    assert max(abs(a-b) for a,b in zip(outer.bounds,design['new_bounds_mm']))<.002,(ident,'Redesigned bounds changed')
+    assert outer.buffer(.002).covers(old_outer['poly']),(ident,'New outline must enclose the original')
+    for new,old in zip(entries[:-1],old_holes,strict=True):
+        assert new['poly'].boundary.hausdorff_distance(old['poly'].boundary)<.0001,(ident,'Changed internal hole or slot')
+        assert outer.contains(new['poly']),(ident,'Hole or slot outside exterior')
+    proof=design.get('tab_geometry_proof',{})
+    tolerance=proof.get('tolerance_mm',.002)
+    regions=proof.get('regions_mm',[])
+    assert 0<tolerance<=.002,(ident,'Invalid tab comparison tolerance')
+    meta=original.get('design_metadata') or {}
+    if meta.get('tab_width_mm') is not None or meta.get('tab_center_mm') is not None:
+        assert regions,(ident,'Missing tab preservation region')
+    if meta.get('tab_center_mm') is not None and meta.get('tab_width_mm') is not None and meta.get('tab_depth_mm') is not None:
+        from shapely.ops import unary_union
+        cx,shoulder=meta['tab_center_mm'];half=meta['tab_width_mm']/2
+        tab_box=box(cx-half,shoulder,cx+half,shoulder+meta['tab_depth_mm'])
+        assert unary_union([box(*r) for r in regions]).buffer(.002).covers(tab_box),(ident,'Tab proof does not cover the complete tab')
+    for region in regions:
+        assert len(region)==4 and region[0]<region[2] and region[1]<region[3],(ident,'Invalid tab preservation region')
+        zone=box(*region)
+        # Intersection at the shoulder can additionally contain zero-area
+        # line fragments; compare polygonal material, not crop-edge artifacts.
+        from shapely.ops import unary_union
+        def polygonal(geometry):
+            if geometry.geom_type=='Polygon':return [geometry]
+            if hasattr(geometry,'geoms'):return [part for item in geometry.geoms for part in polygonal(item)]
+            return []
+        before=unary_union(polygonal(old_outer['poly'].intersection(zone)))
+        after=unary_union(polygonal(outer.intersection(zone)))
+        assert not before.is_empty and not after.is_empty,(ident,'Empty tab preservation region')
+        assert before.boundary.hausdorff_distance(after.boundary)<=tolerance,(ident,'Changed tab geometry')
+    # Clip first to the original source silhouette. Widening the new contour
+    # must not reveal a neighbouring item in the pinned production source PDF.
+    art=clip_art(original['art'],original)
+    white=clip_art(original['white'],original)
+    return {**original,'bounds':outer.bounds,'poly':outer,'paths':entries,'art':art,'white':white}
+
+
+def pad_production_piece(source,ident,variants):
+    """A reviewed production variant shares the source art, not its identity."""
+    original_id=variants.get(ident,ident)
+    assert source['id']==original_id,(ident,'Wrong PAD variant source')
+    if ident==original_id:return source
+    assert ident==original_id+'_safe' and original_id.startswith('len_pad_3T_'),(ident,'Invalid PAD variant identity')
+    metadata={**(source.get('design_metadata') or {}),'redesign_source_id':original_id}
+    return {**source,'id':ident,'canonical_id':ident,
+            'paths':[dict(entry) for entry in source['paths']],
+            'design_metadata':metadata}
+
+
 def inputs(only=None):
     batches={} if only and '19_personal_fill' in only else dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
+    logo_allocation=CONFIG.get('logo_fill_allocation',{})
+    logo_source=None
+    if any(not only or only in group for group in logo_allocation):
+        logos=batches.get('02_extra_sheet/3T')
+        if logos is None:logos=dict(source_inputs('02_extra_sheet/3T'))['02_extra_sheet/3T']
+        original=next(p for p in logos if p['id']=='extra_3T_32')
+        design=json.loads((ROOT/'configs/logo_smooth.json').read_text(encoding='utf-8'))
+        logo_source=smooth_logo_source(original,design)
     for t in ['3T','5T']:
         group=f'02_extra_sheet/{t}'
         if group in batches:
@@ -470,6 +581,24 @@ def inputs(only=None):
     optional={p['id']:p for p in batches.get('09_yanggum/3T',[])}
     for group,ids in CONFIG.get('optional_fill_allocation',{}).items():
         if group in batches:batches[group]+=[optional[k] for k in ids]
+    for group,ids in logo_allocation.items():
+        if not only or only in group:
+            assert logo_source is not None
+            for ident in ids:
+                clone={**logo_source,'id':ident,'canonical_id':'danba_logo_smooth',
+                       'paths':[dict(entry) for entry in logo_source['paths']]}
+                batches.setdefault(group,[]).append(clone)
+    pad_allocation=CONFIG.get('pad_fill_allocation',{})
+    if any(not only or only in group for group in pad_allocation):
+        pad_source=batches.get('06_len_pad/3T')
+        if pad_source is None:
+            pad_source=dict(source_inputs('06_len_pad/3T'))['06_len_pad/3T']
+        pad_parts={p['id']:p for p in pad_source}
+        variants=CONFIG.get('pad_variant_sources',{})
+        for group,ids in pad_allocation.items():
+            if not only or only in group:
+                batches.setdefault(group,[]).extend(
+                    pad_production_piece(pad_parts[variants.get(ident,ident)],ident,variants) for ident in ids)
     allocation=CONFIG.get('personal_fill_allocation',{})
     if any(not only or only in group for group in allocation):
         from chain_keyring_parts import build_all
@@ -477,9 +606,16 @@ def inputs(only=None):
         for group,ids in allocation.items():
             if not only or only in group:
                 batches.setdefault(group,[]).extend(personal[ident] for ident in ids)
-    visited=set()
+    redesign_file=ROOT/'configs/contour_redesigns.json'
+    redesigns=json.loads(redesign_file.read_text(encoding='utf-8')) if redesign_file.exists() else {}
+    if 'parts' in redesigns:redesigns=redesigns['parts']
+    visited=set();redesigned={}
     for parts in batches.values():
-        for piece in parts:
+        for i,piece in enumerate(parts):
+            ident=piece['id']
+            if ident in redesigns:
+                if ident not in redesigned:redesigned[ident]=redesign_outer_contour(piece,redesigns[ident])
+                piece=parts[i]=redesigned[ident]
             if id(piece) not in visited:
                 apply_canonical_contours(piece);visited.add(id(piece))
     return [(group,parts) for group,parts in batches.items() if not only or only in group]

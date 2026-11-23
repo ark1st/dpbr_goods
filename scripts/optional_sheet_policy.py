@@ -30,12 +30,18 @@ def assess(root=None):
     records={}
     for product,ids in policy['candidate_sets'].items():
         records[product]=capacity_bound(shapes(policy['baseline_ids']+ids),cfg['canvas_mm'],cfg['page_margin_mm'],cfg['piece_gap_mm'],2)
-    assert records['len_pad_3T']['impossible_proven'],'PAD deferral requires a valid geometric capacity proof'
+    assert records['len_pad_3T']['impossible_proven'],'Expected a valid bound for the historical two mixed sheets'
     ascent_bound=capacity_bound(shapes(cfg['ascent_remaining']['part_ids']+policy['candidate_sets']['len_pad_3T']),cfg['canvas_mm'],cfg['page_margin_mm'],cfg['piece_gap_mm'],2)
+    pad_allocation=cfg.get('pad_fill_allocation',{})
+    ascent_search={'capacity_bound':ascent_bound,**policy['ascent_PAD_search']}
+    if pad_allocation:
+        ascent_search['decision']='This earlier search concerned only the two Ascent sheets; current PAD placements follow current_pad_allocation.'
     return {'maximum_existing_mixed_sheets':2,'baseline_parts':len(policy['baseline_ids']),
             'candidate_sets':records,'allocation':cfg['optional_fill_allocation'],
-            'ascent_with_PAD':{'capacity_bound':ascent_bound,**policy['ascent_PAD_search']},
-            'deferred':['len_pad_3T'],'production_pages_added':0,'physical_cut_test':False}
+            'ascent_with_PAD':ascent_search,
+            'capacity_proof_scope':'Historical two-sheet comparisons. Current production PAD placements are reported separately.',
+            'current_pad_allocation':pad_allocation,
+            'deferred':[] if pad_allocation else ['len_pad_3T'],'production_pages_added':0,'physical_cut_test':False}
 
 
 if __name__=='__main__':

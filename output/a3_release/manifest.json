@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
   "canvas_mm": [
     420.0,
     297.0
@@ -57,20 +57,20 @@
     "11_ascent_remaining/3T": [
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
-        "pieces": 15,
-        "contours": 17
+        "pieces": 18,
+        "contours": 23
       },
       {
         "folder": "a3_release/11_ascent_remaining/3T/sheet_02",
-        "pieces": 23,
-        "contours": 67
+        "pieces": 24,
+        "contours": 69
       }
     ],
     "19_personal_fill/3T": [
       {
         "folder": "a3_release/19_personal_fill/3T/sheet_01",
-        "pieces": 9,
-        "contours": 27
+        "pieces": 33,
+        "contours": 76
       }
     ]
   },
@@ -130,6 +130,17 @@
       "status": "retired_personal_stand_geometry_and_placements_only",
       "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
       "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
+    },
+    {
+      "commit": "9764eb812b81ce5b3849d9f7f361f0a685ffd640",
+      "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+      "status": "superseded_primary_layout_only",
+      "reason": "Len PAD seven-piece set added to the existing fifth A3 at original size; reinforced stands and all source contours remain current."
+    },
+    {
+      "revision": "A3-2026-11-23-final-with-len-pad",
+      "status": "superseded_primary_layout_only",
+      "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
     }
   ],
   "optional_groups": [
@@ -144,7 +155,9 @@
     "a3_release/OPTIONAL_FILL_ASSESSMENT.json",
     "a3_release/PERSONAL_FILL_ASSESSMENT.json",
     "a3_release/19_personal_fill/connection_preview.png",
-    "a3_release/19_personal_fill/stand_preview.png"
+    "a3_release/19_personal_fill/stand_preview.png",
+    "a3_release/FINAL_LAYOUT_ASSESSMENT.json",
+    "a3_release/LOGO_FILL_ASSESSMENT.json"
   ],
   "recut_recoveries": [
     {

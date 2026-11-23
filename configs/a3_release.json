@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
   "canvas_mm": [
     420,
     297
@@ -169,8 +169,8 @@
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
     "09_yanggum/3T": 3,
-    "11_ascent_remaining/3T": 38,
-    "19_personal_fill/3T": 9
+    "11_ascent_remaining/3T": 42,
+    "19_personal_fill/3T": 33
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -240,6 +240,17 @@
       "status": "retired_personal_stand_geometry_and_placements_only",
       "reason": "Narrow weapon-offset stand supports replaced by continuous clear risers; two Zero stand mode pairs now each use one plate and one base. Keyring artwork/contours and original84 baseline pieces unchanged.",
       "archive_commit": "7b09732e0afac66ee737943335d4b0e569765118"
+    },
+    {
+      "commit": "9764eb812b81ce5b3849d9f7f361f0a685ffd640",
+      "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+      "status": "superseded_primary_layout_only",
+      "reason": "Len PAD seven-piece set added to the existing fifth A3 at original size; reinforced stands and all source contours remain current."
+    },
+    {
+      "revision": "A3-2026-11-23-final-with-len-pad",
+      "status": "superseded_primary_layout_only",
+      "reason": "Existing 113 pieces preserved and 39 full-size original logo keyrings added in offcuts."
     }
   ],
   "len_layout": {
@@ -338,7 +349,7 @@
     "11_ascent_remaining/3T",
     "19_personal_fill/3T"
   ],
-  "selected_primary_parts": 106,
+  "selected_primary_parts": 134,
   "primary_inventory": [
     "ascent_01",
     "ascent_02",
@@ -371,6 +382,27 @@
     "ascent_29",
     "ascent_30",
     "burnt_01",
+    "danba_logo_fill_001",
+    "danba_logo_fill_002",
+    "danba_logo_fill_003",
+    "danba_logo_fill_004",
+    "danba_logo_fill_005",
+    "danba_logo_fill_006",
+    "danba_logo_fill_007",
+    "danba_logo_fill_008",
+    "danba_logo_fill_009",
+    "danba_logo_fill_010",
+    "danba_logo_fill_011",
+    "danba_logo_fill_012",
+    "danba_logo_fill_013",
+    "danba_logo_fill_014",
+    "danba_logo_fill_015",
+    "danba_logo_fill_016",
+    "danba_logo_fill_017",
+    "danba_logo_fill_018",
+    "danba_logo_fill_019",
+    "danba_logo_fill_020",
+    "danba_logo_fill_021",
     "extra_3T_01",
     "extra_3T_02",
     "extra_3T_03",
@@ -415,6 +447,13 @@
     "len_3T_06",
     "len_3T_07",
     "len_dot_3T_06",
+    "len_pad_3T_01_safe",
+    "len_pad_3T_02_safe",
+    "len_pad_3T_03_safe",
+    "len_pad_3T_04",
+    "len_pad_3T_05_safe",
+    "len_pad_3T_06",
+    "len_pad_3T_07",
     "supplied_saetui_01",
     "supplied_saetui_02",
     "supplied_saetui_03",
@@ -533,7 +572,9 @@
     "a3_release/OPTIONAL_FILL_ASSESSMENT.json",
     "a3_release/PERSONAL_FILL_ASSESSMENT.json",
     "a3_release/19_personal_fill/connection_preview.png",
-    "a3_release/19_personal_fill/stand_preview.png"
+    "a3_release/19_personal_fill/stand_preview.png",
+    "a3_release/FINAL_LAYOUT_ASSESSMENT.json",
+    "a3_release/LOGO_FILL_ASSESSMENT.json"
   ],
   "recut_recoveries": [
     {
@@ -650,9 +691,7 @@
     },
     "preserve_scale": true,
     "complete_sets_only": true,
-    "deferred": [
-      "len_pad_3T"
-    ],
+    "deferred": [],
     "standalone_reference_groups": [
       "06_len_pad/3T",
       "06_len_pad/5T",
@@ -670,7 +709,10 @@
       "feasible_two_page_layout_found": false,
       "mathematical_impossibility_proven": false,
       "decision": "Defer PAD under the no-extra-sheet instruction. Failed finite searches are not a proof that every two-page arrangement is impossible."
-    }
+    },
+    "deferred_if_limited_to_original_mixed_sheets": [
+      "len_pad_3T"
+    ]
   },
   "package_archives": false,
   "retired_package_files": [
@@ -2066,5 +2108,51 @@
       "personal_parts_on_added_page": 9
     },
     "baseline_asset_count": 141
+  },
+  "pad_fill_allocation": {
+    "19_personal_fill/3T": [
+      "len_pad_3T_01_safe",
+      "len_pad_3T_02_safe",
+      "len_pad_3T_03_safe",
+      "len_pad_3T_04",
+      "len_pad_3T_05_safe",
+      "len_pad_3T_06",
+      "len_pad_3T_07"
+    ]
+  },
+  "logo_fill_allocation": {
+    "11_ascent_remaining/3T": [
+      "danba_logo_fill_001",
+      "danba_logo_fill_002",
+      "danba_logo_fill_003",
+      "danba_logo_fill_004"
+    ],
+    "19_personal_fill/3T": [
+      "danba_logo_fill_005",
+      "danba_logo_fill_006",
+      "danba_logo_fill_007",
+      "danba_logo_fill_008",
+      "danba_logo_fill_009",
+      "danba_logo_fill_010",
+      "danba_logo_fill_011",
+      "danba_logo_fill_012",
+      "danba_logo_fill_013",
+      "danba_logo_fill_014",
+      "danba_logo_fill_015",
+      "danba_logo_fill_016",
+      "danba_logo_fill_017",
+      "danba_logo_fill_018",
+      "danba_logo_fill_019",
+      "danba_logo_fill_020",
+      "danba_logo_fill_021"
+    ]
+  },
+  "logo_fill_source": "extra_3T_32",
+  "logo_fill_count": 21,
+  "pad_variant_sources": {
+    "len_pad_3T_01_safe": "len_pad_3T_01",
+    "len_pad_3T_03_safe": "len_pad_3T_03",
+    "len_pad_3T_02_safe": "len_pad_3T_02",
+    "len_pad_3T_05_safe": "len_pad_3T_05"
   }
 }

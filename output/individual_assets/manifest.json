@@ -747,6 +747,31 @@
       ]
     },
     {
+      "id": "danba_logo_smooth",
+      "folder": "individual_assets/danba_logo_smooth",
+      "canvas_mm": [
+        27.323660265625,
+        34.03909990625
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T",
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "extra_3T_01",
       "folder": "individual_assets/extra_3T_01",
       "canvas_mm": [
@@ -2860,6 +2885,30 @@
       ]
     },
     {
+      "id": "len_pad_3T_01_safe",
+      "folder": "individual_assets/len_pad_3T_01_safe",
+      "canvas_mm": [
+        213.2753999355469,
+        103.43643595703125
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "len_pad_3T_02",
       "folder": "individual_assets/len_pad_3T_02",
       "canvas_mm": [
@@ -2868,6 +2917,30 @@
       ],
       "a3_groups": [
         "06_len_pad/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "len_pad_3T_02_safe",
+      "folder": "individual_assets/len_pad_3T_02_safe",
+      "canvas_mm": [
+        88.924902,
+        85.36303000000001
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -2908,6 +2981,30 @@
       ]
     },
     {
+      "id": "len_pad_3T_03_safe",
+      "folder": "individual_assets/len_pad_3T_03_safe",
+      "canvas_mm": [
+        92.90577100000002,
+        79.43014090429688
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "len_pad_3T_04",
       "folder": "individual_assets/len_pad_3T_04",
       "canvas_mm": [
@@ -2915,7 +3012,8 @@
         61.43556474323729
       ],
       "a3_groups": [
-        "06_len_pad/3T"
+        "06_len_pad/3T",
+        "19_personal_fill/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -2956,6 +3054,30 @@
       ]
     },
     {
+      "id": "len_pad_3T_05_safe",
+      "folder": "individual_assets/len_pad_3T_05_safe",
+      "canvas_mm": [
+        70.40298101562499,
+        97.046674
+      ],
+      "a3_groups": [
+        "19_personal_fill/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "len_pad_3T_06",
       "folder": "individual_assets/len_pad_3T_06",
       "canvas_mm": [
@@ -2963,7 +3085,8 @@
         39.50534392480469
       ],
       "a3_groups": [
-        "06_len_pad/3T"
+        "06_len_pad/3T",
+        "19_personal_fill/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -2987,7 +3110,8 @@
         75.22351650000002
       ],
       "a3_groups": [
-        "06_len_pad/3T"
+        "06_len_pad/3T",
+        "19_personal_fill/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3448,8 +3572,8 @@
       "id": "강윤진_stand_01",
       "folder": "individual_assets/강윤진_stand_01",
       "canvas_mm": [
-        106.76621250000001,
-        71.525676125
+        107.481169875,
+        71.89329775
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3496,8 +3620,8 @@
       "id": "김윤_keyring_01",
       "folder": "individual_assets/김윤_keyring_01",
       "canvas_mm": [
-        71.542374,
-        75.0
+        71.89637400000001,
+        75.353984
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3520,8 +3644,8 @@
       "id": "김윤_keyring_02",
       "folder": "individual_assets/김윤_keyring_02",
       "canvas_mm": [
-        52.55969164453124,
-        75.00037553054808
+        53.259691000000004,
+        75.35413794384765
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3544,8 +3668,8 @@
       "id": "김윤_keyring_03",
       "folder": "individual_assets/김윤_keyring_03",
       "canvas_mm": [
-        41.797302,
-        74.99994504006577
+        42.497292999999985,
+        75.35392900000001
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3568,8 +3692,8 @@
       "id": "김윤_keyring_04",
       "folder": "individual_assets/김윤_keyring_04",
       "canvas_mm": [
-        34.932221,
-        74.99994374054336
+        35.63443609375,
+        75.69992261436843
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3592,8 +3716,8 @@
       "id": "김윤_keyring_05",
       "folder": "individual_assets/김윤_keyring_05",
       "canvas_mm": [
-        51.03390699999997,
-        75.0001080902176
+        51.73390699999999,
+        75.354077
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3616,8 +3740,8 @@
       "id": "김호_keyring_01",
       "folder": "individual_assets/김호_keyring_01",
       "canvas_mm": [
-        46.037859499999996,
-        74.99981646215821
+        46.748721,
+        75.69965099999999
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3640,8 +3764,8 @@
       "id": "김호_keyring_02",
       "folder": "individual_assets/김호_keyring_02",
       "canvas_mm": [
-        54.17541804687501,
-        74.99961927954101
+        54.89145740820312,
+        75.353603
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3664,8 +3788,8 @@
       "id": "김호_keyring_03",
       "folder": "individual_assets/김호_keyring_03",
       "canvas_mm": [
-        59.864156140625,
-        74.99996394915009
+        60.57469677343748,
+        75.35378013397218
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3688,8 +3812,8 @@
       "id": "김호_keyring_04",
       "folder": "individual_assets/김호_keyring_04",
       "canvas_mm": [
-        51.562966609375025,
-        75.0
+        52.263548863281244,
+        75.35398699999999
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3712,8 +3836,8 @@
       "id": "김호_keyring_05",
       "folder": "individual_assets/김호_keyring_05",
       "canvas_mm": [
-        39.169493999999986,
-        74.99981646215821
+        39.523494,
+        75.699704
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3736,8 +3860,8 @@
       "id": "김호_keyring_06",
       "folder": "individual_assets/김호_keyring_06",
       "canvas_mm": [
-        50.35992765625002,
-        74.99988065292358
+        51.04958887499998,
+        75.70030023281859
       ],
       "a3_groups": [
         "19_personal_fill/3T"
@@ -3760,8 +3884,8 @@
       "id": "배승민_keyring_01",
       "folder": "individual_assets/배승민_keyring_01",
       "canvas_mm": [
-        42.066434,
-        74.99981646215821
+        42.367063,
+        75.70055651123047
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3808,8 +3932,8 @@
       "id": "배승민_keyring_03",
       "folder": "individual_assets/배승민_keyring_03",
       "canvas_mm": [
-        37.38983399999999,
-        74.99966302709961
+        38.08983399999998,
+        75.699646
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3880,8 +4004,8 @@
       "id": "정지영_stand_01",
       "folder": "individual_assets/정지영_stand_01",
       "canvas_mm": [
-        67.31589199999999,
-        71.515367
+        67.76477499999999,
+        71.86536699999999
       ],
       "a3_groups": [
         "11_ascent_remaining/3T"
@@ -3925,7 +4049,7 @@
       ]
     }
   ],
-  "asset_count": 163,
+  "asset_count": 168,
   "files_per_asset": [
     "01_PRINT.pdf",
     "01_PRINT_300ppi.png",
@@ -3948,11 +4072,11 @@
     "11_ascent_remaining_3T_catalog.png",
     "02_extra_sheet_3T_catalog.png",
     "05_len_5T_catalog.png",
+    "19_personal_fill_3T_catalog.png",
     "02_extra_sheet_5T_catalog.png",
     "06_len_pad_3T_catalog.png",
     "06_len_pad_5T_catalog.png",
-    "09_yanggum_3T_catalog.png",
-    "19_personal_fill_3T_catalog.png"
+    "09_yanggum_3T_catalog.png"
   ],
   "physical_test": false,
   "source_policy": "Same canonical pieces as A3, source orientation with translation only; original art rasterized at600ppi for independent editing."

@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-23-reinforced-stands-zero-pairs",
+  "revision": "A3-2026-11-23-rounded-cut-page-3-onward",
   "baseline_commit": "e0abac0c85fbb848d1afaed90da368983d67e61c",
   "source_commit": "59c513dad3cc78e9fc31dd41f79ffd9d0fecc92a",
   "baseline_ids": [
@@ -1322,6 +1322,7 @@
     "personal_parts_in_existing_pages": 13,
     "personal_parts_on_added_page": 9
   },
+  "baseline_asset_count": 141,
   "allocation": {
     "11_ascent_remaining/3T": [
       "강민_stand_01",
@@ -1351,7 +1352,6 @@
     ]
   },
   "selected_pages": 5,
-  "selected_parts": 106,
-  "physical_cut_test": false,
-  "baseline_asset_count": 141
+  "selected_parts": 134,
+  "physical_cut_test": false
 }

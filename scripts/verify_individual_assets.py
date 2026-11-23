@@ -12,10 +12,13 @@ def main():
     base=ROOT/'output/individual_assets';m=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
     a3=json.loads((ROOT/'output/a3_release/manifest.json').read_text(encoding='utf-8'))
     locations={}
+    aliases={ident for ids in CONFIG.get('logo_fill_allocation',{}).values() for ident in ids}
     for group,pages in a3['groups'].items():
         for page in pages:
             spec=json.loads((ROOT/'output'/page['folder']/'validation.json').read_text(encoding='utf-8'))
-            for p in spec['parts']:locations.setdefault(p['id'],[]).append((group,p))
+            for p in spec['parts']:
+                ident='danba_logo_smooth' if p['id'] in aliases else p['id']
+                locations.setdefault(ident,[]).append((group,p))
     assert set(locations)=={a['id'] for a in m['assets']}
     assert len(m['assets'])==m['asset_count']
     personal=CONFIG.get('personal_fill_allocation',{})
@@ -24,7 +27,7 @@ def main():
         policy=CONFIG['personal_fill_policy']
         expected_count=policy['stand_pieces']+policy['keyring_pieces']
         assert len(expected)==expected_count and set(expected)==set(policy['new_part_ids']),'Incomplete personal catalog'
-        assert m['asset_count']==policy['baseline_asset_count']+expected_count,'Incomplete catalog of original and personal pieces'
+        assert m['asset_count']==policy['baseline_asset_count']+expected_count+bool(aliases)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
         for ident,group in expected.items():
             assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed personal asset placement')
     canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']
@@ -34,7 +37,7 @@ def main():
     for asset in m['assets']:
         folder=ROOT/'output'/asset['folder'];s=json.loads((folder/'asset.json').read_text(encoding='utf-8'))
         assert s['artwork_scale']==1 and s['rotation_degrees']==0 and s['pieces']==1
-        assert sorted(s['a3_groups'])==sorted(g for g,p in locations[s['id']])
+        assert sorted(s['a3_groups'])==sorted({g for g,p in locations[s['id']]})
         for file,sha in s['files'].items():assert artifact_sha256(folder/file)==sha,(s['id'],file,'stale asset')
         expected=[Polygon(q) for q in s['parts'][0]['expected_paths']]
         assert len(expected)==s['closed_contours']
