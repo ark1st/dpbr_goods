@@ -20,6 +20,15 @@ def output_inventory(out):
     manifest=json.loads((out/'a3_release/manifest.json').read_text(encoding='utf-8'))
     required={'a3_release/README.md','a3_release/manifest.json','a3_release/05_len/assembly.png','a3_release/05_len/assembly_dot.png'}
     required.update(manifest.get('support_files',[]))
+    delivery=manifest.get('print_delivery')
+    if delivery:
+        required.add('print_delivery/README.md')
+        for key in delivery['plates']:
+            if not key or Path(key).name!=key or key in ('.','..'):
+                raise ValueError('Invalid print delivery plate name')
+            required.update(f'print_delivery/{key}/{name}' for name in
+                            ('01_PRINT_300ppi.png','02_CUT_WITH_BLUE.ai','registration.json'))
+        required.update(delivery['layout_files'])
     recoveries=manifest.get('recut_recoveries',[])
     for recovery in recoveries:required.update(recovery['folder']+'/'+name for name in recovery['files'])
     large_plates=manifest.get('large_format_plates',[])

@@ -8,6 +8,29 @@ OUT=ROOT/'output';BASE=OUT/'a3_release'
 def write(p,text):
     p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text,encoding='utf-8',newline='\n')
 
+def write_fixed_release(cfg,manifest):
+    """Index only: never rewrite the frozen pages or their artwork files."""
+    from fixed_page3_checks import verify_frozen_pages
+    verify_frozen_pages(ROOT,cfg['fixed_source_page3'])
+    manifest.update(revision=cfg['revision'],package_archives=False,selected_thickness='3T',
+        physical_pages_per_selected_thickness=4,active_print_groups=cfg['active_print_groups'],
+        fixed_source_page3=cfg['fixed_source_page3'],test_pieces_included=False)
+    if 'print_delivery' in cfg:
+        manifest['print_delivery']=cfg['print_delivery']
+    write(BASE/'manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    for target, delivery in [(BASE/'README.md','../print_delivery'),(OUT/'README.md','print_delivery')]:
+        write(target, '# 아크릴 제작판\n\n'
+              f'[인쇄소용 파일과 페이지별 규격]({delivery}/README.md)\n\n'
+              '각 대지의 인쇄 PNG와 같은 이름의 폴더에 있는 칼선 AI를 함께 사용합니다. '
+              'AI의 빨간 선은 재단용이고 파란 외곽선은 위치 맞춤용입니다. '
+              '1·2페이지는 기존 인쇄분을 사용합니다.\n')
+    write(BASE/'11_ascent_remaining/README.md',
+          '# 3페이지 · 캐릭터 키링과 스탠드\n\n'
+          '[인쇄 PNG와 칼선 AI](../../print_delivery/page03) · '
+          '[편집 원본과 시안](3T/sheet_01)\n')
+    verify_frozen_pages(ROOT,cfg['fixed_source_page3'])
+    print('Published fixed page 3; first two pages untouched; no ZIP',flush=True)
+
 def write_personal_release(cfg,manifest):
     """Publish the reviewed offcut allocation without creating new archives."""
     assert cfg['package_archives'] is False
@@ -118,6 +141,8 @@ def main():
     cfg=json.loads((ROOT/'configs/a3_release.json').read_text(encoding='utf-8'))
     m=json.loads((BASE/'manifest.json').read_text(encoding='utf-8'))
     assert set(m['groups'])==set(cfg['current_groups'])
+    if cfg.get('fixed_source_page3'):
+        return write_fixed_release(cfg,m)
     if cfg.get('personal_fill_allocation'):
         return write_personal_release(cfg,m)
     m.update(revision=cfg['revision'],selected_thickness='3T',optional_groups=cfg['optional_groups'],test_pieces_included=False,support_files=cfg.get('support_files',[]),recut_recoveries=cfg.get('recut_recoveries',[]))

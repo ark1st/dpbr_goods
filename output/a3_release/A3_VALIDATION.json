@@ -305,13 +305,13 @@
     },
     {
       "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
-      "pieces": 26,
-      "contours": 58,
+      "pieces": 49,
+      "contours": 129,
       "max_export_deviation_mm": {
-        "03_CUT_ONLY.pdf": 0.0007346876148821963,
-        "02_MASTER.pdf": 0.0007346876148821963,
-        "02_MASTER.ai": 0.0007245798046582971,
-        "02_MASTER.vectorcraft": 0.0007245798046582971
+        "03_CUT_ONLY.pdf": 0.0007542650427448392,
+        "02_MASTER.pdf": 0.0007542650427448392,
+        "02_MASTER.ai": 0.0007542650427448392,
+        "02_MASTER.vectorcraft": 0.0007542650427448392
       },
       "png": [
         {
@@ -330,20 +330,44 @@
         }
       ],
       "sha256": {
-        "preview.png": "de03776c03111b92945f3f47d3ab0932260069f018e97f83d3f4db634d9614b5",
-        "01_PRINT_300ppi.png": "4a232409c3bef9cf8b807c34bf1c877a1f4cb96c15b8455148eff60b10802341",
-        "PREVIEW_NOT_FOR_CUT.pdf": "7c4ff758eb5b77fa2ff06cfe52982c930b8638bb91b3273e6ab2e26edd90b6c7",
-        "02_MASTER.vectorcraft": "b4676a72e1d35a017b3c19e3a42c4978231305b58b25985a53de4245d8267996",
-        "03_CUT_ONLY.svg": "d5d9bea38cc15a408808c08fa850721eee9a2b5241021dd2149a6087fd13ff0d",
-        "03_CUT_ONLY.pdf": "40e7bac9b20c0ee96bf19a192dbd1c1db5485d7b3ae941ba74a6e7e1d213e9a5",
-        "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-        "02_MASTER.pdf": "340ad0248762fddb3d2ea575b19973f16514dc6f78aaf0bd948081a7402e87d8",
-        "README.md": "20fbbf7b387d349cafb84df505874e3e5f68fa927ed4319ef7b3ba3a4ec8e96b",
-        "02_MASTER.ai": "e6f1157684d0158d89729d53015c27c4f96b405d105057bb433edc9ee6bfc0e9",
-        "04_WHITE_INK_MASK.pdf": "e5ad0ac0799d5bd2ef89a8343c86bb786dc3ec34256d14e09c97f5b0615fd9ae",
-        "validation.json": "13ed2c19c309176df4ec3d02a72615382e1cb02bacaf83026636cd520bd10c61",
-        "01_PRINT.pdf": "a389b9bfccda15908c3eb00f9f1b03f13c47f287a55cd82520a23e3530c734cd",
-        "cut_detail.png": "7a243fa045bd26b0a7195495325659e1aae6aa723baa6d70b0ce786d6b51d7e1"
+        "preview.png": "22a4fee4fd3b31c5e9721d9f92396b58cc7a5a05c5389d51c6712a1f8d23cea8",
+        "01_PRINT_300ppi.png": "a07019c4a48b9fd19dddb2a363e55ef22376657694e1fc02d131c17e08d67432",
+        "PREVIEW_NOT_FOR_CUT.pdf": "41ae67697761682da993cab23be73f1315f30719dbaab191e4b0f55d859bb414",
+        "02_MASTER.vectorcraft": "e2e8bd0f8e2d59d33871ab2591152fb49ca2fc15d5226d412d4909ef6865c221",
+        "03_CUT_ONLY.svg": "f5f345ca55731a5362434af8a679e10a4a7886bd2cc8331dcb243b9c25bc2a3d",
+        "03_CUT_ONLY.pdf": "abaa30299da5115ffeb555a6dd727562e4fe77d9e564fc830d8dae2eab7ac2f7",
+        "04_WHITE_INK_MASK_300ppi.png": "7a00bb6e99cd1923a765a637c48b2914e74c3145cf8dab4d25df909aca6767f4",
+        "02_MASTER.pdf": "a7aafbe9944ac682f220ff6337b75b82f4e53982f7098659fe7ec8656b20c650",
+        "README.md": "2723cfe8cd79006620780e25809c28e6d2219a6d5f8445337fe69b6e2ec5898b",
+        "02_MASTER.ai": "a7aafbe9944ac682f220ff6337b75b82f4e53982f7098659fe7ec8656b20c650",
+        "04_WHITE_INK_MASK.pdf": "7d7b4a0eb3080bc8710820380c62b5940893ce8622d2a8a1d0bc0b14d9ee8ae0",
+        "validation.json": "91635388a00d0e1c3f6ed3e0139a3013cfa815e9ba7db618af1840a240e0ba25",
+        "01_PRINT.pdf": "6e1fc99781892ec737308e6fdb6d09fb8d2788aa68bf9c0ae569da157aed2797",
+        "cut_detail.png": "e01337bad7713ed57939293b860c49e0fcaf14c8b431f2e854ca48cf067d79c4"
+      },
+      "fixed_source_spacing_exceptions": {
+        "baseline_gap_exceptions_mm": {
+          "fixed_04 / fixed_07": 2.3025760601153182,
+          "fixed_06 / fixed_14": 2.2580706252261056,
+          "fixed_13 / fixed_14": 2.7087347211384842
+        },
+        "baseline_edge_exceptions_mm": {
+          "fixed_04": 7.355245375,
+          "fixed_09": 6.12241211328125,
+          "fixed_10": 5.4631766,
+          "fixed_12": 5.4631766,
+          "fixed_13": 5.4233164,
+          "fixed_14": 6.6726749,
+          "fixed_16": 5.9708619,
+          "fixed_20": 6.139414878601599
+        },
+        "new_piece_minimum_gap_mm": 3,
+        "new_piece_minimum_edge_mm": 8
+      },
+      "requested_additions": {
+        "required_additions": 13,
+        "complete_muhani_sets": 3,
+        "extra_muhani_keyrings": 1
       }
     },
     {
@@ -1000,120 +1024,21 @@
   "selected_primary_pages": 4,
   "selected_thickness": "3T",
   "optional_fill_assessment": {
-    "maximum_existing_mixed_sheets": 2,
-    "baseline_parts": 56,
-    "candidate_sets": {
-      "yanggum_3T": {
-        "parts": 59,
-        "sheets": 2,
-        "gap_mm": 3,
-        "margin_mm": 8,
-        "expanded_piece_area_lower_mm2": 182816.4161545297,
-        "expanded_container_area_upper_mm2": 231176,
-        "excess_area_mm2": -48359.583845470304,
-        "impossible_proven": false,
-        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
-      },
-      "len_pad_3T": {
-        "parts": 63,
-        "sheets": 2,
-        "gap_mm": 3,
-        "margin_mm": 8,
-        "expanded_piece_area_lower_mm2": 231650.3990408355,
-        "expanded_container_area_upper_mm2": 231176,
-        "excess_area_mm2": 474.3990408355021,
-        "impossible_proven": true,
-        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
-      }
-    },
-    "allocation": {
-      "02_extra_sheet/3T": [
-        "yanggum_stand_01",
-        "yanggum_keyring_01"
-      ],
-      "05_len/3T": [
-        "yanggum_stand_02"
-      ]
-    },
-    "ascent_with_PAD": {
-      "capacity_bound": {
-        "parts": 32,
-        "sheets": 2,
-        "gap_mm": 3,
-        "margin_mm": 8,
-        "expanded_piece_area_lower_mm2": 214037.93886507142,
-        "expanded_container_area_upper_mm2": 231176,
-        "excess_area_mm2": -17138.061134928575,
-        "impossible_proven": false,
-        "scope": "Whole exterior contours with the current inter-piece gap; no scaling, overlapping or nesting parts inside mechanical openings."
-      },
-      "rectangular_packing_result_pages": 3,
-      "rectangular_core_layouts_examined": 33,
-      "contour_fill_trials": 264,
-      "best_complete_parts_in_core_search": 29,
-      "requested_total_parts": 32,
-      "constructive_first_page_parts": 14,
-      "constructive_remaining_parts": 18,
-      "constructive_contour_trials": 64,
-      "feasible_two_page_layout_found": false,
-      "mathematical_impossibility_proven": false,
-      "decision": "This earlier search concerned only the two Ascent sheets; current PAD placements follow current_pad_allocation."
-    },
-    "capacity_proof_scope": "Historical two-sheet comparisons. Current production PAD placements are reported separately.",
-    "current_pad_allocation": {
-      "19_personal_fill/3T": [
-        "len_pad_3T_07",
-        "len_pad_3T_01_safe",
-        "len_pad_3T_03_safe",
-        "len_pad_3T_02_safe",
-        "len_pad_3T_04",
-        "len_pad_3T_06"
-      ],
-      "11_ascent_remaining/3T": [
-        "len_pad_3T_05_safe"
-      ]
-    },
-    "deferred": [],
-    "production_pages_added": 0,
-    "physical_cut_test": false
+    "status": "superseded_by_fixed_page3",
+    "old_assessment_is_not_a_proof_for_the_current_layout": true
   },
-  "PAD_print_pages": 2,
+  "PAD_print_pages": 1,
   "minimum_sheet_proof": {
-    "parts": 87,
-    "net_material_area_mm2": 240891.25710961453,
-    "area_lower_bound_sheets": 3,
     "feasible_sheets": 4,
-    "expanded_piece_area_lower_mm2": 272007.71504466754,
-    "expanded_single_sheet_area_upper_mm2": 115588,
-    "single_A3_area_mm2": 124740,
     "optimal_sheet_count_proven": false,
-    "separate_batches": [
-      {
-        "name": "existing",
-        "parts": 55,
-        "net_material_area_mm2": 136273.40875137926,
-        "area_lower_bound_sheets": 2,
-        "feasible_sheets": 2,
-        "expanded_piece_area_lower_mm2": 154329.1477696559,
-        "expanded_single_sheet_area_upper_mm2": 115588
-      },
-      {
-        "name": "ascent_remaining",
-        "parts": 26,
-        "net_material_area_mm2": 55831.26615354982,
-        "area_lower_bound_sheets": 1,
-        "feasible_sheets": 1,
-        "expanded_piece_area_lower_mm2": 64953.750233850886,
-        "expanded_single_sheet_area_upper_mm2": 115588
-      }
-    ],
-    "scope": "Selected 3T inventory. Global lower bound uses the policy clearance, sheet margin and exterior areas. Batch rows describe reviewed placements only."
+    "scope": "No global clearance-based lower bound: the locked user baseline has documented spacing exceptions."
   },
   "source_artwork_scale": 1,
   "physical_cut_test": false,
   "test_pieces_included": false,
   "limitations": [
     "Software checks do not validate physical kerf, material thickness or printer registration.",
+    "The user-supplied page-three baseline retains three gaps below 3mm and eight pieces below the 8mm edge margin; new pieces obey both margins.",
     "Ascent source geometry was checked digitally; its 30 parts are excluded from these 3T production sheets.",
     "Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.",
     "Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers."

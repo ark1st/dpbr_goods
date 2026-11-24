@@ -77,7 +77,12 @@ class A3PackingTests(unittest.TestCase):
         logo_ids=[p for ids in logo.values() for p in ids]
         stands=cfg.get('additional_stand_allocation',{})
         stand_ids=[p for ids in stands.values() for p in ids]
-        self.assertEqual(len(selected),len(cfg['personal_fill_policy']['baseline_ids'])+len(new)+len(pad_ids)+len(logo_ids)+len(stand_ids))
+        fixed_page=cfg.get('fixed_source_page3')
+        archived=set(fixed_page['archived_reference_ids']) if fixed_page else set()
+        fixed_ids={f'fixed_{i:02}' for i in range(1,27)} if fixed_page else set()
+        additions={p['id'] for p in json.loads((ROOT/'configs/fixed_page3_additions.json').read_text())['placements']} if fixed_page else set()
+        original=set(cfg['personal_fill_policy']['baseline_ids'])|set(new)|set(pad_ids)|set(logo_ids)|set(stand_ids)
+        self.assertEqual(set(selected),(original-archived)|fixed_ids|additions)
         self.assertEqual(len(set(selected)),len(selected))
         self.assertEqual(sorted(selected),cfg['primary_inventory'])
         self.assertFalse(set(selected)&set(cfg['excluded_brand_parts']['3T']))
@@ -86,18 +91,21 @@ class A3PackingTests(unittest.TestCase):
         separate_rows=rows['11_ascent_remaining/3T']
         separate_pages=separate_rows if isinstance(separate_rows[0],list) else [separate_rows]
         separate=[r['id'] for page in separate_pages for r in page]
-        self.assertEqual(set(separate),set(([] if migration else cfg['ascent_remaining']['part_ids'])
-                                          +personal.get('11_ascent_remaining/3T',[])+pad.get('11_ascent_remaining/3T',[])+logo.get('11_ascent_remaining/3T',[])+stands.get('11_ascent_remaining/3T',[])))
+        if fixed_page:
+            self.assertEqual(set(separate),fixed_ids|additions)
+        else:
+            self.assertEqual(set(separate),set(([] if migration else cfg['ascent_remaining']['part_ids'])
+                                              +personal.get('11_ascent_remaining/3T',[])+pad.get('11_ascent_remaining/3T',[])+logo.get('11_ascent_remaining/3T',[])+stands.get('11_ascent_remaining/3T',[])))
         self.assertFalse(set(separate)&set(cfg['cadena_source_part_ids']))
         self.assertNotIn('ascent_31',selected)
         if personal:
             from verify_a3_release import verify_fixed_placements
             self.assertEqual(len(new),cfg['personal_fill_policy']['stand_pieces']+cfg['personal_fill_policy']['keyring_pieces'])
             self.assertEqual(set(new),set(cfg['personal_fill_policy']['new_part_ids']))
-            self.assertEqual(set(selected)-set(new)-set(pad_ids)-set(logo_ids)-set(stand_ids),set(cfg['personal_fill_policy']['baseline_ids']))
+            self.assertEqual(set(selected)-set(new)-set(pad_ids)-set(logo_ids)-set(stand_ids)-fixed_ids-additions,set(cfg['personal_fill_policy']['baseline_ids'])-archived)
             for group in cfg['selected_primary_groups']:
                 pages=rows[group] if isinstance(rows[group][0],list) else [rows[group]]
-                self.assertEqual({r['id'] for page in pages for r in page if r['id'] in new},set(personal.get(group,[])))
+                self.assertEqual({r['id'] for page in pages for r in page if r['id'] in new},set(personal.get(group,[]))-archived)
             verify_fixed_placements(cfg,rows)
             fixed=cfg['personal_fill_policy']['fixed_existing_placements'][0]
             pages=rows[fixed['group']]
@@ -394,7 +402,15 @@ class A3PackingTests(unittest.TestCase):
         self.assertFalse(result['ascent_with_PAD']['capacity_bound']['impossible_proven'])
         self.assertFalse(result['ascent_with_PAD']['mathematical_impossibility_proven'])
         self.assertFalse(result['ascent_with_PAD']['feasible_two_page_layout_found'])
-        self.assertEqual(result['current_pad_allocation'],cfg.get('pad_fill_allocation',{}))
+        historical=cfg.get('pad_fill_allocation',{})
+        archived=set(cfg.get('fixed_source_page3',{}).get('archived_reference_ids',[]))
+        current={group:[ident for ident in ids if ident not in archived] for group,ids in historical.items()}
+        current={group:ids for group,ids in current.items() if ids}
+        self.assertEqual(result['current_pad_allocation'],current)
+        if cfg.get('fixed_source_page3'):
+            self.assertEqual(result['historical_pad_allocation'],historical)
+            self.assertEqual(result['archived_pad_parts'],['len_pad_3T_05_safe'])
+            self.assertEqual(sum(map(len,current.values())),6)
         self.assertEqual(result['deferred'],[] if result['current_pad_allocation'] else ['len_pad_3T'])
 
     def test_large_source_oblique_cut_avoids_rounded_form_matrix(self):

@@ -47,6 +47,29 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 
 ![개별 조각 목록](05_len_5T_catalog.png)
 
+## 11_ascent_remaining/3T
+
+| 에셋 | 외곽 크기 mm |
+|---|---|
+| [burnt_01](burnt_01) | 35.013 × 57.361 |
+| [golden_01](golden_01) | 35.013 × 57.361 |
+| [muhani_keyring](muhani_keyring) | 27.645 × 49.889 |
+| [muhani_stand_base](muhani_stand_base) | 43.472 × 39.957 |
+| [muhani_stand_body](muhani_stand_body) | 34.883 × 63.041 |
+| [redflower_keyring](redflower_keyring) | 45.351 × 44.520 |
+| [redflower_stand_base](redflower_stand_base) | 43.472 × 39.957 |
+| [redflower_stand_body](redflower_stand_body) | 59.055 × 58.352 |
+| [remsha_keyring](remsha_keyring) | 50.829 × 49.421 |
+| [remsha_stand_base](remsha_stand_base) | 43.472 × 39.957 |
+| [remsha_stand_body](remsha_stand_body) | 59.655 × 63.313 |
+| [tuiing_01](tuiing_01) | 35.013 × 57.361 |
+| [unfried_01](unfried_01) | 35.013 × 57.361 |
+| [zero_duo_keyring](zero_duo_keyring) | 46.008 × 43.609 |
+| [zero_duo_stand_base](zero_duo_stand_base) | 43.472 × 39.957 |
+| [zero_duo_stand_body](zero_duo_stand_body) | 52.490 × 51.217 |
+
+![개별 조각 목록](11_ascent_remaining_3T_catalog.png)
+
 ## 02_extra_sheet/3T
 
 | 에셋 | 외곽 크기 mm |
@@ -141,39 +164,6 @@ A3는 출력용 배치이며, 아래 파일은 원본 방향의 독립 에셋입
 | [supplied_saetui_04](supplied_saetui_04) | 28.669 × 43.379 |
 
 ![개별 조각 목록](02_extra_sheet_5T_catalog.png)
-
-## 11_ascent_remaining/3T
-
-| 에셋 | 외곽 크기 mm |
-|---|---|
-| [extra_stand_렘샤_01](extra_stand_렘샤_01) | 69.149 × 67.515 |
-| [extra_stand_렘샤_02](extra_stand_렘샤_02) | 72.000 × 28.000 |
-| [extra_stand_적매화검_01](extra_stand_적매화검_01) | 68.674 × 67.575 |
-| [extra_stand_적매화검_02](extra_stand_적매화검_02) | 72.000 × 28.000 |
-| [len_pad_3T_05_safe](len_pad_3T_05_safe) | 63.403 × 91.547 |
-| [강민_stand_01](강민_stand_01) | 72.375 × 69.940 |
-| [강민_stand_02](강민_stand_02) | 72.000 × 28.000 |
-| [강윤진_stand_01](강윤진_stand_01) | 77.178 × 67.516 |
-| [강윤진_stand_02](강윤진_stand_02) | 72.000 × 28.000 |
-| [김윤_keyring_01](김윤_keyring_01) | 67.542 × 71.000 |
-| [김윤_keyring_02](김윤_keyring_02) | 48.561 × 71.001 |
-| [김윤_keyring_03](김윤_keyring_03) | 37.797 × 71.000 |
-| [김윤_keyring_04](김윤_keyring_04) | 30.933 × 70.999 |
-| [김윤_keyring_05](김윤_keyring_05) | 47.034 × 71.000 |
-| [김호_keyring_02](김호_keyring_02) | 50.176 × 71.000 |
-| [김호_keyring_03](김호_keyring_03) | 55.865 × 71.000 |
-| [김호_keyring_04](김호_keyring_04) | 47.563 × 71.000 |
-| [김호_keyring_05](김호_keyring_05) | 35.169 × 70.999 |
-| [김호_keyring_06](김호_keyring_06) | 46.360 × 70.999 |
-| [배승민_keyring_01](배승민_keyring_01) | 38.066 × 71.000 |
-| [배승민_keyring_02](배승민_keyring_02) | 36.186 × 71.000 |
-| [배승민_keyring_03](배승민_keyring_03) | 33.390 × 71.000 |
-| [이상준_stand_01](이상준_stand_01) | 60.515 × 67.517 |
-| [이상준_stand_02](이상준_stand_02) | 72.000 × 28.000 |
-| [정지영_stand_01](정지영_stand_01) | 63.316 × 67.515 |
-| [정지영_stand_02](정지영_stand_02) | 72.000 × 28.000 |
-
-![개별 조각 목록](11_ascent_remaining_3T_catalog.png)
 
 ## 20_guide_stand_comparison/3T
 

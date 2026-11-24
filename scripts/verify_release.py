@@ -196,6 +196,10 @@ def main():
         'existing_print_recovery_cut_files':len(recut['records']) if recut else 0,'recut_print_pages_added':0,
         'archived_previous_cut_files':126,'archive_cut_quality':'retired; not included in current pass count; exact backup bytes checked'},
         'limitations':a3['limitations']}
+    if manifest.get('print_delivery'):
+        assert manifest['print_delivery']==configured['print_delivery']
+        report['print_delivery']=manifest['print_delivery']
+        report['coverage']['physical_plates_to_print']=len(manifest['print_delivery']['plates'])
     (out/'RELEASE_VALIDATION.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(report['coverage']),flush=True)
     return report

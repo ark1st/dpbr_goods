@@ -2648,850 +2648,1087 @@
     ],
     "11_ascent_remaining/3T": [
       {
-        "id": "강민_stand_01",
-        "source_id": "강민_stand_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 329.31,
-        "y": 8.008,
+        "id": "fixed_01",
+        "x": 88.47900180930174,
+        "y": 61.333662037500005,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          88.47900180930174,
+          61.333662037500005,
+          126.7265348,
+          116.0802584625
+        ]
+      },
+      {
+        "id": "fixed_02",
+        "x": 165.08298042500002,
+        "y": 54.011227337499996,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          165.08298042500002,
+          54.011227337499996,
+          201.60344131024627,
+          109.1461035125
+        ]
+      },
+      {
+        "id": "fixed_03",
+        "x": 125.98885233789063,
+        "y": 57.315726575,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          125.98885233789063,
+          57.315726575,
+          159.8509686211334,
+          112.080181
+        ]
+      },
+      {
+        "id": "fixed_04",
+        "x": 342.4402580594726,
+        "y": 7.355245375000001,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          342.4402580594726,
+          7.355245375000001,
+          370.5112428495415,
+          57.9225452
+        ]
+      },
+      {
+        "id": "fixed_05",
+        "x": 209.77827651001894,
+        "y": 50.2506472,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          209.77827651001894,
+          50.2506472,
+          253.49027389277344,
+          106.49432132812501
+        ]
+      },
+      {
+        "id": "fixed_06",
+        "x": 249.5217916194917,
+        "y": 61.1489269,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          249.5217916194917,
+          61.1489269,
+          289.48939927431644,
+          118.0360482281952
+        ]
+      },
+      {
+        "id": "fixed_07",
+        "x": 372.28789512802734,
+        "y": 8.0835902,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          372.28789512802734,
+          8.0835902,
+          411.5154203138368,
+          57.46816
+        ]
+      },
+      {
+        "id": "fixed_08",
+        "x": 39.76051138070679,
+        "y": 64.3634163,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          39.76051138070679,
+          64.3634163,
+          85.03153295312501,
+          115.100834
+        ]
+      },
+      {
+        "id": "fixed_09",
+        "x": 6.12241211328125,
+        "y": 54.3188098,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          6.12241211328125,
+          54.3188098,
+          43.461574614672855,
+          106.194993
+        ]
+      },
+      {
+        "id": "fixed_10",
+        "x": 5.553296016727829,
+        "y": 5.4631766,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          5.553296016727829,
+          5.4631766,
+          70.03569001624146,
+          53.8642994
+        ]
+      },
+      {
+        "id": "fixed_11",
+        "x": 54.25004936858426,
+        "y": 8.4461872,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          54.25004936858426,
+          8.4461872,
+          108.1679136875,
+          62.077547
+        ]
+      },
+      {
+        "id": "fixed_12",
+        "x": 109.08566898510625,
+        "y": 5.4631766,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          109.08566898510625,
+          5.4631766,
+          143.50122935136716,
+          56.7021753
+        ]
+      },
+      {
+        "id": "fixed_13",
+        "x": 194.02357304172324,
+        "y": 5.4233164,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          194.02357304172324,
+          5.4233164,
+          244.42275783039304,
+          58.3405066
+        ]
+      },
+      {
+        "id": "fixed_14",
+        "x": 245.83158704191897,
+        "y": 6.6726749,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          245.83158704191897,
+          6.6726749,
+          300.8681973337025,
+          58.9254784
+        ]
+      },
+      {
+        "id": "fixed_15",
+        "x": 293.8620545626902,
+        "y": 9.7079063,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          293.8620545626902,
+          9.7079063,
+          343.7259932851955,
+          62.337937
+        ]
+      },
+      {
+        "id": "fixed_16",
+        "x": 145.79088148317797,
+        "y": 5.9708619,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          145.79088148317797,
+          5.9708619,
+          189.880706375,
+          59.6272874
+        ]
+      },
+      {
+        "id": "fixed_17",
+        "x": 293.97238248281246,
+        "y": 130.48375976368104,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          293.97238248281246,
+          130.48375976368104,
+          333.93064546249997,
+          173.95597261465755
+        ]
+      },
+      {
+        "id": "fixed_18",
+        "x": 293.9723968542969,
+        "y": 65.0828976,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          293.9723968542969,
+          65.0828976,
+          345.61814062945024,
+          128.9993612
+        ]
+      },
+      {
+        "id": "fixed_19",
+        "x": 58.17339439696847,
+        "y": 113.5810193,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          58.17339439696847,
+          113.5810193,
+          113.15188264958567,
+          178.1642973
+        ]
+      },
+      {
+        "id": "fixed_20",
+        "x": 378.97740651615595,
+        "y": 61.3336594,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          378.97740651615595,
+          61.3336594,
+          413.8605851213984,
+          124.3746542
+        ]
+      },
+      {
+        "id": "fixed_21",
+        "x": 204.6159127,
+        "y": 108.5121642,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          204.6159127,
+          108.5121642,
+          251.2136875375,
+          179.4000531
+        ]
+      },
+      {
+        "id": "fixed_22",
+        "x": 10.024967536474609,
+        "y": 111.3637882,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          10.024967536474609,
+          111.3637882,
+          53.51687151259765,
+          174.3186556
+        ]
+      },
+      {
+        "id": "fixed_23",
+        "x": 252.94556425484313,
+        "y": 120.59981879694824,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          252.94556425484313,
+          120.59981879694824,
+          291.61677908582186,
+          162.96799146066894
+        ]
+      },
+      {
+        "id": "fixed_24",
+        "x": 159.85112175900878,
+        "y": 114.8180669875,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          159.85112175900878,
+          114.8180669875,
+          201.0150826498047,
+          152.30672753747564
+        ]
+      },
+      {
+        "id": "fixed_25",
+        "x": 109.08576681120604,
+        "y": 117.284496646875,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          109.08576681120604,
+          117.284496646875,
+          152.55807537510987,
+          157.2418839
+        ]
+      },
+      {
+        "id": "fixed_26",
+        "x": 338.997324682682,
+        "y": 61.533519004687506,
+        "rotation_degrees": 0,
+        "rotated_origin_mm": [
+          0,
+          0
+        ],
+        "source_bounds_mm": [
+          338.997324682682,
+          61.533519004687506,
+          377.2453950480692,
+          103.69494312052919
+        ]
+      },
+      {
+        "id": "remsha_stand_body",
+        "source_id": "remsha_stand_body",
+        "x": 111.55600000000001,
+        "y": 146.70599999999996,
+        "rotation_degrees": 105,
+        "rotated_origin_mm": [
+          -7.258473067857375,
+          -71.36238562446667
+        ],
+        "source_bounds_mm": [
+          7.510401,
+          2.571271,
+          67.165199,
+          65.88377698976373
+        ],
+        "placed_bounds_mm": [
+          111.55600000000001,
+          146.70599999999996,
+          175.29627081837995,
+          207.40528071173856
+        ],
         "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_keyring_02",
+        "minimum_gap_mm": 4.192746305356803,
+        "minimum_margin_mm": 89.59471928826144
+      },
+      {
+        "id": "redflower_stand_body",
+        "source_id": "redflower_stand_body",
+        "x": 8.006000000000004,
+        "y": 176.156,
+        "rotation_degrees": 120,
+        "rotated_origin_mm": [
+          -22.46720344095352,
+          -75.4804026744027
+        ],
+        "source_bounds_mm": [
+          7.550724,
+          7.508192,
+          66.605449,
+          65.85987034522971
+        ],
+        "placed_bounds_mm": [
+          8.006000000000004,
+          176.156,
+          72.21013203458446,
+          233.46066395604544
+        ],
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "fixed_22",
+        "minimum_gap_mm": 3.460232190991753,
+        "minimum_margin_mm": 8.006000000000004
+      },
+      {
+        "id": "muhani_stand_body_01",
+        "source_id": "muhani_stand_body",
+        "x": 349.0560027485905,
+        "y": 102.05600031636959,
+        "rotation_degrees": 345,
+        "rotated_origin_mm": [
+          -8.343356020860984,
+          4.5683334150069586
+        ],
+        "source_bounds_mm": [
+          378.97740651615595,
+          61.3336594,
+          413.8605851213984,
+          124.3746542
+        ],
+        "placed_bounds_mm": [
+          349.0560027485905,
+          102.05600031636959,
+          383.6305171451499,
+          164.62803366337596
+        ],
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "fixed_20",
+        "minimum_gap_mm": 4.675480069488183,
+        "minimum_margin_mm": 36.369482854850105
+      },
+      {
+        "id": "muhani_stand_body_03",
+        "source_id": "muhani_stand_body",
+        "x": 376.6060005872069,
+        "y": 128.65599999999998,
+        "rotation_degrees": 165,
+        "rotated_origin_mm": [
+          -26.231158375698378,
+          -67.14036676201331
+        ],
+        "source_bounds_mm": [
+          378.97740651615595,
+          61.3336594,
+          413.8605851213984,
+          124.3746542
+        ],
+        "placed_bounds_mm": [
+          376.6060005872069,
+          128.65599999999998,
+          411.1805149837663,
+          191.22803334700632
+        ],
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "fixed_20",
+        "minimum_gap_mm": 4.281345799999983,
+        "minimum_margin_mm": 8.819485016233727
+      },
+      {
+        "id": "remsha_keyring",
+        "source_id": "remsha_keyring",
+        "x": 8.006000000000002,
+        "y": 240.75599999999997,
+        "rotation_degrees": 120,
+        "rotated_origin_mm": [
+          -13.334347803783597,
+          -63.24049612541323
+        ],
+        "source_bounds_mm": [
+          7.513855,
+          2.513035,
+          58.342923,
+          51.93384789257813
+        ],
+        "placed_bounds_mm": [
+          8.006000000000002,
+          240.75599999999997,
+          60.997580648063234,
+          288.1392973362036
+        ],
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "page3_unfried_01",
+        "minimum_gap_mm": 3.83371743582322,
+        "minimum_margin_mm": 8.006000000000002
+      },
+      {
+        "id": "redflower_keyring",
+        "source_id": "redflower_keyring",
+        "x": 360.45599999999996,
+        "y": 244.556,
+        "rotation_degrees": 120,
+        "rotated_origin_mm": [
+          -18.707532756244895,
+          -56.42485836317329
+        ],
+        "source_bounds_mm": [
+          7.562241,
+          7.504226,
+          52.913375,
+          52.024363
+        ],
+        "placed_bounds_mm": [
+          360.45599999999996,
+          244.556,
+          411.5154933593713,
+          287.9961469846358
+        ],
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "zero_duo_stand_base",
+        "minimum_gap_mm": 4.36982019802458,
+        "minimum_margin_mm": 8.484506640628695
+      },
+      {
+        "id": "muhani_stand_body_02",
+        "source_id": "muhani_stand_body",
+        "x": 363.3059999999999,
+        "y": 191.3560009960815,
+        "rotation_degrees": 330,
+        "rotated_origin_mm": [
+          -23.835412367919965,
+          8.571902635506529
+        ],
+        "source_bounds_mm": [
+          378.97740651615595,
+          61.3336594,
+          413.8605851213984,
+          124.3746542
+        ],
+        "placed_bounds_mm": [
+          363.3059999999999,
+          191.3560009960815,
+          406.09127895233894,
+          249.48984197769903
+        ],
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "page3_tuiing_01",
+        "minimum_gap_mm": 3.456874427149748,
+        "minimum_margin_mm": 13.90872104766106
+      },
+      {
+        "id": "page3_unfried_01",
+        "source_id": "unfried_01",
+        "x": 64.056,
+        "y": 253.106,
         "rotation_degrees": 90,
         "rotated_origin_mm": [
-          3.385034620931253e-15,
-          -72.37510998632811
-        ],
-        "source_bounds_mm": [
-          9.22966438671875,
-          5.075756,
-          81.60477437304687,
-          75.015372
-        ],
-        "placed_bounds_mm": [
-          329.31,
-          8.008,
-          399.249616,
-          80.38310998632811
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "강민_stand"
-      },
-      {
-        "id": "강윤진_stand_01",
-        "source_id": "강윤진_stand_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 329.30158557543945,
-        "y": 106.05143500000003,
-        "scale": 1,
-        "rotation_degrees": 90,
-        "rotated_origin_mm": [
-          3.5003196489686607e-15,
-          -77.177892
-        ],
-        "source_bounds_mm": [
-          7.999951,
-          6.893937,
-          85.177843,
-          74.410171
-        ],
-        "placed_bounds_mm": [
-          329.30158557543945,
-          106.05143500000003,
-          396.81781957543944,
-          183.229327
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "강윤진_stand"
-      },
-      {
-        "id": "이상준_stand_01",
-        "source_id": "이상준_stand_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 8.008,
-        "y": 205.94,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
           0.0,
-          0.0
+          -35.01257589902344
         ],
         "source_bounds_mm": [
-          17.677716,
-          7.498641125,
-          78.192525,
-          75.015372
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
         ],
         "placed_bounds_mm": [
-          8.008,
-          205.94,
-          68.522809,
-          273.456730875
+          64.056,
+          253.106,
+          121.41711503115233,
+          288.1185758990234
         ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "이상준_stand"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "remsha_keyring",
+        "minimum_gap_mm": 3.83371743582322,
+        "minimum_margin_mm": 8.881424100976574
       },
       {
-        "id": "정지영_stand_01",
-        "source_id": "정지영_stand_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 71.66280900000001,
-        "y": 205.94,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
-          0.0,
-          0.0
-        ],
-        "source_bounds_mm": [
-          17.503374,
-          7.500005,
-          80.819266,
-          75.015372
-        ],
-        "placed_bounds_mm": [
-          71.66280900000001,
-          205.94,
-          134.978701,
-          273.455367
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "정지영_stand"
-      },
-      {
-        "id": "강민_stand_02",
-        "source_id": "강민_stand_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 138.118701,
-        "y": 205.94,
-        "scale": 1,
-        "rotation_degrees": 90,
-        "rotated_origin_mm": [
-          4.286261347722138e-16,
-          -71.999998
-        ],
-        "source_bounds_mm": [
-          8.000002,
-          95.000005,
-          80.0,
-          122.999996
-        ],
-        "placed_bounds_mm": [
-          138.118701,
-          205.94,
-          166.11869199999998,
-          277.939998
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 2,
-        "source_family": "강민_stand"
-      },
-      {
-        "id": "강윤진_stand_02",
-        "source_id": "강윤진_stand_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 169.25869199999997,
-        "y": 205.94,
-        "scale": 1,
-        "rotation_degrees": 90,
-        "rotated_origin_mm": [
-          4.2862644093391367e-16,
-          -72.00000100000001
-        ],
-        "source_bounds_mm": [
-          19.436849,
-          95.000005,
-          91.43685,
-          122.999996
-        ],
-        "placed_bounds_mm": [
-          169.25869199999997,
-          205.94,
-          197.25868299999996,
-          277.940001
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 2,
-        "source_family": "강윤진_stand"
-      },
-      {
-        "id": "이상준_stand_02",
-        "source_id": "이상준_stand_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 200.39868299999995,
-        "y": 205.94,
-        "scale": 1,
-        "rotation_degrees": 90,
-        "rotated_origin_mm": [
-          4.286261347722138e-16,
-          -71.999998
-        ],
-        "source_bounds_mm": [
-          8.000002,
-          95.000005,
-          80.0,
-          122.999996
-        ],
-        "placed_bounds_mm": [
-          200.39868299999995,
-          205.94,
-          228.39867399999994,
-          277.939998
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 2,
-        "source_family": "이상준_stand"
-      },
-      {
-        "id": "정지영_stand_02",
-        "source_id": "정지영_stand_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 231.53867399999993,
-        "y": 205.94,
-        "scale": 1,
-        "rotation_degrees": 90,
-        "rotated_origin_mm": [
-          4.286261347722138e-16,
-          -71.999998
-        ],
-        "source_bounds_mm": [
-          8.000002,
-          95.000005,
-          80.0,
-          122.999996
-        ],
-        "placed_bounds_mm": [
-          231.53867399999993,
-          205.94,
-          259.5386649999999,
-          277.939998
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 2,
-        "source_family": "정지영_stand"
-      },
-      {
-        "id": "배승민_keyring_01",
-        "source_id": "배승민_keyring_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 262.67866499999997,
-        "y": 211.95792396215822,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
-          0.0,
-          0.0
-        ],
-        "source_bounds_mm": [
-          7.484414,
-          9.500461,
-          45.550848,
-          80.500001
-        ],
-        "placed_bounds_mm": [
-          262.67866499999997,
-          211.95792396215822,
-          300.745099,
-          282.9574639621582
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "배승민_keyring"
-      },
-      {
-        "id": "배승민_keyring_02",
-        "source_id": "배승민_keyring_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 303.8850989999999,
-        "y": 211.9576475,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
-          0.0,
-          0.0
-        ],
-        "source_bounds_mm": [
-          55.635601,
-          9.499733602916717,
-          91.822044,
-          80.500001
-        ],
-        "placed_bounds_mm": [
-          303.8850989999999,
-          211.9576475,
-          340.0715419999999,
-          282.9579148970833
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "배승민_keyring"
-      },
-      {
-        "id": "배승민_keyring_03",
-        "source_id": "배승민_keyring_03",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 343.2115419999999,
-        "y": 211.95764752709962,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
-          0.0,
-          0.0
-        ],
-        "source_bounds_mm": [
-          101.906796,
-          9.500338,
-          135.29663,
-          80.50067867880249
-        ],
-        "placed_bounds_mm": [
-          343.2115419999999,
-          211.95764752709962,
-          376.6013759999999,
-          282.9579882059021
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "배승민_keyring"
-      },
-      {
-        "id": "김윤_keyring_04",
-        "source_id": "김윤_keyring_04",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 379.74137599999995,
-        "y": 211.95867424054336,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
-          0.0,
-          0.0
-        ],
-        "source_bounds_mm": [
-          191.652492,
-          9.501084,
-          222.585761375,
-          80.500001
-        ],
-        "placed_bounds_mm": [
-          379.74137599999995,
-          211.95867424054336,
-          410.67464537499995,
-          282.95759124054337
-        ],
-        "original_group": "11_ascent_remaining/3T",
-        "original_sheet_index": 1,
-        "original_tag": "ascent_2",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김윤_keyring"
-      },
-      {
-        "id": "김윤_keyring_01",
-        "source_id": "김윤_keyring_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 215.178982,
-        "y": 82.161047,
-        "scale": 1,
-        "rotation_degrees": 0,
-        "rotated_origin_mm": [
-          0.0,
-          0.0
-        ],
-        "source_bounds_mm": [
-          7.499999,
-          9.500001,
-          75.042373,
-          80.49997944727708
-        ],
-        "placed_bounds_mm": [
-          215.178982,
-          82.161047,
-          282.721356,
-          153.1610254472771
-        ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김윤_keyring"
-      },
-      {
-        "id": "김윤_keyring_02",
-        "source_id": "김윤_keyring_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 163.703154,
-        "y": 8.02,
-        "scale": 1,
+        "id": "page3_burnt_01",
+        "source_id": "burnt_01",
+        "x": 71.656,
+        "y": 181.856,
         "rotation_degrees": 180,
         "rotated_origin_mm": [
-          -48.56072329589842,
-          -71.00104736888886
+          -35.01257589902344,
+          -57.36111503115234
         ],
         "source_bounds_mm": [
-          85.127098,
-          9.498993442901611,
-          133.68782129589843,
-          80.50004081179047
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
         ],
         "placed_bounds_mm": [
-          163.703154,
-          8.02,
-          212.26387729589845,
-          79.02104736888886
+          71.656,
+          181.856,
+          106.66857589902344,
+          239.21711503115233
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김윤_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "redflower_stand_body",
+        "minimum_gap_mm": 3.4813609154085445,
+        "minimum_margin_mm": 57.78288496884767
       },
       {
-        "id": "김윤_keyring_03",
-        "source_id": "김윤_keyring_03",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 238.615359,
-        "y": 156.301026,
-        "scale": 1,
-        "rotation_degrees": 90,
+        "id": "page3_golden_01",
+        "source_id": "golden_01",
+        "x": 178.056,
+        "y": 163.80599999999998,
+        "rotation_degrees": 45,
         "rotated_origin_mm": [
-          1.1548730618385504e-15,
-          -37.797302
+          11.068660855475116,
+          -14.240510808711724
         ],
         "source_bounds_mm": [
-          143.771198,
-          9.500059589675903,
-          181.5685,
-          80.500001
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
         ],
         "placed_bounds_mm": [
-          238.615359,
-          156.301026,
-          309.6153004103241,
-          194.098328
+          178.056,
+          163.80599999999998,
+          223.17314524357704,
+          208.79525471423557
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김윤_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_keyring_03",
+        "minimum_gap_mm": 4.148947323445582,
+        "minimum_margin_mm": 88.20474528576443
       },
       {
-        "id": "김윤_keyring_05",
-        "source_id": "김윤_keyring_05",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 274.408717,
-        "y": 8.02,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "muhani_stand_base_04",
+        "source_id": "muhani_stand_base",
+        "x": 99.20599999999999,
+        "y": 216.05599999999995,
+        "rotation_degrees": 165,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -39.13546934248772,
+          -44.228924138122544
         ],
         "source_bounds_mm": [
-          232.669498,
-          9.49980158774948,
-          279.703405,
-          80.500001
+          109.08576681120604,
+          117.284496646875,
+          152.55807537510987,
+          157.2418839
         ],
         "placed_bounds_mm": [
-          274.408717,
-          8.02,
-          321.442624,
-          79.0201994122505
+          99.20599999999999,
+          216.05599999999995,
+          141.26647107770083,
+          254.83708906708796
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김윤_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_stand_base_01",
+        "minimum_gap_mm": 3.765077810864596,
+        "minimum_margin_mm": 42.16291093291207
       },
       {
-        "id": "김호_keyring_02",
-        "source_id": "김호_keyring_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 111.16,
-        "y": 102.707284,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "muhani_keyring_04",
+        "source_id": "muhani_keyring",
+        "x": 318.6559999999999,
+        "y": 159.15287440843258,
+        "rotation_degrees": 165,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -21.01743898775586,
+          -52.82324237062631
         ],
         "source_bounds_mm": [
-          59.612072613281256,
-          9.500382,
-          109.788088,
-          80.500001
+          7.502386875,
+          2.543525,
+          35.147145,
+          52.432919
         ],
         "placed_bounds_mm": [
-          111.16,
-          102.707284,
-          161.33601538671874,
-          173.706903
+          318.6559999999999,
+          159.15287440843258,
+          347.09718823782856,
+          208.52562906020833
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김호_keyring"
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "page3_tuiing_01",
+        "minimum_gap_mm": 3.8180833794316955,
+        "minimum_margin_mm": 72.9028117621715
       },
       {
-        "id": "김호_keyring_03",
-        "source_id": "김호_keyring_03",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 215.403877,
-        "y": 8.02,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "page3_tuiing_01",
+        "source_id": "tuiing_01",
+        "x": 320.556,
+        "y": 202.75600000000003,
+        "rotation_degrees": 135,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -14.240510808711724,
+          -56.18580609905216
         ],
         "source_bounds_mm": [
-          119.87264499999999,
-          9.500037,
-          175.73748480444337,
-          80.500001
+          9.998844825976562,
+          8.819201568847657,
+          45.011420725,
+          66.1803166
         ],
         "placed_bounds_mm": [
-          215.403877,
-          8.02,
-          271.2687168044434,
-          79.01996399999999
+          320.556,
+          202.75600000000003,
+          365.5452547142356,
+          247.87314524357706
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김호_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_stand_body_02",
+        "minimum_gap_mm": 3.456874427149748,
+        "minimum_margin_mm": 49.126854756422915
       },
       {
-        "id": "김호_keyring_04",
-        "source_id": "김호_keyring_04",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 164.476015,
-        "y": 82.161047,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "muhani_stand_base_01",
+        "source_id": "muhani_stand_base",
+        "x": 126.75599999999997,
+        "y": 249.30599999999995,
+        "rotation_degrees": 165,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -39.13546934248772,
+          -44.228924138122544
         ],
         "source_bounds_mm": [
-          185.784504,
-          9.50019805315781,
-          233.347471,
-          80.500001
+          109.08576681120604,
+          117.284496646875,
+          152.55807537510987,
+          157.2418839
         ],
         "placed_bounds_mm": [
-          164.476015,
-          82.161047,
-          212.038982,
-          153.16084994684218
+          126.75599999999997,
+          249.30599999999995,
+          168.81647107770084,
+          288.08708906708796
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김호_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_stand_base_04",
+        "minimum_gap_mm": 3.765077810864596,
+        "minimum_margin_mm": 8.912910932912041
       },
       {
-        "id": "김호_keyring_05",
-        "source_id": "김호_keyring_05",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 285.861356,
-        "y": 82.160199,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "remsha_stand_base",
+        "source_id": "remsha_stand_base",
+        "x": 285.40599999999995,
+        "y": 199.90599999999998,
+        "rotation_degrees": 105,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -5.803627513992798,
+          -44.91602778780967
         ],
         "source_bounds_mm": [
-          243.432191,
-          9.500905,
-          278.601685,
-          80.500001
+          10.000000000206054,
+          99.999999999875,
+          53.472308564109866,
+          139.95738725299998
         ],
         "placed_bounds_mm": [
-          285.861356,
-          82.160199,
-          321.03085,
-          153.159295
+          285.40599999999995,
+          199.90599999999998,
+          324.1844074921026,
+          241.96647294965376
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김호_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "zero_duo_stand_body",
+        "minimum_gap_mm": 3.2847048050662626,
+        "minimum_margin_mm": 55.03352705034624
       },
       {
-        "id": "김호_keyring_06",
-        "source_id": "김호_keyring_06",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 164.476015,
-        "y": 156.301026,
-        "scale": 1,
-        "rotation_degrees": 90,
+        "id": "muhani_stand_base_03",
+        "source_id": "muhani_stand_base",
+        "x": 172.356,
+        "y": 249.30599999999993,
+        "rotation_degrees": 30,
         "rotated_origin_mm": [
-          1.4231733120396918e-15,
-          -46.359928000000025
+          5.446997712862218,
+          -14.367118367260417
         ],
         "source_bounds_mm": [
-          288.682412,
-          9.50012,
-          335.04234,
-          80.4994633364563
+          109.08576681120604,
+          117.284496646875,
+          152.55807537510987,
+          157.2418839
         ],
         "placed_bounds_mm": [
-          164.476015,
-          156.301026,
-          235.47535833645628,
-          202.66095400000003
+          172.356,
+          249.30599999999993,
+          214.42025065283804,
+          287.43243570773654
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 3,
-        "source_family": "김호_keyring"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_stand_base_01",
+        "minimum_gap_mm": 4.792229564187488,
+        "minimum_margin_mm": 9.567564292263455
       },
       {
-        "id": "len_pad_3T_05_safe",
-        "source_id": "len_pad_3T_05_safe",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 97.16,
-        "y": 8.02,
-        "scale": 1,
-        "rotation_degrees": 180,
+        "id": "muhani_keyring_02",
+        "source_id": "muhani_keyring",
+        "x": 136.89320181656524,
+        "y": 210.35599999999997,
+        "rotation_degrees": 240,
         "rotated_origin_mm": [
-          -63.403153999999994,
-          -91.54728399999999
+          -52.40206484980812,
+          -18.64089655525936
         ],
         "source_bounds_mm": [
-          10.492727,
-          113.989373,
-          73.895881,
-          205.536657
+          7.502386875,
+          2.543525,
+          35.147145,
+          52.432919
         ],
         "placed_bounds_mm": [
-          97.16,
-          8.02,
-          160.563154,
-          99.56728399999999
+          136.89320181656524,
+          210.35599999999997,
+          182.88349936598757,
+          243.84431865923148
         ],
-        "original_group": "19_personal_fill/3T",
-        "original_sheet_index": 0,
-        "original_tag": "personal",
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "len_pad_3T"
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "muhani_stand_base_04",
+        "minimum_gap_mm": 4.015543380962312,
+        "minimum_margin_mm": 53.155681340768524
       },
       {
-        "id": "extra_stand_렘샤_01",
-        "source_id": "extra_stand_렘샤_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 16.4455869,
-        "y": 8.02,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "redflower_stand_base",
+        "source_id": "redflower_stand_base",
+        "x": 217.956,
+        "y": 238.85599999999997,
+        "rotation_degrees": 105,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -5.803627513992798,
+          -44.91602778780967
         ],
         "source_bounds_mm": [
-          12.090245,
-          7.5000052,
-          81.2390712,
-          75.0153716
+          10.000000000206054,
+          99.999999999875,
+          53.472308564109866,
+          139.95738725299998
         ],
         "placed_bounds_mm": [
-          16.4455869,
-          8.02,
-          85.5944131,
-          75.53536639999999
+          217.956,
+          238.85599999999997,
+          256.7344074921026,
+          280.9164729496538
         ],
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "extra_stand_렘샤"
+        "scale": 1,
+        "closed_paths": 3,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "zero_duo_stand_body",
+        "minimum_gap_mm": 3.3364402053200664,
+        "minimum_margin_mm": 16.083527050346277
       },
       {
-        "id": "extra_stand_렘샤_02",
-        "source_id": "extra_stand_렘샤_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 15.020001050000001,
-        "y": 78.67536639999999,
-        "scale": 1,
-        "rotation_degrees": 0,
+        "id": "muhani_keyring_03",
+        "source_id": "muhani_keyring",
+        "x": 176.33735666059883,
+        "y": 205.10939623485552,
+        "rotation_degrees": 225,
         "rotated_origin_mm": [
-          0.0,
-          0.0
+          -48.54253215683277,
+          -29.669310291150026
         ],
         "source_bounds_mm": [
-          8.0000016,
-          95.0000045,
-          79.9999995,
-          122.9999965
+          7.502386875,
+          2.543525,
+          35.147145,
+          52.432919
         ],
         "placed_bounds_mm": [
-          15.020001050000001,
-          78.67536639999999,
-          87.01999895,
-          106.67535839999998
+          176.33735666059883,
+          205.10939623485552,
+          216.19562199769302,
+          245.63966607436157
         ],
-        "protected_original": false,
-        "path_count": 2,
-        "source_family": "extra_stand_렘샤"
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "nearest_neighbor": "page3_golden_01",
+        "minimum_gap_mm": 4.148947323445582,
+        "minimum_margin_mm": 51.36033392563843
       },
       {
-        "id": "extra_stand_적매화검_01",
-        "source_id": "extra_stand_적매화검_01",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 8.02,
-        "y": 119.82306835,
-        "scale": 1,
-        "rotation_degrees": 90,
+        "id": "muhani_keyring_05",
+        "source_id": "muhani_keyring",
+        "x": 225.746,
+        "y": 198.386,
+        "rotation_degrees": 35,
         "rotated_origin_mm": [
-          3.150814961874402e-15,
-          -68.6738633
+          9.632462808215104,
+          -8.595518252332703
         ],
         "source_bounds_mm": [
-          11.9481913,
-          7.4400067,
-          80.6220546,
-          75.0153716
+          7.502386875,
+          2.543525,
+          35.147145,
+          52.432919
         ],
         "placed_bounds_mm": [
-          8.02,
-          119.82306835,
-          75.59536489999999,
-          188.49693165
+          225.746,
+          198.386,
+          260.44422032064074,
+          243.17489510749226
         ],
-        "protected_original": false,
-        "path_count": 1,
-        "source_family": "extra_stand_적매화검"
+        "scale": 1,
+        "closed_paths": 2,
+        "sizing_placeholder": false,
+        "minimum_gap_mm": 4.068067443395145,
+        "nearest_neighbor": "redflower_stand_base",
+        "minimum_margin_mm": 53.82510489250774
       },
       {
-        "id": "extra_stand_적매화검_02",
-        "source_id": "extra_stand_적매화검_02",
-        "sheet": "personal",
-        "group": "11_ascent_remaining/3T",
-        "sheet_index": 0,
-        "x": 78.7353649,
-        "y": 118.16000104999999,
-        "scale": 1,
-        "rotation_degrees": 90,
+        "id": "zero_duo_stand_body",
+        "source_id": "zero_duo_stand_body",
+        "x": 259.286,
+        "y": 234.80599999999998,
+        "rotation_degrees": 110,
         "rotated_origin_mm": [
-          4.2862617151161785e-16,
-          -71.9999979
+          -13.720209405868543,
+          -60.27695618111389
         ],
         "source_bounds_mm": [
-          8.0000016,
-          95.0000045,
-          79.9999995,
-          122.9999965
+          7.516976140625,
+          7.4951180625,
+          60.006773698974605,
+          58.71227870561563
         ],
         "placed_bounds_mm": [
-          78.7353649,
-          118.16000104999999,
-          106.73535689999999,
-          190.15999895
+          259.286,
+          234.80599999999998,
+          314.8793500391744,
+          286.47976561682685
         ],
-        "protected_original": false,
-        "path_count": 2,
-        "source_family": "extra_stand_적매화검"
+        "closed_paths": 2,
+        "scale": 1,
+        "sizing_placeholder": false,
+        "minimum_gap_mm": 3.044432312472754,
+        "nearest_neighbor": "zero_duo_stand_base",
+        "minimum_margin_mm": 10.520234383173147
+      },
+      {
+        "id": "zero_duo_keyring",
+        "source_id": "zero_duo_keyring",
+        "x": 255.68599999999998,
+        "y": 162.80599999999998,
+        "rotation_degrees": 20,
+        "rotated_origin_mm": [
+          7.759662224704843,
+          -11.409406758087854
+        ],
+        "source_bounds_mm": [
+          7.511721343750001,
+          6.831523,
+          53.519378078125,
+          50.440435
+        ],
+        "placed_bounds_mm": [
+          255.68599999999998,
+          162.80599999999998,
+          301.0560110956506,
+          211.09672433802996
+        ],
+        "closed_paths": 2,
+        "scale": 1,
+        "sizing_placeholder": false,
+        "minimum_gap_mm": 3.4158284971615087,
+        "nearest_neighbor": "fixed_23",
+        "minimum_margin_mm": 85.90327566197004
+      },
+      {
+        "id": "zero_duo_stand_base",
+        "source_id": "zero_duo_stand_base",
+        "x": 316.16599999999994,
+        "y": 249.206,
+        "rotation_degrees": 30,
+        "rotated_origin_mm": [
+          5.446997712862178,
+          -14.367118367260403
+        ],
+        "source_bounds_mm": [
+          10.000000000206054,
+          99.999999999875,
+          53.472308564109866,
+          139.95738725299998
+        ],
+        "placed_bounds_mm": [
+          316.16599999999994,
+          249.206,
+          358.23025065283804,
+          287.3324357077365
+        ],
+        "closed_paths": 3,
+        "scale": 1,
+        "sizing_placeholder": false,
+        "minimum_gap_mm": 3.044432312472754,
+        "nearest_neighbor": "zero_duo_stand_body",
+        "minimum_margin_mm": 9.667564292263478
       }
     ],
     "19_personal_fill/3T": [

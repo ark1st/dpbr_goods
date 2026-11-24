@@ -84,6 +84,14 @@
       "archive_path": "snapshots/before_pr_fit_zero_57456d7",
       "status": "retired_not_for_current_print",
       "reason": "Replaced by corrected Len slots, close-aligned Zero pairs, consolidated characters and two additional stands; editor cutting layers visible."
+    },
+    {
+      "commit": "8b8ff2c9a05f8701b37d9945d1742a37aeb4d9ae",
+      "archive_commit": "e90715a4f16e8972bd414e822f99b4c62560307c",
+      "archive_path": "snapshots/before_user_fixed_page3_8b8ff2c",
+      "scope": "Previous third-page layout only; first two pages remain byte-frozen",
+      "status": "retired_not_for_current_print",
+      "reason": "User supplied a new immutable third-page composition and requested additions only in its free area."
     }
   ],
   "retired_package_files": [

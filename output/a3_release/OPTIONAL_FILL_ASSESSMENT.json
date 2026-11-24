@@ -56,10 +56,23 @@
     "constructive_contour_trials": 64,
     "feasible_two_page_layout_found": false,
     "mathematical_impossibility_proven": false,
-    "decision": "This earlier search concerned only the two Ascent sheets; current PAD placements follow current_pad_allocation."
+    "decision": "This earlier search concerned only the historical two Ascent sheets; current PAD placements follow current_pad_allocation."
   },
-  "capacity_proof_scope": "Historical two-sheet comparisons. Current production PAD placements are reported separately.",
+  "capacity_proof_scope": "Historical two-sheet comparisons only; these bounds do not assess the fixed user-provided third page. Current production PAD placements are reported separately.",
   "current_pad_allocation": {
+    "19_personal_fill/3T": [
+      "len_pad_3T_07",
+      "len_pad_3T_01_safe",
+      "len_pad_3T_03_safe",
+      "len_pad_3T_02_safe",
+      "len_pad_3T_04",
+      "len_pad_3T_06"
+    ]
+  },
+  "deferred": [],
+  "production_pages_added": 0,
+  "physical_cut_test": false,
+  "historical_pad_allocation": {
     "19_personal_fill/3T": [
       "len_pad_3T_07",
       "len_pad_3T_01_safe",
@@ -72,7 +85,9 @@
       "len_pad_3T_05_safe"
     ]
   },
-  "deferred": [],
-  "production_pages_added": 0,
-  "physical_cut_test": false
+  "archived_pad_parts": [
+    "len_pad_3T_05_safe"
+  ],
+  "current_pad_status": "partial_kit; archived components are not on current selected pages",
+  "production_pages_added_scope": "Historical two-sheet comparison only; not a current page-count claim."
 }

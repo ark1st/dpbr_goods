@@ -1,11 +1,3 @@
-# 11_ascent_remaining
+# 3페이지 · 캐릭터 키링과 스탠드
 
-### 현재 제작 · 3T · 26조각
-
-[제작 파일](3T/sheet_01)
-
-![배치](3T/sheet_01/preview.png)
-
-[전체 제작 순서·개인별 부품 위치](../README.md)
-
-ZIP은 새로 만들지 않았습니다. 실물 미검증입니다.
+[인쇄 PNG와 칼선 AI](../../print_delivery/page03) · [편집 원본과 시안](3T/sheet_01)

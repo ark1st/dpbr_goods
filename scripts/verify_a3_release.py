@@ -62,9 +62,16 @@ def verify_personal_inventory(config,selected_by_group):
     assert len(personal)==len(set(personal))==expected_personal,'Changed personal allocation'
     assert set(personal)==set(policy['new_part_ids']),'Unexpected personal piece IDs'
     baseline=policy['baseline_ids']
-    personal_ids=set(personal);baseline_ids=set(baseline)
+    fixed_page=config.get('fixed_source_page3')
+    archived=set(fixed_page.get('archived_reference_ids',[])) if fixed_page else set()
+    personal_ids=set(personal)-archived;baseline_ids=set(baseline)-archived
+    pad_ids-=archived;logo_ids-=archived
     assert len(baseline)==len(baseline_ids),'Changed baseline inventory'
     inventories=(personal_ids,pad_ids,baseline_ids,logo_ids,stand_ids)
+    if fixed_page:
+        from fixed_page3_checks import FIXED_IDS
+        additions=json.loads((ROOT/'configs/fixed_page3_additions.json').read_text(encoding='utf-8'))['placements']
+        inventories=(*inventories,FIXED_IDS,{p['id'] for p in additions})
     inventory=set.union(*inventories)
     assert sum(map(len,inventories))==len(inventory),'Overlapping production inventories'
     assert len(selected)==len(set(selected))==config['selected_primary_parts']==len(inventory),'Changed primary inventory'
@@ -72,7 +79,7 @@ def verify_personal_inventory(config,selected_by_group):
     counts=Counter();stand_pairs=Counter()
     for group,parts in selected_by_group.items():
         actual=[p for p in parts if p['id'] in personal_ids]
-        assert {p['id'] for p in actual}==set(allocation.get(group,[])),(group,'Changed personal allocation')
+        assert {p['id'] for p in actual}==set(allocation.get(group,[]))-archived,(group,'Changed personal allocation')
         for p in actual:
             meta=p['design_metadata'];kind=meta['part']
             counts[kind]+=1
@@ -85,18 +92,32 @@ def verify_personal_inventory(config,selected_by_group):
                 verify_stand_support(p)
                 stand_pairs[(p['source'],meta['nickname'],meta['mode'],kind)]+=1
     stand_sets=policy['stand_pieces']//2
-    assert counts=={'keyring':policy['keyring_pieces'],'character':stand_sets,'base':stand_sets},counts
+    if not fixed_page:
+        assert counts=={'keyring':policy['keyring_pieces'],'character':stand_sets,'base':stand_sets},counts
+    else:
+        assert sum(counts.values())==len(personal_ids),counts
     for (source,nickname,mode,kind),count in stand_pairs.items():
         assert count==1 and stand_pairs[(source,nickname,mode,{'character':'base','base':'character'}[kind])]==1,(source,nickname,mode,'Unmatched stand pair')
     paired=[p for parts in selected_by_group.values() for p in parts if p['id'] in personal_ids
             and p['design_metadata']['part']=='character' and len(p['design_metadata'].get('components',[]))==2]
-    assert {p['design_metadata']['nickname'] for p in paired}==set(policy['combined_zero_stands']),'Changed Zero pair inventory'
+    paired_names={p['design_metadata']['nickname'] for p in paired}
+    if fixed_page:
+        # Replaced-page pieces remain independently catalogued as archival
+        # references; preserve the original paired-Zero contract there.
+        for ident in set(personal)&archived:
+            asset=json.loads((ROOT/'output/individual_assets'/ident/'asset.json').read_text(encoding='utf-8'))
+            meta=asset.get('design_metadata') or {}
+            assert asset['id']==ident and asset['a3_groups']==[], (ident,'Archived reference metadata changed')
+            if meta.get('part')=='character' and len(meta.get('components',[]))==2:
+                paired_names.add(meta['nickname'])
+    assert paired_names==set(policy['combined_zero_stands']),'Changed Zero pair inventory'
 
 def verify_additional_stand_inventory(config,selected_by_group):
     allocation=config.get('additional_stand_allocation',{})
     if not allocation:return set()
     from additional_stands import NAMES
     expected={f'extra_stand_{name}_{i:02}' for name,_ in NAMES for i in (1,2)}
+    archived=set(config.get('fixed_source_page3',{}).get('archived_reference_ids',[]))
     assigned=[ident for ids in allocation.values() for ident in ids]
     assert len(assigned)==len(expected) and set(assigned)==expected,'Expected both additional stand sets exactly once'
     assert set(allocation)<=set(selected_by_group),'Additional stands must be on selected 3T sheets'
@@ -104,9 +125,10 @@ def verify_additional_stand_inventory(config,selected_by_group):
     for name,_ in NAMES:
         pair={f'extra_stand_{name}_01',f'extra_stand_{name}_02'}
         assert any(pair<=set(ids) for ids in allocation.values()),(name,'Separated stand and base')
+        assert not pair&archived or pair<=archived,(name,'Archived only half of a stand')
     for group,parts in selected_by_group.items():
         actual=[p for p in parts if p['id'].startswith('extra_stand_')]
-        assert Counter(p['id'] for p in actual)==Counter(allocation.get(group,[])),(group,'Changed additional stand allocation')
+        assert Counter(p['id'] for p in actual)==Counter(set(allocation.get(group,[]))-archived),(group,'Changed additional stand allocation')
         for p in actual:
             stem,index=p['id'].rsplit('_',1)
             role={'01':'character','02':'base'}[index]
@@ -115,7 +137,7 @@ def verify_additional_stand_inventory(config,selected_by_group):
             assert meta['part']==role and p['scale']==1
             assert p['path_count']==len(p['expected_paths'])=={'character':1,'base':2}[role]
             verify_stand_support(p)
-    return expected
+    return expected-archived
 
 def verify_logo_inventory(config,selected_by_group,canonical):
     allocation=config.get('logo_fill_allocation',{})
@@ -152,10 +174,11 @@ def verify_ascent_migration(config,selected_ids):
 def verify_pad_inventory(config,selected_by_group,canonical=None):
     """Keep a single full-size 3T PAD kit in its reviewed production groups."""
     allocation=config.get('pad_fill_allocation',{})
+    archived=set(config.get('fixed_source_page3',{}).get('archived_reference_ids',[]))
     observed=[]
     for group,parts in selected_by_group.items():
         actual=[p for p in parts if p['id'].startswith('len_pad_')]
-        assert Counter(p['id'] for p in actual)==Counter(allocation.get(group,[])),(group,'Changed PAD allocation (missing, duplicate or wrong sheet)')
+        assert Counter(p['id'] for p in actual)==Counter(set(allocation.get(group,[]))-archived),(group,'Changed PAD allocation (missing, duplicate or wrong sheet)')
         observed.extend(actual)
     if not allocation:return
     redesign_file=ROOT/'configs/contour_redesigns.json'
@@ -181,9 +204,11 @@ def verify_pad_inventory(config,selected_by_group,canonical=None):
         assert variants.get(part,part)=='len_pad_3T_05' and allocation[group]==[part],'Only the PAD character can move to the other sheet'
     assert all(group in selected_by_group and group.endswith('/3T') and not group.startswith('06_len_pad/')
                for group in allocation),'PAD fillers must appear on selected mixed 3T sheets'
-    assert Counter(variants.get(p['id'],p['id']) for p in observed)==Counter(expected),'Print the full 3T PAD kit exactly once'
+    missing={variants.get(ident,ident) for ident in archived if ident in allocated}
+    assert Counter(variants.get(p['id'],p['id']) for p in observed)==Counter(expected-missing),'Print the full 3T PAD kit exactly once' if not missing else 'Changed approved 3T PAD inventory'
     assert all(p['scale']==1 and p['path_count']==len(p['expected_paths']) for p in observed),'PAD scale or contour count changed'
-    assert sum(p['path_count'] for p in observed)==15,'Expected 15 original PAD cut contours'
+    if not missing:
+        assert sum(p['path_count'] for p in observed)==15,'Expected 15 original PAD cut contours'
     if canonical is None:return
     for p in observed:
         source=canonical[p['id']]
@@ -329,6 +354,12 @@ def verify_fixed_placements(config,reviewed,redesigns=None,canonical=None,origin
 
 def minimum_sheet_proof(config,selected_by_group,manifest):
     """Compare a global gap-expanded area lower bound with actual reviewed pages."""
+    if config.get('fixed_source_page3'):
+        # The baseline contains measured sub-3mm gaps and sub-8mm margins.
+        # A bound derived from universal 3mm/8mm spacing is not applicable.
+        return {'feasible_sheets':sum(len(manifest['groups'][g]) for g in selected_by_group),
+                'optimal_sheet_count_proven':False,
+                'scope':'No global clearance-based lower bound: the locked user baseline has documented spacing exceptions.'}
     from optional_sheet_policy import capacity_bound
 
     def polygons(parts):
@@ -391,6 +422,10 @@ def len_slot_counts(file,thickness,spec,owner_source):
 
 def main(check_zips=True,check_native=True):
     out=ROOT/'output';base=out/'a3_release';manifest=json.loads((base/'manifest.json').read_text(encoding='utf-8'))
+    fixed_page=CONFIG.get('fixed_source_page3')
+    if fixed_page:
+        from fixed_page3_checks import verify_frozen_pages
+        verify_frozen_pages(ROOT,fixed_page)
     wanted=CONFIG['current_groups']
     reviewed=json.loads((ROOT/'configs/a3_placements.json').read_text(encoding='utf-8'))['groups']
     assert set(manifest['groups'])==set(wanted),'Incomplete A3 release'
@@ -417,7 +452,13 @@ def main(check_zips=True,check_native=True):
             folder=out/page['folder'];spec=json.loads((folder/'validation.json').read_text(encoding='utf-8'))
             assert spec['canvas_mm']==[420,297] and spec['artwork_scale']==1
             assert spec['pieces']==page['pieces'] and spec['closed_contours']==page['contours']
-            assert spec['minimum_gap_mm'] is None or spec['minimum_gap_mm']>=2.998
+            if fixed_page and page['folder']==fixed_page['folder']:
+                from fixed_page3_checks import verify_fixed_source,verify_fixed_artwork,verify_fixed_additions
+                fixed_exceptions=verify_fixed_source(ROOT,fixed_page,spec)
+                verify_fixed_artwork(ROOT,fixed_page,folder/'02_MASTER.pdf')
+                fixed_additions=verify_fixed_additions(ROOT,spec)
+            else:
+                assert spec['minimum_gap_mm'] is None or spec['minimum_gap_mm']>=2.998
             group_rows=reviewed[group]
             if group_rows and isinstance(group_rows[0],list):group_rows=group_rows[page_index]
             planned={r['id']:r for r in group_rows}
@@ -477,6 +518,9 @@ def main(check_zips=True,check_native=True):
             records.append({'folder':page['folder'],'pieces':spec['pieces'],'contours':spec['closed_contours'],
                             'max_export_deviation_mm':changes,'png':images,
                             'sha256':{p.name:artifact_sha256(p) for p in files}})
+            if fixed_page and page['folder']==fixed_page['folder']:
+                records[-1]['fixed_source_spacing_exceptions']=fixed_exceptions
+                records[-1]['requested_additions']=fixed_additions
         assert len(ids)==len(set(ids)),group
         assert not any('fit' in x.lower() or 'test' in x.lower() for x in ids),(group,'Test pieces are prohibited')
         if 'extra' in group:
@@ -501,11 +545,16 @@ def main(check_zips=True,check_native=True):
         expected_ascent=[] if migration else (CONFIG['ascent_remaining']['part_ids'] if group=='11_ascent_remaining/3T' else CONFIG['cross_sheet_cadena_allocation'].get(group,[]))
         assert sorted(x for x in ids if x.startswith('ascent_'))==sorted(expected_ascent)
         if group=='11_ascent_remaining/3T':
-            fillers=(CONFIG.get('personal_fill_allocation',{}).get(group,[])
-                     +CONFIG.get('pad_fill_allocation',{}).get(group,[])
-                     +CONFIG.get('logo_fill_allocation',{}).get(group,[])
-                     +CONFIG.get('additional_stand_allocation',{}).get(group,[]))
-            assert set(ids)==set(expected_ascent+fillers) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
+            if fixed_page:
+                from fixed_page3_checks import FIXED_IDS
+                additions=json.loads((ROOT/'configs/fixed_page3_additions.json').read_text(encoding='utf-8'))['placements']
+                assert set(ids)==FIXED_IDS|{p['id'] for p in additions}
+            else:
+                fillers=(CONFIG.get('personal_fill_allocation',{}).get(group,[])
+                         +CONFIG.get('pad_fill_allocation',{}).get(group,[])
+                         +CONFIG.get('logo_fill_allocation',{}).get(group,[])
+                         +CONFIG.get('additional_stand_allocation',{}).get(group,[]))
+                assert set(ids)==set(expected_ascent+fillers) and not set(ids)&set(CONFIG['cadena_source_part_ids'])
             assert 'ascent_31' not in ids
     selected_ids=[p['id'] for p in selected_parts]
     assert sorted(selected_ids)==CONFIG['primary_inventory'] and len(set(selected_ids))==CONFIG['selected_primary_parts']
@@ -513,17 +562,20 @@ def main(check_zips=True,check_native=True):
     verify_pad_inventory(CONFIG,selected_by_group,fixed)
     verify_personal_inventory(CONFIG,selected_by_group)
     verify_logo_inventory(CONFIG,selected_by_group,fixed)
-    from optional_sheet_policy import assess
-    fill=assess(ROOT)
-    saved_fill=json.loads((base/'OPTIONAL_FILL_ASSESSMENT.json').read_text(encoding='utf-8'))
-    assert saved_fill['allocation']==fill['allocation'] and saved_fill['deferred']==fill['deferred'],'Stale optional-fill decision'
-    assert saved_fill.get('current_pad_allocation',{})==fill['current_pad_allocation'],'Stale PAD allocation'
-    for old,new in [(saved_fill['candidate_sets'][k],v) for k,v in fill['candidate_sets'].items()]+[(saved_fill['ascent_with_PAD']['capacity_bound'],fill['ascent_with_PAD']['capacity_bound'])]:
-        assert old['impossible_proven']==new['impossible_proven'] and old['parts']==new['parts']
-        for key in ['expanded_piece_area_lower_mm2','expanded_container_area_upper_mm2','excess_area_mm2']:
-            assert abs(old[key]-new[key])<.001,('Stale optional capacity bound',key)
-    assert saved_fill['ascent_with_PAD']['feasible_two_page_layout_found'] is False
-    assert saved_fill['ascent_with_PAD']['mathematical_impossibility_proven'] is False
+    if fixed_page:
+        fill={'status':'superseded_by_fixed_page3','old_assessment_is_not_a_proof_for_the_current_layout':True}
+    else:
+        from optional_sheet_policy import assess
+        fill=assess(ROOT)
+        saved_fill=json.loads((base/'OPTIONAL_FILL_ASSESSMENT.json').read_text(encoding='utf-8'))
+        assert saved_fill['allocation']==fill['allocation'] and saved_fill['deferred']==fill['deferred'],'Stale optional-fill decision'
+        assert saved_fill.get('current_pad_allocation',{})==fill['current_pad_allocation'],'Stale PAD allocation'
+        for old,new in [(saved_fill['candidate_sets'][k],v) for k,v in fill['candidate_sets'].items()]+[(saved_fill['ascent_with_PAD']['capacity_bound'],fill['ascent_with_PAD']['capacity_bound'])]:
+            assert old['impossible_proven']==new['impossible_proven'] and old['parts']==new['parts']
+            for key in ['expanded_piece_area_lower_mm2','expanded_container_area_upper_mm2','excess_area_mm2']:
+                assert abs(old[key]-new[key])<.001,('Stale optional capacity bound',key)
+        assert saved_fill['ascent_with_PAD']['feasible_two_page_layout_found'] is False
+        assert saved_fill['ascent_with_PAD']['mathematical_impossibility_proven'] is False
     assert len(manifest['groups']['02_extra_sheet/3T'])+len(manifest['groups']['05_len/3T'])==2
     selected_yanggum=sorted(x for x in selected_ids if x.startswith('yanggum_'))
     assert selected_yanggum==sorted(CONFIG['optional_fill_policy']['candidate_sets']['yanggum_3T'])
@@ -557,6 +609,7 @@ def main(check_zips=True,check_native=True):
             'minimum_sheet_proof':minimum_proof,
             'source_artwork_scale':1,'physical_cut_test':False,'test_pieces_included':False,
             'limitations':['Software checks do not validate physical kerf, material thickness or printer registration.',
+                           *(['The user-supplied page-three baseline retains three gaps below 3mm and eight pieces below the 8mm edge margin; new pieces obey both margins.'] if fixed_page else []),
                            ('Ascent source geometry was checked digitally; its 30 parts are excluded from these 3T production sheets.' if CONFIG.get('ascent_5t_migration',{}).get('three_t_excluded',False) else 'All requested Ascent pieces included; original blank panel31 excluded by the user. Size verified digitally at1:1, not physically cut-tested.'),
                            'Ascent paired slots have original ~0.195mm vertical stagger; not silently aligned.',
                            'Native editing state is in .vectorcraft. Compact .ai retains PDF-compatible vector layers.']}

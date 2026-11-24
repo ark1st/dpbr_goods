@@ -373,7 +373,8 @@ def write_page(folder,placements):
     (folder/'validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     (folder/'README.md').write_text(f'# A3 · {len(report)}조각\n\n![배치](preview.png)\n\n420×297mm / 실제 크기 100% / 자동 맞춤 해제.\n\n- `01_PRINT.pdf` 또는 `01_PRINT_300ppi.png`: 인쇄·파란 기준선.\n- `02_MASTER.ai`, `.pdf`, `.vectorcraft`: 레이어별 편집 원본.\n- `03_CUT_ONLY.pdf` 또는 `.svg`: 재단 전용, 빨강 0.001mm.\n- `04_WHITE_INK_MASK`: 원본 제공 백색만 보존. 없는 그림은 RIP에서 백색 설정.\n- `PREVIEW_NOT_FOR_CUT.pdf`, `preview.png`, `cut_detail.png`: 검토용, 재단 금지.\n\n외곽 {len(report)}개 / 전체 폐곡선 {count}개. 그림·홈·구멍 배율 1:1.\n파란 기준 사각형은 자르지 않습니다. 인쇄·재단 모두 같은 대지 원점을 사용합니다.\n실물 정합·끼움·절단은 아직 시험하지 않았습니다.\n',encoding='utf-8')
     print(folder.relative_to(ROOT),len(report),count,'gap',gap,flush=True)
-    return {'folder':folder.relative_to(ROOT/'output').as_posix(),'pieces':len(report),'contours':count}
+    rel=folder.relative_to(ROOT/'output').as_posix() if folder.is_relative_to(ROOT/'output') else str(folder)
+    return {'folder':rel,'pieces':len(report),'contours':count}
 
 def supplied_sources():
     native=next((ROOT/'assets/external/linked_supplied').rglob('*.vectorcraft'))
@@ -609,6 +610,10 @@ def pad_production_piece(source,ident,variants):
 
 
 def inputs(only=None):
+    fixed_group='11_ascent_remaining/3T'
+    if CONFIG.get('fixed_source_page3') and only and only in fixed_group:
+        from fixed_page3_assets import additions
+        return [(fixed_group,additions())]
     standalone=only and any(name in only for name in ('19_personal_fill','20_guide_stand_comparison'))
     batches={} if standalone else dict(source_inputs(only if only and any(n in only for n in ['06_len_pad','yanggum','11_ascent_remaining']) else None))
     logo_allocation=CONFIG.get('logo_fill_allocation',{})
@@ -680,6 +685,9 @@ def inputs(only=None):
                 piece=parts[i]=redesigned[ident]
             if id(piece) not in visited:
                 apply_canonical_contours(piece);visited.add(id(piece))
+    if CONFIG.get('fixed_source_page3') and (not only or only in fixed_group):
+        from fixed_page3_assets import additions
+        batches[fixed_group]=additions()
     return [(group,parts) for group,parts in batches.items() if not only or only in group]
 
 
@@ -714,6 +722,16 @@ def reviewed_layout(name,pieces,rows=None):
 def main():
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--only');parser.add_argument('--plan',action='store_true');args=parser.parse_args()
+    if CONFIG.get('fixed_source_page3'):
+        if args.only and args.only in '11_ascent_remaining/3T':
+            if args.plan:
+                plan=json.loads((ROOT/'configs/fixed_page3_additions.json').read_text())
+                print('PLAN 11_ascent_remaining/3T fixed 26 additions',len(plan['placements']))
+                return
+            from build_fixed_page3 import main as fixed_main
+            return fixed_main()
+        if not args.plan and (not args.only or args.only not in '19_personal_fill/3T'):
+            parser.error('Pages 1 and 2 are frozen. This workflow permits writes only to page 3 or 4.')
     OUT.mkdir(parents=True,exist_ok=True)
     manifest_path=OUT/'manifest.json'
     manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {'canvas_mm':list(SIZE),'groups':{},'physical_cut_test':False}

@@ -13,11 +13,22 @@ def main():
     a3=json.loads((ROOT/'output/a3_release/manifest.json').read_text(encoding='utf-8'))
     locations={}
     aliases={ident for ids in CONFIG.get('logo_fill_allocation',{}).values() for ident in ids}
+    fixed_page=CONFIG.get('fixed_source_page3')
+    fixed_aliases={}
+    archived=set()
+    if fixed_page:
+        from fixed_page3_checks import FIXED_IDS
+        plan=json.loads((ROOT/'configs/fixed_page3_additions.json').read_text(encoding='utf-8'))
+        fixed_aliases={p['id']:p['source_id'] for p in plan['placements']}
+        assert len(fixed_aliases)==len(plan['placements']), 'Duplicate fixed-page additions'
+        archived=set(fixed_page['archived_reference_ids'])
     for group,pages in a3['groups'].items():
         for page in pages:
             spec=json.loads((ROOT/'output'/page['folder']/'validation.json').read_text(encoding='utf-8'))
             for p in spec['parts']:
-                ident='danba_logo_smooth' if p['id'] in aliases else p['id']
+                if fixed_page and page['folder']==fixed_page['folder'] and p['id'] in FIXED_IDS:
+                    continue
+                ident=fixed_aliases.get(p['id'], 'danba_logo_smooth' if p['id'] in aliases else p['id'])
                 locations.setdefault(ident,[]).append((group,p))
     logo_archived=CONFIG.get('logo_template_archived',False)
     if logo_archived:
@@ -31,21 +42,25 @@ def main():
         # Keep source-oriented originals as reference assets for the separate
         # 5T plate. They have no 3T A3 locations and are not production sheets.
         locations.update({ident:[] for ident in sources})
+    if fixed_page:
+        assert not archived & set(locations), 'Archived reference has a current A3 placement'
+        locations.update({ident:[] for ident in archived})
     assert set(locations)=={a['id'] for a in m['assets']}
     assert len(m['assets'])==m['asset_count']
     stand_catalog={ident:group for allocation in ('additional_stand_allocation','guide_stand_allocation')
                    for group,ids in CONFIG.get(allocation,{}).items() for ident in ids}
     for ident,group in stand_catalog.items():
-        assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed stand placement')
+        assert [g for g,_ in locations.get(ident,[])]==([] if ident in archived else [group]),(ident,'Changed stand placement')
     personal=CONFIG.get('personal_fill_allocation',{})
     if personal:
         expected={ident:group for group,ids in personal.items() for ident in ids}
         policy=CONFIG['personal_fill_policy']
         expected_count=policy['stand_pieces']+policy['keyring_pieces']
         assert len(expected)==expected_count and set(expected)==set(policy['new_part_ids']),'Incomplete personal catalog'
-        assert m['asset_count']==policy['baseline_asset_count']+expected_count+len(stand_catalog)+bool(aliases or logo_archived)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
+        if not fixed_page:
+            assert m['asset_count']==policy['baseline_asset_count']+expected_count+len(stand_catalog)+bool(aliases or logo_archived)+len(CONFIG.get('pad_variant_sources',{})),'Incomplete catalog of original and personal pieces'
         for ident,group in expected.items():
-            assert [g for g,_ in locations.get(ident,[])]==[group],(ident,'Changed personal asset placement')
+            assert [g for g,_ in locations.get(ident,[])]==([] if ident in archived else [group]),(ident,'Changed personal asset placement')
     canonical=json.loads((ROOT/'configs/individual_contours.json').read_text(encoding='utf-8'))['parts']
     assert set(canonical)==set(locations)
     records=[];tiles=[];rendered=0

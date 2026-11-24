@@ -49,37 +49,46 @@
     "scripts/prepare_len_dot_character.py"
   ],
   "active_source_scripts": [
+    "additional_stands.py",
     "artifact_hash.py",
+    "ascent_size_audit.py",
+    "build_a3_options.py",
     "build_a3_release.py",
+    "build_fixed_page3.py",
+    "build_individual_assets.py",
+    "chain_keyring_parts.py",
+    "danba_character_keyrings.py",
     "export_art_masters.py",
     "extract_logo_full.py",
+    "fixed_page3_assets.py",
+    "fixed_page3_checks.py",
+    "guide_stand_variant.py",
     "laser_paths.py",
+    "len_dot_part.py",
+    "mascot_parts.py",
+    "native_cut_preservation.py",
     "nest_contours.py",
+    "optional_sheet_policy.py",
     "package_a3_release.py",
     "pdf_layers.py",
+    "prepare_yanggum_character.py",
+    "print_delivery.py",
+    "reference_cut_style.py",
+    "repair_printed_plate.py",
     "source_cache.py",
     "vector_utils.py",
     "verify_a3_release.py",
+    "verify_individual_assets.py",
     "verify_laser_paths.py",
+    "verify_recut.py",
     "verify_release.py",
     "verify_repository.py",
-    "len_dot_part.py",
-    "prepare_yanggum_character.py",
-    "yanggum_parts.py",
-    "build_individual_assets.py",
-    "verify_individual_assets.py",
-    "ascent_size_audit.py",
-    "repair_printed_plate.py",
-    "verify_recut.py",
-    "optional_sheet_policy.py",
-    "chain_keyring_parts.py",
-    "additional_stands.py",
-    "guide_stand_variant.py"
+    "yanggum_parts.py"
   ],
   "current_output_root": "output/a3_release",
   "selected_thickness": "3T",
   "physical_sheets": 4,
-  "physical_parts": 87,
+  "physical_parts": 110,
   "retired_status": "ARCHIVED_NOT_FOR_CURRENT_PRODUCTION",
   "raw_snapshot_records": 3379,
   "retired_local_output_files": [
@@ -1371,6 +1380,30 @@
     {
       "file": "assets/chain_keyring/추가스탠드/적매화검_stand60_prepared.png",
       "sha256": "9ace98d2f9ea105ccd3452a40b10e37f6c56d76d3044e89c652f129fc2713a6a"
+    },
+    {
+      "file": "assets/incoming/fixed_page3.ai",
+      "sha256": "3cfadac25e60f7650ac18dcf4f1972e078bff9a5adb6fab49b0b34ca51e82fc0"
+    },
+    {
+      "file": "configs/fixed_page3_source_geometry.json",
+      "sha256": "e47d9ea43aaea6743cd0c11613f63e7f6128ad2a58af7a333ca87ed3ab6e188a"
+    },
+    {
+      "file": "assets/incoming/muhani.png",
+      "sha256": "17b39cedaf022730464e4b5ea3d87a200b7ac64cb127b872b19beea3525f153c"
+    },
+    {
+      "file": "assets/incoming/mascot_blue.png",
+      "sha256": "0edf647ce0bd9b0c310f46f8f400f160c90c63efe6ff2cfe994d300e9e904768"
+    },
+    {
+      "file": "assets/incoming/mascot_pair.png",
+      "sha256": "53291e5a6041115da976bbe8e4f54ca2d15f3da42faad2db073cb4c714949411"
+    },
+    {
+      "file": "assets/incoming/mascot_red.png",
+      "sha256": "10892393c51c2d41b5ef822dfce4434daf7e1582f00c0746afbf15d8de34936f"
     }
   ],
   "optional_current_groups": [

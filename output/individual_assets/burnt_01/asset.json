@@ -23,7 +23,8 @@
   "source": "burnt",
   "a3_groups": [
     "05_len/3T",
-    "05_len/5T"
+    "05_len/5T",
+    "11_ascent_remaining/3T"
   ],
   "physical_cut_test": false,
   "pieces": 1,

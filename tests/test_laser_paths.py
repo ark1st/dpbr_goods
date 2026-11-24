@@ -11,6 +11,12 @@ from artifact_hash import artifact_sha256
 
 
 class LaserRegression(unittest.TestCase):
+    def test_pdf_only_audit_does_not_require_vectorcraft(self):
+        from unittest.mock import patch
+        from verify_laser_paths import inspection_fingerprint
+        with patch('vector_utils.cli_path', side_effect=FileNotFoundError('VectorCraft CLI unavailable')):
+            self.assertEqual(len(inspection_fingerprint(pdf_only=True)),64)
+
     def test_text_hash_normalizes_only_line_endings(self):
         self.assertEqual(artifact_sha256('a.svg',b'a\r\nb'),artifact_sha256('a.svg',b'a\nb'))
         self.assertNotEqual(artifact_sha256('a.pdf',b'a\r\nb'),artifact_sha256('a.pdf',b'a\nb'))

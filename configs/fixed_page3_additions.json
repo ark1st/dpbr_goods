@@ -1,0 +1,806 @@
+{
+  "source_sha256": "3cfadac25e60f7650ac18dcf4f1972e078bff9a5adb6fab49b0b34ca51e82fc0",
+  "original_parts": 26,
+  "original_red_closed_curves": 73,
+  "original_images": 21,
+  "original_existing_gaps_reported_separately": [
+    {
+      "pair": [
+        "fixed_06",
+        "fixed_14"
+      ],
+      "gap_mm": 2.2580706252261056,
+      "overlap_mm2": 0.0,
+      "boundaries_cross": false
+    },
+    {
+      "pair": [
+        "fixed_04",
+        "fixed_07"
+      ],
+      "gap_mm": 2.3025760601153182,
+      "overlap_mm2": 0.0,
+      "boundaries_cross": false
+    },
+    {
+      "pair": [
+        "fixed_13",
+        "fixed_14"
+      ],
+      "gap_mm": 2.7087347211384842,
+      "overlap_mm2": 0.0,
+      "boundaries_cross": false
+    }
+  ],
+  "required_ids": [
+    "remsha_stand_body",
+    "remsha_stand_base",
+    "remsha_keyring",
+    "redflower_stand_body",
+    "redflower_stand_base",
+    "redflower_keyring",
+    "page3_tuiing_01",
+    "page3_golden_01",
+    "page3_burnt_01",
+    "page3_unfried_01",
+    "zero_duo_stand_body",
+    "zero_duo_stand_base",
+    "zero_duo_keyring"
+  ],
+  "optional_set_ids": [
+    "muhani_stand_body",
+    "muhani_stand_base",
+    "muhani_keyring"
+  ],
+  "balanced_stand_and_keyring_sets": 3,
+  "new_parts": 23,
+  "final_part_count": 49,
+  "planning_only_sizing_placeholders": false,
+  "min_new_gap_mm": 3.044432312472754,
+  "min_new_margin_mm": 8.006000000000002,
+  "met_print_alpha_obstacles": true,
+  "mathematical_optimum_proven": false,
+  "placements": [
+    {
+      "id": "remsha_stand_body",
+      "source_id": "remsha_stand_body",
+      "x": 111.55600000000001,
+      "y": 146.70599999999996,
+      "rotation_degrees": 105,
+      "rotated_origin_mm": [
+        -7.258473067857375,
+        -71.36238562446667
+      ],
+      "source_bounds_mm": [
+        7.510401,
+        2.571271,
+        67.165199,
+        65.88377698976373
+      ],
+      "placed_bounds_mm": [
+        111.55600000000001,
+        146.70599999999996,
+        175.29627081837995,
+        207.40528071173856
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_keyring_02",
+      "minimum_gap_mm": 4.192746305356803,
+      "minimum_margin_mm": 89.59471928826144
+    },
+    {
+      "id": "redflower_stand_body",
+      "source_id": "redflower_stand_body",
+      "x": 8.006000000000004,
+      "y": 176.156,
+      "rotation_degrees": 120,
+      "rotated_origin_mm": [
+        -22.46720344095352,
+        -75.4804026744027
+      ],
+      "source_bounds_mm": [
+        7.550724,
+        7.508192,
+        66.605449,
+        65.85987034522971
+      ],
+      "placed_bounds_mm": [
+        8.006000000000004,
+        176.156,
+        72.21013203458446,
+        233.46066395604544
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "fixed_22",
+      "minimum_gap_mm": 3.460232190991753,
+      "minimum_margin_mm": 8.006000000000004
+    },
+    {
+      "id": "muhani_stand_body_01",
+      "source_id": "muhani_stand_body",
+      "x": 349.0560027485905,
+      "y": 102.05600031636959,
+      "rotation_degrees": 345,
+      "rotated_origin_mm": [
+        -8.343356020860984,
+        4.5683334150069586
+      ],
+      "source_bounds_mm": [
+        378.97740651615595,
+        61.3336594,
+        413.8605851213984,
+        124.3746542
+      ],
+      "placed_bounds_mm": [
+        349.0560027485905,
+        102.05600031636959,
+        383.6305171451499,
+        164.62803366337596
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "fixed_20",
+      "minimum_gap_mm": 4.675480069488183,
+      "minimum_margin_mm": 36.369482854850105
+    },
+    {
+      "id": "muhani_stand_body_03",
+      "source_id": "muhani_stand_body",
+      "x": 376.6060005872069,
+      "y": 128.65599999999998,
+      "rotation_degrees": 165,
+      "rotated_origin_mm": [
+        -26.231158375698378,
+        -67.14036676201331
+      ],
+      "source_bounds_mm": [
+        378.97740651615595,
+        61.3336594,
+        413.8605851213984,
+        124.3746542
+      ],
+      "placed_bounds_mm": [
+        376.6060005872069,
+        128.65599999999998,
+        411.1805149837663,
+        191.22803334700632
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "fixed_20",
+      "minimum_gap_mm": 4.281345799999983,
+      "minimum_margin_mm": 8.819485016233727
+    },
+    {
+      "id": "remsha_keyring",
+      "source_id": "remsha_keyring",
+      "x": 8.006000000000002,
+      "y": 240.75599999999997,
+      "rotation_degrees": 120,
+      "rotated_origin_mm": [
+        -13.334347803783597,
+        -63.24049612541323
+      ],
+      "source_bounds_mm": [
+        7.513855,
+        2.513035,
+        58.342923,
+        51.93384789257813
+      ],
+      "placed_bounds_mm": [
+        8.006000000000002,
+        240.75599999999997,
+        60.997580648063234,
+        288.1392973362036
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "page3_unfried_01",
+      "minimum_gap_mm": 3.83371743582322,
+      "minimum_margin_mm": 8.006000000000002
+    },
+    {
+      "id": "redflower_keyring",
+      "source_id": "redflower_keyring",
+      "x": 360.45599999999996,
+      "y": 244.556,
+      "rotation_degrees": 120,
+      "rotated_origin_mm": [
+        -18.707532756244895,
+        -56.42485836317329
+      ],
+      "source_bounds_mm": [
+        7.562241,
+        7.504226,
+        52.913375,
+        52.024363
+      ],
+      "placed_bounds_mm": [
+        360.45599999999996,
+        244.556,
+        411.5154933593713,
+        287.9961469846358
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "zero_duo_stand_base",
+      "minimum_gap_mm": 4.36982019802458,
+      "minimum_margin_mm": 8.484506640628695
+    },
+    {
+      "id": "muhani_stand_body_02",
+      "source_id": "muhani_stand_body",
+      "x": 363.3059999999999,
+      "y": 191.3560009960815,
+      "rotation_degrees": 330,
+      "rotated_origin_mm": [
+        -23.835412367919965,
+        8.571902635506529
+      ],
+      "source_bounds_mm": [
+        378.97740651615595,
+        61.3336594,
+        413.8605851213984,
+        124.3746542
+      ],
+      "placed_bounds_mm": [
+        363.3059999999999,
+        191.3560009960815,
+        406.09127895233894,
+        249.48984197769903
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "page3_tuiing_01",
+      "minimum_gap_mm": 3.456874427149748,
+      "minimum_margin_mm": 13.90872104766106
+    },
+    {
+      "id": "page3_unfried_01",
+      "source_id": "unfried_01",
+      "x": 64.056,
+      "y": 253.106,
+      "rotation_degrees": 90,
+      "rotated_origin_mm": [
+        0.0,
+        -35.01257589902344
+      ],
+      "source_bounds_mm": [
+        9.998844825976562,
+        8.819201568847657,
+        45.011420725,
+        66.1803166
+      ],
+      "placed_bounds_mm": [
+        64.056,
+        253.106,
+        121.41711503115233,
+        288.1185758990234
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "remsha_keyring",
+      "minimum_gap_mm": 3.83371743582322,
+      "minimum_margin_mm": 8.881424100976574
+    },
+    {
+      "id": "page3_burnt_01",
+      "source_id": "burnt_01",
+      "x": 71.656,
+      "y": 181.856,
+      "rotation_degrees": 180,
+      "rotated_origin_mm": [
+        -35.01257589902344,
+        -57.36111503115234
+      ],
+      "source_bounds_mm": [
+        9.998844825976562,
+        8.819201568847657,
+        45.011420725,
+        66.1803166
+      ],
+      "placed_bounds_mm": [
+        71.656,
+        181.856,
+        106.66857589902344,
+        239.21711503115233
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "redflower_stand_body",
+      "minimum_gap_mm": 3.4813609154085445,
+      "minimum_margin_mm": 57.78288496884767
+    },
+    {
+      "id": "page3_golden_01",
+      "source_id": "golden_01",
+      "x": 178.056,
+      "y": 163.80599999999998,
+      "rotation_degrees": 45,
+      "rotated_origin_mm": [
+        11.068660855475116,
+        -14.240510808711724
+      ],
+      "source_bounds_mm": [
+        9.998844825976562,
+        8.819201568847657,
+        45.011420725,
+        66.1803166
+      ],
+      "placed_bounds_mm": [
+        178.056,
+        163.80599999999998,
+        223.17314524357704,
+        208.79525471423557
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_keyring_03",
+      "minimum_gap_mm": 4.148947323445582,
+      "minimum_margin_mm": 88.20474528576443
+    },
+    {
+      "id": "muhani_stand_base_04",
+      "source_id": "muhani_stand_base",
+      "x": 99.20599999999999,
+      "y": 216.05599999999995,
+      "rotation_degrees": 165,
+      "rotated_origin_mm": [
+        -39.13546934248772,
+        -44.228924138122544
+      ],
+      "source_bounds_mm": [
+        109.08576681120604,
+        117.284496646875,
+        152.55807537510987,
+        157.2418839
+      ],
+      "placed_bounds_mm": [
+        99.20599999999999,
+        216.05599999999995,
+        141.26647107770083,
+        254.83708906708796
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_stand_base_01",
+      "minimum_gap_mm": 3.765077810864596,
+      "minimum_margin_mm": 42.16291093291207
+    },
+    {
+      "id": "muhani_keyring_04",
+      "source_id": "muhani_keyring",
+      "x": 318.6559999999999,
+      "y": 159.15287440843258,
+      "rotation_degrees": 165,
+      "rotated_origin_mm": [
+        -21.01743898775586,
+        -52.82324237062631
+      ],
+      "source_bounds_mm": [
+        7.502386875,
+        2.543525,
+        35.147145,
+        52.432919
+      ],
+      "placed_bounds_mm": [
+        318.6559999999999,
+        159.15287440843258,
+        347.09718823782856,
+        208.52562906020833
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "page3_tuiing_01",
+      "minimum_gap_mm": 3.8180833794316955,
+      "minimum_margin_mm": 72.9028117621715
+    },
+    {
+      "id": "page3_tuiing_01",
+      "source_id": "tuiing_01",
+      "x": 320.556,
+      "y": 202.75600000000003,
+      "rotation_degrees": 135,
+      "rotated_origin_mm": [
+        -14.240510808711724,
+        -56.18580609905216
+      ],
+      "source_bounds_mm": [
+        9.998844825976562,
+        8.819201568847657,
+        45.011420725,
+        66.1803166
+      ],
+      "placed_bounds_mm": [
+        320.556,
+        202.75600000000003,
+        365.5452547142356,
+        247.87314524357706
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_stand_body_02",
+      "minimum_gap_mm": 3.456874427149748,
+      "minimum_margin_mm": 49.126854756422915
+    },
+    {
+      "id": "muhani_stand_base_01",
+      "source_id": "muhani_stand_base",
+      "x": 126.75599999999997,
+      "y": 249.30599999999995,
+      "rotation_degrees": 165,
+      "rotated_origin_mm": [
+        -39.13546934248772,
+        -44.228924138122544
+      ],
+      "source_bounds_mm": [
+        109.08576681120604,
+        117.284496646875,
+        152.55807537510987,
+        157.2418839
+      ],
+      "placed_bounds_mm": [
+        126.75599999999997,
+        249.30599999999995,
+        168.81647107770084,
+        288.08708906708796
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_stand_base_04",
+      "minimum_gap_mm": 3.765077810864596,
+      "minimum_margin_mm": 8.912910932912041
+    },
+    {
+      "id": "remsha_stand_base",
+      "source_id": "remsha_stand_base",
+      "x": 285.40599999999995,
+      "y": 199.90599999999998,
+      "rotation_degrees": 105,
+      "rotated_origin_mm": [
+        -5.803627513992798,
+        -44.91602778780967
+      ],
+      "source_bounds_mm": [
+        10.000000000206054,
+        99.999999999875,
+        53.472308564109866,
+        139.95738725299998
+      ],
+      "placed_bounds_mm": [
+        285.40599999999995,
+        199.90599999999998,
+        324.1844074921026,
+        241.96647294965376
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "zero_duo_stand_body",
+      "minimum_gap_mm": 3.2847048050662626,
+      "minimum_margin_mm": 55.03352705034624
+    },
+    {
+      "id": "muhani_stand_base_03",
+      "source_id": "muhani_stand_base",
+      "x": 172.356,
+      "y": 249.30599999999993,
+      "rotation_degrees": 30,
+      "rotated_origin_mm": [
+        5.446997712862218,
+        -14.367118367260417
+      ],
+      "source_bounds_mm": [
+        109.08576681120604,
+        117.284496646875,
+        152.55807537510987,
+        157.2418839
+      ],
+      "placed_bounds_mm": [
+        172.356,
+        249.30599999999993,
+        214.42025065283804,
+        287.43243570773654
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_stand_base_01",
+      "minimum_gap_mm": 4.792229564187488,
+      "minimum_margin_mm": 9.567564292263455
+    },
+    {
+      "id": "muhani_keyring_02",
+      "source_id": "muhani_keyring",
+      "x": 136.89320181656524,
+      "y": 210.35599999999997,
+      "rotation_degrees": 240,
+      "rotated_origin_mm": [
+        -52.40206484980812,
+        -18.64089655525936
+      ],
+      "source_bounds_mm": [
+        7.502386875,
+        2.543525,
+        35.147145,
+        52.432919
+      ],
+      "placed_bounds_mm": [
+        136.89320181656524,
+        210.35599999999997,
+        182.88349936598757,
+        243.84431865923148
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "muhani_stand_base_04",
+      "minimum_gap_mm": 4.015543380962312,
+      "minimum_margin_mm": 53.155681340768524
+    },
+    {
+      "id": "redflower_stand_base",
+      "source_id": "redflower_stand_base",
+      "x": 217.956,
+      "y": 238.85599999999997,
+      "rotation_degrees": 105,
+      "rotated_origin_mm": [
+        -5.803627513992798,
+        -44.91602778780967
+      ],
+      "source_bounds_mm": [
+        10.000000000206054,
+        99.999999999875,
+        53.472308564109866,
+        139.95738725299998
+      ],
+      "placed_bounds_mm": [
+        217.956,
+        238.85599999999997,
+        256.7344074921026,
+        280.9164729496538
+      ],
+      "scale": 1,
+      "closed_paths": 3,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "zero_duo_stand_body",
+      "minimum_gap_mm": 3.3364402053200664,
+      "minimum_margin_mm": 16.083527050346277
+    },
+    {
+      "id": "muhani_keyring_03",
+      "source_id": "muhani_keyring",
+      "x": 176.33735666059883,
+      "y": 205.10939623485552,
+      "rotation_degrees": 225,
+      "rotated_origin_mm": [
+        -48.54253215683277,
+        -29.669310291150026
+      ],
+      "source_bounds_mm": [
+        7.502386875,
+        2.543525,
+        35.147145,
+        52.432919
+      ],
+      "placed_bounds_mm": [
+        176.33735666059883,
+        205.10939623485552,
+        216.19562199769302,
+        245.63966607436157
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "nearest_neighbor": "page3_golden_01",
+      "minimum_gap_mm": 4.148947323445582,
+      "minimum_margin_mm": 51.36033392563843
+    },
+    {
+      "id": "muhani_keyring_05",
+      "source_id": "muhani_keyring",
+      "x": 225.746,
+      "y": 198.386,
+      "rotation_degrees": 35,
+      "rotated_origin_mm": [
+        9.632462808215104,
+        -8.595518252332703
+      ],
+      "source_bounds_mm": [
+        7.502386875,
+        2.543525,
+        35.147145,
+        52.432919
+      ],
+      "placed_bounds_mm": [
+        225.746,
+        198.386,
+        260.44422032064074,
+        243.17489510749226
+      ],
+      "scale": 1,
+      "closed_paths": 2,
+      "sizing_placeholder": false,
+      "minimum_gap_mm": 4.068067443395145,
+      "nearest_neighbor": "redflower_stand_base",
+      "minimum_margin_mm": 53.82510489250774
+    },
+    {
+      "id": "zero_duo_stand_body",
+      "source_id": "zero_duo_stand_body",
+      "x": 259.286,
+      "y": 234.80599999999998,
+      "rotation_degrees": 110,
+      "rotated_origin_mm": [
+        -13.720209405868543,
+        -60.27695618111389
+      ],
+      "source_bounds_mm": [
+        7.516976140625,
+        7.4951180625,
+        60.006773698974605,
+        58.71227870561563
+      ],
+      "placed_bounds_mm": [
+        259.286,
+        234.80599999999998,
+        314.8793500391744,
+        286.47976561682685
+      ],
+      "closed_paths": 2,
+      "scale": 1,
+      "sizing_placeholder": false,
+      "minimum_gap_mm": 3.044432312472754,
+      "nearest_neighbor": "zero_duo_stand_base",
+      "minimum_margin_mm": 10.520234383173147
+    },
+    {
+      "id": "zero_duo_keyring",
+      "source_id": "zero_duo_keyring",
+      "x": 255.68599999999998,
+      "y": 162.80599999999998,
+      "rotation_degrees": 20,
+      "rotated_origin_mm": [
+        7.759662224704843,
+        -11.409406758087854
+      ],
+      "source_bounds_mm": [
+        7.511721343750001,
+        6.831523,
+        53.519378078125,
+        50.440435
+      ],
+      "placed_bounds_mm": [
+        255.68599999999998,
+        162.80599999999998,
+        301.0560110956506,
+        211.09672433802996
+      ],
+      "closed_paths": 2,
+      "scale": 1,
+      "sizing_placeholder": false,
+      "minimum_gap_mm": 3.4158284971615087,
+      "nearest_neighbor": "fixed_23",
+      "minimum_margin_mm": 85.90327566197004
+    },
+    {
+      "id": "zero_duo_stand_base",
+      "source_id": "zero_duo_stand_base",
+      "x": 316.16599999999994,
+      "y": 249.206,
+      "rotation_degrees": 30,
+      "rotated_origin_mm": [
+        5.446997712862178,
+        -14.367118367260403
+      ],
+      "source_bounds_mm": [
+        10.000000000206054,
+        99.999999999875,
+        53.472308564109866,
+        139.95738725299998
+      ],
+      "placed_bounds_mm": [
+        316.16599999999994,
+        249.206,
+        358.23025065283804,
+        287.3324357077365
+      ],
+      "closed_paths": 3,
+      "scale": 1,
+      "sizing_placeholder": false,
+      "minimum_gap_mm": 3.044432312472754,
+      "nearest_neighbor": "zero_duo_stand_body",
+      "minimum_margin_mm": 9.667564292263478
+    }
+  ],
+  "baseline_geometry_file": "original_geometry.json",
+  "original_parts_unchanged": true,
+  "original_blue_references": 1,
+  "original_parts_below_8mm_margin": [
+    {
+      "id": "fixed_04",
+      "edge_mm": 7.355245375000001
+    },
+    {
+      "id": "fixed_09",
+      "edge_mm": 6.12241211328125
+    },
+    {
+      "id": "fixed_10",
+      "edge_mm": 5.4631766
+    },
+    {
+      "id": "fixed_12",
+      "edge_mm": 5.4631766
+    },
+    {
+      "id": "fixed_13",
+      "edge_mm": 5.4233164
+    },
+    {
+      "id": "fixed_14",
+      "edge_mm": 6.6726749
+    },
+    {
+      "id": "fixed_16",
+      "edge_mm": 5.9708619
+    },
+    {
+      "id": "fixed_20",
+      "edge_mm": 6.139414878601599
+    }
+  ],
+  "frozen_snapshot": true,
+  "physical_test": false,
+  "source_artwork_rigid_transforms_preserved_all_new_parts": true,
+  "extra_muhani_keyrings": 1,
+  "muhani_keyring_hole_positions": [
+    "top"
+  ],
+  "prior_muhani_nesting_search": {
+    "candidates_examined": 1,
+    "rectangle_trials": 600,
+    "rotation_step_deg": 15,
+    "selected_trial": "rebind checked geometry",
+    "template_file": "templates_geometry.json",
+    "templates_sha256": "d610cb82b96b58bf9622a40bda33557630b5f0134f3d38489dc9d1f8c594200b",
+    "fine_direct_extra_bundle_search": {
+      "stand_body_valid_candidates": 0,
+      "stand_base_valid_candidates": 0,
+      "keyring_valid_candidates": 6,
+      "translation_step_mm": 0.52,
+      "orientations": 24
+    },
+    "live_source_snapshot": "root_actual_templates.json",
+    "live_source_snapshot_sha256": "85ffef1d887c83763a10d8f1111f168cb80116ae649153b6713c53d33f3afa07"
+  },
+  "zero_duo_replacement": {
+    "stand_visible_height_mm": 44,
+    "keyring_visible_height_mm": 38,
+    "source_print": "output/individual_assets/강민_stand_01/01_PRINT_300ppi.png",
+    "removed_muhani_ids": [
+      "muhani_stand_body_04",
+      "muhani_stand_base_02",
+      "muhani_keyring_01"
+    ],
+    "translation_grid_mm": 0.72,
+    "rotation_step_deg": 10,
+    "preserved_existing_artwork_placements": true
+  }
+}

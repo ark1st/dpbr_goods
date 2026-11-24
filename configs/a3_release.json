@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-24-fit-close-zero",
+  "revision": "A3-fixed-page3-reference-01",
   "canvas_mm": [
     420,
     297
@@ -169,7 +169,7 @@
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
     "09_yanggum/3T": 3,
-    "11_ascent_remaining/3T": 26,
+    "11_ascent_remaining/3T": 49,
     "19_personal_fill/3T": 6,
     "20_guide_stand_comparison/3T": 2
   },
@@ -352,7 +352,7 @@
     "11_ascent_remaining/3T",
     "19_personal_fill/3T"
   ],
-  "selected_primary_parts": 87,
+  "selected_primary_parts": 110,
   "primary_inventory": [
     "burnt_01",
     "extra_3T_01",
@@ -390,10 +390,32 @@
     "extra_3T_36",
     "extra_3T_37",
     "extra_3T_38",
-    "extra_stand_렘샤_01",
-    "extra_stand_렘샤_02",
-    "extra_stand_적매화검_01",
-    "extra_stand_적매화검_02",
+    "fixed_01",
+    "fixed_02",
+    "fixed_03",
+    "fixed_04",
+    "fixed_05",
+    "fixed_06",
+    "fixed_07",
+    "fixed_08",
+    "fixed_09",
+    "fixed_10",
+    "fixed_11",
+    "fixed_12",
+    "fixed_13",
+    "fixed_14",
+    "fixed_15",
+    "fixed_16",
+    "fixed_17",
+    "fixed_18",
+    "fixed_19",
+    "fixed_20",
+    "fixed_21",
+    "fixed_22",
+    "fixed_23",
+    "fixed_24",
+    "fixed_25",
+    "fixed_26",
     "golden_01",
     "len_3T_01",
     "len_3T_02",
@@ -407,9 +429,28 @@
     "len_pad_3T_02_safe",
     "len_pad_3T_03_safe",
     "len_pad_3T_04",
-    "len_pad_3T_05_safe",
     "len_pad_3T_06",
     "len_pad_3T_07",
+    "muhani_keyring_02",
+    "muhani_keyring_03",
+    "muhani_keyring_04",
+    "muhani_keyring_05",
+    "muhani_stand_base_01",
+    "muhani_stand_base_03",
+    "muhani_stand_base_04",
+    "muhani_stand_body_01",
+    "muhani_stand_body_02",
+    "muhani_stand_body_03",
+    "page3_burnt_01",
+    "page3_golden_01",
+    "page3_tuiing_01",
+    "page3_unfried_01",
+    "redflower_keyring",
+    "redflower_stand_base",
+    "redflower_stand_body",
+    "remsha_keyring",
+    "remsha_stand_base",
+    "remsha_stand_body",
     "supplied_saetui_01",
     "supplied_saetui_02",
     "supplied_saetui_03",
@@ -419,28 +460,10 @@
     "yanggum_keyring_01",
     "yanggum_stand_01",
     "yanggum_stand_02",
-    "강민_stand_01",
-    "강민_stand_02",
-    "강윤진_stand_01",
-    "강윤진_stand_02",
-    "김윤_keyring_01",
-    "김윤_keyring_02",
-    "김윤_keyring_03",
-    "김윤_keyring_04",
-    "김윤_keyring_05",
-    "김호_keyring_01",
-    "김호_keyring_02",
-    "김호_keyring_03",
-    "김호_keyring_04",
-    "김호_keyring_05",
-    "김호_keyring_06",
-    "배승민_keyring_01",
-    "배승민_keyring_02",
-    "배승민_keyring_03",
-    "이상준_stand_01",
-    "이상준_stand_02",
-    "정지영_stand_01",
-    "정지영_stand_02"
+    "zero_duo_keyring",
+    "zero_duo_stand_base",
+    "zero_duo_stand_body",
+    "김호_keyring_01"
   ],
   "yanggum_products": {
     "stand": {
@@ -1765,14 +1788,107 @@
     ]
   },
   "previous_production_release": {
-    "commit": "57456d7845aed43b1ff3b29e7c1785f4784401de",
-    "archive_commit": "0afad48363a722cc19cb2c24a4b75e501fec94ab",
-    "archive_path": "snapshots/before_pr_fit_zero_57456d7"
+    "commit": "8b8ff2c9a05f8701b37d9945d1742a37aeb4d9ae",
+    "archive_commit": "e90715a4f16e8972bd414e822f99b4c62560307c",
+    "archive_path": "snapshots/before_user_fixed_page3_8b8ff2c"
   },
   "guide_stand_allocation": {
     "20_guide_stand_comparison/3T": [
       "guide_stand_렘샤_01",
       "guide_stand_렘샤_02"
+    ]
+  },
+  "fixed_source_page3": {
+    "folder": "a3_release/11_ascent_remaining/3T/sheet_01",
+    "source_file": "assets/incoming/fixed_page3.ai",
+    "source_sha256": "3cfadac25e60f7650ac18dcf4f1972e078bff9a5adb6fab49b0b34ca51e82fc0",
+    "geometry_file": "configs/fixed_page3_source_geometry.json",
+    "frozen_pages": [
+      {
+        "folder": "a3_release/02_extra_sheet/3T/sheet_01",
+        "files": {
+          "01_PRINT.pdf": "bffceefda49900306abba0c3b8d444c6bad6fc920770d252bb158cd19de3e66e",
+          "01_PRINT_300ppi.png": "c73cb76675008b4ce6de8021a59962986c2446b6438994f01ef6975ce907ad97",
+          "02_MASTER.ai": "4e8c3b3fea910f696103f2cb283550a86a3bab5766fea3695457b401bace35d0",
+          "02_MASTER.pdf": "299a315e0564a7afdcc4fdd5be3a87ed0e039549eb9d0e1aa90495c80afbd683",
+          "02_MASTER.vectorcraft": "847713bd8e43506328c45a1e03f145f563c3f4ee6f3ca38aa0457df5bc28bca2",
+          "03_CUT_ONLY.pdf": "a292e62d80ee338a4130e6bfb6731ef4eef431f885bb8b407362d9d17439923f",
+          "03_CUT_ONLY.svg": "a3f97cf50fbf491cdc1c6738517c1418617b2427d61e6ca230da1e6aca92e7c8",
+          "04_WHITE_INK_MASK.pdf": "d0746e3fd9c46f71e6d36187517e310a771ab64826ba970877e1038869314abf",
+          "04_WHITE_INK_MASK_300ppi.png": "60fbdc5ea1e7ddbb1f3aa32cc329a65bccbf9273a26c7f80a4bffbdb2a094d68",
+          "PREVIEW_NOT_FOR_CUT.pdf": "0e3412ce8aeeb4665fdd442bfde504ce5f781d0de108982fc64cb80378709729",
+          "README.md": "e80d3cfdc214c286bc8cf3ccefc8db3de0b15dd5500335d0e9303b852338d1cc",
+          "cut_detail.png": "ae771b1be3f79e6afad5acd6cb3b522a759603e8ab06d41c8e9d40f7eca7cd13",
+          "preview.png": "239d5d52a275a1010b8fef15fe0c0150f4f5bd98b0f0727667dc7aeeed4fa7d6",
+          "validation.json": "9cdceaec5e4077550863d0ccdd22e9894d61aa2fc6cca176de6898e32c8c7c84"
+        }
+      },
+      {
+        "folder": "a3_release/05_len/3T/sheet_01",
+        "files": {
+          "01_PRINT.pdf": "9f30c3e958620d1cfda8b47dabbad1dbb454e5fd5ede0ce225065dc464ae9c30",
+          "01_PRINT_300ppi.png": "ca171de132283bdf5147a09922bd3b19fcc77d0ffe73a3d861b630c18167a1d2",
+          "02_MASTER.ai": "dc21649f49e9e4c4206d0054de1042dccf1dddbf2f732c18896a414fc0fdb4a3",
+          "02_MASTER.pdf": "47a9b9e8595413a1aaa7236337598fbd4b24186d0ec84fe836578ba5739912f0",
+          "02_MASTER.vectorcraft": "fb2e724dbb499e72f8f0a3d74edde817e71b1772efe4cc83d6536238f53dd3fb",
+          "03_CUT_ONLY.pdf": "4a11d9602bec3e90bd1751f6a94b852de4c6bb8b036158ee3a52374c4ef2a7d1",
+          "03_CUT_ONLY.svg": "903bb5f231589d84a03a20c14ab3cb8f98730dc53ab82bb788bae5a46fb35e5e",
+          "04_WHITE_INK_MASK.pdf": "87e327c1375ad5eb877e168bda43ee48a780013a371faed4dfac4860da995aad",
+          "04_WHITE_INK_MASK_300ppi.png": "b8efd585c7e01ec3b42e108556304bf38fce86d0b1cf4c08b7260ee17be2be52",
+          "PREVIEW_NOT_FOR_CUT.pdf": "2f63e67cc43b0d6f0895dcdeeb5b775a84991779cecca4c424e8f2c670061abf",
+          "README.md": "81a9ebd974a71642a374d4a5c6f70e9082579b0a5a96fd43508aebd49d328753",
+          "cut_detail.png": "b04d3de41c24d73abfb84a6f754ed7a547e4f2eae6be706b1b6d0e4ddcbe5e7b",
+          "preview.png": "5a09a65d696ad784dc49f434cdfc951621ba003fb5db349e40902ca14c52ac0f",
+          "validation.json": "01013b26aedeb139488ca37946fe41a57d1094244d5a093de377fbf690a7ccf4"
+        }
+      }
+    ],
+    "archived_reference_ids": [
+      "강민_stand_01",
+      "강윤진_stand_01",
+      "이상준_stand_01",
+      "정지영_stand_01",
+      "강민_stand_02",
+      "강윤진_stand_02",
+      "이상준_stand_02",
+      "정지영_stand_02",
+      "배승민_keyring_01",
+      "배승민_keyring_02",
+      "배승민_keyring_03",
+      "김윤_keyring_04",
+      "김윤_keyring_01",
+      "김윤_keyring_02",
+      "김윤_keyring_03",
+      "김윤_keyring_05",
+      "김호_keyring_02",
+      "김호_keyring_03",
+      "김호_keyring_04",
+      "김호_keyring_05",
+      "김호_keyring_06",
+      "len_pad_3T_05_safe",
+      "extra_stand_렘샤_01",
+      "extra_stand_렘샤_02",
+      "extra_stand_적매화검_01",
+      "extra_stand_적매화검_02"
+    ]
+  },
+  "active_print_groups": [
+    "11_ascent_remaining/3T",
+    "19_personal_fill/3T"
+  ],
+  "print_delivery": {
+    "plates": [
+      "page03",
+      "alternative_page04",
+      "alternative_800x500"
+    ],
+    "layout_files": [
+      "a3_options/alternative/page_04/layout.json",
+      "a3_options/alternative/page_04/preview.png"
+    ],
+    "frozen_printed_pages": [
+      1,
+      2
     ]
   }
 }

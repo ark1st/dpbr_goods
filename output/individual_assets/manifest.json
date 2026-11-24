@@ -670,7 +670,8 @@
       ],
       "a3_groups": [
         "05_len/3T",
-        "05_len/5T"
+        "05_len/5T",
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -2395,9 +2396,7 @@
         73.1488262,
         71.51536639999999
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -2419,9 +2418,7 @@
         75.9999979,
         31.99999199999999
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -2443,9 +2440,7 @@
         72.6738633,
         71.5753649
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -2467,9 +2462,7 @@
         75.9999979,
         31.99999199999999
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -2493,7 +2486,8 @@
       ],
       "a3_groups": [
         "05_len/3T",
-        "05_len/5T"
+        "05_len/5T",
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3141,9 +3135,7 @@
         67.403154,
         95.54728399999999
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3377,6 +3369,222 @@
       ]
     },
     {
+      "id": "muhani_keyring",
+      "folder": "individual_assets/muhani_keyring",
+      "canvas_mm": [
+        31.644758125000003,
+        53.889393999999996
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "muhani_stand_base",
+      "folder": "individual_assets/muhani_stand_base",
+      "canvas_mm": [
+        47.47230856390382,
+        43.957387253125006
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "muhani_stand_body",
+      "folder": "individual_assets/muhani_stand_body",
+      "canvas_mm": [
+        38.88317860524245,
+        67.04099479999999
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "redflower_keyring",
+      "folder": "individual_assets/redflower_keyring",
+      "canvas_mm": [
+        49.351134,
+        48.520137
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "redflower_stand_base",
+      "folder": "individual_assets/redflower_stand_base",
+      "canvas_mm": [
+        47.47230856390381,
+        43.95738725312498
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "redflower_stand_body",
+      "folder": "individual_assets/redflower_stand_body",
+      "canvas_mm": [
+        63.05472499999999,
+        62.35167834522971
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "remsha_keyring",
+      "folder": "individual_assets/remsha_keyring",
+      "canvas_mm": [
+        54.829068,
+        53.42081289257813
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "remsha_stand_base",
+      "folder": "individual_assets/remsha_stand_base",
+      "canvas_mm": [
+        47.47230856390381,
+        43.95738725312498
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "remsha_stand_body",
+      "folder": "individual_assets/remsha_stand_body",
+      "canvas_mm": [
+        63.654798,
+        67.31250598976374
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "supplied_saetui_01",
       "folder": "individual_assets/supplied_saetui_01",
       "canvas_mm": [
@@ -3485,7 +3693,8 @@
       ],
       "a3_groups": [
         "05_len/3T",
-        "05_len/5T"
+        "05_len/5T",
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3510,7 +3719,8 @@
       ],
       "a3_groups": [
         "05_len/3T",
-        "05_len/5T"
+        "05_len/5T",
+        "11_ascent_remaining/3T"
       ],
       "files": [
         "01_PRINT.pdf",
@@ -3602,15 +3812,85 @@
       ]
     },
     {
+      "id": "zero_duo_keyring",
+      "folder": "individual_assets/zero_duo_keyring",
+      "canvas_mm": [
+        50.007656734375004,
+        47.608912000000004
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "zero_duo_stand_base",
+      "folder": "individual_assets/zero_duo_stand_base",
+      "canvas_mm": [
+        47.47230856390381,
+        43.95738725312498
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "zero_duo_stand_body",
+      "folder": "individual_assets/zero_duo_stand_body",
+      "canvas_mm": [
+        56.48979755834961,
+        55.21716064311563
+      ],
+      "a3_groups": [
+        "11_ascent_remaining/3T"
+      ],
+      "files": [
+        "01_PRINT.pdf",
+        "01_PRINT_300ppi.png",
+        "02_MASTER.pdf",
+        "02_MASTER.ai",
+        "03_CUT_ONLY.pdf",
+        "03_CUT_ONLY.svg",
+        "04_WHITE_INK_MASK.pdf",
+        "04_WHITE_INK_MASK_300ppi.png",
+        "preview.png",
+        "asset.json",
+        "README.md"
+      ]
+    },
+    {
       "id": "강민_stand_01",
       "folder": "individual_assets/강민_stand_01",
       "canvas_mm": [
         76.37510998632811,
         73.939616
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3632,9 +3912,7 @@
         75.999998,
         31.999990999999994
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3656,9 +3934,7 @@
         81.177892,
         71.51623400000001
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3680,9 +3956,7 @@
         76.00000100000001,
         31.999990999999994
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3704,9 +3978,7 @@
         71.542374,
         74.99997844727709
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3728,9 +4000,7 @@
         52.56072329589843,
         75.00104736888886
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3752,9 +4022,7 @@
         41.797302,
         74.9999414103241
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3776,9 +4044,7 @@
         34.93326937500001,
         74.99891699999999
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3800,9 +4066,7 @@
         51.03390699999997,
         75.00019941225051
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3848,9 +4112,7 @@
         54.176015386718746,
         74.999619
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3872,9 +4134,7 @@
         59.86483980444338,
         74.99996399999999
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3896,9 +4156,7 @@
         51.562967000000015,
         74.99980294684218
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3920,9 +4178,7 @@
         39.169493999999986,
         74.999096
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3944,9 +4200,7 @@
         50.359928000000025,
         74.9993433364563
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3968,9 +4222,7 @@
         42.066434,
         74.99954
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -3992,9 +4244,7 @@
         40.186443000000004,
         75.00026739708328
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -4016,9 +4266,7 @@
         37.38983399999999,
         75.00034067880249
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -4040,9 +4288,7 @@
         64.514809,
         71.516730875
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -4064,9 +4310,7 @@
         75.999998,
         31.999990999999994
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -4088,9 +4332,7 @@
         67.31589199999999,
         71.515367
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -4112,9 +4354,7 @@
         75.999998,
         31.999990999999994
       ],
-      "a3_groups": [
-        "11_ascent_remaining/3T"
-      ],
+      "a3_groups": [],
       "files": [
         "01_PRINT.pdf",
         "01_PRINT_300ppi.png",
@@ -4130,7 +4370,7 @@
       ]
     }
   ],
-  "asset_count": 174,
+  "asset_count": 186,
   "files_per_asset": [
     "01_PRINT.pdf",
     "01_PRINT_300ppi.png",
@@ -4151,9 +4391,9 @@
     "linked_tuiing_assembly.json",
     "05_len_3T_catalog.png",
     "05_len_5T_catalog.png",
+    "11_ascent_remaining_3T_catalog.png",
     "02_extra_sheet_3T_catalog.png",
     "02_extra_sheet_5T_catalog.png",
-    "11_ascent_remaining_3T_catalog.png",
     "20_guide_stand_comparison_3T_catalog.png",
     "06_len_pad_3T_catalog.png",
     "19_personal_fill_3T_catalog.png",
