@@ -1,0 +1,562 @@
+{
+  "scale": 1,
+  "unit": "mm",
+  "parts": [
+    {
+      "id": "ascent_02",
+      "type": "base",
+      "outer_size_mm": [
+        104.00002579999995,
+        29.999977600000022
+      ],
+      "slots_mm": [
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.199976900000024
+        ],
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.200019999999995
+        ],
+        [
+          20.199972900000034,
+          3.1999768999999674
+        ],
+        [
+          20.200015899999983,
+          3.200019999999995
+        ],
+        [
+          20.199972900000034,
+          3.1999768999999674
+        ],
+        [
+          20.200015899999983,
+          3.199976900000024
+        ]
+      ],
+      "paired_slot_center_pitch_mm": [
+        39.999991699999896,
+        39.999991699999896,
+        39.99999169999995,
+        39.99999169999995
+      ],
+      "paired_slot_depth_stagger_mm": [
+        0.1946263499999077,
+        0.1946048999999448,
+        0.19462635000002138,
+        0.1946478999999499
+      ]
+    },
+    {
+      "id": "ascent_03",
+      "type": "base",
+      "outer_size_mm": [
+        104.00002579999995,
+        29.999977599999966
+      ],
+      "slots_mm": [
+        [
+          20.199972900000034,
+          3.199976900000024
+        ],
+        [
+          20.200015899999983,
+          3.19997699999999
+        ],
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.2000201000000175
+        ],
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.200019999999995
+        ],
+        [
+          20.199972900000034,
+          3.199976900000024
+        ],
+        [
+          20.200015899999983,
+          3.199976900000024
+        ]
+      ],
+      "paired_slot_center_pitch_mm": [
+        39.99999169999995,
+        39.999991699999896,
+        39.999991699999896,
+        39.99999169999995
+      ],
+      "paired_slot_depth_stagger_mm": [
+        0.1946478499999671,
+        0.1946478499999671,
+        0.1946479000000636,
+        0.19464790000000676
+      ]
+    },
+    {
+      "id": "ascent_04",
+      "type": "base",
+      "outer_size_mm": [
+        104.00002579999995,
+        29.999977600000022
+      ],
+      "slots_mm": [
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.200020000000052
+        ],
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.200019999999995
+        ],
+        [
+          20.199972900000034,
+          3.19997699999999
+        ],
+        [
+          20.200015899999983,
+          3.19997699999999
+        ],
+        [
+          20.199972900000034,
+          3.19997699999999
+        ],
+        [
+          20.200015899999983,
+          3.1999770000000467
+        ]
+      ],
+      "paired_slot_center_pitch_mm": [
+        39.99999169999984,
+        39.999991699999896,
+        39.99999169999995,
+        39.999991699999896
+      ],
+      "paired_slot_depth_stagger_mm": [
+        0.1946479000000636,
+        0.1946479000000636,
+        0.19464790000012044,
+        0.1946479000000636
+      ]
+    },
+    {
+      "id": "ascent_05",
+      "type": "base",
+      "outer_size_mm": [
+        104.00002579999995,
+        29.99997760000008
+      ],
+      "slots_mm": [
+        [
+          20.199972900000034,
+          3.1999768999999105
+        ],
+        [
+          20.200015899999983,
+          3.199976900000024
+        ],
+        [
+          20.199972900000034,
+          3.200019999999995
+        ],
+        [
+          20.200015899999983,
+          3.200019999999995
+        ],
+        [
+          20.199972900000034,
+          3.2000201000000743
+        ],
+        [
+          20.200015899999983,
+          3.200019999999995
+        ],
+        [
+          20.199972900000034,
+          3.19997699999999
+        ],
+        [
+          20.200015899999983,
+          3.1999768999999105
+        ]
+      ],
+      "paired_slot_center_pitch_mm": [
+        39.999991699999896,
+        39.999991699999896,
+        39.99999169999995,
+        39.99999169999995
+      ],
+      "paired_slot_depth_stagger_mm": [
+        0.1946479000000636,
+        0.19464789999983623,
+        0.19464785000002394,
+        0.19464785000002394
+      ]
+    },
+    {
+      "id": "ascent_06",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000258,
+        62.80697599999999
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697599999999
+    },
+    {
+      "id": "ascent_07",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.00002579999995,
+        62.80697599999999
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.00002810000001
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697599999999
+    },
+    {
+      "id": "ascent_08",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        103.99999340000001,
+        62.806997499999966
+      ],
+      "tab_widths_mm": [
+        19.999995800000008,
+        19.999995900000002
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.806997499999966
+    },
+    {
+      "id": "ascent_09",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        103.99999340000001,
+        62.8069759
+      ],
+      "tab_widths_mm": [
+        19.999995800000008,
+        19.999995900000002
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.8069759
+    },
+    {
+      "id": "ascent_10",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000042,
+        62.80697599999999
+      ],
+      "tab_widths_mm": [
+        19.999985099999975,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697599999999
+    },
+    {
+      "id": "ascent_15",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        103.99999340000001,
+        62.80698679999999
+      ],
+      "tab_widths_mm": [
+        19.999995800000008,
+        19.999995900000002
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80698679999999
+    },
+    {
+      "id": "ascent_16",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000042,
+        62.80698679999999
+      ],
+      "tab_widths_mm": [
+        19.999985099999975,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80698679999999
+    },
+    {
+      "id": "ascent_17",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000258,
+        62.80698679999999
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80698679999999
+    },
+    {
+      "id": "ascent_18",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.00002579999995,
+        62.80698679999999
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.00002810000001
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80698679999999
+    },
+    {
+      "id": "ascent_19",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        103.99999340000001,
+        62.80697599999999
+      ],
+      "tab_widths_mm": [
+        19.999995800000008,
+        19.999995900000002
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697599999999
+    },
+    {
+      "id": "ascent_20",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        103.99999340000001,
+        62.80697600000002
+      ],
+      "tab_widths_mm": [
+        19.999995800000008,
+        19.999995900000002
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697600000002
+    },
+    {
+      "id": "ascent_21",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        103.99999340000001,
+        62.80701909999999
+      ],
+      "tab_widths_mm": [
+        19.999995800000008,
+        19.999995900000002
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80701909999999
+    },
+    {
+      "id": "ascent_22",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000042,
+        62.8069759
+      ],
+      "tab_widths_mm": [
+        19.999985099999975,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.8069759
+    },
+    {
+      "id": "ascent_23",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000042,
+        62.80697600000002
+      ],
+      "tab_widths_mm": [
+        19.999985099999975,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697600000002
+    },
+    {
+      "id": "ascent_24",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000042,
+        62.80701909999999
+      ],
+      "tab_widths_mm": [
+        19.999985099999975,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80701909999999
+    },
+    {
+      "id": "ascent_25",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000258,
+        62.806997499999966
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.806997499999966
+    },
+    {
+      "id": "ascent_26",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.00002579999995,
+        62.806997499999966
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.00002810000001
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.806997499999966
+    },
+    {
+      "id": "ascent_27",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000258,
+        62.8069759
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.8069759
+    },
+    {
+      "id": "ascent_28",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.00002579999995,
+        62.8069759
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.00002810000001
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.8069759
+    },
+    {
+      "id": "ascent_29",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000258,
+        62.80697600000002
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80697600000002
+    },
+    {
+      "id": "ascent_30",
+      "type": "printed_panel",
+      "outer_size_mm": [
+        104.0000258,
+        62.80701909999999
+      ],
+      "tab_widths_mm": [
+        19.999985100000004,
+        20.000006600000006
+      ],
+      "tab_depth_mm": 3,
+      "nominal_visible_height_above_base_mm": 59.80701909999999
+    }
+  ],
+  "geometry_size_errors": [],
+  "source_part_count": 31,
+  "excluded_cadena": [
+    "ascent_01",
+    "ascent_11",
+    "ascent_12",
+    "ascent_13",
+    "ascent_14"
+  ],
+  "excluded_blank_panel": "ascent_31",
+  "included_parts": 25,
+  "printed_panels": 21,
+  "bases": 4,
+  "findings": [
+    {
+      "id": "ascent_02",
+      "status": "original_preserved_physical_fit_unverified",
+      "max_slot_depth_stagger_mm": 0.1946478999999499,
+      "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+    },
+    {
+      "id": "ascent_03",
+      "status": "original_preserved_physical_fit_unverified",
+      "max_slot_depth_stagger_mm": 0.1946479000000636,
+      "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+    },
+    {
+      "id": "ascent_04",
+      "status": "original_preserved_physical_fit_unverified",
+      "max_slot_depth_stagger_mm": 0.19464790000012044,
+      "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+    },
+    {
+      "id": "ascent_05",
+      "status": "original_preserved_physical_fit_unverified",
+      "max_slot_depth_stagger_mm": 0.1946479000000636,
+      "note": "Paired slots are slightly staggered in the base plane; assembly may yaw. No automatic alignment or nominal-thickness fit guarantee."
+    }
+  ],
+  "physical_cut_or_fit_test": false,
+  "status": "digital_dimensions_verified_original_interfaces_preserved",
+  "limitations": [
+    "Nominal3T is not a measurement of the supplied acrylic.",
+    "Software confirms source dimensions and unchanged vector geometry, not physical fit, kerf or cutting quality.",
+    "No fit-test pieces or additional bases were generated."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "revision": "A3-2026-11-24-fit-close-zero",
+  "A3_count": 4,
+  "shape_count": 87,
+  "round_logo_copies": 0,
+  "ascent_parts_on_3T": 0,
+  "physical_cut_test": false,
+  "scope": "Current production geometry; no global optimum claimed",
+  "selected_sheet_groups": {
+    "02_extra_sheet/3T": {
+      "parts": 42,
+      "minimum_gap_mm": 3.0105855566649478,
+      "minimum_margin_mm": 8.0
+    },
+    "05_len/3T": {
+      "parts": 13,
+      "minimum_gap_mm": 3.013729554011429,
+      "minimum_margin_mm": 8.0
+    },
+    "11_ascent_remaining/3T": {
+      "parts": 26,
+      "minimum_gap_mm": 3.1399999999999864,
+      "minimum_margin_mm": 8.007999999999996
+    },
+    "19_personal_fill/3T": {
+      "parts": 6,
+      "minimum_gap_mm": 4.585815795703098,
+      "minimum_margin_mm": 8.009999999999991
+    }
+  },
+  "changes": [
+    "4th-page nine chain characters and one PAD character moved to page 3",
+    "Two additional stand sets on page 3",
+    "Zero pair body scale and feet alignment matched; centers 25mm apart",
+    "PR2 Len mounting slots compensated; other stand slots retain their existing specifications",
+    "Editor LASER_CUT layer visible by default"
+  ],
+  "previous_release_archive": {
+    "commit": "57456d7845aed43b1ff3b29e7c1785f4784401de",
+    "archive_commit": "0afad48363a722cc19cb2c24a4b75e501fec94ab",
+    "archive_path": "snapshots/before_pr_fit_zero_57456d7"
+  },
+  "minimum_sheet_count_proven": false,
+  "material_area_mm2": 240891.25710961455
+}
