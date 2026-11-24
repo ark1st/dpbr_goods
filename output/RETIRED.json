@@ -149,5 +149,13 @@
       "source_commit": "4ffb44caed73a4bf213c189e0cfc86ff9c8b7c74"
     },
     "reason": "Zero modes now share one plate and one base per applicant; old thin supports superseded."
+  },
+  "previous_ascent_print_delivery": {
+    "folder": "print_delivery/alternative_800x500",
+    "source_commit": "cf09a78ed23b22a69d682e6b2689a599f3145782",
+    "status": "superseded_reference",
+    "pieces": 30,
+    "replacement": "print_delivery/ascent_11_sets",
+    "reason": "The 11-set order uses 39 original art panels and 11 bases."
   }
 }

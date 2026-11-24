@@ -1,0 +1,1355 @@
+{
+  "canvas_mm": [
+    800,
+    500
+  ],
+  "stock": "5T",
+  "pieces": 50,
+  "closed_contours": 138,
+  "panels": 39,
+  "bases": 11,
+  "minimum_gap_mm": 9.249999599999908,
+  "minimum_margin_mm": 8.249909299999956,
+  "parts": [
+    {
+      "set_id": "cadena_01",
+      "character": "카데나",
+      "id": "cadena_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_11",
+      "source_bounds_mm": [
+        28.0000136,
+        20.0964908,
+        132.000007,
+        82.9034776
+      ],
+      "placed_bounds_mm": [
+        8.24990969999999,
+        14.829039599999987,
+        112.2499031,
+        77.63602639999999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "cadena_01",
+      "character": "카데나",
+      "id": "cadena_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_12",
+      "source_bounds_mm": [
+        148.0000102,
+        20.0964908,
+        252.0000144,
+        82.9034776
+      ],
+      "placed_bounds_mm": [
+        8.24990969999999,
+        86.88602639999999,
+        112.2499139,
+        149.6930132
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "cadena_01",
+      "character": "카데나",
+      "id": "cadena_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_13",
+      "source_bounds_mm": [
+        268.0000068,
+        20.0964908,
+        372.0000326,
+        82.9034776
+      ],
+      "placed_bounds_mm": [
+        8.24990969999999,
+        158.9430132,
+        112.24993549999999,
+        221.75
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "cadena_01",
+      "character": "카데나",
+      "id": "cadena_01_panel_4",
+      "role": "panel",
+      "layer_index": 4,
+      "source_id": "ascent_14",
+      "source_bounds_mm": [
+        388.0000034,
+        20.0964908,
+        492.0000292,
+        82.9034776
+      ],
+      "placed_bounds_mm": [
+        8.24990969999999,
+        231.0,
+        112.24993549999994,
+        293.8069868
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_01",
+      "character": "키네시스",
+      "id": "kinesis_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_15",
+      "source_bounds_mm": [
+        28.0000136,
+        90.0964924,
+        132.000007,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        8.24990969999999,
+        303.0569868,
+        112.2499031,
+        365.8639736
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_01",
+      "character": "키네시스",
+      "id": "kinesis_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_16",
+      "source_bounds_mm": [
+        148.0000102,
+        90.0964924,
+        252.0000144,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        8.24990969999999,
+        375.1139736,
+        112.2499139,
+        437.9209604
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "cadena_01",
+      "character": "카데나",
+      "id": "cadena_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        8.249909299999956,
+        447.1709606499999,
+        112.24993529999995,
+        485.1709606499999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "kinesis_01",
+      "character": "키네시스",
+      "id": "kinesis_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_17",
+      "source_bounds_mm": [
+        268.0000068,
+        90.0964924,
+        372.0000326,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        121.49993549999999,
+        14.829039600000044,
+        225.4999613,
+        77.63602640000003
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_01",
+      "character": "키네시스",
+      "id": "kinesis_01_panel_4",
+      "role": "panel",
+      "layer_index": 4,
+      "source_id": "ascent_18",
+      "source_bounds_mm": [
+        388.0000034,
+        90.0964924,
+        492.0000292,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        121.49993549999999,
+        86.88602640000003,
+        225.49996129999994,
+        149.69301320000002
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_02",
+      "character": "키네시스",
+      "id": "kinesis_02_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_15",
+      "source_bounds_mm": [
+        28.0000136,
+        90.0964924,
+        132.000007,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        121.49993549999999,
+        158.94301320000002,
+        225.4999289,
+        221.75
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_02",
+      "character": "키네시스",
+      "id": "kinesis_02_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_16",
+      "source_bounds_mm": [
+        148.0000102,
+        90.0964924,
+        252.0000144,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        121.49993549999999,
+        231.0,
+        225.4999397,
+        293.8069868
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_02",
+      "character": "키네시스",
+      "id": "kinesis_02_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_17",
+      "source_bounds_mm": [
+        268.0000068,
+        90.0964924,
+        372.0000326,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        121.49993549999999,
+        303.0569868,
+        225.4999613,
+        365.8639736
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_02",
+      "character": "키네시스",
+      "id": "kinesis_02_panel_4",
+      "role": "panel",
+      "layer_index": 4,
+      "source_id": "ascent_18",
+      "source_bounds_mm": [
+        388.0000034,
+        90.0964924,
+        492.0000292,
+        152.9034792
+      ],
+      "placed_bounds_mm": [
+        121.49993549999999,
+        375.1139736,
+        225.49996129999994,
+        437.9209604
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_01",
+      "character": "키네시스",
+      "id": "kinesis_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        121.49993509999996,
+        447.1709606499999,
+        225.49996109999995,
+        485.1709606499999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "lara_01",
+      "character": "라라",
+      "id": "lara_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_19",
+      "source_bounds_mm": [
+        28.0000136,
+        160.096494,
+        132.000007,
+        222.90347
+      ],
+      "placed_bounds_mm": [
+        234.7499613,
+        14.82905050000005,
+        338.7499547,
+        77.63602650000004
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "lara_01",
+      "character": "라라",
+      "id": "lara_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_10",
+      "source_bounds_mm": [
+        148.0000102,
+        160.096494,
+        252.0000144,
+        222.90347
+      ],
+      "placed_bounds_mm": [
+        234.7499613,
+        86.88602650000004,
+        338.74996550000003,
+        149.69300250000003
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "lara_01",
+      "character": "라라",
+      "id": "lara_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_06",
+      "source_bounds_mm": [
+        268.0000068,
+        160.096494,
+        372.0000326,
+        222.90347
+      ],
+      "placed_bounds_mm": [
+        234.7499613,
+        158.94300250000003,
+        338.7499871,
+        221.74997850000003
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "lara_01",
+      "character": "라라",
+      "id": "lara_01_panel_4",
+      "role": "panel",
+      "layer_index": 4,
+      "source_id": "ascent_07",
+      "source_bounds_mm": [
+        388.0000034,
+        160.096494,
+        492.0000292,
+        222.90347
+      ],
+      "placed_bounds_mm": [
+        234.7499613,
+        230.99997850000003,
+        338.74998709999994,
+        293.8069545
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kain_01",
+      "character": "카인",
+      "id": "kain_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_08",
+      "source_bounds_mm": [
+        28.0000136,
+        230.0964849,
+        132.000007,
+        292.9034824
+      ],
+      "placed_bounds_mm": [
+        234.7499613,
+        303.0569545,
+        338.7499547,
+        365.863952
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kain_01",
+      "character": "카인",
+      "id": "kain_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_25",
+      "source_bounds_mm": [
+        268.0000068,
+        230.0964849,
+        372.0000326,
+        292.9034824
+      ],
+      "placed_bounds_mm": [
+        234.7499613,
+        375.113952,
+        338.7499871,
+        437.92094949999995
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kinesis_02",
+      "character": "키네시스",
+      "id": "kinesis_02_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        234.74996089999996,
+        447.17094974999986,
+        338.74998689999995,
+        485.17094974999986
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "kain_01",
+      "character": "카인",
+      "id": "kain_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_26",
+      "source_bounds_mm": [
+        388.0000034,
+        230.0964849,
+        492.0000292,
+        292.9034824
+      ],
+      "placed_bounds_mm": [
+        347.9999871,
+        14.829061500000023,
+        452.00001289999994,
+        77.63605899999999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_01",
+      "character": "렌",
+      "id": "ren_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_09",
+      "source_bounds_mm": [
+        28.0000136,
+        300.0964973,
+        132.000007,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        347.9999871,
+        86.88605899999999,
+        451.9999805,
+        149.6930349
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_01",
+      "character": "렌",
+      "id": "ren_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_22",
+      "source_bounds_mm": [
+        148.0000102,
+        300.0964973,
+        252.0000144,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        347.9999871,
+        158.9430349,
+        451.99999130000003,
+        221.75001079999998
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_01",
+      "character": "렌",
+      "id": "ren_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_27",
+      "source_bounds_mm": [
+        268.0000068,
+        300.0964973,
+        372.0000326,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        347.9999871,
+        231.00001079999998,
+        452.0000129,
+        293.8069867
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_01",
+      "character": "렌",
+      "id": "ren_01_panel_4",
+      "role": "panel",
+      "layer_index": 4,
+      "source_id": "ascent_28",
+      "source_bounds_mm": [
+        388.0000034,
+        300.0964973,
+        492.0000292,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        347.9999871,
+        303.0569867,
+        452.00001289999994,
+        365.8639626
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_02",
+      "character": "렌",
+      "id": "ren_02_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_09",
+      "source_bounds_mm": [
+        28.0000136,
+        300.0964973,
+        132.000007,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        347.9999871,
+        375.1139626,
+        451.9999805,
+        437.9209385
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "lara_01",
+      "character": "라라",
+      "id": "lara_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        347.99998669999997,
+        447.1709387499999,
+        452.00001269999996,
+        485.1709387499999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "ren_02",
+      "character": "렌",
+      "id": "ren_02_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_22",
+      "source_bounds_mm": [
+        148.0000102,
+        300.0964973,
+        252.0000144,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        461.2500129,
+        14.829072150000002,
+        565.2500170999999,
+        77.63604805
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_02",
+      "character": "렌",
+      "id": "ren_02_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_27",
+      "source_bounds_mm": [
+        268.0000068,
+        300.0964973,
+        372.0000326,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        461.2500129,
+        86.88604804999997,
+        565.2500387,
+        149.69302394999997
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_02",
+      "character": "렌",
+      "id": "ren_02_panel_4",
+      "role": "panel",
+      "layer_index": 4,
+      "source_id": "ascent_28",
+      "source_bounds_mm": [
+        388.0000034,
+        300.0964973,
+        492.0000292,
+        362.9034732
+      ],
+      "placed_bounds_mm": [
+        461.2500129,
+        158.94302394999997,
+        565.2500387,
+        221.74999984999997
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_01",
+      "character": "제로",
+      "id": "zero_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_20",
+      "source_bounds_mm": [
+        28.0000136,
+        370.0964881,
+        132.000007,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        461.2500129,
+        230.99999984999997,
+        565.2500063,
+        293.80697584999996
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_01",
+      "character": "제로",
+      "id": "zero_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_23",
+      "source_bounds_mm": [
+        148.0000102,
+        370.0964881,
+        252.0000144,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        461.2500129,
+        303.05697584999996,
+        565.2500170999999,
+        365.86395185
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_01",
+      "character": "제로",
+      "id": "zero_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_29",
+      "source_bounds_mm": [
+        268.0000068,
+        370.0964881,
+        372.0000326,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        461.2500129,
+        375.11395185,
+        565.2500387,
+        437.92092785
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "kain_01",
+      "character": "카인",
+      "id": "kain_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        461.25001249999997,
+        447.1709280999999,
+        565.2500385,
+        485.1709280999999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "zero_02",
+      "character": "제로",
+      "id": "zero_02_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_20",
+      "source_bounds_mm": [
+        28.0000136,
+        370.0964881,
+        132.000007,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        574.5000387,
+        14.82907199999994,
+        678.5000321,
+        77.63604799999996
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_02",
+      "character": "제로",
+      "id": "zero_02_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_23",
+      "source_bounds_mm": [
+        148.0000102,
+        370.0964881,
+        252.0000144,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        574.5000387,
+        86.88604799999996,
+        678.5000428999999,
+        149.69302399999998
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_02",
+      "character": "제로",
+      "id": "zero_02_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_29",
+      "source_bounds_mm": [
+        268.0000068,
+        370.0964881,
+        372.0000326,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        574.5000387,
+        158.94302399999998,
+        678.5000645,
+        221.75
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_03",
+      "character": "제로",
+      "id": "zero_03_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_20",
+      "source_bounds_mm": [
+        28.0000136,
+        370.0964881,
+        132.000007,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        574.5000387,
+        231.0,
+        678.5000321,
+        293.806976
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_03",
+      "character": "제로",
+      "id": "zero_03_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_23",
+      "source_bounds_mm": [
+        148.0000102,
+        370.0964881,
+        252.0000144,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        574.5000387,
+        303.056976,
+        678.5000428999999,
+        365.86395200000004
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "zero_03",
+      "character": "제로",
+      "id": "zero_03_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_29",
+      "source_bounds_mm": [
+        268.0000068,
+        370.0964881,
+        372.0000326,
+        432.9034641
+      ],
+      "placed_bounds_mm": [
+        574.5000387,
+        375.11395200000004,
+        678.5000645,
+        437.92092800000006
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_01",
+      "character": "렌",
+      "id": "ren_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        574.5000382999999,
+        447.17092825,
+        678.5000643,
+        485.17092825
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "angelic_buster_01",
+      "character": "엔젤릭버스터",
+      "id": "angelic_buster_01_panel_1",
+      "role": "panel",
+      "layer_index": 1,
+      "source_id": "ascent_21",
+      "source_bounds_mm": [
+        28.0000136,
+        440.0964789,
+        132.000007,
+        502.903498
+      ],
+      "placed_bounds_mm": [
+        687.7500645,
+        28.414471350000042,
+        791.7500579,
+        91.22149045000003
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "angelic_buster_01",
+      "character": "엔젤릭버스터",
+      "id": "angelic_buster_01_panel_2",
+      "role": "panel",
+      "layer_index": 2,
+      "source_id": "ascent_24",
+      "source_bounds_mm": [
+        148.0000102,
+        440.0964789,
+        252.0000144,
+        502.903498
+      ],
+      "placed_bounds_mm": [
+        687.7500645,
+        100.47149044999998,
+        791.7500686999999,
+        163.27850954999997
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "angelic_buster_01",
+      "character": "엔젤릭버스터",
+      "id": "angelic_buster_01_panel_3",
+      "role": "panel",
+      "layer_index": 3,
+      "source_id": "ascent_30",
+      "source_bounds_mm": [
+        268.0000068,
+        440.0964789,
+        372.0000326,
+        502.903498
+      ],
+      "placed_bounds_mm": [
+        687.7500645,
+        172.52850955000002,
+        791.7500903,
+        235.33552865000001
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 1
+    },
+    {
+      "set_id": "ren_02",
+      "character": "렌",
+      "id": "ren_02_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        687.7500640999999,
+        244.5855288999999,
+        791.7500901,
+        282.5855288999999
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "zero_01",
+      "character": "제로",
+      "id": "zero_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        687.7500640999999,
+        291.83552889999993,
+        791.7500901,
+        329.83552889999993
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "zero_02",
+      "character": "제로",
+      "id": "zero_02_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        687.7500640999999,
+        339.08552889999993,
+        791.7500901,
+        377.08552889999993
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "zero_03",
+      "character": "제로",
+      "id": "zero_03_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        687.7500640999999,
+        386.33552889999993,
+        791.7500901,
+        424.33552889999993
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    },
+    {
+      "set_id": "angelic_buster_01",
+      "character": "엔젤릭버스터",
+      "id": "angelic_buster_01_base",
+      "role": "base",
+      "source_id": "ascent_01",
+      "source_bounds_mm": [
+        388.0000034,
+        367.49996575000006,
+        492.0000292,
+        405.49996575000006
+      ],
+      "placed_bounds_mm": [
+        687.7500640999999,
+        433.58552889999993,
+        791.7500901,
+        471.58552889999993
+      ],
+      "rotated_origin_mm": [
+        0,
+        0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 9
+    }
+  ],
+  "physical_fit_test": false
+}

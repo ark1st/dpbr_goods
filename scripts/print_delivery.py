@@ -19,8 +19,9 @@ AI = '02_CUT_WITH_BLUE.ai'
 SOURCES = {
     'page03': 'output/a3_release/11_ascent_remaining/3T/sheet_01',
     'alternative_page04': 'tmp/a3_options/alternative/page_04',
-    'alternative_800x500': 'output/large_format/ascent_5T_800x500',
+    'ascent_11_sets': 'tmp/ascent_11_sets',
 }
+REFERENCE_SOURCES = {'alternative_800x500': 'output/large_format/ascent_5T_800x500'}
 COLORS = {'LASER_CUT': (1, 0, 0), 'CORNER_REFERENCE': (0, 0, 1)}
 
 
@@ -111,7 +112,7 @@ def build_pair(key):
 
 
 def verify_delivery():
-    for key, relative in SOURCES.items():
+    for key, relative in (SOURCES | REFERENCE_SOURCES).items():
         directory = DELIVERY / key
         spec = json.loads((directory / 'registration.json').read_text())
         check_art_pair(directory, spec)
@@ -124,6 +125,8 @@ def verify_delivery():
             ) as guide:
                 for layer, doc in [('LASER_CUT', cut), ('CORNER_REFERENCE', guide)]:
                     assert vectors(doc[0], layer) == spec['source_vectors'][layer]
+    from verify_ascent_order import verify_order
+    verify_order(DELIVERY/'ascent_11_sets')
     return list(SOURCES)
 
 

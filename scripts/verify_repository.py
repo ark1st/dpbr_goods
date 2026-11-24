@@ -23,7 +23,7 @@ def output_inventory(out):
     delivery=manifest.get('print_delivery')
     if delivery:
         required.add('print_delivery/README.md')
-        for key in delivery['plates']:
+        for key in [*delivery['plates'],*delivery.get('reference_plates',[])]:
             if not key or Path(key).name!=key or key in ('.','..'):
                 raise ValueError('Invalid print delivery plate name')
             required.update(f'print_delivery/{key}/{name}' for name in

@@ -319,15 +319,20 @@
     "plates": [
       "page03",
       "alternative_page04",
-      "alternative_800x500"
+      "ascent_11_sets"
     ],
     "layout_files": [
       "a3_options/alternative/page_04/layout.json",
-      "a3_options/alternative/page_04/preview.png"
+      "a3_options/alternative/page_04/preview.png",
+      "print_delivery/ascent_11_sets/layout.json",
+      "print_delivery/ascent_11_sets/preview.png"
     ],
     "frozen_printed_pages": [
       1,
       2
+    ],
+    "reference_plates": [
+      "alternative_800x500"
     ]
   }
 }

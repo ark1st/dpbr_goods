@@ -2266,6 +2266,11 @@
       "print_delivery/alternative_page04/01_PRINT_300ppi.png",
       "print_delivery/alternative_page04/02_CUT_WITH_BLUE.ai",
       "print_delivery/alternative_page04/registration.json",
+      "print_delivery/ascent_11_sets/01_PRINT_300ppi.png",
+      "print_delivery/ascent_11_sets/02_CUT_WITH_BLUE.ai",
+      "print_delivery/ascent_11_sets/layout.json",
+      "print_delivery/ascent_11_sets/preview.png",
+      "print_delivery/ascent_11_sets/registration.json",
       "print_delivery/page03/01_PRINT_300ppi.png",
       "print_delivery/page03/02_CUT_WITH_BLUE.ai",
       "print_delivery/page03/registration.json",
@@ -8623,49 +8628,20 @@
     "plates": [
       "page03",
       "alternative_page04",
-      "alternative_800x500"
+      "ascent_11_sets"
     ],
     "layout_files": [
       "a3_options/alternative/page_04/layout.json",
-      "a3_options/alternative/page_04/preview.png"
+      "a3_options/alternative/page_04/preview.png",
+      "print_delivery/ascent_11_sets/layout.json",
+      "print_delivery/ascent_11_sets/preview.png"
     ],
     "frozen_printed_pages": [
       1,
       2
+    ],
+    "reference_plates": [
+      "alternative_800x500"
     ]
-  },
-  "delivery_refresh": {
-    "checked_pairs": {
-      "page03": {
-        "sha256": {
-          "02_CUT_WITH_BLUE.ai": "11a85b243aaf58f03a61a4fc82c485b8b027cb058edb40d1b188480549ede7dd",
-          "01_PRINT_300ppi.png": "a07019c4a48b9fd19dddb2a363e55ef22376657694e1fc02d131c17e08d67432"
-        },
-        "registration_sha256": "180164f33c8af8a54924586399936ad1f0ad2959a21ac6b99deeb70af9cb5c9e",
-        "pieces": 49,
-        "cut_paths": 129
-      },
-      "alternative_page04": {
-        "sha256": {
-          "02_CUT_WITH_BLUE.ai": "864db571ec90452eb05628d906219c4f7153aef6908bc10fa4ab2cf86ec180bd",
-          "01_PRINT_300ppi.png": "f19a6dc2134e9e34ad1626df8403564bbf9459a7cf3113884f9fd3989813062d"
-        },
-        "registration_sha256": "3ef12de75b0739faddafdc444433b3d394d294816f760e1a0ad624d20599ce1f",
-        "pieces": 36,
-        "cut_paths": 79
-      },
-      "alternative_800x500": {
-        "sha256": {
-          "02_CUT_WITH_BLUE.ai": "3533d9e50be3176506f5db7c27a73862338114d8087e7bfdce7f93faaee99249",
-          "01_PRINT_300ppi.png": "a252db532ab7369b30b20e0cb0a2ce26c47b13991ce33021cc6e5e5830048143"
-        },
-        "registration_sha256": "fa009a6e2b3495984c8aafd3acef6e0e611b1adf4e8907eced24db2e6baf83ab",
-        "pieces": 30,
-        "cut_paths": 70
-      }
-    },
-    "matching_artwork_or_spec_hashes": 2023,
-    "laser_audit_sha256": "af1ce0737676a36eeb17d725d93cfd02137e830a8eaf1e3159df508669aa1e2a",
-    "scope": "Updated delivery pairs were checked following the full release run. Previously checked A3 masters, individual assets, large-format sheet, recut, and rendered artwork were matched by their recorded hashes."
   }
 }
