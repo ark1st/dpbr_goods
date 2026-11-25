@@ -125,10 +125,8 @@ def verify_batch(folder):
     assert layout['closed_contours']==2*len(rows)
     counts=Counter(row['canonical_id'] for row in rows)
     assert set(counts)==set(templates)
-    assert layout['ratio']==plan['ratio']=={
-        'danba_mass_contour':4,'danba_garam_keyring':1,'danba_danpaengi_keyring':1}
-    assert counts==layout['counts']=={k:counts['danba_garam_keyring']*n for k,n in plan['ratio'].items()}
-    assert counts['danba_garam_keyring']>=layout['rectangular_baseline_sets']>=1
+    assert counts==layout['counts']==plan['order_counts']=={
+        'danba_mass_contour':70,'danba_garam_keyring':13,'danba_danpaengi_keyring':13}
     places,exteriors,expected = [],[],[]
     characters=[]
     for row,pose in zip(rows,plan['placements'],strict=True):
@@ -151,8 +149,8 @@ def verify_batch(folder):
         expected.append({'expected_paths':[q.exterior.coords for q in placed]})
     gap = min(a.distance(b) for a,b in combinations(exteriors,2))
     edge = min(min(x,y,420-r,297-b) for x,y,r,b in (q.bounds for q in exteriors))
-    assert gap>=2.998 and abs(gap-layout['minimum_gap_mm'])<.002,(gap,layout['minimum_gap_mm'])
-    assert edge>=7.998 and abs(edge-layout['minimum_margin_mm'])<.002,(edge,layout['minimum_margin_mm'])
+    assert gap>=4.0 and abs(gap-layout['minimum_gap_mm'])<.002,(gap,layout['minimum_gap_mm'])
+    assert edge>=8.0 and abs(edge-layout['minimum_margin_mm'])<.002,(edge,layout['minimum_margin_mm'])
     with extract_layers(folder/AI,['LASER_CUT']) as cutter:
         paths=[path for d in cutter[0].get_drawings() for path in contours(d)]
         verify_exported_paths({'parts':expected},paths)

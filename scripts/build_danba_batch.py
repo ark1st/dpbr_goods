@@ -21,7 +21,6 @@ MARGIN, GAP = 8., 4.
 
 
 LOGO='danba_mass_contour'
-GARAM='danba_garam_keyring'
 
 
 def sources():
@@ -43,21 +42,6 @@ def arrange(pieces, plan):
         placements.append(dict(piece=piece,x=row['x'],y=row['y'],rotation=row['rotation'],
                                rotated_origin=origin))
     return placements
-
-
-def rectangular_baseline(pieces, ratio):
-    """Number of complete sets found by a simple axis-aligned rectangle packer."""
-    from build_a3_release import GAP as rectangular_gap, pack_once
-    unit=[]
-    for key,qty in ratio.items():
-        p=pieces[key]
-        x,y,r,b=p['bounds']
-        pad=GAP-rectangular_gap
-        unit += [dict(p,bounds=(0,0,r-x+pad,b-y+pad))]*qty
-    count=1
-    while len(pack_once(unit*count,lambda p: p['bounds'][2]*p['bounds'][3],'short'))==1:
-        count+=1
-    return count-1
 
 
 def new_page():
@@ -92,9 +76,7 @@ def place_art(page,source,place):
 def build():
     pieces=sources()
     plan=json.loads((ROOT/'configs/danba_batch_placements.json').read_text())
-    ratio=plan['ratio']
     places=arrange(pieces,plan)
-    grid_units=rectangular_baseline(pieces,ratio)
     WORK.mkdir(parents=True,exist_ok=True);OUT.mkdir(parents=True,exist_ok=True)
     docs={'PRINT_ARTWORK':new_page(),'CORNER_REFERENCE':extract_layers(GUIDE,['CORNER_REFERENCE']),
           'LASER_CUT':new_page(),'WHITE_INK_MASK':new_page()}
@@ -124,11 +106,10 @@ def build():
         for path in p['piece']['paths']:draw_path(pg,transformed_cut_path(path,p),width=.23)
     pg.get_pixmap(dpi=110).save(OUT/'preview.png')
     counts={key:sum(r['canonical_id']==key for r in rows) for key in pieces}
-    assert counts=={key:counts[GARAM]*qty for key,qty in ratio.items()}
-    assert counts[GARAM]>=grid_units
+    assert counts==plan['order_counts']
     spec=dict(canvas_mm=[WIDTH,HEIGHT],stock='3T',pieces=len(rows),closed_contours=2*len(rows),
-              minimum_gap_mm=gap,minimum_margin_mm=border,counts=counts,ratio=ratio,
-              rectangular_baseline_sets=grid_units,physical_cut_test=False,parts=rows,
+              minimum_gap_mm=gap,minimum_margin_mm=border,counts=counts,
+              physical_cut_test=False,parts=rows,
               fit_method=plan['method'],
               white_ink_policy='Supplied white on logo; generate the character underbase from art alpha in RIP.',
               optimum_proven=False)

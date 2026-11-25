@@ -8699,12 +8699,12 @@
     },
     "danba_keyrings": {
       "sha256": {
-        "02_CUT_WITH_BLUE.ai": "44188ad8b62b9da451087aaf05af2c72d896187a88fb17f0d5c16f903316f925",
-        "01_PRINT_300ppi.png": "ed59df072c29593edb078e69df2550e888c3c02d8fd1cb58dccba5404a88ac0f",
-        "03_COMBINED_MASTER.ai": "5ca34d0046b8369ded482aa9c9aba4302d8cb4a667f846dc6b51ad60ede0d20d"
+        "02_CUT_WITH_BLUE.ai": "776a265bc0005ddb57d839f6f52a280b3f526bbe03b2d3249c8efeae84645c57",
+        "01_PRINT_300ppi.png": "327847711fc737f334bf8f183c58fae105ccc1c756383d4134264fec143cca69",
+        "03_COMBINED_MASTER.ai": "df42622ef1dd9022fa6c3a2a0adc4a79f3eadb740a5c3bb36bb7b120330a3d4a"
       },
-      "pieces": 78,
-      "cut_paths": 156
+      "pieces": 96,
+      "cut_paths": 192
     }
   }
 }

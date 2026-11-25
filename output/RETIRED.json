@@ -169,6 +169,12 @@
     "slot_mm": [20.2, 5.2],
     "status": "retired_short_mount"
   },
+  "previous_danba_52_logo_sheet": {
+    "source_commit": "fdbf4470a0bb174961ade45c65b94f228394dc9c",
+    "folder": "print_delivery/danba_keyrings",
+    "superseded_counts": {"logo": 52, "garam": 13, "danpaengi": 13},
+    "reason": "The logo-priority A3 order preserves the 26 characters and adds 18 logos."
+  },
   "previous_danba_keyring_mix": {
     "source_commit": "fdedb51cd15d09ef7f458a5e64dc2db88d4fd0d8",
     "folder": "print_delivery/danba_keyrings",
