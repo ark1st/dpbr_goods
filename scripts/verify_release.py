@@ -62,24 +62,48 @@ def verify_large_plate(out,plate):
             assert len(holes)==8 and all(outer.contains(p) for p in holes)
             for h in holes:
                 w=h.bounds[2]-h.bounds[0];height=h.bounds[3]-h.bounds[1]
-                assert abs(w-20.2)<.002 and abs(height-5.2)<.002,(ident,'incorrect 5T slot',w,height)
+                assert abs(w-19.8)<.002 and abs(height-4.85)<.002,(ident,'incorrect 5T slot',w,height)
                 assert h.boundary.distance(outer.boundary)>=2.998,(ident,'slot wall too narrow')
             assert all(a.distance(b)>=2.998 for i,a in enumerate(holes) for b in holes[:i]),(ident,'slot separation')
-            prior=[polygon_of(q) for q in source[ident]['paths'][:-1]]
+            prior=sorted((polygon_of(q) for q in source[ident]['paths'][:-1]),key=lambda h:h.centroid.y)
             assert sorted(round(h.centroid.x,3) for h in holes)==sorted(round(h.centroid.x,3) for h in prior),(ident,'slot column moved')
             for i in range(0,8,2):
                 a,b=sorted(holes[i:i+2],key=lambda h:h.centroid.x)
                 assert abs(abs(a.centroid.x-b.centroid.x)-40)<.003,(ident,'slot column pitch')
-                assert abs(abs(a.centroid.y-b.centroid.y)-.1946)<.003,(ident,'source paired stagger changed')
+                axis_y=(a.centroid.y+b.centroid.y)/2
+                mid_x=(a.centroid.x+b.centroid.x)/2
+                original_y=sum(p.centroid.y for p in prior[i:i+2])/2
+                assert abs(axis_y-original_y-(i/2-1.5)*2.5)<.002,(ident,'row centre moved')
+                assert abs(a.centroid.y-b.centroid.y)<.002,(ident,'paired slots are staggered')
+                # One common pose for both tabs. The opening expands by half
+                # the kerf on every side; the tab loses one kerf in width.
+                for hole,cx in ((a,mid_x-20),(b,mid_x+20)):
+                    tab=box(cx-9.9,axis_y-2.5,cx+9.9,axis_y+2.5)
+                    opening=hole.buffer(.1)
+                    assert opening.covers(tab) and opening.boundary.distance(tab)>=.024,(ident,'5T tab fit')
             slots+=8
         else:
             assert len(paths)==1
             original=polygon_of(source[ident]['paths'][0])
-            assert outer.boundary.hausdorff_distance(original.boundary)<.002,(ident,'panel shape changed')
-            b=outer.bounds; shoulder=b[3]-3
-            section=outer.intersection(LineString([(b[0]-1,shoulder+1),(b[2]+1,shoulder+1)]))
-            spans=list(section.geoms) if hasattr(section,'geoms') else [section]
-            assert len(spans)==2 and all(abs(q.length-20)<.002 for q in spans),(ident,'tab dimensions')
+            x0,y0,x1,old_tip=original.bounds
+            shoulder=old_tip-3
+            assert abs(outer.bounds[3]-shoulder-5.1)<.002,(ident,'tab engagement depth')
+            # Recover the released body and original 20 mm-wide tabs by
+            # clipping the extension off. Everything else must match.
+            original_region=box(x0-1,y0-1,x1+1,old_tip)
+            shortened=outer.intersection(original_region)
+            assert shortened.boundary.hausdorff_distance(original.boundary)<.002,(ident,'original panel changed')
+            probe=original.intersection(LineString([(x0-1,shoulder+1),(x1+1,shoulder+1)]))
+            spans=list(probe.geoms)
+            assert len(spans)==2
+            for span in spans:
+                left,_,right,_=span.bounds
+                assert abs(right-left-20)<.002,(ident,'tab width')
+            expected=original
+            for span in spans:
+                left,_,right,_=span.bounds
+                expected=expected.union(box(left,old_tip-.01,right,shoulder+5.1))
+            assert expected.boundary.hausdorff_distance(outer.boundary)<.002,(ident,'tab footprint changed')
     assert slots==40
     usable=box(7.998,7.998,792.002,492.002)
     assert all(usable.covers(p) for p in outer_shapes)
@@ -118,11 +142,11 @@ def verify_large_plate(out,plate):
             assert im.size==tuple(math.ceil(x*300/25.4) for x in plate['canvas_mm']) and im.mode=='RGBA'
             assert all(abs(x-300)<.1 for x in im.info['dpi'])
     return {'folder':plate['folder'],'canvas_mm':plate['canvas_mm'],'pieces':30,'bases':5,'panels':25,'slots':slots,
-            'minimum_gap_mm':min_gap,'format_deviation_mm':deviations,
+            'minimum_gap_mm':min_gap,'tab_depth_mm':5.1,'slot_size_mm':[19.8,4.85],'format_deviation_mm':deviations,
             'sha256':{name:artifact_sha256(folder/name) for name in plate['files']},
             'errors':[],'physical_cut_test':False,
             'limitations':['Nominal 5T slot width does not verify actual material thickness, laser kerf or physical fit.',
-                           'The original paired slot stagger and original 3mm tab depth are retained.']}
+                           'Both slots share a mounting axis. Predicted fit assumes 5.0 mm stock and a 0.20 mm kerf.']}
 
 def production_delivery_files(out, plates, laser):
     """Tie each press file to the completed laser audit and registered print pixels."""

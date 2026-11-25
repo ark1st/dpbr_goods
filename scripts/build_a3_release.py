@@ -96,11 +96,12 @@ def pieces_from(cut,art,white,slug,protected_drawings=(),smooth=False):
     assert sum(len(p['paths']) for p in result)==len(entries)
     return result
 
-def len_slot_fit(thickness):
+def len_slot_fit(thickness, tab_width_mm=None):
     """Drawn slot (length, width) after kerf and fit compensation (issue #1)."""
     fit=CONFIG['len_slot_fit'];t=fit['thickness'][thickness]
     width=t['part_thickness_mm']+t['thickness_clearance_mm']-t['kerf_mm']
-    length=fit['tab_width_mm']+t['side_clearance_mm']-2*t['kerf_mm']
+    tab_width=fit['tab_width_mm'] if tab_width_mm is None else tab_width_mm
+    length=tab_width+t['side_clearance_mm']-2*t['kerf_mm']
     return round(length,6),round(width,6)
 
 def compensate_len_slots(pieces,thickness):
@@ -244,7 +245,7 @@ def clip_art(doc,piece):
     result.update_stream(stream,('q\n'+'\n'.join(cmd)+' h W n\n').encode()+result.xref_stream(stream)+b'\nQ')
     return result
 
-def write_page(folder,placements):
+def write_page(folder,placements, *, native_ppi=600):
     folder.mkdir(parents=True,exist_ok=True)
     master=fitz.open();mp=master.new_page(width=SIZE[0]*MM,height=SIZE[1]*MM)
     names=['PRINT_ARTWORK','CORNER_REFERENCE','LASER_CUT','WHITE_INK_MASK']
@@ -316,9 +317,9 @@ def write_page(folder,placements):
             isolated=fitz.open();ip=isolated.new_page(width=mp.rect.width,height=mp.rect.height)
             clip=fitz.Rect((b[0]-pad)*MM,(b[1]-pad)*MM,(b[2]+pad)*MM,(b[3]+pad)*MM)
             ip.show_pdf_page(pdf_destination(place,pad),source,0,clip=clip,rotate=place['rotation'])
-            pix=ip.get_pixmap(dpi=600,clip=region,alpha=True)
+            pix=ip.get_pixmap(dpi=native_ppi,clip=region,alpha=True)
             if not any(pix.samples[3::4]):continue
-            rect=fitz.Rect(pix.x*72/600,pix.y*72/600,(pix.x+pix.width)*72/600,(pix.y+pix.height)*72/600)
+            rect=fitz.Rect(pix.x*72/native_ppi,pix.y*72/native_ppi,(pix.x+pix.width)*72/native_ppi,(pix.y+pix.height)*72/native_ppi)
             npag.insert_image(rect,stream=pix.tobytes('png'))
             ns[noc[name]].append(native.xref_stream(npag.get_contents()[-1]))
     npag.show_pdf_page(npag.rect,docs['LASER_CUT'],0)
@@ -368,7 +369,7 @@ def write_page(folder,placements):
         'minimum_page_margin_mm':MARGIN,'artwork_scale':1,'protected_regions_mm':protected_regions,
         'max_rigid_export_deviation_mm':max(deviations,default=0),'physical_cut_test':False,
         'white_ink_policy':'Provided white plates retained; absent source white is empty. RIP white required for other art.',
-        'native_artwork_ppi':600,'ai_format':'PDF-compatible layered vector-cut artwork; native editing state is separate .vectorcraft',
+        'native_artwork_ppi':native_ppi,'ai_format':'PDF-compatible layered vector-cut artwork; native editing state is separate .vectorcraft',
         'parts':report}
     (folder/'validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     (folder/'README.md').write_text(f'# A3 · {len(report)}조각\n\n![배치](preview.png)\n\n420×297mm / 실제 크기 100% / 자동 맞춤 해제.\n\n- `01_PRINT.pdf` 또는 `01_PRINT_300ppi.png`: 인쇄·파란 기준선.\n- `02_MASTER.ai`, `.pdf`, `.vectorcraft`: 레이어별 편집 원본.\n- `03_CUT_ONLY.pdf` 또는 `.svg`: 재단 전용, 빨강 0.001mm.\n- `04_WHITE_INK_MASK`: 원본 제공 백색만 보존. 없는 그림은 RIP에서 백색 설정.\n- `PREVIEW_NOT_FOR_CUT.pdf`, `preview.png`, `cut_detail.png`: 검토용, 재단 금지.\n\n외곽 {len(report)}개 / 전체 폐곡선 {count}개. 그림·홈·구멍 배율 1:1.\n파란 기준 사각형은 자르지 않습니다. 인쇄·재단 모두 같은 대지 원점을 사용합니다.\n실물 정합·끼움·절단은 아직 시험하지 않았습니다.\n',encoding='utf-8')

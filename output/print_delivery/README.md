@@ -9,7 +9,7 @@
 | 5 · 어센트 11세트 (그림판 39개 + 받침 11개) | 800×500 mm · 5T | [PNG](ascent_11_sets/01_PRINT_300ppi.png) | [AI](ascent_11_sets/02_CUT_WITH_BLUE.ai) | [합본 AI](ascent_11_sets/03_COMBINED_MASTER.ai) |
 | 별도 · 단풍바람 로고·가람이·단팽이 키링 양산 | A3 가로 420×297 mm · 3T | [PNG](danba_keyrings/01_PRINT_300ppi.png) | [AI](danba_keyrings/02_CUT_WITH_BLUE.ai) | [합본 AI](danba_keyrings/03_COMBINED_MASTER.ai) |
 
-5페이지 구성은 카데나 1, 키네시스 2, 라라 1, 카인 1, 렌 2, 제로 3, 엔젤릭버스터 1세트입니다. 각 세트에 5T 받침이 하나씩 들어갑니다.
+5페이지 구성은 카데나 1, 키네시스 2, 라라 1, 카인 1, 렌 2, 제로 3, 엔젤릭버스터 1세트입니다. 각 세트에 5T 받침이 하나씩 들어갑니다. 그림판 돌기는 폭 20.00mm, 어깨에서 끝까지 5.10mm입니다. 받침 홈의 칼선 치수는 19.80×4.85mm입니다. 판 두께 5.00mm와 절단폭 0.20mm를 기준으로 두께 방향 총 여유를 0.05mm로 잡았습니다. 이 파일은 커프 보정이 포함되어 있으므로 인쇄소에서는 칼선 중심을 따라 100%로 재단하세요.
 
 키링 양산판 한 장에는 로고 52개, 가람이 13개, 단팽이 13개(4:1:1)가 들어갑니다. 가람이와 단팽이의 백색 밑인쇄는 RIP에서 그림 알파 기준으로 설정하세요. [전체 배치](danba_keyrings/preview.png) · [로고 칼선 변경 전후](danba_keyrings/cut_detail.png)
 

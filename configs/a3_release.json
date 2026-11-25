@@ -1709,9 +1709,11 @@
       104,
       38
     ],
+    "tab_width_mm": 20.0,
+    "tab_depth_mm": 5.1,
     "slot_size_mm": [
-      20.2,
-      5.2
+      19.8,
+      4.85
     ],
     "base_slot_pitch_mm": 8.5,
     "physical_fit_test": false,

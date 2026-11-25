@@ -54,6 +54,7 @@
     "ascent_size_audit.py",
     "build_a3_options.py",
     "build_a3_release.py",
+    "build_ascent_5t.py",
     "build_ascent_order.py",
     "build_danba_batch.py",
     "build_fixed_page3.py",

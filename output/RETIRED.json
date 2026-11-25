@@ -158,6 +158,17 @@
     "replacement": "print_delivery/ascent_11_sets",
     "reason": "The 11-set order uses 39 original art panels and 11 bases."
   },
+  "previous_ascent_5t_mount": {
+    "source_commit": "4387390b3247a51dd35d741397e597f344055219",
+    "folders": [
+      "print_delivery/ascent_11_sets",
+      "print_delivery/alternative_800x500",
+      "large_format/ascent_5T_800x500"
+    ],
+    "tab_depth_mm": 3.0,
+    "slot_mm": [20.2, 5.2],
+    "status": "retired_short_mount"
+  },
   "previous_danba_keyring_mix": {
     "source_commit": "fdedb51cd15d09ef7f458a5e64dc2db88d4fd0d8",
     "folder": "print_delivery/danba_keyrings",
