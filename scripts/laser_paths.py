@@ -217,3 +217,28 @@ def audit_path(d, allow_original_numerics=False):
     return {'segments':len(p),'curves':sum(not isinstance(s,Line) for s in p),
             'perimeter_mm':perimeter,'minimum_segment_mm':float(min(lengths)),
             'original_numerical_notes':numeric_notes},poly
+
+
+def slot_path(center, angle_degrees, length, width, radius):
+    """Exact rounded-rectangle slot: four straights and four quarter arcs.
+
+    `length` runs along `angle_degrees`. Kerf-compensated mounting slots are
+    written directly from their dimensions instead of being refitted.
+    """
+    if not 0<radius<min(length,width)/2:
+        raise ValueError('Slot corner radius must be positive and below half the slot width')
+    a=math.radians(angle_degrees)
+    u=np.array([math.cos(a),math.sin(a)]); v=np.array([-u[1],u[0]]); c=np.asarray(center,float)
+    hx=length/2-radius; hy=width/2-radius; k=4/3*math.tan(math.pi/8)*radius
+    def world(q):return c+q[0]*u+q[1]*v
+    def xy(q):q=world(q);return f'{q[0]:.6f} {q[1]:.6f}'
+    d=[]
+    # Counter-clockwise quarter arcs; each starts where the previous straight ends.
+    for i,(cx,cy) in enumerate([(hx,hy),(-hx,hy),(-hx,-hy),(hx,-hy)]):
+        t=i*math.pi/2; e0=np.array([math.cos(t),math.sin(t)]); e1=np.array([-e0[1],e0[0]])
+        centre=np.array([cx,cy]); a0=centre+radius*e0; a1=centre+radius*e1
+        d.append(('M' if i==0 else 'L')+xy(a0))
+        d.append('C'+' '.join(xy(q) for q in [a0+k*e1,a1+k*e0,a1]))
+    text=' '.join(d+['Z'])
+    audit_path(text)
+    return text
