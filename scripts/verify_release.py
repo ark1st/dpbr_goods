@@ -124,6 +124,22 @@ def verify_large_plate(out,plate):
             'limitations':['Nominal 5T slot width does not verify actual material thickness, laser kerf or physical fit.',
                            'The original paired slot stagger and original 3mm tab depth are retained.']}
 
+def production_delivery_files(out, plates, laser):
+    """Tie each press file to the completed laser audit and registered print pixels."""
+    from print_delivery import AI, COMBINED_AI
+    delivery_files={}
+    records={r['file']:r for r in laser['records']}
+    for key in plates:
+        folder=out/'print_delivery'/key
+        registration=json.loads((folder/'registration.json').read_text())
+        hashes=registration['sha256']
+        assert all(artifact_sha256(folder/name)==sha for name,sha in hashes.items())
+        for name in (AI,COMBINED_AI):
+            assert records[f'print_delivery/{key}/{name}']['sha256']==hashes[name]
+        cut=records[f'print_delivery/{key}/{AI}']
+        delivery_files[key]={'sha256':hashes,'pieces':cut['outer_contours'],'cut_paths':cut['contours']}
+    return delivery_files
+
 def main():
     from verify_repository import main as repository_audit
     from verify_laser_paths import main as laser_audit
@@ -200,6 +216,7 @@ def main():
         assert manifest['print_delivery']==configured['print_delivery']
         report['print_delivery']=manifest['print_delivery']
         report['coverage']['physical_plates_to_print']=len(manifest['print_delivery']['plates'])
+        report['production_delivery_files']=production_delivery_files(out,manifest['print_delivery']['plates'],laser)
     (out/'RELEASE_VALIDATION.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(report['coverage']),flush=True)
     return report

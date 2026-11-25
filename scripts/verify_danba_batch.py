@@ -102,6 +102,7 @@ def verify_characters(folder, rows, templates):
 def verify_batch(folder):
     from print_delivery import AI, COMBINED_AI, vectors
     layout = json.loads((folder/'layout.json').read_text())
+    plan = json.loads((ROOT/'configs/danba_batch_placements.json').read_text())
     design = json.loads((ROOT/'configs/danba_mass_contour.json').read_text())
     asset = json.loads((SOURCE/'asset.json').read_text())
     for name in ('01_PRINT.pdf','04_WHITE_INK_MASK.pdf','03_CUT_ONLY.svg'):
@@ -124,18 +125,18 @@ def verify_batch(folder):
     assert layout['closed_contours']==2*len(rows)
     counts=Counter(row['canonical_id'] for row in rows)
     assert set(counts)==set(templates)
-    ratio=layout['ratio']['danba_mass_contour']
-    assert ratio in (2,4)
-    assert counts==layout['counts'] and layout['ratio']=={
-        'danba_mass_contour':ratio,'danba_garam_keyring':1,'danba_danpaengi_keyring':1}
-    assert counts['danba_mass_contour']==ratio*counts['danba_garam_keyring']==ratio*counts['danba_danpaengi_keyring']
+    assert layout['ratio']==plan['ratio']=={
+        'danba_mass_contour':4,'danba_garam_keyring':1,'danba_danpaengi_keyring':1}
+    assert counts==layout['counts']=={k:counts['danba_garam_keyring']*n for k,n in plan['ratio'].items()}
     assert counts['danba_garam_keyring']>=layout['rectangular_baseline_sets']>=1
     places,exteriors,expected = [],[],[]
     characters=[]
-    for row in rows:
-        assert row['scale']==1
+    for row,pose in zip(rows,plan['placements'],strict=True):
+        assert row['scale']==1 and row['path_count']==2
         bounds = row['placed_bounds_mm']
         name=row['canonical_id']
+        assert name==pose['source_id'] and row['rotation_degrees']==pose['rotation'],row['id']
+        assert abs(bounds[0]-pose['x'])<.002 and abs(bounds[1]-pose['y'])<.002,row['id']
         row_hole,row_outer=shapes[name]
         assert max(abs(a-b) for a,b in zip(row['source_bounds_mm'],row_outer.bounds,strict=True))<.002
         place={'piece':{'bounds':row_outer.bounds},'x':bounds[0],'y':bounds[1],

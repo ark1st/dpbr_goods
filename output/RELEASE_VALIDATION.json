@@ -8663,5 +8663,43 @@
     "reference_plates": [
       "alternative_800x500"
     ]
+  },
+  "production_delivery_files": {
+    "page03": {
+      "sha256": {
+        "02_CUT_WITH_BLUE.ai": "11a85b243aaf58f03a61a4fc82c485b8b027cb058edb40d1b188480549ede7dd",
+        "01_PRINT_300ppi.png": "a07019c4a48b9fd19dddb2a363e55ef22376657694e1fc02d131c17e08d67432",
+        "03_COMBINED_MASTER.ai": "a7aafbe9944ac682f220ff6337b75b82f4e53982f7098659fe7ec8656b20c650"
+      },
+      "pieces": 49,
+      "cut_paths": 129
+    },
+    "alternative_page04": {
+      "sha256": {
+        "02_CUT_WITH_BLUE.ai": "864db571ec90452eb05628d906219c4f7153aef6908bc10fa4ab2cf86ec180bd",
+        "01_PRINT_300ppi.png": "f19a6dc2134e9e34ad1626df8403564bbf9459a7cf3113884f9fd3989813062d",
+        "03_COMBINED_MASTER.ai": "b7c332fd260c39ee488edfdf08169d2ee56c0d96637ecc07354b86810ec27dd1"
+      },
+      "pieces": 36,
+      "cut_paths": 79
+    },
+    "ascent_11_sets": {
+      "sha256": {
+        "02_CUT_WITH_BLUE.ai": "9ab9895075e13c24815fa2a81fbc2f6ddb27623b239da661fe0721d7efd904b0",
+        "01_PRINT_300ppi.png": "a2a36c2cf96f5d78ac0b5de6c7f9d64f178dfa59147900973d7068840e0aac4b",
+        "03_COMBINED_MASTER.ai": "cfa267f37ab726749422df5a3bad52b2dd016f68777e11fcd8954c1df3a9fcba"
+      },
+      "pieces": 50,
+      "cut_paths": 138
+    },
+    "danba_keyrings": {
+      "sha256": {
+        "02_CUT_WITH_BLUE.ai": "44188ad8b62b9da451087aaf05af2c72d896187a88fb17f0d5c16f903316f925",
+        "01_PRINT_300ppi.png": "ed59df072c29593edb078e69df2550e888c3c02d8fd1cb58dccba5404a88ac0f",
+        "03_COMBINED_MASTER.ai": "5ca34d0046b8369ded482aa9c9aba4302d8cb4a667f846dc6b51ad60ede0d20d"
+      },
+      "pieces": 78,
+      "cut_paths": 156
+    }
   }
 }
