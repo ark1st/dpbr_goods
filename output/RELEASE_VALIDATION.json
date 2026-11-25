@@ -2274,6 +2274,13 @@
       "print_delivery/ascent_11_sets/layout.json",
       "print_delivery/ascent_11_sets/preview.png",
       "print_delivery/ascent_11_sets/registration.json",
+      "print_delivery/danba_keyrings/01_PRINT_300ppi.png",
+      "print_delivery/danba_keyrings/02_CUT_WITH_BLUE.ai",
+      "print_delivery/danba_keyrings/03_COMBINED_MASTER.ai",
+      "print_delivery/danba_keyrings/cut_detail.png",
+      "print_delivery/danba_keyrings/layout.json",
+      "print_delivery/danba_keyrings/preview.png",
+      "print_delivery/danba_keyrings/registration.json",
       "print_delivery/page03/01_PRINT_300ppi.png",
       "print_delivery/page03/02_CUT_WITH_BLUE.ai",
       "print_delivery/page03/03_COMBINED_MASTER.ai",
@@ -2440,7 +2447,7 @@
     ]
   },
   "laser_path_audit": {
-    "checked_files": 809,
+    "checked_files": 811,
     "errors": [],
     "protected_original_findings": []
   },
@@ -8611,7 +8618,7 @@
   "physical_cut_test": false,
   "coverage": {
     "current_pages_including_thickness_alternatives": 10,
-    "current_cut_formats": 809,
+    "current_cut_formats": 811,
     "packages": 0,
     "rendered_pdf_and_ai_pages": 66,
     "large_format_plates": 1,
@@ -8619,7 +8626,7 @@
     "recut_print_pages_added": 0,
     "archived_previous_cut_files": 126,
     "archive_cut_quality": "retired; not included in current pass count; exact backup bytes checked",
-    "physical_plates_to_print": 3
+    "physical_plates_to_print": 4
   },
   "limitations": [
     "Software checks do not validate physical kerf, material thickness or printer registration.",
@@ -8632,7 +8639,8 @@
     "plates": [
       "page03",
       "alternative_page04",
-      "ascent_11_sets"
+      "ascent_11_sets",
+      "danba_keyrings"
     ],
     "layout_files": [
       "a3_options/alternative/page_04/layout.json",
@@ -8642,7 +8650,11 @@
       "print_delivery/ascent_11_sets/03_COMBINED_MASTER.ai",
       "print_delivery/page03/03_COMBINED_MASTER.ai",
       "print_delivery/alternative_page04/03_COMBINED_MASTER.ai",
-      "print_delivery/alternative_800x500/03_COMBINED_MASTER.ai"
+      "print_delivery/alternative_800x500/03_COMBINED_MASTER.ai",
+      "print_delivery/danba_keyrings/layout.json",
+      "print_delivery/danba_keyrings/preview.png",
+      "print_delivery/danba_keyrings/cut_detail.png",
+      "print_delivery/danba_keyrings/03_COMBINED_MASTER.ai"
     ],
     "frozen_printed_pages": [
       1,
@@ -8651,43 +8663,5 @@
     "reference_plates": [
       "alternative_800x500"
     ]
-  },
-  "delivery_refresh": {
-    "checked_pairs": {
-      "page03": {
-        "sha256": {
-          "02_CUT_WITH_BLUE.ai": "11a85b243aaf58f03a61a4fc82c485b8b027cb058edb40d1b188480549ede7dd",
-          "01_PRINT_300ppi.png": "a07019c4a48b9fd19dddb2a363e55ef22376657694e1fc02d131c17e08d67432",
-          "03_COMBINED_MASTER.ai": "a7aafbe9944ac682f220ff6337b75b82f4e53982f7098659fe7ec8656b20c650"
-        },
-        "registration_sha256": "de8f4cadb99dac23d6258aa3e9a74a408a56fdad789bd509bcaa5115acad38ee",
-        "pieces": 49,
-        "cut_paths": 129
-      },
-      "alternative_page04": {
-        "sha256": {
-          "02_CUT_WITH_BLUE.ai": "864db571ec90452eb05628d906219c4f7153aef6908bc10fa4ab2cf86ec180bd",
-          "01_PRINT_300ppi.png": "f19a6dc2134e9e34ad1626df8403564bbf9459a7cf3113884f9fd3989813062d",
-          "03_COMBINED_MASTER.ai": "b7c332fd260c39ee488edfdf08169d2ee56c0d96637ecc07354b86810ec27dd1"
-        },
-        "registration_sha256": "d799d7782fe1250dad1e4666282db5affcb0dadee6335ae04c5e3bc69776a8db",
-        "pieces": 36,
-        "cut_paths": 79
-      },
-      "ascent_11_sets": {
-        "sha256": {
-          "02_CUT_WITH_BLUE.ai": "9ab9895075e13c24815fa2a81fbc2f6ddb27623b239da661fe0721d7efd904b0",
-          "01_PRINT_300ppi.png": "a2a36c2cf96f5d78ac0b5de6c7f9d64f178dfa59147900973d7068840e0aac4b",
-          "03_COMBINED_MASTER.ai": "cfa267f37ab726749422df5a3bad52b2dd016f68777e11fcd8954c1df3a9fcba"
-        },
-        "registration_sha256": "008c653a629824d50b348c1797c1f0a6d41eeb2867fbce7a087bc2ed842831a4",
-        "pieces": 50,
-        "cut_paths": 138
-      }
-    },
-    "matching_artwork_or_spec_hashes": 2027,
-    "laser_audit_sha256": "f5d3c7448f61156571b3ab3042aa0a2eee6121c3edbc609544ae0fabf32fe049",
-    "scope": "Updated delivery pairs were checked following the full release run. Previously checked A3 masters, individual assets, large-format sheet, recut, and rendered artwork were matched by their recorded hashes.",
-    "verified_reference_master": "print_delivery/alternative_800x500/03_COMBINED_MASTER.ai"
   }
 }

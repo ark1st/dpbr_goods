@@ -1880,7 +1880,8 @@
     "plates": [
       "page03",
       "alternative_page04",
-      "ascent_11_sets"
+      "ascent_11_sets",
+      "danba_keyrings"
     ],
     "layout_files": [
       "a3_options/alternative/page_04/layout.json",
@@ -1890,7 +1891,11 @@
       "print_delivery/ascent_11_sets/03_COMBINED_MASTER.ai",
       "print_delivery/page03/03_COMBINED_MASTER.ai",
       "print_delivery/alternative_page04/03_COMBINED_MASTER.ai",
-      "print_delivery/alternative_800x500/03_COMBINED_MASTER.ai"
+      "print_delivery/alternative_800x500/03_COMBINED_MASTER.ai",
+      "print_delivery/danba_keyrings/layout.json",
+      "print_delivery/danba_keyrings/preview.png",
+      "print_delivery/danba_keyrings/cut_detail.png",
+      "print_delivery/danba_keyrings/03_COMBINED_MASTER.ai"
     ],
     "frozen_printed_pages": [
       1,

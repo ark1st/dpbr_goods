@@ -21,6 +21,7 @@ SOURCES = {
     'page03': 'output/a3_release/11_ascent_remaining/3T/sheet_01',
     'alternative_page04': 'tmp/a3_options/alternative/page_04',
     'ascent_11_sets': 'tmp/ascent_11_sets',
+    'danba_keyrings': 'tmp/danba_keyrings',
 }
 REFERENCE_SOURCES = {'alternative_800x500': 'output/large_format/ascent_5T_800x500'}
 COLORS = {'LASER_CUT': (1, 0, 0), 'CORNER_REFERENCE': (0, 0, 1)}
@@ -130,6 +131,8 @@ def verify_delivery():
                     assert vectors(doc[0], layer) == spec['source_vectors'][layer]
     from verify_ascent_order import verify_order
     verify_order(DELIVERY/'ascent_11_sets')
+    from verify_danba_batch import verify_batch
+    verify_batch(DELIVERY/'danba_keyrings')
     return list(SOURCES)
 
 

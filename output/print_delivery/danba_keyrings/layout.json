@@ -1,0 +1,1500 @@
+{
+  "canvas_mm": [
+    420.0,
+    297.0
+  ],
+  "stock": "3T",
+  "pieces": 64,
+  "closed_contours": 128,
+  "minimum_gap_mm": 4.348373366784751,
+  "minimum_margin_mm": 7.999999999822265,
+  "counts": {
+    "danba_garam_keyring": 16,
+    "danba_danpaengi_keyring": 16,
+    "danba_mass_contour": 32
+  },
+  "ratio": {
+    "danba_mass_contour": 2,
+    "danba_garam_keyring": 1,
+    "danba_danpaengi_keyring": 1
+  },
+  "rectangular_baseline_sets": 13,
+  "physical_cut_test": false,
+  "parts": [
+    {
+      "id": "danba_danpaengi_keyring_001",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        8.0,
+        8.0,
+        47.99501302830005,
+        38.85014386795703
+      ],
+      "rotated_origin_mm": [
+        -30.295262163656812,
+        9.599984434843948
+      ],
+      "rotation_degrees": 300,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_002",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        47.99999999987793,
+        8.000000000001952,
+        87.995013028,
+        38.8501438675
+      ],
+      "rotated_origin_mm": [
+        -9.699750864708065,
+        -40.45012830252085
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_003",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        92.0,
+        8.0,
+        131.99501302830004,
+        38.85014386795703
+      ],
+      "rotated_origin_mm": [
+        -30.295262163656812,
+        9.599984434843948
+      ],
+      "rotation_degrees": 300,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_004",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        131.99999999987796,
+        8.000000000001952,
+        171.995013028,
+        38.8501438675
+      ],
+      "rotated_origin_mm": [
+        -9.699750864708065,
+        -40.45012830252085
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_005",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        176.0,
+        8.0,
+        215.99501302830004,
+        38.85014386795703
+      ],
+      "rotated_origin_mm": [
+        -30.295262163656812,
+        9.599984434843948
+      ],
+      "rotation_degrees": 300,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_006",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        215.99999999987796,
+        8.000000000001952,
+        255.995013028,
+        38.8501438675
+      ],
+      "rotated_origin_mm": [
+        -9.699750864708065,
+        -40.45012830252085
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_007",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        260.0,
+        8.0,
+        299.9950130283,
+        38.85014386795703
+      ],
+      "rotated_origin_mm": [
+        -30.295262163656812,
+        9.599984434843948
+      ],
+      "rotation_degrees": 300,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_008",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        299.9999999998779,
+        8.000000000001952,
+        339.995013028,
+        38.8501438675
+      ],
+      "rotated_origin_mm": [
+        -9.699750864708065,
+        -40.45012830252085
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_009",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        338.9999999999086,
+        8.99999999988202,
+        411.8592662903792,
+        60.98231812298315
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_010",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        67.00000000040039,
+        37.99999999998437,
+        104.709657465,
+        69.58899200974999
+      ],
+      "rotated_origin_mm": [
+        1.0812676795460699e-15,
+        -31.588992009765626
+      ],
+      "rotation_degrees": 90,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_011",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        133.99999999990865,
+        40.99999999988202,
+        206.85926629037917,
+        92.98231812298314
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_012",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        235.0000000004004,
+        37.99999999998437,
+        272.709657465,
+        69.58899200974999
+      ],
+      "rotated_origin_mm": [
+        1.0812676795460699e-15,
+        -31.588992009765626
+      ],
+      "rotation_degrees": 90,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_013",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        276.9999999998223,
+        43.00000000001685,
+        349.85926629032326,
+        94.98231812311798
+      ],
+      "rotated_origin_mm": [
+        -64.55418091923532,
+        11.85144728336511
+      ],
+      "rotation_degrees": 285,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_014",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        24.000000000171873,
+        40.0000000000625,
+        56.55685161339679,
+        60.68355116882031
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_015",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        8.00000000011328,
+        61.0000000000021,
+        77.58232240404688,
+        115.61417371317901
+      ],
+      "rotated_origin_mm": [
+        -16.466919277345347,
+        -72.60658879630512
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_016",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        210.99999999997019,
+        57.0,
+        248.230981781177,
+        90.00707560730274
+      ],
+      "rotated_origin_mm": [
+        -41.61904854662686,
+        -8.195182081862415
+      ],
+      "rotation_degrees": 255,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_017",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        98.00000000025001,
+        60.00000000040039,
+        129.58899201001563,
+        97.709657465
+      ],
+      "rotated_origin_mm": [
+        0.0,
+        0.0
+      ],
+      "rotation_degrees": 0,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_018",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        329.9999999999086,
+        65.99999999988202,
+        402.8592662903792,
+        117.98231812298314
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_019",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        231.99999999982228,
+        88.00000000001685,
+        304.85926629032326,
+        139.982318123118
+      ],
+      "rotated_origin_mm": [
+        -64.55418091923532,
+        11.85144728336511
+      ],
+      "rotation_degrees": 285,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_020",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        131.00000000006543,
+        87.99999999973998,
+        163.01793960354536,
+        108.66572984013673
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_021",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        165.00000000004036,
+        89.99999999990038,
+        227.2882849944116,
+        148.56542173642111
+      ],
+      "rotated_origin_mm": [
+        -23.944703063520645,
+        -78.88091898698507
+      ],
+      "rotation_degrees": 135,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_022",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        76.00000000006544,
+        96.99999999973998,
+        108.01793960354536,
+        117.66572984013673
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_023",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        310.0000000000655,
+        104.99999999973998,
+        342.0179396035453,
+        125.66572984013673
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_024",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        113.00000000006544,
+        106.99999999973998,
+        145.01793960354536,
+        127.66572984013673
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_025",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        8.000000000065429,
+        114.99999999973998,
+        40.01793960354536,
+        135.66572984013672
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_026",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        45.99999999987793,
+        116.00000000000196,
+        85.995013028,
+        146.85014386749998
+      ],
+      "rotated_origin_mm": [
+        -9.699750864708065,
+        -40.45012830252085
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_027",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        374.0000000004004,
+        116.99999999998438,
+        411.709657465,
+        148.58899200974997
+      ],
+      "rotated_origin_mm": [
+        1.0812676795460699e-15,
+        -31.588992009765626
+      ],
+      "rotation_degrees": 90,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_028",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        91.00000000006544,
+        123.99999999973998,
+        123.01793960354536,
+        144.66572984013672
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_029",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        332.00000000009373,
+        121.99999999977928,
+        371.63647488975,
+        153.2157681840124
+      ],
+      "rotated_origin_mm": [
+        -4.808239157200962,
+        -36.97106332763997
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_danpaengi_keyring_030",
+      "canonical_id": "danba_danpaengi_keyring",
+      "source_bounds_mm": [
+        1.9947046562500002,
+        1.9982975354003905,
+        33.583696666015626,
+        39.707955
+      ],
+      "placed_bounds_mm": [
+        283.9999999998779,
+        126.00000000000196,
+        323.995013028,
+        156.85014386749998
+      ],
+      "rotated_origin_mm": [
+        -9.699750864708065,
+        -40.45012830252085
+      ],
+      "rotation_degrees": 120,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_031",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        136.99999999999955,
+        120.99999999994884,
+        160.7516094324038,
+        150.96329483777106
+      ],
+      "rotated_origin_mm": [
+        -20.218965414438156,
+        2.0518742881555694
+      ],
+      "rotation_degrees": 300,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_032",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        7.99999999996991,
+        138.9999999998633,
+        40.017939603733154,
+        159.66572983984474
+      ],
+      "rotated_origin_mm": [
+        2.3190176858381015,
+        -6.756120171619202
+      ],
+      "rotation_degrees": 45,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_033",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        212.00000000017187,
+        138.0000000000625,
+        244.55685161339676,
+        158.68355116882032
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_034",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        77.0000000000122,
+        144.999999999875,
+        110.10468097136328,
+        166.13825628383555
+      ],
+      "rotated_origin_mm": [
+        -35.148198504320085,
+        -8.519841238576825
+      ],
+      "rotation_degrees": 240,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_035",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        249.00000000006543,
+        143.99999999974,
+        281.0179396035453,
+        164.66572984013672
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_036",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        115.00000000006544,
+        147.99999999974,
+        147.01793960354536,
+        168.66572984013672
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_037",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        40.00000000017187,
+        151.0000000000625,
+        72.55685161339679,
+        171.68355116882032
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_038",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        164.00000000017187,
+        151.0000000000625,
+        196.55685161339676,
+        171.68355116882032
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_039",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        303.9999999999086,
+        154.999999999882,
+        376.8592662903792,
+        206.98231812298314
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_040",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        179.99999999990865,
+        161.999999999882,
+        252.85926629037917,
+        213.98231812298314
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_041",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        45.99999999990868,
+        168.999999999882,
+        118.85926629037915,
+        220.98231812298314
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_042",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        376.9999999996032,
+        152.00000000017968,
+        409.55685161340625,
+        172.68355116879687
+      ],
+      "rotated_origin_mm": [
+        -33.81211076695864,
+        -2.822434588283754
+      ],
+      "rotation_degrees": 255,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_043",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        272.0000000001719,
+        160.0000000000625,
+        304.55685161339676,
+        180.68355116882032
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_044",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        121.99999999966974,
+        173.00000000004036,
+        180.5654217366565,
+        235.2882849944116
+      ],
+      "rotated_origin_mm": [
+        20.31549725013045,
+        -23.944703063520645
+      ],
+      "rotation_degrees": 45,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_045",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        246.99999999982228,
+        186.00000000001683,
+        319.85926629032326,
+        237.982318123118
+      ],
+      "rotated_origin_mm": [
+        -64.55418091923532,
+        11.85144728336511
+      ],
+      "rotation_degrees": 285,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_046",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        8.000000000065429,
+        163.99999999974,
+        40.01793960354536,
+        184.66572984013672
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_047",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        354.9999999995574,
+        187.00000000003757,
+        411.2721895940625,
+        257.282430537875
+      ],
+      "rotated_origin_mm": [
+        -12.207859890176284,
+        7.8973714611348065
+      ],
+      "rotation_degrees": 345,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_048",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        7.99999999996991,
+        187.9999999998633,
+        40.017939603733154,
+        208.66572983984474
+      ],
+      "rotated_origin_mm": [
+        2.3190176858381015,
+        -6.756120171619202
+      ],
+      "rotation_degrees": 45,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_049",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        7.999999999822265,
+        213.00000000001683,
+        80.85926629032323,
+        264.98231812311803
+      ],
+      "rotated_origin_mm": [
+        -64.55418091923532,
+        11.85144728336511
+      ],
+      "rotation_degrees": 285,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_050",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        315.9999999996032,
+        211.00000000017968,
+        348.55685161340625,
+        231.68355116879687
+      ],
+      "rotated_origin_mm": [
+        -33.81211076695864,
+        -2.822434588283754
+      ],
+      "rotation_degrees": 255,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_051",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        184.00000000006543,
+        213.99999999974,
+        216.01793960354536,
+        234.66572984013672
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_052",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        76.99999999982226,
+        226.00000000001683,
+        149.85926629032326,
+        277.98231812311803
+      ],
+      "rotated_origin_mm": [
+        -64.55418091923532,
+        11.85144728336511
+      ],
+      "rotation_degrees": 285,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_053",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        221.00000000022897,
+        218.99999999999955,
+        250.96329483766735,
+        242.7516094324038
+      ],
+      "rotated_origin_mm": [
+        -32.015169125665494,
+        -20.218965414438156
+      ],
+      "rotation_degrees": 210,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_garam_keyring_054",
+      "canonical_id": "danba_garam_keyring",
+      "source_bounds_mm": [
+        1.9911213125,
+        1.999965,
+        57.244464,
+        73.848465
+      ],
+      "placed_bounds_mm": [
+        275.9999999999086,
+        233.999999999882,
+        348.8592662903792,
+        285.9823181229831
+      ],
+      "rotated_origin_mm": [
+        -8.30508537129683,
+        -63.83376540640988
+      ],
+      "rotation_degrees": 105,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_055",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        158.00000000017187,
+        234.0000000000625,
+        190.55685161339676,
+        254.68355116882032
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_056",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        195.00000000006543,
+        237.99999999974,
+        227.01793960354536,
+        258.6657298401367
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_057",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        241.00000000017187,
+        241.0000000000625,
+        273.55685161339676,
+        261.6835511688203
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_058",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        140.99999999960323,
+        257.0000000001797,
+        173.55685161340625,
+        277.68355116879684
+      ],
+      "rotated_origin_mm": [
+        -33.81211076695864,
+        -2.822434588283754
+      ],
+      "rotation_degrees": 255,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_059",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        179.00000000006543,
+        257.99999999973994,
+        211.01793960354536,
+        278.6657298401367
+      ],
+      "rotated_origin_mm": [
+        -34.336957289403784,
+        -13.90960966834492
+      ],
+      "rotation_degrees": 225,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_060",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        353.0000000000122,
+        257.999999999875,
+        386.1046809713633,
+        279.1382562838355
+      ],
+      "rotated_origin_mm": [
+        -35.148198504320085,
+        -8.519841238576825
+      ],
+      "rotation_degrees": 240,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_061",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        216.00000000001222,
+        260.999999999875,
+        249.10468097136328,
+        282.1382562838355
+      ],
+      "rotated_origin_mm": [
+        -35.148198504320085,
+        -8.519841238576825
+      ],
+      "rotation_degrees": 240,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_062",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        45.00000000017187,
+        265.0000000000625,
+        77.55685161339679,
+        285.6835511688203
+      ],
+      "rotated_origin_mm": [
+        1.2552591534617568,
+        -17.861116580611636
+      ],
+      "rotation_degrees": 75,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_063",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        7.9999999999488445,
+        265.00000000000273,
+        37.96329483777106,
+        288.7516094328299
+      ],
+      "rotated_origin_mm": [
+        2.051874288155569,
+        -3.5326440181624124
+      ],
+      "rotation_degrees": 30,
+      "scale": 1,
+      "path_count": 2
+    },
+    {
+      "id": "danba_mass_contour_064",
+      "canonical_id": "danba_mass_contour",
+      "source_bounds_mm": [
+        1.9712153199768065,
+        1.971563,
+        25.677168,
+        32.392515
+      ],
+      "placed_bounds_mm": [
+        390.99999999973994,
+        253.9999999999699,
+        411.6657298401367,
+        286.01793960373317
+      ],
+      "rotated_origin_mm": [
+        -13.90960966834492,
+        2.3190176858381015
+      ],
+      "rotation_degrees": 315,
+      "scale": 1,
+      "path_count": 2
+    }
+  ],
+  "fit_method": "NFP occupancy raster using actual source contours; randomized oriented bottom-left/corner packing with independently verified Shapely clearance",
+  "white_ink_policy": "Supplied white on logo; generate the character underbase from art alpha in RIP.",
+  "optimum_proven": false
+}

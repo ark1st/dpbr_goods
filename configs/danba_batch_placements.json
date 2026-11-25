@@ -1,0 +1,397 @@
+{
+  "method": "NFP occupancy raster using actual source contours; randomized oriented bottom-left/corner packing with independently verified Shapely clearance",
+  "seed": 139,
+  "grid_mm": 1,
+  "rotation_step_deg": 15,
+  "ratio": {
+    "danba_mass_contour": 2,
+    "danba_garam_keyring": 1,
+    "danba_danpaengi_keyring": 1
+  },
+  "placements": [
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 8.0,
+      "y": 8.0,
+      "rotation": 300
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 48.0,
+      "y": 8.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 92.0,
+      "y": 8.0,
+      "rotation": 300
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 132.0,
+      "y": 8.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 176.0,
+      "y": 8.0,
+      "rotation": 300
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 216.0,
+      "y": 8.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 260.0,
+      "y": 8.0,
+      "rotation": 300
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 300.0,
+      "y": 8.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 339.0,
+      "y": 9.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 67.0,
+      "y": 38.0,
+      "rotation": 90
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 134.0,
+      "y": 41.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 235.0,
+      "y": 38.0,
+      "rotation": 90
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 277.0,
+      "y": 43.0,
+      "rotation": 285
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 24.0,
+      "y": 40.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 8.0,
+      "y": 61.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 211.0,
+      "y": 57.0,
+      "rotation": 255
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 98.0,
+      "y": 60.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 330.0,
+      "y": 66.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 232.0,
+      "y": 88.0,
+      "rotation": 285
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 131.0,
+      "y": 88.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 165.0,
+      "y": 90.0,
+      "rotation": 135
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 76.0,
+      "y": 97.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 310.0,
+      "y": 105.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 113.0,
+      "y": 107.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 8.0,
+      "y": 115.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 46.0,
+      "y": 116.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 374.0,
+      "y": 117.0,
+      "rotation": 90
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 91.0,
+      "y": 124.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 332.0,
+      "y": 122.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_danpaengi_keyring",
+      "x": 284.0,
+      "y": 126.0,
+      "rotation": 120
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 137.0,
+      "y": 121.0,
+      "rotation": 300
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 8.0,
+      "y": 139.0,
+      "rotation": 45
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 212.0,
+      "y": 138.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 77.0,
+      "y": 145.0,
+      "rotation": 240
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 249.0,
+      "y": 144.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 115.0,
+      "y": 148.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 40.0,
+      "y": 151.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 164.0,
+      "y": 151.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 304.0,
+      "y": 155.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 180.0,
+      "y": 162.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 46.0,
+      "y": 169.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 377.0,
+      "y": 152.0,
+      "rotation": 255
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 272.0,
+      "y": 160.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 122.0,
+      "y": 173.0,
+      "rotation": 45
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 247.0,
+      "y": 186.0,
+      "rotation": 285
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 8.0,
+      "y": 164.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 355.0,
+      "y": 187.0,
+      "rotation": 345
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 8.0,
+      "y": 188.0,
+      "rotation": 45
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 8.0,
+      "y": 213.0,
+      "rotation": 285
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 316.0,
+      "y": 211.0,
+      "rotation": 255
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 184.0,
+      "y": 214.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 77.0,
+      "y": 226.0,
+      "rotation": 285
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 221.0,
+      "y": 219.0,
+      "rotation": 210
+    },
+    {
+      "source_id": "danba_garam_keyring",
+      "x": 276.0,
+      "y": 234.0,
+      "rotation": 105
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 158.0,
+      "y": 234.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 195.0,
+      "y": 238.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 241.0,
+      "y": 241.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 141.0,
+      "y": 257.0,
+      "rotation": 255
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 179.0,
+      "y": 258.0,
+      "rotation": 225
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 353.0,
+      "y": 258.0,
+      "rotation": 240
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 216.0,
+      "y": 261.0,
+      "rotation": 240
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 45.0,
+      "y": 265.0,
+      "rotation": 75
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 8.0,
+      "y": 265.0,
+      "rotation": 30
+    },
+    {
+      "source_id": "danba_mass_contour",
+      "x": 391.0,
+      "y": 254.0,
+      "rotation": 315
+    }
+  ]
+}
