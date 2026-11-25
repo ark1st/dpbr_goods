@@ -169,6 +169,12 @@
     "slot_mm": [20.2, 5.2],
     "status": "retired_short_mount"
   },
+  "previous_danba_without_small_tuiing": {
+    "source_commit": "53d5977202cfb1962dcb0e3c80f821abe99b2819",
+    "folder": "print_delivery/danba_keyrings",
+    "superseded_counts": {"logo": 70, "garam": 13, "danpaengi": 13},
+    "reason": "The new order includes four complete sets of the smaller supplied Tuiing chain."
+  },
   "previous_danba_52_logo_sheet": {
     "source_commit": "fdbf4470a0bb174961ade45c65b94f228394dc9c",
     "folder": "print_delivery/danba_keyrings",

@@ -1,6 +1,7 @@
 """Check keyring contours, hole strength and artwork registration on the mixed A3 sheet."""
-from collections import Counter
+from collections import Counter, defaultdict
 from itertools import combinations
+from functools import lru_cache
 import json
 from xml.etree import ElementTree
 import numpy as np
@@ -14,6 +15,8 @@ from fixed_page3_checks import verify_exported_paths
 from verify_laser_paths import contours
 
 SOURCE = ROOT/'output/individual_assets/danba_logo_smooth'
+SMALL_CHAIN = tuple(f'supplied_saetui_{i:02}' for i in range(1,5))
+BITMAP_SOURCES = {'danba_mass_contour':SOURCE, **{name:SOURCE.parent/name for name in SMALL_CHAIN}}
 
 
 def basis_points(image):
@@ -22,37 +25,50 @@ def basis_points(image):
                        for x,y in ((0,0),(1,0),(0,1))])
 
 
-def signature(doc, image):
-    mask, = {row[1] for row in doc[0].get_images() if row[0]==image['xref']}
-    assert mask>0
-    return image['width'], image['height'], image['digest'], fitz.Pixmap(doc,mask).digest
+def image_instances(page):
+    # Image-info xrefs are deduplicated by RGB alone. The all-white originals
+    # include different soft masks, so read each painted instance with its mask.
+    blocks=page.get_text('dict',flags=fitz.TEXT_PRESERVE_IMAGES,clip=fitz.INFINITE_RECT())['blocks']
+    return [block for block in blocks if block['type']==1]
 
 
-def verify_layer(master, layer, original, places, outer, hole):
-    with fitz.open(original) as src, extract_layers(master,[layer]) as actual:
-        source_image, = src[0].get_image_info(xrefs=True)
-        source_sig = signature(src,source_image)
+@lru_cache(maxsize=16)
+def signature(pixels, mask):
+    assert mask, 'Missing source alpha mask'
+    image=fitz.Pixmap(pixels)
+    return image.width, image.height, image.digest, fitz.Pixmap(mask).digest
+
+
+def verify_layer(master, layer, source_name, places, shapes):
+    """Match each placed bitmap and alpha mask to its own source and rigid transform."""
+    with extract_layers(master,[layer]) as actual:
         assert not actual[0].get_text().strip()
         if layer=='WHITE_INK_MASK':
             assert not actual[0].get_drawings(), 'Unexpected vector white ink'
-        rendered = src[0].get_pixmap(dpi=600,alpha=True)
-        alpha = np.frombuffer(rendered.samples,np.uint8).reshape(rendered.height,rendered.width,-1)[:,:,-1]
-        allowed = Image.new('L',(rendered.width,rendered.height))
-        draw = ImageDraw.Draw(allowed)
-        for shape,color in [(outer,255),(hole,0)]:
-            draw.polygon([(x*600/25.4,y*600/25.4) for x,y in shape.exterior.coords],fill=color)
-        assert np.any(alpha) and not np.any(alpha[np.asarray(allowed)==0]), (layer,'Source ink touches cut')
-        images = actual[0].get_image_info(xrefs=True)
-        assert len(images)==len(places)
-        by_xref = {im['xref']:im for im in images}
-        assert all(signature(actual,im)==source_sig for im in by_xref.values()),(layer,'Image pixels or alpha changed')
-        remaining = [np.asarray([point.coords[0] for point in basis_points(im).geoms]) for im in images]
-        basis = basis_points(source_image)
-        for place in places:
-            expected = np.asarray([p.coords[0] for p in shifted_poly(basis,place).geoms])
-            delta,idx = min((float(np.abs(expected-points).max()),i) for i,points in enumerate(remaining))
-            assert delta<.003,(layer,'Image moved relative to cut',delta)
-            remaining.pop(idx)
+        remaining=defaultdict(list)
+        for im in image_instances(actual[0]):
+            corners=np.array([p.coords[0] for p in basis_points(im).geoms])
+            remaining[signature(im['image'],im['mask'])].append(corners)
+        for ident,folder in BITMAP_SOURCES.items():
+            with fitz.open(folder/source_name) as src:
+                source_image, = image_instances(src[0])
+                copies=remaining[signature(source_image['image'],source_image['mask'])]
+                basis=basis_points(source_image)
+                rendered = src[0].get_pixmap(dpi=600,alpha=True)
+                alpha = np.frombuffer(rendered.samples,np.uint8).reshape(rendered.height,rendered.width,-1)[:,:,-1]
+                allowed = Image.new('L',(rendered.width,rendered.height))
+                draw = ImageDraw.Draw(allowed)
+                *holes,outer=shapes[ident]
+                for shape,color in [(outer,255)]+[(hole,0) for hole in holes]:
+                    draw.polygon([(x*600/25.4,y*600/25.4) for x,y in shape.exterior.coords],fill=color)
+                assert np.any(alpha) and not np.any(alpha[np.asarray(allowed)==0]), (ident,layer,'Source ink touches cut')
+                for place in places[ident]:
+                    expected = np.array([p.coords[0] for p in shifted_poly(basis,place).geoms])
+                    assert copies,(ident,layer,'Missing source pixels or alpha')
+                    delta,idx = min((float(np.abs(expected-points).max()),i) for i,points in enumerate(copies))
+                    assert delta<.003,(ident,layer,'Image moved relative to cut',delta)
+                    copies.pop(idx)
+        assert not any(remaining.values()), (layer,'Unexpected bitmap')
 
 
 def canonical_view(image, row, outer):
@@ -114,38 +130,56 @@ def verify_batch(folder):
     templates['danba_mass_contour'] = design['paths']
     hole_path, outer_path = design['paths']
     assert hole_path==old[0] and outer_path!=old[-1]
+    for ident in SMALL_CHAIN:
+        source_folder=BITMAP_SOURCES[ident]
+        asset=json.loads((source_folder/'asset.json').read_text())
+        assert asset['source']=='supplied_saetui' and asset['closed_contours']==3
+        for name in ('01_PRINT.pdf','04_WHITE_INK_MASK.pdf','03_CUT_ONLY.svg'):
+            assert artifact_sha256(source_folder/name)==asset['files'][name],(ident,name)
+        templates[ident]=[p.get('d') for p in ElementTree.parse(source_folder/'03_CUT_ONLY.svg').iter()
+                          if p.tag.endswith('}path')]
     shapes = {name:tuple(map(polygon_of,paths)) for name,paths in templates.items()}
-    for name,(hole,outer) in shapes.items():
-        assert outer.contains(hole) and outer.boundary.distance(hole.boundary)>=2.999, name
-        assert max(abs(a-b-4) for a,b in zip(hole.bounds[2:],hole.bounds[:2]))<.015, name
-        assert hole.centroid.y<outer.centroid.y, name
+    for name,paths in shapes.items():
+        *holes,outer=paths
+        if name in SMALL_CHAIN:
+            assert len(holes)==2 and holes[0].centroid.y<outer.centroid.y<holes[1].centroid.y,name
+            x,y,r,b=outer.bounds
+            assert abs(r-x-28.669)<.005 and abs(b-y-43.379)<.005,name
+            diameter,wall=2.5,2.29
+        else:
+            assert len(holes)==1 and holes[0].centroid.y<outer.centroid.y,name
+            diameter,wall=4,2.999
+        for hole in holes:
+            assert outer.contains(hole) and outer.boundary.distance(hole.boundary)>=wall,name
+            assert max(abs(a-b-diameter) for a,b in zip(hole.bounds[2:],hole.bounds[:2]))<.015,name
     rows = layout['parts']
     assert layout['canvas_mm']==[420,297] and layout['stock']=='3T'
     assert len(rows)==len({r['id'] for r in rows})==layout['pieces'] and rows
-    assert layout['closed_contours']==2*len(rows)
+    assert layout['closed_contours']==sum(row['path_count'] for row in rows)
     counts=Counter(row['canonical_id'] for row in rows)
     assert set(counts)==set(templates)
     assert counts==layout['counts']==plan['order_counts']=={
-        'danba_mass_contour':70,'danba_garam_keyring':13,'danba_danpaengi_keyring':13}
-    places,exteriors,expected = [],[],[]
+        'danba_mass_contour':59, 'danba_garam_keyring':11, 'danba_danpaengi_keyring':11,
+        **dict.fromkeys(SMALL_CHAIN,4)}
+    places,exteriors,expected = defaultdict(list),[],[]
     characters=[]
     for row,pose in zip(rows,plan['placements'],strict=True):
-        assert row['scale']==1 and row['path_count']==2
         bounds = row['placed_bounds_mm']
         name=row['canonical_id']
         assert name==pose['source_id'] and row['rotation_degrees']==pose['rotation'],row['id']
         assert abs(bounds[0]-pose['x'])<.002 and abs(bounds[1]-pose['y'])<.002,row['id']
-        row_hole,row_outer=shapes[name]
+        assert row['scale']==1 and row['path_count']==len(shapes[name]),row['id']
+        row_outer=shapes[name][-1]
         assert max(abs(a-b) for a,b in zip(row['source_bounds_mm'],row_outer.bounds,strict=True))<.002
         place={'piece':{'bounds':row_outer.bounds},'x':bounds[0],'y':bounds[1],
                'rotated_origin':row['rotated_origin_mm'],'rotation':row['rotation_degrees']}
-        placed=[shifted_poly(q,place) for q in (row_hole,row_outer)]
-        assert max(abs(a-b) for a,b in zip(placed[1].bounds,bounds,strict=True))<.002
-        if name=='danba_mass_contour':
-            places.append(place)
+        placed=[shifted_poly(q,place) for q in shapes[name]]
+        assert max(abs(a-b) for a,b in zip(placed[-1].bounds,bounds,strict=True))<.002
+        if name in BITMAP_SOURCES:
+            places[name].append(place)
         else:
             characters.append(row)
-        exteriors.append(placed[1])
+        exteriors.append(placed[-1])
         expected.append({'expected_paths':[q.exterior.coords for q in placed]})
     gap = min(a.distance(b) for a,b in combinations(exteriors,2))
     edge = min(min(x,y,420-r,297-b) for x,y,r,b in (q.bounds for q in exteriors))
@@ -158,9 +192,8 @@ def verify_batch(folder):
     prior = ROOT/'output/a3_release/19_personal_fill/3T/sheet_01/02_MASTER.pdf'
     with extract_layers(prior,[guide]) as source, extract_layers(folder/AI,[guide]) as actual:
         assert vectors(source[0],guide)==vectors(actual[0],guide), 'Blue A3 registration moved'
-    hole,outer = shapes['danba_mass_contour']
     for layer,name in [('PRINT_ARTWORK','01_PRINT.pdf'),('WHITE_INK_MASK','04_WHITE_INK_MASK.pdf')]:
-        verify_layer(folder/COMBINED_AI,layer,SOURCE/name,places,outer,hole)
+        verify_layer(folder/COMBINED_AI,layer,name,places,shapes)
     verify_characters(folder,characters,templates)
     print(f'Danba A3: {dict(counts)}, {len(paths)} cut loops, '
           f'minimum gap {gap:.3f} mm, edge {edge:.3f} mm',flush=True)

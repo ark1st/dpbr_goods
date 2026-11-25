@@ -4,7 +4,7 @@ import json
 import math
 
 import pymupdf as fitz
-from danba_character_keyrings import garam_danpaengi_pieces
+from danba_character_keyrings import garam_danpaengi_pieces, supplied_saetui_pieces
 
 from build_a3_release import ROOT, MM, draw_path, extract_layers, polygon_of, transformed_cut_path
 from nest_contours import rotated
@@ -24,7 +24,7 @@ LOGO='danba_mass_contour'
 
 
 def sources():
-    pieces=garam_danpaengi_pieces().copy()
+    pieces={**garam_danpaengi_pieces(), **supplied_saetui_pieces()}
     config=json.loads((ROOT/'configs/danba_mass_contour.json').read_text())
     hole,outer=map(polygon_of,config['paths'])
     assert outer.contains(hole) and outer.boundary.distance(hole.boundary)>=2.998
@@ -92,7 +92,7 @@ def build():
         rows.append(dict(id=f'{piece["id"]}_{index:03}',canonical_id=piece['id'],
                          source_bounds_mm=list(piece['bounds']),placed_bounds_mm=list(shape.bounds),
                          rotated_origin_mm=list(p['rotated_origin']),rotation_degrees=p['rotation'],
-                         scale=1,path_count=2))
+                         scale=1,path_count=len(cut_paths)))
     gap=min(p.distance(q) for p,q in itertools.combinations(shapes,2))
     border=min(min(x,y,WIDTH-r,HEIGHT-b) for x,y,r,b in (shape.bounds for shape in shapes))
     assert gap>=GAP and border>=MARGIN-.0001
@@ -107,11 +107,11 @@ def build():
     pg.get_pixmap(dpi=110).save(OUT/'preview.png')
     counts={key:sum(r['canonical_id']==key for r in rows) for key in pieces}
     assert counts==plan['order_counts']
-    spec=dict(canvas_mm=[WIDTH,HEIGHT],stock='3T',pieces=len(rows),closed_contours=2*len(rows),
+    spec=dict(canvas_mm=[WIDTH,HEIGHT],stock='3T',pieces=len(rows),closed_contours=sum(r['path_count'] for r in rows),
               minimum_gap_mm=gap,minimum_margin_mm=border,counts=counts,
               physical_cut_test=False,parts=rows,
               fit_method=plan['method'],
-              white_ink_policy='Supplied white on logo; generate the character underbase from art alpha in RIP.',
+              white_ink_policy='White masks included for the logo and four supplied Tuiing links. Generate the Garam and Danpaengi underbase from artwork alpha in RIP.',
               optimum_proven=False)
     (OUT/'layout.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2)+'\n')
     build_pair(KEY)

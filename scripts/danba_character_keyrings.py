@@ -1,4 +1,4 @@
-"""Original 4 mm keyrings with the current Garam and Danpaengi vector masters."""
+"""Load artwork and cut paths for the characters on the Danba keyring sheet."""
 from functools import lru_cache
 import json
 from xml.etree import ElementTree
@@ -29,4 +29,21 @@ def garam_danpaengi_pieces():
         ident = f'danba_{name}_keyring'
         result[ident] = dict(id=ident, paths=paths, poly=outer, bounds=outer.bounds,
                              source_bounds_mm=list(outer.bounds), art=art)
+    return result
+
+
+@lru_cache(None)
+def supplied_saetui_pieces():
+    """Use the four small supplied chain links at their registered size."""
+    result = {}
+    for index in range(1, 5):
+        ident = f'supplied_saetui_{index:02}'
+        folder = ROOT/'output/individual_assets'/ident
+        svg = ElementTree.parse(folder/'03_CUT_ONLY.svg')
+        paths = [p.attrib['d'] for p in svg.findall('.//{http://www.w3.org/2000/svg}path')]
+        top, bottom, outer = map(polygon_of, paths)
+        assert outer.contains(top) and outer.contains(bottom) and top.centroid.y < bottom.centroid.y
+        result[ident] = dict(id=ident, paths=paths, poly=outer, bounds=outer.bounds,
+                             art=fitz.open(folder/'01_PRINT.pdf'),
+                             white=fitz.open(folder/'04_WHITE_INK_MASK.pdf'))
     return result
