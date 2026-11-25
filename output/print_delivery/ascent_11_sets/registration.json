@@ -158,6 +158,7 @@
   "print_pdf_sha256": "ab309facedf8c0e77ff2776265c547cf5e3aaef3fdbae007b157352ea1b79c5a",
   "sha256": {
     "02_CUT_WITH_BLUE.ai": "9ab9895075e13c24815fa2a81fbc2f6ddb27623b239da661fe0721d7efd904b0",
-    "01_PRINT_300ppi.png": "a2a36c2cf96f5d78ac0b5de6c7f9d64f178dfa59147900973d7068840e0aac4b"
+    "01_PRINT_300ppi.png": "a2a36c2cf96f5d78ac0b5de6c7f9d64f178dfa59147900973d7068840e0aac4b",
+    "03_COMBINED_MASTER.ai": "cfa267f37ab726749422df5a3bad52b2dd016f68777e11fcd8954c1df3a9fcba"
   }
 }

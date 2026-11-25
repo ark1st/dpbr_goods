@@ -325,7 +325,11 @@
       "a3_options/alternative/page_04/layout.json",
       "a3_options/alternative/page_04/preview.png",
       "print_delivery/ascent_11_sets/layout.json",
-      "print_delivery/ascent_11_sets/preview.png"
+      "print_delivery/ascent_11_sets/preview.png",
+      "print_delivery/ascent_11_sets/03_COMBINED_MASTER.ai",
+      "print_delivery/page03/03_COMBINED_MASTER.ai",
+      "print_delivery/alternative_page04/03_COMBINED_MASTER.ai",
+      "print_delivery/alternative_800x500/03_COMBINED_MASTER.ai"
     ],
     "frozen_printed_pages": [
       1,

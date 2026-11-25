@@ -335,6 +335,8 @@ def main(pdf_only=False):
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
     expected_count=(len(current_a3)+len(current_large))*(3 if pdf_only else 5)+len(current_assets)*(3 if pdf_only else 4)+len(current_recut)*(2 if pdf_only else 4)
     delivery_keys=[]
+    active_masters=[]
+    reference_records=[]
     if manifest.get('print_delivery'):
         from print_delivery import AI, verify_delivery
         delivery_keys=verify_delivery()
@@ -357,14 +359,43 @@ def main(pdf_only=False):
             records.append(result)
             if result['errors']:errors.append({'file':result['file'],'errors':result['errors']})
         expected_count+=len(delivery_keys)
+        from print_delivery import SOURCES, REFERENCE_SOURCES
+        active=set(delivery_keys)
+        assert set(REFERENCE_SOURCES)==set(manifest['print_delivery']['reference_plates'])
+        for key,relative in (SOURCES|REFERENCE_SOURCES).items():
+            combined_rel=f'print_delivery/{key}/03_COMBINED_MASTER.ai'
+            assert combined_rel in manifest['print_delivery']['layout_files'],combined_rel
+            master=out/combined_rel
+            verify_combined_master(master, key, relative)
+            if key=='page03':
+                # All source-specific red paths and widths match the registered
+                # pair; the fixed source retains the user's original exceptions.
+                source=f'print_delivery/{key}/{AI}'
+                result=dict(next(row for row in records if row['file']==source))
+            else:
+                result=inspect_pdf(master)
+                assert result and result['minimum_piece_gap_mm']>=2.998,key
+            result.update(file=combined_rel,sha256=artifact_sha256(master),sha256_mode='raw bytes')
+            if result['errors']:errors.append({'file':combined_rel,'errors':result['errors']})
+            if key in active:
+                records.append(result)
+                active_masters.append(combined_rel)
+            else:
+                reference_records.append(result)
+        expected_count+=len(active_masters)
     assert len(records)==expected_count,('Incomplete cutting-format coverage',len(records),expected_count)
     inventory=inventory_for(records)
+    references={str(Path(row['file']).parent) for row in reference_records}
+    for entry in inventory:
+        if str(Path(entry['file']).parent) in references:
+            entry['status']='superseded_print_reference'
+
     report={'revision':manifest['revision'],'mode':'pdf-and-ai-only' if pdf_only else 'all-formats','checked_files':len(records),'errors':errors,
             'protected_original_findings':[{'file':r['file'],'findings':r['protected_original_findings']} for r in records if r['protected_original_findings']],
-            'records':records,'inventory':inventory,'physical_cut_test':False,
+            'records':records,'reference_combined_masters':reference_records,'inventory':inventory,'physical_cut_test':False,
             'superseded_releases':manifest.get('superseded_releases',[]),
             'retired_archive':json.loads((out/'RETIRED.json').read_text()),
-            'coverage':{'current_pages':len(current_a3),'large_format_plates':len(current_large),'individual_assets':len(current_assets),'existing_print_recovery_plates':len(current_recut),'expected_cut_files':expected_count,'cut_with_blue_ai':len(delivery_keys),
+            'coverage':{'current_pages':len(current_a3),'large_format_plates':len(current_large),'individual_assets':len(current_assets),'existing_print_recovery_plates':len(current_recut),'expected_cut_files':expected_count,'cut_with_blue_ai':len(delivery_keys),'combined_masters':len(active_masters),
                         'retired_files_are_not_counted_as_current_passes':True},
             'limitations':['Raw archive integrity is verified separately; retired files are not re-approved for cutting.',
                            'Protected external originals are inspected without edits; numerical no-ops are reported separately.']}
@@ -373,6 +404,37 @@ def main(pdf_only=False):
     if errors:raise SystemExit(f'LASER PREFLIGHT FAILED: {len(errors)} files')
     print(json.dumps({'checked_files':len(records),'errors':0,'protected_findings':len(report['protected_original_findings'])}))
     return report
+
+
+def verify_combined_master(path, key, relative):
+    """Cross-check the printer's layered master against the approved PNG/cut pair."""
+    from io import BytesIO
+    from PIL import Image
+    from build_a3_release import extract_layers
+    from print_delivery import PNG, vectors, sha
+
+    folder=path.parent
+    registration=json.loads((folder/'registration.json').read_text())
+    with fitz.open(path) as doc:
+        assert len(doc)==1 and list(doc[0].rect)==registration['page_rect_pt']
+        defaults={g['name']:g['on'] for g in doc.get_ocgs().values()}
+        assert defaults==({'PRINT_ARTWORK':True,'LASER_CUT':True,'CORNER_REFERENCE':True} | ({} if key=='alternative_page04' else {'WHITE_INK_MASK':False})),defaults
+    for layer, fingerprints in registration['source_vectors'].items():
+        with extract_layers(path,[layer]) as subset:
+            assert vectors(subset[0],layer)==fingerprints,(path,layer)
+    original=ROOT/relative/'02_MASTER.pdf'
+    if original.is_file():
+        assert sha(original)==sha(path),'Combined AI differs from the generated master PDF'
+    with extract_layers(path,['PRINT_ARTWORK','CORNER_REFERENCE']) as printed, Image.open(folder/PNG) as source:
+        pix=printed[0].get_pixmap(dpi=300,alpha=True)
+        with Image.open(BytesIO(pix.tobytes('png'))) as actual:
+            del pix
+            assert actual.size==source.size and actual.mode==source.mode=='RGBA'
+            for top in range(0, source.height, 256):
+                region=(0,top,source.width,min(source.height,top+256))
+                assert source.crop(region).tobytes()==actual.crop(region).tobytes(),(path,'Print pixels differ',top)
+    print(f'{key} combined AI verified: registered artwork pixels, red/blue vectors and layer defaults match.',flush=True)
+
 
 if __name__=='__main__':
     import argparse

@@ -1,4 +1,4 @@
-"""Export print PNGs and registered, cut-only two-layer AI documents."""
+"""Export registered print PNGs, cutter AI files and complete layered masters."""
 import argparse
 import hashlib
 import json
@@ -16,6 +16,7 @@ from pdf_layers import mark_pdf_layers
 DELIVERY = ROOT / 'output/print_delivery'
 PNG = '01_PRINT_300ppi.png'
 AI = '02_CUT_WITH_BLUE.ai'
+COMBINED_AI = '03_COMBINED_MASTER.ai'
 SOURCES = {
     'page03': 'output/a3_release/11_ascent_remaining/3T/sheet_01',
     'alternative_page04': 'tmp/a3_options/alternative/page_04',
@@ -46,7 +47,7 @@ def vectors(page, layer):
 
 def check_art_pair(directory, manifest):
     """Validate the two distributable files even when temporary nesting files are absent."""
-    for name in (AI, PNG):
+    for name in (AI, PNG, COMBINED_AI):
         assert sha(directory / name) == manifest['sha256'][name], (directory, name)
     with fitz.open(directory / AI) as doc, Image.open(directory / PNG) as png:
         assert len(doc) == 1 and list(doc[0].rect) == manifest['page_rect_pt']
@@ -65,7 +66,8 @@ def check_art_pair(directory, manifest):
 
 
 def build_pair(key):
-    source = ROOT / SOURCES[key]
+    relative = (SOURCES | REFERENCE_SOURCES)[key]
+    source = ROOT / relative
     dest = DELIVERY / key
     dest.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=dest) as tmp:
@@ -86,6 +88,7 @@ def build_pair(key):
             mark_pdf_layers(page, streams)
             master.save(stage / AI, garbage=4, deflate=True)
         shutil.copyfile(source / PNG, stage / PNG)
+        shutil.copyfile(source / '02_MASTER.pdf', stage / COMBINED_AI)
         with Image.open(stage / PNG) as png, fitz.open(source / '01_PRINT.pdf') as doc:
             assert len(doc) == 1 and doc[0].rect == rect
             pix = doc[0].get_pixmap(dpi=300, alpha=True)
@@ -100,12 +103,12 @@ def build_pair(key):
                     assert png.crop(box).tobytes() == expected.crop(box).tobytes(), (key, y)
             size = png.size
         manifest = {
-            'source': SOURCES[key], 'page_rect_pt': list(rect), 'png_pixels': list(size),
+            'source': relative, 'page_rect_pt': list(rect), 'png_pixels': list(size),
             'source_vectors': fingerprints, 'print_pdf_sha256': sha(source / '01_PRINT.pdf'),
-            'sha256': {name: sha(stage / name) for name in [AI, PNG]},
+            'sha256': {name: sha(stage / name) for name in (AI, PNG, COMBINED_AI)},
         }
         check_art_pair(stage, manifest)
-        for name in (AI, PNG):
+        for name in (AI, PNG, COMBINED_AI):
             (stage / name).replace(dest / name)
         (dest / 'registration.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(key, size, 'vector drawings', {k: len(v) for k, v in fingerprints.items()}, flush=True)
