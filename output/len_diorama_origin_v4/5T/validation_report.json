@@ -29,34 +29,32 @@
   "base_art_vertical": "center",
   "base_corner_radius_mm": 14.42,
   "clear_border_mm": 1.0,
-  "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. Exception: the blossom tree keeps 1.2 mm because a 1.0 mm contour over its ~300-blossom canopy cannot be fitted within the laser_paths segment gate (1.5 segments per mm) at any workable simplification; 1.2 mm is the smallest rim that passes.",
+  "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. V4 has no exception: the blossom tree that needed 1.2 mm as a cut plate in V2/V3 is now printed inside the back panel, so every rim is 1.0 mm.",
   "clear_border_per_piece_mm": {
     "backdrop": 1.0,
-    "tree": 1.2,
     "snake": 1.0,
     "character": 1.0
   },
-  "pieces": 5,
+  "pieces": 4,
   "finished_size_mm": {
     "width": 280,
-    "height": 91.5,
-    "depth": 71.22
+    "height": 94.0,
+    "depth": 71.22,
+    "note": "3T: base 3 + back panel 90 art + 1.0 mm rim = 94; seated Len assembles to 57 mm (3 + 53 art + 1 rim)."
   },
   "assembled_height_mm": {
     "backdrop": 96.0,
-    "tree": 78.2,
     "snake": 61.0,
-    "character": 90.0
+    "character": 58.94
   },
   "depth_rows_mm": [
     12,
     23,
-    34,
     56
   ],
-  "cut_closed_paths": 11,
+  "cut_closed_paths": 9,
   "hole_paths_first": true,
-  "slot_count": 6,
+  "slot_count": 5,
   "tab_width_mm": 18,
   "tab_depth_mm": 4.6,
   "slot_length_mm": 18.8,
@@ -65,7 +63,7 @@
   "fit_status": "UNTESTED; no fit-test pieces by repo policy",
   "physical_fit_test": false,
   "test_pieces_included": false,
-  "minimum_piece_gap_mm": 9.461992619926207,
+  "minimum_piece_gap_mm": 39.745299899955484,
   "ai_layers": [
     "3_ARTWORK",
     "2_CORNER_REFERENCE",
@@ -77,15 +75,11 @@
   "art_overhang_beyond_base_mm": {},
   "front_view_coverage_pct": {
     "backdrop": {
-      "total_pct": 40.8,
-      "top30_pct": 12.4
-    },
-    "tree": {
-      "total_pct": 44.1,
-      "top30_pct": 5.8
+      "total_pct": 20.5,
+      "top30_pct": 0.0
     },
     "snake": {
-      "total_pct": 0.1,
+      "total_pct": 0.0,
       "top30_pct": 0.0
     },
     "character": {
@@ -99,7 +93,7 @@
       "total_covered_pct",
       "top30_band_covered_pct"
     ],
-    "note": "ORIGIN is a deliberately stacked centre scene (tree across the moon, serpent behind the character): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art. Structural checks (row clearance, overhang, load path, gaps) stay hard."
+    "note": "ORIGIN is a deliberately stacked centre scene (tree printed across the moon, serpent behind the character): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art. Structural checks (row clearance, overhang, load path, gaps) stay hard."
   },
   "load_path_floor_mm": 12.0,
   "bud_guard_risers": {},
@@ -107,20 +101,185 @@
   "unprinted_tabs_and_slots": true,
   "slot_ink_clearance_checked_mm": 1.5,
   "margins_nonblue_ink": true,
-  "base_plate": "supplied raster 07_base_art printed as-is, vertically centred on a 2.5 mm clear rim; 6 slot windows ink-cleared 1.5 mm in-memory by the builder (no separate prepared copy, no placeholder-slot surgery)",
+  "base_plate": "supplied raster 07_base_art printed as-is, vertically centred on a 2.5 mm clear rim; {SLOT_COUNT} slot windows ink-cleared 1.5 mm in-memory by the builder (no separate prepared copy, no placeholder-slot surgery)",
   "piece_breakdown": {
-    "backdrop": "one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned) and the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; 3 tabs",
-    "tree": "03_blossom_tree silhouette plate, 1 tab",
-    "snake": "02_snake silhouette plate, 1 tab",
-    "character": "01_character silhouette plate, 1 tab"
+    "backdrop": "one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned), the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top and, V4, the blossom tree printed into the same print layer (rotated 25 deg clockwise at native resolution, premultiplied alpha, confined to the sky rectangle); 3 tabs",
+    "snake": "02_snake silhouette plate, 1 tab (V2 position)",
+    "character": "01_character silhouette plate, 1 tab under the hips; V4 seated: art below the seat line cropped in-memory, cut ends at the base line, no clear plinth (V2 scale and x)"
   },
   "layer_order_back_to_front": [
-    "backdrop",
-    "tree",
+    "backdrop (sky, doors, moon/clouds, tree)",
     "snake",
     "character"
   ],
-  "revision_changes_vs_v3": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 (73a2823) merged the sky, both lattice doors and the moon/cloud layer into one back plate, shrank the clear rim 2.5 -> 1.0 mm and rendered clear acrylic see-through in the assembly preview. V3 (657a484) recomposed the scene but the owner prefers V2 (\"v2가 낫다고 한거야\"), so V4 starts from the V2 design: the V2 composition is restored unchanged (sky 90 mm, doors 85 mm, moon/clouds 60 mm, tree plate 72 mm at x=112, serpent 55 mm at x=115, character 84 mm at x=170 on row 12) as the base; the owner's two V4 requests are applied on top in the next step.",
+  "row_order_front_to_back": [
+    "character",
+    "snake",
+    "backdrop"
+  ],
+  "composition": {
+    "scene_width_mm": 280,
+    "row_order_front_to_back": [
+      "character",
+      "snake",
+      "backdrop"
+    ],
+    "pieces": {
+      "backdrop": {
+        "art_mm": [
+          138.6,
+          90.0
+        ],
+        "plate_cut_bounds_mm": [
+          -31.4,
+          -1.0,
+          170.1,
+          95.6
+        ],
+        "art_center_x_mm": 140.0,
+        "art_span_x_mm": [
+          70.7,
+          209.3
+        ],
+        "depth_row_mm": 56,
+        "assembled_height_mm": 94.0,
+        "effective_ppi": [
+          261,
+          254,
+          254,
+          282,
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          55.5,
+          140.0,
+          224.5
+        ],
+        "sky_mm": [
+          138.6,
+          90.0
+        ],
+        "sky_span_x_mm": [
+          70.7,
+          209.3
+        ],
+        "moon_disc": {
+          "center_x_mm": 139.28,
+          "center_y_above_base_mm": 55.13,
+          "diameter_mm": 57.82,
+          "offset_from_scene_axis_x140_mm": -0.72,
+          "visible_pct_in_front_view": 85.0
+        }
+      },
+      "snake": {
+        "art_mm": [
+          45.11,
+          55.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          46.05,
+          60.55
+        ],
+        "art_center_x_mm": 115.0,
+        "art_span_x_mm": [
+          92.45,
+          137.55
+        ],
+        "depth_row_mm": 23,
+        "assembled_height_mm": 59.0,
+        "effective_ppi": [
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          115.0
+        ]
+      },
+      "character": {
+        "art_mm": [
+          67.01,
+          52.94
+        ],
+        "plate_cut_bounds_mm": [
+          4.77,
+          -0.99,
+          67.95,
+          58.48
+        ],
+        "art_center_x_mm": 170.0,
+        "art_span_x_mm": [
+          136.49,
+          203.51
+        ],
+        "depth_row_mm": 12,
+        "assembled_height_mm": 56.94,
+        "effective_ppi": [
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          170.0
+        ]
+      }
+    },
+    "tree_printed_on_backdrop": {
+      "rotate_deg_clockwise": 25,
+      "configured_art_height_mm": 80.0,
+      "unrotated_alpha_box_px": [
+        1283,
+        990
+      ],
+      "source_density_ppi": 314,
+      "embedded_ppi": 300,
+      "resample_px": [
+        1146,
+        1035
+      ],
+      "native_cap": true,
+      "rotated_box_mm": [
+        97.05,
+        87.6
+      ],
+      "top_left_in_sky_mm": [
+        4.0,
+        1.0
+      ],
+      "box_in_base_coords_mm": {
+        "x": [
+          74.7,
+          171.75
+        ],
+        "z_above_base_top": [
+          1.4,
+          89.0
+        ]
+      },
+      "confined_to_sky_rectangle": true,
+      "visible_pct_in_front_view_not_hidden_by_front_plates": 63.5,
+      "processing": "rotated 25 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 16 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450215",
+      "clip": null
+    },
+    "character_seating": {
+      "configured_art_height_mm": 84.0,
+      "crop_below_fraction": 0.63,
+      "kept_art_mm": [
+        67.01,
+        52.94
+      ],
+      "seat_line_above_base_top_mm": 1.0,
+      "plinth_rise_mm": 0,
+      "tab_cx_scene_mm": [
+        170.0
+      ],
+      "tab_window_body_width_at_base_line_mm": 26.0,
+      "bud_guard_riser": {},
+      "processing": "art below 0.630 of the figure height (the seat line) cropped in-memory: 854 of 1355 px kept so the seat rests on the base line"
+    }
+  },
+  "revision_changes_vs_v3": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 (73a2823) merged the sky, both lattice doors and the moon/cloud layer into one back plate, shrank the clear rim 2.5 -> 1.0 mm and rendered clear acrylic see-through in the assembly preview. V3 (657a484) recomposed the scene but the owner prefers V2 (\"v2가 낫다고 한거야\"), so V4 = the V2 design plus the owner's two requests: (a) \"컨샙처럼 나무 대각선 배치\" - the blossom tree is no longer a cut plate on its own row; it is composited into the back panel's print layer, rotated 25 deg clockwise at native resolution (trunk low on the left, canopy sweeping diagonally up to the right across the moon) and confined inside the sky rectangle, so it adds no cut path, no rim and no base slot (5 -> 4 pieces, 6 -> 5 slots, 11 -> 9 closed paths, and the 1.2 mm tree rim exception disappears: every rim is 1.0 mm); (b) \"렌이 완전히 앉는 자세면 좋겠어\" - the character art (84 mm, unchanged scale, x=170 row 12) is lowered so her seat rests on the base top: the art below the seat line (0.63 of the figure height: both dangling legs, boots, the lower sword blade) is cropped in-memory and the cut contour ends at the base line, with the tab under the hips and no clear plinth between the legs. Everything else is V2.",
   "preview_rendering": "clear acrylic see-through on a dark mauve ground: plate bodies unfilled, one 0.26 mm lit-edge stroke per plate, tabs clipped at the shoulder (inside the slots); base slab shows its front side band",
   "unused_source_islands": [],
   "assets": {
@@ -152,9 +311,13 @@
           ],
           "art_width_mm": 138.604,
           "art_height_mm": 90.0,
+          "configured_art_height_mm": 90.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
           "effective_ppi": 261,
           "native_cap": true,
-          "processing": null,
+          "processing": "",
+          "clip": null,
           "note": null
         },
         {
@@ -181,9 +344,13 @@
           ],
           "art_width_mm": 30.4,
           "art_height_mm": 85.0,
+          "configured_art_height_mm": 85.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
           "effective_ppi": 254,
           "native_cap": true,
           "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched",
+          "clip": null,
           "note": "left lattice door butted against the sky's left edge, bottoms aligned"
         },
         {
@@ -210,9 +377,13 @@
           ],
           "art_width_mm": 30.5,
           "art_height_mm": 85.0,
+          "configured_art_height_mm": 85.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
           "effective_ppi": 254,
           "native_cap": true,
           "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched",
+          "clip": null,
           "note": "right lattice door butted against the sky's right edge, bottoms aligned"
         },
         {
@@ -239,31 +410,22 @@
           ],
           "art_width_mm": 137.091,
           "art_height_mm": 60.0,
+          "configured_art_height_mm": 60.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
           "effective_ppi": 282,
           "native_cap": true,
-          "processing": null,
-          "note": "moon and both cloud islands (including V1's unused 34 x 6.9 mm upper-right cloud) registered over the sky; the disc lands ~10 mm right of the sky centre as in the concept"
-        }
-      ],
-      "art_width_mm": 138.604,
-      "art_height_mm": 90.0,
-      "minimum_art_to_cut_mm": 0.9858710185182253,
-      "clear_border_mm": 1.0,
-      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
-      "redrawn": false,
-      "processing": "overlays positioned on the base raster: 06_lattice_doors.png, 06_lattice_doors.png, 04_moon_clouds.png"
-    },
-    "tree": {
-      "file": "03_blossom_tree.png",
-      "sha256": "4d283d0695c8e519313dbf002b2fda611eac23812c4167e06bfc60d0b5452472",
-      "rasters": [
+          "processing": "",
+          "clip": null,
+          "note": "moon and both cloud islands (including V1's unused 34 x 6.9 mm upper-right cloud) registered over the sky as in V2"
+        },
         {
           "file": "03_blossom_tree.png",
           "sha256": "4d283d0695c8e519313dbf002b2fda611eac23812c4167e06bfc60d0b5452472",
-          "anchor": "base",
+          "anchor": "xy_mm",
           "offset_mm": [
-            0.0,
-            0.0
+            4.0,
+            1.0
           ],
           "source_bbox_px": [
             125,
@@ -272,28 +434,32 @@
             990
           ],
           "source_px": [
-            1283,
-            990
+            1201,
+            1084
           ],
           "resample_px": [
-            1102,
-            850
+            1146,
+            1035
           ],
-          "art_width_mm": 93.309,
-          "art_height_mm": 72.0,
+          "art_width_mm": 97.051,
+          "art_height_mm": 87.596,
+          "configured_art_height_mm": 80.0,
+          "rotate_deg": 25,
+          "crop_below_fraction": null,
           "effective_ppi": 300,
           "native_cap": true,
-          "processing": null,
-          "note": null
+          "processing": "rotated 25 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 16 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450215",
+          "clip": null,
+          "note": "V4 owner request: tree printed on the back panel like the concept - 80 mm art (314 ppi source density, embedded at the 300 ppi cap) rotated 25 deg clockwise at native resolution, rotated box 97.1 x 87.6 mm placed at the sky's lower left so the trunk rises behind the serpent and the canopy sweeps diagonally up to the right across the moon and above Len's head; confined to the sky rectangle (no cut path, no rim, no slot)"
         }
       ],
-      "art_width_mm": 93.309,
-      "art_height_mm": 72.0,
-      "minimum_art_to_cut_mm": 1.1848848441219606,
-      "clear_border_mm": 1.2,
+      "art_width_mm": 138.604,
+      "art_height_mm": 90.0,
+      "minimum_art_to_cut_mm": 0.9858710185182269,
+      "clear_border_mm": 1.0,
       "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
       "redrawn": false,
-      "processing": null
+      "processing": "overlays positioned on the base raster: 06_lattice_doors.png, 06_lattice_doors.png, 04_moon_clouds.png, 03_blossom_tree.png"
     },
     "snake": {
       "file": "02_snake.png",
@@ -323,9 +489,13 @@
           ],
           "art_width_mm": 45.108,
           "art_height_mm": 55.0,
+          "configured_art_height_mm": 55.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
           "effective_ppi": 300,
           "native_cap": true,
-          "processing": null,
+          "processing": "",
+          "clip": null,
           "note": null
         }
       ],
@@ -357,23 +527,27 @@
           ],
           "source_px": [
             1081,
-            1355
+            854
           ],
           "resample_px": [
             792,
-            992
+            625
           ],
           "art_width_mm": 67.014,
-          "art_height_mm": 84.0,
+          "art_height_mm": 52.942,
+          "configured_art_height_mm": 84.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": 0.63,
           "effective_ppi": 300,
           "native_cap": true,
-          "processing": null,
+          "processing": "art below 0.630 of the figure height (the seat line) cropped in-memory: 854 of 1355 px kept so the seat rests on the base line",
+          "clip": null,
           "note": null
         }
       ],
       "art_width_mm": 67.014,
-      "art_height_mm": 84.0,
-      "minimum_art_to_cut_mm": 0.984701691927994,
+      "art_height_mm": 52.942,
+      "minimum_art_to_cut_mm": 0.9848674714679155,
       "clear_border_mm": 1.0,
       "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
       "redrawn": false,
