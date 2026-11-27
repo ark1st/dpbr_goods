@@ -113,7 +113,7 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 (the V2 masters themselves were never gated as a release; V4 re-registers the same composition with the owner's two changes)."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 and V5 (the V2 masters themselves were never gated as a release)."
     },
     {
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -125,7 +125,19 @@
       "masters_commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
       "registration_commit": "c5faa9ecb0d53c26a6d576396b926c3db0be49aa",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 (V2 composition + printed diagonal tree + seated Len) before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 before publication. Masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "revision": "A3-2026-11-27-len-origin-v4",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "registration_commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel and Len cropped at the seat line. The owner objected to the cropped legs/boots and wants the tree as a separate diagonal cut piece, so V4 was superseded by V5 before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "retired_package_files": [

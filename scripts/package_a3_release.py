@@ -16,12 +16,11 @@ def main():
     write(BASE/'manifest.json',json.dumps(m,ensure_ascii=False,indent=2)+'\n')
     rev=cfg['len_origin_revision'];origin_parts=rev['pieces'];origin_slots=rev['slots']
     origin_preview=rev['preview'];total_with_optional=56+7+origin_parts
-    comp=rev['composition'];ch=comp['character'];sn=comp['snake'];tr=comp['tree_printed_on_backdrop'];bd=comp['backdrop']
-    origin_composition=(f"{rev['product'].split()[-1]} 구도(V2 디자인 기반 + 소유자 요청 2건): 렌 {ch['configured_art_height_mm']:.0f}mm 그림({ch['effective_ppi']}ppi)을 V2 위치(x={ch['art_center_x_mm']}mm, 앞행 {ch['depth_row_mm']})에서 받침 위에 앉혔습니다. "
-        f"엉덩이가 받침 윗면(투명 테두리 1.0mm 위)에 닿도록 그림 아래 {round(100-ch['crop_below_fraction']*100)}%(다리·부츠·칼 아래부분)를 빌더가 잘라내고 칼선은 받침 선에서 끝납니다. 돌기는 엉덩이 아래에 있고 다리 사이 투명 받침대는 없습니다. "
-        f"뱀 {sn['art_mm'][1]:.0f}mm는 V2 위치(x={sn['art_center_x_mm']}mm) 그대로입니다. "
-        f"매화는 잘라내는 판이 아니라 뒷판 하늘에 인쇄했습니다: {tr['configured_art_height_mm']:.0f}mm 그림(원본 {tr['source_density_ppi']}ppi, {tr['embedded_ppi']}ppi로 삽입)을 원본 해상도에서 시계방향 {tr['rotate_deg_clockwise']}° 돌려 {tr['rotated_box_mm'][0]:.1f}×{tr['rotated_box_mm'][1]:.1f}mm 상자를 하늘 왼쪽 아래에 두었고, "
-        f"줄기는 뱀 뒤 왼쪽 아래에서 시작해 꽃잎이 달(지름 {bd['moon_disc']['diameter_mm']:.0f}mm)을 가로질러 오른쪽 위로 뻗으며 렌 머리 위로 보입니다(앞 판에 가려지지 않는 비율 {tr['visible_pct_in_front_view_not_hidden_by_front_plates']}%). 매화는 칼선·테두리·홈을 더하지 않습니다.")
+    comp=rev['composition'];ch=comp['character'];sn=comp['snake'];tr=comp['tree_plate'];bd=comp['backdrop'];seat=comp['character_seating'];coil=seat['serpent_coil_behind_hips'];env=tr['canopy_envelope'];low=seat['lowest_ink_above_base_top_mm']
+    origin_composition=(f"{rev['product'].split()[-1]} 구도(V2 디자인 + 소유자의 V4 피드백): 렌 {seat['configured_art_height_mm']:.0f}mm 그림({ch['effective_ppi'][0]}ppi)을 V2 위치(x={ch['tab_x_mm']:.0f}mm, 앞행 {ch['depth_row_mm']})에 통째로 보여줍니다(다리·부츠·칼을 잘라내지 않음). "
+        f"엉덩이(받침 위 {seat['seat_line_above_base_top_mm']}mm)는 뱀의 감긴 몸통(뱀 {sn['art_mm'][1]:.0f}mm, x={sn['tab_x_mm']:.0f}mm, 뒷행 {sn['depth_row_mm']}, 몸통 윗면 {coil['coil_top_z_above_base_top_mm']}mm) 위에 얹히고 다리는 뱀 앞으로 늘어져 부츠 바닥이 받침 위 {low['right_boot_x_0.60_0.75']}mm, 칼끝이 {low['sword_tip_x_0.26_0.34']}mm에 닿습니다. 다리 사이 {seat['riser_width_mm']}mm 폭 투명 리서(홈 위 {seat['riser_top_above_slot_mm']}mm)만 하중을 받습니다. "
+        f"매화는 다시 별도 판입니다: {tr['configured_unrotated_art_height_mm']:.0f}mm 그림(원본 {tr['source_density_ppi']}ppi, {tr['embedded_ppi']}ppi로 삽입)을 시계방향 {tr['rotate_deg_clockwise']}° 돌려 {tr['rotated_box_mm'][0]:.1f}×{tr['rotated_box_mm'][1]:.1f}mm, 줄기 x={tr['trunk_base_scene_x_mm']:.0f}mm에서 받침에 서고(판 {tr['plate_size_mm'][0]:.0f}×{tr['plate_size_mm'][1]:.0f}mm, 받침 위 {tr['box_in_base_coords_mm']['z_above_base_top'][1]:.0f}mm까지) 꽃잎이 달(지름 {bd['moon_disc']['diameter_mm']:.0f}mm)을 가로질러 오른쪽 위로 뻗습니다(앞 판 잉크에 가려지지 않는 비율 {tr['visible_pct_in_front_view_not_hidden_by_front_plates']}%). "
+        f"외곽은 잉크 실루엣을 {env['closing_mm']:g}mm 벡터 닫기로 매끈하게 만든 포락선(꽃 사이 {env['clear_fill_mm2']:.0f}mm² 투명 아크릴, 잉크 면적의 {env['clear_fill_pct_of_ink']}%)이라 {tr['clear_border_mm']:.1f}mm 테두리 그대로 선분 상한({tr['cut_segments']}/{tr['segment_limit']})을 통과합니다.")
     common=f'''**현재 선택: 3T. A3 가로 420×297mm, 실제 크기 100%, 자동 맞춤 해제.**
 
 | 구분 | 시트 | 구성 |
@@ -59,7 +58,7 @@ ZIP에는 인쇄 PNG·백색 PNG·재단 PDF/SVG·시안·치수 기록이 있�
 카데나는 제공 원본의 약3.2mm 홈·3mm 돌기, 좌우 홈 약0.195mm 높이 차이를 유지했습니다. 5T용이 아닙니다.
 Len 공통 받침275×60mm와8개 홈은 유지했습니다. 일반 렌76mm, 도트 렌50mm이며 같은 캐릭터 홈에 교체합니다. 도트 발 아래 돌기는18mm 폭·3T 삽입깊이2.6mm이며, 칼 때문에 왼쪽으로 치우쳤던 위치를 발 중심으로 옮겼습니다.
 PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len과 치수가 다릅니다.
-ORIGIN 받침도280×71.2235mm이며 홈{origin_slots}개, 투명 테두리{rev['clear_border_mm']:.1f}mm(모든 판 동일)입니다. 뒤→앞: 하늘·창문 좌우·달구름·대각선 매화를 인쇄한 뒷판 1장 → 뱀 → 받침에 앉은 렌.
+ORIGIN 받침도280×71.2235mm이며 홈{origin_slots}개, 투명 테두리{rev['clear_border_mm']:.1f}mm(모든 판 동일)입니다. 뒤→앞: 하늘·창문 좌우·달구름 뒷판 1장 → 대각선 매화 판 → 뱀 → 뱀 몸통에 앉은 렌.
 {origin_composition}
 실물 재단·끼움·커프·인쇄 정합은 아직 검증하지 않았습니다.
 
@@ -84,7 +83,7 @@ ORIGIN 받침도280×71.2235mm이며 홈{origin_slots}개, 투명 테두리{rev[
             text+='\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠6개, 홈8개. 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 별밤·산맥 배경 → 매화 좌·우 → 용·캐릭터 → 분홍 구름.\n\n![조립 참고](assembly.png)\n'
         if cat=='07_len_origin':
             shutil.copy2(source_path(origin_preview),BASE/cat/'assembly.png')
-            text+=f'\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠{origin_parts-1}개, 홈{origin_slots}개, 투명 테두리{rev["clear_border_mm"]:.1f}mm(모든 판 동일). 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 하늘·창문 좌우·달구름·대각선 매화를 인쇄한 뒷판 1장 → 뱀 → 받침에 앉은 렌. 조립 시안은 투명 아크릴을 투명하게 그립니다.\n\n{origin_composition}\n\n![조립 참고](assembly.png)\n'
+            text+=f'\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠{origin_parts-1}개, 홈{origin_slots}개, 투명 테두리{rev["clear_border_mm"]:.1f}mm(모든 판 동일). 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 하늘·창문 좌우·달구름 뒷판 1장 → 대각선 매화 판 → 뱀 → 뱀 몸통에 앉은 렌(그림 전체). 조립 시안은 투명 아크릴을 투명하게 그립니다.\n\n{origin_composition}\n\n![조립 참고](assembly.png)\n'
         write(BASE/cat/'README.md',f'# {title}\n\n'+text+'\n실물 검증 전입니다. [전체 출력 안내](../README.md)\n')
     included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
     for group,pages in m['groups'].items():

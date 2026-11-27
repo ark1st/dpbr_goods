@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-27-len-origin-v4",
+  "revision": "A3-2026-11-28-len-origin-v5",
   "canvas_mm": [
     420,
     297
@@ -154,28 +154,28 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v4/3T/02_MASTER.ai",
-      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
-      "sha256": "3d56ebb064dbae268fe47059dfd96a7a032f05363fb300ffdbd2c93e73800963",
-      "git_path": "output/len_diorama_origin_v4/3T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v5/3T/02_MASTER.ai",
+      "commit": "7459c7fab095f3306966c7291a751e7e3aa42fb5",
+      "sha256": "82aa0af3bbbf1f926e2119e99f15301d02dff41a1df88670d4c00245170d21e3",
+      "git_path": "output/len_diorama_origin_v5/3T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v4/3T/03_CUT_ONLY.pdf",
-      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
-      "sha256": "130d4cd387bed596e3fcf5aaec590b2cbceabeab4da8d60e6104ebaad5073e26",
-      "git_path": "output/len_diorama_origin_v4/3T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v5/3T/03_CUT_ONLY.pdf",
+      "commit": "7459c7fab095f3306966c7291a751e7e3aa42fb5",
+      "sha256": "088accfe57be7f5fbc62f808dbaabcd41b3614358b2a51f1fcd81643ce952fab",
+      "git_path": "output/len_diorama_origin_v5/3T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v4/5T/02_MASTER.ai",
-      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
-      "sha256": "e75d9538af36ad037d25b47e9d9034c8cc2ab2dfa11a5ebff01361f841c1260e",
-      "git_path": "output/len_diorama_origin_v4/5T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v5/5T/02_MASTER.ai",
+      "commit": "7459c7fab095f3306966c7291a751e7e3aa42fb5",
+      "sha256": "efef334377626b28e8604ba15491ffff428c23fc6581b79a634ac95eeeec5f75",
+      "git_path": "output/len_diorama_origin_v5/5T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v4/5T/03_CUT_ONLY.pdf",
-      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
-      "sha256": "2f459a610e15d0b8aa81db4a852c0f83ee6b70d0e9e2153453170b92a85d7a02",
-      "git_path": "output/len_diorama_origin_v4/5T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v5/5T/03_CUT_ONLY.pdf",
+      "commit": "7459c7fab095f3306966c7291a751e7e3aa42fb5",
+      "sha256": "54d523f160bc91efe57031d1d8dd1880d02b430a21983e263a537189709709d6",
+      "git_path": "output/len_diorama_origin_v5/5T/03_CUT_ONLY.pdf"
     }
   ],
   "cadena_source_part_ids": [
@@ -192,8 +192,8 @@
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
-    "07_len_origin/3T": 4,
-    "07_len_origin/5T": 4
+    "07_len_origin/3T": 5,
+    "07_len_origin/5T": 5
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -251,7 +251,7 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 (the V2 masters themselves were never gated as a release; V4 re-registers the same composition with the owner's two changes)."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 and V5 (the V2 masters themselves were never gated as a release; V5 re-registers the same composition with the tree back as a diagonal plate and Len seated whole on the serpent)."
     },
     {
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -263,7 +263,19 @@
       "masters_commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
       "registration_commit": "c5faa9ecb0d53c26a6d576396b926c3db0be49aa",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 (V2 composition + printed diagonal tree + seated Len) before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 before publication. Masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
+      "revision": "A3-2026-11-27-len-origin-v4",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "registration_commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel and Len cropped at the seat line. The owner objected to the cropped legs/boots and wants the tree as a separate diagonal cut piece, so V4 was superseded by V5 before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "len_layout": {
@@ -319,11 +331,18 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/preview/assembly.png"
     },
     {
+      "file": "output/len_diorama_origin_v5/3T/preview/assembly.png",
+      "commit": "7459c7fab095f3306966c7291a751e7e3aa42fb5",
+      "sha256": "161cca7680be3cf887a3184f06dfe40419cfefa75280b0f41ffbb337edef9b26",
+      "git_path": "output/len_diorama_origin_v5/3T/preview/assembly.png",
+      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
+    },
+    {
       "file": "output/len_diorama_origin_v4/3T/preview/assembly.png",
       "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
       "sha256": "9681f5967f832f166fd061aa0ca0fe797fa7960a8b5585b1d4e48f7af55ba4b0",
       "git_path": "output/len_diorama_origin_v4/3T/preview/assembly.png",
-      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
+      "role": "superseded ORIGIN V4 assembly preview (printed tree, cropped Len; replaced by V5 before publication; kept for before/after review only)"
     },
     {
       "file": "output/len_diorama_origin_v3/3T/preview/assembly.png",
@@ -482,11 +501,11 @@
     }
   },
   "len_origin_revision": {
-    "product": "Len Diorama ORIGIN V4",
+    "product": "Len Diorama ORIGIN V5",
     "source_pack": "assets/len_orgin",
-    "pieces": 4,
-    "slots": 5,
-    "closed_paths": 9,
+    "pieces": 5,
+    "slots": 6,
+    "closed_paths": 11,
     "base_mm": [
       280,
       71.2235
@@ -494,126 +513,351 @@
     "depth_rows_mm": [
       12,
       23,
+      34,
       56
     ],
     "clear_border_mm": 1.0,
     "clear_border_per_piece_mm": {
       "backdrop": 1.0,
+      "tree": 1.0,
       "snake": 1.0,
       "character": 1.0
     },
     "plate_mounts": {
       "backdrop": 3,
+      "tree": 1,
       "snake": 1,
       "character": 1
     },
     "composition": {
+      "scene_width_mm": 280,
       "row_order_front_to_back": [
         "character",
         "snake",
+        "tree",
         "backdrop"
       ],
-      "character": {
+      "tree_plate": {
+        "rotate_deg_clockwise": 25,
+        "configured_unrotated_art_height_mm": 86.0,
+        "unrotated_alpha_box_px": [
+          1283,
+          990
+        ],
+        "source_density_ppi": 292,
+        "embedded_ppi": 292,
+        "resample_px": [
+          1201,
+          1084
+        ],
+        "native_cap": true,
+        "rotated_box_mm": [
+          104.33,
+          94.17
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          105.24,
+          97.68
+        ],
+        "plate_size_mm": [
+          106.24,
+          98.68
+        ],
+        "clear_border_mm": 1.0,
+        "cut_segments": 721,
+        "segment_limit": 893,
+        "canopy_envelope": {
+          "closing_mm": 2.5,
+          "ink_area_mm2": 3793.9,
+          "envelope_area_mm2": 4629.7,
+          "clear_fill_mm2": 835.9,
+          "clear_fill_pct_of_ink": 22.0
+        },
+        "trunk_base_scene_x_mm": 128.0,
+        "trunk_tab_art_x_mm": 56.73,
+        "box_in_base_coords_mm": {
+          "x": [
+            71.27,
+            175.6
+          ],
+          "z_above_base_top": [
+            1.0,
+            95.17
+          ]
+        },
+        "lowest_point": {
+          "x_mm": [
+            127.57,
+            127.65
+          ],
+          "z_above_base_top_mm": 1.0
+        },
+        "canopy_top": {
+          "x_mm": [
+            132.43,
+            135.21
+          ],
+          "z_above_base_top_mm": 95.17
+        },
+        "visible_pct_in_front_view_not_hidden_by_front_plates": 77.1,
+        "tab_cx_scene_mm": [
+          128.0
+        ],
+        "bud_guard_riser": {
+          "56.73": {
+            "riser_width_mm": 12.25,
+            "riser_top_above_slot_mm": 2.12,
+            "worst_section_before_mm": 1.28,
+            "worst_at_above_slot_mm": 0.12,
+            "riser_axis": "narrowest ligament"
+          }
+        },
+        "processing": "rotated 25 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 16 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450215; canopy envelope: 2.5 mm vector closing of the ink silhouette unioned with the ink (835.9 mm2 clear acrylic between blossoms = 22.0% of the ink area)"
+      },
+      "character_seating": {
+        "crop_below_fraction": null,
+        "whole_figure_shown": true,
+        "configured_art_height_mm": 84.0,
         "art_mm": [
           67.01,
-          52.94
+          84.0
         ],
-        "art_center_x_mm": 170,
-        "depth_row_mm": 12,
-        "effective_ppi": 300,
-        "configured_art_height_mm": 84,
-        "crop_below_fraction": 0.63,
-        "seating": {
-          "configured_art_height_mm": 84.0,
-          "crop_below_fraction": 0.63,
-          "kept_art_mm": [
-            67.01,
-            52.94
+        "art_span_x_mm": [
+          136.49,
+          203.51
+        ],
+        "tab_cx_scene_mm": [
+          170.0
+        ],
+        "plinth_rise_mm": 0,
+        "lowest_ink_above_base_top_mm": {
+          "sword_tip_x_0.26_0.34": 1.0,
+          "left_boot_x_0.05_0.22": 2.95,
+          "right_boot_x_0.60_0.75": 1.68
+        },
+        "tab_window_body_width_at_base_line_mm": 18.1,
+        "bud_guard_riser": {
+          "33.51": {
+            "riser_width_mm": 12.25,
+            "riser_top_above_slot_mm": 9.12,
+            "worst_section_before_mm": 0.11,
+            "worst_at_above_slot_mm": 0.12,
+            "riser_axis": "narrowest ligament"
+          }
+        },
+        "processing": "",
+        "riser_width_mm": 12.25,
+        "riser_top_above_slot_mm": 9.12,
+        "seat_line_fraction_of_figure_height": 0.63,
+        "seat_line_above_base_top_mm": 32.08,
+        "hip_span_x_mm_at_seat_line": [
+          151.14,
+          195.26
+        ],
+        "serpent_coil_behind_hips": {
+          "coil_top_z_above_base_top_mm": 36.89,
+          "hip_span_x_mm": [
+            151.14,
+            195.26
           ],
-          "seat_line_above_base_top_mm": 1.0,
-          "plinth_rise_mm": 0,
-          "tab_cx_scene_mm": [
-            170.0
+          "serpent_span_x_mm": [
+            121.3,
+            178.7
           ],
-          "tab_window_body_width_at_base_line_mm": 26.0,
-          "bud_guard_riser": {},
-          "processing": "art below 0.630 of the figure height (the seat line) cropped in-memory: 854 of 1355 px kept so the seat rests on the base line"
+          "serpent_art_mm": [
+            57.41,
+            70.0
+          ],
+          "coil_minus_seat_line_mm": 4.81,
+          "head_x_mm_top_15pct_rows": [
+            142.96,
+            167.51
+          ],
+          "head_z_above_base_top_mm_top_15pct_rows": [
+            60.5,
+            70.83
+          ],
+          "depth_row_mm": 23,
+          "note": "the serpent plate stands on row 23 behind the character plate (row 12); her legs hang in front of its lower coil. coil_top = top of the stacked coils under her hip span: highest row in the lower 60% of the serpent whose ink covers >= 50% of that span with solid cover 10 mm below"
         }
-      },
-      "snake": {
-        "art_mm": [
-          45.11,
-          55.0
-        ],
-        "art_center_x_mm": 115,
-        "depth_row_mm": 23,
-        "effective_ppi": 300
       },
       "backdrop": {
         "art_mm": [
           138.6,
           90.0
         ],
-        "art_center_x_mm": 140,
+        "plate_cut_bounds_mm": [
+          -31.4,
+          -1.0,
+          170.1,
+          93.6
+        ],
+        "plate_size_mm": [
+          201.5,
+          94.6
+        ],
+        "tab_x_mm": 140.0,
+        "art_center_x_mm": 140.0,
+        "art_span_x_mm": [
+          70.7,
+          209.3
+        ],
         "depth_row_mm": 56,
+        "assembled_height_mm": 94.0,
+        "effective_ppi": [
+          261,
+          254,
+          254,
+          282
+        ],
+        "clear_border_mm": 1.0,
+        "cut_segments": 34,
+        "segment_limit": 898,
+        "max_curve_deviation_mm": 0.0172,
+        "tab_cx_mm": [
+          55.5,
+          140.0,
+          224.5
+        ],
+        "sky_mm": [
+          138.6,
+          90.0
+        ],
+        "sky_span_x_mm": [
+          70.7,
+          209.3
+        ],
         "moon_disc": {
           "center_x_mm": 139.28,
           "center_y_above_base_mm": 55.13,
           "diameter_mm": 57.82,
           "offset_from_scene_axis_x140_mm": -0.72,
-          "visible_pct_in_front_view": 85.0
+          "visible_pct_in_front_view": 32.3,
+          "note": "share of the disc not covered by the printed ink of the plates in front of the back panel (tree blossoms, serpent, character); clear gaps count as visible"
         }
       },
-      "tree_printed_on_backdrop": {
-        "rotate_deg_clockwise": 25,
-        "configured_art_height_mm": 80.0,
-        "unrotated_alpha_box_px": [
-          1283,
-          990
+      "tree": {
+        "art_mm": [
+          104.33,
+          94.17
         ],
-        "source_density_ppi": 314,
-        "embedded_ppi": 300,
-        "resample_px": [
-          1146,
-          1035
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          105.24,
+          97.68
         ],
-        "native_cap": true,
-        "rotated_box_mm": [
-          97.05,
-          87.6
+        "plate_size_mm": [
+          106.24,
+          98.68
         ],
-        "top_left_in_sky_mm": [
-          4.0,
-          1.0
+        "tab_x_mm": 128.0,
+        "art_center_x_mm": 123.44,
+        "art_span_x_mm": [
+          71.27,
+          175.6
         ],
-        "box_in_base_coords_mm": {
-          "x": [
-            74.7,
-            171.75
-          ],
-          "z_above_base_top": [
-            1.4,
-            89.0
-          ]
-        },
-        "confined_to_sky_rectangle": true,
-        "visible_pct_in_front_view_not_hidden_by_front_plates": 63.5,
-        "processing": "rotated 25 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 16 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450215",
-        "clip": null
+        "depth_row_mm": 34,
+        "assembled_height_mm": 98.17,
+        "effective_ppi": [
+          292
+        ],
+        "clear_border_mm": 1.0,
+        "cut_segments": 721,
+        "segment_limit": 893,
+        "max_curve_deviation_mm": 0.0179,
+        "tab_cx_mm": [
+          128.0
+        ],
+        "ink_visible_pct_in_front_view_not_hidden_by_front_plates": 77.1
+      },
+      "snake": {
+        "art_mm": [
+          57.41,
+          70.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          58.34,
+          73.53
+        ],
+        "plate_size_mm": [
+          59.34,
+          74.53
+        ],
+        "tab_x_mm": 150.0,
+        "art_center_x_mm": 150.0,
+        "art_span_x_mm": [
+          121.3,
+          178.7
+        ],
+        "depth_row_mm": 23,
+        "assembled_height_mm": 74.0,
+        "effective_ppi": [
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "cut_segments": 467,
+        "segment_limit": 488,
+        "max_curve_deviation_mm": 0.018,
+        "tab_cx_mm": [
+          150.0
+        ],
+        "ink_visible_pct_in_front_view_not_hidden_by_front_plates": 61.9,
+        "note": "V5 seat: the serpent stands on row 23 behind the character; its lower coil rises to her seat line (see character_seating.serpent_coil_behind_hips)"
+      },
+      "character": {
+        "art_mm": [
+          67.01,
+          84.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          67.95,
+          87.54
+        ],
+        "plate_size_mm": [
+          68.95,
+          88.54
+        ],
+        "tab_x_mm": 170.0,
+        "art_center_x_mm": 170.0,
+        "art_span_x_mm": [
+          136.49,
+          203.51
+        ],
+        "depth_row_mm": 12,
+        "assembled_height_mm": 88.0,
+        "effective_ppi": [
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "cut_segments": 550,
+        "segment_limit": 581,
+        "max_curve_deviation_mm": 0.018,
+        "tab_cx_mm": [
+          170.0
+        ],
+        "ink_visible_pct_in_front_view_not_hidden_by_front_plates": 100.0
       },
       "concept": "assets/len_orgin/08_diorama concept art.png"
     },
     "builder": "scripts/build_len_diorama_origin.py",
     "config": "configs/len_diorama_origin.json",
-    "source_dir": "output/len_diorama_origin_v4",
-    "preview": "output/len_diorama_origin_v4/3T/preview/assembly.png",
+    "source_dir": "output/len_diorama_origin_v5",
+    "preview": "output/len_diorama_origin_v5/3T/preview/assembly.png",
     "supersedes": {
-      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
-      "product": "Len Diorama ORIGIN V3",
-      "pieces": 5,
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "registration_commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
+      "product": "Len Diorama ORIGIN V4",
+      "pieces": 4,
       "clear_border_mm": 1.0,
-      "reason": "The owner prefers the V2 design over V3 (\"v2가 낫다고 한거야\"): V3's centred 125 mm Len and serpent placed directly behind her are not wanted. V4 = the V2 composition (84 mm Len at x=170, serpent at x=115, one back panel with sky/doors/moon at V2 sizes) plus the two owner requests: the blossom tree printed diagonally into the back panel instead of a cut plate, and Len seated on the base."
+      "reason": "Owner feedback on V4 (\"거슬림, 그리고 벛곷나무도 별도 에셋으로 빼, + 나무는 대각선 배치하라고\"): the cropped legs/boots bother him and the blossom tree must be its own cut piece placed diagonally. V5 shows the whole 84 mm figure seated on the serpent's coil (serpent 70 mm at x=150) and brings the tree back as a 25 deg rotated cut plate (86 mm, 2.5 mm canopy closing, 1.0 mm rim)."
     },
-    "reason": "Owner correction after V3: keep the V2 look; add the concept's diagonal tree (printed, no extra plate) and seat Len fully on the base."
+    "reason": "Owner correction after V4: show Len whole and seated on the serpent; blossom tree as its own diagonal plate; every rim 1.0 mm."
   }
 }
