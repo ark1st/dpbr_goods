@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-22-two-sheets-dot50",
+  "revision": "A3-2026-11-27-len-origin-optional",
   "canvas_mm": [
     420,
     297
@@ -152,6 +152,30 @@
       "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
       "sha256": "7ee8cd1586603648beb5848447228a4b18987fe62e0e3692f919db4023b891af",
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
+    },
+    {
+      "file": "output/len_diorama_origin_v1/3T/02_MASTER.ai",
+      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
+      "sha256": "fe8afe247f202a47bf68d8d2b34f8c5a45f1134d1a9e5e36a17a93a5f02f6873",
+      "git_path": "output/len_diorama_origin_v1/3T/02_MASTER.ai"
+    },
+    {
+      "file": "output/len_diorama_origin_v1/3T/03_CUT_ONLY.pdf",
+      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
+      "sha256": "5e3d906ea020c6ba0b724eaf3c44be12ee4e54c0afe52f950c59ce67d0ce873f",
+      "git_path": "output/len_diorama_origin_v1/3T/03_CUT_ONLY.pdf"
+    },
+    {
+      "file": "output/len_diorama_origin_v1/5T/02_MASTER.ai",
+      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
+      "sha256": "9d1fb006a88f54cda293d829a75c20d16015bf5700bb48926bcefad64605273f",
+      "git_path": "output/len_diorama_origin_v1/5T/02_MASTER.ai"
+    },
+    {
+      "file": "output/len_diorama_origin_v1/5T/03_CUT_ONLY.pdf",
+      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
+      "sha256": "fdb2bdc3628dff45221c1491c8fc0683b57c3dd8db8016f318d2012a4394de53",
+      "git_path": "output/len_diorama_origin_v1/5T/03_CUT_ONLY.pdf"
     }
   ],
   "cadena_source_part_ids": [
@@ -167,7 +191,9 @@
     "05_len/3T": 15,
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
-    "06_len_pad/5T": 7
+    "06_len_pad/5T": 7,
+    "07_len_origin/3T": 8,
+    "07_len_origin/5T": 8
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -258,11 +284,19 @@
       "commit": "23fa3384414dd8d075d6cc82238b3032bd3f3309",
       "sha256": "c3f8e4e83bdfaaccbd6663fc5e98ef8eb5e55811b1ff805affb8a9185e1ac6bb",
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/preview/assembly.png"
+    },
+    {
+      "file": "output/len_diorama_origin_v1/3T/preview/assembly.png",
+      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
+      "sha256": "d6388df604908d440f048f4b933d645965631c6bc26276231c0204cfd0a8b515",
+      "git_path": "output/len_diorama_origin_v1/3T/preview/assembly.png"
     }
   ],
   "optional_groups": [
     "06_len_pad/3T",
-    "06_len_pad/5T"
+    "06_len_pad/5T",
+    "07_len_origin/3T",
+    "07_len_origin/5T"
   ],
   "len_dot_revision": {
     "art_height_mm": 50,
@@ -364,7 +398,8 @@
     "reason": "Issue #1: Len slots were drawn at the nominal sheet thickness with no kerf compensation, so parts were loose.",
     "applies_to": [
       "05_len",
-      "06_len_pad"
+      "06_len_pad",
+      "07_len_origin"
     ],
     "source_slot_mm": [
       18.8,
@@ -390,5 +425,35 @@
       "drawn_width": "part_thickness + thickness_clearance - kerf",
       "drawn_length": "tab_width + side_clearance - 2*kerf (the tab also loses one kerf)"
     }
+  },
+  "len_origin_revision": {
+    "product": "Len Diorama ORIGIN V1",
+    "source_pack": "assets/len_orgin",
+    "pieces": 8,
+    "slots": 9,
+    "closed_paths": 17,
+    "base_mm": [
+      280,
+      71.2235
+    ],
+    "depth_rows_mm": [
+      12,
+      23,
+      34,
+      45,
+      56
+    ],
+    "plate_mounts": {
+      "bg": 3,
+      "moon_clouds": 1,
+      "tree": 1,
+      "snake": 1,
+      "character": 1,
+      "door_left": 1,
+      "door_right": 1
+    },
+    "builder": "scripts/build_len_diorama_origin.py",
+    "config": "configs/len_diorama_origin.json",
+    "reason": "Owner requested production output for the newly supplied len_orgin separated-asset pack; PAD V1 slot-in diorama conventions with the concept art (08) as the piece-breakdown reference."
   }
 }

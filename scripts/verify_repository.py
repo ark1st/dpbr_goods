@@ -13,6 +13,8 @@ def output_inventory(out):
     required={'a3_release/README.md','a3_release/manifest.json','a3_release/05_len/assembly.png','a3_release/05_len/assembly_dot.png'}
     if any(g.startswith('06_len_pad/') for g in manifest['groups']):
         required.add('a3_release/06_len_pad/assembly.png')
+    if any(g.startswith('07_len_origin/') for g in manifest['groups']):
+        required.add('a3_release/07_len_origin/assembly.png')
     for group,pages in manifest['groups'].items():
         required.add('a3_release/'+group.split('/')[0]+'/README.md')
         required.add('a3_release/'+group.replace('/','_')+'_A3.zip')

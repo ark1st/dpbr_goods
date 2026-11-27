@@ -457,6 +457,14 @@ def source_inputs(only=None):
         assert len(pieces)==7 and sum(len(p['paths']) for p in pieces)==15
         assert compensate_len_slots(pieces,t)==8,('Len PAD slot count changed',t)
         batches.append((f'06_len_pad/{t}',pieces))
+    for t in ['3T','5T']:
+        if only and only not in f'07_len_origin/{t}':continue
+        folder=source_path(f'output/len_diorama_origin_v1/{t}/02_MASTER.ai').parent
+        art=extract_layers(folder/'02_MASTER.ai',['3_ARTWORK'])
+        pieces=pieces_from(fitz.open(folder/'03_CUT_ONLY.pdf'),art,None,f'len_origin_{t}')
+        assert len(pieces)==8 and sum(len(p['paths']) for p in pieces)==17
+        assert compensate_len_slots(pieces,t)==9,('Len ORIGIN slot count changed',t)
+        batches.append((f'07_len_origin/{t}',pieces))
     return batches
 
 def inputs(only=None):

@@ -20,9 +20,10 @@ def main():
 |---|---|---|
 | 현재 1 | [혼합 A3 1: 추가 이미지 + 새튀 + 카데나 판 2개](02_extra_sheet/3T/sheet_01) | 41조각 |
 | 현재 2 | [혼합 A3 2: Len 일반·DOT + 튀잉 + 카데나 나머지](05_len/3T/sheet_01) | 15조각 |
-| 별도 선택안 | [새 Len PAD](06_len_pad/3T/sheet_01) | 받침 1 + 파츠 6 = 7조각, 별도 A3 1장 |
+| 별도 선택안 1 | [새 Len PAD](06_len_pad/3T/sheet_01) | 받침 1 + 파츠 6 = 7조각, 별도 A3 1장 |
+| 별도 선택안 2 | [Len ORIGIN](07_len_origin/3T/sheet_01) | 받침 1 + 파츠 7 = 8조각, 별도 A3 1장 |
 
-현재 확정 목록은 **2장 / 56조각**입니다. PAD까지 별도로 출력하면 **3장 / 63조각**입니다.
+현재 확정 목록은 **2장 / 56조각**입니다. PAD·ORIGIN까지 별도로 출력하면 **4장 / 71조각**입니다.
 단팽이 1개·단풍바람 로고 키링 2개는 제외했습니다. 카데나는 독립 판 없이 두 시트에 나누었습니다.
 Python으로 실제 외곽을 회전·이동해 충돌과 간격을 검사했습니다. 56조각의 구멍을 뺀 재료 면적이 A3 한 장보다 크고 두 장 배치가 성립하므로, 현재 구성의 최소 장수는 2장입니다. 수치는 `A3_VALIDATION.json`의 `minimum_sheet_proof`에 있습니다.
 PAD는 다른 받침·배경을 쓰는 별도 세트이며, 일반·DOT와 공통 받침을 쓰는 것으로 합치지 않았습니다.
@@ -57,7 +58,7 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
 이전 제작판·시험편·중복 ZIP은 [raw 보관 브랜치](https://github.com/ark1st/dpbr_goods/tree/raw)에 있습니다. 새 제작에 사용하지 마세요.
 '''
     write(BASE/'README.md','# A3 제작 파일 · 현재 3T\n\n'+common)
-    titles={'02_extra_sheet':'혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각','05_len':'혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 15조각','06_len_pad':'Len PAD · 별도 선택안 7조각'}
+    titles={'02_extra_sheet':'혼합 A3 1 · 추가 이미지·새튀·카데나 판2개 · 41조각','05_len':'혼합 A3 2 · Len·튀잉·카데나 나머지3개 · 15조각','06_len_pad':'Len PAD · 별도 선택안 7조각','07_len_origin':'Len ORIGIN · 별도 선택안 8조각'}
     for cat,title in titles.items():
         text='[현재 3T 제작 파일](3T/sheet_01) · [선택 대안 5T](5T/sheet_01)\n\n![3T 배치](3T/sheet_01/preview.png)\n\n![5T 대안 배치](5T/sheet_01/preview.png)\n'
         if cat=='02_extra_sheet':
@@ -71,6 +72,9 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
         if cat=='06_len_pad':
             shutil.copy2(source_path('output/len_diorama_pad_v1/3T/preview/assembly.png'),BASE/cat/'assembly.png')
             text+='\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠6개, 홈8개. 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 별밤·산맥 배경 → 매화 좌·우 → 용·캐릭터 → 분홍 구름.\n\n![조립 참고](assembly.png)\n'
+        if cat=='07_len_origin':
+            shutil.copy2(source_path('output/len_diorama_origin_v1/3T/preview/assembly.png'),BASE/cat/'assembly.png')
+            text+='\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠7개, 홈9개. 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 바다·별하늘 배경 → 달·구름 → 매화 → 뱀·창문 좌우 → 캐릭터.\n\n![조립 참고](assembly.png)\n'
         write(BASE/cat/'README.md',f'# {title}\n\n'+text+'\n실물 검증 전입니다. [전체 출력 안내](../README.md)\n')
     included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
     for group,pages in m['groups'].items():
@@ -91,7 +95,7 @@ PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len
 
 현재 확정분 **A3 최소2장 / 56조각**. 단팽이·단바 로고 키링 제외. 도트 렌50mm·발 아래 돌기 수정. [전체 안내·두께별 대안·검사](a3_release)
 
-별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01). 이것도 출력하면 총3장·63조각입니다.
+별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 8조각 / A3 1장](a3_release/07_len_origin/3T/sheet_01). 이 둘까지 출력하면 총4장·71조각입니다.
 
 [이전 파일·원본 백업(raw)](https://github.com/ark1st/dpbr_goods/tree/raw) · [main 소스](https://github.com/ark1st/dpbr_goods/tree/main)
 

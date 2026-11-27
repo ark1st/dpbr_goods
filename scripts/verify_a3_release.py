@@ -64,7 +64,7 @@ def main(check_zips=True,check_native=True):
                 assert p['rotation_degrees']==r['rotation_degrees'],(group,p['id'],'Changed reviewed rotation')
                 assert max(abs(a-b) for a,b in zip(p['placed_bounds_mm'][:2],[r['x'],r['y']]))<.0001
                 assert max(abs(a-b) for a,b in zip(p['source_bounds_mm'],r['source_bounds_mm']))<.0001
-            if group.startswith(('05_len/','06_len_pad/')):
+            if group.startswith(('05_len/','06_len_pad/','07_len_origin/')):
                 assert spec['layout_method']=='15-degree contour nesting'
                 assert all(p['rotation_degrees']%15==0 and p.get('rotated_origin_mm') is not None for p in spec['parts'])
             protected_count+=sum(p['protected_original'] for p in spec['parts'])
@@ -79,9 +79,10 @@ def main(check_zips=True,check_native=True):
                     from build_a3_release import len_slot_fit
                     assert meta['compensated_base_slot_mm']==list(len_slot_fit(group.split('/')[-1]))
             changes={name:compare_geometry(folder/name,spec) for name in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']}
-            if group.startswith(('05_len/','06_len_pad/')):
+            if group.startswith(('05_len/','06_len_pad/','07_len_origin/')):
                 slots=len_slot_counts(folder/'03_CUT_ONLY.pdf',group.split('/')[-1])
-                assert slots=={'nominal':0,'compensated':8},(group,'Len slot fit compensation',slots)
+                expected_slots=9 if group.startswith('07_len_origin/') else 8
+                assert slots=={'nominal':0,'compensated':expected_slots},(group,'Len slot fit compensation',slots)
             if check_native:
                 native=folder/'02_MASTER.vectorcraft'
                 rel=native.relative_to(out).as_posix()
@@ -119,6 +120,11 @@ def main(check_zips=True,check_native=True):
             t=group.split('/')[-1]
             assert set(ids)=={f'len_pad_{t}_{i:02}' for i in range(1,8)}
             assert sum(p['contours'] for p in pages)==15
+        if group.startswith('07_len_origin/'):
+            t=group.split('/')[-1]
+            assert set(ids)=={f'len_origin_{t}_{i:02}' for i in range(1,9)}
+            assert sum(p['contours'] for p in pages)==17
+            assert sum(p['pieces'] for p in pages)==8 and len(ids)==8
         if group.startswith('05_len/'):
             t=group.split('/')[-1]
             assert sum(x.startswith(f'len_{t}_') for x in ids)==7

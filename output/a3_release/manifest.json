@@ -1,0 +1,98 @@
+{
+  "canvas_mm": [
+    420,
+    297
+  ],
+  "groups": {
+    "02_extra_sheet/3T": [
+      {
+        "folder": "a3_release/02_extra_sheet/3T/sheet_01",
+        "pieces": 41,
+        "contours": 103
+      }
+    ],
+    "02_extra_sheet/5T": [
+      {
+        "folder": "a3_release/02_extra_sheet/5T/sheet_01",
+        "pieces": 39,
+        "contours": 101
+      }
+    ],
+    "05_len/3T": [
+      {
+        "folder": "a3_release/05_len/3T/sheet_01",
+        "pieces": 15,
+        "contours": 39
+      }
+    ],
+    "05_len/5T": [
+      {
+        "folder": "a3_release/05_len/5T/sheet_01",
+        "pieces": 12,
+        "contours": 28
+      }
+    ],
+    "06_len_pad/3T": [
+      {
+        "folder": "a3_release/06_len_pad/3T/sheet_01",
+        "pieces": 7,
+        "contours": 15
+      }
+    ],
+    "06_len_pad/5T": [
+      {
+        "folder": "a3_release/06_len_pad/5T/sheet_01",
+        "pieces": 7,
+        "contours": 15
+      }
+    ],
+    "07_len_origin/3T": [
+      {
+        "folder": "a3_release/07_len_origin/3T/sheet_01",
+        "pieces": 8,
+        "contours": 17
+      }
+    ],
+    "07_len_origin/5T": [
+      {
+        "folder": "a3_release/07_len_origin/5T/sheet_01",
+        "pieces": 8,
+        "contours": 17
+      }
+    ]
+  },
+  "physical_cut_test": false,
+  "revision": "A3-2026-11-27-len-origin-optional",
+  "test_pieces_included": false,
+  "superseded_releases": [
+    {
+      "commit": "fd57eab6c43cca6d4ee4a6aa10e8d20eea6aac92",
+      "revision": "A3-2026-11-21-compact-cadena-dot",
+      "groups": [
+        "05_len/3T",
+        "05_len/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Contains two test pieces explicitly rejected by the user."
+    },
+    {
+      "commit": "0061b39491f7e70c28060eecd81753eb35c7f779",
+      "revision": "A3-2026-11-22-current-only",
+      "status": "retired_not_for_current_print",
+      "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    }
+  ],
+  "physical_pages_per_selected_thickness": 2,
+  "retired_groups": [
+    "03_linked_keyrings",
+    "04_ascent_original",
+    "04_ascent_cadena"
+  ],
+  "selected_thickness": "3T",
+  "optional_groups": [
+    "06_len_pad/3T",
+    "06_len_pad/5T",
+    "07_len_origin/3T",
+    "07_len_origin/5T"
+  ]
+}
