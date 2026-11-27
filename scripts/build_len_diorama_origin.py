@@ -1,13 +1,29 @@
-"""Len ORIGIN layered slot-in acrylic diorama, V1.
+"""Len ORIGIN layered slot-in acrylic diorama, V2.
 
-Lineage: the Len PAD V1 product builder (raw snapshot len_pad_bud_guard /
-scripts/build_len_diorama_pad.py), adapted for the separated pack in
-assets/len_orgin. Every raster is embedded as-is at its native aspect; cut
-geometry derives from each raster's alpha contour plus the 2.5 mm clear
-border; slots and tabs follow the repo conventions (18.8 mm nominal slots,
-18 mm tabs, 0.4 mm bottom clearance, 12 mm load-path floor with an automatic
-bud guard). One base + seven plates = eight pieces; 3T and 5T presets.
-No fit-test pieces: current repo policy rejects all test pieces.
+Lineage: V1 (commit 2ac3ad0, scripts/build_len_diorama_origin.py) built one
+base plus seven plates with a 2.5 mm clear border. The owner rejected the
+assembled look ("too many borders"): the preview painted every clear plate
+near-white and drew each one twice, so every element carried a thick halo
+plus a second outline, and the two doors and the background added heavy
+rectangular frames. V2 keeps the V1 slot-in mechanics (18 mm tabs, 18.8 mm
+nominal slots, 0.4 mm bottom clearance, 12 mm load-path floor with the
+automatic bud guard) and changes the piece breakdown, the rim and the preview:
+
+* Clear border 2.5 mm -> 1.0 mm (configs/len_diorama_origin.json carries the
+  rationale; the quality doc fixes no rim minimum).
+* The back panel is ONE plate: the sky raster with both lattice doors butted
+  against its sides and the moon/cloud layer registered over the sky. V1
+  carried these as four plates (background, moon+clouds, two doors) whose
+  rims produced the stacked outlines in the middle and the frames at the sides.
+* Tree, serpent and character stay separate shaped plates on their own depth
+  rows, so the concept's layering (sky -> tree -> serpent -> character) and
+  the diorama depth are kept.
+* The assembly preview renders clear acrylic see-through: no body fill and
+  one thin edge stroke per plate.
+
+Every raster is embedded as-is at its native aspect and never upscaled past
+its native pixels; overlays are only positioned. No fit-test pieces: current
+repo policy rejects all test pieces.
 
 The product archive keeps exactly the files the A3 release consumes:
 02_MASTER.ai, 03_CUT_ONLY.pdf, validation_report.json per thickness and
@@ -29,8 +45,8 @@ from pypdf import PdfReader
 from laser_paths import cut_path, audit_path
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 
-OUT = ROOT/'output/len_diorama_origin_v1'
-TMP = ROOT/'tmp/len_diorama_origin'
+OUT = ROOT/'output/len_diorama_origin_v2'
+TMP = ROOT/'tmp/len_diorama_origin_v2'
 CFG = json.loads((ROOT/'configs/len_diorama_origin.json').read_text(encoding='utf-8'))
 BOARD = tuple(CFG['board_mm'])
 PPI = 300/25.4
@@ -38,6 +54,9 @@ RED = '#ff0000'
 BLUE = '#0000ff'
 SRC = ROOT/'assets/len_orgin'
 LOAD_PATH_FLOOR_MM = 12.0
+PIECE_COUNT = 1 + len(CFG['pieces'])
+SLOT_COUNT = sum(len(p['mounts_mm']) for p in CFG['pieces'])
+CUT_PATH_COUNT = PIECE_COUNT + SLOT_COUNT
 
 
 def write_svg(dest, w, h, content, title=''):
@@ -97,67 +116,111 @@ def export_png(svg, dest):
     runvc(['run', '--in', svg, '--commands', cf])
 
 
-def load_asset(spec):
-    """Embed one island or one whole alpha-cropped raster at exact print scale."""
+def load_raster(spec, border=None):
+    """Embed one island or one whole alpha-cropped raster at exact print scale.
+
+    `border` (standalone plates) asserts that every printed pixel lies within
+    the clear rim of a kept contour, so no speck can print outside the cut.
+    """
     source = SRC/spec['file']
     im = Image.open(source)
     if im.mode != 'RGBA': im = im.convert('RGBA')
+    a = np.asarray(im)
+    processing = None
     if spec.get('island_at_px'):
-        a = np.asarray(im)
         n, labels, stats, _ = cv2.connectedComponentsWithStats((a[..., 3] > 8).astype('uint8'), 8)
         ex, ey = spec['island_at_px']
         sel = [i for i in range(1, n) if abs(int(stats[i, 0])-ex) < 40 and abs(int(stats[i, 1])-ey) < 40]
-        assert sel, (spec['id'], ex, ey)
+        assert sel, (spec['file'], ex, ey)
         idx = max(sel, key=lambda i: int(stats[i, 4]))
-        assert int(stats[idx, 4]) > 10000, (spec['id'], ex, ey, [int(stats[i, 4]) for i in sel])
-        idx = sel[0]
-        bx, by, bw, bh = int(stats[idx, 0]), int(stats[idx, 1]), int(stats[idx, 2]), int(stats[idx, 3])
+        assert int(stats[idx, 4]) > 10000, (spec['file'], ex, ey, [int(stats[i, 4]) for i in sel])
+        bx, by, bw, bh = (int(v) for v in stats[idx, :4])
         crop = a[by:by+bh, bx:bx+bw].copy()
         crop[labels[by:by+bh, bx:bx+bw] != idx, 3] = 0
         im = Image.fromarray(crop, 'RGBA')
-        spec = dict(spec, source_bbox_px=[bx, by, bw, bh],
-                    processing='island separated from the bundled sheet by '
-                               'connected-component label; neighbour-bbox fragments '
-                               'alpha-zeroed, island pixels untouched')
+        bbox = [bx, by, bw, bh]
+        processing = 'island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched'
     else:
-        a = np.asarray(im)
         ys, xs = np.nonzero(a[..., 3] > 8)
         assert len(ys), source
         x0, y0 = int(xs.min()), int(ys.min())
         im = im.crop((x0, y0, int(xs.max())+1, int(ys.max())+1))
-        spec = dict(spec, source_bbox_px=[x0, y0, im.size[0], im.size[1]], processing=None)
+        bbox = [x0, y0, im.size[0], im.size[1]]
     pw, ph = im.size
     h = spec['art_height_mm']; s = h/ph; w = pw*s
     mask = (np.asarray(im)[:, :, 3] > 8).astype('uint8')
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     polys = [Polygon(c[:, 0, :].astype(float)*[s, s]).buffer(0) for c in contours if cv2.contourArea(c) > 6]
     assert polys, source
-    main = max(polys, key=lambda p: p.area)
-    for p in polys:
-        if p is main: continue
-        assert main.distance(p) < CFG['clear_border_mm']-.1, (source.name, p.bounds)
     kept = np.zeros(mask.shape, np.uint8)
     for c in contours:
         if cv2.contourArea(c) > 6: cv2.drawContours(kept, [c], -1, 1, -1)
     far = cv2.distanceTransform(1-kept, cv2.DIST_L2, 3)*s
-    assert not ((far >= CFG['clear_border_mm']-.05) & (mask > 0)).any(), (source.name, 'stray ink beyond border')
+    reach = (border-.05) if border is not None else .5
+    assert not ((far >= reach) & (mask > 0)).any(), (source.name, 'stray ink beyond', reach, 'mm of a kept contour')
+    if border is not None:
+        main = max(polys, key=lambda p: p.area)
+        for p in polys:
+            if p is not main: assert main.distance(p) < border-.1, (source.name, p.bounds)
     # Embed at the exact 300 ppi print size, but never upscale beyond the
     # native pixels: a raster below 300 ppi ships as-is.
     tw, th = max(1, min(round(w*PPI), pw)), max(1, min(round(h*PPI), ph))
     res = im.resize((tw, th), Image.LANCZOS)
+    ra = np.asarray(res); solid = ra[:, :, 3] > 128
     buf = io.BytesIO(); res.save(buf, 'PNG', optimize=True)
     b64 = base64.b64encode(buf.getvalue()).decode()
     ink = (f'<image x="0" y="0" width="{w:.6f}" height="{h:.6f}" '
            f'xlink:href="data:image/png;base64,{b64}" href="data:image/png;base64,{b64}"/>')
-    return {'id': spec['id'], 'src_name': source.name,
+    return {'file': source.name,
         'sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
-        'source_px': [pw, ph], 'source_bbox_px': spec['source_bbox_px'],
+        'source_px': [pw, ph], 'source_bbox_px': bbox,
         'resample_px': [tw, th],
         'w': w, 'h': h, 'ink': ink, 'art': unary_union(polys),
-        'processing': spec.get('processing'),
+        'processing': processing,
         'opaque_px': int((np.asarray(res)[:, :, 3] > 8).sum()),
+        'res_alpha': ra[:, :, 3].copy(), 'mean_rgb': ra[solid][:, :3].mean(0),
         'native_cap': bool(tw < pw-1 or (tw == pw and th == ph and round(w*PPI) > pw)),
         'effective_ppi': round(tw/(w/25.4))}
+
+
+def overlay_offset(anchor, bw, bh, ow, oh, top_margin):
+    """Overlay top-left in the base raster's image coordinates (y down)."""
+    if anchor == 'left_edge_bottom': return -ow, bh-oh
+    if anchor == 'right_edge_bottom': return bw, bh-oh
+    if anchor == 'top_center': return (bw-ow)/2, top_margin
+    raise ValueError(f'Unknown overlay anchor {anchor}')
+
+
+def load_piece(spec):
+    """One plate: a base raster plus overlays butted/registered onto it.
+
+    Overlays are only positioned (no resampling beyond their own 300 ppi cap);
+    their silhouettes join the plate's art union so the cut encloses them.
+    """
+    rasters = []
+    base = load_raster(spec, border=CFG['clear_border_mm'] if not spec.get('overlays') else None)
+    rasters.append(dict(base, dx=0.0, dy=0.0, anchor='base'))
+    ink = base['ink']
+    # A merged plate's body is the union of raster footprints: alpha
+    # silhouettes sit half a pixel inside their image and never exactly meet
+    # at a butt joint. Standalone plates keep the alpha silhouette so the
+    # cut hugs the art.
+    art = base['art'] if not spec.get('overlays') else box(0, 0, base['w'], base['h'])
+    for ov in spec.get('overlays', []):
+        r = load_raster(ov)
+        dx, dy = overlay_offset(ov['anchor'], base['w'], base['h'], r['w'], r['h'], ov.get('top_margin_mm', 0))
+        moved = box(dx, dy, dx+r['w'], dy+r['h'])
+        assert art.distance(moved) < 1e-6, (spec['id'], ov['file'], 'overlay detached from the plate body')
+        if ov['anchor'] == 'top_center':
+            assert art.buffer(1e-6).contains(moved), (spec['id'], ov['file'], 'overlay leaves the base raster')
+        ink += f'<g transform="translate({dx:.6f} {dy:.6f})">{r["ink"]}</g>'
+        art = unary_union([art, moved])
+        rasters.append(dict(r, dx=dx, dy=dy, anchor=ov['anchor'], note=ov.get('note')))
+    if spec.get('overlays'): assert art.geom_type == 'Polygon', (spec['id'], art.geom_type)
+    return {'id': spec['id'], 'src_name': base['file'],
+        'w': base['w'], 'h': base['h'], 'ink': ink, 'art': art, 'rasters': rasters,
+        'opaque_px': sum(r['opaque_px'] for r in rasters),
+        'processing': None if len(rasters) == 1 else 'overlays positioned on the base raster: '+', '.join(r['file'] for r in rasters[1:])}
 
 
 def load_base(preset):
@@ -165,9 +228,7 @@ def load_base(preset):
 
     The raster has no alpha channel: it is a full-bleed opaque strip, so the
     plate cut is the base rectangle itself and only the slot windows need the
-    ink knocked out (1.5 mm beyond each slot), as prepare_len_pad_base.py did
-    for the PAD pack. Here the clearing is in-memory and recorded in the
-    validation report.
+    ink knocked out (1.5 mm beyond each slot), as the PAD builder did.
     """
     source = SRC/'07_base_art.png'
     im = Image.open(source)
@@ -195,8 +256,7 @@ def load_base(preset):
                          CFG['slot_length_mm'], preset['slot_width_mm'],
                          CFG['slot_corner_radius_mm']).buffer(2.0)
         # 2.0 mm clip = 1.5 mm spec plus slack exceeding the LANCZOS upsample
-        # transition band at the window's hard alpha edge (PAD prepare script
-        # convention; a 0.5 mm gap let edge bleed reach the assert zone).
+        # transition band at the window's hard alpha edge (PAD convention).
         outline = np.round(np.asarray(window.exterior.coords)*np.array([tw/aw, th/h])).astype(np.int32)
         cv2.fillPoly(arr, [outline], (0, 0, 0, 0))
         cleared.append({'id': pid, 'center_img_px': [int(cx_img*tw/aw), int(cy_img*th/h)]})
@@ -254,8 +314,8 @@ def bud_guard(g, tab_cx, half, rise, shoulder, a_id):
     return list(boxes.values()), recs
 
 
-def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015):
-    border = CFG['clear_border_mm']; art = a['art']
+def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015, border=None):
+    border = CFG['clear_border_mm'] if border is None else border; art = a['art']
     body = art.buffer(border, quad_segs=28)
     if body.geom_type != 'Polygon': body = concave_hull(body, ratio=.5)
     body = Polygon(body.exterior)
@@ -296,7 +356,7 @@ def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015):
             y -= .25
     assert depth > 1 and abs(shape.bounds[3]-shoulder-depth) < .001
     return {'poly': shape, 'tab_cx': tab_cx, 'shoulder': shoulder, 'depth': depth,
-        'mount_mean_x': mean_x, 'clearance': clearance, 'bud_guard': guard_recs}
+        'mount_mean_x': mean_x, 'clearance': clearance, 'border': border, 'bud_guard': guard_recs}
 
 
 def base_slots(preset):
@@ -328,31 +388,31 @@ def assembly_clearance(shapes):
     st = standing_cuts(shapes)
     rows = {}
     for pid, (g, my) in st.items(): rows.setdefault(my, []).append((pid, g))
-    mind = float('inf'); worst = None
+    mind = None; worst = None
     for my, members in rows.items():
         for i in range(len(members)):
             for j in range(i+1, len(members)):
                 d = members[i][1].distance(members[j][1])
-                if d < mind: mind, worst = d, (members[i][0], members[j][0])
+                if mind is None or d < mind: mind, worst = d, (members[i][0], members[j][0])
     for pid, (g, my) in st.items():
         b = g.bounds
         assert b[0] >= -12 and b[2] <= CFG['base_mm'][0]+12, (pid, b[0], b[2])
-    assert mind >= 2, (worst, mind)
+    assert mind is None or mind >= 2, (worst, mind)
     over = {pid: round(max(0, -g.bounds[0])+max(0, g.bounds[2]-CFG['base_mm'][0]), 2)
             for pid, (g, my) in st.items() if g.bounds[0] < 0 or g.bounds[2] > CFG['base_mm'][0]}
-    return mind, worst, over
+    return (round(mind, 2) if mind is not None else None), worst, over
 
 
 def front_coverage(shapes):
     """Front-view occlusion sweep, reported (not asserted) for ORIGIN.
 
-    PAD V1 asserted 0.65/0.32 for its sparse side-by-side placement. ORIGIN is
-    a deliberately stacked center scene (big moon behind the character, tree
-    across the moon, serpent behind the character): polygon occlusion is
-    by-design and overstates visual blocking (wide hair silhouettes). The
-    numbers are recorded for review; composition acceptance is the
-    vision-checked assembly preview against the supplied concept art. All
-    structural checks (row clearance, overhang, load path, gaps) stay hard."""
+    ORIGIN is a deliberately stacked centre scene (tree across the moon,
+    serpent behind the character): polygon occlusion is by design and
+    overstates visual blocking (wide hair silhouettes). The numbers are
+    recorded for review; composition acceptance is the vision-checked
+    assembly preview against the supplied concept art. All structural
+    checks (row clearance, overhang, load path, gaps) stay hard.
+    """
     st = standing_cuts(shapes)
     out = {}
     for pid, (g, my) in st.items():
@@ -382,8 +442,8 @@ def positioned(assets, shapes, preset):
         x, y = p['board_xy_mm']; tx, ty = x-bx, y-by
         items.append({'name': p['id'], 'poly': affinity.translate(poly, tx, ty),
                       'tx': tx, 'ty': ty, 'ink': a['ink'], 'holes': [],
-                      'art': (tx, ty, a['w'], a['h']), 'opaque_px': a['opaque_px'],
-                      'resample_px': a['resample_px']})
+                      'rasters': [dict(r, x=tx+r['dx'], y=ty+r['dy']) for r in a['rasters']],
+                      'opaque_px': a['opaque_px']})
     tx, ty = CFG['base_board_xy_mm']; inset_x = CFG['base_art_inset_mm']; b = assets['base']
     inset_y = (CFG['base_mm'][1]-b['h'])/2
     # The raster's image-top is the plate's BACK edge; cut y0 is the front
@@ -393,8 +453,8 @@ def positioned(assets, shapes, preset):
     items.append({'name': 'base', 'poly': affinity.translate(base, tx, ty), 'tx': tx, 'ty': ty,
                   'ink': f'<g transform="{flip}">{b["ink"]}</g>',
                   'holes': [affinity.translate(s[3], tx, ty) for s in slots],
-                  'art': (tx+inset_x, ty+inset_y, b['w'], b['h']), 'opaque_px': b['opaque_px'],
-                  'resample_px': b['resample_px']})
+                  'rasters': [dict(b, x=tx+inset_x, y=ty+inset_y, anchor='base')],
+                  'opaque_px': b['opaque_px']})
     for p in items:
         assert box(8, 8, BOARD[0]-8, BOARD[1]-6).contains(p['poly']), (p['name'], p['poly'].bounds)
     gap = min(p['poly'].distance(q['poly']) for i, p in enumerate(items) for q in items[:i])
@@ -416,10 +476,11 @@ def make_board(assets, shapes, preset, folder):
     runvc(['convert', printing, folder/'01_PRINT.pdf'])
     runvc(['convert', folder/'03_CUT_ONLY.svg', folder/'03_CUT_ONLY.pdf'])
     depths = sorted({round(m[1], 1) for p in CFG['pieces'] for m in p['mounts_mm']})
-    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V1 / {preset["name"]} / 8 PIECES', 4.0)
-        + svg_text(13, 403, 'BASE / 280 x 71.2 cut / wave art 275 x 47.5 centred + 2.5 clear rim', 3.1)
-        + svg_text(13, 410, f'9 SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (bg: 3 tabs)', 3.1)
-        + svg_text(13, 417, 'BG 139x90  MOON+CLOUDS 137x60  TREE 93x72  SNAKE 45x55  CHARACTER 67x84  DOORS 30x85', 3.0))
+    bd = assets['backdrop']
+    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V2 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
+        + svg_text(13, 403, f'BASE / {CFG["base_mm"][0]:.0f} x {CFG["base_mm"][1]:.1f} cut / wave art {assets["base"]["w"]:.0f} x {assets["base"]["h"]:.1f} centred + 2.5 clear rim', 3.1)
+        + svg_text(13, 410, f'{SLOT_COUNT} SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (backdrop: 3 tabs)', 3.1)
+        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky + doors + moon/clouds)  TREE {assets["tree"]["w"]:.0f}x{assets["tree"]["h"]:.0f}  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER {assets["character"]["w"]:.0f}x{assets["character"]["h"]:.0f}  / clear rim {CFG["clear_border_mm"]:.1f} (tree {shapes["tree"]["border"]:.1f})', 3.0))
     preview = write_svg(folder/'preview/flat_layout.svg', w, h,
         f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+cut_layer(items, .17)+labels)
     render(preview, folder/'preview/flat_layout.png', 2.2)
@@ -428,35 +489,51 @@ def make_board(assets, shapes, preset, folder):
 
 
 def assembly(assets, shapes, preset, folder):
-    # Axonometric assembly preview from the real cut polygons; illustrative only.
-    ox, oy = 55, 205; dx, dy = .44, -.34
+    """Axonometric assembly preview from the real cut polygons; illustrative.
+
+    Clear acrylic is drawn see-through on the concept's dark mauve ground:
+    plate bodies get no fill and a single thin lit-edge stroke stands for the
+    cut edge (V1 filled every plate near-white and drew each one twice, which
+    produced the white halos and the double outlines; on a light ground even
+    an unfilled plate reads as white). Tabs are clipped at the shoulder line
+    because they sit inside the base slots. Plates are drawn back to front:
+    backdrop, tree, serpent, character.
+    """
+    ox, oy = 62, 212; dx, dy = .22, -.26
     bw, bh = CFG['base_mm']
-    bt = preset['base_thickness_mm']; pt = preset['part_thickness_mm']
+    bt = preset['base_thickness_mm']
     base = rounded(0, 0, bw, bh, CFG['base_corner_radius_mm'])
     slots = base_slots(preset)
     inset_x = CFG['base_art_inset_mm']; inset_y = (bh-assets['base']['h'])/2; b = assets['base']
-    parts = ['<rect width="400" height="260" fill="#f7f3eb"/>']
-    parts.append('<ellipse cx="211" cy="228" rx="170" ry="9" fill="#e9e2d5"/>')
-    bt_transform = f'matrix(1 0 {dx} {dy} {ox} {oy})'
-    parts.append(f'<g transform="{bt_transform}">'+path(poly_path(base), '#d4dedb', '#99ada9', .35)+'</g>')
-    top_transform = f'matrix(1 0 {dx} {dy} {ox} {oy-bt})'
-    stage = path(poly_path(base), '#fafffc', '#a4b6b1', .35)
-    stage += f'<g transform="translate({inset_x:.6f} {inset_y+b["h"]:.6f}) scale(1 -1)">{b["ink"]}</g>'
-    for _, _, _, s in slots: stage += path(poly_path(s), '#bdcbc5', '#8eaaa1', .25)
-    parts.append(f'<g transform="{top_transform}">{stage}</g>')
-    # Draw rear first: backdrop, moon, tree, serpent, doors, character last.
-    for pid in ['bg', 'moon_clouds', 'tree', 'snake', 'door_left', 'door_right', 'character']:
-        spec = next(p for p in CFG['pieces'] if p['id'] == pid)
+    EDGE = '#f2b9ff'; EDGE_W = .26; SIDE = 'rgba(236,170,255,.42)'; SLOT = 'rgba(242,185,255,.55)'
+    TEXT = '#efe6f7'
+    parts = [f'<rect width="400" height="260" fill="#5f4f82"/>',
+             '<ellipse cx="212" cy="236" rx="182" ry="10" fill="rgba(40,28,66,.45)"/>',
+             '<ellipse cx="212" cy="226" rx="200" ry="26" fill="rgba(214,170,236,.16)"/>']
+    # Slab: bottom outline, the visible lit front side band, then the clear top.
+    bottom = affinity.affine_transform(base, [1, dx, 0, dy, ox, oy])
+    top = affinity.affine_transform(base, [1, dx, 0, dy, ox, oy-bt])
+    parts.append(path(poly_path(bottom), 'none', EDGE, EDGE_W))
+    parts.append(path(poly_path(bottom.difference(top)), SIDE, EDGE, EDGE_W))
+    stage = path(poly_path(top), 'none', EDGE, EDGE_W)
+    stage += f'<g transform="translate({ox+inset_x:.6f} {oy-bt+inset_y+b["h"]:.6f}) scale(1 -1)">{b["ink"]}</g>'
+    for _, _, _, s in slots:
+        slot = affinity.affine_transform(s, [1, dx, 0, dy, ox, oy-bt])
+        stage += path(poly_path(slot), 'rgba(40,28,66,.35)', SLOT, .18)
+    parts.append(stage)
+    for spec in CFG['pieces']:
+        pid = spec['id']
         mx = sum(m[0] for m in spec['mounts_mm'])/len(spec['mounts_mm'])
         my = spec['mounts_mm'][0][1]
         a = assets[pid]; s = shapes[pid]
         X = ox+mx+dx*my-a['w']/2; Y = oy+dy*my-bt-s['shoulder']
-        body = path(poly_path(s['poly']), '#fafffc', '#a6b7b3', .35)
-        parts.append(f'<g transform="translate({X+dx*pt:.4f} {Y+dy*pt:.4f})">{body}</g>')
-        parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">{body}{a["ink"]}</g>')
-    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V1', 5, '#4d5148'))
-    parts.append(svg_text(13, 23, f'base {bw:.0f} x {bh:.1f} mm / 8 pieces / transparent acrylic', 3.4))
-    parts.append(svg_text(13, 252, f'V1 / {preset["name"]} concept / len_orgin pack rasters as supplied', 3.1))
+        body = s['poly'].intersection(box(-200, -200, 600, s['shoulder']))
+        if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
+        parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">'
+                     + path(poly_path(body), 'none', EDGE, EDGE_W) + a['ink'] + '</g>')
+    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V2', 5, TEXT))
+    parts.append(svg_text(13, 23, f'base {bw:.0f} x {bh:.1f} mm / {PIECE_COUNT} pieces / clear rim {CFG["clear_border_mm"]:.1f} mm (tree {shapes["tree"]["border"]:.1f}) / clear acrylic drawn see-through on a dark ground', 3.4))
+    parts.append(svg_text(13, 252, f'V2 / {preset["name"]} / one back panel: sky + lattice doors + moon and clouds / tree, serpent, character plates', 3.1))
     svg = write_svg(folder/'preview/assembly.svg', 400, 260, ''.join(parts))
     render(svg, folder/'preview/assembly.png', 2.7)
     svg.unlink()
@@ -485,16 +562,16 @@ def validate(assets, shapes, preset, items, gap, folder):
     names = [r.get_object()['/Name'] for r in reader.trailer['/Root']['/OCProperties']['/OCGs']]
     assert names == ['3_ARTWORK', '2_CORNER_REFERENCE', '1_LASER_CUT']
     text = (folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
-    assert text.count('<path ') == 17 and text.count(' Z"') == 17 and BLUE not in text
-    assert len(items) == 8 and sum(len(p['holes']) for p in items) == 9
+    assert text.count('<path ') == CUT_PATH_COUNT and text.count(' Z"') == CUT_PATH_COUNT and BLUE not in text
+    assert len(items) == PIECE_COUNT and sum(len(p['holes']) for p in items) == SLOT_COUNT
     for p in items:
         for hole in p['holes']: assert p['poly'].contains(hole)
     for p in CFG['pieces']:
-        a = assets[p['id']]
-        assert abs(a['w']/a['h']-a['source_px'][0]/a['source_px'][1]) < 1e-9
-        x0, y0, x1, y1 = a['art'].bounds
-        quant = 1/max(1, min(a['source_px'])-1)
-        assert abs((x1-x0)/(y1-y0)-a['source_px'][0]/a['source_px'][1]) < .003+quant, (p['id'],)
+        for r in assets[p['id']]['rasters']:
+            assert abs(r['w']/r['h']-r['source_px'][0]/r['source_px'][1]) < 1e-9
+            x0, y0, x1, y1 = r['art'].bounds
+            quant = 1/max(1, min(r['source_px'])-1)
+            assert abs((x1-x0)/(y1-y0)-r['source_px'][0]/r['source_px'][1]) < .003+quant, (p['id'], r['file'])
     b = assets['base']
     assert abs(b['w']/b['h']-b['source_px'][0]/b['source_px'][1]) < .003
     # Slot centres carry no ink; tab tips are unprinted.
@@ -510,37 +587,49 @@ def validate(assets, shapes, preset, items, gap, folder):
             for cx in s['tab_cx']:
                 x, y = p['tx']+cx, p['ty']+s['shoulder']+s['depth']/2
                 assert arr[round(y*PPI), round(x*PPI), 3] == 0
-    # Each embedded raster actually printed where the piece sits.
+    # Each embedded raster actually printed where it sits. Overlays on the
+    # opaque sky are recognised by colour under their own opaque mask: a
+    # pixel count there would also count the sky beneath them.
     for p in items:
-        tx, ty, aw, ah = p['art']
-        x0, y0 = round(tx*PPI), round(ty*PPI)
-        region = arr[y0:y0+round(ah*PPI), x0:x0+round(aw*PPI), 3]
-        rpx = p['resample_px']
-        if (region.shape[1], region.shape[0]) != tuple(rpx):
-            region = np.asarray(Image.fromarray(region).resize(tuple(rpx), Image.BILINEAR))
-        cnt = int((region > 8).sum())
-        assert .55*p['opaque_px'] <= cnt <= 1.6*p['opaque_px'], (p['name'], cnt, p['opaque_px'])
+        for r in p['rasters']:
+            x0, y0 = round(r['x']*PPI), round(r['y']*PPI)
+            region = arr[y0:y0+round(r['h']*PPI), x0:x0+round(r['w']*PPI), 3]
+            rpx = r['resample_px']
+            if r['anchor'] != 'base':
+                mask = np.asarray(Image.fromarray(r['res_alpha']).resize((region.shape[1], region.shape[0]), Image.BILINEAR)) > 128
+                printed = arr[y0:y0+region.shape[0], x0:x0+region.shape[1], :3][mask].astype(float)
+                assert len(printed) >= .5*int((r['res_alpha'] > 128).sum()), (p['name'], r['file'], 'overlay missing')
+                delta = float(np.linalg.norm(printed.mean(0)-r['mean_rgb']))
+                assert delta < 30, (p['name'], r['file'], 'overlay colour', round(delta, 1))
+                continue
+            if (region.shape[1], region.shape[0]) != tuple(rpx):
+                region = np.asarray(Image.fromarray(region).resize(tuple(rpx), Image.BILINEAR))
+            cnt = int((region > 8).sum())
+            assert .55*r['opaque_px'] <= cnt <= 1.6*r['opaque_px'], (p['name'], r['file'], cnt, r['opaque_px'])
     depths = sorted({m[1] for p in CFG['pieces'] for m in p['mounts_mm']})
-    heights = {pid: round(preset['base_thickness_mm']+assets[pid]['h']+CFG['clear_border_mm'], 2)
+    heights = {pid: round(preset['base_thickness_mm']+assets[pid]['h']+shapes[pid]['border'], 2)
                for pid in assets if pid != 'base'}
-    report = {'revision': 1, 'product': CFG['product'], 'concept_title': CFG['concept_title'],
+    report = {'revision': CFG['revision'], 'product': CFG['product'], 'concept_title': CFG['concept_title'],
         'character': CFG['character'], 'source_pack': CFG['source_pack'],
         'preset': preset, 'canvas_mm': list(BOARD),
         'base_mm': CFG['base_mm'], 'base_art_mm': [round(b['w'], 3), round(b['h'], 3)],
         'base_art_inset_mm': CFG['base_art_inset_mm'],
         'base_art_vertical': CFG['base_art_vertical'],
         'base_corner_radius_mm': CFG['base_corner_radius_mm'],
-        'pieces': 8, 'finished_size_mm': CFG['finished_size_mm'],
+        'clear_border_mm': CFG['clear_border_mm'], 'clear_border_rationale': CFG['clear_border_rationale'],
+        'clear_border_per_piece_mm': {p['id']: shapes[p['id']]['border'] for p in CFG['pieces']},
+        'pieces': PIECE_COUNT, 'finished_size_mm': CFG['finished_size_mm'],
         'assembled_height_mm': heights, 'depth_rows_mm': [round(d, 2) for d in depths],
-        'cut_closed_paths': 17, 'hole_paths_first': True, 'slot_count': 9,
+        'cut_closed_paths': CUT_PATH_COUNT, 'hole_paths_first': True, 'slot_count': SLOT_COUNT,
         'tab_width_mm': CFG['tab_width_mm'],
-        'tab_depth_mm': shapes['bg']['depth'],
+        'tab_depth_mm': shapes['backdrop']['depth'],
         'slot_length_mm': CFG['slot_length_mm'], 'slot_width_mm': preset['slot_width_mm'],
         'dimensions_are': 'nominal 18.8 x T cut-path centerlines; kerf and fit compensation is applied by scripts/build_a3_release.py (len_slot_fit, issue #1 policy)',
         'fit_status': 'UNTESTED; no fit-test pieces by repo policy',
         'physical_fit_test': False, 'test_pieces_included': False,
         'minimum_piece_gap_mm': gap, 'ai_layers': names,
-        'same_row_standing_clearance_mm': round(mind, 2), 'same_row_worst_pair': list(worst),
+        'same_row_standing_clearance_mm': mind, 'same_row_worst_pair': list(worst) if worst else None,
+        'same_row_note': 'every plate stands on its own depth row; no same-row pairs exist',
         'art_overhang_beyond_base_mm': over,
         'front_view_coverage_pct': cov,
         'front_view_policy': CFG['front_view_policy'],
@@ -550,19 +639,31 @@ def validate(assets, shapes, preset, items, gap, folder):
         'blue_reference_four_sides': True, 'unprinted_tabs_and_slots': True,
         'slot_ink_clearance_checked_mm': 1.5, 'margins_nonblue_ink': True,
         'base_plate': 'supplied raster 07_base_art printed as-is, vertically centred '
-                      'on a 2.5 mm clear rim; 9 slot windows ink-cleared 1.5 mm in-memory '
+                      'on a 2.5 mm clear rim; 6 slot windows ink-cleared 1.5 mm in-memory '
                       'by the builder (no separate prepared copy, no placeholder-slot surgery)',
+        'piece_breakdown': {
+            'backdrop': 'one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned) and the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; 3 tabs',
+            'tree': '03_blossom_tree silhouette plate, 1 tab',
+            'snake': '02_snake silhouette plate, 1 tab',
+            'character': '01_character silhouette plate, 1 tab'},
+        'layer_order_back_to_front': ['backdrop', 'tree', 'snake', 'character'],
+        'revision_changes_vs_v1': CFG['revision_note'],
+        'preview_rendering': 'clear acrylic see-through on a dark mauve ground: plate bodies unfilled, one 0.26 mm lit-edge stroke per plate, tabs clipped at the shoulder (inside the slots); base slab shows its front side band',
         'unused_source_islands': CFG['unused_source_islands'],
         'assets': {p['id']: {'file': assets[p['id']]['src_name'],
-            'sha256': assets[p['id']]['sha256'],
-            'source_bbox_px': assets[p['id']]['source_bbox_px'],
-            'source_px': assets[p['id']]['source_px'],
-            'resample_px': assets[p['id']]['resample_px'],
+            'sha256': assets[p['id']]['rasters'][0]['sha256'],
+            'rasters': [{'file': r['file'], 'sha256': r['sha256'], 'anchor': r['anchor'],
+                'offset_mm': [round(r['dx'], 3), round(r['dy'], 3)],
+                'source_bbox_px': r['source_bbox_px'], 'source_px': r['source_px'],
+                'resample_px': r['resample_px'],
+                'art_width_mm': round(r['w'], 3), 'art_height_mm': round(r['h'], 3),
+                'effective_ppi': r['effective_ppi'], 'native_cap': r['native_cap'],
+                'processing': r['processing'], 'note': r.get('note')}
+                for r in assets[p['id']]['rasters']],
             'art_width_mm': round(assets[p['id']]['w'], 3), 'art_height_mm': round(assets[p['id']]['h'], 3),
             'minimum_art_to_cut_mm': shapes[p['id']]['clearance'],
+            'clear_border_mm': shapes[p['id']]['border'],
             'resample': 'LANCZOS; exact 300 ppi print size, never upscaled past native pixels', 'redrawn': False,
-            'native_cap': assets[p['id']]['native_cap'],
-            'effective_ppi': assets[p['id']]['effective_ppi'],
             'processing': assets[p['id']]['processing']}
             for p in CFG['pieces']}}
     report['assets']['base'] = {'file': b['src_name'], 'sha256': b['sha256'],
@@ -595,19 +696,21 @@ def prune_archive(folder, keep_preview):
 def main():
     OUT.mkdir(parents=True, exist_ok=True); TMP.mkdir(parents=True, exist_ok=True)
     presets = CFG['presets']
-    assets = {p['id']: load_asset(p) for p in CFG['pieces']}
+    assets = {p['id']: load_piece(p) for p in CFG['pieces']}
     reports = []
     for preset in presets:
         folder = OUT/preset['name']; (folder/'preview').mkdir(parents=True, exist_ok=True)
         assets['base'] = load_base(preset)
-        shapes = {p['id']: standee(assets[p['id']], preset['base_thickness_mm'], p['mounts_mm'], p.get('plinth_rise_mm', 8), p.get('simplify_mm', .015)) for p in CFG['pieces']}
+        shapes = {p['id']: standee(assets[p['id']], preset['base_thickness_mm'], p['mounts_mm'], p.get('plinth_rise_mm', 8), p.get('simplify_mm', .015), p.get('clear_border_mm', CFG['clear_border_mm'])) for p in CFG['pieces']}
         items, gap = make_board(assets, shapes, preset, folder)
         assembly(assets, shapes, preset, folder)
         report = validate(assets, shapes, preset, items, gap, folder); reports.append(report)
-        print(json.dumps({'preset': preset['name'], 'pieces': 8, 'cut_paths': 17,
+        print(json.dumps({'preset': preset['name'], 'pieces': PIECE_COUNT, 'cut_paths': CUT_PATH_COUNT,
             'same_row_mm': report['same_row_standing_clearance_mm'],
             'coverage': report['front_view_coverage_pct'],
+            'risers': report['bud_guard_risers'],
             'art': {k: round(v['w'], 1) for k, v in assets.items() if k != 'base'},
+            'plate_bounds': {k: [round(x, 1) for x in v['poly'].bounds] for k, v in shapes.items()},
             'base': [round(assets['base']['w'], 1), round(assets['base']['h'], 1)]}, ensure_ascii=False), flush=True)
         prune_archive(folder, keep_preview=preset is presets[0])
     print(json.dumps({'product': CFG['product'], 'archive': [str(p.relative_to(ROOT)) for p in sorted(OUT.rglob('*')) if p.is_file()]}), flush=True)

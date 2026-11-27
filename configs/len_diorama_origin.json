@@ -1,12 +1,14 @@
 {
-  "revision": 1,
-  "product": "Len Diorama ORIGIN V1",
+  "revision": 2,
+  "product": "Len Diorama ORIGIN V2",
   "concept_title": "보랏빛 달밤의 매화 무대, 뱀과 렌",
   "character": {"name": "렌", "world": "메이플스토리"},
   "source_pack": "assets/len_orgin",
+  "revision_note": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 merges the sky, both lattice doors and the moon/cloud layer into one back plate, shrinks the clear rim 2.5 -> 1.0 mm and renders clear acrylic see-through in the assembly preview.",
   "finished_size_mm": {"width": 280, "height": 91.5, "depth": 71.22},
   "board_mm": [340, 420],
-  "clear_border_mm": 2.5,
+  "clear_border_mm": 1.0,
+  "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. Exception: the blossom tree keeps 1.2 mm because a 1.0 mm contour over its ~300-blossom canopy cannot be fitted within the laser_paths segment gate (1.5 segments per mm) at any workable simplification; 1.2 mm is the smallest rim that passes.",
   "tab_width_mm": 18,
   "tab_bottom_clearance_mm": 0.4,
   "slot_length_mm": 18.8,
@@ -17,26 +19,23 @@
   "base_art_vertical": "center",
   "base_corner_radius_mm": 14.42,
   "base_board_xy_mm": [10, 320],
-  "unused_source_islands": [
-    {
-      "file": "04_moon_clouds.png",
-      "island_bbox_px": [1235, 248, 344, 70],
-      "reason": "Lone 34 x 6.9 mm cloud island is too small for the 18 mm tab load-path floor; the moon cluster island already carries the printed clouds."
-    }
-  ],
+  "unused_source_islands": [],
   "pieces": [
-    {"id": "bg", "file": "05_background.png", "art_height_mm": 90.0, "mounts_mm": [[85, 56], [140, 56], [195, 56]], "board_xy_mm": [10.5, 8]},
-    {"id": "moon_clouds", "file": "04_moon_clouds.png", "island_at_px": [133, 100], "art_height_mm": 60.0, "simplify_mm": 0.02, "mounts_mm": [[175, 45]], "board_xy_mm": [162, 8]},
-    {"id": "tree", "file": "03_blossom_tree.png", "art_height_mm": 72.0, "simplify_mm": 0.03, "mounts_mm": [[95, 34]], "board_xy_mm": [98, 118]},
+    {"id": "backdrop", "file": "05_background.png", "art_height_mm": 90.0,
+     "overlays": [
+       {"file": "06_lattice_doors.png", "island_at_px": [135, 11], "art_height_mm": 85.0, "anchor": "left_edge_bottom", "note": "left lattice door butted against the sky's left edge, bottoms aligned"},
+       {"file": "06_lattice_doors.png", "island_at_px": [1335, 11], "art_height_mm": 85.0, "anchor": "right_edge_bottom", "note": "right lattice door butted against the sky's right edge, bottoms aligned"},
+       {"file": "04_moon_clouds.png", "art_height_mm": 60.0, "anchor": "top_center", "top_margin_mm": 5.0, "note": "moon and both cloud islands (including V1's unused 34 x 6.9 mm upper-right cloud) registered over the sky; the disc lands ~10 mm right of the sky centre as in the concept"}
+     ],
+     "mounts_mm": [[55.5, 56], [140, 56], [224.5, 56]], "board_xy_mm": [10.5, 8]},
+    {"id": "tree", "file": "03_blossom_tree.png", "art_height_mm": 72.0, "clear_border_mm": 1.2, "mounts_mm": [[112, 34]], "board_xy_mm": [98, 118]},
     {"id": "snake", "file": "02_snake.png", "art_height_mm": 55.0, "mounts_mm": [[115, 23]], "board_xy_mm": [226, 118]},
-    {"id": "character", "file": "01_character.png", "art_height_mm": 84.0, "plinth_rise_mm": 10, "mounts_mm": [[170, 12]], "board_xy_mm": [10.5, 220]},
-    {"id": "door_left", "file": "06_lattice_doors.png", "island_at_px": [135, 11], "art_height_mm": 85.0, "mounts_mm": [[32, 23]], "board_xy_mm": [10.5, 118]},
-    {"id": "door_right", "file": "06_lattice_doors.png", "island_at_px": [1335, 11], "art_height_mm": 85.0, "mounts_mm": [[252, 23]], "board_xy_mm": [54, 118]}
+    {"id": "character", "file": "01_character.png", "art_height_mm": 84.0, "plinth_rise_mm": 10, "mounts_mm": [[170, 12]], "board_xy_mm": [10.5, 220]}
   ],
   "front_view_policy": {
     "asserted": false,
     "reported_metrics": ["total_covered_pct", "top30_band_covered_pct"],
-    "note": "PAD V1 asserted 0.65/0.32 for its sparse side placement. ORIGIN is a deliberately stacked center scene (big moon behind the character, tree across the moon, serpent behind the character): polygon occlusion is by-design and overstates visual blocking (wide hair silhouettes). The numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art."
+    "note": "ORIGIN is a deliberately stacked centre scene (tree across the moon, serpent behind the character): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art. Structural checks (row clearance, overhang, load path, gaps) stay hard."
   },
   "presets": [
     {"name": "3T", "part_thickness_mm": 3, "base_thickness_mm": 3, "slot_width_mm": 3},
