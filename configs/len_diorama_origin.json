@@ -1,0 +1,45 @@
+{
+  "revision": 1,
+  "product": "Len Diorama ORIGIN V1",
+  "concept_title": "보랏빛 달밤의 매화 무대, 뱀과 렌",
+  "character": {"name": "렌", "world": "메이플스토리"},
+  "source_pack": "assets/len_orgin",
+  "finished_size_mm": {"width": 280, "height": 91.5, "depth": 71.22},
+  "board_mm": [340, 420],
+  "clear_border_mm": 2.5,
+  "tab_width_mm": 18,
+  "tab_bottom_clearance_mm": 0.4,
+  "slot_length_mm": 18.8,
+  "slot_corner_radius_mm": 0.35,
+  "base_mm": [280, 71.2235],
+  "base_art_mm": [275, 47.5335],
+  "base_art_inset_mm": 2.5,
+  "base_art_vertical": "center",
+  "base_corner_radius_mm": 14.42,
+  "base_board_xy_mm": [10, 320],
+  "unused_source_islands": [
+    {
+      "file": "04_moon_clouds.png",
+      "island_bbox_px": [1235, 248, 344, 70],
+      "reason": "Lone 34 x 6.9 mm cloud island is too small for the 18 mm tab load-path floor; the moon cluster island already carries the printed clouds."
+    }
+  ],
+  "pieces": [
+    {"id": "bg", "file": "05_background.png", "art_height_mm": 90.0, "mounts_mm": [[85, 56], [140, 56], [195, 56]], "board_xy_mm": [10.5, 8]},
+    {"id": "moon_clouds", "file": "04_moon_clouds.png", "island_at_px": [133, 100], "art_height_mm": 60.0, "simplify_mm": 0.02, "mounts_mm": [[175, 45]], "board_xy_mm": [162, 8]},
+    {"id": "tree", "file": "03_blossom_tree.png", "art_height_mm": 72.0, "simplify_mm": 0.03, "mounts_mm": [[95, 34]], "board_xy_mm": [98, 118]},
+    {"id": "snake", "file": "02_snake.png", "art_height_mm": 55.0, "mounts_mm": [[115, 23]], "board_xy_mm": [226, 118]},
+    {"id": "character", "file": "01_character.png", "art_height_mm": 84.0, "plinth_rise_mm": 10, "mounts_mm": [[170, 12]], "board_xy_mm": [10.5, 220]},
+    {"id": "door_left", "file": "06_lattice_doors.png", "island_at_px": [135, 11], "art_height_mm": 85.0, "mounts_mm": [[32, 23]], "board_xy_mm": [10.5, 118]},
+    {"id": "door_right", "file": "06_lattice_doors.png", "island_at_px": [1335, 11], "art_height_mm": 85.0, "mounts_mm": [[252, 23]], "board_xy_mm": [54, 118]}
+  ],
+  "front_view_policy": {
+    "asserted": false,
+    "reported_metrics": ["total_covered_pct", "top30_band_covered_pct"],
+    "note": "PAD V1 asserted 0.65/0.32 for its sparse side placement. ORIGIN is a deliberately stacked center scene (big moon behind the character, tree across the moon, serpent behind the character): polygon occlusion is by-design and overstates visual blocking (wide hair silhouettes). The numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art."
+  },
+  "presets": [
+    {"name": "3T", "part_thickness_mm": 3, "base_thickness_mm": 3, "slot_width_mm": 3},
+    {"name": "5T", "part_thickness_mm": 5, "base_thickness_mm": 5, "slot_width_mm": 5}
+  ]
+}

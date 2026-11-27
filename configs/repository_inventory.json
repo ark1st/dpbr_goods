@@ -51,6 +51,7 @@
   "active_source_scripts": [
     "artifact_hash.py",
     "build_a3_release.py",
+    "build_len_diorama_origin.py",
     "export_art_masters.py",
     "extract_logo_full.py",
     "laser_paths.py",
@@ -1204,10 +1205,52 @@
       "file": "assets/source_logo.ai",
       "archive_path": "snapshots/main/assets/source_logo.ai",
       "sha256": "490e2d49be311f3a5302589295f3b529a2e4c43752305a3a0c945b05abd31546"
+    },
+    {
+      "file": "assets/len_orgin/01_character.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/01_character.png",
+      "sha256": "1b9c409859694c1d4359fda0d766de09d8d75654e2c11098378dcc2c027ab9c8"
+    },
+    {
+      "file": "assets/len_orgin/02_snake.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/02_snake.png",
+      "sha256": "8f94b310ec4b2ce888b5f2134ca51c75da1ba196e3a9b54cd61d071557d035e4"
+    },
+    {
+      "file": "assets/len_orgin/03_blossom_tree.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/03_blossom_tree.png",
+      "sha256": "4d283d0695c8e519313dbf002b2fda611eac23812c4167e06bfc60d0b5452472"
+    },
+    {
+      "file": "assets/len_orgin/04_moon_clouds.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/04_moon_clouds.png",
+      "sha256": "f84ea90f667c8b14f27450839aba6bce8062c87031052303f117139f6f145055"
+    },
+    {
+      "file": "assets/len_orgin/05_background.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/05_background.png",
+      "sha256": "aa2c2deef7738a84e7f88997342be35d8306c0ed07d645f952f9efa5aa80151c"
+    },
+    {
+      "file": "assets/len_orgin/06_lattice_doors.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/06_lattice_doors.png",
+      "sha256": "13d3a1854db1ddf4d7367da93ee0fce827e13cc9c73d5d70d2f6eb7a32d5fffb"
+    },
+    {
+      "file": "assets/len_orgin/07_base_art.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/07_base_art.png",
+      "sha256": "db2c01a30122121189a3ea445edf78b55aceb47589b9fe9c04e694d54000a450"
+    },
+    {
+      "file": "assets/len_orgin/08_diorama concept art.png",
+      "archive_path": "after_days/sleeg:assets/len_orgin/08_diorama concept art.png",
+      "sha256": "dc73dda988bd05e1c0202fafd403019c263d220b5ae358e5520698696b63d625"
     }
   ],
   "optional_current_groups": [
     "06_len_pad/3T",
-    "06_len_pad/5T"
+    "06_len_pad/5T",
+    "07_len_origin/3T",
+    "07_len_origin/5T"
   ]
 }
