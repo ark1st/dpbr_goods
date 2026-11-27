@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-27-len-origin-v3",
+  "revision": "A3-2026-11-27-len-origin-v4",
   "canvas_mm": [
     420,
     297
@@ -154,28 +154,28 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v3/3T/02_MASTER.ai",
-      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
-      "sha256": "97afbd7cffdfaaffcdd7b1acf5a42c955ede9788668202024fb4f40e40848af3",
-      "git_path": "output/len_diorama_origin_v3/3T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v4/3T/02_MASTER.ai",
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "sha256": "3d56ebb064dbae268fe47059dfd96a7a032f05363fb300ffdbd2c93e73800963",
+      "git_path": "output/len_diorama_origin_v4/3T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v3/3T/03_CUT_ONLY.pdf",
-      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
-      "sha256": "8b2623fa0c333ac059157b4722376218bfb4912eeb785a85cbfc9064c03a9585",
-      "git_path": "output/len_diorama_origin_v3/3T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v4/3T/03_CUT_ONLY.pdf",
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "sha256": "130d4cd387bed596e3fcf5aaec590b2cbceabeab4da8d60e6104ebaad5073e26",
+      "git_path": "output/len_diorama_origin_v4/3T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v3/5T/02_MASTER.ai",
-      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
-      "sha256": "fe03fdadc6bf0b12cfb7574d726b108639bb6525d9a03177dd89aa96a1172374",
-      "git_path": "output/len_diorama_origin_v3/5T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v4/5T/02_MASTER.ai",
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "sha256": "e75d9538af36ad037d25b47e9d9034c8cc2ab2dfa11a5ebff01361f841c1260e",
+      "git_path": "output/len_diorama_origin_v4/5T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v3/5T/03_CUT_ONLY.pdf",
-      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
-      "sha256": "cd12d9c2d17970f539c06dfc385303726cf8a2dc64a30c14cd3cb26d4d025b62",
-      "git_path": "output/len_diorama_origin_v3/5T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v4/5T/03_CUT_ONLY.pdf",
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "sha256": "2f459a610e15d0b8aa81db4a852c0f83ee6b70d0e9e2153453170b92a85d7a02",
+      "git_path": "output/len_diorama_origin_v4/5T/03_CUT_ONLY.pdf"
     }
   ],
   "cadena_source_part_ids": [
@@ -192,8 +192,8 @@
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
-    "07_len_origin/3T": 5,
-    "07_len_origin/5T": 5
+    "07_len_origin/3T": 4,
+    "07_len_origin/5T": 4
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -251,7 +251,19 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed): one back panel, 1.0 mm rim and see-through preview kept in V3, but its composition (84 mm Len at x=170, serpent at x=115 beside the tree, tree at x=112) did not follow the concept; the release integration for V2 was never gated. Superseded by V3 before publication."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 (the V2 masters themselves were never gated as a release; V4 re-registers the same composition with the owner's two changes)."
+    },
+    {
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "revision": "A3-2026-11-27-len-origin-v3",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "registration_commit": "c5faa9ecb0d53c26a6d576396b926c3db0be49aa",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 (V2 composition + printed diagonal tree + seated Len) before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "len_layout": {
@@ -307,18 +319,25 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/preview/assembly.png"
     },
     {
+      "file": "output/len_diorama_origin_v4/3T/preview/assembly.png",
+      "commit": "a2a83cd9d70a317acf075caccf3118374421d028",
+      "sha256": "9681f5967f832f166fd061aa0ca0fe797fa7960a8b5585b1d4e48f7af55ba4b0",
+      "git_path": "output/len_diorama_origin_v4/3T/preview/assembly.png",
+      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
+    },
+    {
       "file": "output/len_diorama_origin_v3/3T/preview/assembly.png",
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
       "sha256": "c3b5701efca6716bb5a1d735b05c1fe3c1f08849cda7eba564e84fc33d882447",
       "git_path": "output/len_diorama_origin_v3/3T/preview/assembly.png",
-      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
+      "role": "superseded ORIGIN V3 assembly preview (never published to main/output_len; owner prefers V2; kept for before/after review only)"
     },
     {
       "file": "output/len_diorama_origin_v2/3T/preview/assembly.png",
       "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "sha256": "8edd00e8df22cb7c66d8dd4d9b3771658eba3c46a86ba760cc1fddee031153d5",
       "git_path": "output/len_diorama_origin_v2/3T/preview/assembly.png",
-      "role": "superseded ORIGIN V2 assembly preview (never published; kept for before/after review only)"
+      "role": "ORIGIN V2 assembly preview: the owner's preferred design and the base of V4 (never published; kept for before/after review only)"
     },
     {
       "file": "output/len_diorama_origin_v1/3T/preview/assembly.png",
@@ -463,11 +482,11 @@
     }
   },
   "len_origin_revision": {
-    "product": "Len Diorama ORIGIN V3",
+    "product": "Len Diorama ORIGIN V4",
     "source_pack": "assets/len_orgin",
-    "pieces": 5,
-    "slots": 6,
-    "closed_paths": 11,
+    "pieces": 4,
+    "slots": 5,
+    "closed_paths": 9,
     "base_mm": [
       280,
       71.2235
@@ -475,19 +494,16 @@
     "depth_rows_mm": [
       12,
       23,
-      34,
       56
     ],
     "clear_border_mm": 1.0,
     "clear_border_per_piece_mm": {
       "backdrop": 1.0,
-      "tree": 1.2,
       "snake": 1.0,
       "character": 1.0
     },
     "plate_mounts": {
       "backdrop": 3,
-      "tree": 1,
       "snake": 1,
       "character": 1
     },
@@ -495,64 +511,109 @@
       "row_order_front_to_back": [
         "character",
         "snake",
-        "tree",
         "backdrop"
       ],
       "character": {
         "art_mm": [
-          99.72,
-          125.0
+          67.01,
+          52.94
         ],
-        "art_center_x_mm": 140,
+        "art_center_x_mm": 170,
         "depth_row_mm": 12,
-        "effective_ppi": 275
+        "effective_ppi": 300,
+        "configured_art_height_mm": 84,
+        "crop_below_fraction": 0.63,
+        "seating": {
+          "configured_art_height_mm": 84.0,
+          "crop_below_fraction": 0.63,
+          "kept_art_mm": [
+            67.01,
+            52.94
+          ],
+          "seat_line_above_base_top_mm": 1.0,
+          "plinth_rise_mm": 0,
+          "tab_cx_scene_mm": [
+            170.0
+          ],
+          "tab_window_body_width_at_base_line_mm": 26.0,
+          "bud_guard_riser": {},
+          "processing": "art below 0.630 of the figure height (the seat line) cropped in-memory: 854 of 1355 px kept so the seat rests on the base line"
+        }
       },
       "snake": {
         "art_mm": [
-          82.01,
-          100.0
+          45.11,
+          55.0
         ],
-        "art_center_x_mm": 105,
+        "art_center_x_mm": 115,
         "depth_row_mm": 23,
-        "effective_ppi": 260
-      },
-      "tree": {
-        "art_mm": [
-          93.31,
-          72.0
-        ],
-        "art_center_x_mm": 140,
-        "depth_row_mm": 34,
         "effective_ppi": 300
       },
       "backdrop": {
         "art_mm": [
-          169.4,
-          110.0
+          138.6,
+          90.0
         ],
         "art_center_x_mm": 140,
         "depth_row_mm": 56,
         "moon_disc": {
-          "center_x_mm": 139.99,
-          "center_y_above_base_mm": 68.66,
-          "diameter_mm": 70.35,
-          "offset_from_scene_axis_mm": -0.01,
-          "disc_center_fraction_of_layer_width": 0.4948
+          "center_x_mm": 139.28,
+          "center_y_above_base_mm": 55.13,
+          "diameter_mm": 57.82,
+          "offset_from_scene_axis_x140_mm": -0.72,
+          "visible_pct_in_front_view": 85.0
         }
+      },
+      "tree_printed_on_backdrop": {
+        "rotate_deg_clockwise": 25,
+        "configured_art_height_mm": 80.0,
+        "unrotated_alpha_box_px": [
+          1283,
+          990
+        ],
+        "source_density_ppi": 314,
+        "embedded_ppi": 300,
+        "resample_px": [
+          1146,
+          1035
+        ],
+        "native_cap": true,
+        "rotated_box_mm": [
+          97.05,
+          87.6
+        ],
+        "top_left_in_sky_mm": [
+          4.0,
+          1.0
+        ],
+        "box_in_base_coords_mm": {
+          "x": [
+            74.7,
+            171.75
+          ],
+          "z_above_base_top": [
+            1.4,
+            89.0
+          ]
+        },
+        "confined_to_sky_rectangle": true,
+        "visible_pct_in_front_view_not_hidden_by_front_plates": 63.5,
+        "processing": "rotated 25 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 16 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450215",
+        "clip": null
       },
       "concept": "assets/len_orgin/08_diorama concept art.png"
     },
     "builder": "scripts/build_len_diorama_origin.py",
     "config": "configs/len_diorama_origin.json",
-    "source_dir": "output/len_diorama_origin_v3",
-    "preview": "output/len_diorama_origin_v3/3T/preview/assembly.png",
+    "source_dir": "output/len_diorama_origin_v4",
+    "preview": "output/len_diorama_origin_v4/3T/preview/assembly.png",
     "supersedes": {
-      "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
-      "product": "Len Diorama ORIGIN V2",
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "product": "Len Diorama ORIGIN V3",
       "pieces": 5,
       "clear_border_mm": 1.0,
-      "reason": "V2 fixed the border complaint but did not follow the concept composition: Len small (84 mm) and pushed right, the serpent beside the tree on the left, the tree left of centre. V3 keeps the V2 piece breakdown, rims and see-through preview and recomposes: Len 125 mm centred in front, serpent plate directly behind her, tree centred and enlarged to crown the moon, moon centred on the scene axis."
+      "reason": "The owner prefers the V2 design over V3 (\"v2가 낫다고 한거야\"): V3's centred 125 mm Len and serpent placed directly behind her are not wanted. V4 = the V2 composition (84 mm Len at x=170, serpent at x=115, one back panel with sky/doors/moon at V2 sizes) plus the two owner requests: the blossom tree printed diagonally into the back panel instead of a cut plate, and Len seated on the base."
     },
-    "reason": "Lead's vision read of the V2 preview against the concept: dominant centred Len, serpent behind her, tree centred behind, moon centred."
+    "reason": "Owner correction after V3: keep the V2 look; add the concept's diagonal tree (printed, no extra plate) and seat Len fully on the base."
   }
 }

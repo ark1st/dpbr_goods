@@ -102,7 +102,7 @@
       ],
       "masters_commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
       "status": "retired_not_for_current_print",
-      "reason": "Len ORIGIN V1 (8 pieces, 2.5 mm clear rims, doors/moon/clouds as separate framed plates) rejected by the owner as too many borders; replaced by V2 (5 pieces, 1.0 mm rim with 1.2 mm on the blossom tree, merged back panel, see-through assembly preview), itself superseded by V3 before publication. V1 masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V1 (8 pieces, 2.5 mm clear rims, doors/moon/clouds as separate framed plates) rejected by the owner as too many borders; replaced by V2 (5 pieces, 1.0 mm rim, merged back panel, see-through assembly preview), the owner's preferred design and the base of V4. V1 masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
@@ -113,7 +113,19 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed): one back panel, 1.0 mm rim and see-through preview kept in V3, but its composition (84 mm Len at x=170, serpent at x=115 beside the tree, tree at x=112) did not follow the concept; the release integration for V2 was never gated. Superseded by V3 before publication."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 (the V2 masters themselves were never gated as a release; V4 re-registers the same composition with the owner's two changes)."
+    },
+    {
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "revision": "A3-2026-11-27-len-origin-v3",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "registration_commit": "c5faa9ecb0d53c26a6d576396b926c3db0be49aa",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 (V2 composition + printed diagonal tree + seated Len) before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "retired_package_files": [
@@ -188,19 +200,30 @@
       "large_format/ascent_5T_800x500"
     ],
     "tab_depth_mm": 3.0,
-    "slot_mm": [20.2, 5.2],
+    "slot_mm": [
+      20.2,
+      5.2
+    ],
     "status": "retired_short_mount"
   },
   "previous_danba_without_small_tuiing": {
     "source_commit": "53d5977202cfb1962dcb0e3c80f821abe99b2819",
     "folder": "print_delivery/danba_keyrings",
-    "superseded_counts": {"logo": 70, "garam": 13, "danpaengi": 13},
+    "superseded_counts": {
+      "logo": 70,
+      "garam": 13,
+      "danpaengi": 13
+    },
     "reason": "The new order includes four complete sets of the smaller supplied Tuiing chain."
   },
   "previous_danba_52_logo_sheet": {
     "source_commit": "fdbf4470a0bb174961ade45c65b94f228394dc9c",
     "folder": "print_delivery/danba_keyrings",
-    "superseded_counts": {"logo": 52, "garam": 13, "danpaengi": 13},
+    "superseded_counts": {
+      "logo": 52,
+      "garam": 13,
+      "danpaengi": 13
+    },
     "reason": "The logo-priority A3 order preserves the 26 characters and adds 18 logos."
   },
   "previous_danba_keyring_mix": {

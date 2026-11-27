@@ -49,20 +49,20 @@
     "07_len_origin/3T": [
       {
         "folder": "a3_release/07_len_origin/3T/sheet_01",
-        "pieces": 5,
-        "contours": 11
+        "pieces": 4,
+        "contours": 9
       }
     ],
     "07_len_origin/5T": [
       {
         "folder": "a3_release/07_len_origin/5T/sheet_01",
-        "pieces": 5,
-        "contours": 11
+        "pieces": 4,
+        "contours": 9
       }
     ]
   },
   "physical_cut_test": false,
-  "revision": "A3-2026-11-27-len-origin-v3",
+  "revision": "A3-2026-11-27-len-origin-v4",
   "test_pieces_included": false,
   "superseded_releases": [
     {
@@ -100,7 +100,19 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed): one back panel, 1.0 mm rim and see-through preview kept in V3, but its composition (84 mm Len at x=170, serpent at x=115 beside the tree, tree at x=112) did not follow the concept; the release integration for V2 was never gated. Superseded by V3 before publication."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 (the V2 masters themselves were never gated as a release; V4 re-registers the same composition with the owner's two changes)."
+    },
+    {
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "revision": "A3-2026-11-27-len-origin-v3",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "registration_commit": "c5faa9ecb0d53c26a6d576396b926c3db0be49aa",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V3 masters (commit 657a484, release registration c5faa9e; pushed to after_days/sleeg only, never to main/output_len): Len 125 mm centred with the serpent directly behind her. The owner prefers V2 (\"v2가 낫다고 한거야\"), so V3 was superseded by V4 (V2 composition + printed diagonal tree + seated Len) before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "physical_pages_per_selected_thickness": 2,
