@@ -569,6 +569,57 @@
       "contours": 294,
       "existing_print_only": true,
       "print_pages_added": 0,
+      "cut_variants": {
+        "03_CUT_ONLY_NO_CARABINERS.ai": {
+          "excluded_outer_ids": [
+            "original_037",
+            "original_038",
+            "original_039",
+            "original_040",
+            "original_079",
+            "original_080",
+            "original_081",
+            "original_082",
+            "original_121",
+            "original_122",
+            "original_123",
+            "original_124",
+            "original_163",
+            "original_164",
+            "original_165",
+            "original_166",
+            "original_205",
+            "original_206",
+            "original_207",
+            "original_208",
+            "original_247",
+            "original_248",
+            "original_249",
+            "original_250",
+            "original_289",
+            "original_290",
+            "original_291",
+            "original_292"
+          ],
+          "pieces": 49,
+          "contours": 210
+        },
+        "03_CUT_ONLY_NO_CARABINERS_5T.ai": {
+          "parent_variant": "03_CUT_ONLY_NO_CARABINERS.ai",
+          "pieces": 49,
+          "contours": 210,
+          "mount_fit": {
+            "stock_mm": 5.0,
+            "kerf_mm": 0.2,
+            "tab_width_mm": 18.0,
+            "tab_depth_mm": 5.1,
+            "slot_mm": [
+              17.8,
+              4.85
+            ]
+          }
+        }
+      },
       "files": [
         "03_CUT_ONLY.pdf",
         "03_CUT_ONLY.ai",

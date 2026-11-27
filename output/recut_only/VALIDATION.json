@@ -37,6 +37,65 @@
       "max_hole_bounds_deviation_mm": 0.00019380000026103517,
       "contours": 294,
       "pieces": 77
+    },
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY_NO_CARABINERS.ai",
+      "sha256": "7ff762c263125f8073b26af313919d7f8fa8b56245bce889ed6735e1e8c3df65",
+      "pieces": 49,
+      "contours": 210,
+      "excluded_outer_ids": [
+        "original_037",
+        "original_038",
+        "original_039",
+        "original_040",
+        "original_079",
+        "original_080",
+        "original_081",
+        "original_082",
+        "original_121",
+        "original_122",
+        "original_123",
+        "original_124",
+        "original_163",
+        "original_164",
+        "original_165",
+        "original_166",
+        "original_205",
+        "original_206",
+        "original_207",
+        "original_208",
+        "original_247",
+        "original_248",
+        "original_249",
+        "original_250",
+        "original_289",
+        "original_290",
+        "original_291",
+        "original_292"
+      ],
+      "max_parent_format_deviation_mm": 0.0
+    },
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY_NO_CARABINERS_5T.ai",
+      "sha256": "1216ad49cd8e5f4799914a1a986b593b7d22bb8a621fc79019d3e3d477c25d5a",
+      "contours": 210,
+      "pieces": 49,
+      "minimum_piece_gap_mm": 2.6254642000000104,
+      "changed_contours": 49,
+      "slots": 28,
+      "tabs": 28,
+      "mount_fit": {
+        "stock_mm": 5.0,
+        "kerf_mm": 0.2,
+        "tab_width_mm": 18.0,
+        "tab_depth_mm": 5.1,
+        "slot_mm": [
+          17.8,
+          4.85
+        ]
+      },
+      "changed_material_ink_pixels_at_300ppi": 0,
+      "physical_fit_test": false
     }
   ],
   "packages": [
@@ -49,7 +108,9 @@
     "03_CUT_ONLY.pdf",
     "03_CUT_ONLY.ai",
     "03_CUT_ONLY.svg",
-    "03_CUT_ONLY.vectorcraft"
+    "03_CUT_ONLY.vectorcraft",
+    "03_CUT_ONLY_NO_CARABINERS.ai",
+    "03_CUT_ONLY_NO_CARABINERS_5T.ai"
   ],
   "pieces": 77,
   "contours": 294,

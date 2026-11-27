@@ -30,7 +30,8 @@ def output_inventory(out):
                             ('01_PRINT_300ppi.png','02_CUT_WITH_BLUE.ai','registration.json'))
         required.update(delivery['layout_files'])
     recoveries=manifest.get('recut_recoveries',[])
-    for recovery in recoveries:required.update(recovery['folder']+'/'+name for name in recovery['files'])
+    for recovery in recoveries:
+        required.update(recovery['folder']+'/'+name for name in [*recovery['files'],*recovery.get('cut_variants',{})])
     large_plates=manifest.get('large_format_plates',[])
     for plate in large_plates:
         folder=Path(plate['folder'])

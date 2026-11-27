@@ -148,6 +148,9 @@ def inspection_fingerprint(pdf_only=False):
     values=[inspect.getsource(fn) for fn in functions]
     # Keep existing full-format cache entries when selecting the PDF-only toolchain.
     evaluator=inspect.getsource(main).split('    expected_count=')[0]
+    # Enumerating variants separately changes no per-file parent geometry checks.
+    evaluator=evaluator.replace('for file in parent_cut_files(out,folder,manifest):',
+                                "for file in sorted((out/folder).rglob('*')):")
     values.append(evaluator.replace('fingerprint=inspection_fingerprint(pdf_only=pdf_only)',
                                     'fingerprint=inspection_fingerprint()'))
     values.extend(artifact_sha256(ROOT/'scripts'/name) for name in
@@ -200,6 +203,13 @@ def verify_len_delivery(file, layout, canonical):
     verify_exported_paths({'parts':expected},actual)
 
 
+def parent_cut_files(out,folder,manifest):
+    # Subset AIs have independent inventories and are audited separately below.
+    variants={out/spec['folder']/name for spec in manifest.get('recut_recoveries',[])
+              for name in spec.get('cut_variants',{})} if folder=='recut_only' else set()
+    return sorted(path for path in (out/folder).rglob('*') if path not in variants)
+
+
 def main(pdf_only=False):
     out=ROOT/'output';tmp=ROOT/'tmp/laser_preflight';tmp.mkdir(parents=True,exist_ok=True)
     records=[];errors=[]
@@ -220,7 +230,7 @@ def main(pdf_only=False):
     fixed=CONFIG.get('fixed_source_page3',{})
     retired_a3=['a3_release/'+g+'/' for g in manifest.get('retired_groups',[])]
     for folder in ACTIVE:
-        for file in sorted((out/folder).rglob('*')):
+        for file in parent_cut_files(out,folder,manifest):
             if not file.is_file() or 'preview' in file.parts or file.name.startswith('00_'):continue
             rel=file.relative_to(out).as_posix();suffix=file.suffix.lower();target=file
             if folder=='a3_release':
@@ -334,6 +344,16 @@ def main(pdf_only=False):
             except Exception as e:
                 errors.append({'file':rel,'errors':[str(e)]});print('FAIL',rel,str(e),flush=True)
     expected_count=(len(current_a3)+len(current_large))*(3 if pdf_only else 5)+len(current_assets)*(3 if pdf_only else 4)+len(current_recut)*(2 if pdf_only else 4)
+    for recovery in manifest.get('recut_recoveries',[]):
+        for name,variant in recovery.get('cut_variants',{}).items():
+            path=out/recovery['folder']/name
+            result=inspect_pdf(path)
+            assert result and not result['errors'] and result['outer_contours']==variant['pieces']
+            assert result['contours']==variant['contours'] and all(abs(a-b)<.01 for a,b in
+                    zip(result['dimensions_mm'],recovery['canvas_mm'],strict=True))
+            result.update(file=path.relative_to(out).as_posix(),sha256=artifact_sha256(path),sha256_mode='raw bytes')
+            records.append(result)
+            expected_count+=1
     delivery_keys=[]
     active_masters=[]
     reference_records=[]

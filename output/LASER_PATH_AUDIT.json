@@ -1,7 +1,7 @@
 {
   "revision": "A3-fixed-page3-reference-01",
   "mode": "all-formats",
-  "checked_files": 811,
+  "checked_files": 813,
   "errors": [],
   "protected_original_findings": [],
   "records": [
@@ -67394,6 +67394,3824 @@
     },
     {
       "dimensions_mm": [
+        499.9989810519748,
+        800.0012118869357
+      ],
+      "drawing_objects": 210,
+      "contours": 210,
+      "outer_contours": 49,
+      "minimum_piece_gap_mm": 2.6254642000000104,
+      "segments": 2652,
+      "curves": 2085,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.567908693818648,
+          "minimum_segment_mm": 3.141968382808342,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998331834912946,
+          "minimum_segment_mm": 0.5275620178737027,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99831442794664,
+          "minimum_segment_mm": 0.5275578231122415,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568073111327095,
+          "minimum_segment_mm": 3.1420135111678,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398829286306488,
+          "minimum_segment_mm": 1.0996918193489862,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7708957793080935,
+          "minimum_segment_mm": 0.9427150522477233,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027273390827025,
+          "minimum_segment_mm": 1.2568165505713333,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027268877668057,
+          "minimum_segment_mm": 1.256814293995995,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398872151235122,
+          "minimum_segment_mm": 1.0997133183878738,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.771010221319136,
+          "minimum_segment_mm": 0.9427436523771057,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99841354522628,
+          "minimum_segment_mm": 0.5275881308304844,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398847867758931,
+          "minimum_segment_mm": 1.0996918193489924,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898516,
+          "minimum_segment_mm": 0.9427151405194201,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903659291,
+          "minimum_segment_mm": 1.256814293996014,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.9985881475415,
+          "minimum_segment_mm": 0.5275371364489168,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.0272827705399905,
+          "minimum_segment_mm": 1.2568142274362535,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398848000880069,
+          "minimum_segment_mm": 1.0996918193489924,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709530645688645,
+          "minimum_segment_mm": 0.9427150739586831,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988480008785755,
+          "minimum_segment_mm": 1.0996919076200216,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027225530151032,
+          "minimum_segment_mm": 1.2567856071944126,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898134,
+          "minimum_segment_mm": 0.9427151405194011,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99836967510606,
+          "minimum_segment_mm": 0.5275203310842179,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027287549936889,
+          "minimum_segment_mm": 1.2568166171308028,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883397555155,
+          "minimum_segment_mm": 1.0997013526307629,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770953021005303,
+          "minimum_segment_mm": 0.9427245856005528,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998328736521536,
+          "minimum_segment_mm": 0.5275449019695109,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998773960309,
+          "minimum_segment_mm": 0.5278191203689719,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027785374367905,
+          "minimum_segment_mm": 1.2569321315216442,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "28:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02778537436788,
+          "minimum_segment_mm": 1.256932131521594,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "29:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02778537436788,
+          "minimum_segment_mm": 1.256932131521594,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "30:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02778537436788,
+          "minimum_segment_mm": 1.256932131521594,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "31:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.028451641495711,
+          "minimum_segment_mm": 1.257074865314176,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "32:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02845155179883,
+          "minimum_segment_mm": 1.2570748870256205,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "33:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99829576462281,
+          "minimum_segment_mm": 0.5275523682949698,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "34:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286367410311,
+          "minimum_segment_mm": 1.0995715809970283,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "35:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988188,
+          "minimum_segment_mm": 1.0995715809970283,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "36:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398857260254867,
+          "minimum_segment_mm": 1.0996952485481843,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "37:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398857303677093,
+          "minimum_segment_mm": 1.099695270258888,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "38:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988572602547915,
+          "minimum_segment_mm": 1.0996952485481968,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "39:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398857260254867,
+          "minimum_segment_mm": 1.0996952485481968,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "40:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99858223517797,
+          "minimum_segment_mm": 0.5275984805701706,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "41:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99856294303701,
+          "minimum_segment_mm": 0.5275791625679157,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "42:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568063513621041,
+          "minimum_segment_mm": 3.142006389219072,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "43:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962045555755,
+          "minimum_segment_mm": 0.9424253167052242,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "44:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796294252134,
+          "minimum_segment_mm": 0.9424253832642482,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "45:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962045555506,
+          "minimum_segment_mm": 0.9424253167052119,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "46:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796294252134,
+          "minimum_segment_mm": 0.9424253832642482,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "47:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7704438893985968,
+          "minimum_segment_mm": 0.9425967160866012,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "48:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7704438893985968,
+          "minimum_segment_mm": 0.9425967160866012,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "49:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883862164675,
+          "minimum_segment_mm": 1.0996894745289136,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "50:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770953021146725,
+          "minimum_segment_mm": 0.9427150522477483,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "51:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903658783,
+          "minimum_segment_mm": 1.2568142057248513,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "52:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903659252,
+          "minimum_segment_mm": 1.2568142939959885,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "53:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898516,
+          "minimum_segment_mm": 0.9427151405193951,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "54:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398847867875629,
+          "minimum_segment_mm": 1.0996941641988787,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "55:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998441768116656,
+          "minimum_segment_mm": 0.5275887632735918,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "56:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282770539952,
+          "minimum_segment_mm": 1.2568142274362786,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "57:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988479574587815,
+          "minimum_segment_mm": 1.0996894745288757,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "58:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770953064568865,
+          "minimum_segment_mm": 0.9427150739587083,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "59:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282770539952,
+          "minimum_segment_mm": 1.2568142274362786,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "60:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770895689612431,
+          "minimum_segment_mm": 0.9427150739587083,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "61:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988386654212785,
+          "minimum_segment_mm": 1.0996941641988913,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "62:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99835199212562,
+          "minimum_segment_mm": 0.527607058610026,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "63:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.56735867668327,
+          "minimum_segment_mm": 3.141820657547507,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "64:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.77095306456824,
+          "minimum_segment_mm": 0.9427150522477483,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "65:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39878138004384,
+          "minimum_segment_mm": 1.0996941424871767,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "66:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903658783,
+          "minimum_segment_mm": 1.2568142057248515,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "67:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903659253,
+          "minimum_segment_mm": 1.256814293996039,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "68:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898516,
+          "minimum_segment_mm": 0.9427151405194453,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "69:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398847867760741,
+          "minimum_segment_mm": 1.0996894962400416,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "70:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99817643048576,
+          "minimum_segment_mm": 0.5274965992191617,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "71:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99876450395481,
+          "minimum_segment_mm": 0.5278142520721384,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "72:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998751495350426,
+          "minimum_segment_mm": 0.5277891469513476,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "73:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568577511180075,
+          "minimum_segment_mm": 3.1421253885954648,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "74:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.9982420543611,
+          "minimum_segment_mm": 0.5275073601973376,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "75:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703426831660036,
+          "minimum_segment_mm": 0.9425628243376462,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "76:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904110466137,
+          "minimum_segment_mm": 1.2569570384373698,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "77:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3983006464318795,
+          "minimum_segment_mm": 1.0995739258112414,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "78:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904110466061,
+          "minimum_segment_mm": 1.256957038437332,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "79:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166079,
+          "minimum_segment_mm": 0.9425628243376462,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "80:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398300469889003,
+          "minimum_segment_mm": 1.0995739258112414,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "81:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99829374492928,
+          "minimum_segment_mm": 0.5275384158949864,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "82:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166079,
+          "minimum_segment_mm": 0.9425628243376963,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "83:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838621485327,
+          "minimum_segment_mm": 1.0997084528556793,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "84:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256604766661,
+          "minimum_segment_mm": 1.2568141070560803,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "85:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99887135278422,
+          "minimum_segment_mm": 0.5275357934286966,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "86:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838664907365,
+          "minimum_segment_mm": 1.0997084745667236,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "87:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703426831660036,
+          "minimum_segment_mm": 0.9425628243376462,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "88:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904110466137,
+          "minimum_segment_mm": 1.2569570384373698,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "89:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99834498749247,
+          "minimum_segment_mm": 0.5275373886071302,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "90:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166003,
+          "minimum_segment_mm": 0.9425628243376337,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "91:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256515071555,
+          "minimum_segment_mm": 1.2568141287678352,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "92:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838531786568,
+          "minimum_segment_mm": 1.099708474566661,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "93:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190296,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "94:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838621485402,
+          "minimum_segment_mm": 1.0997084528557417,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "95:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166155,
+          "minimum_segment_mm": 0.9425628243377342,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "96:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027918136317554,
+          "minimum_segment_mm": 1.256941488997842,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "97:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027918136316319,
+          "minimum_segment_mm": 1.256941577269295,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "98:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285802,
+          "minimum_segment_mm": 1.2567987551662745,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "99:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285801,
+          "minimum_segment_mm": 1.2567987551662243,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "100:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285801,
+          "minimum_segment_mm": 1.2567987551662243,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "101:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285777,
+          "minimum_segment_mm": 1.256798755166262,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "102:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99819451012584,
+          "minimum_segment_mm": 0.5274880888400064,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "103:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.397752951720402,
+          "minimum_segment_mm": 1.0994381829388427,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "104:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.397753084840456,
+          "minimum_segment_mm": 1.0994382494988693,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "105:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988164,
+          "minimum_segment_mm": 1.0995715809969657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "106:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286500530661,
+          "minimum_segment_mm": 1.0995715809969657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "107:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988264,
+          "minimum_segment_mm": 1.099571580997016,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "108:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988164,
+          "minimum_segment_mm": 1.0995715809969657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "109:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962941671026,
+          "minimum_segment_mm": 0.9424109844046226,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "110:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962941671266,
+          "minimum_segment_mm": 0.942410984404635,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "111:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7704057996531546,
+          "minimum_segment_mm": 0.9425823392503074,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "112:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770405799653154,
+          "minimum_segment_mm": 0.9425823392503074,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "113:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796383863677,
+          "minimum_segment_mm": 0.9424110509648267,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "114:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796383863677,
+          "minimum_segment_mm": 0.9424110509648267,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "115:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568577644356603,
+          "minimum_segment_mm": 3.142106410246741,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "116:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99837123453572,
+          "minimum_segment_mm": 0.5275717483951922,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "117:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998343383434545,
+          "minimum_segment_mm": 0.5275726243401022,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "118:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568577511179999,
+          "minimum_segment_mm": 3.1421253885954274,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "119:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190296,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "120:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838621485401,
+          "minimum_segment_mm": 1.099708452855717,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "121:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703426831661546,
+          "minimum_segment_mm": 0.9425628243376337,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "122:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256515071755,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "123:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709854683352235,
+          "minimum_segment_mm": 0.9427418935554192,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "124:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883866490754,
+          "minimum_segment_mm": 1.0997084745667611,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "125:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.998751516515085,
+          "minimum_segment_mm": 0.5277890575244902,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "126:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838531786568,
+          "minimum_segment_mm": 1.099708474566661,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "127:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256515071555,
+          "minimum_segment_mm": 1.2568141287678352,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "128:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166004,
+          "minimum_segment_mm": 0.9425628243376587,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "129:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770985335214002,
+          "minimum_segment_mm": 0.9427418269945899,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "130:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190296,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "131:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883862148525,
+          "minimum_segment_mm": 1.0997084528556413,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "132:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99871141844233,
+          "minimum_segment_mm": 0.5278266612102586,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "133:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398300469889104,
+          "minimum_segment_mm": 1.0995739258112414,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "134:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703427728650056,
+          "minimum_segment_mm": 0.9425628026263603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "135:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904067044124,
+          "minimum_segment_mm": 1.2569569501663933,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "136:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683167751,
+          "minimum_segment_mm": 0.9425627360665577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "137:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190247,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "138:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883862148525,
+          "minimum_segment_mm": 1.0997084528557417,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "139:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99831182261477,
+          "minimum_segment_mm": 0.5275351691063669,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "140:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99830520548437,
+          "minimum_segment_mm": 0.5274901259420444,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "141:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770767137402663,
+          "minimum_segment_mm": 0.9426917626388586,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "142:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027442664780951,
+          "minimum_segment_mm": 1.2568511770694277,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "143:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39868527115773,
+          "minimum_segment_mm": 1.099671229517723,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "144:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685404272574,
+          "minimum_segment_mm": 1.099671296075147,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "145:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027442664780849,
+          "minimum_segment_mm": 1.2568511770694524,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "146:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7707671808267356,
+          "minimum_segment_mm": 0.9426917843508945,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "147:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.99904976618377,
+          "minimum_segment_mm": 0.5276177153816612,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "148:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7707671808267356,
+          "minimum_segment_mm": 0.9426917843508945,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "149:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685404272574,
+          "minimum_segment_mm": 1.099671296075147,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "150:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.0274426647808,
+          "minimum_segment_mm": 1.2568511770694277,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "151:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770196554623454,
+          "minimum_segment_mm": 0.9425491386558132,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "152:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685271157627,
+          "minimum_segment_mm": 1.0996712295177478,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "153:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.0274426213589445,
+          "minimum_segment_mm": 1.2568511553586788,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "154:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 46.9986781352766,
+          "minimum_segment_mm": 0.5274825540625476,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "155:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685271157627,
+          "minimum_segment_mm": 1.0996712295177478,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "156:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027442664780849,
+          "minimum_segment_mm": 1.2568511770694524,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "157:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770196511201646,
+          "minimum_segment_mm": 0.9425491169450096,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "158:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398114376888456,
+          "minimum_segment_mm": 1.0995285168066817,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "159:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7701965112014943,
+          "minimum_segment_mm": 0.9425491169449091,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "160:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.028013334236802,
+          "minimum_segment_mm": 1.2569938443619109,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "161:0",
+          "segments": 62,
+          "curves": 54,
+          "perimeter_mm": 118.43692416750979,
+          "minimum_segment_mm": 0.33193377077171493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "162:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06619372966951,
+          "minimum_segment_mm": 0.32539054741380496,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "163:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 407.3001260338943,
+          "minimum_segment_mm": 0.565532970257668,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "164:0",
+          "segments": 62,
+          "curves": 54,
+          "perimeter_mm": 118.44470630903513,
+          "minimum_segment_mm": 0.33220251127707434,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "165:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 238.2038980663163,
+          "minimum_segment_mm": 0.23723162569766962,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "166:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860902682823,
+          "minimum_segment_mm": 1.6362009961569168,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "167:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 238.20398218774986,
+          "minimum_segment_mm": 0.2372312008416515,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "168:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06537517333598,
+          "minimum_segment_mm": 0.32504213879627836,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "169:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6633248156778,
+          "minimum_segment_mm": 1.9633741197433676,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "170:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54011296052775,
+          "minimum_segment_mm": 3.134819129069611,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "171:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.66373153623283,
+          "minimum_segment_mm": 1.9633685903626223,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "172:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 407.3011817162219,
+          "minimum_segment_mm": 0.5655444032366601,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "173:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 407.2999824485498,
+          "minimum_segment_mm": 0.565483450637091,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "174:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860928808885,
+          "minimum_segment_mm": 1.63619490098292,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "175:0",
+          "segments": 62,
+          "curves": 54,
+          "perimeter_mm": 118.44408768660777,
+          "minimum_segment_mm": 0.3322401400433608,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "176:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54053838115826,
+          "minimum_segment_mm": 3.135098795593849,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "177:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860554037348,
+          "minimum_segment_mm": 1.6361991442628823,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "178:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 238.20423828800574,
+          "minimum_segment_mm": 0.2372226349803438,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "179:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06811611354564,
+          "minimum_segment_mm": 0.32504155092922155,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "180:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6633796254679,
+          "minimum_segment_mm": 1.963368875794577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "181:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54013489155352,
+          "minimum_segment_mm": 3.1348528533543707,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "182:0",
+          "segments": 60,
+          "curves": 52,
+          "perimeter_mm": 118.43623433293894,
+          "minimum_segment_mm": 0.3400313286781931,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "183:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06552697570966,
+          "minimum_segment_mm": 0.32533980446210337,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "184:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 238.2042035748914,
+          "minimum_segment_mm": 0.2373468270346691,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "185:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 407.29995906167005,
+          "minimum_segment_mm": 0.5654834506371312,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "186:0",
+          "segments": 61,
+          "curves": 53,
+          "perimeter_mm": 118.43342051218768,
+          "minimum_segment_mm": 0.33187355331962687,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "187:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.38655336770535,
+          "minimum_segment_mm": 1.6362060757358405,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "188:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.663484163124,
+          "minimum_segment_mm": 1.9633794457051794,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "189:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 238.20406778604155,
+          "minimum_segment_mm": 0.23722290663732315,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "190:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06574279585423,
+          "minimum_segment_mm": 0.32499591246932846,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "191:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6634404270841,
+          "minimum_segment_mm": 1.9633723660043287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "192:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.5401875705147,
+          "minimum_segment_mm": 3.13490776020436,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "193:0",
+          "segments": 31,
+          "curves": 11,
+          "perimeter_mm": 407.30821369428963,
+          "minimum_segment_mm": 0.5657422771514423,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "194:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3866708516167,
+          "minimum_segment_mm": 1.6361949978004147,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "195:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54045233456134,
+          "minimum_segment_mm": 3.1350654398259135,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "196:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 407.3010728988003,
+          "minimum_segment_mm": 0.5657577021984537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "197:0",
+          "segments": 60,
+          "curves": 52,
+          "perimeter_mm": 118.42960070066218,
+          "minimum_segment_mm": 0.33187678218658745,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "198:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06558790618233,
+          "minimum_segment_mm": 0.3253591575010481,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "199:0",
+          "segments": 61,
+          "curves": 53,
+          "perimeter_mm": 118.43699484842382,
+          "minimum_segment_mm": 0.33226161151254635,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "200:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3865683720617,
+          "minimum_segment_mm": 1.636203672873183,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "201:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 238.20438409942517,
+          "minimum_segment_mm": 0.23722291159725978,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "202:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 118.06879591174058,
+          "minimum_segment_mm": 0.3249952615829683,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "203:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6633119205395,
+          "minimum_segment_mm": 1.9633663489547482,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "204:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54032007402026,
+          "minimum_segment_mm": 3.134810922479733,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "205:0",
+          "segments": 100,
+          "curves": 85,
+          "perimeter_mm": 238.20396047230986,
+          "minimum_segment_mm": 0.23725319879802112,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "206:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860841563128,
+          "minimum_segment_mm": 1.636231248924963,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "207:0",
+          "segments": 29,
+          "curves": 9,
+          "perimeter_mm": 407.30940857972877,
+          "minimum_segment_mm": 0.41416646915083916,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "208:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54053001579283,
+          "minimum_segment_mm": 3.135064987237601,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "209:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6635810688844,
+          "minimum_segment_mm": 1.963365414235704,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY_NO_CARABINERS.ai",
+      "sha256": "7ff762c263125f8073b26af313919d7f8fa8b56245bce889ed6735e1e8c3df65",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
+        499.9989810519748,
+        800.0012118869357
+      ],
+      "drawing_objects": 210,
+      "contours": 210,
+      "outer_contours": 49,
+      "minimum_piece_gap_mm": 2.6254642000000104,
+      "segments": 2540,
+      "curves": 1973,
+      "paths": [
+        {
+          "path": "0:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.567908693818648,
+          "minimum_segment_mm": 3.141968382808342,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "1:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.2999858,
+          "minimum_segment_mm": 4.849994699999996,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "2:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299969799999985,
+          "minimum_segment_mm": 4.849994699999996,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "3:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568073111327095,
+          "minimum_segment_mm": 3.1420135111678,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "4:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398829286306488,
+          "minimum_segment_mm": 1.0996918193489862,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "5:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7708957793080935,
+          "minimum_segment_mm": 0.9427150522477233,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "6:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027273390827025,
+          "minimum_segment_mm": 1.2568165505713333,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "7:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027268877668057,
+          "minimum_segment_mm": 1.256814293995995,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "8:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398872151235122,
+          "minimum_segment_mm": 1.0997133183878738,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "9:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.771010221319136,
+          "minimum_segment_mm": 0.9427436523771057,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "10:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299991199999994,
+          "minimum_segment_mm": 4.849994699999996,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "11:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398847867758931,
+          "minimum_segment_mm": 1.0996918193489924,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "12:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898516,
+          "minimum_segment_mm": 0.9427151405194201,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "13:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903659291,
+          "minimum_segment_mm": 1.256814293996014,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "14:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.2999696,
+          "minimum_segment_mm": 4.849994600000002,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "15:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.0272827705399905,
+          "minimum_segment_mm": 1.2568142274362535,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398848000880069,
+          "minimum_segment_mm": 1.0996918193489924,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "17:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709530645688645,
+          "minimum_segment_mm": 0.9427150739586831,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "18:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988480008785755,
+          "minimum_segment_mm": 1.0996919076200216,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "19:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027225530151032,
+          "minimum_segment_mm": 1.2567856071944126,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "20:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898134,
+          "minimum_segment_mm": 0.9427151405194011,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "21:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990499999997,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "22:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027287549936889,
+          "minimum_segment_mm": 1.2568166171308028,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "23:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883397555155,
+          "minimum_segment_mm": 1.0997013526307629,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "24:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770953021005303,
+          "minimum_segment_mm": 0.9427245856005528,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "25:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990499999991,
+          "minimum_segment_mm": 4.849962299999959,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "26:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299905199999955,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "27:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027785374367905,
+          "minimum_segment_mm": 1.2569321315216442,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "28:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02778537436788,
+          "minimum_segment_mm": 1.256932131521594,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "29:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02778537436788,
+          "minimum_segment_mm": 1.256932131521594,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "30:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02778537436788,
+          "minimum_segment_mm": 1.256932131521594,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "31:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.028451641495711,
+          "minimum_segment_mm": 1.257074865314176,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "32:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.02845155179883,
+          "minimum_segment_mm": 1.2570748870256205,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "33:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990499999997,
+          "minimum_segment_mm": 4.849962299999959,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "34:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286367410311,
+          "minimum_segment_mm": 1.0995715809970283,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "35:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988188,
+          "minimum_segment_mm": 1.0995715809970283,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "36:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398857260254867,
+          "minimum_segment_mm": 1.0996952485481843,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "37:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398857303677093,
+          "minimum_segment_mm": 1.099695270258888,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "38:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988572602547915,
+          "minimum_segment_mm": 1.0996952485481968,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "39:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398857260254867,
+          "minimum_segment_mm": 1.0996952485481968,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "40:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.30000719999998,
+          "minimum_segment_mm": 4.850005399999986,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "41:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299991199999965,
+          "minimum_segment_mm": 4.850005399999986,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "42:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568063513621041,
+          "minimum_segment_mm": 3.142006389219072,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "43:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962045555755,
+          "minimum_segment_mm": 0.9424253167052242,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "44:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796294252134,
+          "minimum_segment_mm": 0.9424253832642482,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "45:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962045555506,
+          "minimum_segment_mm": 0.9424253167052119,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "46:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796294252134,
+          "minimum_segment_mm": 0.9424253832642482,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "47:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7704438893985968,
+          "minimum_segment_mm": 0.9425967160866012,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "48:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7704438893985968,
+          "minimum_segment_mm": 0.9425967160866012,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "49:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883862164675,
+          "minimum_segment_mm": 1.0996894745289136,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "50:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770953021146725,
+          "minimum_segment_mm": 0.9427150522477483,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "51:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903658783,
+          "minimum_segment_mm": 1.2568142057248513,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "52:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903659252,
+          "minimum_segment_mm": 1.2568142939959885,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "53:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898516,
+          "minimum_segment_mm": 0.9427151405193951,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "54:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398847867875629,
+          "minimum_segment_mm": 1.0996941641988787,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "55:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.300012799999905,
+          "minimum_segment_mm": 4.850005499999952,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "56:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282770539952,
+          "minimum_segment_mm": 1.2568142274362786,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "57:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988479574587815,
+          "minimum_segment_mm": 1.0996894745288757,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "58:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770953064568865,
+          "minimum_segment_mm": 0.9427150739587083,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "59:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282770539952,
+          "minimum_segment_mm": 1.2568142274362786,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "60:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770895689612431,
+          "minimum_segment_mm": 0.9427150739587083,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "61:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3988386654212785,
+          "minimum_segment_mm": 1.0996941641988913,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "62:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299991199999965,
+          "minimum_segment_mm": 4.850005399999986,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "63:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.56735867668327,
+          "minimum_segment_mm": 3.141820657547507,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "64:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.77095306456824,
+          "minimum_segment_mm": 0.9427150522477483,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "65:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39878138004384,
+          "minimum_segment_mm": 1.0996941424871767,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "66:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903658783,
+          "minimum_segment_mm": 1.2568142057248515,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "67:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027282903659253,
+          "minimum_segment_mm": 1.256814293996039,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "68:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709531976898516,
+          "minimum_segment_mm": 0.9427151405194453,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "69:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398847867760741,
+          "minimum_segment_mm": 1.0996894962400416,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "70:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990499999997,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "71:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.30000719999998,
+          "minimum_segment_mm": 4.850005399999986,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "72:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299991199999965,
+          "minimum_segment_mm": 4.850005399999986,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "73:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568577511180075,
+          "minimum_segment_mm": 3.1421253885954648,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "74:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990479999992,
+          "minimum_segment_mm": 4.849962299999959,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "75:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703426831660036,
+          "minimum_segment_mm": 0.9425628243376462,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "76:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904110466137,
+          "minimum_segment_mm": 1.2569570384373698,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "77:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.3983006464318795,
+          "minimum_segment_mm": 1.0995739258112414,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "78:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904110466061,
+          "minimum_segment_mm": 1.256957038437332,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "79:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166079,
+          "minimum_segment_mm": 0.9425628243376462,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "80:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398300469889003,
+          "minimum_segment_mm": 1.0995739258112414,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "81:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29992639999992,
+          "minimum_segment_mm": 4.849962299999959,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "82:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166079,
+          "minimum_segment_mm": 0.9425628243376963,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "83:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838621485327,
+          "minimum_segment_mm": 1.0997084528556793,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "84:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256604766661,
+          "minimum_segment_mm": 1.2568141070560803,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "85:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29999139999984,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "86:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838664907365,
+          "minimum_segment_mm": 1.0997084745667236,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "87:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703426831660036,
+          "minimum_segment_mm": 0.9425628243376462,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "88:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904110466137,
+          "minimum_segment_mm": 1.2569570384373698,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "89:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299905199999955,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "90:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166003,
+          "minimum_segment_mm": 0.9425628243376337,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "91:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256515071555,
+          "minimum_segment_mm": 1.2568141287678352,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "92:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838531786568,
+          "minimum_segment_mm": 1.099708474566661,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "93:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190296,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "94:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838621485402,
+          "minimum_segment_mm": 1.0997084528557417,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "95:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166155,
+          "minimum_segment_mm": 0.9425628243377342,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "96:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027918136317554,
+          "minimum_segment_mm": 1.256941488997842,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "97:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027918136316319,
+          "minimum_segment_mm": 1.256941577269295,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "98:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285802,
+          "minimum_segment_mm": 1.2567987551662745,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "99:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285801,
+          "minimum_segment_mm": 1.2567987551662243,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "100:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285801,
+          "minimum_segment_mm": 1.2567987551662243,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "101:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027271244285777,
+          "minimum_segment_mm": 1.256798755166262,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "102:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990499999997,
+          "minimum_segment_mm": 4.849962299999959,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "103:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.397752951720402,
+          "minimum_segment_mm": 1.0994381829388427,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "104:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.397753084840456,
+          "minimum_segment_mm": 1.0994382494988693,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "105:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988164,
+          "minimum_segment_mm": 1.0995715809969657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "106:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286500530661,
+          "minimum_segment_mm": 1.0995715809969657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "107:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988264,
+          "minimum_segment_mm": 1.099571580997016,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "108:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398286323988164,
+          "minimum_segment_mm": 1.0995715809969657,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "109:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962941671026,
+          "minimum_segment_mm": 0.9424109844046226,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "110:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7697962941671266,
+          "minimum_segment_mm": 0.942410984404635,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "111:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7704057996531546,
+          "minimum_segment_mm": 0.9425823392503074,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "112:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770405799653154,
+          "minimum_segment_mm": 0.9425823392503074,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "113:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796383863677,
+          "minimum_segment_mm": 0.9424110509648267,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "114:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.769796383863677,
+          "minimum_segment_mm": 0.9424110509648267,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "115:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568577644356603,
+          "minimum_segment_mm": 3.142106410246741,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "116:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299905199999955,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "117:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29992119999997,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "118:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 12.568577511179999,
+          "minimum_segment_mm": 3.1421253885954274,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "119:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190296,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "120:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838621485401,
+          "minimum_segment_mm": 1.099708452855717,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "121:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703426831661546,
+          "minimum_segment_mm": 0.9425628243376337,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "122:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256515071755,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "123:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7709854683352235,
+          "minimum_segment_mm": 0.9427418935554192,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "124:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883866490754,
+          "minimum_segment_mm": 1.0997084745667611,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "125:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29992640000003,
+          "minimum_segment_mm": 4.849962300000016,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "126:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398838531786568,
+          "minimum_segment_mm": 1.099708474566661,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "127:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256515071555,
+          "minimum_segment_mm": 1.2568141287678352,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "128:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683166004,
+          "minimum_segment_mm": 0.9425628243376587,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "129:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770985335214002,
+          "minimum_segment_mm": 0.9427418269945899,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "130:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190296,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "131:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883862148525,
+          "minimum_segment_mm": 1.0997084528556413,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "132:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299905199999955,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "133:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398300469889104,
+          "minimum_segment_mm": 1.0995739258112414,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "134:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7703427728650056,
+          "minimum_segment_mm": 0.9425628026263603,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "135:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027904067044124,
+          "minimum_segment_mm": 1.2569569501663933,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "136:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770342683167751,
+          "minimum_segment_mm": 0.9425627360665577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "137:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027256648190247,
+          "minimum_segment_mm": 1.2568141287679357,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "138:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39883862148525,
+          "minimum_segment_mm": 1.0997084528557417,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "139:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990520000001,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "140:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29990499999997,
+          "minimum_segment_mm": 4.849962399999981,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "141:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770767137402663,
+          "minimum_segment_mm": 0.9426917626388586,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "142:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027442664780951,
+          "minimum_segment_mm": 1.2568511770694277,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "143:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.39868527115773,
+          "minimum_segment_mm": 1.099671229517723,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "144:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685404272574,
+          "minimum_segment_mm": 1.099671296075147,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "145:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027442664780849,
+          "minimum_segment_mm": 1.2568511770694524,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "146:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7707671808267356,
+          "minimum_segment_mm": 0.9426917843508945,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "147:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.299818800000025,
+          "minimum_segment_mm": 4.8499193000000105,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "148:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7707671808267356,
+          "minimum_segment_mm": 0.9426917843508945,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "149:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685404272574,
+          "minimum_segment_mm": 1.099671296075147,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "150:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.0274426647808,
+          "minimum_segment_mm": 1.2568511770694277,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "151:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770196554623454,
+          "minimum_segment_mm": 0.9425491386558132,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "152:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685271157627,
+          "minimum_segment_mm": 1.0996712295177478,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "153:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.0274426213589445,
+          "minimum_segment_mm": 1.2568511553586788,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "154:0",
+          "segments": 4,
+          "curves": 0,
+          "perimeter_mm": 45.29981899999984,
+          "minimum_segment_mm": 4.849919299999897,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "155:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398685271157627,
+          "minimum_segment_mm": 1.0996712295177478,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "156:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.027442664780849,
+          "minimum_segment_mm": 1.2568511770694524,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "157:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.770196511201646,
+          "minimum_segment_mm": 0.9425491169450096,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "158:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 4.398114376888456,
+          "minimum_segment_mm": 1.0995285168066817,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "159:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 3.7701965112014943,
+          "minimum_segment_mm": 0.9425491169449091,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "160:0",
+          "segments": 4,
+          "curves": 4,
+          "perimeter_mm": 5.028013334236802,
+          "minimum_segment_mm": 1.2569938443619109,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "161:0",
+          "segments": 62,
+          "curves": 54,
+          "perimeter_mm": 118.43692416750979,
+          "minimum_segment_mm": 0.33193377077171493,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "162:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06574131124826,
+          "minimum_segment_mm": 0.32539054741380496,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "163:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 409.30064991678177,
+          "minimum_segment_mm": 0.5655330410030851,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "164:0",
+          "segments": 62,
+          "curves": 54,
+          "perimeter_mm": 118.44470630903513,
+          "minimum_segment_mm": 0.33220251127707434,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "165:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 239.2041600077377,
+          "minimum_segment_mm": 0.23723162569766962,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "166:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860902682823,
+          "minimum_segment_mm": 1.6362009961569168,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "167:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 239.20351198774986,
+          "minimum_segment_mm": 0.2372312008416515,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "168:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06561557333592,
+          "minimum_segment_mm": 0.32504213879627836,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "169:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6633248156778,
+          "minimum_segment_mm": 1.9633741197433676,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "170:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54011296052775,
+          "minimum_segment_mm": 3.134819129069611,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "171:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.66373153623283,
+          "minimum_segment_mm": 1.9633685903626223,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "172:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 409.30174879909794,
+          "minimum_segment_mm": 0.5655444739759006,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "173:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 409.30061034771427,
+          "minimum_segment_mm": 0.5654987305154021,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "174:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860928808885,
+          "minimum_segment_mm": 1.63619490098292,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "175:0",
+          "segments": 62,
+          "curves": 54,
+          "perimeter_mm": 118.44408768660777,
+          "minimum_segment_mm": 0.3322401400433608,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "176:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54053838115826,
+          "minimum_segment_mm": 3.135098795593849,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "177:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860554037348,
+          "minimum_segment_mm": 1.6361991442628823,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "178:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 239.20376808800575,
+          "minimum_segment_mm": 0.2372226349803438,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "179:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06835651354558,
+          "minimum_segment_mm": 0.32504155092922155,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "180:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6633796254679,
+          "minimum_segment_mm": 1.963368875794577,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "181:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54013489155352,
+          "minimum_segment_mm": 3.1348528533543707,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "182:0",
+          "segments": 60,
+          "curves": 52,
+          "perimeter_mm": 118.43623433293894,
+          "minimum_segment_mm": 0.3400313286781931,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "183:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06576737570964,
+          "minimum_segment_mm": 0.32533980446210337,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "184:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 239.2037119748914,
+          "minimum_segment_mm": 0.2373468270346691,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "185:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 409.3005261445328,
+          "minimum_segment_mm": 0.5654835213763344,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "186:0",
+          "segments": 61,
+          "curves": 53,
+          "perimeter_mm": 118.43342051218768,
+          "minimum_segment_mm": 0.33187355331962687,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "187:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.38655336770535,
+          "minimum_segment_mm": 1.6362060757358405,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "188:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.663484163124,
+          "minimum_segment_mm": 1.9633794457051794,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "189:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 239.20359758604155,
+          "minimum_segment_mm": 0.23722290663732315,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "190:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06598319585417,
+          "minimum_segment_mm": 0.32499591246932846,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "191:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6634404270841,
+          "minimum_segment_mm": 1.9633723660043287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "192:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.5401875705147,
+          "minimum_segment_mm": 3.13490776020436,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "193:0",
+          "segments": 31,
+          "curves": 11,
+          "perimeter_mm": 409.30878077714374,
+          "minimum_segment_mm": 0.565742347865941,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "194:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3866708516167,
+          "minimum_segment_mm": 1.6361949978004147,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "195:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54045233456134,
+          "minimum_segment_mm": 3.1350654398259135,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "196:0",
+          "segments": 30,
+          "curves": 10,
+          "perimeter_mm": 409.3002616988003,
+          "minimum_segment_mm": 0.5657577021984537,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "197:0",
+          "segments": 60,
+          "curves": 52,
+          "perimeter_mm": 118.42960070066218,
+          "minimum_segment_mm": 0.33187678218658745,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "198:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06587150618235,
+          "minimum_segment_mm": 0.3253591575010481,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "199:0",
+          "segments": 61,
+          "curves": 53,
+          "perimeter_mm": 118.43699484842382,
+          "minimum_segment_mm": 0.33226161151254635,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "200:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3865683720617,
+          "minimum_segment_mm": 1.636203672873183,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "201:0",
+          "segments": 102,
+          "curves": 87,
+          "perimeter_mm": 239.20391389942517,
+          "minimum_segment_mm": 0.23722291159725978,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "202:0",
+          "segments": 46,
+          "curves": 36,
+          "perimeter_mm": 119.06903631174052,
+          "minimum_segment_mm": 0.3249952615829683,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "203:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6633119205395,
+          "minimum_segment_mm": 1.9633663489547482,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "204:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54032007402026,
+          "minimum_segment_mm": 3.134810922479733,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "205:0",
+          "segments": 100,
+          "curves": 85,
+          "perimeter_mm": 239.20421862655593,
+          "minimum_segment_mm": 0.23725319879802112,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "206:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 347.3860841563128,
+          "minimum_segment_mm": 1.636231248924963,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "207:0",
+          "segments": 29,
+          "curves": 9,
+          "perimeter_mm": 409.30929301742043,
+          "minimum_segment_mm": 0.41416646915083916,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "208:0",
+          "segments": 8,
+          "curves": 4,
+          "perimeter_mm": 192.54053001579283,
+          "minimum_segment_mm": 3.135064987237601,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "209:0",
+          "segments": 12,
+          "curves": 8,
+          "perimeter_mm": 261.6635810688844,
+          "minimum_segment_mm": 1.963365414235704,
+          "original_numerical_notes": [],
+          "protected_original": false
+        }
+      ],
+      "errors": [],
+      "protected_original_findings": [],
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY_NO_CARABINERS_5T.ai",
+      "sha256": "1216ad49cd8e5f4799914a1a986b593b7d22bb8a621fc79019d3e3d477c25d5a",
+      "sha256_mode": "raw bytes"
+    },
+    {
+      "dimensions_mm": [
         419.9999881320529,
         297.0000023735894
       ],
@@ -87390,6 +91208,14 @@
       "status": "cut_geometry_checked"
     },
     {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY_NO_CARABINERS.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
+      "file": "recut_only/danbar_500x800/03_CUT_ONLY_NO_CARABINERS_5T.ai",
+      "status": "cut_geometry_checked"
+    },
+    {
       "file": "recut_only/danbar_500x800/README.md",
       "status": "current_supporting_artwork_or_documentation"
     },
@@ -87688,7 +91514,7 @@
     "large_format_plates": 1,
     "individual_assets": 186,
     "existing_print_recovery_plates": 1,
-    "expected_cut_files": 811,
+    "expected_cut_files": 813,
     "cut_with_blue_ai": 4,
     "combined_masters": 4,
     "retired_files_are_not_counted_as_current_passes": true

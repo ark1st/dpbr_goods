@@ -122,4 +122,94 @@ def main():
     print(json.dumps({k:result[k] for k in ['pieces','closed_contours','original_command_count','new_command_count','max_source_deviation_mm','max_hole_bbox_deviation_mm','print_pages_added']}),flush=True)
     return result
 
-if __name__=='__main__':main()
+def refit_mount_block(block, row, fit):
+    """Edit only the through-slot or bevelled tab tips of a registered stroke."""
+    import re
+    from svgpathtools import parse_path, Line
+    role=row['source_index']%42
+    if role not in (0,1,2,3,31,32,33):
+        return block
+    prefix,body=block.split(b' w ',1)
+    path=parse_path(row['path'])
+    def coord(z):
+        return f'{z.real*MM:.7f} {z.imag*MM:.7f}'.encode()
+    if role<4:
+        poly=polygon_of(row['path'])
+        corners=[complex(x,y) for x,y in poly.minimum_rotated_rectangle.exterior.coords[:-1]]
+        sides=[corners[(i+1)%4]-v for i,v in enumerate(corners)]
+        u=max(sides,key=abs)
+        assert abs(abs(u)-18.8)<.002 and abs(min(map(abs,sides))-5)<.002
+        center=sum(corners)/4
+        u=u/abs(u)
+        length,width=fit['slot_mm']
+        points=[center+u*(x*length+1j*y*width)/2 for x,y in [(-1,-1),(1,-1),(1,1),(-1,1)]]
+        body=coord(points[0])+b' m '+b' '.join(coord(z)+b' l' for z in points[1:])+b'\nh\nS'
+    else:
+        # The printed panels can be at arbitrary angles. Each 18 mm tongue
+        # ends in a 17.2 mm straight with two 0.4 mm corner chamfers.
+        targets=[]
+        for j,tip in enumerate(path):
+            if not isinstance(tip,Line) or abs(tip.length()-17.2)>.002:
+                continue
+            side,left,right=path[j-2],path[j-1],path[j+1]
+            assert all(isinstance(k,Line) for k in (side,left,right,path[j+2]))
+            assert abs(side.length()-4.2)<.002 and abs(path[j+2].length()-4.2)<.002
+            assert abs(left.length()-.4*2**.5)<.002 and abs(right.length()-.4*2**.5)<.002
+            u=(side.end-side.start)/side.length()
+            depth=((tip.start-side.start)*u.conjugate()).real
+            assert abs(depth-4.6)<.002
+            shift=u*(fit['tab_depth_mm']-depth)
+            targets.extend((z,shift) for z in (left.start,tip.start,tip.end,right.end))
+        assert len(targets)==(8 if role==33 else 4)
+        moved=set()
+        def move(match):
+            point=complex(float(match[1]),float(match[2]))/MM
+            for i,(original,delta) in enumerate(targets):
+                if abs(point-original)<.002:
+                    moved.add(i)
+                    return coord(point+delta)+b' '+match[3]
+            return match[0]
+        number=rb'(-?[0-9.]+)'
+        body=re.sub(number+rb' '+number+rb' ([ml])(?=\s)',move,body)
+        assert len(moved)==len(targets),(row['source_index'],moved)
+    return prefix+b' w '+body
+
+
+def export_cut_variant(name):
+    spec,_,_=load_recovery()
+    folder=ROOT/'output'/spec['folder']
+    variant=spec['cut_variants'][name]
+    parent_name=variant.get('parent_variant',name)
+    excluded=set(spec['cut_variants'][parent_name]['excluded_outer_ids'])
+    validation=json.loads((folder/'validation.json').read_text())
+    paths=validation['source_paths']
+    outlines=[polygon_of(r['path']) for r in paths if not r['is_hole']
+              and f"original_{r['source_index']:03}" in excluded]
+    assert len(outlines)==len(excluded)>0
+    from shapely.ops import unary_union
+    removed_region=unary_union(outlines)
+    removed={r['source_index'] for r in paths if
+             f"original_{r['source_index']:03}" in excluded or
+             (r['is_hole'] and removed_region.contains(polygon_of(r['path'])))}
+    order=validation['cut_order_source_indices']
+    with fitz.open(folder/'03_CUT_ONLY.ai') as doc:
+        # VectorCraft wraps each complete laser stroke in its own q/Q block.
+        form,=doc[0].get_xobjects()
+        stream=doc.xref_stream(form[0])
+        assert stream.endswith(b'\nQ')
+        blocks=stream[:-2].split(b'\nQ\n')
+        assert len(blocks)==len(order) and all(
+            b.startswith(b'q ') and b.endswith(b'\nS') and b.count(b'\nS')==1 for b in blocks)
+        retained=[refit_mount_block(b,paths[i],variant['mount_fit']) if 'mount_fit' in variant else b
+                  for b,i in zip(blocks,order,strict=True) if i not in removed]
+        doc.update_stream(form[0],b'\nQ\n'.join(retained)+b'\nQ')
+        doc.save(folder/name,garbage=4,deflate=True,no_new_id=True)
+
+
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--cut-variant',help='Export one registered subset of the existing production AI')
+    variant=parser.parse_args().cut_variant
+    if variant:export_cut_variant(variant)
+    else:main()
