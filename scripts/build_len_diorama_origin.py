@@ -1,4 +1,4 @@
-"""Len ORIGIN layered slot-in acrylic diorama, V4.
+"""Len ORIGIN layered slot-in acrylic diorama, V5.
 
 Lineage: V1 (commit 2ac3ad0, scripts/build_len_diorama_origin.py) built one
 base plus seven plates with a 2.5 mm clear border. The owner rejected the
@@ -9,37 +9,34 @@ rectangular frames. V2 (73a2823) kept the V1 slot-in mechanics (18 mm tabs,
 18.8 mm nominal slots, 0.4 mm bottom clearance, 12 mm load-path floor with the
 automatic bud guard) and changed the piece breakdown, the rim and the preview.
 V3 (657a484) recomposed the scene to the concept but the owner prefers V2, so
-V4 restores the V2 design as its base (this builder = V2 plus V3's pure
+V4 restored the V2 design as its base (this builder = V2 plus V3's pure
 bud-guard bug fix: an empty tab window now raises the riser on the tab axis
-and every riser is clamped inside the tab window) and applies the owner's two
-V4 requests on top, see configs/len_diorama_origin.json:
+and every riser is clamped inside the tab window) and printed the tree into
+the back panel while cropping Len at the seat line. V5 answers the owner's V4
+feedback (see configs/len_diorama_origin.json):
 
-* Clear border 2.5 mm -> 1.0 mm (configs/len_diorama_origin.json carries the
-  rationale; the quality doc fixes no rim minimum).
+* Clear border 2.5 mm -> 1.0 mm on every plate (configs/len_diorama_origin.json
+  carries the rationale; the quality doc fixes no rim minimum).
 * The back panel is ONE plate: the sky raster with both lattice doors butted
-  against its sides and the moon/cloud layer registered over the sky. V1
-  carried these as four plates (background, moon+clouds, two doors) whose
-  rims produced the stacked outlines in the middle and the frames at the sides.
-* Tree, serpent and character stay separate shaped plates on their own depth
-  rows, so the concept's layering (sky -> tree -> serpent -> character) and
-  the diorama depth are kept. (V4: the tree is no longer a plate, see below.)
+  against its sides and the moon/cloud layer registered over the sky.
+* The blossom tree is a cut plate again (V5), rotated 25 deg clockwise at
+  native resolution so the canopy sweeps diagonally up across the moon. Its
+  canopy contour is a smoothed envelope: a 2.5 mm closing of the ink
+  silhouette (vector space) unioned with the ink, so the gaps between
+  blossoms are clear acrylic and the 1.0 mm rim passes the laser_paths
+  segment gate. The tab sits under the trunk (`tab_anchor`), not under the
+  art box centre.
+* Len is shown whole (no crop) and reads as seated on the serpent's coil:
+  the serpent is enlarged and moved so its lower coil rises to her seat line
+  behind her hips while her legs hang in front of it down to the base. The
+  bud-guard riser between the legs is the only clear support.
 * The assembly preview renders clear acrylic see-through: no body fill and
-  one thin edge stroke per plate.
-
-V4 (owner requests on top of V2):
-
-* The blossom tree is printed INTO the back panel's print layer, rotated
-  clockwise at native resolution (premultiplied alpha) and confined inside the
-  sky rectangle: trunk low on the left behind the serpent, canopy sweeping
-  diagonally up to the right across the moon. No cut path, no rim, no slot.
-* Len reads as fully seated: her art is lowered so the seat rests on the base
-  top; everything below the seat line is cropped in-memory and the cut ends at
-  the base line, with the tab under the hips and no clear plinth.
+  one thin edge stroke per plate, drawn back to front by depth row.
 
 Every raster keeps its native pixels (LANCZOS to the 300 ppi print size, never
-upscaled); the tree's rotation and the seat crop are the only resampling steps
-and both act at native resolution before that downsample. No fit-test pieces:
-current repo policy rejects all test pieces.
+upscaled); the tree's rotation is the only resampling step and acts at native
+resolution before that downsample. No fit-test pieces: current repo policy
+rejects all test pieces.
 
 The product archive keeps exactly the files the A3 release consumes:
 02_MASTER.ai, 03_CUT_ONLY.pdf, validation_report.json per thickness and
@@ -61,8 +58,8 @@ from pypdf import PdfReader
 from laser_paths import cut_path, audit_path
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 
-OUT = ROOT/'output/len_diorama_origin_v4'
-TMP = ROOT/'tmp/len_diorama_origin_v4'
+OUT = ROOT/'output/len_diorama_origin_v5'
+TMP = ROOT/'tmp/len_diorama_origin_v5'
 CFG = json.loads((ROOT/'configs/len_diorama_origin.json').read_text(encoding='utf-8'))
 BOARD = tuple(CFG['board_mm'])
 PPI = 300/25.4
@@ -240,11 +237,34 @@ def load_raster(spec, border=None, clip_mm=None):
         main = max(polys, key=lambda p: p.area)
         for p in polys:
             if p is not main: assert main.distance(p) < border-.1, (source.name, p.bounds)
+    ink_poly = unary_union(polys)
+    envelope = None
+    if spec.get('envelope_closing_mm'):
+        r = float(spec['envelope_closing_mm'])
+        closed = unary_union([ink_poly, ink_poly.buffer(r, quad_segs=28).buffer(-r, quad_segs=28)])
+        assert closed.geom_type == 'Polygon' and closed.buffer(1e-6).contains(ink_poly), (source.name, closed.geom_type)
+        envelope = {'closing_mm': r, 'ink_area_mm2': round(ink_poly.area, 1), 'envelope_area_mm2': round(closed.area, 1),
+                    'clear_fill_mm2': round(closed.area-ink_poly.area, 1),
+                    'clear_fill_pct_of_ink': round(100*(closed.area-ink_poly.area)/ink_poly.area, 1)}
+        art = closed
+        processing += f'; canopy envelope: {r:g} mm vector closing of the ink silhouette unioned with the ink ({envelope["clear_fill_mm2"]} mm2 clear acrylic between blossoms = {envelope["clear_fill_pct_of_ink"]}% of the ink area)'
+    else:
+        art = ink_poly
     # Embed at the exact 300 ppi print size, but never upscale beyond the
     # native pixels: a raster below 300 ppi ships as-is.
     tw, th = max(1, min(round(w*PPI), pw)), max(1, min(round(h*PPI), ph))
     res = im.resize((tw, th), Image.LANCZOS)
     ra = np.asarray(res); solid = ra[:, :, 3] > 128
+    tab_x = None
+    anchor = spec.get('tab_anchor')
+    if anchor:
+        assert anchor['type'] == 'run_at_height_above_lowest', anchor
+        a8 = ra[:, :, 3] > 8; occupied = np.nonzero(a8.any(1))[0]; rlow = int(occupied.max())
+        low = np.nonzero(a8[rlow])[0]; low_c = (int(low.min())+int(low.max()))/2
+        row = np.nonzero(a8[max(0, rlow-int(round(anchor['height_mm']/(h/th))))])[0]
+        runs = np.split(row, np.flatnonzero(np.diff(row) > 1)+1)
+        run = min(runs, key=lambda q: abs((q[0]+q[-1])/2-low_c))
+        tab_x = float((int(run[0])+int(run[-1]))/2*(w/tw))
     buf = io.BytesIO(); res.save(buf, 'PNG', optimize=True)
     b64 = base64.b64encode(buf.getvalue()).decode()
     ink = (f'<image x="0" y="0" width="{w:.6f}" height="{h:.6f}" '
@@ -253,7 +273,8 @@ def load_raster(spec, border=None, clip_mm=None):
         'sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'source_px': [pw, ph], 'source_bbox_px': bbox,
         'resample_px': [tw, th],
-        'w': w, 'h': h, 'ink': ink, 'art': unary_union(polys),
+        'w': w, 'h': h, 'ink': ink, 'art': art, 'ink_poly': ink_poly, 'envelope': envelope,
+        'tab_x_mm': tab_x,
         'processing': processing, 'clip': clip_note,
         'art_height_mm_config': spec['art_height_mm'], 'rotate_deg': spec.get('rotate_deg', 0),
         'crop_below_fraction': spec.get('crop_below_fraction'),
@@ -311,6 +332,7 @@ def load_piece(spec):
     if spec.get('overlays'): assert art.geom_type == 'Polygon', (spec['id'], art.geom_type)
     return {'id': spec['id'], 'src_name': base['file'],
         'w': base['w'], 'h': base['h'], 'ink': ink, 'art': art, 'rasters': rasters,
+        'tab_x_mm': base['tab_x_mm'], 'envelope': base['envelope'],
         'opaque_px': sum(r['opaque_px'] for r in rasters),
         'processing': None if len(rasters) == 1 else 'overlays positioned on the base raster: '+', '.join(r['file'] for r in rasters[1:])}
 
@@ -419,9 +441,10 @@ def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015, border=
     depth = base_thickness-CFG['tab_bottom_clearance_mm']
     mean_x = sum(m[0] for m in mounts)/len(mounts)
     half = CFG['tab_width_mm']/2
+    tab_x = a.get('tab_x_mm') if a.get('tab_x_mm') is not None else a['w']/2
     tabs = []; bridges = []; tab_cx = []
     for mx, my in mounts:
-        cx = (mx-mean_x)+a['w']/2
+        cx = (mx-mean_x)+tab_x
         tab_cx.append(cx)
         tabs.append(tab_shape(cx, shoulder, depth))
         if plinth_rise > 0:
@@ -453,7 +476,8 @@ def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015, border=
             y -= .25
     assert depth > 1 and abs(shape.bounds[3]-shoulder-depth) < .001
     return {'poly': shape, 'tab_cx': tab_cx, 'shoulder': shoulder, 'depth': depth,
-        'mount_mean_x': mean_x, 'clearance': clearance, 'border': border, 'bud_guard': guard_recs}
+        'mount_mean_x': mean_x, 'clearance': clearance, 'border': border, 'bud_guard': guard_recs,
+        'tab_x_mm': tab_x}
 
 
 def base_slots(preset):
@@ -573,13 +597,11 @@ def make_board(assets, shapes, preset, folder):
     runvc(['convert', printing, folder/'01_PRINT.pdf'])
     runvc(['convert', folder/'03_CUT_ONLY.svg', folder/'03_CUT_ONLY.pdf'])
     depths = sorted({round(m[1], 1) for p in CFG['pieces'] for m in p['mounts_mm']})
-    bd = assets['backdrop']
-    tree = next(r for r in bd['rasters'] if r['file'] == '03_blossom_tree.png')
-    ch = assets['character']
-    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V4 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
+    bd = assets['backdrop']; tr = assets['tree']; ch = assets['character']
+    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V5 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
         + svg_text(13, 403, f'BASE / {CFG["base_mm"][0]:.0f} x {CFG["base_mm"][1]:.1f} cut / wave art {assets["base"]["w"]:.0f} x {assets["base"]["h"]:.1f} centred + 2.5 clear rim', 3.1)
         + svg_text(13, 410, f'{SLOT_COUNT} SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (backdrop: 3 tabs)', 3.1)
-        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky + doors + moon/clouds + tree printed on it: {tree["art_height_mm_config"]:.0f} mm art rotated {tree["rotate_deg"]:g} deg, box {tree["w"]:.1f}x{tree["h"]:.1f} at {tree["effective_ppi"]} ppi)  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER seated {ch["w"]:.0f}x{ch["h"]:.1f} ({ch["rasters"][0]["art_height_mm_config"]:.0f} mm art cropped at {ch["rasters"][0]["crop_below_fraction"]})  / clear rim {CFG["clear_border_mm"]:.1f}', 3.0))
+        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky + doors + moon/clouds)  TREE {tr["w"]:.1f}x{tr["h"]:.1f} ({tr["rasters"][0]["art_height_mm_config"]:.0f} mm art rotated {tr["rasters"][0]["rotate_deg"]:g} deg, {tr["rasters"][0]["effective_ppi"]} ppi, canopy envelope {tr["rasters"][0]["envelope"]["closing_mm"]:g} mm)  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER {ch["w"]:.0f}x{ch["h"]:.1f} ({ch["rasters"][0]["art_height_mm_config"]:.0f} mm art, whole figure)  / clear rim {CFG["clear_border_mm"]:.1f}', 3.0))
     preview = write_svg(folder/'preview/flat_layout.svg', w, h,
         f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+cut_layer(items, .17)+labels)
     render(preview, folder/'preview/flat_layout.png', 2.2)
@@ -595,8 +617,8 @@ def assembly(assets, shapes, preset, folder):
     cut edge (V1 filled every plate near-white and drew each one twice, which
     produced the white halos and the double outlines; on a light ground even
     an unfilled plate reads as white). Tabs are clipped at the shoulder line
-    because they sit inside the base slots. Plates are drawn back to front:
-    backdrop (with the tree printed on it), serpent, seated character.
+    because they sit inside the base slots. Plates are drawn back to front
+    by depth row: backdrop, blossom tree, serpent, character.
     """
     ox, oy = 62, 212; dx, dy = .22, -.26
     bw, bh = CFG['base_mm']
@@ -620,19 +642,19 @@ def assembly(assets, shapes, preset, folder):
         slot = affinity.affine_transform(s, [1, dx, 0, dy, ox, oy-bt])
         stage += path(poly_path(slot), 'rgba(40,28,66,.35)', SLOT, .18)
     parts.append(stage)
-    for spec in CFG['pieces']:
+    for spec in sorted(CFG['pieces'], key=lambda q: -q['mounts_mm'][0][1]):
         pid = spec['id']
         mx = sum(m[0] for m in spec['mounts_mm'])/len(spec['mounts_mm'])
         my = spec['mounts_mm'][0][1]
         a = assets[pid]; s = shapes[pid]
-        X = ox+mx+dx*my-a['w']/2; Y = oy+dy*my-bt-s['shoulder']
+        X = ox+mx+dx*my-s['tab_x_mm']; Y = oy+dy*my-bt-s['shoulder']
         body = s['poly'].intersection(box(-200, -200, 600, s['shoulder']))
         if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
         parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">'
                      + path(poly_path(body), 'none', EDGE, EDGE_W) + a['ink'] + '</g>')
-    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V4', 5, TEXT))
+    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V5', 5, TEXT))
     parts.append(svg_text(13, 23, f'base {bw:.0f} x {bh:.1f} mm / {PIECE_COUNT} pieces / clear rim {CFG["clear_border_mm"]:.1f} mm on every plate / clear acrylic drawn see-through on a dark ground', 3.4))
-    parts.append(svg_text(13, 252, f'V4 / {preset["name"]} / one back panel: sky + lattice doors + moon and clouds + blossom tree printed diagonally on it / serpent plate / seated character plate', 3.1))
+    parts.append(svg_text(13, 252, f'V5 / {preset["name"]} / back panel: sky + lattice doors + moon and clouds / blossom tree plate placed diagonally / serpent plate / Len plate: whole figure seated on the serpent\'s coil', 3.1))
     svg = write_svg(folder/'preview/assembly.svg', 400, 260, ''.join(parts))
     render(svg, folder/'preview/assembly.png', 2.7)
     svg.unlink()
@@ -640,44 +662,66 @@ def assembly(assets, shapes, preset, folder):
 
 def _scene_geometry(assets, shapes):
     """Scene x from the base's left edge, scene y = height above the base top,
-    for every plate as it stands (art bbox centred on its mount x)."""
+    for every plate as it stands (its tab on the mount x)."""
     out = {}
     for spec in CFG['pieces']:
         a = assets[spec['id']]; s = shapes[spec['id']]
         mx = sum(m[0] for m in spec['mounts_mm'])/len(spec['mounts_mm']); my = spec['mounts_mm'][0][1]
+        left = mx-s['tab_x_mm']
         out[spec['id']] = {'art': a, 'shape': s, 'mx': mx, 'my': my,
-            'left': mx-a['w']/2, 'right': mx+a['w']/2, 'top': a['h']+s['border'], 'row': my}
+            'left': left, 'right': left+a['w'], 'top': a['h']+s['border'], 'row': my}
     return out
 
 
 def composition_report(assets, shapes):
-    """Measure the V4 scene from the real rasters and cut polygons: where every
-    plate stands, how the printed tree sits on the back panel and how much of
-    it (and of the moon) stays visible in front of the plates ahead of it, and
-    how the seated character meets the base line."""
+    """Measure the V5 scene from the real rasters and cut polygons: where every
+    plate stands, how the blossom tree plate sweeps across the moon and how
+    much of it (and of the moon) stays visible in front of the plates ahead of
+    it, how the whole character figure meets the base line and the serpent's
+    coil behind her hips, and the fitted segment count of every cut."""
+    from laser_paths import fitted
     geo = _scene_geometry(assets, shapes)
     out = {'scene_width_mm': CFG['base_mm'][0], 'row_order_front_to_back': [p['id'] for p in sorted(CFG['pieces'], key=lambda q: q['mounts_mm'][0][1])], 'pieces': {}}
     for pid, g in geo.items():
         a = g['art']; s = g['shape']
+        segs, info, _ = fitted(s['poly'].wkb)
         out['pieces'][pid] = {'art_mm': [round(a['w'], 2), round(a['h'], 2)], 'plate_cut_bounds_mm': [round(x, 2) for x in s['poly'].bounds],
-            'art_center_x_mm': round(g['mx'], 2), 'art_span_x_mm': [round(g['left'], 2), round(g['right'], 2)],
+            'plate_size_mm': [round(s['poly'].bounds[2]-s['poly'].bounds[0], 2), round(s['poly'].bounds[3]-s['poly'].bounds[1], 2)],
+            'tab_x_mm': round(g['mx'], 2), 'art_center_x_mm': round((g['left']+g['right'])/2, 2), 'art_span_x_mm': [round(g['left'], 2), round(g['right'], 2)],
             'depth_row_mm': g['my'], 'assembled_height_mm': round(CFG['presets'][0]['base_thickness_mm']+g['top'], 2),
             'effective_ppi': [r['effective_ppi'] for r in a['rasters']], 'clear_border_mm': s['border'],
-            'tab_cx_mm': [round(g['mx']-a['w']/2+cx, 2) for cx in s['tab_cx']]}
-    # Front plates as standing cuts in scene coordinates (y up from the base top).
+            'cut_segments': info['segments'], 'segment_limit': round(max(100, s['poly'].length*1.5)),
+            'max_curve_deviation_mm': round(info['max_boundary_deviation_mm'], 4),
+            'tab_cx_mm': [round(g['left']+cx, 2) for cx in s['tab_cx']]}
+    # Standing cuts in scene coordinates (y up from the base top); a plate is
+    # hidden only by the printed ink of the plates on rows in front of it (a
+    # clear gap in a front plate, e.g. between the tree's blossoms or Len's
+    # legs, stays see-through), so the numbers describe what the eye sees.
     standing = standing_cuts(shapes)
-    bd = assets['backdrop']; sky = bd['rasters'][0]; comp = out['pieces']['backdrop']
-    comp['sky_mm'] = [round(sky['w'], 2), round(sky['h'], 2)]
-    comp['sky_span_x_mm'] = [round(geo['backdrop']['left'], 2), round(geo['backdrop']['right'], 2)]
-    sky_left = geo['backdrop']['mx']-sky['w']/2
-    # What the plates on rows in front of the backdrop hide, in sky-raster millimetres.
-    front = [(pid, g, my) for pid, (g, my) in standing.items() if my < geo['backdrop']['my']]
-    def visible_fraction(raster):
+    def front_of(row):
+        out_ = []
+        for pid, (g, my) in standing.items():
+            if my >= row: continue
+            rs = geo[pid]['art']['rasters']
+            out_.append((pid, g, my, rs[0] if len(rs) == 1 else None))
+        return out_
+    def visible_fraction(raster, x0, ytop, front):
         ra = raster['res_alpha'] > 128; h, w = ra.shape
         sc = raster['h']/h
-        x0 = sky_left+raster['dx']; ytop = sky['h']-raster['dy']
         vis = ra.copy()
-        for pid, g, my in front:
+        xs = x0+(np.arange(w)+.5)*sc; zs = ytop-(np.arange(h)+.5)*sc
+        for pid, g, my, br in front:
+            if br is not None:
+                ba = br['res_alpha'] > 128; bh, bw = ba.shape; bsc = br['h']/bh
+                bx0 = geo[pid]['left']; btop = geo[pid]['top']
+                if bx0 > x0+w*sc or bx0+br['w'] < x0 or btop-br['h'] > ytop or btop < ytop-h*sc: continue
+                bi = np.rint((xs-bx0)/bsc-.5).astype(int); bj = np.rint((btop-zs)/bsc-.5).astype(int)
+                okj = (bj >= 0)&(bj < bh); oki = (bi >= 0)&(bi < bw)
+                block = np.zeros((h, w), bool)
+                jj = bj[okj]; ii = bi[oki]
+                block[np.ix_(okj, oki)] = ba[np.clip(jj, 0, bh-1)[:, None], np.clip(ii, 0, bw-1)[None, :]]
+                vis &= ~block
+                continue
             minx, miny, maxx, maxy = g.bounds
             for yy in range(h):
                 z = ytop-(yy+.5)*sc
@@ -686,10 +730,15 @@ def composition_report(assets, shapes):
                 if seg.is_empty: continue
                 parts = list(seg.geoms) if seg.geom_type == 'MultiLineString' else [seg]
                 for part in parts:
-                    xs = [p[0] for p in part.coords]; i0 = max(0, int((min(xs)-x0)/sc)); i1 = min(w, int((max(xs)-x0)/sc)+1)
+                    xs_ = [p[0] for p in part.coords]; i0 = max(0, int((min(xs_)-x0)/sc)); i1 = min(w, int((max(xs_)-x0)/sc)+1)
                     vis[yy, i0:i1] = False
         total = int(ra.sum()); seen = int(vis.sum())
-        return round(100*seen/total, 1) if total else None, vis, sc, x0, ytop
+        return (round(100*seen/total, 1) if total else None), vis, sc
+    bd = assets['backdrop']; sky = bd['rasters'][0]; comp = out['pieces']['backdrop']
+    comp['sky_mm'] = [round(sky['w'], 2), round(sky['h'], 2)]
+    comp['sky_span_x_mm'] = [round(geo['backdrop']['mx']-sky['w']/2, 2), round(geo['backdrop']['mx']+sky['w']/2, 2)]
+    sky_left = geo['backdrop']['mx']-sky['w']/2
+    bd_front = front_of(geo['backdrop']['my'])
     moon = next(r for r in bd['rasters'] if r['file'] == '04_moon_clouds.png')
     al = (moon['res_alpha'] > 128).astype('uint8')
     dt = cv2.distanceTransform(al, cv2.DIST_L2, 5)
@@ -698,29 +747,80 @@ def composition_report(assets, shapes):
     disc_x = sky_left+moon['dx']+cx*scm; disc_z = sky['h']-moon['dy']-cy*scm
     comp['moon_disc'] = {'center_x_mm': round(disc_x, 2), 'center_y_above_base_mm': round(disc_z, 2),
         'diameter_mm': round(2*radius*scm, 2), 'offset_from_scene_axis_x140_mm': round(disc_x-140, 2)}
-    # Moon disc visibility: disc pixels not hidden by front plates.
     yy, xx = np.mgrid[0:al.shape[0], 0:al.shape[1]]
     disc = ((xx-cx)*scm)**2+((yy-cy)*scm)**2 <= (radius*scm)**2
-    _, vism, _, _, _ = visible_fraction(moon)
+    _, vism, _ = visible_fraction(moon, sky_left+moon['dx'], sky['h']-moon['dy'], bd_front)
     comp['moon_disc']['visible_pct_in_front_view'] = round(100*int((disc & (vism > 0)).sum())/int(disc.sum()), 1)
-    tree = next((r for r in bd['rasters'] if r['file'] == '03_blossom_tree.png'), None)
-    if tree is not None:
-        pct, _, sc, x0, ytop = visible_fraction(tree)
-        src_px = tree['source_bbox_px'][2:]
-        out['tree_printed_on_backdrop'] = {'rotate_deg_clockwise': tree['rotate_deg'], 'configured_art_height_mm': tree['art_height_mm_config'],
-            'unrotated_alpha_box_px': src_px, 'source_density_ppi': round(src_px[1]/(tree['art_height_mm_config']/25.4)),
-            'embedded_ppi': tree['effective_ppi'], 'resample_px': tree['resample_px'], 'native_cap': tree['native_cap'],
-            'rotated_box_mm': [round(tree['w'], 2), round(tree['h'], 2)], 'top_left_in_sky_mm': [round(tree['dx'], 2), round(tree['dy'], 2)],
-            'box_in_base_coords_mm': {'x': [round(x0, 2), round(x0+tree['w'], 2)], 'z_above_base_top': [round(ytop-tree['h'], 2), round(ytop, 2)]},
-            'confined_to_sky_rectangle': bool(tree['dx'] >= 0 and tree['dy'] >= 0 and tree['dx']+tree['w'] <= sky['w']+1e-6 and tree['dy']+tree['h'] <= sky['h']+1e-6),
-            'visible_pct_in_front_view_not_hidden_by_front_plates': pct, 'processing': tree['processing'], 'clip': tree['clip']}
-    ch = assets['character']; cr = ch['rasters'][0]; cs = shapes['character']; g = geo['character']
-    out['character_seating'] = {'configured_art_height_mm': cr['art_height_mm_config'], 'crop_below_fraction': cr['crop_below_fraction'],
-        'kept_art_mm': [round(ch['w'], 2), round(ch['h'], 2)], 'seat_line_above_base_top_mm': cs['border'],
-        'plinth_rise_mm': next(p for p in CFG['pieces'] if p['id'] == 'character').get('plinth_rise_mm', 8),
-        'tab_cx_scene_mm': out['pieces']['character']['tab_cx_mm'],
+    comp['moon_disc']['note'] = 'share of the disc not covered by the printed ink of the plates in front of the back panel (tree blossoms, serpent, character); clear gaps count as visible'
+    for pid in ['tree', 'snake', 'character']:
+        if pid not in geo or len(geo[pid]['art']['rasters']) != 1: continue
+        r = geo[pid]['art']['rasters'][0]
+        pct, _, _ = visible_fraction(r, geo[pid]['left'], geo[pid]['top'], front_of(geo[pid]['row']))
+        out['pieces'][pid]['ink_visible_pct_in_front_view_not_hidden_by_front_plates'] = pct
+    if 'tree' in geo:
+        tr = assets['tree']; t = tr['rasters'][0]; tg = geo['tree']; ts = shapes['tree']
+        pct, _, _ = visible_fraction(t, tg['left'], ts['border']+tr['h'], front_of(tg['row']))
+        a8 = t['res_alpha'] > 8; rows = np.nonzero(a8.any(1))[0]; rlow = int(rows.max()); rtop = int(rows.min())
+        low = np.nonzero(a8[rlow])[0]; top = np.nonzero(a8[rtop])[0]; px = tr['h']/a8.shape[0]
+        src_px = t['source_bbox_px'][2:]
+        out['tree_plate'] = {'rotate_deg_clockwise': t['rotate_deg'], 'configured_unrotated_art_height_mm': t['art_height_mm_config'],
+            'unrotated_alpha_box_px': src_px, 'source_density_ppi': round(src_px[1]/(t['art_height_mm_config']/25.4)),
+            'embedded_ppi': t['effective_ppi'], 'resample_px': t['resample_px'], 'native_cap': t['native_cap'],
+            'rotated_box_mm': [round(tr['w'], 2), round(tr['h'], 2)], 'plate_cut_bounds_mm': out['pieces']['tree']['plate_cut_bounds_mm'],
+            'plate_size_mm': out['pieces']['tree']['plate_size_mm'], 'clear_border_mm': ts['border'],
+            'cut_segments': out['pieces']['tree']['cut_segments'], 'segment_limit': out['pieces']['tree']['segment_limit'],
+            'canopy_envelope': t['envelope'],
+            'trunk_base_scene_x_mm': round(tg['mx'], 2), 'trunk_tab_art_x_mm': round(ts['tab_x_mm'], 2),
+            'box_in_base_coords_mm': {'x': [round(tg['left'], 2), round(tg['right'], 2)], 'z_above_base_top': [round(ts['border'], 2), round(tg['top'], 2)]},
+            'lowest_point': {'x_mm': [round(tg['left']+low.min()*px, 2), round(tg['left']+low.max()*px, 2)], 'z_above_base_top_mm': round(ts['border'], 2)},
+            'canopy_top': {'x_mm': [round(tg['left']+top.min()*px, 2), round(tg['left']+top.max()*px, 2)], 'z_above_base_top_mm': round(tg['top'], 2)},
+            'visible_pct_in_front_view_not_hidden_by_front_plates': pct,
+            'tab_cx_scene_mm': out['pieces']['tree']['tab_cx_mm'], 'bud_guard_riser': ts['bud_guard'], 'processing': t['processing']}
+    if 'snake' in out['pieces']:
+        out['pieces']['snake']['note'] = 'V5 seat: the serpent stands on row 23 behind the character; its lower coil rises to her seat line (see character_seating.serpent_coil_behind_hips)'
+    ch = assets['character']; cr = ch['rasters'][0]; cs = shapes['character']; g = geo['character']; cspec = next(p for p in CFG['pieces'] if p['id'] == 'character')
+    a8 = cr['res_alpha'] > 8; H, W = a8.shape; px = ch['h']/H
+    def lowest_in(fx0, fx1):
+        cols = a8[:, int(fx0*W):int(fx1*W)]; rows = np.nonzero(cols.any(1))[0]
+        return round(cs['border']+(H-1-int(rows.max()))*px, 2) if len(rows) else None
+    f = cspec.get('seat_line_fraction')
+    seat = {'crop_below_fraction': cr['crop_below_fraction'], 'whole_figure_shown': cr['crop_below_fraction'] is None,
+        'configured_art_height_mm': cr['art_height_mm_config'], 'art_mm': [round(ch['w'], 2), round(ch['h'], 2)],
+        'art_span_x_mm': out['pieces']['character']['art_span_x_mm'], 'tab_cx_scene_mm': out['pieces']['character']['tab_cx_mm'],
+        'plinth_rise_mm': cspec.get('plinth_rise_mm', 8),
+        'lowest_ink_above_base_top_mm': {'sword_tip_x_0.26_0.34': lowest_in(.26, .34), 'left_boot_x_0.05_0.22': lowest_in(.05, .22), 'right_boot_x_0.60_0.75': lowest_in(.60, .75)},
         'tab_window_body_width_at_base_line_mm': round(_window_section(cs['poly'], cs['shoulder']-.125, cs['tab_cx'][0], CFG['tab_width_mm']/2)[0], 2),
         'bud_guard_riser': cs['bud_guard'], 'processing': cr['processing']}
+    if cs['bud_guard']:
+        riser = next(iter(cs['bud_guard'].values()))
+        seat['riser_width_mm'], seat['riser_top_above_slot_mm'] = riser['riser_width_mm'], riser['riser_top_above_slot_mm']
+    else:
+        seat['riser_width_mm'], seat['riser_top_above_slot_mm'] = 0, 0
+    hips = None
+    if f:
+        seat['seat_line_fraction_of_figure_height'] = f
+        seat['seat_line_above_base_top_mm'] = round(cs['border']+(1-f)*ch['h'], 2)
+        row = np.nonzero(a8[H-1-int(round((1-f)*H))])[0]
+        runs = np.split(row, np.flatnonzero(np.diff(row) > 1)+1); main = max(runs, key=len)
+        hips = (g['left']+main[0]*px, g['left']+main[-1]*px)
+        seat['hip_span_x_mm_at_seat_line'] = [round(hips[0], 2), round(hips[1], 2)]
+    if 'snake' in geo and hips:
+        sn = assets['snake']; sr = sn['rasters'][0]; sg = geo['snake']; ss = shapes['snake']
+        sa = sr['res_alpha'] > 128; sH, sW = sa.shape; spx = sn['h']/sH
+        c0 = max(0, int((hips[0]-sg['left'])/spx)); c1 = min(sW, int((hips[1]-sg['left'])/spx))
+        cover = sa[:, c0:c1].mean(1)
+        z_rows = ss['border']+(sH-1-np.arange(sH))*spx
+        solid = np.array([cover[i] >= .5 and cover[max(0, i-int(10/spx))] >= .5 for i in range(sH)])
+        coil_z = round(float(z_rows[np.nonzero(solid & (z_rows <= ss['border']+.6*sn['h']))[0].min()]), 2) if (solid & (z_rows <= ss['border']+.6*sn['h'])).any() else None
+        srows = np.nonzero(sa.any(1))[0]; trow = np.nonzero(sa[int(srows.min())])[0]
+        hrows = np.nonzero(sa[:int(sH*.15)]); hy, hx = hrows
+        seat['serpent_coil_behind_hips'] = {'coil_top_z_above_base_top_mm': coil_z, 'hip_span_x_mm': [round(hips[0], 2), round(hips[1], 2)],
+            'serpent_span_x_mm': [round(sg['left'], 2), round(sg['right'], 2)], 'serpent_art_mm': [round(sn['w'], 2), round(sn['h'], 2)],
+            'coil_minus_seat_line_mm': round(coil_z-seat['seat_line_above_base_top_mm'], 2) if coil_z is not None else None,
+            'head_x_mm_top_15pct_rows': [round(sg['left']+hx.min()*spx, 2), round(sg['left']+hx.max()*spx, 2)],
+            'head_z_above_base_top_mm_top_15pct_rows': [round(ss['border']+(sH-1-hy.max())*spx, 2), round(ss['border']+(sH-1-hy.min())*spx, 2)],
+            'depth_row_mm': sg['my'], 'note': 'the serpent plate stands on row 23 behind the character plate (row 12); her legs hang in front of its lower coil. coil_top = top of the stacked coils under her hip span: highest row in the lower 60% of the serpent whose ink covers >= 50% of that span with solid cover 10 mm below'}
+    out['character_seating'] = seat
     return out
 
 
@@ -834,16 +934,17 @@ def validate(assets, shapes, preset, items, gap, folder):
         'blue_reference_four_sides': True, 'unprinted_tabs_and_slots': True,
         'slot_ink_clearance_checked_mm': 1.5, 'margins_nonblue_ink': True,
         'base_plate': f'supplied raster 07_base_art printed as-is, vertically centred '
-                      'on a 2.5 mm clear rim; {SLOT_COUNT} slot windows ink-cleared 1.5 mm in-memory '
+                      f'on a 2.5 mm clear rim; {SLOT_COUNT} slot windows ink-cleared 1.5 mm in-memory '
                       'by the builder (no separate prepared copy, no placeholder-slot surgery)',
         'piece_breakdown': {
-            'backdrop': 'one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned), the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top and, V4, the blossom tree printed into the same print layer (rotated 25 deg clockwise at native resolution, premultiplied alpha, confined to the sky rectangle); 3 tabs',
-            'snake': '02_snake silhouette plate, 1 tab (V2 position)',
-            'character': '01_character silhouette plate, 1 tab under the hips; V4 seated: art below the seat line cropped in-memory, cut ends at the base line, no clear plinth (V2 scale and x)'},
-        'layer_order_back_to_front': ['backdrop (sky, doors, moon/clouds, tree)', 'snake', 'character'],
-        'row_order_front_to_back': ['character', 'snake', 'backdrop'],
+            'backdrop': 'one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned) and the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; 3 tabs',
+            'tree': '03_blossom_tree silhouette plate rotated 25 deg clockwise (86 mm unrotated art), canopy contour = 2.5 mm closing of the ink silhouette (clear acrylic between blossoms), 1 tab under the trunk, placed diagonally across the moon (row 34)',
+            'snake': '02_snake silhouette plate, 70 mm, 1 tab; V5: enlarged and moved to x=154 so its lower coil rises to Len\'s seat line behind her hips',
+            'character': '01_character silhouette plate, whole 84 mm figure, 1 tab under the hips between the legs; the bud-guard riser between the legs is the only clear support (V2 scale and x)'},
+        'layer_order_back_to_front': ['backdrop (sky, doors, moon/clouds)', 'tree', 'snake', 'character'],
+        'row_order_front_to_back': ['character', 'snake', 'tree', 'backdrop'],
         'composition': composition_report(assets, shapes),
-        'revision_changes_vs_v3': CFG['revision_note'],
+        'revision_changes_vs_v4': CFG['revision_note'],
         'preview_rendering': 'clear acrylic see-through on a dark mauve ground: plate bodies unfilled, one 0.26 mm lit-edge stroke per plate, tabs clipped at the shoulder (inside the slots); base slab shows its front side band',
         'unused_source_islands': CFG['unused_source_islands'],
         'assets': {p['id']: {'file': assets[p['id']]['src_name'],
@@ -854,7 +955,7 @@ def validate(assets, shapes, preset, items, gap, folder):
                 'resample_px': r['resample_px'],
                 'art_width_mm': round(r['w'], 3), 'art_height_mm': round(r['h'], 3),
                 'configured_art_height_mm': r['art_height_mm_config'], 'rotate_deg': r['rotate_deg'],
-                'crop_below_fraction': r['crop_below_fraction'],
+                'crop_below_fraction': r['crop_below_fraction'], 'envelope': r['envelope'], 'tab_x_mm': r['tab_x_mm'],
                 'effective_ppi': r['effective_ppi'], 'native_cap': r['native_cap'],
                 'processing': r['processing'], 'clip': r['clip'], 'note': r.get('note')}
                 for r in assets[p['id']]['rasters']],
