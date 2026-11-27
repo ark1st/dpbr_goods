@@ -1,14 +1,15 @@
 {
-  "revision": 2,
-  "product": "Len Diorama ORIGIN V2",
+  "revision": 3,
+  "product": "Len Diorama ORIGIN V3",
   "concept_title": "보랏빛 달밤의 매화 무대, 뱀과 렌",
   "character": {"name": "렌", "world": "메이플스토리"},
   "source_pack": "assets/len_orgin",
-  "revision_note": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 merges the sky, both lattice doors and the moon/cloud layer into one back plate, shrinks the clear rim 2.5 -> 1.0 mm and renders clear acrylic see-through in the assembly preview.",
-  "finished_size_mm": {"width": 280, "height": 91.5, "depth": 71.22},
+  "revision_note": "V2 (73a2823) fixed the owner's border complaint (one back panel, 1.0 mm rim, see-through preview) but its composition did not follow the concept: Len was small (84 mm) and pushed right (x=170), the serpent stood beside the tree on the left (x=115) and the tree sat left of centre (x=112). V3 keeps the V2 piece breakdown, rims and preview and recomposes the scene to the concept: Len dominant and centred (125 mm art, 99.7 mm wide, 275 ppi, x=140, front row 12), the serpent plate directly behind her on row 23 at x=105 so its head rises above her left shoulder and its coils show around her legs, the blossom tree centred behind her on row 34 at x=140, and the back panel on row 56 enlarged to a 110 mm sky with the moon/cloud layer centred so the 71 mm disc lands on the scene axis and shows above her hair. The tree stays at V2's 72 mm: the laser_paths segment gate (1.5 segments/mm) is already saturated by its ~300-blossom canopy at 1.2 mm rim (72 mm: 896/904 segments; 76 mm and every larger size fail, and only a 2.0 mm rim would pass at 140 mm), so it cannot rise above the 125 mm character without widening the owner's rim. Character and serpent contours are simplified at 0.03 mm (0.015 mm exceeded the same gate at their new sizes); the measured ink-to-cut distance from the final curve is recorded per piece in validation_report.json.",
+  "finished_size_mm": {"width": 280, "height": 133.2, "depth": 71.22,
+    "note": "3T: base 3 + Len art 125 + 1.0 mm rim; back panel assembles to 114 mm, tree to 76 mm."},
   "board_mm": [340, 420],
   "clear_border_mm": 1.0,
-  "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. Exception: the blossom tree keeps 1.2 mm because a 1.0 mm contour over its ~300-blossom canopy cannot be fitted within the laser_paths segment gate (1.5 segments per mm) at any workable simplification; 1.2 mm is the smallest rim that passes.",
+  "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. Exception: the blossom tree keeps 1.2 mm (V2 value): a 1.0 mm contour over its ~300-blossom canopy could not be fitted within the laser_paths segment gate (1.5 segments per mm) at the V2 size; the rim is kept at 1.2 mm in V3 so the tree plate is unchanged in kind.",
   "tab_width_mm": 18,
   "tab_bottom_clearance_mm": 0.4,
   "slot_length_mm": 18.8,
@@ -19,23 +20,38 @@
   "base_art_vertical": "center",
   "base_corner_radius_mm": 14.42,
   "base_board_xy_mm": [10, 320],
+  "scene_center_x_mm": 140,
   "unused_source_islands": [],
+  "composition": {
+    "scene_axis_x_mm": 140,
+    "character": {"art_height_mm": 125, "mount_x_mm": 140, "row_mm": 12, "head_center_x_mm": 146.3, "head_top_mm": 125, "chin_mm": 87.5, "hair_left_edge_at_70_80mm_mm": 97, "ppi": 275, "simplify_mm": 0.03,
+      "concept": "dominant subject, front-centre"},
+    "serpent": {"art_height_mm": 100, "mount_x_mm": 105, "row_mm": 23, "head_center_x_mm": 106.6, "head_band_mm": [75, 91], "tip_mm": 100, "coil_span_x_mm": [64, 146], "ppi": 260, "simplify_mm": 0.03,
+      "concept": "coils behind Len; head above her left shoulder; body visible around her"},
+    "tree": {"art_height_mm": 72, "mount_x_mm": 140, "row_mm": 34, "top_mm": 72, "canopy_span_x_mm": [93.4, 186.6], "ppi": 300,
+      "concept": "centred behind Len, crowning the moon; in the concept it also rises above her head, which the segment gate forbids at the 1.2 mm rim (see revision_note)"},
+    "backdrop": {"sky_art_height_mm": 110, "door_art_height_mm": 105, "moon_overlay_height_mm": 73.0, "moon_top_margin_mm": 5, "moon_disc_diameter_mm": 70.4, "moon_disc_center_mm": [140, 68.7], "ppi": {"sky": 213, "doors": 206, "moon_clouds": 232},
+      "concept": "moon centred high behind the tree and Len"},
+    "concept_reference": "assets/len_orgin/08_diorama concept art.png",
+    "row_order_front_to_back": ["character", "snake", "tree", "backdrop"],
+    "rules_kept_hard": ["18 mm tabs / 18.8 mm nominal slots (kerf-compensated in the A3 stage)", "0.4 mm tab bottom clearance", "12 mm load-path floor with bud guard", "one depth row per plate (no same-row pairs)", "art overhang beyond the base at most 12 mm", "6 mm piece gaps and 8 mm margins on the 340 x 420 board"]
+  },
   "pieces": [
-    {"id": "backdrop", "file": "05_background.png", "art_height_mm": 90.0,
+    {"id": "backdrop", "file": "05_background.png", "art_height_mm": 110.0,
      "overlays": [
-       {"file": "06_lattice_doors.png", "island_at_px": [135, 11], "art_height_mm": 85.0, "anchor": "left_edge_bottom", "note": "left lattice door butted against the sky's left edge, bottoms aligned"},
-       {"file": "06_lattice_doors.png", "island_at_px": [1335, 11], "art_height_mm": 85.0, "anchor": "right_edge_bottom", "note": "right lattice door butted against the sky's right edge, bottoms aligned"},
-       {"file": "04_moon_clouds.png", "art_height_mm": 60.0, "anchor": "top_center", "top_margin_mm": 5.0, "note": "moon and both cloud islands (including V1's unused 34 x 6.9 mm upper-right cloud) registered over the sky; the disc lands ~10 mm right of the sky centre as in the concept"}
+       {"file": "06_lattice_doors.png", "island_at_px": [135, 11], "art_height_mm": 105.0, "anchor": "left_edge_bottom", "note": "left lattice door butted against the sky's left edge, bottoms aligned"},
+       {"file": "06_lattice_doors.png", "island_at_px": [1335, 11], "art_height_mm": 105.0, "anchor": "right_edge_bottom", "note": "right lattice door butted against the sky's right edge, bottoms aligned"},
+       {"file": "04_moon_clouds.png", "art_height_mm": 73.0, "anchor": "top_center", "top_margin_mm": 5.0, "dx_mm": 0.868, "note": "moon and both cloud islands registered over the sky; the disc (largest inscribed circle of the layer, 49.48 % of the layer width) is shifted 0.868 mm right of the sky centre so the disc centre lands exactly on the scene axis x = 140 mm as the concept shows"}
      ],
      "mounts_mm": [[55.5, 56], [140, 56], [224.5, 56]], "board_xy_mm": [10.5, 8]},
-    {"id": "tree", "file": "03_blossom_tree.png", "art_height_mm": 72.0, "clear_border_mm": 1.2, "mounts_mm": [[112, 34]], "board_xy_mm": [98, 118]},
-    {"id": "snake", "file": "02_snake.png", "art_height_mm": 55.0, "mounts_mm": [[115, 23]], "board_xy_mm": [226, 118]},
-    {"id": "character", "file": "01_character.png", "art_height_mm": 84.0, "plinth_rise_mm": 10, "mounts_mm": [[170, 12]], "board_xy_mm": [10.5, 220]}
+    {"id": "tree", "file": "03_blossom_tree.png", "art_height_mm": 72.0, "clear_border_mm": 1.2, "mounts_mm": [[140, 34]], "board_xy_mm": [10.5, 131]},
+    {"id": "snake", "file": "02_snake.png", "art_height_mm": 100.0, "simplify_mm": 0.03, "mounts_mm": [[105, 23]], "board_xy_mm": [112.1, 131]},
+    {"id": "character", "file": "01_character.png", "art_height_mm": 125.0, "simplify_mm": 0.03, "plinth_rise_mm": 10, "mounts_mm": [[140, 12]], "board_xy_mm": [202, 131]}
   ],
   "front_view_policy": {
     "asserted": false,
     "reported_metrics": ["total_covered_pct", "top30_band_covered_pct"],
-    "note": "ORIGIN is a deliberately stacked centre scene (tree across the moon, serpent behind the character): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art. Structural checks (row clearance, overhang, load path, gaps) stay hard."
+    "note": "ORIGIN is a deliberately stacked centre scene (Len in front of the serpent, serpent in front of the tree, tree across the moon): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art. Structural checks (row clearance, overhang, load path, gaps) stay hard."
   },
   "presets": [
     {"name": "3T", "part_thickness_mm": 3, "base_thickness_mm": 3, "slot_width_mm": 3},

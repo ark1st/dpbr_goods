@@ -1,34 +1,32 @@
-"""Len ORIGIN layered slot-in acrylic diorama, V2.
+"""Len ORIGIN layered slot-in acrylic diorama, V3.
 
-Lineage: V1 (commit 2ac3ad0, scripts/build_len_diorama_origin.py) built one
-base plus seven plates with a 2.5 mm clear border. The owner rejected the
-assembled look ("too many borders"): the preview painted every clear plate
-near-white and drew each one twice, so every element carried a thick halo
-plus a second outline, and the two doors and the background added heavy
-rectangular frames. V2 keeps the V1 slot-in mechanics (18 mm tabs, 18.8 mm
-nominal slots, 0.4 mm bottom clearance, 12 mm load-path floor with the
-automatic bud guard) and changes the piece breakdown, the rim and the preview:
+Lineage: V1 (commit 2ac3ad0) built one base plus seven plates with a 2.5 mm
+clear border; the owner rejected it as "too many borders". V2 (commit 73a2823)
+kept the V1 slot-in mechanics (18 mm tabs, 18.8 mm nominal slots, 0.4 mm
+bottom clearance, 12 mm load-path floor with the automatic bud guard), shrank
+the clear rim to 1.0 mm, merged the sky, both lattice doors and the
+moon/cloud layer into ONE back plate and rendered clear acrylic see-through in
+the assembly preview. V3 keeps everything V2 fixed and recomposes the scene
+to the supplied concept art (08_diorama concept art.png):
 
-* Clear border 2.5 mm -> 1.0 mm (configs/len_diorama_origin.json carries the
-  rationale; the quality doc fixes no rim minimum).
-* The back panel is ONE plate: the sky raster with both lattice doors butted
-  against its sides and the moon/cloud layer registered over the sky. V1
-  carried these as four plates (background, moon+clouds, two doors) whose
-  rims produced the stacked outlines in the middle and the frames at the sides.
-* Tree, serpent and character stay separate shaped plates on their own depth
-  rows, so the concept's layering (sky -> tree -> serpent -> character) and
-  the diorama depth are kept.
-* The assembly preview renders clear acrylic see-through: no body fill and
-  one thin edge stroke per plate.
+* Len (character) is the dominant subject: 125 mm art height (275 ppi),
+  centred on the scene axis (x = 140 mm) on the front row.
+* The serpent plate stands directly behind her on the row between her and the
+  tree, offset left so its head rises above her left shoulder and its coils
+  show around her legs, reading as wrapped around her.
+* The blossom tree is centred behind her at V2's 72 mm (the laser_paths
+  segment gate is already saturated by its blossom canopy at the 1.2 mm rim;
+  every larger size fails it), so its canopy shows at her sides and crosses
+  the moon's lower half but cannot rise above her head as in the concept.
+* The back panel keeps the V2 one-plate build (sky + butted doors + moon/cloud
+  overlay) with a 110 mm sky; the overlay is registered so the moon disc
+  centre lands exactly on the scene axis.
 
 Every raster is embedded as-is at its native aspect and never upscaled past
 its native pixels; overlays are only positioned. No fit-test pieces: current
-repo policy rejects all test pieces.
-
-The product archive keeps exactly the files the A3 release consumes:
-02_MASTER.ai, 03_CUT_ONLY.pdf, validation_report.json per thickness and
-preview/assembly.png for 3T. Everything else is generated for validation,
-then pruned; the A3 stage rebuilds print/cut/native files at sheet level.
+repo policy rejects all test pieces. The product archive keeps exactly the
+files the A3 release consumes: 02_MASTER.ai, 03_CUT_ONLY.pdf,
+validation_report.json per thickness and preview/assembly.png for 3T.
 """
 from pathlib import Path
 import sys, json, base64, io, hashlib
@@ -42,11 +40,11 @@ from shapely.geometry import Polygon, box, LineString
 from shapely import affinity, concave_hull
 from shapely.ops import unary_union
 from pypdf import PdfReader
-from laser_paths import cut_path, audit_path
+from laser_paths import cut_path, audit_path, fitted
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 
-OUT = ROOT/'output/len_diorama_origin_v2'
-TMP = ROOT/'tmp/len_diorama_origin_v2'
+OUT = ROOT/'output/len_diorama_origin_v3'
+TMP = ROOT/'tmp/len_diorama_origin_v3'
 CFG = json.loads((ROOT/'configs/len_diorama_origin.json').read_text(encoding='utf-8'))
 BOARD = tuple(CFG['board_mm'])
 PPI = 300/25.4
@@ -183,11 +181,15 @@ def load_raster(spec, border=None):
         'effective_ppi': round(tw/(w/25.4))}
 
 
-def overlay_offset(anchor, bw, bh, ow, oh, top_margin):
-    """Overlay top-left in the base raster's image coordinates (y down)."""
+def overlay_offset(anchor, bw, bh, ow, oh, top_margin, dx_mm=0.0):
+    """Overlay top-left in the base raster's image coordinates (y down).
+
+    `dx_mm` shifts a centred overlay sideways so a measured feature of the
+    layer (the moon disc) can be registered exactly on the scene axis.
+    """
     if anchor == 'left_edge_bottom': return -ow, bh-oh
     if anchor == 'right_edge_bottom': return bw, bh-oh
-    if anchor == 'top_center': return (bw-ow)/2, top_margin
+    if anchor == 'top_center': return (bw-ow)/2+dx_mm, top_margin
     raise ValueError(f'Unknown overlay anchor {anchor}')
 
 
@@ -208,7 +210,7 @@ def load_piece(spec):
     art = base['art'] if not spec.get('overlays') else box(0, 0, base['w'], base['h'])
     for ov in spec.get('overlays', []):
         r = load_raster(ov)
-        dx, dy = overlay_offset(ov['anchor'], base['w'], base['h'], r['w'], r['h'], ov.get('top_margin_mm', 0))
+        dx, dy = overlay_offset(ov['anchor'], base['w'], base['h'], r['w'], r['h'], ov.get('top_margin_mm', 0), ov.get('dx_mm', 0.0))
         moved = box(dx, dy, dx+r['w'], dy+r['h'])
         assert art.distance(moved) < 1e-6, (spec['id'], ov['file'], 'overlay detached from the plate body')
         if ov['anchor'] == 'top_center':
@@ -282,9 +284,11 @@ def _window_section(g, y, cx, half):
 
 def bud_guard(g, tab_cx, half, rise, shoulder, a_id):
     """The low slab hides the tab seam, but a floating pose can cross the
-    slab top as one narrow ligament - the whole figure would then hang on
-    that bud. Raise a slim riser under it until the buffered silhouette
-    alone meets the load-path floor."""
+    slab top as one narrow ligament - or, with the legs apart, as no
+    ligament at all - and the whole figure would then hang on that bud.
+    Raise a slim riser under the ligament (or on the tab axis when the
+    window is empty) until the buffered silhouette alone meets the
+    load-path floor."""
     boxes = {}; recs = {}
     for cx in tab_cx:
         samples = []
@@ -297,17 +301,21 @@ def bud_guard(g, tab_cx, half, rise, shoulder, a_id):
         if not samples or min(s[0] for s in samples) >= LOAD_PATH_FLOOR_MM-.05:
             continue
         worst = min(samples, key=lambda s: s[0])
-        if not worst[2]: continue
         pinch_top = min(y for w, y, _ in samples if w < LOAD_PATH_FLOOR_MM)
-        load = max(worst[2], key=lambda p: p.length)
-        mx = (load.bounds[0]+load.bounds[2])/2
+        if worst[2]:
+            load = max(worst[2], key=lambda p: p.length)
+            mx = (load.bounds[0]+load.bounds[2])/2
+        else:
+            mx = cx
         rw = LOAD_PATH_FLOOR_MM+.25
+        mx = min(max(mx, cx-half+rw/2), cx+half-rw/2)
         top = pinch_top-.25
         boxes[cx] = box(mx-rw/2, top, mx+rw/2, shoulder)
         recs[round(cx, 2)] = {'riser_width_mm': round(rw, 2),
             'riser_top_above_slot_mm': round(shoulder-top, 2),
             'worst_section_before_mm': round(worst[0], 2),
-            'worst_at_above_slot_mm': round(shoulder-worst[1], 2)}
+            'worst_at_above_slot_mm': round(shoulder-worst[1], 2),
+            'riser_axis': 'tab axis (window empty between the legs)' if not worst[2] else 'narrowest ligament'}
         print(f"bud guard: {a_id} cx={cx:.1f} worst {worst[0]:.2f} mm at "
               f"{shoulder-worst[1]:.2f} mm above slot -> riser {rw:.2f} mm wide "
               f"to {shoulder-top:.2f} mm", flush=True)
@@ -477,7 +485,7 @@ def make_board(assets, shapes, preset, folder):
     runvc(['convert', folder/'03_CUT_ONLY.svg', folder/'03_CUT_ONLY.pdf'])
     depths = sorted({round(m[1], 1) for p in CFG['pieces'] for m in p['mounts_mm']})
     bd = assets['backdrop']
-    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V2 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
+    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V3 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
         + svg_text(13, 403, f'BASE / {CFG["base_mm"][0]:.0f} x {CFG["base_mm"][1]:.1f} cut / wave art {assets["base"]["w"]:.0f} x {assets["base"]["h"]:.1f} centred + 2.5 clear rim', 3.1)
         + svg_text(13, 410, f'{SLOT_COUNT} SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (backdrop: 3 tabs)', 3.1)
         + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky + doors + moon/clouds)  TREE {assets["tree"]["w"]:.0f}x{assets["tree"]["h"]:.0f}  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER {assets["character"]["w"]:.0f}x{assets["character"]["h"]:.0f}  / clear rim {CFG["clear_border_mm"]:.1f} (tree {shapes["tree"]["border"]:.1f})', 3.0))
@@ -497,7 +505,8 @@ def assembly(assets, shapes, preset, folder):
     produced the white halos and the double outlines; on a light ground even
     an unfilled plate reads as white). Tabs are clipped at the shoulder line
     because they sit inside the base slots. Plates are drawn back to front:
-    backdrop, tree, serpent, character.
+    backdrop, tree, serpent, character (V3: the serpent stands directly
+    behind the centred character, the tree centred behind the serpent).
     """
     ox, oy = 62, 212; dx, dy = .22, -.26
     bw, bh = CFG['base_mm']
@@ -531,12 +540,61 @@ def assembly(assets, shapes, preset, folder):
         if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
         parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">'
                      + path(poly_path(body), 'none', EDGE, EDGE_W) + a['ink'] + '</g>')
-    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V2', 5, TEXT))
+    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V3', 5, TEXT))
     parts.append(svg_text(13, 23, f'base {bw:.0f} x {bh:.1f} mm / {PIECE_COUNT} pieces / clear rim {CFG["clear_border_mm"]:.1f} mm (tree {shapes["tree"]["border"]:.1f}) / clear acrylic drawn see-through on a dark ground', 3.4))
-    parts.append(svg_text(13, 252, f'V2 / {preset["name"]} / one back panel: sky + lattice doors + moon and clouds / tree, serpent, character plates', 3.1))
+    parts.append(svg_text(13, 252, f'V3 / {preset["name"]} / Len centred in front, serpent behind her, tree centred behind, one back panel with centred moon', 3.1))
     svg = write_svg(folder/'preview/assembly.svg', 400, 260, ''.join(parts))
     render(svg, folder/'preview/assembly.png', 2.7)
     svg.unlink()
+
+
+def composition_report(assets, shapes):
+    """Measure the standing scene from the real rasters and cut polygons.
+
+    Scene x is measured from the base's left edge; scene y is the height
+    above the base top. Every plate stands with its art bounding-box centre
+    on its mount x, so the numbers below are what the assembled preview shows.
+    """
+    comp = CFG['composition']
+    out = {'scene_axis_x_mm': comp['scene_axis_x_mm'], 'row_order_front_to_back': comp['row_order_front_to_back'], 'pieces': {}}
+    for spec in CFG['pieces']:
+        pid = spec['id']; a = assets[pid]; s = shapes[pid]
+        mx = sum(m[0] for m in spec['mounts_mm'])/len(spec['mounts_mm']); my = spec['mounts_mm'][0][1]
+        row = {'art_mm': [round(a['w'], 2), round(a['h'], 2)], 'plate_cut_bounds_mm': [round(x, 2) for x in s['poly'].bounds],
+               'art_center_x_mm': round(mx, 2), 'depth_row_mm': my,
+               'assembled_height_mm': round(CFG['presets'][0]['base_thickness_mm']+a['h']+s['border'], 2),
+               'effective_ppi': [r['effective_ppi'] for r in a['rasters']], 'clear_border_mm': s['border']}
+        if pid != 'backdrop':
+            ra = a['rasters'][0]; al = ra['res_alpha'] > 128; h, w = al.shape
+            sc = a['h']/h; x0 = mx-a['w']/2
+            def band(lo, hi):
+                ys, xs = np.nonzero(al[int(lo*h):int(hi*h)])
+                if not len(xs): return None
+                return {'center_x_mm': round(x0+xs.mean()*sc, 2), 'mean_y_mm': round(a['h']-(int(lo*h)+ys.mean())*sc, 2),
+                        'span_x_mm': [round(x0+xs.min()*sc, 2), round(x0+xs.max()*sc, 2)]}
+            if pid == 'character':
+                row['head_top15pct'] = band(0, .15); row['head_top_mm'] = round(a['h'], 2)
+                row['hair_30_50pct'] = band(.3, .5); row['legs_85_100pct'] = band(.85, 1.0)
+            if pid == 'snake':
+                row['head_top20pct'] = band(0, .2); row['tip_mm'] = round(a['h'], 2); row['coils_70_100pct'] = band(.7, 1.0)
+            if pid == 'tree':
+                row['top_mm'] = round(a['h'], 2); row['canopy_30_45pct'] = band(.3, .45)
+        out['pieces'][pid] = row
+    bd = assets['backdrop']; sky = bd['rasters'][0]; moon = bd['rasters'][-1]
+    assert moon['anchor'] == 'top_center'
+    al = (moon['res_alpha'] > 128).astype('uint8')
+    dt = cv2.distanceTransform(al, cv2.DIST_L2, 5)
+    cy, cx = divmod(int(dt.argmax()), al.shape[1]); radius = float(dt.max())
+    sc = moon['h']/al.shape[0]
+    sky_left = comp['scene_axis_x_mm']-sky['w']/2
+    disc_x = sky_left+moon['dx']+cx*sc
+    top_margin = next(o for o in next(p for p in CFG['pieces'] if p['id'] == 'backdrop')['overlays'] if o['file'] == '04_moon_clouds.png')['top_margin_mm']
+    disc_y = sky['h']-top_margin-cy*sc
+    out['pieces']['backdrop']['moon_disc'] = {'center_x_mm': round(disc_x, 2), 'center_y_above_base_mm': round(disc_y, 2),
+        'diameter_mm': round(2*radius*sc, 2), 'offset_from_scene_axis_mm': round(disc_x-comp['scene_axis_x_mm'], 2),
+        'disc_center_fraction_of_layer_width': round(cx/al.shape[1], 4)}
+    out['design'] = comp
+    return out
 
 
 def validate(assets, shapes, preset, items, gap, folder):
@@ -642,12 +700,14 @@ def validate(assets, shapes, preset, items, gap, folder):
                       'on a 2.5 mm clear rim; 6 slot windows ink-cleared 1.5 mm in-memory '
                       'by the builder (no separate prepared copy, no placeholder-slot surgery)',
         'piece_breakdown': {
-            'backdrop': 'one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned) and the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; 3 tabs',
-            'tree': '03_blossom_tree silhouette plate, 1 tab',
-            'snake': '02_snake silhouette plate, 1 tab',
-            'character': '01_character silhouette plate, 1 tab'},
+            'backdrop': 'one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned) and the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top, centred so the disc lands on the scene axis; 3 tabs',
+            'tree': '03_blossom_tree silhouette plate, 1 tab, centred behind the serpent',
+            'snake': '02_snake silhouette plate, 1 tab, directly behind the character',
+            'character': '01_character silhouette plate, 1 tab, dominant and centred in front'},
         'layer_order_back_to_front': ['backdrop', 'tree', 'snake', 'character'],
-        'revision_changes_vs_v1': CFG['revision_note'],
+        'row_order_front_to_back': ['character', 'snake', 'tree', 'backdrop'],
+        'composition': composition_report(assets, shapes),
+        'revision_changes_vs_v2': CFG['revision_note'],
         'preview_rendering': 'clear acrylic see-through on a dark mauve ground: plate bodies unfilled, one 0.26 mm lit-edge stroke per plate, tabs clipped at the shoulder (inside the slots); base slab shows its front side band',
         'unused_source_islands': CFG['unused_source_islands'],
         'assets': {p['id']: {'file': assets[p['id']]['src_name'],
@@ -674,6 +734,14 @@ def validate(assets, shapes, preset, items, gap, folder):
         'native_cap': b['native_cap'],
         'effective_ppi': b['effective_ppi'],
         'processing': b['processing']}
+    for p in CFG['pieces']:
+        poly = shapes[p['id']]['poly']
+        _, stats, curve = fitted(poly.wkb)
+        report['assets'][p['id']].update(
+            simplify_mm=p.get('simplify_mm', .015),
+            minimum_art_to_cut_curve_mm=round(curve.boundary.distance(assets[p['id']]['art']), 3),
+            laser_fit=stats,
+            cut_contour_note='the cut is fitted to the buffered alpha silhouette; the ink-to-cut distance above is measured from the final fitted curve to the unsmoothed raster silhouette')
     (folder/'validation_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
     return report
 
