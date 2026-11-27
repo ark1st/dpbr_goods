@@ -15,8 +15,8 @@
 Python으로 실제 칼선의 회전·이동·충돌·3mm 간격을 검사했습니다. 구멍을 제외한 조각 면적이 A3 한 장보다 크고 두 장 배치가 성립하므로 최소 장수는2장입니다. 상세 수치는 출력의 `A3_VALIDATION.json`에 있습니다.
 Len은 공통 받침·배경 한 세트에 일반·DOT 캐릭터를 교체합니다. 일반76mm, 도트50mm로 수정했으며 도트 돌기를 발 아래로 옮겼습니다. 공통 받침275×60mm·18.8×3mm 홈을 유지하고, 도트 돌기는18mm 폭·2.6mm 깊이로 새로 만들었습니다.
 
-별도 선택안: [새 Len PAD · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 8조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/07_len_origin/3T/sheet_01)입니다.
-이 둘까지 출력하면4장·71조각입니다. PAD의 받침은280×71.2235mm, ORIGIN의 받침도280×71.2235mm(홈9개)로 기존 Len과 치수가 다릅니다.
+별도 선택안: [새 Len PAD · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 5조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/07_len_origin/3T/sheet_01)입니다.
+이 둘까지 출력하면4장·68조각입니다. Len PAD의 받침은280×71.2235mm, ORIGIN의 받침도280×71.2235mm(홈6개)로 기존 Len과 치수가 다릅니다. ORIGIN V3는 시안 구도대로 렌 125mm를 가운데 세우고 뱀판을 렌 바로 뒤에, 매화와 달을 가운데 두렀습니다.
 
 [전체 출력 안내·시안·ZIP](https://github.com/ark1st/dpbr_goods/tree/output_len/output) · [보관본](https://github.com/ark1st/dpbr_goods/tree/raw)
 5T는 별도 대안입니다. 현재3T와 둘 다 출력하지 않습니다. 카데나는5T용이 아닙니다.

@@ -81,7 +81,7 @@ def main(check_zips=True,check_native=True):
             changes={name:compare_geometry(folder/name,spec) for name in ['03_CUT_ONLY.pdf','02_MASTER.pdf','02_MASTER.ai']}
             if group.startswith(('05_len/','06_len_pad/','07_len_origin/')):
                 slots=len_slot_counts(folder/'03_CUT_ONLY.pdf',group.split('/')[-1])
-                expected_slots=9 if group.startswith('07_len_origin/') else 8
+                expected_slots=CONFIG['len_origin_revision']['slots'] if group.startswith('07_len_origin/') else 8
                 assert slots=={'nominal':0,'compensated':expected_slots},(group,'Len slot fit compensation',slots)
             if check_native:
                 native=folder/'02_MASTER.vectorcraft'
@@ -121,10 +121,10 @@ def main(check_zips=True,check_native=True):
             assert set(ids)=={f'len_pad_{t}_{i:02}' for i in range(1,8)}
             assert sum(p['contours'] for p in pages)==15
         if group.startswith('07_len_origin/'):
-            t=group.split('/')[-1]
-            assert set(ids)=={f'len_origin_{t}_{i:02}' for i in range(1,9)}
-            assert sum(p['contours'] for p in pages)==17
-            assert sum(p['pieces'] for p in pages)==8 and len(ids)==8
+            t=group.split('/')[-1];rev=CONFIG['len_origin_revision']
+            assert set(ids)=={f'len_origin_{t}_{i:02}' for i in range(1,rev['pieces']+1)}
+            assert sum(p['contours'] for p in pages)==rev['closed_paths']
+            assert sum(p['pieces'] for p in pages)==rev['pieces'] and len(ids)==rev['pieces']
         if group.startswith('05_len/'):
             t=group.split('/')[-1]
             assert sum(x.startswith(f'len_{t}_') for x in ids)==7

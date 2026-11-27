@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-27-len-origin-optional",
+  "revision": "A3-2026-11-27-len-origin-v3",
   "canvas_mm": [
     420,
     297
@@ -154,28 +154,28 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v1/3T/02_MASTER.ai",
-      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
-      "sha256": "fe8afe247f202a47bf68d8d2b34f8c5a45f1134d1a9e5e36a17a93a5f02f6873",
-      "git_path": "output/len_diorama_origin_v1/3T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v3/3T/02_MASTER.ai",
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "sha256": "97afbd7cffdfaaffcdd7b1acf5a42c955ede9788668202024fb4f40e40848af3",
+      "git_path": "output/len_diorama_origin_v3/3T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v1/3T/03_CUT_ONLY.pdf",
-      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
-      "sha256": "5e3d906ea020c6ba0b724eaf3c44be12ee4e54c0afe52f950c59ce67d0ce873f",
-      "git_path": "output/len_diorama_origin_v1/3T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v3/3T/03_CUT_ONLY.pdf",
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "sha256": "8b2623fa0c333ac059157b4722376218bfb4912eeb785a85cbfc9064c03a9585",
+      "git_path": "output/len_diorama_origin_v3/3T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v1/5T/02_MASTER.ai",
-      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
-      "sha256": "9d1fb006a88f54cda293d829a75c20d16015bf5700bb48926bcefad64605273f",
-      "git_path": "output/len_diorama_origin_v1/5T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v3/5T/02_MASTER.ai",
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "sha256": "fe03fdadc6bf0b12cfb7574d726b108639bb6525d9a03177dd89aa96a1172374",
+      "git_path": "output/len_diorama_origin_v3/5T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v1/5T/03_CUT_ONLY.pdf",
-      "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
-      "sha256": "fdb2bdc3628dff45221c1491c8fc0683b57c3dd8db8016f318d2012a4394de53",
-      "git_path": "output/len_diorama_origin_v1/5T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v3/5T/03_CUT_ONLY.pdf",
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "sha256": "cd12d9c2d17970f539c06dfc385303726cf8a2dc64a30c14cd3cb26d4d025b62",
+      "git_path": "output/len_diorama_origin_v3/5T/03_CUT_ONLY.pdf"
     }
   ],
   "cadena_source_part_ids": [
@@ -192,8 +192,8 @@
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
-    "07_len_origin/3T": 8,
-    "07_len_origin/5T": 8
+    "07_len_origin/3T": 5,
+    "07_len_origin/5T": 5
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -231,6 +231,27 @@
       "revision": "A3-2026-11-22-current-only",
       "status": "retired_not_for_current_print",
       "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    },
+    {
+      "commit": "162220a",
+      "revision": "A3-2026-11-27-len-origin-optional",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Len ORIGIN V1 (8 pieces, 2.5 mm clear rims, doors/moon/clouds as separate framed plates) rejected by the owner as too many borders; masters stay at commit 2ac3ad0, replaced by V2 (5 pieces, 1.0 mm rim, merged back panel)."
+    },
+    {
+      "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "revision": "A3-2026-11-27-len-origin-v2",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed): one back panel, 1.0 mm rim and see-through preview kept in V3, but its composition (84 mm Len at x=170, serpent at x=115 beside the tree, tree at x=112) did not follow the concept; the release integration for V2 was never gated. Superseded by V3 before publication."
     }
   ],
   "len_layout": {
@@ -286,10 +307,25 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/3T/preview/assembly.png"
     },
     {
+      "file": "output/len_diorama_origin_v3/3T/preview/assembly.png",
+      "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
+      "sha256": "c3b5701efca6716bb5a1d735b05c1fe3c1f08849cda7eba564e84fc33d882447",
+      "git_path": "output/len_diorama_origin_v3/3T/preview/assembly.png",
+      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
+    },
+    {
+      "file": "output/len_diorama_origin_v2/3T/preview/assembly.png",
+      "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "sha256": "8edd00e8df22cb7c66d8dd4d9b3771658eba3c46a86ba760cc1fddee031153d5",
+      "git_path": "output/len_diorama_origin_v2/3T/preview/assembly.png",
+      "role": "superseded ORIGIN V2 assembly preview (never published; kept for before/after review only)"
+    },
+    {
       "file": "output/len_diorama_origin_v1/3T/preview/assembly.png",
       "commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
       "sha256": "d6388df604908d440f048f4b933d645965631c6bc26276231c0204cfd0a8b515",
-      "git_path": "output/len_diorama_origin_v1/3T/preview/assembly.png"
+      "git_path": "output/len_diorama_origin_v1/3T/preview/assembly.png",
+      "role": "retired ORIGIN V1 assembly preview kept for before/after review only"
     }
   ],
   "optional_groups": [
@@ -427,11 +463,11 @@
     }
   },
   "len_origin_revision": {
-    "product": "Len Diorama ORIGIN V1",
+    "product": "Len Diorama ORIGIN V3",
     "source_pack": "assets/len_orgin",
-    "pieces": 8,
-    "slots": 9,
-    "closed_paths": 17,
+    "pieces": 5,
+    "slots": 6,
+    "closed_paths": 11,
     "base_mm": [
       280,
       71.2235
@@ -440,20 +476,83 @@
       12,
       23,
       34,
-      45,
       56
     ],
+    "clear_border_mm": 1.0,
+    "clear_border_per_piece_mm": {
+      "backdrop": 1.0,
+      "tree": 1.2,
+      "snake": 1.0,
+      "character": 1.0
+    },
     "plate_mounts": {
-      "bg": 3,
-      "moon_clouds": 1,
+      "backdrop": 3,
       "tree": 1,
       "snake": 1,
-      "character": 1,
-      "door_left": 1,
-      "door_right": 1
+      "character": 1
+    },
+    "composition": {
+      "row_order_front_to_back": [
+        "character",
+        "snake",
+        "tree",
+        "backdrop"
+      ],
+      "character": {
+        "art_mm": [
+          99.72,
+          125.0
+        ],
+        "art_center_x_mm": 140,
+        "depth_row_mm": 12,
+        "effective_ppi": 275
+      },
+      "snake": {
+        "art_mm": [
+          82.01,
+          100.0
+        ],
+        "art_center_x_mm": 105,
+        "depth_row_mm": 23,
+        "effective_ppi": 260
+      },
+      "tree": {
+        "art_mm": [
+          93.31,
+          72.0
+        ],
+        "art_center_x_mm": 140,
+        "depth_row_mm": 34,
+        "effective_ppi": 300
+      },
+      "backdrop": {
+        "art_mm": [
+          169.4,
+          110.0
+        ],
+        "art_center_x_mm": 140,
+        "depth_row_mm": 56,
+        "moon_disc": {
+          "center_x_mm": 139.99,
+          "center_y_above_base_mm": 68.66,
+          "diameter_mm": 70.35,
+          "offset_from_scene_axis_mm": -0.01,
+          "disc_center_fraction_of_layer_width": 0.4948
+        }
+      },
+      "concept": "assets/len_orgin/08_diorama concept art.png"
     },
     "builder": "scripts/build_len_diorama_origin.py",
     "config": "configs/len_diorama_origin.json",
-    "reason": "Owner requested production output for the newly supplied len_orgin separated-asset pack; PAD V1 slot-in diorama conventions with the concept art (08) as the piece-breakdown reference."
+    "source_dir": "output/len_diorama_origin_v3",
+    "preview": "output/len_diorama_origin_v3/3T/preview/assembly.png",
+    "supersedes": {
+      "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "product": "Len Diorama ORIGIN V2",
+      "pieces": 5,
+      "clear_border_mm": 1.0,
+      "reason": "V2 fixed the border complaint but did not follow the concept composition: Len small (84 mm) and pushed right, the serpent beside the tree on the left, the tree left of centre. V3 keeps the V2 piece breakdown, rims and see-through preview and recomposes: Len 125 mm centred in front, serpent plate directly behind her, tree centred and enlarged to crown the moon, moon centred on the scene axis."
+    },
+    "reason": "Lead's vision read of the V2 preview against the concept: dominant centred Len, serpent behind her, tree centred behind, moon centred."
   }
 }

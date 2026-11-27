@@ -92,6 +92,28 @@
       "scope": "Previous third-page layout only; first two pages remain byte-frozen",
       "status": "retired_not_for_current_print",
       "reason": "User supplied a new immutable third-page composition and requested additions only in its free area."
+    },
+    {
+      "commit": "162220a",
+      "revision": "A3-2026-11-27-len-origin-optional",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "2ac3ad0ae0f3e293ff2699fcff2689c4bb9b8720",
+      "status": "retired_not_for_current_print",
+      "reason": "Len ORIGIN V1 (8 pieces, 2.5 mm clear rims, doors/moon/clouds as separate framed plates) rejected by the owner as too many borders; replaced by V2 (5 pieces, 1.0 mm rim with 1.2 mm on the blossom tree, merged back panel, see-through assembly preview), itself superseded by V3 before publication. V1 masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "revision": "A3-2026-11-27-len-origin-v2",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed): one back panel, 1.0 mm rim and see-through preview kept in V3, but its composition (84 mm Len at x=170, serpent at x=115 beside the tree, tree at x=112) did not follow the concept; the release integration for V2 was never gated. Superseded by V3 before publication."
     }
   ],
   "retired_package_files": [

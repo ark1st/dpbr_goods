@@ -49,20 +49,20 @@
     "07_len_origin/3T": [
       {
         "folder": "a3_release/07_len_origin/3T/sheet_01",
-        "pieces": 8,
-        "contours": 17
+        "pieces": 5,
+        "contours": 11
       }
     ],
     "07_len_origin/5T": [
       {
         "folder": "a3_release/07_len_origin/5T/sheet_01",
-        "pieces": 8,
-        "contours": 17
+        "pieces": 5,
+        "contours": 11
       }
     ]
   },
   "physical_cut_test": false,
-  "revision": "A3-2026-11-27-len-origin-optional",
+  "revision": "A3-2026-11-27-len-origin-v3",
   "test_pieces_included": false,
   "superseded_releases": [
     {
@@ -80,6 +80,27 @@
       "revision": "A3-2026-11-22-current-only",
       "status": "retired_not_for_current_print",
       "reason": "Three separate primary sheets, oversized 76mm DOT and no-longer-requested brand keyrings."
+    },
+    {
+      "commit": "162220a",
+      "revision": "A3-2026-11-27-len-origin-optional",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "status": "retired_not_for_current_print",
+      "reason": "Len ORIGIN V1 (8 pieces, 2.5 mm clear rims, doors/moon/clouds as separate framed plates) rejected by the owner as too many borders; masters stay at commit 2ac3ad0, replaced by V2 (5 pieces, 1.0 mm rim, merged back panel)."
+    },
+    {
+      "commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "revision": "A3-2026-11-27-len-origin-v2",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed): one back panel, 1.0 mm rim and see-through preview kept in V3, but its composition (84 mm Len at x=170, serpent at x=115 beside the tree, tree at x=112) did not follow the concept; the release integration for V2 was never gated. Superseded by V3 before publication."
     }
   ],
   "physical_pages_per_selected_thickness": 2,

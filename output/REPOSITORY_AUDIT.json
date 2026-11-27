@@ -10,7 +10,10 @@
     "status": "retired_archive_bytes_verified_not_current_cut_quality_approval"
   },
   "current_output_files": [
+    "LASER_PATH_AUDIT.json",
     "README.md",
+    "RELEASE_VALIDATION.json",
+    "REPOSITORY_AUDIT.json",
     "RETIRED.json",
     "a3_release/02_extra_sheet/3T/sheet_01/01_PRINT.pdf",
     "a3_release/02_extra_sheet/3T/sheet_01/01_PRINT_300ppi.png",
@@ -140,10 +143,11 @@
     "a3_release/07_len_origin/assembly.png",
     "a3_release/07_len_origin_3T_A3.zip",
     "a3_release/07_len_origin_5T_A3.zip",
+    "a3_release/A3_VALIDATION.json",
     "a3_release/README.md",
     "a3_release/manifest.json"
   ],
-  "pinned_inputs_sha256_checked": 40,
+  "pinned_inputs_sha256_checked": 42,
   "preserved_source_assets_sha256_checked": [
     "assets/artwork.json",
     "assets/external/linked_supplied/줄줄이키링/이미지/새튀_0000_새튀W.png",
