@@ -1,4 +1,4 @@
-"""Len ORIGIN layered slot-in acrylic diorama, V7.
+"""Len ORIGIN layered slot-in acrylic diorama, V8.
 
 Lineage: V1 (commit 2ac3ad0, scripts/build_len_diorama_origin.py) built one
 base plus seven plates with a 2.5 mm clear border. The owner rejected the
@@ -16,42 +16,43 @@ requests: the blossom tree printed into the back panel and Len "seated" by
 cropping her raster at the seat line. V5 (7459c7f) restructured the scene (Len
 whole on a 70 mm serpent's coil, the tree back as ONE cut plate whose 2.5 mm
 canopy envelope webbed the blossoms together with clear acrylic) and the owner
-rejected it ("이거 아니야 v4에서 잘림 문제만 해결하고 나무를 예시 이미지처럼
-대각선 배치 해달라고"). V6 (62963a8) = V4 with exactly those two changes: Len
-shown whole and the printed tree leaning up to the right like the concept.
+rejected it. V6 (62963a8) = V4 with exactly those two changes: Len shown
+whole and the printed tree leaning up to the right like the concept. V7
+(e8a480e) split the tree into a wood cut piece plus six pink blossom cluster
+plates on clear stems.
 
-V7 = the owner's decision on the tree ("벚꽃하고 나무는 별도 에셋으로 분리해줘"):
-the blossom tree is neither printed on the back panel (V4/V6) nor one
-clear-webbed cut piece (V5). 03_blossom_tree.png is split by colour into
+V8 = the owner's correction ("벚꽃-나무는 하나여야지": the blossom tree must be
+ONE piece; "저 문": the assets he wanted separate are the DOORS, which V7
+still printed flat on the back panel):
 
-* a TREE piece: the dark trunk and branches (wood pixels), twigs under 0.5 mm
-  pruned, 1.0 mm rim, standing on its own 18 mm tab on its own depth row
-  with its base behind the serpent, 35 deg clockwise like V6 but 88 mm art so
-  the whole tree stands on the base line inside the sky;
-* seven BLOSSOM pieces: pink petal clusters grouped around the branch tips by
-  seed discs, each its own plate with a 1.0 mm rim, no webbing between
-  clusters, mounted on the base BEHIND the tree plate on three depth rows
-  (see configs/len_diorama_origin.json) on a 12.25 mm clear stem, so the
-  branches cross in front of them and the gaps between clusters show the sky
-  and moon like the concept's open arching tree.
+* TREE, one piece: the complete blossom tree - trunk, branches and every
+  blossom cluster - as ONE cut piece printed with the original pixels (dark
+  wood + pink blossoms), 35 deg clockwise, 88 mm art, standing behind the
+  serpent on its own 18 mm tab at row 31 exactly like the V7 tree piece. The
+  cut skeleton is the opaque mask opened 1.5 mm (twigs and petals under 3 mm
+  of ink are not cut), so the gaps between branch/cluster groups are REAL
+  cut-out openings through which the sky and moon show: no clear canopy fill,
+  no stems, no separate cluster plates. Every detached cluster is attached
+  along its own twig by a 2.75 mm clear connector with the twig printed
+  inside; the body is buffered 1.0 mm and closed 1.25 mm; enclosed holes at
+  least 2.5 mm wide are cut-out openings unless they would leave a neck under
+  2.5 mm or cross the riser - those gaps, and every gap too narrow to cut,
+  stay PRINTED with the back panel's blurred local colour instead of clear
+  acrylic (pale over the moon, violet elsewhere, no detail baked in).
+* DOORS, separate pieces: the two lattice doorways of 06_lattice_doors.png
+  (85 mm art, 1.0 mm rim, the lattice printed and its wide holes cut out)
+  on one 18 mm tab each at row 47 in front of the back panel, at scene
+  x 40.3-70.7 and 209.3-239.8 exactly where V2-V7 printed them.
+* The back panel loses the printed doors and keeps the sky, moon, clouds and
+  water waves; the sky/wave raster is mirrored into the former door zones so
+  the plate keeps its V7 outline.
 
-Everything else is V6 exactly, see configs/len_diorama_origin.json:
-
-* Clear border 1.0 mm on every plate.
-* The back panel is ONE plate: the sky raster with both lattice doors butted
-  against its sides and the moon/cloud layer registered over the sky.
-* Tree, serpent and character stay shaped plates on their own depth rows, so
-  the concept's layering (sky -> blossoms -> tree -> serpent -> character) and
-  the diorama depth are kept.
-* The assembly preview renders clear acrylic see-through: no body fill and
-  one thin edge stroke per plate.
-* Len is shown WHOLE: no seat crop. Both boot rims rest on the base line and
-  the bud guard carries the plate on a clear riser inside the tab window.
-
-Every raster keeps its native pixels (LANCZOS to the 300 ppi print size, never
-upscaled); the tree's rotation is the only resampling step and acts at native
-resolution before that downsample. No fit-test pieces: current repo policy
-rejects all test pieces.
+Everything else is V7/V6 exactly, see configs/len_diorama_origin.json: whole
+seated Len, serpent, moon, base, slots, 1.0 mm clear border on every plate,
+the see-through assembly preview, native pixels (LANCZOS to the 300 ppi print
+size, never upscaled; the tree's rotation is the only resampling step and
+acts at native resolution before that downsample). No fit-test pieces: current
+repo policy rejects all test pieces.
 
 The product archive keeps exactly the files the A3 release consumes:
 02_MASTER.ai, 03_CUT_ONLY.pdf, validation_report.json per thickness and
@@ -67,15 +68,15 @@ import cv2
 import pymupdf as fitz
 from PIL import Image
 from scipy.ndimage import gaussian_filter1d
-from shapely.geometry import Polygon, box, LineString
+from shapely.geometry import Polygon, box, LineString, Point
 from shapely import affinity, concave_hull
 from shapely.ops import unary_union
 from pypdf import PdfReader
 from laser_paths import cut_path, audit_path
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 
-OUT = ROOT/'output/len_diorama_origin_v7'
-TMP = ROOT/'tmp/len_diorama_origin_v7'
+OUT = ROOT/'output/len_diorama_origin_v8'
+TMP = ROOT/'tmp/len_diorama_origin_v8'
 CFG = json.loads((ROOT/'configs/len_diorama_origin.json').read_text(encoding='utf-8'))
 BOARD = tuple(CFG['board_mm'])
 PPI = 300/25.4
@@ -83,11 +84,11 @@ RED = '#ff0000'
 BLUE = '#0000ff'
 SRC = ROOT/'assets/len_orgin'
 LOAD_PATH_FLOOR_MM = 12.0
-STEM_WIDTH_MM = LOAD_PATH_FLOOR_MM+.25
-MIN_FEATURE_MM = CFG['tree_split']['min_feature_mm']
+RISER_WIDTH_MM = LOAD_PATH_FLOOR_MM+.25
+MIN_FEATURE_MM = CFG['tree_one_piece']['min_feature_mm']
 PIECE_COUNT = 1 + len(CFG['pieces'])
 SLOT_COUNT = sum(len(p['mounts_mm']) for p in CFG['pieces'])
-CUT_PATH_COUNT = PIECE_COUNT + SLOT_COUNT
+CUT_PATH_COUNT = PIECE_COUNT+SLOT_COUNT   # main() adds the cut-out openings
 
 
 def write_svg(dest, w, h, content, title=''):
@@ -236,6 +237,14 @@ def load_raster(spec, border=None, clip_mm=None):
     base raster without resampling."""
     source = SRC/spec['file']
     im, bbox, ref_h, processing = source_pixels(spec)
+    ext = spec.get('extend_sky_mm')
+    if ext:
+        s0 = spec['art_height_mm']/ref_h
+        l, r = int(round(ext['left']/s0)), int(round(ext['right']/s0))
+        arr = cv2.copyMakeBorder(np.asarray(im), 0, 0, l, r, cv2.BORDER_REFLECT_101)
+        im = Image.fromarray(arr, 'RGBA')
+        bbox = [bbox[0]-l, bbox[1], bbox[2]+l+r, bbox[3]]
+        processing += f"; sky/wave art extended into the former door zones by mirroring the raster's own edge columns (BORDER_REFLECT_101): {l} px = {l*s0:.2f} mm left, {r} px = {r*s0:.2f} mm right, no resampling"
     h = spec['art_height_mm']; s = h/ref_h
     clip_note = None
     if clip_mm is not None:
@@ -334,121 +343,300 @@ def load_piece(spec):
         'processing': None if len(rasters) == 1 else 'overlays positioned on the base raster: '+', '.join(r['file'] for r in rasters[1:])}
 
 
-class TreeSplit:
-    """Colour split of the rotated blossom tree into the wood skeleton and the
-    petal clusters (V7). All masks live on the native pixels of the 35 deg
-    clockwise rotation V6 already used; millimetres follow the configured art
-    height so the split is computed once for both thicknesses."""
-
-    def __init__(self, split_cfg):
-        self.cfg = split_cfg
-        spec = {'file': split_cfg['file'], 'art_height_mm': split_cfg['art_height_mm'], 'rotate_deg': split_cfg['rotate_deg']}
-        self.im, self.bbox, self.ref_h, self.processing = source_pixels(spec)
-        a = np.asarray(self.im)
-        self.rgb = a[..., :3].astype(int)
-        self.alpha = a[..., 3]
-        self.s = split_cfg['art_height_mm']/self.ref_h
-        self.pxmm = 1/self.s
-        op = self.alpha > 128
-        r, g, b = self.rgb[..., 0], self.rgb[..., 1], self.rgb[..., 2]
-        red_dominant = (r-np.maximum(g, b) >= 45) & (r >= 110)
-        self.petal = op & red_dominant
-        self.wood = op & ~red_dominant
-        self.opaque = op
-        self.H, self.W = op.shape
-        self.kernel_cache = {}
-
-    def kernel(self, mm):
-        r = max(1, int(round(mm*self.pxmm)))
-        if r not in self.kernel_cache:
-            self.kernel_cache[r] = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2*r+1, 2*r+1))
-        return self.kernel_cache[r]
-
-    def morph(self, mask, op, mm):
-        return cv2.morphologyEx(mask.astype('uint8'), op, self.kernel(mm)) > 0
-
-    def smooth(self, mask, mm):
-        return self.morph(self.morph(mask, cv2.MORPH_CLOSE, mm), cv2.MORPH_OPEN, mm)
-
-    def main_component(self, mask):
-        n, lab, st, _ = cv2.connectedComponentsWithStats(mask.astype('uint8'), 8)
-        assert n > 1, 'empty mask'
-        main = max(range(1, n), key=lambda i: st[i, 4])
-        return (lab == main), int(st[main, 4])
-
-    def polygon(self, mask, sigma_px):
-        """Outer contour of a mask as a smooth polygon: the pixel staircase is
-        Gaussian-smoothed along the contour so laser_paths can fit it within
-        the segment gate; enclosed holes are dropped (no interior rings)."""
-        cnts, _ = cv2.findContours(mask.astype('uint8'), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-        c = max(cnts, key=cv2.contourArea)[:, 0, :].astype(float)
-        if len(c) > 8:
-            c = np.stack([gaussian_filter1d(c[:, 0], sigma_px, mode='wrap'), gaussian_filter1d(c[:, 1], sigma_px, mode='wrap')], 1)
-        p = Polygon(c*[self.s, self.s]).buffer(0)
-        if p.geom_type != 'Polygon': p = max(p.geoms, key=lambda g: g.area)
-        if p.interiors: p = Polygon(p.exterior).buffer(0)
-        assert p.geom_type == 'Polygon' and p.is_valid and not p.interiors, p.geom_type
-        return p
-
-    def filled(self, poly):
-        m = np.zeros((self.H, self.W), 'uint8')
-        ext = np.round(np.asarray(poly.exterior.coords)/self.s).astype('int32')
-        cv2.fillPoly(m, [ext], 1)
-        return m > 0
-
-    def skeleton(self):
-        cfg = self.cfg
-        wood = self.smooth(self.wood, cfg['wood_smooth_mm'])
-        opened = self.morph(wood, cv2.MORPH_OPEN, cfg['wood_open_mm'])
-        sk, px = self.main_component(opened)
-        return sk, {'wood_px': int(self.wood.sum()), 'wood_smoothed_px': int(wood.sum()),
-            'wood_kept_px': px, 'wood_pruned_px': int(self.wood.sum())-int((sk & self.wood).sum()),
-            'dropped_wood_islands_px': int(opened.sum())-px}
-
-    def clusters(self):
-        cfg = self.cfg
-        pm = self.smooth(self.petal, cfg['wood_smooth_mm'])
-        yy, xx = np.mgrid[0:self.H, 0:self.W]
-        xm = (xx+.5)*self.s; ym = (yy+.5)*self.s
-        seeds = [tuple(c['seed_mm']) for c in cfg['clusters']]
-        d = np.stack([np.hypot(xm-sx, ym-sy) for sx, sy in seeds])
-        nearest = d.argmin(0)
-        out = []
-        for i, c in enumerate(cfg['clusters']):
-            region = (nearest == i) & (d[i] <= c['radius_mm'])
-            # Keep clusters apart by a sky gap: petals within half the gap of
-            # the Voronoi boundary between two seeds are not cut.
-            others = np.delete(d, i, axis=0).min(0)
-            region &= (others-d[i]) >= 2*cfg['cluster_gap_mm']
-            m = self.morph(region & pm, cv2.MORPH_CLOSE, cfg['rim_closing_mm'])
-            n, lab, st, _ = cv2.connectedComponentsWithStats(m.astype('uint8'), 8)
-            keep = np.zeros_like(m)
-            for k in range(1, n):
-                if st[k, 4]*self.s*self.s >= cfg['min_cluster_island_mm2']: keep |= (lab == k)
-            # A cluster is ONE plate: the largest component; larger satellites
-            # are dropped with the small islands rather than cut separately.
-            keep, main_px = self.main_component(keep)
-            dropped = int(m.sum())-int(keep.sum())
-            out.append((keep, {'petal_px_in_disc': int((region & pm).sum()), 'cluster_px': int(keep.sum()), 'islands_dropped_px': dropped}))
-        return out
-
-
 def closing(p, r):
     return p.buffer(r, quad_segs=28).buffer(-r, quad_segs=28)
 
 
 def neck_width(poly):
     """Narrowest connection of a plate: twice the erosion radius that first
-    splits it (tab corners excluded by starting above the shoulder)."""
+    splits it into real parts (zero-area buffer slivers do not count)."""
     for k in range(1, 16):
         e = poly.buffer(-k*.25, quad_segs=16)
-        n = len(e.geoms) if hasattr(e, 'geoms') else (0 if e.is_empty else 1)
-        if n > 1: return 2*(k*.25-.125)
+        parts = [g for g in (e.geoms if hasattr(e, 'geoms') else ([] if e.is_empty else [e])) if g.area > 1e-3]
+        if len(parts) > 1: return 2*(k*.25-.125)
     return None
 
 
+class OnePieceTree:
+    """The complete blossom tree as one cut piece (V8). All masks live on the
+    native pixels of the 35 deg clockwise rotation V6/V7 already used."""
+
+    def __init__(self, cfg):
+        self.cfg = cfg
+        spec = {'file': cfg['file'], 'art_height_mm': cfg['art_height_mm'], 'rotate_deg': cfg['rotate_deg']}
+        self.im, self.bbox, self.ref_h, self.processing = source_pixels(spec)
+        a = np.asarray(self.im)
+        self.rgba = a
+        self.s = cfg['art_height_mm']/self.ref_h
+        self.pxmm = 1/self.s
+        self.opaque = a[..., 3] > 128
+        r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
+        red_dominant = (r-np.maximum(g, b) >= 45) & (r >= 110)
+        self.wood = self.opaque & ~red_dominant
+        self.H, self.W = self.opaque.shape
+
+    def kernel(self, mm):
+        r = max(1, int(round(mm*self.pxmm)))
+        return cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2*r+1, 2*r+1))
+
+    def trunk_base_x(self):
+        """Canvas x (mm) of the lowest wood pixel: the trunk base, V7's tab axis."""
+        ys, xs = np.nonzero(self.wood)
+        low = xs[ys >= ys.max()-max(1, int(round(.5*self.pxmm)))]
+        return float(low.mean()*self.s)
+
+    def skeleton(self):
+        cfg = self.cfg
+        S = cv2.morphologyEx(self.opaque.astype('uint8'), cv2.MORPH_OPEN, self.kernel(cfg['skeleton_open_mm'])) > 0
+        n, lab, st, _ = cv2.connectedComponentsWithStats(S.astype('uint8'), 8)
+        main = max(range(1, n), key=lambda i: st[i, 4])
+        main_mask = lab == main
+        frags = []
+        for i in range(1, n):
+            area = st[i, 4]*self.s*self.s
+            if i != main and area >= cfg['fragment_min_mm2']:
+                frags.append((i, area, lab == i))
+        kept = main_mask.copy()
+        for _, _, fm in frags: kept |= fm
+        info = {'skeleton_open_mm': cfg['skeleton_open_mm'], 'opaque_px': int(self.opaque.sum()),
+            'skeleton_px': int(S.sum()), 'main_skeleton_px': int(main_mask.sum()),
+            'detached_clusters': len(frags), 'detached_cluster_px': int(sum(f[2].sum() for f in frags)),
+            'detached_cluster_areas_mm2': sorted((round(f[1], 1) for f in frags), reverse=True),
+            'specks_cut_away_px': int(S.sum()-kept.sum())}
+        return kept, main_mask, frags, info
+
+    def geodesic(self, main_mask, frags):
+        """Arrival-time geodesic distance from the main skeleton inside the
+        opaque mask, then one twig path per detached cluster (backtracked)."""
+        T = np.full((self.H, self.W), -1, 'int32'); T[main_mask] = 0
+        frontier = main_mask.copy(); k = 0
+        pending = {i: None for i, _, _ in frags}
+        while frontier.any() and any(v is None for v in pending.values()):
+            k += 1
+            nxt = (cv2.dilate(frontier.astype('uint8'), np.ones((3, 3), 'uint8')) > 0) & self.opaque & (T < 0)
+            T[nxt] = k; frontier = nxt
+            for i, _, fm in frags:
+                if pending[i] is None and (fm & nxt).any(): pending[i] = k
+        paths, recs = {}, {}
+        for i, area, fm in frags:
+            ys, xs = np.nonzero(fm & (T >= 0))
+            assert len(ys), ('detached cluster unreachable inside the opaque mask', i)
+            j = int(np.argmin(T[ys, xs])); y, x = int(ys[j]), int(xs[j])
+            path = [(x, y)]
+            while T[y, x] > 0:
+                y, x = next((y+dy, x+dx) for dy in (-1, 0, 1) for dx in (-1, 0, 1)
+                            if 0 <= y+dy < self.H and 0 <= x+dx < self.W and T[y+dy, x+dx] == T[y, x]-1)
+                path.append((x, y))
+            paths[i] = path
+            recs[int(i)] = {'cluster_mm2': round(area, 2), 'twig_path_mm': round(len(path)*self.s, 2)}
+        return paths, recs
+
+
+def mask_polygons(mask, s, sigma_px):
+    """Smoothed polygons of a boolean mask: (outer union, enclosed holes)."""
+    cnts, hier = cv2.findContours(mask.astype('uint8'), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+    hier = hier[0] if hier is not None else []
+    outers, holes = [], []
+    for i, c in enumerate(cnts):
+        if len(c) < 4 or cv2.contourArea(c) <= 1: continue
+        pts = c[:, 0, :].astype(float)
+        if len(pts) > 8:
+            pts = np.stack([gaussian_filter1d(pts[:, 0], sigma_px, mode='wrap'), gaussian_filter1d(pts[:, 1], sigma_px, mode='wrap')], 1)
+        p = Polygon(pts*[s, s]).buffer(0)
+        if p.geom_type != 'Polygon': p = max(p.geoms, key=lambda g: g.area)
+        if p.interiors: p = Polygon(p.exterior).buffer(0)
+        (holes if len(hier) and hier[i][3] != -1 else outers).append(p)
+    return unary_union(outers), holes
+
+
+def opening_of(p, r):
+    return p.buffer(-r, quad_segs=16).buffer(r, quad_segs=16)
+
+
+def one_piece_body(skeleton, connectors, rules):
+    """Cut body of a one-piece plate: skeleton buffered by the rim plus the
+    connectors, closed so sky slits under the minimum feature vanish, with
+    enclosed holes kept as cut-out openings only when they measure at least
+    the minimum feature wide and leave every neck at least that wide. With
+    `regularize` (doors) thin material features are widened to the minimum.
+    Returns outer, openings, filled gaps (printed), gaps dropped for a neck."""
+    rim, mf, om = rules['rim_mm'], rules['min_feature_mm'], rules['opening_min_mm']
+    body = unary_union([skeleton.buffer(rim, quad_segs=28)]+connectors)
+    assert body.geom_type == 'Polygon', ('one-piece body disconnected', len(body.geoms))
+    body = closing(body, rules['closing_mm'])
+    assert body.geom_type == 'Polygon', ('closing disconnected the body', len(body.geoms))
+    outer = Polygon(body.exterior)
+    openings, filled, dropped = [], [], []
+    for ring in sorted(body.interiors, key=lambda r: -Polygon(r).area):
+        o = Polygon(ring); w = neck_width(o)
+        if w is None or w < om-.01:
+            filled.append(o); continue
+        holed = Polygon(outer.exterior, [q.exterior for q in openings]+[o.exterior])
+        nw = neck_width(holed)
+        if nw is not None and nw < mf-.01:
+            dropped.append(o); continue
+        openings.append(o)
+    if rules.get('regularize'):
+        R = mf/2+.05
+        for _ in range(3):
+            holed = Polygon(outer.exterior, [o.exterior for o in openings])
+            thin = holed.difference(closing(opening_of(holed, R), R))
+            if thin.is_empty or thin.area < 1e-6: break
+            grown = unary_union([holed, thin.buffer(.25, quad_segs=16)])
+            if grown.geom_type != 'Polygon': grown = max(grown.geoms, key=lambda g: g.area)
+            grown = closing(grown, rules['closing_mm'])
+            if grown.geom_type != 'Polygon': grown = max(grown.geoms, key=lambda g: g.area)
+            outer = Polygon(grown.exterior)
+            kept = []
+            for ring in grown.interiors:
+                o = Polygon(ring); w = neck_width(o)
+                (kept if w is not None and w >= om-.01 else filled).append(o)
+            openings = kept
+    outer = opening_of(outer, .01)
+    openings = [opening_of(o, .01) for o in openings if not opening_of(o, .01).is_empty]
+    return outer, openings, filled, dropped
+
+
+def sky_sampler(backdrop, sigma_mm=15.0):
+    """Colour of the back panel behind a one-piece plate with its detail
+    removed: the extended sky raster Gaussian-blurred over `sigma_mm` (waves
+    and stars averaged into the gradient) plus the moon/cloud layer as one
+    uniform pale colour through its own blurred mask, so the printed gaps of
+    the tree and doors take the local sky or moon tone without any wave line,
+    cloud edge or crater being baked into the plate."""
+    def decode(r):
+        return np.asarray(Image.open(io.BytesIO(base64.b64decode(r['ink'].split('base64,')[1].split('"')[0]))).convert('RGBA')).astype('float32')
+    sky = decode(backdrop['rasters'][0])[..., :3]; ov = backdrop['rasters'][1]
+    moon = decode(ov)
+    h, w = sky.shape[:2]; sx, sy = w/backdrop['w'], h/backdrop['h']
+    rgb = cv2.GaussianBlur(sky, (0, 0), sigmaX=sigma_mm/sx, sigmaY=sigma_mm/sy)
+    solid = moon[..., 3] > 200
+    colour = moon[..., :3][solid].mean(0) if solid.any() else np.array([240., 225., 235.])
+    mh, mw = moon.shape[:2]
+    ox, oy = int(round(ov['dx']*sx)), int(round(ov['dy']*sy))
+    mask = np.zeros((h, w), 'float32')
+    x0, y0 = max(0, ox), max(0, oy); x1, y1 = min(w, ox+mw), min(h, oy+mh)
+    mask[y0:y1, x0:x1] = (moon[y0-oy:y1-oy, x0-ox:x1-ox, 3] > 128).astype('float32')
+    mask = cv2.GaussianBlur(mask, (0, 0), sigmaX=(sigma_mm/2)/sx, sigmaY=(sigma_mm/2)/sy)[..., None]
+    rgb = rgb*(1-mask)+colour*mask
+    left = 140.0-backdrop['w']/2; top = CFG['clear_border_mm']+backdrop['h']
+    def sample(scene_x, scene_z):
+        mx = ((scene_x-left)/backdrop['w']*(w-1)).astype('float32')
+        my = ((top-scene_z)/backdrop['h']*(h-1)).astype('float32')
+        return cv2.remap(rgb, mx, my, cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+    sample.sigma_mm = sigma_mm
+    sample.moon_colour = [int(v) for v in colour]
+    return sample
+
+
+def one_piece_print(asset, shape, sampler):
+    """Print raster of a one-piece plate: the original pixels inside the body
+    (0.6 mm from every cut edge and opening, outside the riser), and every
+    enclosed gap - everything inside the piece that is not printed art, not
+    the 1.0 mm clear band along a cut edge and not a clear connector halo -
+    printed with the sampled sky colour up to the art. Nothing prints outside
+    the body, so twigs and petals the cut skeleton dropped never print inside
+    an opening, and the outer rim stays clear (no pale halo)."""
+    H, W = asset['canvas_px']
+    s = asset['w']/W
+    band = shape['body'].buffer(-CFG['clear_border_mm'], quad_segs=16)
+    halos = [c.difference(asset['art']) for c in asset['connectors']]
+    fill = band.difference(unary_union([asset['art']]+halos+[o.buffer(CFG['clear_border_mm'], quad_segs=16) for o in shape['openings']]+shape['risers']))
+    fill = fill.intersection(box(0, 0, asset['w'], asset['h']))
+    bodymask = shape['body'].buffer(-.6, quad_segs=16)
+    for o in shape['openings']: bodymask = bodymask.difference(o.buffer(.6, quad_segs=16))
+    for r in shape['risers']: bodymask = bodymask.difference(r)
+    def raster(poly):
+        m = np.zeros((H, W), 'uint8')
+        for g in (poly.geoms if poly.geom_type != 'Polygon' else [poly]):
+            if g.geom_type == 'Polygon' and not g.is_empty:
+                cv2.fillPoly(m, [np.round(np.asarray(g.exterior.coords)/s).astype('int32')], 1)
+                for ring in g.interiors: cv2.fillPoly(m, [np.round(np.asarray(ring.coords)/s).astype('int32')], 0)
+        return m > 0
+    fm, bm = raster(fill), raster(bodymask)
+    cols, rows = np.meshgrid(np.arange(W), np.arange(H))
+    sky = sampler(shape['scene_left']+cols*s, shape['shoulder']-rows*s)
+    a = asset['rgba'].astype(np.float32); al = a[..., 3:4]/255.0
+    out = a.copy()
+    # Semi-transparent source pixels (soft petal and twig fringes) print only
+    # inside the printed gaps, where they are composited; elsewhere they would
+    # become translucent pale halos over the dark sky, so they stay clear.
+    out[..., 3] = np.where(bm & ((a[..., 3] > 128) | fm), a[..., 3], 0)
+    out[..., :3][fm] = a[..., :3][fm]*al[fm]+sky[fm]*(1-al[fm])
+    out[..., 3][fm] = 255
+    im = Image.fromarray(out.clip(0, 255).astype('uint8'), 'RGBA')
+    raster_ = embed_canvas(im, asset['w'], asset['h'], asset['art'], dict(asset['raster_extra'],
+        processing=asset['processing']+f'; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over {sampler.sigma_mm} mm + uniform moon colour {sampler.moon_colour} through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear'))
+    return {'ink': raster_['ink'], 'rasters': [raster_], 'opaque_px': raster_['opaque_px'], 'fill_region': fill,
+        'fill_px': int(fm.sum()), 'printed_sky_mm2': round(fill.area, 1)}
+
+
+def load_tree(tree, spec):
+    """The tree as ONE cut piece: skeleton + connectors as the cut silhouette,
+    the complete tree printed, gaps printed with sky where not cut out."""
+    cfg = tree.cfg
+    kept, main_mask, frags, info = tree.skeleton()
+    paths, path_recs = tree.geodesic(main_mask, frags)
+    connectors = []
+    for path in paths.values():
+        pts = np.array(path, float)
+        if len(pts) > 4:
+            pts = np.stack([gaussian_filter1d(pts[:, 0], cfg['path_sigma_px'], mode='nearest'), gaussian_filter1d(pts[:, 1], cfg['path_sigma_px'], mode='nearest')], 1)
+        line = LineString(pts*tree.s).simplify(cfg['path_simplify_mm'], preserve_topology=False)
+        if len(line.coords) >= 2: connectors.append(line.buffer(cfg['connector_width_mm']/2, quad_segs=12))
+        else: connectors.append(Point(line.coords[0]).buffer(cfg['connector_width_mm']/2, quad_segs=12))
+    skeleton, _ = mask_polygons(kept, tree.s, cfg['contour_sigma_px'])
+    structure = unary_union([skeleton]+connectors)
+    assert structure.geom_type == 'Polygon', ('skeleton + connectors disconnected', len(structure.geoms))
+    gap_holes = [Polygon(r) for r in structure.interiors]
+    outer, openings, filled, dropped = one_piece_body(skeleton, connectors, cfg)
+    H, W = tree.H, tree.W; w, h = W*tree.s, H*tree.s
+    ys, xs = np.nonzero(tree.opaque)
+    info.update({'connectors': len(connectors), 'connector_width_mm': cfg['connector_width_mm'],
+        'connector_twig_paths_mm': sorted((r['twig_path_mm'] for r in path_recs.values()), reverse=True),
+        'connector_twig_path_total_mm': round(sum(r['twig_path_mm'] for r in path_recs.values()), 1),
+        'openings': len(openings), 'openings_mm': [{'area_mm2': round(o.area, 1), 'min_width_mm': neck_width(o),
+            'box_mm': [round(v, 1) for v in o.bounds]} for o in sorted(openings, key=lambda o: -o.area)],
+        'enclosed_gaps_of_body': len(filled)+len(dropped), 'enclosed_gaps_area_mm2': round(sum(o.area for o in filled+dropped), 1),
+        'gaps_too_narrow_to_cut': len(filled), 'gaps_dropped_for_neck': len(dropped),
+        'minimum_feature_mm': neck_width(outer), 'outer_perimeter_mm': round(outer.length, 1),
+        'canvas_mm': [round(w, 2), round(h, 2)], 'ink_box_mm': [round(xs.min()*tree.s, 2), round(ys.min()*tree.s, 2), round((xs.max()+1)*tree.s, 2), round((ys.max()+1)*tree.s, 2)],
+        'art_area_mm2': round(skeleton.area, 1), 'body_area_mm2': round(outer.area, 1)})
+    return {'id': spec['id'], 'src_name': '03_blossom_tree.png', 'w': w, 'h': h, 'ink': '',
+        'art': skeleton, 'opaque_px': 0, 'tab_x_mm': tree.trunk_base_x(), 'body_override': outer,
+        'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': tree.rgba, 'outer': outer, 'gap_holes': gap_holes, 'connectors': connectors,
+        'processing': tree.processing+f"; V8 one-piece tree: opaque mask opened {cfg['skeleton_open_mm']} mm (twigs and petals under {2*cfg['skeleton_open_mm']:g} mm of ink are not cut), main skeleton + every detached cluster of at least {cfg['fragment_min_mm2']} mm2 kept, {len(connectors)} twig connectors {cfg['connector_width_mm']} mm wide, rim {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, {len(openings)} cut-out openings, narrow gaps printed with sky",
+        'split_info': info,
+        'raster_extra': {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': tree.bbox, 'source_file': '03_blossom_tree.png',
+            'art_height_mm_config': CFG['tree_one_piece']['art_height_mm'], 'rotate_deg': CFG['tree_one_piece']['rotate_deg']}}
+
+
+def load_door(spec):
+    """One lattice doorway as its own cut piece (V8)."""
+    cfg = CFG['tree_one_piece']['doors']
+    im, bbox, ref_h, processing = source_pixels(spec)
+    a = np.asarray(im); s = spec['art_height_mm']/ref_h
+    op = a[..., 3] > 128
+    H, W = op.shape
+    silhouette, holes = mask_polygons(op, s, cfg['contour_sigma_px'])
+    assert silhouette.geom_type == 'Polygon', ('door silhouette disconnected', len(silhouette.geoms))
+    gap_holes = [Polygon(r) for r in silhouette.interiors]
+    outer, openings, filled, dropped = one_piece_body(silhouette, [], cfg)
+    info = {'lattice_holes_in_source': len(holes), 'openings': len(openings),
+        'openings_mm': [{'area_mm2': round(o.area, 1), 'min_width_mm': neck_width(o), 'box_mm': [round(v, 1) for v in o.bounds]} for o in sorted(openings, key=lambda o: -o.area)],
+        'enclosed_gaps_of_body': len(filled)+len(dropped), 'minimum_feature_mm': neck_width(outer), 'outer_perimeter_mm': round(outer.length, 1),
+        'canvas_mm': [round(W*s, 2), round(H*s, 2)], 'art_area_mm2': round(silhouette.area, 1), 'body_area_mm2': round(outer.area, 1)}
+    return {'id': spec['id'], 'src_name': '06_lattice_doors.png', 'w': W*s, 'h': H*s, 'ink': '',
+        'art': silhouette, 'opaque_px': 0, 'tab_x_mm': W*s/2, 'body_override': outer,
+        'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': a, 'outer': outer, 'gap_holes': gap_holes, 'connectors': [],
+        'processing': processing+f"; V8 door piece: silhouette buffered {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, thin features widened to {cfg['min_feature_mm']} mm, {len(openings)} lattice openings cut, the other lattice gaps printed with sky",
+        'split_info': info,
+        'raster_extra': {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': bbox, 'source_file': '06_lattice_doors.png',
+            'art_height_mm_config': spec['art_height_mm'], 'rotate_deg': 0}}
+
+
 def embed_canvas(im, w, h, art, extra):
-    """Embed a native-pixel canvas (tree piece or blossom piece) at print scale."""
+    """Embed a native-pixel canvas (the one-piece tree or a door) at print scale."""
     pw, ph = im.size
     tw, th = max(1, min(round(w*PPI), pw)), max(1, min(round(h*PPI), ph))
     res = im.resize((tw, th), Image.LANCZOS)
@@ -457,110 +645,15 @@ def embed_canvas(im, w, h, art, extra):
     b64 = base64.b64encode(buf.getvalue()).decode()
     ink = (f'<image x="0" y="0" width="{w:.6f}" height="{h:.6f}" '
            f'xlink:href="data:image/png;base64,{b64}" href="data:image/png;base64,{b64}"/>')
-    source = SRC/'03_blossom_tree.png'
+    source = SRC/extra['source_file']
     return dict({'file': source.name, 'sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'source_px': [pw, ph], 'source_bbox_px': None, 'resample_px': [tw, th],
         'w': w, 'h': h, 'ink': ink, 'art': art, 'canvas': True,
-        'processing': None, 'clip': None,
-        'art_height_mm_config': CFG['tree_split']['art_height_mm'], 'rotate_deg': CFG['tree_split']['rotate_deg'],
-        'crop_below_fraction': None,
+        'clip': None, 'crop_below_fraction': None,
         'opaque_px': int((ra[:, :, 3] > 8).sum()),
         'res_alpha': ra[:, :, 3].copy(), 'mean_rgb': ra[solid][:, :3].mean(0) if solid.any() else np.zeros(3),
         'native_cap': bool(tw < pw-1 or (tw == pw and th == ph and round(w*PPI) > pw)),
         'effective_ppi': round(tw/(w/25.4))}, **extra)
-
-
-def load_tree(split, spec):
-    """The tree piece: wood skeleton as the cut silhouette and the print."""
-    cfg = split.cfg
-    sk, info = split.skeleton()
-    art = split.polygon(sk, cfg['contour_sigma_px'])
-    H, W = split.H, split.W
-    # The print is the original pixels inside the kept skeleton mask.
-    arr = np.asarray(split.im).copy()
-    arr[~sk, 3] = 0
-    im = Image.fromarray(arr, 'RGBA')
-    # Tab under the lowest point of the skeleton (the trunk base).
-    ys, xs = np.nonzero(sk)
-    low = xs[ys >= ys.max()-max(1, int(round(.5*split.pxmm)))]
-    tab_x = float(low.mean()*split.s)
-    w, h = W*split.s, H*split.s
-    body = closing(art.buffer(CFG['clear_border_mm'], quad_segs=28), cfg['rim_closing_mm'])
-    if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
-    body = Polygon(body.exterior) if body.interiors else body
-    raster = embed_canvas(im, w, h, art, {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': split.bbox,
-        'processing': split.processing+'; V7 tree piece: wood mask (not red-dominant) closed %.1f mm, opened %.1f mm (twigs under that ink width pruned), '
-                      'largest component kept; print = original pixels inside the kept skeleton' % (cfg['wood_smooth_mm'], cfg['wood_open_mm'])})
-    return {'id': spec['id'], 'src_name': '03_blossom_tree.png', 'w': w, 'h': h, 'ink': raster['ink'],
-        'art': art, 'rasters': [raster], 'opaque_px': raster['opaque_px'],
-        'tab_x_mm': tab_x, 'body_override': body, 'split_info': info,
-        'processing': 'tree piece: wood skeleton separated from the blossoms by colour'}
-
-
-def load_blossom(split, spec, cluster_mask, info, base_y_mm):
-    """One blossom cluster as a standee: cluster silhouette plus a clear stem
-    down to the base line, centred on its own tab axis."""
-    cfg = split.cfg
-    art0 = split.polygon(cluster_mask, cfg['contour_sigma_px'])
-    x0, y0, x1, y1 = art0.bounds
-    cluster_body = closing(art0.buffer(CFG['clear_border_mm'], quad_segs=28), cfg['rim_closing_mm'])
-    if cluster_body.geom_type != 'Polygon': cluster_body = max(cluster_body.geoms, key=lambda g: g.area)
-    cluster_body = Polygon(cluster_body.exterior) if cluster_body.interiors else cluster_body
-    half = STEM_WIDTH_MM/2
-    # Stem axis = the lowest point of the buffered cluster within the tab
-    # window around the widest run near the cluster's bottom, so the bud
-    # guard's riser (centred on that same lowest section) coincides with the
-    # stem instead of standing beside it.
-    stem_x = float(spec['stem_x_mm'])
-    cols = np.nonzero((np.arange(split.W)*split.s >= stem_x-half) & (np.arange(split.W)*split.s <= stem_x+half))[0]
-    rows = np.nonzero(cluster_mask[:, cols].any(1))[0]
-    assert len(rows), (spec['id'], 'stem misses the cluster')
-    stem_top = rows.max()*split.s-2.0
-    # The clear stem runs up through every narrow section of the cluster inside
-    # the tab window (inside the cluster it is a no-op: the body already fills
-    # that area), so the bud guard never has to raise a riser beside it.
-    for i in range(400):
-        w, _ = _window_section(cluster_body, stem_top, stem_x, CFG['tab_width_mm']/2)
-        if w >= STEM_WIDTH_MM-.001 or stem_top <= y0+.5: break
-        stem_top -= .25
-    assert w >= STEM_WIDTH_MM-.001, (spec['id'], 'cluster never reaches the stem width inside the tab window', round(stem_x, 2), round(w, 2))
-    # Canvas centred on the stem axis, wide enough for the whole cluster.
-    W = 2*max(stem_x-x0, x1-stem_x)
-    W = math.ceil(W/split.s)*split.s
-    left = stem_x-W/2
-    H = math.ceil((base_y_mm-y0)/split.s)*split.s
-    px = [int(round(left/split.s)), int(round(y0/split.s)), int(round((left+W)/split.s)), int(round((y0+H)/split.s))]
-    assert px[2] > px[0] and px[3] > px[1] and px[3] <= split.H, (spec['id'], px)
-    left, y0 = px[0]*split.s, px[1]*split.s
-    w, h = (px[2]-px[0])*split.s, (px[3]-px[1])*split.s
-    def window(array):
-        out = np.zeros((px[3]-px[1], px[2]-px[0])+array.shape[2:], array.dtype)
-        ix0, iy0 = max(0, px[0]), max(0, px[1]); ix1, iy1 = min(split.W, px[2]), min(split.H, px[3])
-        out[iy0-px[1]:iy1-px[1], ix0-px[0]:ix1-px[0]] = array[iy0:iy1, ix0:ix1]
-        return out
-    # Print every opaque pixel inside the cluster contour (petals and the twigs
-    # between them); everything else on the canvas stays clear.
-    inside = window(split.filled(art0)[..., None])[..., 0] > 0
-    crop = window(np.asarray(split.im))
-    crop[~inside, 3] = 0
-    im = Image.fromarray(crop, 'RGBA')
-    art = affinity.translate(art0, -left, -y0)
-    stem = box(w/2-half, stem_top-y0, w/2+half, h)
-    body = unary_union([affinity.translate(cluster_body, -left, -y0), stem])
-    if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
-    body = Polygon(body.exterior) if body.interiors else body
-    assert body.geom_type == 'Polygon' and art.difference(body).area < 1e-6, (spec['id'], body.geom_type, art.difference(body).area)
-    ys, xs = np.nonzero(cluster_mask)
-    raster = embed_canvas(im, w, h, art, {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': [split.bbox[0]+px[0], split.bbox[1]+px[1], px[2]-px[0], px[3]-px[1]],
-        'processing': split.processing+f"; V7 blossom piece '{spec['cluster']}': petals inside the seed disc {spec['seed_mm']} mm r {spec['radius_mm']} mm (Voronoi among seeds) closed {cfg['rim_closing_mm']} mm, islands under {cfg['min_cluster_island_mm2']} mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem {STEM_WIDTH_MM} mm from the cluster down to the base line"})
-    opaque_inside = int((inside & (window(split.opaque[..., None])[..., 0] > 0)).sum())
-    return {'id': spec['id'], 'src_name': '03_blossom_tree.png', 'w': w, 'h': h, 'ink': raster['ink'],
-        'art': art, 'rasters': [raster], 'opaque_px': raster['opaque_px'],
-        'tab_x_mm': w/2, 'body_override': body, 'shoulder_override': h,
-        'split_info': dict(info, cluster_box_mm=[round(v, 2) for v in art0.bounds], canvas_box_mm=[round(left, 2), round(y0, 2), round(left+w, 2), round(y0+h, 2)],
-            stem_top_mm=round(stem_top, 2), stem_length_mm=round(h-(stem_top-y0), 2), stem_x_mm=round(stem_x, 2),
-            opaque_px_inside_contour=opaque_inside, contour_area_mm2=round(art0.area, 1)),
-        'processing': f"blossom piece '{spec['cluster']}' on a clear stem"}
 
 
 def load_base(preset):
@@ -690,6 +783,14 @@ def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015, border=
     shape = union.simplify(simplify_tol, preserve_topology=True)
     assert shape.geom_type == 'Polygon' and shape.is_valid and not shape.interiors
     assert shape.contains(art)
+    # Cut-out openings: inside the body, clear of the risers and tabs; any
+    # opening a riser would cross stays solid (printed) instead.
+    openings = []
+    for o in a.get('openings', []):
+        if any(o.intersects(g) for g in guard) or not shape.contains(o) or o.intersects(art):
+            continue
+        assert shape.exterior.distance(o) >= 0 and min(r.distance(o) for r in guard) >= 0
+        openings.append(o)
     clearance = shape.boundary.distance(art)
     assert border-simplify_tol-.005 <= clearance <= border+.05, (a['id'], clearance)
     for cx in tab_cx:
@@ -707,7 +808,7 @@ def standee(a, base_thickness, mounts, plinth_rise=8, simplify_tol=.015, border=
     assert depth > 1 and abs(shape.bounds[3]-shoulder-depth) < .001
     return {'poly': shape, 'tab_cx': tab_cx, 'shoulder': shoulder, 'depth': depth,
         'mount_mean_x': mean_x, 'clearance': clearance, 'border': border, 'bud_guard': guard_recs,
-        'tab_x_mm': tab_x, 'body': body}
+        'tab_x_mm': tab_x, 'body': body, 'openings': openings, 'risers': list(guard)}
 
 
 def base_slots(preset):
@@ -796,7 +897,7 @@ def positioned(assets, shapes, preset):
         poly = s['poly']; bx, by = poly.bounds[0], poly.bounds[1]
         x, y = p['board_xy_mm']; tx, ty = x-bx, y-by
         items.append({'name': p['id'], 'poly': affinity.translate(poly, tx, ty),
-                      'tx': tx, 'ty': ty, 'ink': a['ink'], 'holes': [],
+                      'tx': tx, 'ty': ty, 'ink': a['ink'], 'holes': [affinity.translate(o, tx, ty) for o in s['openings']],
                       'rasters': [dict(r, x=tx+r['dx'], y=ty+r['dy']) for r in a['rasters']],
                       'opaque_px': a['opaque_px']})
     tx, ty = CFG['base_board_xy_mm']; inset_x = CFG['base_art_inset_mm']; b = assets['base']
@@ -831,12 +932,13 @@ def make_board(assets, shapes, preset, folder):
     runvc(['convert', printing, folder/'01_PRINT.pdf'])
     runvc(['convert', folder/'03_CUT_ONLY.svg', folder/'03_CUT_ONLY.pdf'])
     depths = sorted({round(m[1], 1) for p in CFG['pieces'] for m in p['mounts_mm']})
-    bd = assets['backdrop']; ch = assets['character']; tr = assets['tree']
-    nb = sum(1 for p in CFG['pieces'] if p['id'].startswith('blossom_'))
-    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V7 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
+    bd = assets['backdrop']; ch = assets['character']; tr = assets['tree']; ti = tr['split_info']
+    dl, dr = assets['door_left'], assets['door_right']
+    nop = sum(len(shapes[p['id']]['openings']) for p in CFG['pieces'])
+    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V8 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
         + svg_text(13, 403, f'BASE / {CFG["base_mm"][0]:.0f} x {CFG["base_mm"][1]:.1f} cut / wave art {assets["base"]["w"]:.0f} x {assets["base"]["h"]:.1f} centred + 2.5 clear rim', 3.1)
-        + svg_text(13, 410, f'{SLOT_COUNT} SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (backdrop: 3 tabs)', 3.1)
-        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky + doors + moon/clouds printed on it)  TREE piece {tr["w"]:.0f}x{tr["h"]:.0f} canvas ({CFG["tree_split"]["art_height_mm"]:.0f} mm art rotated {CFG["tree_split"]["rotate_deg"]:g} deg clockwise, wood only, {tr["rasters"][0]["effective_ppi"]} ppi)  {nb} BLOSSOM pieces on 12.25 mm clear stems  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER whole {ch["w"]:.0f}x{ch["h"]:.1f} ({ch["rasters"][0]["art_height_mm_config"]:.0f} mm art, no crop, clear riser in the tab window)  / clear rim {CFG["clear_border_mm"]:.1f}', 3.0))
+        + svg_text(13, 410, f'{SLOT_COUNT} SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (backdrop: 3 tabs) / {nop} cut-out openings', 3.1)
+        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky extended into the door zones + moon/clouds printed on it)  TREE one piece {tr["w"]:.0f}x{tr["h"]:.0f} canvas ({CFG["tree_one_piece"]["art_height_mm"]:.0f} mm art rotated {CFG["tree_one_piece"]["rotate_deg"]:g} deg clockwise, wood + blossoms printed, {ti["openings"]} openings, {ti["connectors"]} connectors {ti["connector_width_mm"]} mm, {tr["rasters"][0]["effective_ppi"]} ppi)  DOORS L/R {dl["w"]:.1f}x{dl["h"]:.0f} / {dr["w"]:.1f}x{dr["h"]:.0f} ({dl["rasters"][0]["art_height_mm_config"]:.0f} mm art, lattice openings cut)  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER whole {ch["w"]:.0f}x{ch["h"]:.1f} ({ch["rasters"][0]["art_height_mm_config"]:.0f} mm art, no crop, clear riser in the tab window)  / clear rim {CFG["clear_border_mm"]:.1f}', 3.0))
     preview = write_svg(folder/'preview/flat_layout.svg', w, h,
         f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+cut_layer(items, .17)+labels)
     render(preview, folder/'preview/flat_layout.png', 2.2)
@@ -852,9 +954,10 @@ def assembly(assets, shapes, preset, folder):
     cut edge (V1 filled every plate near-white and drew each one twice, which
     produced the white halos and the double outlines; on a light ground even
     an unfilled plate reads as white). Tabs are clipped at the shoulder line
-    because they sit inside the base slots. Plates are drawn back to front by
-    depth row: backdrop, blossom plates (three rows), tree, serpent,
-    whole seated character.
+    because they sit inside the base slots. Cut-out openings (V8 tree and
+    doors) are drawn with the same lit edge so the sky shows through them.
+    Plates are drawn back to front by depth row: backdrop, doors, tree,
+    serpent, whole seated character.
     """
     ox, oy = 62, 212; dx, dy = .22, -.26
     bw, bh = CFG['base_mm']
@@ -886,11 +989,13 @@ def assembly(assets, shapes, preset, folder):
         X = ox+mx+dx*my-s['tab_x_mm']; Y = oy+dy*my-bt-s['shoulder']
         body = s['poly'].intersection(box(-200, -200, 600, s['shoulder']))
         if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
-        parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">'
-                     + path(poly_path(body), 'none', EDGE, EDGE_W) + a['ink'] + '</g>')
-    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V7', 5, TEXT))
+        edges = path(poly_path(body), 'none', EDGE, EDGE_W)+''.join(path(poly_path(o), 'none', EDGE, EDGE_W) for o in s['openings'])
+        parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">' + edges + a['ink'] + '</g>')
+    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V8', 5, TEXT))
     parts.append(svg_text(13, 23, f'base {bw:.0f} x {bh:.1f} mm / {PIECE_COUNT} pieces / clear rim {CFG["clear_border_mm"]:.1f} mm on every plate / clear acrylic drawn see-through on a dark ground', 3.4))
-    parts.append(svg_text(13, 252, f'V7 / {preset["name"]} / one back panel: sky + lattice doors + moon and clouds / tree as its own cut piece (trunk and branches) standing diagonally behind the serpent / {sum(1 for p in CFG["pieces"] if p["id"].startswith("blossom_"))} blossom cluster plates on clear stems behind the branches, gaps show the sky and moon / serpent plate / whole Len plate, feet on the base line, carried by a clear riser in the tab window', 3.1))
+    ti = assets['tree']['split_info']; nopen = sum(len(shapes[p['id']]['openings']) for p in CFG['pieces'])
+    parts.append(svg_text(13, 246, f'V8 / {preset["name"]} / back panel: sky + moon and clouds (doors no longer printed on it) / tree as ONE cut piece (trunk, branches and blossoms printed on it, {ti["openings"]} cut-out openings, {ti["connectors"]} twig connectors {ti["connector_width_mm"]} mm wide) standing diagonally behind the serpent / two lattice door plates at the sides in front of the back panel', 3.1))
+    parts.append(svg_text(13, 253, f'/ serpent plate / whole Len plate, feet on the base line, carried by a clear riser in the tab window / {nopen} cut-out openings in total, {CUT_PATH_COUNT} closed cut paths / 7 pieces, {SLOT_COUNT} slots', 3.1))
     svg = write_svg(folder/'preview/assembly.svg', 400, 260, ''.join(parts))
     render(svg, folder/'preview/assembly.png', 2.7)
     svg.unlink()
@@ -905,7 +1010,7 @@ def _scene_geometry(assets, shapes):
         mx = sum(m[0] for m in spec['mounts_mm'])/len(spec['mounts_mm']); my = spec['mounts_mm'][0][1]
         tabx = s['tab_x_mm'] if s.get('tab_x_mm') is not None else a['w']/2
         out[spec['id']] = {'art': a, 'shape': s, 'mx': mx, 'my': my, 'tabx': tabx,
-            'left': mx-tabx, 'right': mx-tabx+a['w'], 'top': s['shoulder']+a['h'], 'row': my}
+            'left': mx-tabx, 'right': mx-tabx+a['w'], 'top': s['shoulder'], 'row': my}
     return out
 
 
@@ -933,25 +1038,26 @@ def _visible_pct(raster, x0, ytop, sc, front_cuts, ra=None):
 
 def _ink_mask(raster, x0, ztop, res=.25):
     """Printed pixels of one raster as a scene grid (x from the base's left
-    edge, z up from the base top) at `res` mm per cell."""
-    ra = raster['res_alpha'] > 128
+    edge, z up from the base top) at `res` mm per cell; the raster is
+    nearest-neighbour resampled from its own pixel size to the grid."""
+    ra = (raster['res_alpha'] > 128).astype('uint8')
     h, w = ra.shape; sc = raster['h']/h
     nx = int(math.ceil(CFG['base_mm'][0]/res))+1; nz = int(math.ceil(100/res))+1
     m = np.zeros((nz, nx), bool)
     ix0 = int(round(x0/res)); iz0 = int(round((100-ztop)/res))
-    sx = max(1, int(round(sc/res)))
-    up = np.repeat(np.repeat(ra, sx, axis=0), sx, axis=1)
-    j0 = max(0, iz0); j1 = min(nz, iz0+up.shape[0]); i0 = max(0, ix0); i1 = min(nx, ix0+up.shape[1])
+    tw, th = max(1, int(round(w*sc/res))), max(1, int(round(h*sc/res)))
+    up = cv2.resize(ra, (tw, th), interpolation=cv2.INTER_NEAREST) > 0
+    j0 = max(0, iz0); j1 = min(nz, iz0+th); i0 = max(0, ix0); i1 = min(nx, ix0+tw)
     if j1 > j0 and i1 > i0:
         m[j0:j1, i0:i1] = up[j0-iz0:j1-iz0, i0-ix0:i1-ix0]
     return m
 
 
-def composition_report(assets, shapes, split):
-    """Measure the V7 scene from the real rasters and cut polygons: where every
-    plate stands, how the tree piece and the blossom plates sit relative to
-    the moon and the plates in front of them, how the clear stems are placed,
-    and how the whole character meets the base line (feet, riser)."""
+def composition_report(assets, shapes, tree_info):
+    """Measure the V8 scene from the real rasters and cut polygons: where every
+    plate stands, the one-piece tree's openings, connectors and printed gaps,
+    the two door plates, the moon's visibility, and how the character meets
+    the base line."""
     geo = _scene_geometry(assets, shapes)
     out = {'scene_width_mm': CFG['base_mm'][0], 'row_order_front_to_back': [p['id'] for p in sorted(CFG['pieces'], key=lambda q: q['mounts_mm'][0][1])], 'pieces': {}}
     for pid, g in geo.items():
@@ -961,14 +1067,18 @@ def composition_report(assets, shapes, split):
             'depth_row_mm': g['my'], 'assembled_height_mm': round(CFG['presets'][0]['base_thickness_mm']+g['top'], 2),
             'effective_ppi': [r['effective_ppi'] for r in a['rasters']], 'clear_border_mm': s['border'],
             'tab_cx_mm': [round(g['mx']-g['tabx']+cx, 2) for cx in s['tab_cx']],
-            'minimum_art_to_cut_mm': round(s['clearance'], 3), 'minimum_feature_mm': neck_width(s['poly'])}
+            'minimum_art_to_cut_mm': round(s['clearance'], 3), 'minimum_feature_mm': neck_width(s['poly']),
+            'cut_out_openings': len(s['openings'])}
+        if s['openings']:
+            holed = Polygon(s['poly'].exterior, [o.exterior for o in s['openings']])
+            out['pieces'][pid]['minimum_feature_with_openings_mm'] = neck_width(holed)
     standing = standing_cuts(shapes)
     bd = assets['backdrop']; sky = bd['rasters'][0]; comp = out['pieces']['backdrop']
     comp['sky_mm'] = [round(sky['w'], 2), round(sky['h'], 2)]
     comp['sky_span_x_mm'] = [round(geo['backdrop']['left'], 2), round(geo['backdrop']['right'], 2)]
+    comp['sky_extension'] = {'rule': CFG['tree_one_piece'].get('sky_extension_rule', 'see pieces.backdrop.extend_sky_mm'), 'processing': sky['processing']}
     sky_left = geo['backdrop']['mx']-sky['w']/2
     cuts_in_front = lambda row: [g for pid, (g, my) in standing.items() if my < row]
-    # Printed-ink occlusion (what the eye sees through clear acrylic) per piece.
     ink_masks = {}
     for pid, g in geo.items():
         s = g['shape']; a = g['art']
@@ -997,61 +1107,67 @@ def composition_report(assets, shapes, split):
     disc = ((xx-cx)*scm)**2+((yy-cy)*scm)**2 <= (radius*scm)**2
     _, vism = visible(moon, geo['backdrop']['my'], sky_left+moon['dx'], sky['h']-moon['dy'])
     comp['moon_disc']['visible_pct_in_front_view'] = round(100*int((disc & (vism > 0)).sum())/int(disc.sum()), 1)
-    # The same disc against the PRINTED ink of every plate in front of it.
     front = ink_in_front(geo['backdrop']['my'])
-    res = .25; disc_cells = 0; disc_seen = 0
+    res = .25; disc_cells = 0; disc_seen = 0; disc_open_tree = 0; disc_tree_body = 0
+    tg = geo['tree']; ts = shapes['tree']; tr_left = tg['left']
+    tree_body = affinity.scale(affinity.translate(ts['poly'], tr_left, 0), 1, -1, origin=(0, 0))
+    tree_body = affinity.translate(tree_body, 0, ts['shoulder'])
+    tree_holed = Polygon(tree_body.exterior, [affinity.translate(affinity.scale(affinity.translate(o, tr_left, 0), 1, -1, origin=(0, 0)), 0, ts['shoulder']).exterior for o in ts['openings']])
     for zz in np.arange(0, 100, res):
         for xx in np.arange(0, CFG['base_mm'][0], res):
             if (xx-disc_x)**2+(zz-disc_z)**2 <= (radius*scm)**2:
                 disc_cells += 1
+                pt = Point(xx+.125, zz+.125)
+                if tree_holed.contains(pt):
+                    disc_tree_body += 1
+                    if not ink_masks['tree'][int(round((100-zz)/res)), int(round(xx/res))]: disc_open_tree += 1
                 if not front[int(round((100-zz)/res)), int(round(xx/res))]: disc_seen += 1
     comp['moon_disc']['visible_pct_against_printed_ink_of_front_plates'] = round(100*disc_seen/disc_cells, 1) if disc_cells else None
-    # Tree piece: the wood skeleton, its scene box and what the plates in front hide.
-    tr = assets['tree']; ts = shapes['tree']; tg = geo['tree']; ra = tr['rasters'][0]
-    tinfo = dict(tr['split_info'])
+    comp['moon_disc']['pct_behind_the_tree_plate_body'] = round(100*disc_tree_body/disc_cells, 1) if disc_cells else None
+    comp['moon_disc']['pct_of_moon_under_the_tree_plate_s_printed_gaps'] = round(100*disc_open_tree/disc_cells, 1) if disc_cells else None
+    comp['moon_disc']['note'] = 'visible_pct counts moon cells not covered by the PRINTED ink of the plates in front (the tree plate\'s clear connectors and rim do not count as ink); pct_behind_the_tree_plate_body counts cells covered by the tree plate material (rim, connectors, printed gaps); the moon shows through the tree where the plate is absent (cut-out openings and inlets), and the printed gaps carry the blurred local colour of the moon behind them'
+    # One-piece tree.
+    tr = assets['tree']; ra = tr['rasters'][0]; tinfo = dict(tr['split_info'])
     sc = ra['h']/ra['res_alpha'].shape[0]
     pct, _ = visible(ra, tg['my'], tg['left'], ts['shoulder'])
     ys, xs = np.nonzero(ra['res_alpha'] > 128)
-    tinfo.update({'rotate_deg_clockwise': CFG['tree_split']['rotate_deg'], 'configured_art_height_mm': CFG['tree_split']['art_height_mm'],
-        'unrotated_alpha_box_px': ra['source_bbox_px'][2:], 'source_density_ppi': round(ra['source_bbox_px'][3]/(CFG['tree_split']['art_height_mm']/25.4)),
+    def scene_box(b):
+        return {'x': [round(tr_left+b[0], 2), round(tr_left+b[2], 2)], 'z_above_base_top': [round(ts['shoulder']-b[3], 2), round(ts['shoulder']-b[1], 2)]}
+    tinfo.update({'rotate_deg_clockwise': CFG['tree_one_piece']['rotate_deg'], 'configured_art_height_mm': CFG['tree_one_piece']['art_height_mm'],
+        'unrotated_alpha_box_px': ra['source_bbox_px'][2:], 'source_density_ppi': round(ra['source_bbox_px'][3]/(CFG['tree_one_piece']['art_height_mm']/25.4)),
         'embedded_ppi': ra['effective_ppi'], 'resample_px': ra['resample_px'], 'native_cap': ra['native_cap'],
-        'canvas_mm': [round(tr['w'], 2), round(tr['h'], 2)], 'wood_ink_box_mm': [round(xs.min()*sc, 2), round(ys.min()*sc, 2), round((xs.max()+1)*sc, 2), round((ys.max()+1)*sc, 2)],
-        'wood_ink_box_in_scene_mm': {'x': [round(tg['left']+xs.min()*sc, 2), round(tg['left']+(xs.max()+1)*sc, 2)], 'z_above_base_top': [round(ts['shoulder']-(ys.max()+1)*sc, 2), round(ts['shoulder']-ys.min()*sc, 2)]},
-        'plate_cut_bounds_in_scene_mm': {'x': [round(tg['left']+ts['poly'].bounds[0], 2), round(tg['left']+ts['poly'].bounds[2], 2)], 'z_above_base_top': [round(ts['shoulder']-ts['poly'].bounds[3], 2), round(ts['shoulder']-ts['poly'].bounds[1], 2)]},
-        'art_area_mm2': round(tr['art'].area, 1), 'body_area_mm2': round(ts['poly'].area, 1), 'clear_rim_and_riser_mm2': round(ts['poly'].area-ts['body'].area+0, 1),
+        'ink_box_mm': [round(xs.min()*sc, 2), round(ys.min()*sc, 2), round((xs.max()+1)*sc, 2), round((ys.max()+1)*sc, 2)],
+        'ink_box_in_scene_mm': scene_box([xs.min()*sc, ys.min()*sc, (xs.max()+1)*sc, (ys.max()+1)*sc]),
+        'plate_cut_bounds_mm': [round(v, 2) for v in ts['poly'].bounds], 'plate_cut_bounds_in_scene_mm': scene_box(ts['poly'].bounds),
+        'openings_in_scene_mm': [dict(scene_box(o['box_mm']), area_mm2=o['area_mm2'], min_width_mm=o['min_width_mm']) for o in tinfo['openings_mm']],
+        'openings_total_area_mm2': round(sum(o['area_mm2'] for o in tinfo['openings_mm']), 1),
         'minimum_art_to_cut_mm': round(ts['clearance'], 3), 'minimum_feature_mm': neck_width(ts['poly']),
+        'minimum_feature_with_openings_mm': neck_width(Polygon(ts['poly'].exterior, [o.exterior for o in ts['openings']])) if ts['openings'] else None,
         'tab_x_scene_mm': round(tg['mx']-tg['tabx']+ts['tab_cx'][0], 2), 'depth_row_mm': tg['my'],
         'visible_pct_in_front_view_not_hidden_by_front_plates': pct,
         'visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates': visible_ink('tree'),
-        'bud_guard_riser': ts['bud_guard'], 'processing': ra['processing']})
+        'bud_guard_riser': ts['bud_guard'], 'printed_sky_fill_mm2': round(tr['fill_region'].area, 1), 'processing': ra['processing']})
+    tinfo['open_area_fraction_of_canopy_envelope'] = tree_info['open_fraction_of_canopy_hull']
+    tinfo['canopy_envelope_mm2'] = tree_info['canopy_hull_mm2']
     out['tree_piece'] = tinfo
-    bl = []
-    for spec in CFG['pieces']:
-        if not spec['id'].startswith('blossom_'): continue
-        a = assets[spec['id']]; s = shapes[spec['id']]; g = geo[spec['id']]; ra = a['rasters'][0]; sc = ra['h']/ra['res_alpha'].shape[0]
+    doors = []
+    for pid in ('door_left', 'door_right'):
+        a = assets[pid]; s = shapes[pid]; g = geo[pid]; ra = a['rasters'][0]; sc = ra['h']/ra['res_alpha'].shape[0]
         pct, _ = visible(ra, g['my'], g['left'], s['shoulder'])
         ys, xs = np.nonzero(ra['res_alpha'] > 128)
-        bl.append({'id': spec['id'], 'cluster': spec['cluster'], 'seed_mm': spec['seed_mm'], 'disc_radius_mm': spec['radius_mm'],
-            'art_mm': [round(a['w'], 2), round(a['h'], 2)], 'canvas_mm': [round(a['w'], 2), round(a['h'], 2)],
-            'cluster_box_in_scene_mm': {'x': [round(g['left']+xs.min()*sc, 2), round(g['left']+(xs.max()+1)*sc, 2)], 'z_above_base_top': [round(s['shoulder']-(ys.max()+1)*sc, 2), round(s['shoulder']-ys.min()*sc, 2)]},
+        doors.append({'id': pid, 'art_mm': [round(a['w'], 2), round(a['h'], 2)], 'canvas_mm': [round(a['w'], 2), round(a['h'], 2)],
+            'ink_box_in_scene_mm': {'x': [round(g['left']+xs.min()*sc, 2), round(g['left']+(xs.max()+1)*sc, 2)], 'z_above_base_top': [round(s['shoulder']-(ys.max()+1)*sc, 2), round(s['shoulder']-ys.min()*sc, 2)]},
+            'plate_cut_bounds_mm': [round(v, 2) for v in s['poly'].bounds],
             'plate_cut_bounds_in_scene_mm': {'x': [round(g['left']+s['poly'].bounds[0], 2), round(g['left']+s['poly'].bounds[2], 2)], 'z_above_base_top': [round(s['shoulder']-s['poly'].bounds[3], 2), round(s['shoulder']-s['poly'].bounds[1], 2)]},
-            'tab_x_scene_mm': round(g['mx'], 2), 'depth_row_mm': g['my'], 'stem_mm': {'width': STEM_WIDTH_MM, 'length': a['split_info']['stem_length_mm'], 'top_inside_cluster_mm': 2.0, 'printed': False},
-            'ink_mm2': round(a['split_info']['opaque_px_inside_contour']*sc*sc, 1), 'body_area_mm2': round(s['poly'].area, 1),
-            'clear_fill_pct_of_cluster_body': round(100*(1-a['split_info']['opaque_px_inside_contour']*sc*sc/(s['poly'].area-a['split_info']['stem_length_mm']*STEM_WIDTH_MM)), 1),
+            'tab_x_scene_mm': round(g['mx'], 2), 'depth_row_mm': g['my'], 'assembled_height_mm': out['pieces'][pid]['assembled_height_mm'],
+            'lattice_openings_cut': a['split_info']['openings'], 'lattice_openings_mm': a['split_info']['openings_mm'],
+            'lattice_holes_in_source': a['split_info']['lattice_holes_in_source'], 'printed_sky_fill_mm2': round(a['fill_region'].area, 1),
             'minimum_art_to_cut_mm': round(s['clearance'], 3), 'minimum_feature_mm': neck_width(s['poly']),
+            'minimum_feature_with_openings_mm': out['pieces'][pid].get('minimum_feature_with_openings_mm'),
             'visible_pct_in_front_view_not_hidden_by_front_plates': pct,
-            'visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates': visible_ink(spec['id']),
-            'laser_path_segments': None, 'processing': ra['processing']})
-    st = standing_cuts(shapes)
-    bl_ids = [b['id'] for b in bl]
-    gaps = []
-    for i in range(len(bl_ids)):
-        for j in range(i+1, len(bl_ids)):
-            d = st[bl_ids[i]][0].distance(st[bl_ids[j]][0])
-            gaps.append({'pair': [bl_ids[i], bl_ids[j]], 'front_view_gap_mm': round(d, 2)})
-    out['blossom_pieces'] = bl
-    out['blossom_front_view_gaps_mm'] = sorted(gaps, key=lambda r: r['front_view_gap_mm'])[:12]
-    out['blossom_front_view_gap_note'] = 'standing silhouettes (clusters plus stems) of every blossom plate pair in the front view, whatever their depth row; negative values are impossible because rows differ, zero means two plates overlap in projection (the nearer hides part of the farther)'
+            'visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates': visible_ink(pid),
+            'processing': ra['processing']})
+    out['doors'] = doors
     ch = assets['character']; cr = ch['rasters'][0]; cs = shapes['character']; g = geo['character']
     ra = cr['res_alpha'] > 128; ph, pw = ra.shape; sc = ch['h']/ph
     low = ra[int(ph*(1-4.0/ch['h'])):, :].any(0); cols = np.nonzero(low)[0]
@@ -1076,8 +1192,8 @@ def composition_report(assets, shapes, split):
         'clear_riser_mm': {'width': riser.get('riser_width_mm'), 'top_above_slot_line': riser.get('riser_top_above_slot_mm'),
                            'axis': riser.get('riser_axis'), 'note': 'unprinted clear acrylic inside the tab window between the legs; the only support below the hips'},
         'processing': cr['processing']}
-    out['split'] = {'colour_rule': CFG['tree_split']['colour_rule'], 'wood_rule': CFG['tree_split']['wood_rule'], 'cluster_rule': CFG['tree_split']['cluster_rule'],
-        'min_feature_rule': CFG['tree_split']['min_feature_rule'], 'dropped_petals': CFG['tree_split']['dropped_petals']}
+    out['rules'] = {k: CFG['tree_one_piece'][k] for k in ('skeleton_rule', 'connector_rule', 'opening_rule', 'print_rule', 'trunk_rule')}
+    out['rules']['doors'] = CFG['tree_one_piece']['doors']['rule']
     return out
 
 
@@ -1106,7 +1222,7 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
     assert names == ['3_ARTWORK', '2_CORNER_REFERENCE', '1_LASER_CUT']
     text = (folder/'03_CUT_ONLY.svg').read_text(encoding='utf-8')
     assert text.count('<path ') == CUT_PATH_COUNT and text.count(' Z"') == CUT_PATH_COUNT and BLUE not in text
-    assert len(items) == PIECE_COUNT and sum(len(p['holes']) for p in items) == SLOT_COUNT
+    assert len(items) == PIECE_COUNT and sum(len(p['holes']) for p in items) == SLOT_COUNT+sum(len(shapes[p['id']]['openings']) for p in CFG['pieces'])
     for p in items:
         for hole in p['holes']: assert p['poly'].contains(hole)
     for p in CFG['pieces']:
@@ -1131,33 +1247,68 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
             for cx in s['tab_cx']:
                 x, y = p['tx']+cx, p['ty']+s['shoulder']+s['depth']/2
                 assert arr[round(y*PPI), round(x*PPI), 3] == 0
-    # V7 pieces: every printed pixel inside its plate with at least 0.5 mm of
-    # clear acrylic around it, the stem exactly 12.25 mm wide, minimum feature.
+    # V8 one-piece plates: every printed pixel inside its plate (outside the
+    # cut-out openings) with at least 0.5 mm of clear acrylic around it, the
+    # minimum feature on the outer profile and across the openings, every
+    # opening at least the minimum feature wide, and no clear fill inside
+    # the body apart from the rim, the connectors and the riser.
     for p in CFG['pieces']:
-        if not p.get('split'): continue
+        if not p.get('one_piece'): continue
         a = assets[p['id']]; s = shapes[p['id']]; ra = a['rasters'][0]
         pm = np.zeros(arr.shape[:2], np.uint8)
         item = next(q for q in items if q['name'] == p['id'])
-        ext = np.round(np.asarray(item['poly'].exterior.coords)*PPI).astype(np.int32)
+        ext = np.round(np.asarray(item['poly'].exterior.coords)*PPI).astype('int32')
         cv2.fillPoly(pm, [ext], 1)
+        for o in item['holes']:
+            cv2.fillPoly(pm, [np.round(np.asarray(o.exterior.coords)*PPI).astype('int32')], 0)
         x0, y0 = round(item['rasters'][0]['x']*PPI), round(item['rasters'][0]['y']*PPI)
         ink = np.zeros(arr.shape[:2], bool)
         rw, rh = round(ra['w']*PPI), round(ra['h']*PPI)
         alpha_img = np.asarray(Image.fromarray(ra['res_alpha']).resize((rw, rh), Image.BILINEAR)) > 128
         ink[y0:min(y0+rh, arr.shape[0]), x0:min(x0+rw, arr.shape[1])] = alpha_img[:max(0, min(rh, arr.shape[0]-y0)), :max(0, min(rw, arr.shape[1]-x0))]
-        assert (ink & (pm == 0)).sum() == 0, (p['id'], 'ink outside the cut')
+        assert (ink & (pm == 0)).sum() == 0, (p['id'], 'ink outside the cut or inside an opening')
         dt = cv2.distanceTransform(pm, cv2.DIST_L2, 3)/PPI
         assert dt[ink].min() >= .5, (p['id'], 'ink closer than 0.5 mm to the cut', float(dt[ink].min()))
         nf = neck_width(s['poly'])
         assert nf is None or nf >= MIN_FEATURE_MM, (p['id'], 'minimum feature', nf)
+        assert s['poly'].contains(a['art'])
+        if s['openings']:
+            holed = Polygon(s['poly'].exterior, [o.exterior for o in s['openings']])
+            nf2 = neck_width(holed)
+            assert nf2 is None or nf2 >= MIN_FEATURE_MM, (p['id'], 'minimum feature across openings', nf2)
+            for o in s['openings']:
+                assert s['poly'].contains(o) and not o.intersects(a['art']) and not any(o.intersects(r) for r in s['risers'])
+                ow = neck_width(o)
+                assert ow is None or ow >= MIN_FEATURE_MM, (p['id'], 'opening narrower than the minimum feature', ow)
+                for q in s['openings']:
+                    if q is not o: assert not o.intersects(q), (p['id'], 'openings touch')
+                stats, _ = audit_path(cut_path(o))
+                assert stats['segments'] <= max(100, 1.5*stats['perimeter_mm']), (p['id'], 'opening', stats)
         stats, _ = audit_path(cut_path(s['poly']))
         assert stats['segments'] <= max(100, 1.5*stats['perimeter_mm']), (p['id'], stats)
-        if p['split'] == 'blossom':
-            cx = s['tab_cx'][0]; half = STEM_WIDTH_MM/2
-            sec = s['poly'].intersection(LineString([(cx-half-3, s['shoulder']-1.5), (cx+half+3, s['shoulder']-1.5)]))
-            assert abs(sec.length-STEM_WIDTH_MM) < .01, (p['id'], 'stem width', sec.length)
-            sec = s['poly'].intersection(LineString([(cx-half-3, s['shoulder']-a['split_info']['stem_length_mm']+2.5), (cx+half+3, s['shoulder']-a['split_info']['stem_length_mm']+2.5)]))
-            assert sec.length >= STEM_WIDTH_MM-.01, (p['id'], 'stem top narrower than the stem', sec.length)
+        # No clear acrylic fill inside the body: every pixel of the fill
+        # region (body 0.75 mm inside every cut edge, openings excluded,
+        # riser excluded; eroded 0.2 mm for the native-to-300 ppi resample)
+        # carries ink.
+        fm = np.zeros(arr.shape[:2], np.uint8)
+        fill = affinity.translate(a['fill_region'], item['tx'], item['ty']).buffer(-.2, quad_segs=8)
+        for g in (fill.geoms if fill.geom_type != 'Polygon' else [fill]):
+            if g.is_empty: continue
+            cv2.fillPoly(fm, [np.round(np.asarray(g.exterior.coords)*PPI).astype('int32')], 1)
+            for ring in g.interiors: cv2.fillPoly(fm, [np.round(np.asarray(ring.coords)*PPI).astype('int32')], 0)
+        sel = fm.astype(bool)
+        assert sel.sum() > 0 and ink[sel].all(), (p['id'], 'clear fill inside the body', int((~ink[sel]).sum()))
+        a['clear_fill_check'] = {'fill_px_at_300ppi': int(fm.sum()), 'unprinted_fill_px': int((~ink[sel]).sum())}
+        # Nothing else inside the body is clear: body minus the 1.0 mm band
+        # along the cut, minus the art, the connector halos, the printed gaps
+        # and the riser must be empty inside the canvas (beyond it nothing can
+        # print: that is the outer rim of widened frame bars).
+        band = s['body'].buffer(-1.0, quad_segs=16)
+        halos = unary_union([c.difference(a['art']) for c in a['connectors']]) if a['connectors'] else Polygon()
+        rest = band.difference(unary_union([a['fill_region'], halos, a['art']]+[o.buffer(1.0, quad_segs=16) for o in s['openings']]+s['risers']))
+        rest = rest.intersection(box(0, 0, a['w'], a['h']))
+        assert rest.area < .5, (p['id'], 'clear region inside the body that is neither rim, connector nor printed gap', round(rest.area, 2))
+        a['clear_fill_check']['other_clear_area_mm2'] = round(rest.area, 3)
     # Each embedded raster actually printed where it sits. Overlays on the
     # opaque sky are recognised by colour under their own opaque mask: a
     # pixel count there would also count the sky beneath them.
@@ -1210,11 +1361,13 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
         'minimum_piece_gap_mm': gap, 'ai_layers': names,
         'same_row_standing_clearance_mm': mind, 'same_row_worst_pair': list(worst) if worst else None,
         'same_row_pairs': pairs,
-        'same_row_note': f"blossom plates share rows {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('blossom_')})} with each other; every same-row pair of standing cuts keeps at least 2 mm",
+        'same_row_note': f"the two door plates share row {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('door_')})} far apart; every same-row pair of standing cuts keeps at least 2 mm",
         'art_overhang_beyond_base_mm': over,
         'front_view_coverage_pct': cov,
         'front_view_policy': CFG['front_view_policy'],
-        'load_path_floor_mm': LOAD_PATH_FLOOR_MM, 'stem_width_mm': STEM_WIDTH_MM, 'minimum_feature_mm': MIN_FEATURE_MM,
+        'load_path_floor_mm': LOAD_PATH_FLOOR_MM, 'riser_width_mm': RISER_WIDTH_MM, 'minimum_feature_mm': MIN_FEATURE_MM, 'opening_min_mm': CFG['tree_one_piece']['opening_min_mm'],
+        'cut_out_openings': {p['id']: len(shapes[p['id']]['openings']) for p in CFG['pieces'] if shapes[p['id']]['openings']},
+        'cut_out_opening_paths_drawn_first_with_slots': True,
         'bud_guard_risers': {p['id']: shapes[p['id']]['bud_guard']
             for p in CFG['pieces'] if shapes[p['id']]['bud_guard']},
         'blue_reference_four_sides': True, 'unprinted_tabs_and_slots': True,
@@ -1223,12 +1376,12 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
                       'on a 2.5 mm clear rim; {SLOT_COUNT} slot windows ink-cleared 1.5 mm in-memory '
                       'by the builder (no separate prepared copy, no placeholder-slot surgery)',
         'piece_breakdown': {
-            'backdrop': 'one plate: 05_background sky with both 06_lattice_doors islands butted against its sides (bottoms aligned), the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; no tree printed on it (V7); 3 tabs',
-            'tree': 'V7: the trunk and branches of 03_blossom_tree.png as their own cut piece (wood pixels only, blossoms removed by colour), 88 mm art rotated 35 deg clockwise, 1 tab under the trunk base behind the serpent',
-            'blossom_01..07': f"V7: seven pink petal clusters as separate cut plates (1.0 mm rim, no webbing between clusters), each on a 12.25 mm clear stem and one tab, standing behind the tree piece at rows {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('blossom_')})}",
+            'backdrop': 'one plate: 05_background sky/wave raster mirrored into the two former door zones (30.4 / 30.5 mm) with the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; no doors and no tree printed on it (V8); 3 tabs',
+            'tree': 'V8: the complete blossom tree (trunk, branches, every blossom cluster) as ONE cut piece printed with the original pixels, 88 mm art rotated 35 deg clockwise, 1 tab under the trunk base behind the serpent; cut-out openings between branch/cluster groups, twig connectors 2.75 mm, narrow gaps printed with the sky colour',
+            'door_left, door_right': f"V8: the two lattice doorways of 06_lattice_doors.png as their own cut plates (85 mm art, 1.0 mm rim, lattice openings cut), one 18 mm tab each at row {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('door_')})[0]} in front of the back panel at their V2-V7 printed positions",
             'snake': '02_snake silhouette plate, 1 tab (V2/V4 position)',
             'character': '01_character silhouette plate, 1 tab; the whole 84 mm figure (no crop), boot rims on the base line, bud-guard clear riser inside the tab window between the legs (V2/V4 scale and x)'},
-        'layer_order_back_to_front': ['backdrop (sky, doors, moon/clouds)'] + [f"blossom plates on row {r}" for r in sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('blossom_')}, reverse=True)] + ['tree', 'snake', 'character'],
+        'layer_order_back_to_front': ['backdrop (sky extended into the door zones, moon/clouds)', 'door_left, door_right (lattice doorways)', 'tree (one piece)', 'snake', 'character'],
         'row_order_front_to_back': [p['id'] for p in sorted(CFG['pieces'], key=lambda q: q['mounts_mm'][0][1])]+['backdrop'],
         'composition': composition_report(assets, shapes, split),
         'revision_note': CFG['revision_note'],
@@ -1252,7 +1405,8 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
             'clear_border_mm': shapes[p['id']]['border'],
             'resample': 'LANCZOS; exact 300 ppi print size, never upscaled past native pixels', 'redrawn': False,
             'processing': assets[p['id']]['processing'],
-            **({'split_info': assets[p['id']]['split_info']} if assets[p['id']].get('split_info') else {})}
+            **({'split_info': assets[p['id']]['split_info']} if assets[p['id']].get('split_info') else {}),
+            **({'clear_fill_check': assets[p['id']]['clear_fill_check']} if assets[p['id']].get('clear_fill_check') else {})}
             for p in CFG['pieces']}}
     report['assets']['base'] = {'file': b['src_name'], 'sha256': b['sha256'],
         'source_px': b['source_px'], 'source_bbox_px': b['source_bbox_px'],
@@ -1283,46 +1437,48 @@ def prune_archive(folder, keep_preview):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True); TMP.mkdir(parents=True, exist_ok=True)
+    global CUT_PATH_COUNT
     presets = CFG['presets']
-    split = TreeSplit(CFG['tree_split'])
-    base_y = None
+    tree = OnePieceTree(CFG['tree_one_piece'])
     assets = {}
     for p in CFG['pieces']:
-        if p.get('split') == 'tree':
-            assets[p['id']] = load_tree(split, p)
-            base_y = assets[p['id']]['art'].bounds[3]
-    clusters = split.clusters()
-    by_id = {c['id']: (m, i) for c, (m, i) in zip(CFG['tree_split']['clusters'], clusters)}
-    for p in CFG['pieces']:
-        if p.get('split') == 'blossom':
-            m, i = by_id[p['id']]
-            assets[p['id']] = load_blossom(split, p, m, i, base_y)
-        elif not p.get('split'):
-            assets[p['id']] = load_piece(p)
+        if p['id'] == 'tree': assets[p['id']] = load_tree(tree, p)
+        elif p['id'].startswith('door_'): assets[p['id']] = load_door(p)
+        elif not p.get('one_piece'): assets[p['id']] = load_piece(p)
+    CUT_PATH_COUNT = PIECE_COUNT+SLOT_COUNT+sum(len(a['openings']) for a in assets.values() if a.get('one_piece'))
+    hull = assets['tree']['outer'].convex_hull
+    tree_info = {'open_fraction_of_canopy_hull': round(1-assets['tree']['outer'].area/hull.area, 3), 'canopy_hull_mm2': round(hull.area, 1)}
     reports = []
-    # Scene x of every blossom tab: the stem axis computed from the cluster,
-    # expressed from the base's left edge like every other mount.
     tree_mount = next(p for p in CFG['pieces'] if p['id'] == 'tree')['mounts_mm'][0][0]
-    scene_left = tree_mount-assets['tree']['tab_x_mm']
-    for p in CFG['pieces']:
-        if p.get('split') == 'blossom':
-            p['mounts_mm'] = [[round(scene_left+assets[p['id']]['split_info']['stem_x_mm'], 1), p['mounts_mm'][0][1]]]
     for preset in presets:
         folder = OUT/preset['name']; (folder/'preview').mkdir(parents=True, exist_ok=True)
         assets['base'] = load_base(preset)
         shapes = {p['id']: standee(assets[p['id']], preset['base_thickness_mm'], p['mounts_mm'], p.get('plinth_rise_mm', 8), p.get('simplify_mm', .015), p.get('clear_border_mm', CFG['clear_border_mm'])) for p in CFG['pieces']}
+        # One-piece plates print after the risers are known so the riser stays clear.
+        sample = sky_sampler(assets['backdrop'], CFG['tree_one_piece']['gap_colour_blur_mm'])
+        for p in CFG['pieces']:
+            if not p.get('one_piece'): continue
+            s = shapes[p['id']]; a = assets[p['id']]
+            mx = sum(m[0] for m in p['mounts_mm'])/len(p['mounts_mm'])
+            s_ = dict(s, scene_left=mx-(s['tab_x_mm'] if s['tab_x_mm'] is not None else a['w']/2))
+            assets[p['id']].update(one_piece_print(a, s_, sample))
+            a['split_info']['printed_sky_mm2'] = assets[p['id']]['printed_sky_mm2']
         items, gap, slot_gap = make_board(assets, shapes, preset, folder)
         assembly(assets, shapes, preset, folder)
-        report = validate(assets, shapes, preset, items, gap, slot_gap, split); reports.append(report)
+        report = validate(assets, shapes, preset, items, gap, slot_gap, tree_info); reports.append(report)
         print(json.dumps({'preset': preset['name'], 'pieces': PIECE_COUNT, 'cut_paths': CUT_PATH_COUNT,
             'same_row_mm': report['same_row_standing_clearance_mm'], 'slot_gap_mm': slot_gap,
             'coverage': report['front_view_coverage_pct'],
             'risers': report['bud_guard_risers'],
             'art': {k: round(v['w'], 1) for k, v in assets.items() if k != 'base'},
+            'openings': {k: len(v['openings']) for k, v in shapes.items()},
             'plate_bounds': {k: [round(x, 1) for x in v['poly'].bounds] for k, v in shapes.items()},
             'base': [round(assets['base']['w'], 1), round(assets['base']['h'], 1)]}, ensure_ascii=False), flush=True)
         prune_archive(folder, keep_preview=preset is presets[0])
-    print(json.dumps({'product': CFG['product'], 'archive': [str(p.relative_to(ROOT)) for p in sorted(OUT.rglob('*')) if p.is_file()]}), flush=True)
+    ti = assets['tree']['split_info']
+    print(json.dumps({'product': CFG['product'], 'tree': {k: ti[k] for k in ('detached_clusters', 'connectors', 'connector_twig_path_total_mm', 'openings', 'openings_mm', 'printed_sky_mm2', 'minimum_feature_mm')},
+        'doors': {d: {k: assets[d]['split_info'][k] for k in ('lattice_holes_in_source', 'openings', 'minimum_feature_mm', 'printed_sky_mm2')} for d in ('door_left', 'door_right')},
+        'archive': [str(p.relative_to(ROOT)) for p in sorted(OUT.rglob('*')) if p.is_file()]}, ensure_ascii=False), flush=True)
 
 
 if __name__ == '__main__':

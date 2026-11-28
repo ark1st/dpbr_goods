@@ -1,25 +1,25 @@
 {
- "revision": 7,
- "product": "Len Diorama ORIGIN V7",
+ "revision": 8,
+ "product": "Len Diorama ORIGIN V8",
  "concept_title": "보랏빛 달밤의 매화 무대, 뱀과 렌",
  "character": {
   "name": "렌",
   "world": "메이플스토리"
  },
  "source_pack": "assets/len_orgin",
- "revision_note": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 (73a2823) merged the sky, both lattice doors and the moon/cloud layer into one back plate, shrank the clear rim 2.5 -> 1.0 mm and rendered clear acrylic see-through in the assembly preview. V3 (657a484) recomposed the scene but the owner prefers V2 (\"v2가 낫다고 한거야\"). V4 (a2a83cd) = V2 plus two owner requests: the blossom tree printed diagonally into the back panel and Len \"seated\" by cropping her raster at the seat line. V5 (7459c7f) restructured the scene (Len whole on a 70 mm serpent's coil, the tree back as ONE cut plate whose 2.5 mm canopy envelope webbed the blossoms together with clear acrylic) and the owner rejected it (\"이거 아니야 v4에서 잘림 문제만 해결하고 나무를 예시 이미지처럼 대각선 배치 해달라고\"). V6 (62963a8) = V4 with exactly those two changes: Len shown whole on the base line and the tree printed into the back panel, leaning up to the right like the concept. V7 = the owner's decision on the tree (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"): the tree is no longer printed on the back panel and is no longer one clear-webbed piece. 03_blossom_tree.png is split by colour into (a) a TREE cut piece = the dark trunk and branches (wood pixels; twigs thinner than 0.5 mm pruned so every feature is at least 2.5 mm after the 1.0 mm rim) standing on its own tab on its own depth row (31) with its base behind the serpent, and (b) six BLOSSOM cut pieces = pink petal clusters grouped around branch tips (5 mm sky gaps between clusters), each a separate plate with a 1.0 mm rim, no clear webbing between clusters, mounted on the base BEHIND the tree plate on two depth rows (39 and 47) on a 12.25 mm clear stem so the branches cross in front of them and the gaps between clusters show the sky and moon like the concept. Everything else is V6 exactly: whole seated Len, serpent, moon, doors, base, layout, rims.",
+ "revision_note": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 (73a2823) merged the sky, both lattice doors and the moon/cloud layer into one back plate, shrank the clear rim 2.5 -> 1.0 mm and rendered clear acrylic see-through in the assembly preview. V3 (657a484) recomposed the scene but the owner prefers V2 (\"v2가 낫다고 한거야\"). V4 (a2a83cd) = V2 plus two owner requests: the blossom tree printed diagonally into the back panel and Len \"seated\" by cropping her raster at the seat line. V5 (7459c7f) restructured the scene (Len whole on a 70 mm serpent's coil, the tree back as ONE cut plate whose 2.5 mm canopy envelope webbed the blossoms together with clear acrylic) and the owner rejected it (\"이거 아니야 v4에서 잘림 문제만 해결하고 나무를 예시 이미지처럼 대각선 배치 해달라고\"). V6 (62963a8) = V4 with exactly those two changes: Len shown whole on the base line and the tree printed into the back panel, leaning up to the right like the concept. V7 = the owner's decision on the tree (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"): the tree is no longer printed on the back panel and is no longer one clear-webbed piece. 03_blossom_tree.png is split by colour into (a) a TREE cut piece = the dark trunk and branches (wood pixels; twigs thinner than 0.5 mm pruned so every feature is at least 2.5 mm after the 1.0 mm rim) standing on its own tab on its own depth row (31) with its base behind the serpent, and (b) six BLOSSOM cut pieces = pink petal clusters grouped around branch tips (5 mm sky gaps between clusters), each a separate plate with a 1.0 mm rim, no clear webbing between clusters, mounted on the base BEHIND the tree plate on two depth rows (39 and 47) on a 12.25 mm clear stem so the branches cross in front of them and the gaps between clusters show the sky and moon like the concept. Everything else is V6 exactly: whole seated Len, serpent, moon, doors, base, layout, rims. V8 = the owner's correction (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors): (1) the TREE is ONE cut piece with the complete tree printed on it (trunk, branches and all blossom clusters); the the opaque mask opened 1.5 mm is the cut skeleton so the gaps between branch/cluster groups are real cut-out openings (sky and moon show through, no clear canopy fill, no stems, no cluster plates); the printed branch skeleton connects every part, twig connectors are widened to 2.75 mm of clear acrylic so every cut feature meets the 2.5 mm minimum after the 1.0 mm rim, and gaps that cannot be real openings (under 2.5 mm after the rim) stay printed with the back panel's blurred local colour instead of clear acrylic; placement, rotation, scale and row are V7's. (2) The DOORS become their own cut pieces: the two lattice doorways of 06_lattice_doors.png (85 mm art, 1.0 mm rim, lattice openings) stand on 18 mm tabs at row 47 exactly where V2-V7 printed them; the back panel loses the printed doors and keeps the sky, moon, clouds and waves, with the sky/wave art mirrored into the former door zones. Whole Len, serpent, moon, base, slots, rims 1.0 mm and the layout stay V7/V6 exactly: 7 pieces, 8 slots, rows 12/23/31/47/56.",
  "finished_size_mm": {
   "width": 280,
   "height": 94.0,
   "depth": 71.22,
-  "note": "3T: base 3 + back panel 90 art + 1.0 mm rim = 94; the tallest blossom plate (upper-centre cluster, apex z 88 + 1.0 rim + 2.6 tab) assembles to 91.6 mm above the base top and stays under the back panel."
+  "note": "3T: base 3 + back panel 90 art + 1.0 mm rim = 94; the one-piece tree (88 mm art rotated 35 deg, treetop z ~89.4 + 1.0 rim) assembles to ~93.4 mm above the base top and stays under the back panel; the door plates (85 mm + 1.0 rim) reach 89 mm."
  },
  "board_mm": [
   340,
   420
  ],
  "clear_border_mm": 1.0,
- "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. V7 keeps 1.0 mm on every plate including the new tree and blossom pieces (\"no fat rims - 1.0 mm\"); the only local widening is a 0.6 mm closing applied after the rim so that two branches closer than 2 mm end up joined by at least a 1.2 mm clear bridge instead of a zero-width pinch (measured minimum art-to-cut stays 0.985 mm).",
+ "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. V8 keeps 1.0 mm on every plate. The one-piece tree and the doors add material only where the laser rules need it: a 1.25 mm closing after the rim removes sky slits under 2.5 mm (needle gaps), and the tree's twig connectors are 2.75 mm wide (1.375 mm of clear acrylic around the printed twig) so the measured minimum feature is at least 2.5 mm everywhere.",
  "tab_width_mm": 18,
  "tab_bottom_clearance_mm": 0.4,
  "slot_length_mm": 18.8,
@@ -45,27 +45,13 @@
    "id": "backdrop",
    "file": "05_background.png",
    "art_height_mm": 90.0,
+   "extend_sky_mm": {
+    "left": 30.4,
+    "right": 30.5,
+    "mode": "reflect_101",
+    "note": "V8: the two lattice doors are no longer printed on the back panel; the sky/wave raster (1423 px = 138.6 mm at 90 mm) is widened by mirroring its own edge columns (312 px = 30.4 mm on the left, 313 px = 30.5 mm on the right, exactly the widths the printed doors had in V7) so the plate keeps its V7 outline and the waves and stars continue into the former door zones without resampling."
+   },
    "overlays": [
-    {
-     "file": "06_lattice_doors.png",
-     "island_at_px": [
-      135,
-      11
-     ],
-     "art_height_mm": 85.0,
-     "anchor": "left_edge_bottom",
-     "note": "left lattice door butted against the sky's left edge, bottoms aligned"
-    },
-    {
-     "file": "06_lattice_doors.png",
-     "island_at_px": [
-      1335,
-      11
-     ],
-     "art_height_mm": 85.0,
-     "anchor": "right_edge_bottom",
-     "note": "right lattice door butted against the sky's right edge, bottoms aligned"
-    },
     {
      "file": "04_moon_clouds.png",
      "art_height_mm": 60.0,
@@ -92,16 +78,16 @@
     10.5,
     8
    ],
-   "note": "V7: sky + both lattice doors + moon/clouds exactly as V6; the blossom tree is no longer printed here (it is the tree piece plus the blossom pieces)."
+   "note": "V8: sky + moon/clouds only. The lattice doors that V2-V7 printed at its sides are now the door_left and door_right cut pieces standing in front of it at row 47; the sky/wave art is extended into their former zones (see extend_sky_mm). Moon and clouds registered 5 mm below the sky top exactly as V2-V7."
   },
   {
    "id": "tree",
    "file": "03_blossom_tree.png",
    "art_height_mm": 88.0,
    "rotate_deg": 35,
-   "split": "tree",
+   "one_piece": true,
    "tab_anchor": {
-    "type": "lowest_point"
+    "type": "trunk_base"
    },
    "plinth_rise_mm": 0,
    "mounts_mm": [
@@ -111,166 +97,52 @@
     ]
    ],
    "board_xy_mm": [
-    240,
-    185
+    230,
+    190
    ],
-   "note": "V7 owner decision (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"): the trunk and branches as their own cut piece, separated from the pink blossoms by colour (wood = every opaque pixel that is not red-dominant), 35 deg clockwise like V6, 88 mm art so the whole tree stands on the base line inside the sky. Tab under the trunk base (the lowest point, scene x ~131) at row 31 behind the serpent; the bud guard raises a 12.25 mm clear riser under the narrow root until the trunk widens past the 12 mm load-path floor."
+   "note": "V8 owner decision (\"벚꽃-나무는 하나여야지\"): the complete blossom tree - trunk, branches and every blossom cluster - as ONE cut piece, printed with the original pixels (dark wood + pink blossoms). 35 deg clockwise and 88 mm art exactly as V7 (trunk low-left, canopy sweeping up-right across the moon, standing behind the serpent). Twigs and petals thinner than 3 mm of ink are not part of the cut skeleton (the opaque mask opened 1.5 mm): the gaps between branch/cluster groups become real cut-out openings (sky and moon show through); every cluster the skeleton does not reach is attached along its own twig path by a 2.75 mm clear connector with the twig printed inside; gaps under 2.5 mm after the 1.0 mm rim stay printed with the back panel's blurred local colour instead of clear acrylic. Tab under the trunk base (scene x ~131) at row 31."
   },
   {
-   "id": "blossom_01",
-   "file": "03_blossom_tree.png",
-   "art_height_mm": 88.0,
-   "rotate_deg": 35,
-   "split": "blossom",
-   "cluster": "upper-left",
-   "seed_mm": [
-    14,
-    16
+   "id": "door_left",
+   "file": "06_lattice_doors.png",
+   "island_at_px": [
+    135,
+    11
    ],
-   "radius_mm": 14,
-   "stem_x_mm": 9.9,
-   "plinth_rise_mm": 0,
+   "art_height_mm": 85.0,
+   "one_piece": true,
    "mounts_mm": [
     [
-     107,
+     55.5,
      47
     ]
    ],
    "board_xy_mm": [
     92,
-    112
+    118
    ],
-   "note": "V7 blossom cluster 'upper-left' (seed [14, 16] mm, disc r 14 mm in the rotated tree frame, 5 mm sky gap to neighbouring clusters): separate cut piece, 1.0 mm rim, no webbing to other clusters; stands on the base at row 47 on a 12.25 mm clear stem under scene x 107, behind the tree plate so the branches cross in front of it."
+   "note": "V8 owner decision (\"저 문\" - the separate assets are the doors): the left lattice doorway of 06_lattice_doors.png as its own cut piece (30.4 x 85 mm art, 1.0 mm rim, the source pixels printed incl. the lattice), standing at scene x 40.3-70.7 exactly where V2-V7 printed it, on an 18 mm tab at row 47 in front of the back panel. Lattice holes at least 2.5 mm wide after the rim are real openings; smaller ones are printed with the back panel's blurred local colour."
   },
   {
-   "id": "blossom_02",
-   "file": "03_blossom_tree.png",
-   "art_height_mm": 88.0,
-   "rotate_deg": 35,
-   "split": "blossom",
-   "cluster": "upper-centre",
-   "seed_mm": [
-    38,
-    12
+   "id": "door_right",
+   "file": "06_lattice_doors.png",
+   "island_at_px": [
+    1335,
+    11
    ],
-   "radius_mm": 14,
-   "stem_x_mm": 40.9,
-   "plinth_rise_mm": 0,
+   "art_height_mm": 85.0,
+   "one_piece": true,
    "mounts_mm": [
     [
-     138,
-     39
-    ]
-   ],
-   "board_xy_mm": [
-    128,
-    112
-   ],
-   "note": "V7 blossom cluster 'upper-centre' (seed [38, 12] mm, disc r 14 mm in the rotated tree frame, 5 mm sky gap to neighbouring clusters): separate cut piece, 1.0 mm rim, no webbing to other clusters; stands on the base at row 39 on a 12.25 mm clear stem under scene x 138, behind the tree plate so the branches cross in front of it."
-  },
-  {
-   "id": "blossom_03",
-   "file": "03_blossom_tree.png",
-   "art_height_mm": 88.0,
-   "rotate_deg": 35,
-   "split": "blossom",
-   "cluster": "upper-centre-right",
-   "seed_mm": [
-    60,
-    19
-   ],
-   "radius_mm": 14,
-   "stem_x_mm": 56.6,
-   "plinth_rise_mm": 0,
-   "mounts_mm": [
-    [
-     154,
+     224.5,
      47
     ]
    ],
    "board_xy_mm": [
-    176,
-    112
+    140,
+    118
    ],
-   "note": "V7 blossom cluster 'upper-centre-right' (seed [60, 19] mm, disc r 14 mm in the rotated tree frame, 5 mm sky gap to neighbouring clusters): separate cut piece, 1.0 mm rim, no webbing to other clusters; stands on the base at row 47 on a 12.25 mm clear stem under scene x 154, behind the tree plate so the branches cross in front of it."
-  },
-  {
-   "id": "blossom_04",
-   "file": "03_blossom_tree.png",
-   "art_height_mm": 88.0,
-   "rotate_deg": 35,
-   "split": "blossom",
-   "cluster": "right",
-   "seed_mm": [
-    86,
-    32
-   ],
-   "radius_mm": 14,
-   "stem_x_mm": 87.9,
-   "plinth_rise_mm": 0,
-   "mounts_mm": [
-    [
-     185,
-     47
-    ]
-   ],
-   "board_xy_mm": [
-    92,
-    210
-   ],
-   "note": "V7 blossom cluster 'right' (seed [86, 32] mm, disc r 14 mm in the rotated tree frame, 5 mm sky gap to neighbouring clusters): separate cut piece, 1.0 mm rim, no webbing to other clusters; stands on the base at row 47 on a 12.25 mm clear stem under scene x 185, behind the tree plate so the branches cross in front of it."
-  },
-  {
-   "id": "blossom_05",
-   "file": "03_blossom_tree.png",
-   "art_height_mm": 88.0,
-   "rotate_deg": 35,
-   "split": "blossom",
-   "cluster": "centre-right-lower",
-   "seed_mm": [
-    66,
-    44
-   ],
-   "radius_mm": 14,
-   "stem_x_mm": 64.4,
-   "plinth_rise_mm": 0,
-   "mounts_mm": [
-    [
-     161.5,
-     39
-    ]
-   ],
-   "board_xy_mm": [
-    138,
-    210
-   ],
-   "note": "V7 blossom cluster 'centre-right-lower' (seed [66, 44] mm, disc r 14 mm in the rotated tree frame, 5 mm sky gap to neighbouring clusters): separate cut piece, 1.0 mm rim, no webbing to other clusters; stands on the base at row 39 on a 12.25 mm clear stem under scene x 161.5, behind the tree plate so the branches cross in front of it."
-  },
-  {
-   "id": "blossom_07",
-   "file": "03_blossom_tree.png",
-   "art_height_mm": 88.0,
-   "rotate_deg": 35,
-   "split": "blossom",
-   "cluster": "left-middle",
-   "seed_mm": [
-    18,
-    40
-   ],
-   "radius_mm": 14,
-   "stem_x_mm": 12.9,
-   "plinth_rise_mm": 0,
-   "mounts_mm": [
-    [
-     110,
-     39
-    ]
-   ],
-   "board_xy_mm": [
-    177,
-    210
-   ],
-   "note": "V7 blossom cluster 'left-middle' (seed [18, 40] mm, disc r 14 mm in the rotated tree frame, 5 mm sky gap to neighbouring clusters): separate cut piece, 1.0 mm rim, no webbing to other clusters; stands on the base at row 39 on a 12.25 mm clear stem under scene x 110, behind the tree plate so the branches cross in front of it."
+   "note": "V8: the right lattice doorway (30.5 x 85 mm art) as its own cut piece at scene x 209.3-239.8 (its V2-V7 printed position), 1.0 mm rim, 18 mm tab at row 47, mirroring door_left."
   },
   {
    "id": "snake",
@@ -312,7 +184,7 @@
    "total_covered_pct",
    "top30_band_covered_pct"
   ],
-  "note": "ORIGIN is a deliberately stacked centre scene (blossom plates behind the tree plate, tree behind the serpent and character): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art. Structural checks (row clearance, overhang, load path, gaps, rims, minimum feature) stay hard."
+  "note": "ORIGIN is a deliberately stacked centre scene (doors and tree behind the serpent and character, tree across the moon): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art and the V7 preview. Structural checks (row clearance, overhang, load path, gaps, rims, minimum feature, openings) stay hard."
  },
  "presets": [
   {
@@ -328,111 +200,39 @@
    "slot_width_mm": 5
   }
  ],
- "tree_split": {
+ "board_layout_note": "Product master board 340 x 420 mm: back panel top-left, character lower-left, the two door plates centre-left, serpent right, the one-piece tree right-centre; the A3 stage re-nests the same cut polygons at a 3 mm gap.",
+ "tree_one_piece": {
   "file": "03_blossom_tree.png",
   "art_height_mm": 88.0,
   "rotate_deg": 35,
-  "scale_note": "88 mm art (unrotated alpha box 1283 x 990 px = 285 ppi at this size, embedded at native pixels) so the whole rotated tree (105.7 x 88.4 mm) stands on the base line inside the 90 mm sky: the treetop reaches z 89.4, under the back panel top (91). V6 printed a 100 mm tree with its lowest 18.4 mm clipped off by the sky rectangle; a physical plate cannot be clipped, so the tree is scaled to fit whole.",
-  "colour_rule": "opaque = alpha > 128; petal = r - max(g, b) >= 45 and r >= 110 (pink/magenta petals); wood = every other opaque pixel (dark trunk, branches, mauve highlights). Pixels are classified on the native-resolution 35 deg clockwise rotation that V6 already used (premultiplied alpha, cubic).",
-  "wood_smooth_mm": 0.3,
-  "wood_open_mm": 0.5,
+  "scale_note": "88 mm art (unrotated alpha box 1283 x 990 px = 285 ppi at this size, embedded at native pixels) so the whole rotated tree (105.7 x 88.4 mm) stands on the base line inside the 90 mm sky: the treetop reaches z 89.4, under the back panel top (91).",
+  "skeleton_open_mm": 1.5,
+  "fragment_min_mm2": 2.0,
+  "connector_width_mm": 2.75,
   "contour_sigma_px": 2.5,
-  "rim_closing_mm": 0.6,
+  "rim_mm": 1.0,
+  "closing_mm": 1.25,
   "min_feature_mm": 2.5,
-  "wood_rule": "wood mask closed 0.3 mm (anti-aliasing gaps), opened 0.5 mm (minimum feature: twigs thinner than 0.5 mm of ink are pruned so no cut feature is below 2.5 mm after the rim), largest connected component kept; the cut silhouette is its contour smoothed along the contour (sigma 2.5 px = 0.22 mm, so the pixel staircase cannot trip the segment gate), buffered 1.0 mm and closed 0.6 mm. The print is the original pixels inside the kept skeleton mask.",
-  "cluster_rule": "petal mask closed/opened 0.3 mm; each cluster = petals inside its seed disc (Voronoi among seeds) that lie at least 2.5 mm (half the 5 mm cluster gap) away from every other seed's cell, closed 0.6 mm so touching flowers join, largest component kept, islands dropped; cut = outer contour (enclosed holes filled clear) smoothed, buffered 1.0 mm, closed 0.6 mm. Print = every original opaque pixel inside that contour (petals plus the twigs between them). Petals outside the discs or inside the 5 mm gaps are not cut, so neighbouring plates show at least 2 mm of sky.",
-  "stem_rule": "each blossom plate stands on the base on a clear unprinted stem 12.25 mm wide (the load-path riser width) under its 18 mm tab; the stem top sits 2 mm inside the cluster so the join is inside the rim.",
-  "min_feature_rule": "after the rim every neck of every new piece must measure at least 2.5 mm (erosion test), the rim 1.0 mm +/- 0.02, the stem 12.25 mm >= the 12 mm load-path floor; every cluster must pass laser_paths.audit_path (segments <= max(100, 1.5 x perimeter mm)).",
-  "clusters": [
-   {
-    "id": "blossom_01",
-    "name": "upper-left",
-    "seed_mm": [
-     14,
-     16
-    ],
-    "radius_mm": 14,
-    "stem_x_mm": 9.9,
-    "mount": [
-     107,
-     47
-    ]
-   },
-   {
-    "id": "blossom_02",
-    "name": "upper-centre",
-    "seed_mm": [
-     38,
-     12
-    ],
-    "radius_mm": 14,
-    "stem_x_mm": 40.9,
-    "mount": [
-     138,
-     39
-    ]
-   },
-   {
-    "id": "blossom_03",
-    "name": "upper-centre-right",
-    "seed_mm": [
-     60,
-     19
-    ],
-    "radius_mm": 14,
-    "stem_x_mm": 56.6,
-    "mount": [
-     154,
-     47
-    ]
-   },
-   {
-    "id": "blossom_04",
-    "name": "right",
-    "seed_mm": [
-     86,
-     32
-    ],
-    "radius_mm": 14,
-    "stem_x_mm": 87.9,
-    "mount": [
-     185,
-     47
-    ]
-   },
-   {
-    "id": "blossom_05",
-    "name": "centre-right-lower",
-    "seed_mm": [
-     66,
-     44
-    ],
-    "radius_mm": 14,
-    "stem_x_mm": 64.4,
-    "mount": [
-     161.5,
-     39
-    ]
-   },
-   {
-    "id": "blossom_07",
-    "name": "left-middle",
-    "seed_mm": [
-     18,
-     40
-    ],
-    "radius_mm": 14,
-    "stem_x_mm": 12.9,
-    "mount": [
-     110,
-     39
-    ]
-   }
-  ],
-  "dropped_petals": "the lower-right lobe (image x 55-95, y 55-96 mm = scene x 152-192, z 0-34) sits behind Len's legs at the base line; the small centre-lower-left cluster (scene x 135-153, z 41-59, about 75 mm2 of ink) sits behind the trunk fork and is not cut either; petals inside the 5 mm gaps between clusters are not cut. The sky and moon show through those gaps.",
-  "rows_note": "tree row 31 (8 mm behind the serpent row 23, so 5T slots keep a 3 mm gap); blossom rows 39 and 47 (8 and 16 mm behind the tree plane, 9 mm in front of the back panel slots). Two rows suffice once neighbouring clusters keep a 5 mm sky gap: the only front-view overlaps left are stems passing behind another cluster (upper-centre behind left-middle, upper-centre-right behind centre-right-lower, upper-left behind left-middle), and in each of them the crossed cluster sits on the nearer row so no clear stem shows in front of a pink cluster. Same-row blossom tabs are at least 22 mm apart and their standing cuts at least 2 mm apart; every slot is at least 2.99 mm from every other slot at both thicknesses.",
-  "min_cluster_island_mm2": 6.0,
-  "cluster_gap_mm": 2.5
- },
- "board_layout_note": "Product master board 340 x 420 mm: back panel top-left, character lower-left, serpent right, tree right-centre, the seven blossom plates in two rows between the character and the serpent; the A3 stage re-nests the same cut polygons at a 3 mm gap."
+  "opening_min_mm": 2.5,
+  "trunk_rule": "the tab axis is the lowest wood pixel of the rotated tree (wood = opaque pixel that is not red-dominant: r - max(g, b) < 45 or r < 110), i.e. the trunk base, exactly the V7 tab position (scene x ~131).",
+  "skeleton_rule": "opaque = alpha > 128 on the native-resolution 35 deg clockwise rotation. The cut skeleton is the opaque mask opened with a 1.5 mm radius: twigs and petals thinner than 3 mm of ink are not cut, so the gaps between branch/cluster groups are real openings (inlets and enclosed holes) through which the sky and moon show. Main component plus every detached component of at least 2 mm2 is kept; smaller specks are cut away.",
+  "connector_rule": "each detached component is attached to the main skeleton along its own twig: the geodesic path inside the opaque mask from the fragment to the main component is buffered to 2.75 mm (the twig is printed inside the clear connector). Measured minimum feature of every connector >= 2.5 mm. The twig path is Gaussian-smoothed (sigma 2 px) and simplified (0.15 mm) before buffering so the laser path stays within the segment gate.",
+  "opening_rule": "the cut body is skeleton + connectors, buffered 1.0 mm and closed 1.25 mm (sky slits under 2.5 mm filled). Enclosed holes at least 2.5 mm wide (erosion test) are kept as cut-out openings unless they would leave a neck under 2.5 mm or cross the riser; every other enclosed gap stays solid and is PRINTED with the back panel's blurred local colour (no clear acrylic fill inside the piece apart from the 1.0 mm rim, the connectors and the riser).",
+  "print_rule": "the print is the original RGBA pixels inside the body 0.6 mm from every cut edge and opening (riser left clear); every enclosed gap - everything inside the piece that is not printed art, not the 1.0 mm clear band along a cut edge and not a clear connector halo - is printed with the back panel's tone sampled at the same scene position (extended sky raster Gaussian-blurred over 15 mm so waves and stars average into the gradient, plus the moon/cloud layer as one uniform pale colour through its own blurred mask), so the gaps read as the sky or moon behind them with no wave line, cloud edge or crater baked into the plate; the asset's semi-transparent fringes print only inside those gaps; nothing prints outside the body, so twigs and petals the cut skeleton dropped never print inside an opening and the outer rim stays clear.",
+  "doors": {
+   "art_height_mm": 85.0,
+   "contour_sigma_px": 2.5,
+   "rim_mm": 1.0,
+   "closing_mm": 1.25,
+   "min_feature_mm": 2.5,
+   "opening_min_mm": 2.5,
+   "rule": "each door island (alpha silhouette at 85 mm) buffered 1.0 mm, closed 1.25 mm, thin features widened to the 2.5 mm minimum and re-closed; enclosed lattice holes at least 2.5 mm wide after the rim are cut-out openings, every other lattice gap is printed with the back panel's blurred local colour. One 18 mm tab under the art centre, row 47.",
+   "regularize": true
+  },
+  "concept": "assets/len_orgin/08_diorama concept art.png",
+  "path_sigma_px": 2.0,
+  "path_simplify_mm": 0.15,
+  "regularize": false,
+  "gap_colour_blur_mm": 15.0
+ }
 }

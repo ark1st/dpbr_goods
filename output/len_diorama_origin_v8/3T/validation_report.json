@@ -1,0 +1,1250 @@
+{
+  "revision": 8,
+  "product": "Len Diorama ORIGIN V8",
+  "concept_title": "보랏빛 달밤의 매화 무대, 뱀과 렌",
+  "character": {
+    "name": "렌",
+    "world": "메이플스토리"
+  },
+  "source_pack": "assets/len_orgin",
+  "preset": {
+    "name": "3T",
+    "part_thickness_mm": 3,
+    "base_thickness_mm": 3,
+    "slot_width_mm": 3
+  },
+  "canvas_mm": [
+    340,
+    420
+  ],
+  "base_mm": [
+    280,
+    71.2235
+  ],
+  "base_art_mm": [
+    275,
+    47.54
+  ],
+  "base_art_inset_mm": 2.5,
+  "base_art_vertical": "center",
+  "base_corner_radius_mm": 14.42,
+  "clear_border_mm": 1.0,
+  "clear_border_rationale": "docs/laser-cut-quality.md fixes no rim minimum; its hard limits are the 0.035 mm curve deviation and the 12 mm load-path floor on the buffered silhouette. 1.0 mm is the smallest round offset that still keeps UV ink 0.5 mm inside the cut edge under a 0.5 mm print registration error. V8 keeps 1.0 mm on every plate. The one-piece tree and the doors add material only where the laser rules need it: a 1.25 mm closing after the rim removes sky slits under 2.5 mm (needle gaps), and the tree's twig connectors are 2.75 mm wide (1.375 mm of clear acrylic around the printed twig) so the measured minimum feature is at least 2.5 mm everywhere.",
+  "clear_border_per_piece_mm": {
+    "backdrop": 1.0,
+    "tree": 1.0,
+    "door_left": 1.0,
+    "door_right": 1.0,
+    "snake": 1.0,
+    "character": 1.0
+  },
+  "pieces": 7,
+  "finished_size_mm": {
+    "width": 280,
+    "height": 94.0,
+    "depth": 71.22,
+    "note": "3T: base 3 + back panel 90 art + 1.0 mm rim = 94; the one-piece tree (88 mm art rotated 35 deg, treetop z ~89.4 + 1.0 rim) assembles to ~93.4 mm above the base top and stays under the back panel; the door plates (85 mm + 1.0 rim) reach 89 mm."
+  },
+  "assembled_height_mm": {
+    "backdrop": 94.0,
+    "tree": 92.36,
+    "door_left": 89.0,
+    "door_right": 89.0,
+    "snake": 59.0,
+    "character": 88.0
+  },
+  "depth_rows_mm": [
+    12,
+    23,
+    31,
+    47,
+    56
+  ],
+  "cut_closed_paths": 17,
+  "hole_paths_first": true,
+  "slot_count": 8,
+  "tab_width_mm": 18,
+  "tab_depth_mm": 2.6,
+  "slot_length_mm": 18.8,
+  "slot_width_mm": 3,
+  "minimum_slot_gap_mm": [
+    5.0,
+    "tree",
+    "snake"
+  ],
+  "dimensions_are": "nominal 18.8 x T cut-path centerlines; kerf and fit compensation is applied by scripts/build_a3_release.py (len_slot_fit, issue #1 policy)",
+  "fit_status": "UNTESTED; no fit-test pieces by repo policy",
+  "physical_fit_test": false,
+  "test_pieces_included": false,
+  "minimum_piece_gap_mm": 11.461992619926207,
+  "ai_layers": [
+    "3_ARTWORK",
+    "2_CORNER_REFERENCE",
+    "1_LASER_CUT"
+  ],
+  "same_row_standing_clearance_mm": 135.35,
+  "same_row_worst_pair": [
+    "door_left",
+    "door_right"
+  ],
+  "same_row_pairs": [
+    {
+      "row_mm": 47,
+      "pair": [
+        "door_left",
+        "door_right"
+      ],
+      "standing_cut_distance_mm": 135.35
+    }
+  ],
+  "same_row_note": "the two door plates share row [47] far apart; every same-row pair of standing cuts keeps at least 2 mm",
+  "art_overhang_beyond_base_mm": {},
+  "front_view_coverage_pct": {
+    "backdrop": {
+      "total_pct": 66.4,
+      "top30_pct": 40.2
+    },
+    "tree": {
+      "total_pct": 64.9,
+      "top30_pct": 13.8
+    },
+    "door_left": {
+      "total_pct": 0.0,
+      "top30_pct": 0.0
+    },
+    "door_right": {
+      "total_pct": 0.0,
+      "top30_pct": 0.0
+    },
+    "snake": {
+      "total_pct": 0.1,
+      "top30_pct": 0.0
+    },
+    "character": {
+      "total_pct": 0.0,
+      "top30_pct": 0.0
+    }
+  },
+  "front_view_policy": {
+    "asserted": false,
+    "reported_metrics": [
+      "total_covered_pct",
+      "top30_band_covered_pct"
+    ],
+    "note": "ORIGIN is a deliberately stacked centre scene (doors and tree behind the serpent and character, tree across the moon): polygon occlusion is by design and overstates visual blocking. Numbers are recorded per piece in validation_report.json; composition acceptance is the vision-checked assembly preview against the supplied concept art and the V7 preview. Structural checks (row clearance, overhang, load path, gaps, rims, minimum feature, openings) stay hard."
+  },
+  "load_path_floor_mm": 12.0,
+  "riser_width_mm": 12.25,
+  "minimum_feature_mm": 2.5,
+  "opening_min_mm": 2.5,
+  "cut_out_openings": {
+    "tree": 2
+  },
+  "cut_out_opening_paths_drawn_first_with_slots": true,
+  "bud_guard_risers": {
+    "tree": {
+      "34.64": {
+        "riser_width_mm": 12.25,
+        "riser_top_above_slot_mm": 14.88,
+        "worst_section_before_mm": 1.73,
+        "worst_at_above_slot_mm": 0.12,
+        "riser_axis": "narrowest ligament"
+      }
+    },
+    "character": {
+      "33.51": {
+        "riser_width_mm": 12.25,
+        "riser_top_above_slot_mm": 9.12,
+        "worst_section_before_mm": 0.11,
+        "worst_at_above_slot_mm": 0.12,
+        "riser_axis": "narrowest ligament"
+      }
+    }
+  },
+  "blue_reference_four_sides": true,
+  "unprinted_tabs_and_slots": true,
+  "slot_ink_clearance_checked_mm": 1.5,
+  "margins_nonblue_ink": true,
+  "base_plate": "supplied raster 07_base_art printed as-is, vertically centred on a 2.5 mm clear rim; {SLOT_COUNT} slot windows ink-cleared 1.5 mm in-memory by the builder (no separate prepared copy, no placeholder-slot surgery)",
+  "piece_breakdown": {
+    "backdrop": "one plate: 05_background sky/wave raster mirrored into the two former door zones (30.4 / 30.5 mm) with the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; no doors and no tree printed on it (V8); 3 tabs",
+    "tree": "V8: the complete blossom tree (trunk, branches, every blossom cluster) as ONE cut piece printed with the original pixels, 88 mm art rotated 35 deg clockwise, 1 tab under the trunk base behind the serpent; cut-out openings between branch/cluster groups, twig connectors 2.75 mm, narrow gaps printed with the sky colour",
+    "door_left, door_right": "V8: the two lattice doorways of 06_lattice_doors.png as their own cut plates (85 mm art, 1.0 mm rim, lattice openings cut), one 18 mm tab each at row 47 in front of the back panel at their V2-V7 printed positions",
+    "snake": "02_snake silhouette plate, 1 tab (V2/V4 position)",
+    "character": "01_character silhouette plate, 1 tab; the whole 84 mm figure (no crop), boot rims on the base line, bud-guard clear riser inside the tab window between the legs (V2/V4 scale and x)"
+  },
+  "layer_order_back_to_front": [
+    "backdrop (sky extended into the door zones, moon/clouds)",
+    "door_left, door_right (lattice doorways)",
+    "tree (one piece)",
+    "snake",
+    "character"
+  ],
+  "row_order_front_to_back": [
+    "character",
+    "snake",
+    "tree",
+    "door_left",
+    "door_right",
+    "backdrop",
+    "backdrop"
+  ],
+  "composition": {
+    "scene_width_mm": 280,
+    "row_order_front_to_back": [
+      "character",
+      "snake",
+      "tree",
+      "door_left",
+      "door_right",
+      "backdrop"
+    ],
+    "pieces": {
+      "backdrop": {
+        "art_mm": [
+          199.48,
+          90.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          200.48,
+          93.6
+        ],
+        "art_center_x_mm": 140.0,
+        "art_span_x_mm": [
+          40.26,
+          239.74
+        ],
+        "depth_row_mm": 56,
+        "assembled_height_mm": 94.0,
+        "effective_ppi": [
+          261,
+          282
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          55.5,
+          140.0,
+          224.5
+        ],
+        "minimum_art_to_cut_mm": 0.986,
+        "minimum_feature_mm": null,
+        "cut_out_openings": 0,
+        "sky_mm": [
+          199.48,
+          90.0
+        ],
+        "sky_span_x_mm": [
+          40.26,
+          239.74
+        ],
+        "sky_extension": {
+          "rule": "see pieces.backdrop.extend_sky_mm",
+          "processing": "; sky/wave art extended into the former door zones by mirroring the raster's own edge columns (BORDER_REFLECT_101): 312 px = 30.39 mm left, 313 px = 30.49 mm right, no resampling"
+        },
+        "moon_disc": {
+          "center_x_mm": 139.28,
+          "center_y_above_base_mm": 55.13,
+          "diameter_mm": 57.82,
+          "offset_from_scene_axis_x140_mm": -0.72,
+          "visible_pct_in_front_view": 21.9,
+          "visible_pct_against_printed_ink_of_front_plates": 38.2,
+          "pct_behind_the_tree_plate_body": 61.0,
+          "pct_of_moon_under_the_tree_plate_s_printed_gaps": 11.0,
+          "note": "visible_pct counts moon cells not covered by the PRINTED ink of the plates in front (the tree plate's clear connectors and rim do not count as ink); pct_behind_the_tree_plate_body counts cells covered by the tree plate material (rim, connectors, printed gaps); the moon shows through the tree where the plate is absent (cut-out openings and inlets), and the printed gaps carry the blurred local colour of the moon behind them"
+        }
+      },
+      "tree": {
+        "art_mm": [
+          105.78,
+          88.36
+        ],
+        "plate_cut_bounds_mm": [
+          3.99,
+          6.86,
+          98.95,
+          87.97
+        ],
+        "art_center_x_mm": 131.0,
+        "art_span_x_mm": [
+          96.36,
+          202.14
+        ],
+        "depth_row_mm": 31,
+        "assembled_height_mm": 88.37,
+        "effective_ppi": [
+          286
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          131.0
+        ],
+        "minimum_art_to_cut_mm": 0.985,
+        "minimum_feature_mm": 3.25,
+        "cut_out_openings": 2,
+        "minimum_feature_with_openings_mm": 3.25
+      },
+      "door_left": {
+        "art_mm": [
+          30.4,
+          85.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.65,
+          -1.65,
+          31.95,
+          88.4
+        ],
+        "art_center_x_mm": 55.5,
+        "art_span_x_mm": [
+          40.3,
+          70.7
+        ],
+        "depth_row_mm": 47,
+        "assembled_height_mm": 88.8,
+        "effective_ppi": [
+          254
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          55.5
+        ],
+        "minimum_art_to_cut_mm": 1.0,
+        "minimum_feature_mm": null,
+        "cut_out_openings": 0
+      },
+      "door_right": {
+        "art_mm": [
+          30.5,
+          85.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.65,
+          -1.65,
+          32.05,
+          88.4
+        ],
+        "art_center_x_mm": 224.5,
+        "art_span_x_mm": [
+          209.25,
+          239.75
+        ],
+        "depth_row_mm": 47,
+        "assembled_height_mm": 88.8,
+        "effective_ppi": [
+          254
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          224.5
+        ],
+        "minimum_art_to_cut_mm": 1.0,
+        "minimum_feature_mm": null,
+        "cut_out_openings": 0
+      },
+      "snake": {
+        "art_mm": [
+          45.11,
+          55.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          46.05,
+          58.55
+        ],
+        "art_center_x_mm": 115.0,
+        "art_span_x_mm": [
+          92.45,
+          137.55
+        ],
+        "depth_row_mm": 23,
+        "assembled_height_mm": 58.95,
+        "effective_ppi": [
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          115.0
+        ],
+        "minimum_art_to_cut_mm": 0.985,
+        "minimum_feature_mm": 2.75,
+        "cut_out_openings": 0
+      },
+      "character": {
+        "art_mm": [
+          67.01,
+          84.0
+        ],
+        "plate_cut_bounds_mm": [
+          -1.0,
+          -1.0,
+          67.95,
+          87.54
+        ],
+        "art_center_x_mm": 170.0,
+        "art_span_x_mm": [
+          136.49,
+          203.51
+        ],
+        "depth_row_mm": 12,
+        "assembled_height_mm": 87.94,
+        "effective_ppi": [
+          300
+        ],
+        "clear_border_mm": 1.0,
+        "tab_cx_mm": [
+          170.0
+        ],
+        "minimum_art_to_cut_mm": 0.985,
+        "minimum_feature_mm": 5.25,
+        "cut_out_openings": 0
+      }
+    },
+    "tree_piece": {
+      "skeleton_open_mm": 1.5,
+      "opaque_px": 374439,
+      "skeleton_px": 234590,
+      "main_skeleton_px": 128942,
+      "detached_clusters": 22,
+      "detached_cluster_px": 105648,
+      "detached_cluster_areas_mm2": [
+        323.4,
+        58.9,
+        54.1,
+        51.8,
+        50.4,
+        43.6,
+        31.0,
+        26.0,
+        24.8,
+        24.6,
+        22.2,
+        16.5,
+        15.7,
+        13.9,
+        13.2,
+        10.0,
+        9.9,
+        9.7,
+        9.2,
+        9.1,
+        8.5,
+        8.4
+      ],
+      "specks_cut_away_px": 0,
+      "connectors": 22,
+      "connector_width_mm": 2.75,
+      "connector_twig_paths_mm": [
+        36.98,
+        34.49,
+        30.31,
+        30.13,
+        27.29,
+        23.91,
+        17.96,
+        17.33,
+        15.29,
+        14.31,
+        13.6,
+        9.51,
+        8.53,
+        7.64,
+        7.2,
+        6.93,
+        6.67,
+        5.51,
+        3.91,
+        1.96,
+        1.69,
+        1.33
+      ],
+      "connector_twig_path_total_mm": 322.5,
+      "openings": 2,
+      "openings_mm": [
+        {
+          "area_mm2": 138.1,
+          "min_width_mm": 6.75,
+          "box_mm": [
+            29.9,
+            38.1,
+            43.5,
+            58.7
+          ]
+        },
+        {
+          "area_mm2": 72.1,
+          "min_width_mm": 2.75,
+          "box_mm": [
+            45.4,
+            32.5,
+            60.1,
+            42.9
+          ]
+        }
+      ],
+      "enclosed_gaps_of_body": 4,
+      "enclosed_gaps_area_mm2": 194.8,
+      "gaps_too_narrow_to_cut": 4,
+      "gaps_dropped_for_neck": 0,
+      "minimum_feature_mm": 3.25,
+      "outer_perimeter_mm": 564.5,
+      "canvas_mm": [
+        105.78,
+        88.36
+      ],
+      "ink_box_mm": [
+        4.62,
+        7.64,
+        98.4,
+        82.13
+      ],
+      "art_area_mm2": 1817.2,
+      "body_area_mm2": 3478.8,
+      "printed_sky_mm2": 503.4,
+      "rotate_deg_clockwise": 35,
+      "configured_art_height_mm": 88.0,
+      "unrotated_alpha_box_px": [
+        1283,
+        990
+      ],
+      "source_density_ppi": 286,
+      "embedded_ppi": 286,
+      "resample_px": [
+        1190,
+        994
+      ],
+      "native_cap": true,
+      "ink_box_in_scene_mm": {
+        "x": [
+          100.99,
+          194.76
+        ],
+        "z_above_base_top": [
+          3.24,
+          77.72
+        ]
+      },
+      "plate_cut_bounds_mm": [
+        3.99,
+        6.86,
+        98.95,
+        87.97
+      ],
+      "plate_cut_bounds_in_scene_mm": {
+        "x": [
+          100.35,
+          195.32
+        ],
+        "z_above_base_top": [
+          -2.6,
+          78.51
+        ]
+      },
+      "openings_in_scene_mm": [
+        {
+          "x": [
+            126.26,
+            139.86
+          ],
+          "z_above_base_top": [
+            26.67,
+            47.27
+          ],
+          "area_mm2": 138.1,
+          "min_width_mm": 6.75
+        },
+        {
+          "x": [
+            141.76,
+            156.46
+          ],
+          "z_above_base_top": [
+            42.47,
+            52.87
+          ],
+          "area_mm2": 72.1,
+          "min_width_mm": 2.75
+        }
+      ],
+      "openings_total_area_mm2": 210.2,
+      "minimum_art_to_cut_mm": 0.985,
+      "minimum_feature_with_openings_mm": 3.25,
+      "tab_x_scene_mm": 131.0,
+      "depth_row_mm": 31,
+      "visible_pct_in_front_view_not_hidden_by_front_plates": 36.1,
+      "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 53.3,
+      "bud_guard_riser": {
+        "34.64": {
+          "riser_width_mm": 12.25,
+          "riser_top_above_slot_mm": 14.88,
+          "worst_section_before_mm": 1.73,
+          "worst_at_above_slot_mm": 0.12,
+          "riser_axis": "narrowest ligament"
+        }
+      },
+      "printed_sky_fill_mm2": 503.4,
+      "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V8 one-piece tree: opaque mask opened 1.5 mm (twigs and petals under 3 mm of ink are not cut), main skeleton + every detached cluster of at least 2.0 mm2 kept, 22 twig connectors 2.75 mm wide, rim 1.0 mm closed 1.25 mm, 2 cut-out openings, narrow gaps printed with sky; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over 15.0 mm + uniform moon colour [237, 211, 232] through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear",
+      "open_area_fraction_of_canopy_envelope": 0.4,
+      "canopy_envelope_mm2": 5799.8
+    },
+    "doors": [
+      {
+        "id": "door_left",
+        "art_mm": [
+          30.4,
+          85.0
+        ],
+        "canvas_mm": [
+          30.4,
+          85.0
+        ],
+        "ink_box_in_scene_mm": {
+          "x": [
+            40.3,
+            70.7
+          ],
+          "z_above_base_top": [
+            0.9,
+            85.8
+          ]
+        },
+        "plate_cut_bounds_mm": [
+          -1.65,
+          -1.65,
+          31.95,
+          88.4
+        ],
+        "plate_cut_bounds_in_scene_mm": {
+          "x": [
+            38.65,
+            72.25
+          ],
+          "z_above_base_top": [
+            -2.6,
+            87.45
+          ]
+        },
+        "tab_x_scene_mm": 55.5,
+        "depth_row_mm": 47,
+        "assembled_height_mm": 88.8,
+        "lattice_openings_cut": 0,
+        "lattice_openings_mm": [],
+        "lattice_holes_in_source": 59,
+        "printed_sky_fill_mm2": 29.8,
+        "minimum_art_to_cut_mm": 1.0,
+        "minimum_feature_mm": null,
+        "minimum_feature_with_openings_mm": null,
+        "visible_pct_in_front_view_not_hidden_by_front_plates": 100.0,
+        "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 100.0,
+        "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched; V8 door piece: silhouette buffered 1.0 mm closed 1.25 mm, thin features widened to 2.5 mm, 0 lattice openings cut, the other lattice gaps printed with sky; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over 15.0 mm + uniform moon colour [237, 211, 232] through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear"
+      },
+      {
+        "id": "door_right",
+        "art_mm": [
+          30.5,
+          85.0
+        ],
+        "canvas_mm": [
+          30.5,
+          85.0
+        ],
+        "ink_box_in_scene_mm": {
+          "x": [
+            209.25,
+            239.75
+          ],
+          "z_above_base_top": [
+            0.9,
+            85.8
+          ]
+        },
+        "plate_cut_bounds_mm": [
+          -1.65,
+          -1.65,
+          32.05,
+          88.4
+        ],
+        "plate_cut_bounds_in_scene_mm": {
+          "x": [
+            207.6,
+            241.3
+          ],
+          "z_above_base_top": [
+            -2.6,
+            87.45
+          ]
+        },
+        "tab_x_scene_mm": 224.5,
+        "depth_row_mm": 47,
+        "assembled_height_mm": 88.8,
+        "lattice_openings_cut": 0,
+        "lattice_openings_mm": [],
+        "lattice_holes_in_source": 56,
+        "printed_sky_fill_mm2": 30.4,
+        "minimum_art_to_cut_mm": 1.0,
+        "minimum_feature_mm": null,
+        "minimum_feature_with_openings_mm": null,
+        "visible_pct_in_front_view_not_hidden_by_front_plates": 100.0,
+        "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 100.0,
+        "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched; V8 door piece: silhouette buffered 1.0 mm closed 1.25 mm, thin features widened to 2.5 mm, 0 lattice openings cut, the other lattice gaps printed with sky; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over 15.0 mm + uniform moon colour [237, 211, 232] through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear"
+      }
+    ],
+    "character_seating": {
+      "configured_art_height_mm": 84.0,
+      "crop_below_fraction": null,
+      "whole_figure": true,
+      "kept_art_mm": [
+        67.01,
+        84.0
+      ],
+      "lowest_ink_above_base_top_mm": 1.0,
+      "clear_rim_below_lowest_ink_mm": 1.0,
+      "feet_and_sword_runs_at_the_base_line": [
+        {
+          "scene_x_mm": [
+            147.25,
+            148.94
+          ],
+          "lowest_ink_above_base_top_mm": 3.12
+        },
+        {
+          "scene_x_mm": [
+            154.36,
+            158.76
+          ],
+          "lowest_ink_above_base_top_mm": 1.08
+        },
+        {
+          "scene_x_mm": [
+            178.32,
+            180.86
+          ],
+          "lowest_ink_above_base_top_mm": 1.76
+        }
+      ],
+      "plinth_rise_mm": 0,
+      "tab_cx_scene_mm": [
+        170.0
+      ],
+      "tab_window_body_width_at_base_line_mm": 18.1,
+      "bud_guard_riser": {
+        "33.51": {
+          "riser_width_mm": 12.25,
+          "riser_top_above_slot_mm": 9.12,
+          "worst_section_before_mm": 0.11,
+          "worst_at_above_slot_mm": 0.12,
+          "riser_axis": "narrowest ligament"
+        }
+      },
+      "clear_riser_mm": {
+        "width": 12.25,
+        "top_above_slot_line": 9.12,
+        "axis": "narrowest ligament",
+        "note": "unprinted clear acrylic inside the tab window between the legs; the only support below the hips"
+      },
+      "processing": ""
+    },
+    "rules": {
+      "skeleton_rule": "opaque = alpha > 128 on the native-resolution 35 deg clockwise rotation. The cut skeleton is the opaque mask opened with a 1.5 mm radius: twigs and petals thinner than 3 mm of ink are not cut, so the gaps between branch/cluster groups are real openings (inlets and enclosed holes) through which the sky and moon show. Main component plus every detached component of at least 2 mm2 is kept; smaller specks are cut away.",
+      "connector_rule": "each detached component is attached to the main skeleton along its own twig: the geodesic path inside the opaque mask from the fragment to the main component is buffered to 2.75 mm (the twig is printed inside the clear connector). Measured minimum feature of every connector >= 2.5 mm. The twig path is Gaussian-smoothed (sigma 2 px) and simplified (0.15 mm) before buffering so the laser path stays within the segment gate.",
+      "opening_rule": "the cut body is skeleton + connectors, buffered 1.0 mm and closed 1.25 mm (sky slits under 2.5 mm filled). Enclosed holes at least 2.5 mm wide (erosion test) are kept as cut-out openings unless they would leave a neck under 2.5 mm or cross the riser; every other enclosed gap stays solid and is PRINTED with the back panel's blurred local colour (no clear acrylic fill inside the piece apart from the 1.0 mm rim, the connectors and the riser).",
+      "print_rule": "the print is the original RGBA pixels inside the body 0.6 mm from every cut edge and opening (riser left clear); every enclosed gap - everything inside the piece that is not printed art, not the 1.0 mm clear band along a cut edge and not a clear connector halo - is printed with the back panel's tone sampled at the same scene position (extended sky raster Gaussian-blurred over 15 mm so waves and stars average into the gradient, plus the moon/cloud layer as one uniform pale colour through its own blurred mask), so the gaps read as the sky or moon behind them with no wave line, cloud edge or crater baked into the plate; the asset's semi-transparent fringes print only inside those gaps; nothing prints outside the body, so twigs and petals the cut skeleton dropped never print inside an opening and the outer rim stays clear.",
+      "trunk_rule": "the tab axis is the lowest wood pixel of the rotated tree (wood = opaque pixel that is not red-dominant: r - max(g, b) < 45 or r < 110), i.e. the trunk base, exactly the V7 tab position (scene x ~131).",
+      "doors": "each door island (alpha silhouette at 85 mm) buffered 1.0 mm, closed 1.25 mm, thin features widened to the 2.5 mm minimum and re-closed; enclosed lattice holes at least 2.5 mm wide after the rim are cut-out openings, every other lattice gap is printed with the back panel's blurred local colour. One 18 mm tab under the art centre, row 47."
+    }
+  },
+  "revision_note": "V1 (2ac3ad0) rejected by the owner: too many borders. V2 (73a2823) merged the sky, both lattice doors and the moon/cloud layer into one back plate, shrank the clear rim 2.5 -> 1.0 mm and rendered clear acrylic see-through in the assembly preview. V3 (657a484) recomposed the scene but the owner prefers V2 (\"v2가 낫다고 한거야\"). V4 (a2a83cd) = V2 plus two owner requests: the blossom tree printed diagonally into the back panel and Len \"seated\" by cropping her raster at the seat line. V5 (7459c7f) restructured the scene (Len whole on a 70 mm serpent's coil, the tree back as ONE cut plate whose 2.5 mm canopy envelope webbed the blossoms together with clear acrylic) and the owner rejected it (\"이거 아니야 v4에서 잘림 문제만 해결하고 나무를 예시 이미지처럼 대각선 배치 해달라고\"). V6 (62963a8) = V4 with exactly those two changes: Len shown whole on the base line and the tree printed into the back panel, leaning up to the right like the concept. V7 = the owner's decision on the tree (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"): the tree is no longer printed on the back panel and is no longer one clear-webbed piece. 03_blossom_tree.png is split by colour into (a) a TREE cut piece = the dark trunk and branches (wood pixels; twigs thinner than 0.5 mm pruned so every feature is at least 2.5 mm after the 1.0 mm rim) standing on its own tab on its own depth row (31) with its base behind the serpent, and (b) six BLOSSOM cut pieces = pink petal clusters grouped around branch tips (5 mm sky gaps between clusters), each a separate plate with a 1.0 mm rim, no clear webbing between clusters, mounted on the base BEHIND the tree plate on two depth rows (39 and 47) on a 12.25 mm clear stem so the branches cross in front of them and the gaps between clusters show the sky and moon like the concept. Everything else is V6 exactly: whole seated Len, serpent, moon, doors, base, layout, rims. V8 = the owner's correction (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors): (1) the TREE is ONE cut piece with the complete tree printed on it (trunk, branches and all blossom clusters); the the opaque mask opened 1.5 mm is the cut skeleton so the gaps between branch/cluster groups are real cut-out openings (sky and moon show through, no clear canopy fill, no stems, no cluster plates); the printed branch skeleton connects every part, twig connectors are widened to 2.75 mm of clear acrylic so every cut feature meets the 2.5 mm minimum after the 1.0 mm rim, and gaps that cannot be real openings (under 2.5 mm after the rim) stay printed with the back panel's blurred local colour instead of clear acrylic; placement, rotation, scale and row are V7's. (2) The DOORS become their own cut pieces: the two lattice doorways of 06_lattice_doors.png (85 mm art, 1.0 mm rim, lattice openings) stand on 18 mm tabs at row 47 exactly where V2-V7 printed them; the back panel loses the printed doors and keeps the sky, moon, clouds and waves, with the sky/wave art mirrored into the former door zones. Whole Len, serpent, moon, base, slots, rims 1.0 mm and the layout stay V7/V6 exactly: 7 pieces, 8 slots, rows 12/23/31/47/56.",
+  "preview_rendering": "clear acrylic see-through on a dark mauve ground: plate bodies unfilled, one 0.26 mm lit-edge stroke per plate, tabs clipped at the shoulder (inside the slots); base slab shows its front side band",
+  "unused_source_islands": [],
+  "assets": {
+    "backdrop": {
+      "file": "05_background.png",
+      "sha256": "aa2c2deef7738a84e7f88997342be35d8306c0ed07d645f952f9efa5aa80151c",
+      "rasters": [
+        {
+          "file": "05_background.png",
+          "sha256": "aa2c2deef7738a84e7f88997342be35d8306c0ed07d645f952f9efa5aa80151c",
+          "anchor": "base",
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "source_bbox_px": [
+            -312,
+            0,
+            2048,
+            924
+          ],
+          "source_px": [
+            2048,
+            924
+          ],
+          "resample_px": [
+            2048,
+            924
+          ],
+          "art_width_mm": 199.481,
+          "art_height_mm": 90.0,
+          "configured_art_height_mm": 90.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
+          "effective_ppi": 261,
+          "native_cap": true,
+          "processing": "; sky/wave art extended into the former door zones by mirroring the raster's own edge columns (BORDER_REFLECT_101): 312 px = 30.39 mm left, 313 px = 30.49 mm right, no resampling",
+          "clip": null,
+          "note": null
+        },
+        {
+          "file": "04_moon_clouds.png",
+          "sha256": "f84ea90f667c8b14f27450839aba6bce8062c87031052303f117139f6f145055",
+          "anchor": "top_center",
+          "offset_mm": [
+            31.195,
+            5.0
+          ],
+          "source_bbox_px": [
+            133,
+            100,
+            1524,
+            667
+          ],
+          "source_px": [
+            1524,
+            667
+          ],
+          "resample_px": [
+            1524,
+            667
+          ],
+          "art_width_mm": 137.091,
+          "art_height_mm": 60.0,
+          "configured_art_height_mm": 60.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
+          "effective_ppi": 282,
+          "native_cap": true,
+          "processing": "",
+          "clip": null,
+          "note": "moon and both cloud islands (including V1's unused 34 x 6.9 mm upper-right cloud) registered over the sky as in V2/V4"
+        }
+      ],
+      "art_width_mm": 199.481,
+      "art_height_mm": 90.0,
+      "minimum_art_to_cut_mm": 0.9858710185182358,
+      "minimum_feature_mm": null,
+      "clear_border_mm": 1.0,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "processing": "overlays positioned on the base raster: 04_moon_clouds.png"
+    },
+    "tree": {
+      "file": "03_blossom_tree.png",
+      "sha256": "4d283d0695c8e519313dbf002b2fda611eac23812c4167e06bfc60d0b5452472",
+      "rasters": [
+        {
+          "file": "03_blossom_tree.png",
+          "sha256": "4d283d0695c8e519313dbf002b2fda611eac23812c4167e06bfc60d0b5452472",
+          "anchor": "base",
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "source_bbox_px": [
+            125,
+            15,
+            1283,
+            990
+          ],
+          "source_px": [
+            1190,
+            994
+          ],
+          "resample_px": [
+            1190,
+            994
+          ],
+          "art_width_mm": 105.778,
+          "art_height_mm": 88.356,
+          "configured_art_height_mm": 88.0,
+          "rotate_deg": 35,
+          "crop_below_fraction": null,
+          "effective_ppi": 286,
+          "native_cap": true,
+          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V8 one-piece tree: opaque mask opened 1.5 mm (twigs and petals under 3 mm of ink are not cut), main skeleton + every detached cluster of at least 2.0 mm2 kept, 22 twig connectors 2.75 mm wide, rim 1.0 mm closed 1.25 mm, 2 cut-out openings, narrow gaps printed with sky; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over 15.0 mm + uniform moon colour [237, 211, 232] through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear",
+          "clip": null,
+          "note": null
+        }
+      ],
+      "art_width_mm": 105.778,
+      "art_height_mm": 88.356,
+      "minimum_art_to_cut_mm": 0.9846952858655174,
+      "minimum_feature_mm": 3.25,
+      "clear_border_mm": 1.0,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V8 one-piece tree: opaque mask opened 1.5 mm (twigs and petals under 3 mm of ink are not cut), main skeleton + every detached cluster of at least 2.0 mm2 kept, 22 twig connectors 2.75 mm wide, rim 1.0 mm closed 1.25 mm, 2 cut-out openings, narrow gaps printed with sky",
+      "split_info": {
+        "skeleton_open_mm": 1.5,
+        "opaque_px": 374439,
+        "skeleton_px": 234590,
+        "main_skeleton_px": 128942,
+        "detached_clusters": 22,
+        "detached_cluster_px": 105648,
+        "detached_cluster_areas_mm2": [
+          323.4,
+          58.9,
+          54.1,
+          51.8,
+          50.4,
+          43.6,
+          31.0,
+          26.0,
+          24.8,
+          24.6,
+          22.2,
+          16.5,
+          15.7,
+          13.9,
+          13.2,
+          10.0,
+          9.9,
+          9.7,
+          9.2,
+          9.1,
+          8.5,
+          8.4
+        ],
+        "specks_cut_away_px": 0,
+        "connectors": 22,
+        "connector_width_mm": 2.75,
+        "connector_twig_paths_mm": [
+          36.98,
+          34.49,
+          30.31,
+          30.13,
+          27.29,
+          23.91,
+          17.96,
+          17.33,
+          15.29,
+          14.31,
+          13.6,
+          9.51,
+          8.53,
+          7.64,
+          7.2,
+          6.93,
+          6.67,
+          5.51,
+          3.91,
+          1.96,
+          1.69,
+          1.33
+        ],
+        "connector_twig_path_total_mm": 322.5,
+        "openings": 2,
+        "openings_mm": [
+          {
+            "area_mm2": 138.1,
+            "min_width_mm": 6.75,
+            "box_mm": [
+              29.9,
+              38.1,
+              43.5,
+              58.7
+            ]
+          },
+          {
+            "area_mm2": 72.1,
+            "min_width_mm": 2.75,
+            "box_mm": [
+              45.4,
+              32.5,
+              60.1,
+              42.9
+            ]
+          }
+        ],
+        "enclosed_gaps_of_body": 4,
+        "enclosed_gaps_area_mm2": 194.8,
+        "gaps_too_narrow_to_cut": 4,
+        "gaps_dropped_for_neck": 0,
+        "minimum_feature_mm": 3.25,
+        "outer_perimeter_mm": 564.5,
+        "canvas_mm": [
+          105.78,
+          88.36
+        ],
+        "ink_box_mm": [
+          0.09,
+          0.09,
+          105.69,
+          88.18
+        ],
+        "art_area_mm2": 1817.2,
+        "body_area_mm2": 3478.8,
+        "printed_sky_mm2": 503.4
+      },
+      "clear_fill_check": {
+        "fill_px_at_300ppi": 57878,
+        "unprinted_fill_px": 0,
+        "other_clear_area_mm2": 0.0
+      }
+    },
+    "door_left": {
+      "file": "06_lattice_doors.png",
+      "sha256": "13d3a1854db1ddf4d7367da93ee0fce827e13cc9c73d5d70d2f6eb7a32d5fffb",
+      "rasters": [
+        {
+          "file": "06_lattice_doors.png",
+          "sha256": "13d3a1854db1ddf4d7367da93ee0fce827e13cc9c73d5d70d2f6eb7a32d5fffb",
+          "anchor": "base",
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "source_bbox_px": [
+            135,
+            11,
+            304,
+            850
+          ],
+          "source_px": [
+            304,
+            850
+          ],
+          "resample_px": [
+            304,
+            850
+          ],
+          "art_width_mm": 30.4,
+          "art_height_mm": 85.0,
+          "configured_art_height_mm": 85.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
+          "effective_ppi": 254,
+          "native_cap": true,
+          "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched; V8 door piece: silhouette buffered 1.0 mm closed 1.25 mm, thin features widened to 2.5 mm, 0 lattice openings cut, the other lattice gaps printed with sky; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over 15.0 mm + uniform moon colour [237, 211, 232] through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear",
+          "clip": null,
+          "note": null
+        }
+      ],
+      "art_width_mm": 30.4,
+      "art_height_mm": 85.0,
+      "minimum_art_to_cut_mm": 0.9999999999999999,
+      "minimum_feature_mm": null,
+      "clear_border_mm": 1.0,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched; V8 door piece: silhouette buffered 1.0 mm closed 1.25 mm, thin features widened to 2.5 mm, 0 lattice openings cut, the other lattice gaps printed with sky",
+      "split_info": {
+        "lattice_holes_in_source": 59,
+        "openings": 0,
+        "openings_mm": [],
+        "enclosed_gaps_of_body": 0,
+        "minimum_feature_mm": null,
+        "outer_perimeter_mm": 238.5,
+        "canvas_mm": [
+          30.4,
+          85.0
+        ],
+        "art_area_mm2": 2548.1,
+        "body_area_mm2": 2955.8,
+        "printed_sky_mm2": 29.8
+      },
+      "clear_fill_check": {
+        "fill_px_at_300ppi": 42,
+        "unprinted_fill_px": 0,
+        "other_clear_area_mm2": 0.0
+      }
+    },
+    "door_right": {
+      "file": "06_lattice_doors.png",
+      "sha256": "13d3a1854db1ddf4d7367da93ee0fce827e13cc9c73d5d70d2f6eb7a32d5fffb",
+      "rasters": [
+        {
+          "file": "06_lattice_doors.png",
+          "sha256": "13d3a1854db1ddf4d7367da93ee0fce827e13cc9c73d5d70d2f6eb7a32d5fffb",
+          "anchor": "base",
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "source_bbox_px": [
+            1335,
+            11,
+            305,
+            850
+          ],
+          "source_px": [
+            305,
+            850
+          ],
+          "resample_px": [
+            305,
+            850
+          ],
+          "art_width_mm": 30.5,
+          "art_height_mm": 85.0,
+          "configured_art_height_mm": 85.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
+          "effective_ppi": 254,
+          "native_cap": true,
+          "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched; V8 door piece: silhouette buffered 1.0 mm closed 1.25 mm, thin features widened to 2.5 mm, 0 lattice openings cut, the other lattice gaps printed with sky; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over 15.0 mm + uniform moon colour [237, 211, 232] through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear",
+          "clip": null,
+          "note": null
+        }
+      ],
+      "art_width_mm": 30.5,
+      "art_height_mm": 85.0,
+      "minimum_art_to_cut_mm": 0.9999999999999999,
+      "minimum_feature_mm": null,
+      "clear_border_mm": 1.0,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "processing": "island separated from the bundled sheet by connected-component label; neighbour-bbox fragments alpha-zeroed, island pixels untouched; V8 door piece: silhouette buffered 1.0 mm closed 1.25 mm, thin features widened to 2.5 mm, 0 lattice openings cut, the other lattice gaps printed with sky",
+      "split_info": {
+        "lattice_holes_in_source": 56,
+        "openings": 0,
+        "openings_mm": [],
+        "enclosed_gaps_of_body": 0,
+        "minimum_feature_mm": null,
+        "outer_perimeter_mm": 238.7,
+        "canvas_mm": [
+          30.5,
+          85.0
+        ],
+        "art_area_mm2": 2556.0,
+        "body_area_mm2": 2964.1,
+        "printed_sky_mm2": 30.4
+      },
+      "clear_fill_check": {
+        "fill_px_at_300ppi": 46,
+        "unprinted_fill_px": 0,
+        "other_clear_area_mm2": 0.0
+      }
+    },
+    "snake": {
+      "file": "02_snake.png",
+      "sha256": "8f94b310ec4b2ce888b5f2134ca51c75da1ba196e3a9b54cd61d071557d035e4",
+      "rasters": [
+        {
+          "file": "02_snake.png",
+          "sha256": "8f94b310ec4b2ce888b5f2134ca51c75da1ba196e3a9b54cd61d071557d035e4",
+          "anchor": "base",
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "source_bbox_px": [
+            291,
+            18,
+            839,
+            1023
+          ],
+          "source_px": [
+            839,
+            1023
+          ],
+          "resample_px": [
+            533,
+            650
+          ],
+          "art_width_mm": 45.108,
+          "art_height_mm": 55.0,
+          "configured_art_height_mm": 55.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
+          "effective_ppi": 300,
+          "native_cap": true,
+          "processing": "",
+          "clip": null,
+          "note": null
+        }
+      ],
+      "art_width_mm": 45.108,
+      "art_height_mm": 55.0,
+      "minimum_art_to_cut_mm": 0.9849383849346076,
+      "minimum_feature_mm": 2.75,
+      "clear_border_mm": 1.0,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "processing": null
+    },
+    "character": {
+      "file": "01_character.png",
+      "sha256": "1b9c409859694c1d4359fda0d766de09d8d75654e2c11098378dcc2c027ab9c8",
+      "rasters": [
+        {
+          "file": "01_character.png",
+          "sha256": "1b9c409859694c1d4359fda0d766de09d8d75654e2c11098378dcc2c027ab9c8",
+          "anchor": "base",
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "source_bbox_px": [
+            37,
+            7,
+            1081,
+            1355
+          ],
+          "source_px": [
+            1081,
+            1355
+          ],
+          "resample_px": [
+            792,
+            992
+          ],
+          "art_width_mm": 67.014,
+          "art_height_mm": 84.0,
+          "configured_art_height_mm": 84.0,
+          "rotate_deg": 0,
+          "crop_below_fraction": null,
+          "effective_ppi": 300,
+          "native_cap": true,
+          "processing": "",
+          "clip": null,
+          "note": null
+        }
+      ],
+      "art_width_mm": 67.014,
+      "art_height_mm": 84.0,
+      "minimum_art_to_cut_mm": 0.984701691927994,
+      "minimum_feature_mm": 5.25,
+      "clear_border_mm": 1.0,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "processing": null
+    },
+    "base": {
+      "file": "07_base_art.png",
+      "sha256": "db2c01a30122121189a3ea445edf78b55aceb47589b9fe9c04e694d54000a450",
+      "source_px": [
+        1423,
+        246
+      ],
+      "source_bbox_px": [
+        0,
+        0,
+        1423,
+        246
+      ],
+      "resample_px": [
+        1423,
+        246
+      ],
+      "art_width_mm": 275,
+      "art_height_mm": 47.54,
+      "resample": "LANCZOS; exact 300 ppi print size, never upscaled past native pixels",
+      "redrawn": false,
+      "native_cap": true,
+      "effective_ppi": 131,
+      "processing": "slot windows ink-cleared 1.5 mm by builder (in-memory)"
+    }
+  }
+}
