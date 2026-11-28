@@ -586,9 +586,6 @@ def load_tree(tree, spec):
         if len(line.coords) >= 2: connectors.append(line.buffer(cfg['connector_width_mm']/2, quad_segs=12))
         else: connectors.append(Point(line.coords[0]).buffer(cfg['connector_width_mm']/2, quad_segs=12))
     skeleton, _ = mask_polygons(kept, tree.s, cfg['contour_sigma_px'])
-    structure = unary_union([skeleton]+connectors)
-    assert structure.geom_type == 'Polygon', ('skeleton + connectors disconnected', len(structure.geoms))
-    gap_holes = [Polygon(r) for r in structure.interiors]
     outer, openings, filled, dropped = one_piece_body(skeleton, connectors, cfg)
     H, W = tree.H, tree.W; w, h = W*tree.s, H*tree.s
     ys, xs = np.nonzero(tree.opaque)
@@ -604,7 +601,7 @@ def load_tree(tree, spec):
         'art_area_mm2': round(skeleton.area, 1), 'body_area_mm2': round(outer.area, 1)})
     return {'id': spec['id'], 'src_name': '03_blossom_tree.png', 'w': w, 'h': h, 'ink': '',
         'art': skeleton, 'opaque_px': 0, 'tab_x_mm': tree.trunk_base_x(), 'body_override': outer,
-        'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': tree.rgba, 'outer': outer, 'gap_holes': gap_holes, 'connectors': connectors,
+        'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': tree.rgba, 'outer': outer, 'connectors': connectors,
         'processing': tree.processing+f"; V8 one-piece tree: opaque mask opened {cfg['skeleton_open_mm']} mm (twigs and petals under {2*cfg['skeleton_open_mm']:g} mm of ink are not cut), main skeleton + every detached cluster of at least {cfg['fragment_min_mm2']} mm2 kept, {len(connectors)} twig connectors {cfg['connector_width_mm']} mm wide, rim {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, {len(openings)} cut-out openings, narrow gaps printed with sky",
         'split_info': info,
         'raster_extra': {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': tree.bbox, 'source_file': '03_blossom_tree.png',
@@ -620,7 +617,6 @@ def load_door(spec):
     H, W = op.shape
     silhouette, holes = mask_polygons(op, s, cfg['contour_sigma_px'])
     assert silhouette.geom_type == 'Polygon', ('door silhouette disconnected', len(silhouette.geoms))
-    gap_holes = [Polygon(r) for r in silhouette.interiors]
     outer, openings, filled, dropped = one_piece_body(silhouette, [], cfg)
     info = {'lattice_holes_in_source': len(holes), 'openings': len(openings),
         'openings_mm': [{'area_mm2': round(o.area, 1), 'min_width_mm': neck_width(o), 'box_mm': [round(v, 1) for v in o.bounds]} for o in sorted(openings, key=lambda o: -o.area)],
@@ -628,7 +624,7 @@ def load_door(spec):
         'canvas_mm': [round(W*s, 2), round(H*s, 2)], 'art_area_mm2': round(silhouette.area, 1), 'body_area_mm2': round(outer.area, 1)}
     return {'id': spec['id'], 'src_name': '06_lattice_doors.png', 'w': W*s, 'h': H*s, 'ink': '',
         'art': silhouette, 'opaque_px': 0, 'tab_x_mm': W*s/2, 'body_override': outer,
-        'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': a, 'outer': outer, 'gap_holes': gap_holes, 'connectors': [],
+        'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': a, 'outer': outer, 'connectors': [],
         'processing': processing+f"; V8 door piece: silhouette buffered {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, thin features widened to {cfg['min_feature_mm']} mm, {len(openings)} lattice openings cut, the other lattice gaps printed with sky",
         'split_info': info,
         'raster_extra': {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': bbox, 'source_file': '06_lattice_doors.png',

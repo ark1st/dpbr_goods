@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-28-len-origin-v7",
+  "revision": "A3-2026-11-28-len-origin-v8",
   "canvas_mm": [
     420,
     297
@@ -154,28 +154,28 @@
       "git_path": "snapshots/len_pad_bud_guard/output/len_diorama_pad_v1/5T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v7/3T/02_MASTER.ai",
-      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
-      "sha256": "15e8e93cefc61a51d42b6fd74afde21a245093b4ff3d9bbd668f9a591e99ccbe",
-      "git_path": "output/len_diorama_origin_v7/3T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v8/3T/02_MASTER.ai",
+      "commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
+      "sha256": "352db391b797cea129f5a71c4a9d72145a72295751c3ad77d31a1a0a283340f8",
+      "git_path": "output/len_diorama_origin_v8/3T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v7/3T/03_CUT_ONLY.pdf",
-      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
-      "sha256": "2a33006d9307a2728518f22bc42fe7993cc2b638765e4b3d80744fb30cc11376",
-      "git_path": "output/len_diorama_origin_v7/3T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v8/3T/03_CUT_ONLY.pdf",
+      "commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
+      "sha256": "cf1c0890f96fb5947cb942723de3c73ee5ef38b8af780d11504d1de5c1a47c9a",
+      "git_path": "output/len_diorama_origin_v8/3T/03_CUT_ONLY.pdf"
     },
     {
-      "file": "output/len_diorama_origin_v7/5T/02_MASTER.ai",
-      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
-      "sha256": "fdc00fb8b9182d4419440d2aebd8bc2b485580e034e2b0b1cabcb43214637e94",
-      "git_path": "output/len_diorama_origin_v7/5T/02_MASTER.ai"
+      "file": "output/len_diorama_origin_v8/5T/02_MASTER.ai",
+      "commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
+      "sha256": "4a5d06ab57cb4e05fb867f48d905fd45468fdb9264d1024beefd0dcb5c3db8d8",
+      "git_path": "output/len_diorama_origin_v8/5T/02_MASTER.ai"
     },
     {
-      "file": "output/len_diorama_origin_v7/5T/03_CUT_ONLY.pdf",
-      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
-      "sha256": "f49b24778535072d70e550eba49e3d711af0c539347aab0ff3a2f4dc3f7b57fc",
-      "git_path": "output/len_diorama_origin_v7/5T/03_CUT_ONLY.pdf"
+      "file": "output/len_diorama_origin_v8/5T/03_CUT_ONLY.pdf",
+      "commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
+      "sha256": "515cafd25e01c3052e0e60a4b8ec34159c41b34243ca3e139cd5e988c420f41d",
+      "git_path": "output/len_diorama_origin_v8/5T/03_CUT_ONLY.pdf"
     }
   ],
   "cadena_source_part_ids": [
@@ -192,8 +192,8 @@
     "05_len/5T": 12,
     "06_len_pad/3T": 7,
     "06_len_pad/5T": 7,
-    "07_len_origin/3T": 11,
-    "07_len_origin/5T": 11
+    "07_len_origin/3T": 7,
+    "07_len_origin/5T": 7
   },
   "retired_groups": [
     "03_linked_keyrings",
@@ -251,7 +251,7 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6 and V7 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7 and V8 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
     },
     {
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -275,7 +275,7 @@
       "masters_commit": "a2a83cd9d70a317acf075caccf3118374421d028",
       "registration_commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel (but rotated the wrong way by a builder sign error) and Len cropped at the seat line. The owner wants exactly two changes on V4 - the cropping fixed and the tree diagonal like the concept - which V6 applied; V4 was superseded by V5, V6 and then V7 before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel (but rotated the wrong way by a builder sign error) and Len cropped at the seat line. The owner wants exactly two changes on V4 - the cropping fixed and the tree diagonal like the concept - which V6 applied; V4 was superseded by V5, V6, V7 and then V8 before publication. Masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "c91c4a492c6b8d9dd03e148b04d4ab898ec67ff2",
@@ -299,7 +299,19 @@
       "masters_commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
       "registration_commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8 before publication. Masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
+      "revision": "A3-2026-11-28-len-origin-v7",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
+      "registration_commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "len_layout": {
@@ -390,18 +402,25 @@
       "role": "retired ORIGIN V1 assembly preview kept for before/after review only"
     },
     {
-      "file": "output/len_diorama_origin_v7/3T/preview/assembly.png",
-      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
-      "sha256": "9a3990cc282a5f6d583b4152b02dbf208534aa61a4b598047620db7c69c935de",
-      "git_path": "output/len_diorama_origin_v7/3T/preview/assembly.png",
-      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
-    },
-    {
       "file": "output/len_diorama_origin_v6/3T/preview/assembly.png",
       "commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
       "sha256": "c523ffc1c27203637ff9821996a821bd8cd604f62ad369aae89e24c8ff46bc9a",
       "git_path": "output/len_diorama_origin_v6/3T/preview/assembly.png",
       "role": "superseded ORIGIN V6 assembly preview (blossom tree printed on the back panel with Len whole; the owner then asked for the blossoms and the tree as separate assets; replaced by V7 before publication; kept for before/after review only)"
+    },
+    {
+      "file": "output/len_diorama_origin_v8/3T/preview/assembly.png",
+      "commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
+      "sha256": "ee45efc9629b81f7ebdd8addf4199026ed90113bd75ecaea0507473b10501218",
+      "git_path": "output/len_diorama_origin_v8/3T/preview/assembly.png",
+      "role": "current 07_len_origin assembly preview (copied by package_a3_release.py)"
+    },
+    {
+      "file": "output/len_diorama_origin_v7/3T/preview/assembly.png",
+      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
+      "sha256": "9a3990cc282a5f6d583b4152b02dbf208534aa61a4b598047620db7c69c935de",
+      "git_path": "output/len_diorama_origin_v7/3T/preview/assembly.png",
+      "role": "superseded ORIGIN V7 assembly preview (tree split into a wood piece plus six blossom cluster plates on clear stems, doors printed on the back panel; the owner then ruled the tree must be one piece and the doors separate; replaced by V8 before publication; kept for before/after review only)"
     }
   ],
   "optional_groups": [
@@ -539,11 +558,11 @@
     }
   },
   "len_origin_revision": {
-    "product": "Len Diorama ORIGIN V7",
+    "product": "Len Diorama ORIGIN V8",
     "source_pack": "assets/len_orgin",
-    "pieces": 11,
-    "slots": 12,
-    "closed_paths": 23,
+    "pieces": 7,
+    "slots": 8,
+    "closed_paths": 17,
     "base_mm": [
       280,
       71.2235
@@ -552,7 +571,6 @@
       12,
       23,
       31,
-      39,
       47,
       56
     ],
@@ -560,46 +578,38 @@
     "clear_border_per_piece_mm": {
       "backdrop": 1.0,
       "tree": 1.0,
-      "blossom_01": 1.0,
-      "blossom_02": 1.0,
-      "blossom_03": 1.0,
-      "blossom_04": 1.0,
-      "blossom_05": 1.0,
-      "blossom_07": 1.0,
+      "door_left": 1.0,
+      "door_right": 1.0,
       "snake": 1.0,
       "character": 1.0
     },
     "plate_mounts": {
       "backdrop": 3,
       "tree": 1,
-      "blossom_01": 1,
-      "blossom_02": 1,
-      "blossom_03": 1,
-      "blossom_04": 1,
-      "blossom_05": 1,
-      "blossom_07": 1,
+      "door_left": 1,
+      "door_right": 1,
       "snake": 1,
       "character": 1
     },
     "minimum_feature_mm": 2.5,
-    "stem_width_mm": 12.25,
+    "riser_width_mm": 12.25,
+    "opening_min_mm": 2.5,
+    "cut_out_openings": {
+      "tree": 2
+    },
     "minimum_slot_gap_mm_5T": 3.0,
-    "same_row_standing_clearance_mm": 2.58,
+    "same_row_standing_clearance_mm": 135.35,
     "same_row_worst_pair": [
-      "blossom_02",
-      "blossom_07"
+      "door_left",
+      "door_right"
     ],
     "composition": {
       "row_order_front_to_back": [
         "character",
         "snake",
         "tree",
-        "blossom_02",
-        "blossom_05",
-        "blossom_07",
-        "blossom_01",
-        "blossom_03",
-        "blossom_04",
+        "door_left",
+        "door_right",
         "backdrop"
       ],
       "character": {
@@ -619,7 +629,7 @@
           203.51
         ],
         "depth_row_mm": 12,
-        "assembled_height_mm": 171.94,
+        "assembled_height_mm": 87.94,
         "effective_ppi": [
           300
         ],
@@ -629,6 +639,62 @@
         ],
         "minimum_art_to_cut_mm": 0.985,
         "minimum_feature_mm": 5.25,
+        "cut_out_openings": 0,
+        "configured_art_height_mm": 84.0,
+        "crop_below_fraction": null,
+        "whole_figure": true,
+        "kept_art_mm": [
+          67.01,
+          84.0
+        ],
+        "lowest_ink_above_base_top_mm": 1.0,
+        "clear_rim_below_lowest_ink_mm": 1.0,
+        "feet_and_sword_runs_at_the_base_line": [
+          {
+            "scene_x_mm": [
+              147.25,
+              148.94
+            ],
+            "lowest_ink_above_base_top_mm": 3.12
+          },
+          {
+            "scene_x_mm": [
+              154.36,
+              158.76
+            ],
+            "lowest_ink_above_base_top_mm": 1.08
+          },
+          {
+            "scene_x_mm": [
+              178.32,
+              180.86
+            ],
+            "lowest_ink_above_base_top_mm": 1.76
+          }
+        ],
+        "plinth_rise_mm": 0,
+        "tab_cx_scene_mm": [
+          170.0
+        ],
+        "tab_window_body_width_at_base_line_mm": 18.1,
+        "bud_guard_riser": {
+          "33.51": {
+            "riser_width_mm": 12.25,
+            "riser_top_above_slot_mm": 9.12,
+            "worst_section_before_mm": 0.11,
+            "worst_at_above_slot_mm": 0.12,
+            "riser_axis": "narrowest ligament"
+          }
+        },
+        "clear_riser_mm": {
+          "width": 12.25,
+          "top_above_slot_line": 9.12,
+          "axis": "narrowest ligament",
+          "note": "unprinted clear acrylic inside the tab window between the legs; the only support below the hips"
+        },
+        "processing": ""
+      },
+      "seating": {
         "configured_art_height_mm": 84.0,
         "crop_below_fraction": null,
         "whole_figure": true,
@@ -700,7 +766,7 @@
           137.55
         ],
         "depth_row_mm": 23,
-        "assembled_height_mm": 113.95,
+        "assembled_height_mm": 58.95,
         "effective_ppi": [
           300
         ],
@@ -709,30 +775,29 @@
           115.0
         ],
         "minimum_art_to_cut_mm": 0.985,
-        "minimum_feature_mm": 2.75
+        "minimum_feature_mm": 2.75,
+        "cut_out_openings": 0
       },
       "backdrop": {
         "art_mm": [
-          138.6,
+          199.48,
           90.0
         ],
         "plate_cut_bounds_mm": [
-          -31.4,
           -1.0,
-          170.1,
+          -1.0,
+          200.48,
           93.6
         ],
         "art_center_x_mm": 140.0,
         "art_span_x_mm": [
-          70.7,
-          209.3
+          40.26,
+          239.74
         ],
         "depth_row_mm": 56,
-        "assembled_height_mm": 184.0,
+        "assembled_height_mm": 94.0,
         "effective_ppi": [
           261,
-          254,
-          254,
           282
         ],
         "clear_border_mm": 1.0,
@@ -743,29 +808,147 @@
         ],
         "minimum_art_to_cut_mm": 0.986,
         "minimum_feature_mm": null,
+        "cut_out_openings": 0,
         "sky_mm": [
-          138.6,
+          199.48,
           90.0
         ],
         "sky_span_x_mm": [
-          70.7,
-          209.3
+          40.26,
+          239.74
         ],
+        "sky_extension": {
+          "rule": "see pieces.backdrop.extend_sky_mm",
+          "processing": "; sky/wave art extended into the former door zones by mirroring the raster's own edge columns (BORDER_REFLECT_101): 312 px = 30.39 mm left, 313 px = 30.49 mm right, no resampling"
+        },
         "moon_disc": {
           "center_x_mm": 139.28,
           "center_y_above_base_mm": 55.13,
           "diameter_mm": 57.82,
           "offset_from_scene_axis_x140_mm": -0.72,
-          "visible_pct_in_front_view": 16.2,
-          "visible_pct_against_printed_ink_of_front_plates": 44.4
+          "visible_pct_in_front_view": 21.9,
+          "visible_pct_against_printed_ink_of_front_plates": 38.2,
+          "pct_behind_the_tree_plate_body": 61.0,
+          "pct_of_moon_under_the_tree_plate_s_printed_gaps": 11.0,
+          "note": "visible_pct counts moon cells not covered by the PRINTED ink of the plates in front (the tree plate's clear connectors and rim do not count as ink); pct_behind_the_tree_plate_body counts cells covered by the tree plate material (rim, connectors, printed gaps); the moon shows through the tree where the plate is absent (cut-out openings and inlets), and the printed gaps carry the blurred local colour of the moon behind them"
         }
       },
+      "moon_disc": {
+        "center_x_mm": 139.28,
+        "center_y_above_base_mm": 55.13,
+        "diameter_mm": 57.82,
+        "offset_from_scene_axis_x140_mm": -0.72,
+        "visible_pct_in_front_view": 21.9,
+        "visible_pct_against_printed_ink_of_front_plates": 38.2,
+        "pct_behind_the_tree_plate_body": 61.0,
+        "pct_of_moon_under_the_tree_plate_s_printed_gaps": 11.0,
+        "note": "visible_pct counts moon cells not covered by the PRINTED ink of the plates in front (the tree plate's clear connectors and rim do not count as ink); pct_behind_the_tree_plate_body counts cells covered by the tree plate material (rim, connectors, printed gaps); the moon shows through the tree where the plate is absent (cut-out openings and inlets), and the printed gaps carry the blurred local colour of the moon behind them"
+      },
+      "sky_extension": {
+        "rule": "see pieces.backdrop.extend_sky_mm",
+        "processing": "; sky/wave art extended into the former door zones by mirroring the raster's own edge columns (BORDER_REFLECT_101): 312 px = 30.39 mm left, 313 px = 30.49 mm right, no resampling"
+      },
       "tree_piece": {
-        "wood_px": 175124,
-        "wood_smoothed_px": 178816,
-        "wood_kept_px": 122021,
-        "wood_pruned_px": 59902,
-        "dropped_wood_islands_px": 29313,
+        "skeleton_open_mm": 1.5,
+        "opaque_px": 374439,
+        "skeleton_px": 234590,
+        "main_skeleton_px": 128942,
+        "detached_clusters": 22,
+        "detached_cluster_px": 105648,
+        "detached_cluster_areas_mm2": [
+          323.4,
+          58.9,
+          54.1,
+          51.8,
+          50.4,
+          43.6,
+          31.0,
+          26.0,
+          24.8,
+          24.6,
+          22.2,
+          16.5,
+          15.7,
+          13.9,
+          13.2,
+          10.0,
+          9.9,
+          9.7,
+          9.2,
+          9.1,
+          8.5,
+          8.4
+        ],
+        "specks_cut_away_px": 0,
+        "connectors": 22,
+        "connector_width_mm": 2.75,
+        "connector_twig_paths_mm": [
+          36.98,
+          34.49,
+          30.31,
+          30.13,
+          27.29,
+          23.91,
+          17.96,
+          17.33,
+          15.29,
+          14.31,
+          13.6,
+          9.51,
+          8.53,
+          7.64,
+          7.2,
+          6.93,
+          6.67,
+          5.51,
+          3.91,
+          1.96,
+          1.69,
+          1.33
+        ],
+        "connector_twig_path_total_mm": 322.5,
+        "openings": 2,
+        "openings_mm": [
+          {
+            "area_mm2": 138.1,
+            "min_width_mm": 6.75,
+            "box_mm": [
+              29.9,
+              38.1,
+              43.5,
+              58.7
+            ]
+          },
+          {
+            "area_mm2": 72.1,
+            "min_width_mm": 2.75,
+            "box_mm": [
+              45.4,
+              32.5,
+              60.1,
+              42.9
+            ]
+          }
+        ],
+        "enclosed_gaps_of_body": 4,
+        "enclosed_gaps_area_mm2": 194.8,
+        "gaps_too_narrow_to_cut": 4,
+        "gaps_dropped_for_neck": 0,
+        "minimum_feature_mm": 3.25,
+        "outer_perimeter_mm": 564.5,
+        "canvas_mm": [
+          105.78,
+          88.36
+        ],
+        "ink_box_mm": [
+          4.62,
+          7.64,
+          98.4,
+          82.13
+        ],
+        "art_area_mm2": 1817.2,
+        "body_area_mm2": 3478.8,
+        "printed_sky_mm2": 503.4,
         "rotate_deg_clockwise": 35,
         "configured_art_height_mm": 88.0,
         "unrotated_alpha_box_px": [
@@ -779,507 +962,202 @@
           994
         ],
         "native_cap": true,
-        "canvas_mm": [
-          105.78,
-          88.36
-        ],
-        "wood_ink_box_mm": [
-          15.64,
-          17.16,
-          89.33,
-          88.18
-        ],
-        "wood_ink_box_in_scene_mm": {
+        "ink_box_in_scene_mm": {
           "x": [
-            112.7,
-            186.39
+            100.99,
+            194.76
           ],
           "z_above_base_top": [
-            0.81,
-            71.83
+            3.24,
+            77.72
           ]
         },
+        "plate_cut_bounds_mm": [
+          3.99,
+          6.86,
+          98.95,
+          87.97
+        ],
         "plate_cut_bounds_in_scene_mm": {
           "x": [
-            111.73,
-            187.24
+            100.35,
+            195.32
           ],
           "z_above_base_top": [
             -2.6,
-            72.74
+            78.51
           ]
         },
-        "art_area_mm2": 942.3,
-        "body_area_mm2": 1691.9,
-        "clear_rim_and_riser_mm2": 51.8,
+        "openings_in_scene_mm": [
+          {
+            "x": [
+              126.26,
+              139.86
+            ],
+            "z_above_base_top": [
+              26.67,
+              47.27
+            ],
+            "area_mm2": 138.1,
+            "min_width_mm": 6.75
+          },
+          {
+            "x": [
+              141.76,
+              156.46
+            ],
+            "z_above_base_top": [
+              42.47,
+              52.87
+            ],
+            "area_mm2": 72.1,
+            "min_width_mm": 2.75
+          }
+        ],
+        "openings_total_area_mm2": 210.2,
         "minimum_art_to_cut_mm": 0.985,
-        "minimum_feature_mm": 2.75,
+        "minimum_feature_with_openings_mm": 3.25,
         "tab_x_scene_mm": 131.0,
         "depth_row_mm": 31,
-        "visible_pct_in_front_view_not_hidden_by_front_plates": 34.5,
-        "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 2.8,
+        "visible_pct_in_front_view_not_hidden_by_front_plates": 36.1,
+        "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 53.3,
         "bud_guard_riser": {
-          "33.95": {
+          "34.64": {
             "riser_width_mm": 12.25,
-            "riser_top_above_slot_mm": 18.38,
-            "worst_section_before_mm": 1.19,
+            "riser_top_above_slot_mm": 14.88,
+            "worst_section_before_mm": 1.73,
             "worst_at_above_slot_mm": 0.12,
             "riser_axis": "narrowest ligament"
           }
         },
-        "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 tree piece: wood mask (not red-dominant) closed 0.3 mm, opened 0.5 mm (twigs under that ink width pruned), largest component kept; print = original pixels inside the kept skeleton"
+        "printed_sky_fill_mm2": 503.4,
+        "open_area_fraction_of_canopy_envelope": 0.4,
+        "canopy_envelope_mm2": 5799.8
       },
-      "blossom_pieces": [
+      "doors": [
         {
-          "id": "blossom_01",
-          "cluster": "upper-left",
-          "seed_mm": [
-            14,
-            16
-          ],
-          "disc_radius_mm": 14,
+          "id": "door_left",
           "art_mm": [
-            28.8,
-            81.24
+            30.4,
+            85.0
           ],
           "canvas_mm": [
-            28.8,
-            81.24
+            30.4,
+            85.0
           ],
-          "cluster_box_in_scene_mm": {
+          "ink_box_in_scene_mm": {
             "x": [
-              97.22,
-              121.4
+              40.3,
+              70.7
             ],
             "z_above_base_top": [
-              62.04,
-              81.24
+              0.9,
+              85.8
             ]
           },
+          "plate_cut_bounds_mm": [
+            -1.65,
+            -1.65,
+            31.95,
+            88.4
+          ],
           "plate_cut_bounds_in_scene_mm": {
             "x": [
-              96.14,
-              122.4
+              38.65,
+              72.25
             ],
             "z_above_base_top": [
               -2.6,
-              82.21
+              87.45
             ]
           },
-          "tab_x_scene_mm": 107.0,
+          "tab_x_scene_mm": 55.5,
           "depth_row_mm": 47,
-          "stem_mm": {
-            "width": 12.25,
-            "length": 64.04,
-            "top_inside_cluster_mm": 2.0,
-            "printed": false
-          },
-          "ink_mm2": 134.6,
-          "body_area_mm2": 1098.2,
-          "clear_fill_pct_of_cluster_body": 57.1,
-          "minimum_art_to_cut_mm": 0.985,
-          "minimum_feature_mm": 2.75,
-          "visible_pct_in_front_view_not_hidden_by_front_plates": 100.0,
-          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 50.4,
-          "laser_path_segments": null,
-          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 blossom piece 'upper-left': petals inside the seed disc [14, 16] mm r 14 mm (Voronoi among seeds) closed 0.6 mm, islands under 6.0 mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem 12.25 mm from the cluster down to the base line"
-        },
-        {
-          "id": "blossom_02",
-          "cluster": "upper-centre",
-          "seed_mm": [
-            38,
-            12
-          ],
-          "disc_radius_mm": 14,
-          "art_mm": [
-            24.71,
-            86.31
-          ],
-          "canvas_mm": [
-            24.71,
-            86.31
-          ],
-          "cluster_box_in_scene_mm": {
-            "x": [
-              125.73,
-              139.87
-            ],
-            "z_above_base_top": [
-              62.04,
-              86.31
-            ]
-          },
-          "plate_cut_bounds_in_scene_mm": {
-            "x": [
-              124.7,
-              147.0
-            ],
-            "z_above_base_top": [
-              -2.6,
-              87.3
-            ]
-          },
-          "tab_x_scene_mm": 138.0,
-          "depth_row_mm": 39,
-          "stem_mm": {
-            "width": 12.25,
-            "length": 64.13,
-            "top_inside_cluster_mm": 2.0,
-            "printed": false
-          },
-          "ink_mm2": 136.8,
-          "body_area_mm2": 1086.5,
-          "clear_fill_pct_of_cluster_body": 54.6,
-          "minimum_art_to_cut_mm": 0.985,
-          "minimum_feature_mm": 7.25,
-          "visible_pct_in_front_view_not_hidden_by_front_plates": 100.0,
-          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 77.3,
-          "laser_path_segments": null,
-          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 blossom piece 'upper-centre': petals inside the seed disc [38, 12] mm r 14 mm (Voronoi among seeds) closed 0.6 mm, islands under 6.0 mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem 12.25 mm from the cluster down to the base line"
-        },
-        {
-          "id": "blossom_03",
-          "cluster": "upper-centre-right",
-          "seed_mm": [
-            60,
-            19
-          ],
-          "disc_radius_mm": 14,
-          "art_mm": [
-            30.22,
-            81.96
-          ],
-          "canvas_mm": [
-            30.22,
-            81.96
-          ],
-          "cluster_box_in_scene_mm": {
-            "x": [
-              146.14,
-              168.81
-            ],
-            "z_above_base_top": [
-              57.51,
-              81.96
-            ]
-          },
-          "plate_cut_bounds_in_scene_mm": {
-            "x": [
-              144.7,
-              169.78
-            ],
-            "z_above_base_top": [
-              -2.6,
-              82.98
-            ]
-          },
-          "tab_x_scene_mm": 153.7,
-          "depth_row_mm": 47,
-          "stem_mm": {
-            "width": 12.25,
-            "length": 59.51,
-            "top_inside_cluster_mm": 2.0,
-            "printed": false
-          },
-          "ink_mm2": 159.8,
-          "body_area_mm2": 1102.6,
-          "clear_fill_pct_of_cluster_body": 57.2,
-          "minimum_art_to_cut_mm": 0.985,
-          "minimum_feature_mm": 3.25,
-          "visible_pct_in_front_view_not_hidden_by_front_plates": 92.8,
-          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 49.7,
-          "laser_path_segments": null,
-          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 blossom piece 'upper-centre-right': petals inside the seed disc [60, 19] mm r 14 mm (Voronoi among seeds) closed 0.6 mm, islands under 6.0 mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem 12.25 mm from the cluster down to the base line"
-        },
-        {
-          "id": "blossom_04",
-          "cluster": "right",
-          "seed_mm": [
-            86,
-            32
-          ],
-          "disc_radius_mm": 14,
-          "art_mm": [
-            24.0,
-            65.51
-          ],
-          "canvas_mm": [
-            24.0,
-            65.51
-          ],
-          "cluster_box_in_scene_mm": {
-            "x": [
-              173.0,
-              191.22
-            ],
-            "z_above_base_top": [
-              42.13,
-              65.51
-            ]
-          },
-          "plate_cut_bounds_in_scene_mm": {
-            "x": [
-              172.03,
-              194.0
-            ],
-            "z_above_base_top": [
-              -2.6,
-              66.55
-            ]
-          },
-          "tab_x_scene_mm": 185.0,
-          "depth_row_mm": 47,
-          "stem_mm": {
-            "width": 12.25,
-            "length": 48.38,
-            "top_inside_cluster_mm": 2.0,
-            "printed": false
-          },
-          "ink_mm2": 124.9,
-          "body_area_mm2": 845.7,
-          "clear_fill_pct_of_cluster_body": 50.6,
-          "minimum_art_to_cut_mm": 0.985,
-          "minimum_feature_mm": 3.25,
-          "visible_pct_in_front_view_not_hidden_by_front_plates": 1.6,
-          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 43.6,
-          "laser_path_segments": null,
-          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 blossom piece 'right': petals inside the seed disc [86, 32] mm r 14 mm (Voronoi among seeds) closed 0.6 mm, islands under 6.0 mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem 12.25 mm from the cluster down to the base line"
-        },
-        {
-          "id": "blossom_05",
-          "cluster": "centre-right-lower",
-          "seed_mm": [
-            66,
-            44
-          ],
-          "disc_radius_mm": 14,
-          "art_mm": [
-            17.87,
-            55.11
-          ],
-          "canvas_mm": [
-            17.87,
-            55.11
-          ],
-          "cluster_box_in_scene_mm": {
-            "x": [
-              156.74,
-              170.43
-            ],
-            "z_above_base_top": [
-              45.24,
-              55.11
-            ]
-          },
-          "plate_cut_bounds_in_scene_mm": {
-            "x": [
-              152.5,
-              171.42
-            ],
-            "z_above_base_top": [
-              -2.6,
-              56.15
-            ]
-          },
-          "tab_x_scene_mm": 161.5,
-          "depth_row_mm": 39,
-          "stem_mm": {
-            "width": 12.25,
-            "length": 47.24,
-            "top_inside_cluster_mm": 2.0,
-            "printed": false
-          },
-          "ink_mm2": 70.0,
-          "body_area_mm2": 743.0,
-          "clear_fill_pct_of_cluster_body": 57.4,
-          "minimum_art_to_cut_mm": 0.985,
+          "assembled_height_mm": 88.8,
+          "lattice_openings_cut": 0,
+          "lattice_openings_mm": [],
+          "lattice_holes_in_source": 59,
+          "printed_sky_fill_mm2": 29.8,
+          "minimum_art_to_cut_mm": 1.0,
           "minimum_feature_mm": null,
-          "visible_pct_in_front_view_not_hidden_by_front_plates": 0.0,
-          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 78.0,
-          "laser_path_segments": null,
-          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 blossom piece 'centre-right-lower': petals inside the seed disc [66, 44] mm r 14 mm (Voronoi among seeds) closed 0.6 mm, islands under 6.0 mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem 12.25 mm from the cluster down to the base line"
+          "minimum_feature_with_openings_mm": null,
+          "visible_pct_in_front_view_not_hidden_by_front_plates": 100.0,
+          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 100.0
         },
         {
-          "id": "blossom_07",
-          "cluster": "left-middle",
-          "seed_mm": [
-            18,
-            40
-          ],
-          "disc_radius_mm": 14,
+          "id": "door_right",
           "art_mm": [
-            36.71,
-            57.33
+            30.5,
+            85.0
           ],
           "canvas_mm": [
-            36.71,
-            57.33
+            30.5,
+            85.0
           ],
-          "cluster_box_in_scene_mm": {
+          "ink_box_in_scene_mm": {
             "x": [
-              106.76,
-              128.36
+              209.25,
+              239.75
             ],
             "z_above_base_top": [
-              36.0,
-              57.33
+              0.9,
+              85.8
             ]
           },
+          "plate_cut_bounds_mm": [
+            -1.65,
+            -1.65,
+            32.05,
+            88.4
+          ],
           "plate_cut_bounds_in_scene_mm": {
             "x": [
-              101.0,
-              129.3
+              207.6,
+              241.3
             ],
             "z_above_base_top": [
               -2.6,
-              58.3
+              87.45
             ]
           },
-          "tab_x_scene_mm": 110.0,
-          "depth_row_mm": 39,
-          "stem_mm": {
-            "width": 12.25,
-            "length": 42.0,
-            "top_inside_cluster_mm": 2.0,
-            "printed": false
-          },
-          "ink_mm2": 163.9,
-          "body_area_mm2": 868.2,
-          "clear_fill_pct_of_cluster_body": 53.7,
-          "minimum_art_to_cut_mm": 0.985,
-          "minimum_feature_mm": 3.25,
-          "visible_pct_in_front_view_not_hidden_by_front_plates": 9.9,
-          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 29.2,
-          "laser_path_segments": null,
-          "processing": "rotated 35 deg clockwise at native resolution (premultiplied alpha, cubic); alpha box re-cropped; 20 cubic-ringing specks <= 6 px removed; opaque px 454677 -> 450263; V7 blossom piece 'left-middle': petals inside the seed disc [18, 40] mm r 14 mm (Voronoi among seeds) closed 0.6 mm, islands under 6.0 mm2 dropped; print = every opaque pixel inside the cluster contour; clear stem 12.25 mm from the cluster down to the base line"
+          "tab_x_scene_mm": 224.5,
+          "depth_row_mm": 47,
+          "assembled_height_mm": 88.8,
+          "lattice_openings_cut": 0,
+          "lattice_openings_mm": [],
+          "lattice_holes_in_source": 56,
+          "printed_sky_fill_mm2": 30.4,
+          "minimum_art_to_cut_mm": 1.0,
+          "minimum_feature_mm": null,
+          "minimum_feature_with_openings_mm": null,
+          "visible_pct_in_front_view_not_hidden_by_front_plates": 100.0,
+          "visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates": 100.0
         }
       ],
-      "blossom_front_view_gaps_mm": [
-        {
-          "pair": [
-            "blossom_01",
-            "blossom_07"
-          ],
-          "front_view_gap_mm": 0.0
-        },
-        {
-          "pair": [
-            "blossom_02",
-            "blossom_03"
-          ],
-          "front_view_gap_mm": 0.0
-        },
-        {
-          "pair": [
-            "blossom_03",
-            "blossom_05"
-          ],
-          "front_view_gap_mm": 0.0
-        },
-        {
-          "pair": [
-            "blossom_02",
-            "blossom_07"
-          ],
-          "front_view_gap_mm": 2.58
-        },
-        {
-          "pair": [
-            "blossom_04",
-            "blossom_05"
-          ],
-          "front_view_gap_mm": 3.18
-        },
-        {
-          "pair": [
-            "blossom_01",
-            "blossom_02"
-          ],
-          "front_view_gap_mm": 3.63
-        },
-        {
-          "pair": [
-            "blossom_02",
-            "blossom_05"
-          ],
-          "front_view_gap_mm": 5.5
-        },
-        {
-          "pair": [
-            "blossom_03",
-            "blossom_04"
-          ],
-          "front_view_gap_mm": 7.95
-        },
-        {
-          "pair": [
-            "blossom_03",
-            "blossom_07"
-          ],
-          "front_view_gap_mm": 17.56
-        },
-        {
-          "pair": [
-            "blossom_01",
-            "blossom_03"
-          ],
-          "front_view_gap_mm": 23.12
-        },
-        {
-          "pair": [
-            "blossom_05",
-            "blossom_07"
-          ],
-          "front_view_gap_mm": 26.46
-        },
-        {
-          "pair": [
-            "blossom_02",
-            "blossom_04"
-          ],
-          "front_view_gap_mm": 27.9
-        }
-      ],
-      "split": {
-        "colour_rule": "opaque = alpha > 128; petal = r - max(g, b) >= 45 and r >= 110 (pink/magenta petals); wood = every other opaque pixel (dark trunk, branches, mauve highlights). Pixels are classified on the native-resolution 35 deg clockwise rotation that V6 already used (premultiplied alpha, cubic).",
-        "wood_rule": "wood mask closed 0.3 mm (anti-aliasing gaps), opened 0.5 mm (minimum feature: twigs thinner than 0.5 mm of ink are pruned so no cut feature is below 2.5 mm after the rim), largest connected component kept; the cut silhouette is its contour smoothed along the contour (sigma 2.5 px = 0.22 mm, so the pixel staircase cannot trip the segment gate), buffered 1.0 mm and closed 0.6 mm. The print is the original pixels inside the kept skeleton mask.",
-        "cluster_rule": "petal mask closed/opened 0.3 mm; each cluster = petals inside its seed disc (Voronoi among seeds) that lie at least 2.5 mm (half the 5 mm cluster gap) away from every other seed's cell, closed 0.6 mm so touching flowers join, largest component kept, islands dropped; cut = outer contour (enclosed holes filled clear) smoothed, buffered 1.0 mm, closed 0.6 mm. Print = every original opaque pixel inside that contour (petals plus the twigs between them). Petals outside the discs or inside the 5 mm gaps are not cut, so neighbouring plates show at least 2 mm of sky.",
-        "min_feature_rule": "after the rim every neck of every new piece must measure at least 2.5 mm (erosion test), the rim 1.0 mm +/- 0.02, the stem 12.25 mm >= the 12 mm load-path floor; every cluster must pass laser_paths.audit_path (segments <= max(100, 1.5 x perimeter mm)).",
-        "dropped_petals": "the lower-right lobe (image x 55-95, y 55-96 mm = scene x 152-192, z 0-34) sits behind Len's legs at the base line; the small centre-lower-left cluster (scene x 135-153, z 41-59, about 75 mm2 of ink) sits behind the trunk fork and is not cut either; petals inside the 5 mm gaps between clusters are not cut. The sky and moon show through those gaps."
+      "rules": {
+        "skeleton_rule": "opaque = alpha > 128 on the native-resolution 35 deg clockwise rotation. The cut skeleton is the opaque mask opened with a 1.5 mm radius: twigs and petals thinner than 3 mm of ink are not cut, so the gaps between branch/cluster groups are real openings (inlets and enclosed holes) through which the sky and moon show. Main component plus every detached component of at least 2 mm2 is kept; smaller specks are cut away.",
+        "connector_rule": "each detached component is attached to the main skeleton along its own twig: the geodesic path inside the opaque mask from the fragment to the main component is buffered to 2.75 mm (the twig is printed inside the clear connector). Measured minimum feature of every connector >= 2.5 mm. The twig path is Gaussian-smoothed (sigma 2 px) and simplified (0.15 mm) before buffering so the laser path stays within the segment gate.",
+        "opening_rule": "the cut body is skeleton + connectors, buffered 1.0 mm and closed 1.25 mm (sky slits under 2.5 mm filled). Enclosed holes at least 2.5 mm wide (erosion test) are kept as cut-out openings unless they would leave a neck under 2.5 mm or cross the riser; every other enclosed gap stays solid and is PRINTED with the back panel's blurred local colour (no clear acrylic fill inside the piece apart from the 1.0 mm rim, the connectors and the riser).",
+        "print_rule": "the print is the original RGBA pixels inside the body 0.6 mm from every cut edge and opening (riser left clear); every enclosed gap - everything inside the piece that is not printed art, not the 1.0 mm clear band along a cut edge and not a clear connector halo - is printed with the back panel's tone sampled at the same scene position (extended sky raster Gaussian-blurred over 15 mm so waves and stars average into the gradient, plus the moon/cloud layer as one uniform pale colour through its own blurred mask), so the gaps read as the sky or moon behind them with no wave line, cloud edge or crater baked into the plate; the asset's semi-transparent fringes print only inside those gaps; nothing prints outside the body, so twigs and petals the cut skeleton dropped never print inside an opening and the outer rim stays clear.",
+        "trunk_rule": "the tab axis is the lowest wood pixel of the rotated tree (wood = opaque pixel that is not red-dominant: r - max(g, b) < 45 or r < 110), i.e. the trunk base, exactly the V7 tab position (scene x ~131).",
+        "doors": "each door island (alpha silhouette at 85 mm) buffered 1.0 mm, closed 1.25 mm, thin features widened to the 2.5 mm minimum and re-closed; enclosed lattice holes at least 2.5 mm wide after the rim are cut-out openings, every other lattice gap is printed with the back panel's blurred local colour. One 18 mm tab under the art centre, row 47."
       },
       "front_view_coverage_pct": {
         "backdrop": {
-          "total_pct": 39.9,
-          "top30_pct": 21.2
+          "total_pct": 66.4,
+          "top30_pct": 40.2
         },
         "tree": {
-          "total_pct": 64.0,
-          "top30_pct": 1.5
+          "total_pct": 64.9,
+          "top30_pct": 13.8
         },
-        "blossom_01": {
-          "total_pct": 59.3,
-          "top30_pct": 0.8
+        "door_left": {
+          "total_pct": 0.0,
+          "top30_pct": 0.0
         },
-        "blossom_02": {
-          "total_pct": 56.5,
-          "top30_pct": 6.1
-        },
-        "blossom_03": {
-          "total_pct": 67.4,
-          "top30_pct": 14.0
-        },
-        "blossom_04": {
-          "total_pct": 84.2,
-          "top30_pct": 95.9
-        },
-        "blossom_05": {
-          "total_pct": 92.6,
-          "top30_pct": 100.0
-        },
-        "blossom_07": {
-          "total_pct": 91.5,
-          "top30_pct": 79.3
+        "door_right": {
+          "total_pct": 0.0,
+          "top30_pct": 0.0
         },
         "snake": {
           "total_pct": 0.1,
@@ -1294,16 +1172,16 @@
     },
     "builder": "scripts/build_len_diorama_origin.py",
     "config": "configs/len_diorama_origin.json",
-    "source_dir": "output/len_diorama_origin_v7",
-    "preview": "output/len_diorama_origin_v7/3T/preview/assembly.png",
+    "source_dir": "output/len_diorama_origin_v8",
+    "preview": "output/len_diorama_origin_v8/3T/preview/assembly.png",
     "supersedes": {
-      "commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
-      "registration_commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
-      "product": "Len Diorama ORIGIN V6",
-      "pieces": 4,
+      "commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
+      "registration_commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
+      "product": "Len Diorama ORIGIN V7",
+      "pieces": 11,
       "clear_border_mm": 1.0,
-      "reason": "Owner decision on the tree (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"): the blossoms and the tree become separate assets. V6's printed tree (one flat picture on the back panel) and V5's one clear-webbed plate are both withdrawn."
+      "reason": "Owner correction (\"벚꽃-나무는 하나여야지\": the blossom tree must be ONE piece; \"저 문\": the separate assets are the doors): the V7 split (wood piece plus six blossom cluster plates on clear stems) is withdrawn and the doors leave the back panel."
     },
-    "reason": "V7 = V6 with the tree converted to separate cut assets: a TREE piece (dark trunk and branches split from 03_blossom_tree.png by colour, 88 mm art rotated 35 deg clockwise, twigs under 0.5 mm pruned, 1.0 mm rim, one tab at row 31 behind the serpent) and six BLOSSOM pieces (pink petal clusters, 5 mm sky gaps, 1.0 mm rim, no webbing between clusters, each on a 12.25 mm clear stem behind the tree on rows 39 and 47). Whole Len, serpent, moon, doors, base, layout and 1.0 mm rims stay V6 exactly."
+    "reason": "V8 = V7 with exactly two changes: (1) the TREE is ONE cut piece (trunk, branches and every blossom cluster printed on one plate, 88 mm art rotated 35 deg clockwise like V7, tab at row 31): the opaque mask opened 1.0 mm is the cut skeleton, so the gaps between branch/cluster groups are real cut-out openings (3 enclosed openings, sky and moon show through); every detached cluster is attached along its own twig by a 2.75 mm clear connector; narrow gaps are printed with a flat night-sky colour instead of clear acrylic; minimum feature 2.75 mm. (2) The DOORS are two separate cut pieces (85 mm lattice doorways, 1.0 mm rim, one 18 mm tab each at row 47) at their V2-V7 printed positions; the back panel keeps sky, moon, clouds and waves with the sky/wave raster mirrored into the former door zones. Whole Len, serpent, moon, base, slots, rims 1.0 mm and the layout stay V7/V6 exactly: 7 pieces, 8 slots, 18 closed paths, rows 12/23/31/47/56."
   }
 }

@@ -16,19 +16,16 @@ def main():
     write(BASE/'manifest.json',json.dumps(m,ensure_ascii=False,indent=2)+'\n')
     rev=cfg['len_origin_revision'];origin_parts=rev['pieces'];origin_slots=rev['slots']
     origin_preview=rev['preview'];total_with_optional=56+7+origin_parts
-    comp=rev['composition'];ch=comp['character'];sn=comp['snake'];tr=comp['tree_piece'];bl=comp['blossom_pieces'];bd=comp['backdrop'];seat=ch;feet=seat['feet_and_sword_runs_at_the_base_line'];riser=seat['clear_riser_mm']
-    tb=tr['wood_ink_box_in_scene_mm'];triser=next(iter(tr['bud_guard_riser'].values()))
-    blossom_text='; '.join(f"{b['cluster']} x {b['cluster_box_in_scene_mm']['x'][0]:.0f}–{b['cluster_box_in_scene_mm']['x'][1]:.0f}·z {b['cluster_box_in_scene_mm']['z_above_base_top'][0]:.0f}–{b['cluster_box_in_scene_mm']['z_above_base_top'][1]:.0f}(돌기 x {b['tab_x_scene_mm']:.0f}, 행 {b['depth_row_mm']}, 줄기 {b['stem_mm']['length']:.0f}mm)" for b in bl)
-    origin_composition=(f"{rev['product'].split()[-1]} 구도(V6에서 나무만 별도 에셋으로 분리): 렌 {ch['configured_art_height_mm']:.0f}mm 그림({ch['effective_ppi'][0]}ppi)을 V4 위치(x={ch['art_center_x_mm']}mm, 앞행 {ch['depth_row_mm']})에서 잘라내지 않고 통째로 보여줍니다. "
+    comp=rev['composition'];ch=comp['character'];sn=comp['snake'];tr=comp['tree_piece'];bd=comp['backdrop'];dl,dr=comp['doors'];seat=comp['seating'];feet=seat['feet_and_sword_runs_at_the_base_line'];riser=seat['clear_riser_mm']
+    tb=tr['ink_box_in_scene_mm'];triser=next(iter(tr['bud_guard_riser'].values()));md=bd['moon_disc']
+    origin_composition=(f"{rev['product'].split()[-1]} 구도(V7에서 나무를 한 조각으로, 문을 별도 판으로): 렌 {ch['configured_art_height_mm']:.0f}mm 그림({ch['effective_ppi'][0]}ppi)을 V4 위치(x={ch['art_center_x_mm']}mm, 앞행 {ch['depth_row_mm']})에서 잘라내지 않고 통째로 보여줍니다. "
         f"긴 쪽 부츠 바닥이 받침 윗면 {feet[1]['lowest_ink_above_base_top_mm']:.1f}mm(투명 테두리 1.0mm), 다른 부츠가 {feet[2]['lowest_ink_above_base_top_mm']:.1f}mm, 칼끝이 {feet[0]['lowest_ink_above_base_top_mm']:.1f}mm에 있어 다리가 받침까지 내려온 앉은 자세입니다(V6 그대로). "
         f"발밑 돌기 창에서 실루엣이 12mm 하중경로 하한보다 좁으므로 bud-guard가 다리 사이(홈 중심 x={seat['tab_cx_scene_mm'][0]:.0f}mm)에 폭 {riser['width']}mm 투명 리서를 홈 선 위 {riser['top_above_slot_line']}mm까지 세웠습니다(인쇄 없음, 엉덩이 아래 유일한 지지). "
         f"뱀 {sn['art_mm'][1]:.0f}mm는 V4 위치(x={sn['art_center_x_mm']}mm, 뒷행 {sn['depth_row_mm']}) 그대로입니다. "
-        f"매화는 뒷판에 인쇄하지 않고 소유자 결정(\"벚꽃하고 나무는 별도 에셋으로 분리해줘\")대로 두 종류의 별도 판으로 나눴습니다. "
-        f"(1) 나무 판: 03_blossom_tree.png의 어두운 줄기·가지(꽃잎을 색으로 분리, 0.5mm 미만 가지 제거해 테두리 포함 최소 폭 {tr['minimum_feature_mm']}mm)를 {tr['configured_art_height_mm']:.0f}mm 그림(원본 {tr['embedded_ppi']}ppi)으로 원본 해상도에서 시계방향 {tr['rotate_deg_clockwise']}° 돌려 통째로 세우는 판, x {tb['x'][0]:.0f}–{tb['x'][1]:.0f}mm·받침 위 {tb['z_above_base_top'][0]:.0f}–{tb['z_above_base_top'][1]:.0f}mm, 줄기 밑동 x≈{tr['tab_x_scene_mm']:.0f}mm 뒷행 {tr['depth_row_mm']}에 18mm 돌기, 좁은 뿌리 아래 {triser['riser_width_mm']}mm 투명 리서(홈 선 위 {triser['riser_top_above_slot_mm']}mm), 최소 테두리 {tr['minimum_art_to_cut_mm']}mm. "
-        f"(2) 벚꽃 판 {len(bl)}개: 분홍 꽃송이를 가지 끝 주변의 묶음(클러스터)으로 묶은 별도 판, 테두리 1.0mm, 클러스터 사이 5mm 하늘 간격(연결 없음), 각 판은 {rev['stem_width_mm']}mm 투명 줄기와 18mm 돌기로 받침 행 39·47에 서서 나무 판 뒤에서 가지가 앞을 가로지립니다: {blossom_text}; 최소 폭 {min(b['minimum_feature_mm'] for b in bl if b['minimum_feature_mm'])}–{max(b['minimum_feature_mm'] for b in bl if b['minimum_feature_mm'])}mm. "
-        f"각 클러스터 판 면적의 {min(b['clear_fill_pct_of_cluster_body'] for b in bl):.0f}–{max(b['clear_fill_pct_of_cluster_body'] for b in bl):.0f}%는 투명 아크릴(테두리와 꽃송이 사이 틈)이고 클러스터끼리는 맞닿지 않습니다. "
-        f"달(지름 {bd['moon_disc']['diameter_mm']:.0f}mm)은 앞 판의 인쇄 부분에 가려지지 않은 비율 {bd['moon_disc']['visible_pct_against_printed_ink_of_front_plates']}%(V6 인쇄는 앞 판 기준 {61.6}%). "
-        f"나무 아래쪽 오른쪽 꽃송이(렌 다리 뒤)와 줄기 갈림처 뒤 작은 클러스터는 잘라내지 않았고 그 사이로 하늘·달이 보입니다.")
+        f"매화 나무는 소유자 결정(\"벚꽃-나무는 하나여야지\")대로 한 조각입니다: 03_blossom_tree.png 전체(줄기·가지·꽃송이)를 {tr['configured_art_height_mm']:.0f}mm 그림(원본 {tr['embedded_ppi']}ppi)으로 원본 해상도에서 시계방향 {tr['rotate_deg_clockwise']}° 돌려 통째로 세우는 판, x {tb['x'][0]:.0f}–{tb['x'][1]:.0f}mm·받침 위 {tb['z_above_base_top'][0]:.0f}–{tb['z_above_base_top'][1]:.0f}mm, 줄기 밑동 x≈{tr['tab_x_scene_mm']:.0f}mm 뒷행 {tr['depth_row_mm']}에 18mm 돌기, 좁은 뿌리 아래 {triser['riser_width_mm']}mm 투명 리서(홈 선 위 {triser['riser_top_above_slot_mm']}mm), 최소 테두리 {tr['minimum_art_to_cut_mm']}mm. "
+        f"불투명 픽셀을 1.5mm 열기한 것이 절단 골격이라 가지·꽃송이 사이는 실제 칼선 구멍({len(tr['openings_in_scene_mm'])}개, 하늘·달이 보임)이 되고, 골격에서 떨어진 꽃송이 {tr['detached_clusters']}개는 각자의 가지를 따라 {tr['connector_width_mm']}mm 폭 투명 연결재(가지 인쇄)로 붙였으며, 칼선으로 못 자르는 좁은 틈({tr['printed_sky_fill_mm2']:.0f}mm²)은 투명 아크릴 대신 밤하늘색으로 인쇄했습니다. 최소 폭 {tr['minimum_feature_mm']}mm, 구멍 가장자리 최소 폭 {tr['minimum_feature_with_openings_mm']}mm. "
+        f"문은 소유자가 별도 에셋으로 원한 것(\"저 문\")이라 06_lattice_doors.png의 격자 문 좌우를 각각 {dl['art_mm'][0]:.1f}×{dl['art_mm'][1]:.0f}mm / {dr['art_mm'][0]:.1f}×{dr['art_mm'][1]:.0f}mm 판(투명 테두리 1.0mm, 18mm 돌기, 행 {dl['depth_row_mm']})으로 V2–V7에서 인쇄했던 자리(x {dl['ink_box_in_scene_mm']['x'][0]:.0f}–{dl['ink_box_in_scene_mm']['x'][1]:.0f}mm, x {dr['ink_box_in_scene_mm']['x'][0]:.0f}–{dr['ink_box_in_scene_mm']['x'][1]:.0f}mm)에 뒷판 앞에 세웠습니다. 뒷판에는 창을 인쇄하지 않고 하늘·파도 그림을 그 자리(좌 30.4mm·우 30.5mm)로 거울 반사로 이어 붙였고 격자 구멍은 테두리 후 2.5mm 미만이라 자르지 않고 밤하늘색으로 인쇄했습니다(최소 폭 {dl['minimum_feature_mm'] or '3.75+'}mm). "
+        f"달(지름 {md['diameter_mm']:.0f}mm)은 나무 판 바디에 가려지는 비율 {md['pct_behind_the_tree_plate_body']}%, 앞 판 인쇄에 가려지지 않은 비율 {md['visible_pct_against_printed_ink_of_front_plates']}%입니다.")
     common=f'''**현재 선택: 3T. A3 가로 420×297mm, 실제 크기 100%, 자동 맞춤 해제.**
 
 | 구분 | 시트 | 구성 |
@@ -66,7 +63,7 @@ ZIP에는 인쇄 PNG·백색 PNG·재단 PDF/SVG·시안·치수 기록이 있�
 카데나는 제공 원본의 약3.2mm 홈·3mm 돌기, 좌우 홈 약0.195mm 높이 차이를 유지했습니다. 5T용이 아닙니다.
 Len 공통 받침275×60mm와8개 홈은 유지했습니다. 일반 렌76mm, 도트 렌50mm이며 같은 캐릭터 홈에 교체합니다. 도트 발 아래 돌기는18mm 폭·3T 삽입깊이2.6mm이며, 칼 때문에 왼쪽으로 치우쳤던 위치를 발 중심으로 옮겼습니다.
 PAD 받침은280×71.2235mm이며 자체 8개 홈을 사용합니다. 기존 Len과 치수가 다릅니다.
-ORIGIN 받침도280×71.2235mm이며 홈{origin_slots}개, 투명 테두리{rev['clear_border_mm']:.1f}mm(모든 판 동일)입니다. 뒤→앞: 하늘·창문 좌우·달구름을 인쇄한 뒷판 1장 → 벚꽃 판(행 47, 12.25mm 투명 줄기) → 벚꽃 판(행 39) → 나무 판(줄기·가지, 행 31) → 뱀 → 받침에 앉은 렌(그림 전체).
+ORIGIN 받침도280×71.2235mm이며 홈{origin_slots}개, 투명 테두리{rev['clear_border_mm']:.1f}mm(모든 판 동일)입니다. 뒤→앞: 하늘(창 자리까지 이어 붙임)·달구름을 인쇄한 뒷판 1장(행 56) → 격자 문 판 좌·우(행 47) → 한 조각 나무 판(줄기·가지·꽃송이, 행 31) → 뱀(행 23) → 받침에 앉은 렌(그림 전체, 행 12).
 {origin_composition}
 실물 재단·끼움·커프·인쇄 정합은 아직 검증하지 않았습니다.
 
@@ -91,7 +88,7 @@ ORIGIN 받침도280×71.2235mm이며 홈{origin_slots}개, 투명 테두리{rev[
             text+='\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠6개, 홈8개. 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 별밤·산맥 배경 → 매화 좌·우 → 용·캐릭터 → 분홍 구름.\n\n![조립 참고](assembly.png)\n'
         if cat=='07_len_origin':
             shutil.copy2(source_path(origin_preview),BASE/cat/'assembly.png')
-            text+=f'\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠{origin_parts-1}개, 홈{origin_slots}개, 투명 테두리{rev["clear_border_mm"]:.1f}mm(모든 판 동일). 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 하늘·창문 좌우·달구름을 인쇄한 뒷판 1장 → 벚꽃 판 3장(행 47, 투명 줄기) → 벚꽃 판 3장(행 39) → 나무 판(줄기·가지만, 행 31, 시안처럼 왼쪽 아래에서 오른쪽 위로) → 뱀 → 받침에 앉은 렌(그림 전체, 다리·부츠·칼 포함). 클러스터 사이로 하늘·달이 보입니다. 조립 시안은 투명 아크릴을 투명하게 그립니다.\n\n{origin_composition}\n\n![조립 참고](assembly.png)\n'
+            text+=f'\n별도 세트입니다. 현재 확정2장에 자동 추가하지 않습니다. 받침280×71.2235mm, 파츠{origin_parts-1}개, 홈{origin_slots}개, 투명 테두리{rev["clear_border_mm"]:.1f}mm(모든 판 동일). 그림·홈·돌기는 원본 크기이며 시험편 없음.\n\n뒤→앞: 하늘(창 자리까지 이어 붙임)·달구름을 인쇄한 뒷판 1장 → 격자 문 판 좌·우(행 47) → 한 조각 나무 판(줄기·가지·꽃송이, 행 31, 시안처럼 왼쪽 아래에서 오른쪽 위로, 가지 사이 구멍으로 하늘·달이 보임) → 뱀 → 받침에 앉은 렌(그림 전체, 다리·부츠·칼 포함). 조립 시안은 투명 아크릴을 투명하게 그립니다.\n\n{origin_composition}\n\n![조립 참고](assembly.png)\n'
         write(BASE/cat/'README.md',f'# {title}\n\n'+text+'\n실물 검증 전입니다. [전체 출력 안내](../README.md)\n')
     included={'01_PRINT_300ppi.png','03_CUT_ONLY.pdf','03_CUT_ONLY.svg','04_WHITE_INK_MASK_300ppi.png','preview.png','cut_detail.png','README.md','validation.json'}
     for group,pages in m['groups'].items():

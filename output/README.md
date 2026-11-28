@@ -7,7 +7,7 @@
 
 현재 확정분 **A3 최소2장 / 56조각**. 단팽이·단바 로고 키링 제외. 도트 렌50mm·발 아래 돌기 수정. [전체 안내·두께별 대안·검사](a3_release)
 
-별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 11조각 / A3 1장](a3_release/07_len_origin/3T/sheet_01). 이 둘까지 출력하면 총4장·74조각입니다.
+별도 선택안: [새 Len PAD · 7조각 / A3 1장](a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 7조각 / A3 1장](a3_release/07_len_origin/3T/sheet_01). 이 둘까지 출력하면 총4장·70조각입니다.
 
 [이전 파일·원본 백업(raw)](https://github.com/ark1st/dpbr_goods/tree/raw) · [main 소스](https://github.com/ark1st/dpbr_goods/tree/main)
 

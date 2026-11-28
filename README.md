@@ -15,8 +15,8 @@
 Python으로 실제 칼선의 회전·이동·충돌·3mm 간격을 검사했습니다. 구멍을 제외한 조각 면적이 A3 한 장보다 크고 두 장 배치가 성립하므로 최소 장수는2장입니다. 상세 수치는 출력의 `A3_VALIDATION.json`에 있습니다.
 Len은 공통 받침·배경 한 세트에 일반·DOT 캐릭터를 교체합니다. 일반76mm, 도트50mm로 수정했으며 도트 돌기를 발 아래로 옮겼습니다. 공통 받침275×60mm·18.8×3mm 홈을 유지하고, 도트 돌기는18mm 폭·2.6mm 깊이로 새로 만들었습니다.
 
-별도 선택안: [새 Len PAD · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 11조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/07_len_origin/3T/sheet_01)입니다.
-이 둘까지 출력하면4장·74조각입니다. Len PAD의 받침은280×71.2235mm, ORIGIN의 받침도280×71.2235mm(홈12개)로 기존 Len과 치수가 다릅니다. ORIGIN V7는 소유자 결정("벚꽃하고 나무는 별도 에셋으로 분리해줘")대로 매화를 뒷판에 인쇄하지 않고 나무 판(어두운 줄기·가지만, 0.5mm 미만 가지 제거, 시안처럼 왼쪽 아래에서 오른쪽 위로 35° 기울여 뱀 등 뒤에 세움)과 벚꽃 판 6개(분홍 꽃송이 클러스터, 클러스터 사이 하늘 간격, 각 판 12.25mm 투명 줄기로 나무 판 뒤에 세움)로 분리한 세트입니다. 렌은 V6처럼 잘라내지 않고 통째로 받침에 앉고 뱀·달·창·받침·테두리 1.0mm는 V6 그대로입니다(V3·V4·V5·V6는 출시 전 대체).
+별도 선택안: [새 Len PAD · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/06_len_pad/3T/sheet_01)과 [Len ORIGIN · 7조각 / A3 1장](https://github.com/ark1st/dpbr_goods/tree/output_len/output/a3_release/07_len_origin/3T/sheet_01)입니다.
+이 둘까지 출력하면4장·70조각입니다. Len PAD의 받침은280×71.2235mm, ORIGIN의 받침도280×71.2235mm(홈8개)로 기존 Len과 치수가 다릅니다. ORIGIN V8는 소유자의 바로잡음("벚꽃-나무는 하나여야지", 별도 에셋은 "저 문")대로 매화 나무 전체(줄기·가지·꽃송이)를 한 조각 판에 인쇄하고 가지·꽃송이 사이는 실제 칼선 구멍으로 하늘·달이 보이게 한 세트입니다(떨어진 꽃송이는 2.75mm 투명 연결재로 붙이고, 좁은 틈은 뒷판 색으로 인쇄). V2–V7에서 뒷판에 인쇄하던 격자 문 좌우는 1.0mm 테두리의 별도 판(행 47)으로 뒷판 앞에 세우고, 뒷판은 하늘·파도를 그 자리로 이어 붙였습니다. 렌은 V6처럼 잘라내지 않고 통째로 받침에 앉고 뱀·달·받침·테두리 1.0mm는 V6 그대로입니다(V3·V4·V5·V7은 출시 전 대체).
 [전체 출력 안내·시안·ZIP](https://github.com/ark1st/dpbr_goods/tree/output_len/output) · [보관본](https://github.com/ark1st/dpbr_goods/tree/raw)
 5T는 별도 대안입니다. 현재3T와 둘 다 출력하지 않습니다. 카데나는5T용이 아닙니다.
 
