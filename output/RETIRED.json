@@ -113,7 +113,7 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4 and V6 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6 and V7 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
     },
     {
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -150,6 +150,18 @@
       "registration_commit": "c91c4a492c6b8d9dd03e148b04d4ab898ec67ff2",
       "status": "superseded_before_publication",
       "reason": "Len ORIGIN V5 masters (commit 7459c7f, release registration c91c4a4; pushed to after_days/sleeg only, never to main/output_len): Len whole seated on a 70 mm serpent's coil and the blossom tree back as a separate diagonal cut plate. The owner rejected the restructure (\"이거 아니야 v4에서 잘림 문제만 해결하고 나무를 예시 이미지처럼 대각선 배치 해달라고\"), so V5 was superseded by V6 (V4 + only the two requested changes) before publication. Masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
+      "revision": "A3-2026-11-28-len-origin-v6",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
+      "registration_commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "retired_package_files": [
