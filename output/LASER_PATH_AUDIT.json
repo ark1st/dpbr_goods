@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-28-len-origin-v9",
+  "revision": "A3-2026-11-28-len-origin-v10",
   "mode": "all-formats",
   "checked_files": 40,
   "errors": [],
@@ -14125,12 +14125,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.010802628530412,
-      "segments": 1360,
-      "curves": 1245,
+      "minimum_piece_gap_mm": 3.011520617634107,
+      "segments": 1782,
+      "curves": 1662,
       "paths": [
         {
           "path": "0:0",
@@ -14224,55 +14224,64 @@
         },
         {
           "path": "10:0",
-          "segments": 46,
-          "curves": 31,
-          "perimeter_mm": 255.24271858587704,
-          "minimum_segment_mm": 0.5140953525197308,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 387.21452794027203,
+          "minimum_segment_mm": 0.06219760581298953,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 255.03692788897314,
-          "minimum_segment_mm": 0.5656813952615527,
+          "segments": 46,
+          "curves": 31,
+          "perimeter_mm": 255.24273235859948,
+          "minimum_segment_mm": 0.5140958073409879,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 387.2146607497391,
-          "minimum_segment_mm": 0.06219283348706686,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.98211300448364,
+          "minimum_segment_mm": 0.32551206842179253,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 298,
-          "curves": 286,
-          "perimeter_mm": 256.4141004507684,
-          "minimum_segment_mm": 0.16058060299642943,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.59962312318034,
+          "minimum_segment_mm": 0.41338164559104634,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830459064719616,
-          "minimum_segment_mm": 0.748452234877151,
+          "segments": 645,
+          "curves": 630,
+          "perimeter_mm": 779.0682622147951,
+          "minimum_segment_mm": 0.23207496662868016,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
-          "segments": 322,
-          "curves": 312,
-          "perimeter_mm": 359.99195808012934,
-          "minimum_segment_mm": 0.3144025454751771,
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 255.03693092922336,
+          "minimum_segment_mm": 0.5656965267299682,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 298,
+          "curves": 286,
+          "perimeter_mm": 256.4140904033947,
+          "minimum_segment_mm": 0.16056981678631685,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -14280,7 +14289,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/3T/sheet_01/02_MASTER.ai",
-      "sha256": "7d719e3c46cb5aba659854daf5cb971bbe4bb26d19ac82e7ecaff7d8d02563d4",
+      "sha256": "11f7bcbfa8a1906dcb804168a41b5411e39e9512e3e26b3c33192c0190040bae",
       "sha256_mode": "raw bytes"
     },
     {
@@ -14288,12 +14297,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.010802628530412,
-      "segments": 1360,
-      "curves": 1245,
+      "minimum_piece_gap_mm": 3.011520617634107,
+      "segments": 1782,
+      "curves": 1662,
       "paths": [
         {
           "path": "0:0",
@@ -14387,55 +14396,64 @@
         },
         {
           "path": "10:0",
-          "segments": 46,
-          "curves": 31,
-          "perimeter_mm": 255.24271858587704,
-          "minimum_segment_mm": 0.5140953525197308,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 387.21452794027203,
+          "minimum_segment_mm": 0.06219760581298953,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 255.03692788897314,
-          "minimum_segment_mm": 0.5656813952615527,
+          "segments": 46,
+          "curves": 31,
+          "perimeter_mm": 255.24272391961773,
+          "minimum_segment_mm": 0.5140958073185313,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 387.21462734986426,
-          "minimum_segment_mm": 0.06218946129359588,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.98211300448364,
+          "minimum_segment_mm": 0.32551206842179253,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 298,
-          "curves": 286,
-          "perimeter_mm": 256.41413079639574,
-          "minimum_segment_mm": 0.1605809295516497,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.59962312318034,
+          "minimum_segment_mm": 0.41338164559104634,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830459064719616,
-          "minimum_segment_mm": 0.748452234877151,
+          "segments": 645,
+          "curves": 630,
+          "perimeter_mm": 779.0682622147951,
+          "minimum_segment_mm": 0.23207496662868016,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
-          "segments": 322,
-          "curves": 312,
-          "perimeter_mm": 359.99195808012934,
-          "minimum_segment_mm": 0.3144025454751771,
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 255.03693762958488,
+          "minimum_segment_mm": 0.5656965974425469,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 298,
+          "curves": 286,
+          "perimeter_mm": 256.4140869305537,
+          "minimum_segment_mm": 0.16056981678631685,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -14443,7 +14461,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/3T/sheet_01/02_MASTER.pdf",
-      "sha256": "2bbc086371b13c02e68fe30ac5a1a99d72d2b7789cea8d92b047eee56c3da480",
+      "sha256": "007e5ee3a727505e6899552409b78bcea6acd36e7e21c80e9fa0652224717467",
       "sha256_mode": "raw bytes"
     },
     {
@@ -14451,12 +14469,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.010802628530412,
-      "segments": 1360,
-      "curves": 1245,
+      "minimum_piece_gap_mm": 3.011520617634107,
+      "segments": 1782,
+      "curves": 1662,
       "paths": [
         {
           "path": "0:0",
@@ -14550,55 +14568,64 @@
         },
         {
           "path": "10:0",
-          "segments": 46,
-          "curves": 31,
-          "perimeter_mm": 255.24271858587704,
-          "minimum_segment_mm": 0.5140953525197308,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 387.21452794027203,
+          "minimum_segment_mm": 0.06219760581298953,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 255.03692788897314,
-          "minimum_segment_mm": 0.5656813952615527,
+          "segments": 46,
+          "curves": 31,
+          "perimeter_mm": 255.24273235859948,
+          "minimum_segment_mm": 0.5140958073409879,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 387.2146607497391,
-          "minimum_segment_mm": 0.06219283348706686,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.98211300448364,
+          "minimum_segment_mm": 0.32551206842179253,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 298,
-          "curves": 286,
-          "perimeter_mm": 256.4141004507684,
-          "minimum_segment_mm": 0.16058060299642943,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.59962312318034,
+          "minimum_segment_mm": 0.41338164559104634,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830459064719616,
-          "minimum_segment_mm": 0.748452234877151,
+          "segments": 645,
+          "curves": 630,
+          "perimeter_mm": 779.0682622147951,
+          "minimum_segment_mm": 0.23207496662868016,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
-          "segments": 322,
-          "curves": 312,
-          "perimeter_mm": 359.99195808012934,
-          "minimum_segment_mm": 0.3144025454751771,
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 255.03693092922336,
+          "minimum_segment_mm": 0.5656965267299682,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 298,
+          "curves": 286,
+          "perimeter_mm": 256.4140904033947,
+          "minimum_segment_mm": 0.16056981678631685,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -14606,7 +14633,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/3T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "c7f6c0aa20ed676a2fbbe0b91c1a5fb530a38537c6aecc21f65390e99b1ff059",
+      "sha256": "f844bb4d6e016ed8be2ee9bf0afa9d5c3939556e8f0e8ded8bd6e96dc4df6328",
       "sha256_mode": "raw bytes"
     },
     {
@@ -14614,12 +14641,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.010802628530412,
-      "segments": 1360,
-      "curves": 1245,
+      "minimum_piece_gap_mm": 3.011520617634107,
+      "segments": 1782,
+      "curves": 1662,
       "paths": [
         {
           "path": "0:0",
@@ -14713,55 +14740,64 @@
         },
         {
           "path": "10:0",
-          "segments": 46,
-          "curves": 31,
-          "perimeter_mm": 255.24271858587704,
-          "minimum_segment_mm": 0.5140953525197308,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 387.21452794027203,
+          "minimum_segment_mm": 0.06219760581298953,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 255.03692788897314,
-          "minimum_segment_mm": 0.5656813952615527,
+          "segments": 46,
+          "curves": 31,
+          "perimeter_mm": 255.24272391961773,
+          "minimum_segment_mm": 0.5140958073185313,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 387.21462734986426,
-          "minimum_segment_mm": 0.06218946129359588,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.98211300448364,
+          "minimum_segment_mm": 0.32551206842179253,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 298,
-          "curves": 286,
-          "perimeter_mm": 256.41413079639574,
-          "minimum_segment_mm": 0.1605809295516497,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.59962312318034,
+          "minimum_segment_mm": 0.41338164559104634,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830459064719616,
-          "minimum_segment_mm": 0.748452234877151,
+          "segments": 645,
+          "curves": 630,
+          "perimeter_mm": 779.0682622147951,
+          "minimum_segment_mm": 0.23207496662868016,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
-          "segments": 322,
-          "curves": 312,
-          "perimeter_mm": 359.99195808012934,
-          "minimum_segment_mm": 0.3144025454751771,
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 255.03693762958488,
+          "minimum_segment_mm": 0.5656965974425469,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 298,
+          "curves": 286,
+          "perimeter_mm": 256.4140869305537,
+          "minimum_segment_mm": 0.16056981678631685,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -14769,7 +14805,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/3T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "079dca9c180409e06d98055c9fa1e444edccb4d5bf77d87fc546bb59906f0550",
+      "sha256": "e80c635376e9cec4f84786f711372544ab9d28ec62a3e47ab96205b44e3b0fa0",
       "sha256_mode": "raw bytes"
     },
     {
@@ -14777,12 +14813,12 @@
         420.0000311957465,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.0108058188206193,
-      "segments": 1360,
-      "curves": 1245,
+      "minimum_piece_gap_mm": 3.0115184794094843,
+      "segments": 1782,
+      "curves": 1662,
       "paths": [
         {
           "path": "0:0",
@@ -14876,55 +14912,64 @@
         },
         {
           "path": "10:0",
-          "segments": 46,
-          "curves": 31,
-          "perimeter_mm": 255.24268365597962,
-          "minimum_segment_mm": 0.5140960487085596,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 387.214476553884,
+          "minimum_segment_mm": 0.06218882051084295,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 255.03690783842657,
-          "minimum_segment_mm": 0.5656965267299783,
+          "segments": 46,
+          "curves": 31,
+          "perimeter_mm": 255.24273431928484,
+          "minimum_segment_mm": 0.5140953501230903,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 387.214634979094,
-          "minimum_segment_mm": 0.06218348072563344,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.982102501788226,
+          "minimum_segment_mm": 0.32552022588044194,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 298,
-          "curves": 286,
-          "perimeter_mm": 256.4140215173911,
-          "minimum_segment_mm": 0.16060246875608775,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.5995933715333,
+          "minimum_segment_mm": 0.41339107983527257,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830455584536672,
-          "minimum_segment_mm": 0.7484737893340053,
+          "segments": 645,
+          "curves": 630,
+          "perimeter_mm": 779.0681565043606,
+          "minimum_segment_mm": 0.23205256498780485,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
-          "segments": 322,
-          "curves": 312,
-          "perimeter_mm": 359.99204130747665,
-          "minimum_segment_mm": 0.31441810238852386,
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 255.03692493567502,
+          "minimum_segment_mm": 0.5656737581484287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
+          "segments": 298,
+          "curves": 286,
+          "perimeter_mm": 256.41397673909756,
+          "minimum_segment_mm": 0.16057910262368863,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -14932,7 +14977,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/3T/sheet_01/03_CUT_ONLY.svg",
-      "sha256": "a09d7f9aaa063566189b28f6c05adfe58479b8c50c3cb06e63d6ef5eb37d4dd0",
+      "sha256": "4bbc82053dad00b7388b2472185b116c6f90b061aad42f7b0284b827636bc026",
       "sha256_mode": "LF-normalized text"
     },
     {
@@ -14940,12 +14985,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.019475499999999,
-      "segments": 1358,
-      "curves": 1243,
+      "minimum_piece_gap_mm": 3.01081996425061,
+      "segments": 1780,
+      "curves": 1660,
       "paths": [
         {
           "path": "0:0",
@@ -14960,8 +15005,8 @@
           "path": "1:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994306939715,
-          "minimum_segment_mm": 0.5498547793570611,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -14969,8 +15014,8 @@
           "path": "2:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.699430693971486,
-          "minimum_segment_mm": 0.5498547793570862,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -14978,8 +15023,8 @@
           "path": "3:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323581,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -14987,8 +15032,8 @@
           "path": "4:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323832,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -14996,8 +15041,8 @@
           "path": "5:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941860638071,
-          "minimum_segment_mm": 0.5498571907394015,
+          "perimeter_mm": 44.699435340193276,
+          "minimum_segment_mm": 0.5498548459171358,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15005,8 +15050,8 @@
           "path": "6:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942109636613,
-          "minimum_segment_mm": 0.5498476574438806,
+          "perimeter_mm": 44.699435340193034,
+          "minimum_segment_mm": 0.5498547576455723,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15014,8 +15059,8 @@
           "path": "7:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941378361637,
-          "minimum_segment_mm": 0.5498548676286722,
+          "perimeter_mm": 44.699430517436774,
+          "minimum_segment_mm": 0.5498525228134454,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15023,8 +15068,8 @@
           "path": "8:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994136305314,
-          "minimum_segment_mm": 0.5498547793576213,
+          "perimeter_mm": 44.69943056085855,
+          "minimum_segment_mm": 0.5498524562532583,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15032,62 +15077,71 @@
           "path": "9:0",
           "segments": 16,
           "curves": 12,
-          "perimeter_mm": 677.674454331793,
-          "minimum_segment_mm": 4.718726809896021,
+          "perimeter_mm": 677.6744312177397,
+          "minimum_segment_mm": 4.718727431597334,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "10:0",
-          "segments": 45,
-          "curves": 30,
-          "perimeter_mm": 259.23752614017474,
-          "minimum_segment_mm": 0.5531462410778968,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.982132628774785,
+          "minimum_segment_mm": 0.32552751125008456,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 259.03692589652775,
-          "minimum_segment_mm": 0.5656737581484287,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.5996217719767,
+          "minimum_segment_mm": 0.41336227844214435,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 391.21483729177027,
-          "minimum_segment_mm": 0.06219584276697898,
+          "segments": 644,
+          "curves": 629,
+          "perimeter_mm": 783.0717431670049,
+          "minimum_segment_mm": 0.23207483494886877,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830454473667306,
-          "minimum_segment_mm": 0.7484604567441054,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 391.21481331030566,
+          "minimum_segment_mm": 0.06221004473442736,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 321,
-          "curves": 311,
-          "perimeter_mm": 363.9954759093078,
-          "minimum_segment_mm": 0.314380269788428,
+          "segments": 45,
+          "curves": 30,
+          "perimeter_mm": 259.23752269081155,
+          "minimum_segment_mm": 0.5531472191860172,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 259.036944362448,
+          "minimum_segment_mm": 0.5656737581484287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
           "segments": 297,
           "curves": 285,
-          "perimeter_mm": 260.4161642101498,
-          "minimum_segment_mm": 0.16057518140451965,
+          "perimeter_mm": 260.41599678949,
+          "minimum_segment_mm": 0.16056696907974444,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -15095,7 +15149,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/5T/sheet_01/02_MASTER.ai",
-      "sha256": "1489004e72c8d6da207ddd2ef4aca70fab4c9464d145180d3f6e432d59089667",
+      "sha256": "53cd667aea85ce0e05965f4524f7ea1c7cd0b2fbd653b2484183c92a417939f3",
       "sha256_mode": "raw bytes"
     },
     {
@@ -15103,12 +15157,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.019475499999999,
-      "segments": 1358,
-      "curves": 1243,
+      "minimum_piece_gap_mm": 3.0108148470452063,
+      "segments": 1780,
+      "curves": 1660,
       "paths": [
         {
           "path": "0:0",
@@ -15123,8 +15177,8 @@
           "path": "1:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994306939715,
-          "minimum_segment_mm": 0.5498547793570611,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15132,8 +15186,8 @@
           "path": "2:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.699430693971486,
-          "minimum_segment_mm": 0.5498547793570862,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15141,8 +15195,8 @@
           "path": "3:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323581,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15150,8 +15204,8 @@
           "path": "4:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323832,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15159,8 +15213,8 @@
           "path": "5:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941860638071,
-          "minimum_segment_mm": 0.5498571907394015,
+          "perimeter_mm": 44.699435340193276,
+          "minimum_segment_mm": 0.5498548459171358,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15168,8 +15222,8 @@
           "path": "6:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942109636613,
-          "minimum_segment_mm": 0.5498476574438806,
+          "perimeter_mm": 44.699435340193034,
+          "minimum_segment_mm": 0.5498547576455723,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15177,8 +15231,8 @@
           "path": "7:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941378361637,
-          "minimum_segment_mm": 0.5498548676286722,
+          "perimeter_mm": 44.699430517436774,
+          "minimum_segment_mm": 0.5498525228134454,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15186,8 +15240,8 @@
           "path": "8:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994136305314,
-          "minimum_segment_mm": 0.5498547793576213,
+          "perimeter_mm": 44.69943056085855,
+          "minimum_segment_mm": 0.5498524562532583,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15195,62 +15249,71 @@
           "path": "9:0",
           "segments": 16,
           "curves": 12,
-          "perimeter_mm": 677.6744445148872,
+          "perimeter_mm": 677.6744325180784,
           "minimum_segment_mm": 4.718727431597334,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "10:0",
-          "segments": 45,
-          "curves": 30,
-          "perimeter_mm": 259.23752177033526,
-          "minimum_segment_mm": 0.5531302177893686,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.98212483600911,
+          "minimum_segment_mm": 0.3255319430906299,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 259.0369173231593,
-          "minimum_segment_mm": 0.5656661918509934,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.5996176862727,
+          "minimum_segment_mm": 0.41336227582161605,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 391.2148483358087,
-          "minimum_segment_mm": 0.06219584276697898,
+          "segments": 644,
+          "curves": 629,
+          "perimeter_mm": 783.0717407321522,
+          "minimum_segment_mm": 0.2320963925155011,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.83045692651803,
-          "minimum_segment_mm": 0.7484477553666599,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 391.2148220570598,
+          "minimum_segment_mm": 0.06220282487042797,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 321,
-          "curves": 311,
-          "perimeter_mm": 363.9954701715542,
-          "minimum_segment_mm": 0.31438578918253984,
+          "segments": 45,
+          "curves": 30,
+          "perimeter_mm": 259.2375183211105,
+          "minimum_segment_mm": 0.5531311958992605,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 259.0369357888525,
+          "minimum_segment_mm": 0.5656661918509934,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
           "segments": 297,
           "curves": 285,
-          "perimeter_mm": 260.4161752397269,
-          "minimum_segment_mm": 0.16056977529595223,
+          "perimeter_mm": 260.4159945114827,
+          "minimum_segment_mm": 0.16056748386304517,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -15258,7 +15321,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/5T/sheet_01/02_MASTER.pdf",
-      "sha256": "c31f17720be3b2bfa24ca2452401152fe01d0a6bd7e04c245873e711965ca702",
+      "sha256": "9a5a7eac91c5921c352930aaa25932bdfd58e0115b1075fad0c7f379f9db0d3b",
       "sha256_mode": "raw bytes"
     },
     {
@@ -15266,12 +15329,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.019475499999999,
-      "segments": 1358,
-      "curves": 1243,
+      "minimum_piece_gap_mm": 3.01081996425061,
+      "segments": 1780,
+      "curves": 1660,
       "paths": [
         {
           "path": "0:0",
@@ -15286,8 +15349,8 @@
           "path": "1:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994306939715,
-          "minimum_segment_mm": 0.5498547793570611,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15295,8 +15358,8 @@
           "path": "2:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.699430693971486,
-          "minimum_segment_mm": 0.5498547793570862,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15304,8 +15367,8 @@
           "path": "3:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323581,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15313,8 +15376,8 @@
           "path": "4:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323832,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15322,8 +15385,8 @@
           "path": "5:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941860638071,
-          "minimum_segment_mm": 0.5498571907394015,
+          "perimeter_mm": 44.699435340193276,
+          "minimum_segment_mm": 0.5498548459171358,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15331,8 +15394,8 @@
           "path": "6:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942109636613,
-          "minimum_segment_mm": 0.5498476574438806,
+          "perimeter_mm": 44.699435340193034,
+          "minimum_segment_mm": 0.5498547576455723,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15340,8 +15403,8 @@
           "path": "7:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941378361637,
-          "minimum_segment_mm": 0.5498548676286722,
+          "perimeter_mm": 44.699430517436774,
+          "minimum_segment_mm": 0.5498525228134454,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15349,8 +15412,8 @@
           "path": "8:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994136305314,
-          "minimum_segment_mm": 0.5498547793576213,
+          "perimeter_mm": 44.69943056085855,
+          "minimum_segment_mm": 0.5498524562532583,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15358,62 +15421,71 @@
           "path": "9:0",
           "segments": 16,
           "curves": 12,
-          "perimeter_mm": 677.674454331793,
-          "minimum_segment_mm": 4.718726809896021,
+          "perimeter_mm": 677.6744312177397,
+          "minimum_segment_mm": 4.718727431597334,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "10:0",
-          "segments": 45,
-          "curves": 30,
-          "perimeter_mm": 259.23752614017474,
-          "minimum_segment_mm": 0.5531462410778968,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.982132628774785,
+          "minimum_segment_mm": 0.32552751125008456,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 259.03692589652775,
-          "minimum_segment_mm": 0.5656737581484287,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.5996217719767,
+          "minimum_segment_mm": 0.41336227844214435,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 391.21483729177027,
-          "minimum_segment_mm": 0.06219584276697898,
+          "segments": 644,
+          "curves": 629,
+          "perimeter_mm": 783.0717431670049,
+          "minimum_segment_mm": 0.23207483494886877,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830454473667306,
-          "minimum_segment_mm": 0.7484604567441054,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 391.21481331030566,
+          "minimum_segment_mm": 0.06221004473442736,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 321,
-          "curves": 311,
-          "perimeter_mm": 363.9954759093078,
-          "minimum_segment_mm": 0.314380269788428,
+          "segments": 45,
+          "curves": 30,
+          "perimeter_mm": 259.23752269081155,
+          "minimum_segment_mm": 0.5531472191860172,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 259.036944362448,
+          "minimum_segment_mm": 0.5656737581484287,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
           "segments": 297,
           "curves": 285,
-          "perimeter_mm": 260.4161642101498,
-          "minimum_segment_mm": 0.16057518140451965,
+          "perimeter_mm": 260.41599678949,
+          "minimum_segment_mm": 0.16056696907974444,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -15421,7 +15493,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/5T/sheet_01/02_MASTER.vectorcraft",
-      "sha256": "fd56871dca8797a4bf991b4254e129a080796ecccd9468ea074f843fc8d344bf",
+      "sha256": "c7506423c6e2e97920ac20af4440e964ec7f3fd226319a9345fbb802e97bd1fa",
       "sha256_mode": "raw bytes"
     },
     {
@@ -15429,12 +15501,12 @@
         419.9999881320529,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.019475499999999,
-      "segments": 1358,
-      "curves": 1243,
+      "minimum_piece_gap_mm": 3.0108148470452063,
+      "segments": 1780,
+      "curves": 1660,
       "paths": [
         {
           "path": "0:0",
@@ -15449,8 +15521,8 @@
           "path": "1:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994306939715,
-          "minimum_segment_mm": 0.5498547793570611,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15458,8 +15530,8 @@
           "path": "2:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.699430693971486,
-          "minimum_segment_mm": 0.5498547793570862,
+          "perimeter_mm": 44.69944742779937,
+          "minimum_segment_mm": 0.5498524345422448,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15467,8 +15539,8 @@
           "path": "3:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323581,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15476,8 +15548,8 @@
           "path": "4:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941630496669,
-          "minimum_segment_mm": 0.5498560400323832,
+          "perimeter_mm": 44.69943303878292,
+          "minimum_segment_mm": 0.5498536952135915,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15485,8 +15557,8 @@
           "path": "5:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941860638071,
-          "minimum_segment_mm": 0.5498571907394015,
+          "perimeter_mm": 44.699435340193276,
+          "minimum_segment_mm": 0.5498548459171358,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15494,8 +15566,8 @@
           "path": "6:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942109636613,
-          "minimum_segment_mm": 0.5498476574438806,
+          "perimeter_mm": 44.699435340193034,
+          "minimum_segment_mm": 0.5498547576455723,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15503,8 +15575,8 @@
           "path": "7:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941378361637,
-          "minimum_segment_mm": 0.5498548676286722,
+          "perimeter_mm": 44.699430517436774,
+          "minimum_segment_mm": 0.5498525228134454,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15512,8 +15584,8 @@
           "path": "8:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994136305314,
-          "minimum_segment_mm": 0.5498547793576213,
+          "perimeter_mm": 44.69943056085855,
+          "minimum_segment_mm": 0.5498524562532583,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15521,62 +15593,71 @@
           "path": "9:0",
           "segments": 16,
           "curves": 12,
-          "perimeter_mm": 677.6744445148872,
+          "perimeter_mm": 677.6744325180784,
           "minimum_segment_mm": 4.718727431597334,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "10:0",
-          "segments": 45,
-          "curves": 30,
-          "perimeter_mm": 259.23752177033526,
-          "minimum_segment_mm": 0.5531302177893686,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.98212483600911,
+          "minimum_segment_mm": 0.3255319430906299,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 259.0369173231593,
-          "minimum_segment_mm": 0.5656661918509934,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.5996176862727,
+          "minimum_segment_mm": 0.41336227582161605,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 391.2148483358087,
-          "minimum_segment_mm": 0.06219584276697898,
+          "segments": 644,
+          "curves": 629,
+          "perimeter_mm": 783.0717407321522,
+          "minimum_segment_mm": 0.2320963925155011,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.83045692651803,
-          "minimum_segment_mm": 0.7484477553666599,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 391.2148220570598,
+          "minimum_segment_mm": 0.06220282487042797,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 321,
-          "curves": 311,
-          "perimeter_mm": 363.9954701715542,
-          "minimum_segment_mm": 0.31438578918253984,
+          "segments": 45,
+          "curves": 30,
+          "perimeter_mm": 259.2375183211105,
+          "minimum_segment_mm": 0.5531311958992605,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 259.0369357888525,
+          "minimum_segment_mm": 0.5656661918509934,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
           "segments": 297,
           "curves": 285,
-          "perimeter_mm": 260.4161752397269,
-          "minimum_segment_mm": 0.16056977529595223,
+          "perimeter_mm": 260.4159945114827,
+          "minimum_segment_mm": 0.16056748386304517,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -15584,7 +15665,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/5T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "5e4efd1d351475a3851fd8981ac28cca833126f466fbd7e1181fecd6bbf79696",
+      "sha256": "e207e239107d6c754835a4cb99c3d4a94af784867881a1bbc8f54268cca13dce",
       "sha256_mode": "raw bytes"
     },
     {
@@ -15592,12 +15673,12 @@
         420.0000311957465,
         297.0000023735894
       ],
-      "drawing_objects": 16,
-      "contours": 16,
+      "drawing_objects": 17,
+      "contours": 17,
       "outer_contours": 7,
-      "minimum_piece_gap_mm": 3.0194754999999986,
-      "segments": 1358,
-      "curves": 1243,
+      "minimum_piece_gap_mm": 3.010817330914279,
+      "segments": 1780,
+      "curves": 1660,
       "paths": [
         {
           "path": "0:0",
@@ -15612,8 +15693,8 @@
           "path": "1:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942600445154,
-          "minimum_segment_mm": 0.5498452461052155,
+          "perimeter_mm": 44.69944527163659,
+          "minimum_segment_mm": 0.5498429012759016,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15621,8 +15702,8 @@
           "path": "2:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69944024820354,
-          "minimum_segment_mm": 0.5498524345422697,
+          "perimeter_mm": 44.69945225080526,
+          "minimum_segment_mm": 0.5498475692818641,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15630,8 +15711,8 @@
           "path": "3:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69941625911684,
-          "minimum_segment_mm": 0.5498465067586017,
+          "perimeter_mm": 44.699435526267386,
+          "minimum_segment_mm": 0.5498441619253374,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15639,8 +15720,8 @@
           "path": "4:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.699430502851214,
-          "minimum_segment_mm": 0.5498536952136166,
+          "perimeter_mm": 44.699442505496435,
+          "minimum_segment_mm": 0.5498488299391637,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15648,8 +15729,8 @@
           "path": "5:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942587140125,
-          "minimum_segment_mm": 0.549845334377066,
+          "perimeter_mm": 44.69943787385833,
+          "minimum_segment_mm": 0.5498404689720681,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15657,8 +15738,8 @@
           "path": "6:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.6994328069752,
-          "minimum_segment_mm": 0.5498476791550723,
+          "perimeter_mm": 44.699447404404836,
+          "minimum_segment_mm": 0.5498453343182368,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15666,8 +15747,8 @@
           "path": "7:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69944240465253,
-          "minimum_segment_mm": 0.5498453126653953,
+          "perimeter_mm": 44.69944971780571,
+          "minimum_segment_mm": 0.5498404472606928,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15675,8 +15756,8 @@
           "path": "8:0",
           "segments": 8,
           "curves": 4,
-          "perimeter_mm": 44.69942100453419,
-          "minimum_segment_mm": 0.54986196784854,
+          "perimeter_mm": 44.69943538387392,
+          "minimum_segment_mm": 0.5498476792663212,
           "original_numerical_notes": [],
           "protected_original": false
         },
@@ -15684,62 +15765,71 @@
           "path": "9:0",
           "segments": 16,
           "curves": 12,
-          "perimeter_mm": 677.6744316672557,
-          "minimum_segment_mm": 4.718728702421426,
+          "perimeter_mm": 677.6744230963529,
+          "minimum_segment_mm": 4.71872611082258,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "10:0",
-          "segments": 45,
-          "curves": 30,
-          "perimeter_mm": 259.23753078058786,
-          "minimum_segment_mm": 0.553128571866598,
+          "segments": 63,
+          "curves": 63,
+          "perimeter_mm": 60.9821306076851,
+          "minimum_segment_mm": 0.3255319430906299,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "11:0",
-          "segments": 18,
-          "curves": 8,
-          "perimeter_mm": 259.0369169259764,
-          "minimum_segment_mm": 0.5656509896700022,
+          "segments": 56,
+          "curves": 55,
+          "perimeter_mm": 71.59962555805228,
+          "minimum_segment_mm": 0.41336811989606,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "12:0",
-          "segments": 550,
-          "curves": 541,
-          "perimeter_mm": 391.21487386478844,
-          "minimum_segment_mm": 0.06220269609208622,
+          "segments": 644,
+          "curves": 629,
+          "perimeter_mm": 783.0716705571224,
+          "minimum_segment_mm": 0.23210812162190556,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "13:0",
-          "segments": 20,
-          "curves": 19,
-          "perimeter_mm": 27.830450522614154,
-          "minimum_segment_mm": 0.7484473110391143,
+          "segments": 550,
+          "curves": 541,
+          "perimeter_mm": 391.2149625483616,
+          "minimum_segment_mm": 0.06219547111861087,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "14:0",
-          "segments": 321,
-          "curves": 311,
-          "perimeter_mm": 363.9954921600666,
-          "minimum_segment_mm": 0.31438578918253984,
+          "segments": 45,
+          "curves": 30,
+          "perimeter_mm": 259.2375008194851,
+          "minimum_segment_mm": 0.5531312018307782,
           "original_numerical_notes": [],
           "protected_original": false
         },
         {
           "path": "15:0",
+          "segments": 18,
+          "curves": 8,
+          "perimeter_mm": 259.03694146317116,
+          "minimum_segment_mm": 0.5656661918509934,
+          "original_numerical_notes": [],
+          "protected_original": false
+        },
+        {
+          "path": "16:0",
           "segments": 297,
           "curves": 285,
-          "perimeter_mm": 260.41618334922373,
-          "minimum_segment_mm": 0.16056977529595223,
+          "perimeter_mm": 260.41601017612226,
+          "minimum_segment_mm": 0.1605678031111636,
           "original_numerical_notes": [],
           "protected_original": false
         }
@@ -15747,7 +15837,7 @@
       "errors": [],
       "protected_original_findings": [],
       "file": "a3_release/07_len_origin/5T/sheet_01/03_CUT_ONLY.svg",
-      "sha256": "70209abfa1270590bf18ef50f64b47215f5a917e07d54c583b762b0c3960b826",
+      "sha256": "b4ec099a754723b1991957636581f872e1eea28a5ce488330d28715ba6adbb52",
       "sha256_mode": "LF-normalized text"
     }
   ],
@@ -16334,7 +16424,7 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7, V8 and V9 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7, V8, V9 and V10 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
     },
     {
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -16358,7 +16448,7 @@
       "masters_commit": "a2a83cd9d70a317acf075caccf3118374421d028",
       "registration_commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel (but rotated the wrong way by a builder sign error) and Len cropped at the seat line. The owner wants exactly two changes on V4 - the cropping fixed and the tree diagonal like the concept - which V6 applied; V4 was superseded by V5, V6, V7, V8 and then V9 before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel (but rotated the wrong way by a builder sign error) and Len cropped at the seat line. The owner wants exactly two changes on V4 - the cropping fixed and the tree diagonal like the concept - which V6 applied; V4 was superseded by V5, V6, V7, V8, V9 and then V10 before publication. Masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "c91c4a492c6b8d9dd03e148b04d4ab898ec67ff2",
@@ -16382,7 +16472,7 @@
       "masters_commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
       "registration_commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8 and V9 before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8, V9 and V10 before publication. Masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
@@ -16394,7 +16484,7 @@
       "masters_commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
       "registration_commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) and then by V9 before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) and then by V9 and V10 before publication. Masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "268357cd5c6811d8699a91887b1176d259b8343c",
@@ -16406,7 +16496,19 @@
       "masters_commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
       "registration_commit": "268357cd5c6811d8699a91887b1176d259b8343c",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V8 masters (commit 13a3635, release registration 268357c; pushed to after_days/sleeg only, never to main/output_len): the one-piece tree with real cut-out openings at 88 mm art standing behind Len (trunk at scene x 131, canopy crossing behind her), the two lattice door plates at 85 mm art (cut tops 87.45 mm above the base top, shorter than the back panel's 92.0 mm). The owner's final tweaks (\"마지막 수정 문하고 배경 높이만 좀 맞춰주고 벛꽃나무는 문하고 캐릭터사이 왼쪽으로 빼봐\" - match the door and backdrop heights; pull the blossom tree out to the left, between the door and the character) superseded it by V9 (doors at 89.57 mm art with their cut tops level with the back panel; the same one-piece tree at 56.0 mm art in the gap between the left door and Len, trunk at scene x 96) before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V8 masters (commit 13a3635, release registration 268357c; pushed to after_days/sleeg only, never to main/output_len): the one-piece tree with real cut-out openings at 88 mm art standing behind Len (trunk at scene x 131, canopy crossing behind her), the two lattice door plates at 85 mm art (cut tops 87.45 mm above the base top, shorter than the back panel's 92.0 mm). The owner's final tweaks (\"마지막 수정 문하고 배경 높이만 좀 맞춰주고 벛꽃나무는 문하고 캐릭터사이 왼쪽으로 빼봐\" - match the door and backdrop heights; pull the blossom tree out to the left, between the door and the character) superseded it by V9 (doors at 89.57 mm art with their cut tops level with the back panel; the same one-piece tree at 56.0 mm art in the gap between the left door and Len, trunk at scene x 96) and then by V10 (the same tree restored past its V8 size and grown to 103.5 mm art, its cut top on the shared 92.0 mm door/backdrop line) before publication. Masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "3183a13b1016ff506acb2efec0bf59350eb88674",
+      "revision": "A3-2026-11-28-len-origin-v9",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "43c04f681a5681a7c8e602bd2e59538ed24a7c59",
+      "registration_commit": "3183a13b1016ff506acb2efec0bf59350eb88674",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V9 masters (commit 43c04f6, release registration 3183a13; pushed to after_days/sleeg only, never to main/output_len): both lattice door plates at 89.57 mm art with their cut tops level with the back panel (92.0 mm above the base top), the one-piece tree shrunk to 56.0 mm art (cut top 50.7 mm above the base top) standing in the gap between the left door and Len with 1 mm from both cuts. The owner's request (\"나무 사이즈 복원하고 문그림하고 배경의 높이가 맞을때까지만 키워\" - restore the tree's size and grow it only up to the height where the door art and the backdrop line up) superseded it by V10 (the same one-piece tree restored past its V8 size and grown to 103.5 mm art so its cut top stands on the shared 92.0 mm line, trunk base still at scene x 96; at that size its canopy sits behind the serpent, Len's left edge and the left door's top-right corner across rows) before publication; kept for before/after review only."
     }
   ],
   "retired_archive": {
@@ -16524,7 +16626,7 @@
         ],
         "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
         "status": "superseded_before_publication",
-        "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7, V8 and V9 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
+        "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7, V8, V9 and V10 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
       },
       {
         "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -16572,7 +16674,7 @@
         "masters_commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
         "registration_commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
         "status": "superseded_before_publication",
-        "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8 and V9 before publication. Masters and preview stay retrievable at the masters commit."
+        "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8, V9 and V10 before publication. Masters and preview stay retrievable at the masters commit."
       },
       {
         "commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
@@ -16584,7 +16686,7 @@
         "masters_commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
         "registration_commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
         "status": "superseded_before_publication",
-        "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) and then by V9 before publication. Masters and preview stay retrievable at the masters commit."
+        "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) and then by V9 and V10 before publication. Masters and preview stay retrievable at the masters commit."
       },
       {
         "commit": "268357cd5c6811d8699a91887b1176d259b8343c",
@@ -16596,7 +16698,19 @@
         "masters_commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
         "registration_commit": "268357cd5c6811d8699a91887b1176d259b8343c",
         "status": "superseded_before_publication",
-        "reason": "Len ORIGIN V8 masters (commit 13a3635, release registration 268357c; pushed to after_days/sleeg only, never to main/output_len): the one-piece tree with real cut-out openings at 88 mm art standing behind Len (trunk at scene x 131, canopy crossing behind her), the two lattice door plates at 85 mm art (cut tops 87.45 mm above the base top, shorter than the back panel's 92.0 mm). The owner's final tweaks (\"마지막 수정 문하고 배경 높이만 좀 맞춰주고 벛꽃나무는 문하고 캐릭터사이 왼쪽으로 빼봐\" - match the door and backdrop heights; pull the blossom tree out to the left, between the door and the character) superseded it by V9 (doors at 89.57 mm art with their cut tops level with the back panel; the same one-piece tree at 56.0 mm art in the gap between the left door and Len, trunk at scene x 96) before publication. Masters and preview stay retrievable at the masters commit."
+        "reason": "Len ORIGIN V8 masters (commit 13a3635, release registration 268357c; pushed to after_days/sleeg only, never to main/output_len): the one-piece tree with real cut-out openings at 88 mm art standing behind Len (trunk at scene x 131, canopy crossing behind her), the two lattice door plates at 85 mm art (cut tops 87.45 mm above the base top, shorter than the back panel's 92.0 mm). The owner's final tweaks (\"마지막 수정 문하고 배경 높이만 좀 맞춰주고 벛꽃나무는 문하고 캐릭터사이 왼쪽으로 빼봐\" - match the door and backdrop heights; pull the blossom tree out to the left, between the door and the character) superseded it by V9 (doors at 89.57 mm art with their cut tops level with the back panel; the same one-piece tree at 56.0 mm art in the gap between the left door and Len, trunk at scene x 96) and then by V10 (the same tree restored past its V8 size and grown to 103.5 mm art, its cut top on the shared 92.0 mm door/backdrop line) before publication. Masters and preview stay retrievable at the masters commit."
+      },
+      {
+        "commit": "3183a13b1016ff506acb2efec0bf59350eb88674",
+        "revision": "A3-2026-11-28-len-origin-v9",
+        "groups": [
+          "07_len_origin/3T",
+          "07_len_origin/5T"
+        ],
+        "masters_commit": "43c04f681a5681a7c8e602bd2e59538ed24a7c59",
+        "registration_commit": "3183a13b1016ff506acb2efec0bf59350eb88674",
+        "status": "superseded_before_publication",
+        "reason": "Len ORIGIN V9 masters (commit 43c04f6, release registration 3183a13; pushed to after_days/sleeg only, never to main/output_len): both lattice door plates at 89.57 mm art with their cut tops level with the back panel (92.0 mm above the base top), the one-piece tree shrunk to 56.0 mm art (cut top 50.7 mm above the base top) standing in the gap between the left door and Len with 1 mm from both cuts. The owner's request (\"나무 사이즈 복원하고 문그림하고 배경의 높이가 맞을때까지만 키워\" - restore the tree's size and grow it only up to the height where the door art and the backdrop line up) superseded it by V10 (the same one-piece tree restored past its V8 size and grown to 103.5 mm art so its cut top stands on the shared 92.0 mm line, trunk base still at scene x 96; at that size its canopy sits behind the serpent, Len's left edge and the left door's top-right corner across rows) before publication; kept for before/after review only."
       }
     ],
     "retired_package_files": [
