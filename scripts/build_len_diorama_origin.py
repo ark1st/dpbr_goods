@@ -1,4 +1,4 @@
-"""Len ORIGIN layered slot-in acrylic diorama, V8.
+"""Len ORIGIN layered slot-in acrylic diorama, V9.
 
 Lineage: V1 (commit 2ac3ad0, scripts/build_len_diorama_origin.py) built one
 base plus seven plates with a 2.5 mm clear border. The owner rejected the
@@ -47,7 +47,26 @@ still printed flat on the back panel):
   water waves; the sky/wave raster is mirrored into the former door zones so
   the plate keeps its V7 outline.
 
-Everything else is V7/V6 exactly, see configs/len_diorama_origin.json: whole
+V9 = the owner's final tweaks ("마지막 수정 문하고 배경 높이만 좀 맞춰주고 벛꽃나무는
+문하고 캐릭터사이 왼쪽으로 빼봐": match the doors to the backdrop height; pull the
+blossom tree out to the left, between the door and the character):
+
+* DOOR HEIGHT = BACKDROP HEIGHT: both lattice door plates are scaled from
+  85 mm to 89.57 mm art so each door's cut top stands at 92.0 mm above the
+  base top, exactly the back panel's cut top (95.0 mm assembled). Same tab
+  axis (x 55.5 / 224.5, row 47), same slots, 1.0 mm rim, symmetric.
+* TREE MOVED LEFT: the same one-piece tree (V8 design unchanged: 35 deg
+  clockwise, the cut skeleton is the opaque mask opened 1.5 mm at the 88 mm
+  reference scale and carried to the smaller size, the same cluster
+  connectors, rim, closing and opening rules in millimetres) stands in the
+  gap between the LEFT DOOR and LEN, trunk base at scene x 96 on row 31
+  behind the serpent. The 88 mm tree (95 mm wide) cannot fit the 63 mm gap
+  without overlapping the door or Len, so it is scaled to 56.0 mm art - the
+  largest size keeping at least 1.0 mm between the tree's cut and the door's
+  and Len's cuts (a hard check in validate()). The canopy no longer crosses
+  behind Len.
+
+Everything else is V8 exactly, see configs/len_diorama_origin.json: whole
 seated Len, serpent, moon, base, slots, 1.0 mm clear border on every plate,
 the see-through assembly preview, native pixels (LANCZOS to the 300 ppi print
 size, never upscaled; the tree's rotation is the only resampling step and
@@ -75,9 +94,10 @@ from pypdf import PdfReader
 from laser_paths import cut_path, audit_path
 from vector_utils import runvc, svg_doc, path, poly_path, layer
 
-OUT = ROOT/'output/len_diorama_origin_v8'
-TMP = ROOT/'tmp/len_diorama_origin_v8'
+OUT = ROOT/'output/len_diorama_origin_v9'
+TMP = ROOT/'tmp/len_diorama_origin_v9'
 CFG = json.loads((ROOT/'configs/len_diorama_origin.json').read_text(encoding='utf-8'))
+TREE_CLEARANCE_MM = CFG['tree_one_piece']['clearance_to_door_and_character_mm']
 BOARD = tuple(CFG['board_mm'])
 PPI = 300/25.4
 RED = '#ff0000'
@@ -358,8 +378,12 @@ def neck_width(poly):
 
 
 class OnePieceTree:
-    """The complete blossom tree as one cut piece (V8). All masks live on the
-    native pixels of the 35 deg clockwise rotation V6/V7 already used."""
+    """The complete blossom tree as one cut piece (V8 design, V9 size). All
+    masks live on the native pixels of the 35 deg clockwise rotation V6-V8
+    already used. The cut skeleton is the opaque mask opened 1.5 mm at the
+    88 mm reference scale (`skeleton_ref_mm`): exactly the twigs and petals
+    V8 cut are cut at any art height, while the rim, closing, connectors and
+    opening rules are applied in millimetres at the configured art height."""
 
     def __init__(self, cfg):
         self.cfg = cfg
@@ -369,14 +393,16 @@ class OnePieceTree:
         self.rgba = a
         self.s = cfg['art_height_mm']/self.ref_h
         self.pxmm = 1/self.s
+        self.skeleton_ref_mm = cfg.get('skeleton_ref_mm', cfg['art_height_mm'])
+        self.pxmm_skel = self.ref_h/self.skeleton_ref_mm
         self.opaque = a[..., 3] > 128
         r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
         red_dominant = (r-np.maximum(g, b) >= 45) & (r >= 110)
         self.wood = self.opaque & ~red_dominant
         self.H, self.W = self.opaque.shape
 
-    def kernel(self, mm):
-        r = max(1, int(round(mm*self.pxmm)))
+    def kernel(self, mm, pxmm=None):
+        r = max(1, int(round(mm*(self.pxmm if pxmm is None else pxmm))))
         return cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2*r+1, 2*r+1))
 
     def trunk_base_x(self):
@@ -387,7 +413,7 @@ class OnePieceTree:
 
     def skeleton(self):
         cfg = self.cfg
-        S = cv2.morphologyEx(self.opaque.astype('uint8'), cv2.MORPH_OPEN, self.kernel(cfg['skeleton_open_mm'])) > 0
+        S = cv2.morphologyEx(self.opaque.astype('uint8'), cv2.MORPH_OPEN, self.kernel(cfg['skeleton_open_mm'], self.pxmm_skel)) > 0
         n, lab, st, _ = cv2.connectedComponentsWithStats(S.astype('uint8'), 8)
         main = max(range(1, n), key=lambda i: st[i, 4])
         main_mask = lab == main
@@ -398,7 +424,8 @@ class OnePieceTree:
                 frags.append((i, area, lab == i))
         kept = main_mask.copy()
         for _, _, fm in frags: kept |= fm
-        info = {'skeleton_open_mm': cfg['skeleton_open_mm'], 'opaque_px': int(self.opaque.sum()),
+        info = {'skeleton_open_mm': cfg['skeleton_open_mm'], 'skeleton_ref_mm': self.skeleton_ref_mm,
+            'art_height_mm': cfg['art_height_mm'], 'scale_vs_reference': round(cfg['art_height_mm']/self.skeleton_ref_mm, 4), 'opaque_px': int(self.opaque.sum()),
             'skeleton_px': int(S.sum()), 'main_skeleton_px': int(main_mask.sum()),
             'detached_clusters': len(frags), 'detached_cluster_px': int(sum(f[2].sum() for f in frags)),
             'detached_cluster_areas_mm2': sorted((round(f[1], 1) for f in frags), reverse=True),
@@ -567,6 +594,11 @@ def one_piece_print(asset, shape, sampler):
     im = Image.fromarray(out.clip(0, 255).astype('uint8'), 'RGBA')
     raster_ = embed_canvas(im, asset['w'], asset['h'], asset['art'], dict(asset['raster_extra'],
         processing=asset['processing']+f'; print: original pixels inside the body 0.6 mm from every cut edge, every enclosed gap printed with the back panel tone (sky blurred over {sampler.sigma_mm} mm + uniform moon colour {sampler.moon_colour} through its blurred mask) sampled at the same scene position, up to the art, 1.0 mm clear band along the cut and riser left clear'))
+    # The tree's own ink (original pixels) without the printed sky fill, at the
+    # embedded resolution: the V9 trunk-base clearance to the serpent is judged
+    # on this, not on the pale gap fill.
+    art_alpha = np.where(fm, 0, out[..., 3]).astype('uint8')
+    raster_['art_alpha'] = np.asarray(Image.fromarray(art_alpha).resize(tuple(raster_['resample_px']), Image.BILINEAR))
     return {'ink': raster_['ink'], 'rasters': [raster_], 'opaque_px': raster_['opaque_px'], 'fill_region': fill,
         'fill_px': int(fm.sum()), 'printed_sky_mm2': round(fill.area, 1)}
 
@@ -602,14 +634,14 @@ def load_tree(tree, spec):
     return {'id': spec['id'], 'src_name': '03_blossom_tree.png', 'w': w, 'h': h, 'ink': '',
         'art': skeleton, 'opaque_px': 0, 'tab_x_mm': tree.trunk_base_x(), 'body_override': outer,
         'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': tree.rgba, 'outer': outer, 'connectors': connectors,
-        'processing': tree.processing+f"; V8 one-piece tree: opaque mask opened {cfg['skeleton_open_mm']} mm (twigs and petals under {2*cfg['skeleton_open_mm']:g} mm of ink are not cut), main skeleton + every detached cluster of at least {cfg['fragment_min_mm2']} mm2 kept, {len(connectors)} twig connectors {cfg['connector_width_mm']} mm wide, rim {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, {len(openings)} cut-out openings, narrow gaps printed with sky",
+        'processing': tree.processing+f"; V9 one-piece tree: the V8 cut skeleton (opaque mask opened {cfg['skeleton_open_mm']} mm at the {cfg['skeleton_ref_mm']} mm reference scale, so the same twigs and petals V8 cut are cut) scaled to {cfg['art_height_mm']} mm art, main skeleton + every detached cluster of at least {cfg['fragment_min_mm2']} mm2 kept, {len(connectors)} twig connectors {cfg['connector_width_mm']} mm wide, rim {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm at the new size, {len(openings)} cut-out openings, narrow gaps printed with sky",
         'split_info': info,
         'raster_extra': {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': tree.bbox, 'source_file': '03_blossom_tree.png',
             'art_height_mm_config': CFG['tree_one_piece']['art_height_mm'], 'rotate_deg': CFG['tree_one_piece']['rotate_deg']}}
 
 
 def load_door(spec):
-    """One lattice doorway as its own cut piece (V8)."""
+    """One lattice doorway as its own cut piece (V8 asset, V9 height)."""
     cfg = CFG['tree_one_piece']['doors']
     im, bbox, ref_h, processing = source_pixels(spec)
     a = np.asarray(im); s = spec['art_height_mm']/ref_h
@@ -625,7 +657,7 @@ def load_door(spec):
     return {'id': spec['id'], 'src_name': '06_lattice_doors.png', 'w': W*s, 'h': H*s, 'ink': '',
         'art': silhouette, 'opaque_px': 0, 'tab_x_mm': W*s/2, 'body_override': outer,
         'openings': openings, 'one_piece': True, 'canvas_px': [H, W], 'rgba': a, 'outer': outer, 'connectors': [],
-        'processing': processing+f"; V8 door piece: silhouette buffered {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, thin features widened to {cfg['min_feature_mm']} mm, {len(openings)} lattice openings cut, the other lattice gaps printed with sky",
+        'processing': processing+f"; V9 door piece: silhouette buffered {cfg['rim_mm']} mm closed {cfg['closing_mm']} mm, thin features widened to {cfg['min_feature_mm']} mm, {len(openings)} lattice openings cut, the other lattice gaps printed with sky; art {spec['art_height_mm']} mm (V8 85 mm) so the cut top stands level with the back panel",
         'split_info': info,
         'raster_extra': {'dx': 0.0, 'dy': 0.0, 'anchor': 'base', 'source_bbox_px': bbox, 'source_file': '06_lattice_doors.png',
             'art_height_mm_config': spec['art_height_mm'], 'rotate_deg': 0}}
@@ -852,6 +884,44 @@ def assembly_clearance(shapes):
     return (round(mind, 2) if mind is not None else None), worst, over, sorted(pairs, key=lambda r: r['standing_cut_distance_mm'])
 
 
+def tree_clearance(shapes, assets):
+    """V9: the tree stands between the left door and Len. In the front view its
+    standing cut must keep at least TREE_CLEARANCE_MM from the standing cuts of
+    the character (row 12) and both door plates (row 47) - the owner asked for
+    the tree between the door and the character without overlapping either.
+    The serpent (row 23) is in front of the tree by design (V8 rule), so the
+    trunk base is judged on the tree's own PRINTED ink near the base line
+    (z <= 8 mm, within 8 mm of the tab axis on the serpent side): it must keep
+    at least the same clearance from the serpent's printed ink, while clear
+    rims, the pale gap fill and the blossom clusters hidden behind the
+    serpent's coil may cross. Hard checks."""
+    st = standing_cuts(shapes)
+    tree = st['tree'][0].intersection(box(-300, 0, 600, 300))
+    out = {}
+    for pid in ('door_left', 'door_right', 'character'):
+        g = st[pid][0].intersection(box(-300, 0, 600, 300))
+        d = tree.distance(g)
+        out[pid] = round(d, 2)
+        assert d >= TREE_CLEARANCE_MM, ('tree overlaps or nears', pid, round(d, 3))
+    geo = _scene_geometry(assets, shapes)
+    # The trunk base: the tree's own ink (not the pale gap fill) within 8 mm
+    # of the tab axis on the serpent side, near the base line (z <= 8 mm).
+    res = .25
+    gt, gs = geo['tree'], geo['snake']
+    tree_ink = _ink_mask(gt['art']['rasters'][0], gt['left'], gt['shape']['shoulder'], res, key='art_alpha')
+    snake_ink = _ink_mask(gs['art']['rasters'][0], gs['left'], gs['shape']['shoulder'], res)
+    rows = slice(int(round((100-8)/res)), tree_ink.shape[0]); cols = slice(0, int(round((gt['mx']+8)/res))+1)
+    tree_base = np.zeros_like(tree_ink); tree_base[rows, cols] = tree_ink[rows, cols]
+    far = cv2.distanceTransform((~snake_ink[rows]).astype('uint8'), cv2.DIST_L2, 5)*res
+    d = float(far[tree_base[rows]].min()) if tree_base.any() else None
+    out['printed_trunk_base_to_serpent_ink_near_the_base_line_mm'] = round(d, 2) if d is not None else None
+    assert d is not None and d >= TREE_CLEARANCE_MM, ('trunk base ink nears the serpent ink', d)
+    base_line = box(-300, 0, 600, 2.0)
+    cross = tree.intersection(base_line).intersection(st['snake'][0].intersection(base_line))
+    out['clear_rims_crossing_the_serpent_cut_at_the_base_line_mm2'] = round(cross.area, 2)
+    return out
+
+
 def front_coverage(shapes):
     """Front-view occlusion sweep, reported (not asserted) for ORIGIN.
 
@@ -931,10 +1001,10 @@ def make_board(assets, shapes, preset, folder):
     bd = assets['backdrop']; ch = assets['character']; tr = assets['tree']; ti = tr['split_info']
     dl, dr = assets['door_left'], assets['door_right']
     nop = sum(len(shapes[p['id']]['openings']) for p in CFG['pieces'])
-    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V8 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
+    labels = (svg_text(13, 396, f'LEN DIORAMA ORIGIN V9 / {preset["name"]} / {PIECE_COUNT} PIECES', 4.0)
         + svg_text(13, 403, f'BASE / {CFG["base_mm"][0]:.0f} x {CFG["base_mm"][1]:.1f} cut / wave art {assets["base"]["w"]:.0f} x {assets["base"]["h"]:.1f} centred + 2.5 clear rim', 3.1)
         + svg_text(13, 410, f'{SLOT_COUNT} SLOTS 18.8 x {preset["slot_width_mm"]:.2f} / rows y {depths} (backdrop: 3 tabs) / {nop} cut-out openings', 3.1)
-        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky extended into the door zones + moon/clouds printed on it)  TREE one piece {tr["w"]:.0f}x{tr["h"]:.0f} canvas ({CFG["tree_one_piece"]["art_height_mm"]:.0f} mm art rotated {CFG["tree_one_piece"]["rotate_deg"]:g} deg clockwise, wood + blossoms printed, {ti["openings"]} openings, {ti["connectors"]} connectors {ti["connector_width_mm"]} mm, {tr["rasters"][0]["effective_ppi"]} ppi)  DOORS L/R {dl["w"]:.1f}x{dl["h"]:.0f} / {dr["w"]:.1f}x{dr["h"]:.0f} ({dl["rasters"][0]["art_height_mm_config"]:.0f} mm art, lattice openings cut)  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER whole {ch["w"]:.0f}x{ch["h"]:.1f} ({ch["rasters"][0]["art_height_mm_config"]:.0f} mm art, no crop, clear riser in the tab window)  / clear rim {CFG["clear_border_mm"]:.1f}', 3.0))
+        + svg_text(13, 417, f'BACKDROP {shapes["backdrop"]["poly"].bounds[2]-shapes["backdrop"]["poly"].bounds[0]:.0f}x{bd["h"]:.0f} (sky extended into the door zones + moon/clouds printed on it)  TREE one piece {tr["w"]:.0f}x{tr["h"]:.0f} canvas ({CFG["tree_one_piece"]["art_height_mm"]:.1f} mm art = V8 skeleton at the {CFG["tree_one_piece"]["skeleton_ref_mm"]:g} mm reference, rotated {CFG["tree_one_piece"]["rotate_deg"]:g} deg clockwise, wood + blossoms printed, {ti["openings"]} openings, {ti["connectors"]} connectors {ti["connector_width_mm"]} mm, {tr["rasters"][0]["effective_ppi"]} ppi)  DOORS L/R {dl["w"]:.1f}x{dl["h"]:.1f} / {dr["w"]:.1f}x{dr["h"]:.1f} ({dl["rasters"][0]["art_height_mm_config"]:.2f} mm art, cut tops level with the back panel, lattice openings cut)  SNAKE {assets["snake"]["w"]:.0f}x{assets["snake"]["h"]:.0f}  CHARACTER whole {ch["w"]:.0f}x{ch["h"]:.1f} ({ch["rasters"][0]["art_height_mm_config"]:.0f} mm art, no crop, clear riser in the tab window)  / clear rim {CFG["clear_border_mm"]:.1f}', 3.0))
     preview = write_svg(folder/'preview/flat_layout.svg', w, h,
         f'<rect width="{w}" height="{h}" fill="#fffdf8"/>'+ink+reference+cut_layer(items, .17)+labels)
     render(preview, folder/'preview/flat_layout.png', 2.2)
@@ -950,10 +1020,10 @@ def assembly(assets, shapes, preset, folder):
     cut edge (V1 filled every plate near-white and drew each one twice, which
     produced the white halos and the double outlines; on a light ground even
     an unfilled plate reads as white). Tabs are clipped at the shoulder line
-    because they sit inside the base slots. Cut-out openings (V8 tree and
-    doors) are drawn with the same lit edge so the sky shows through them.
-    Plates are drawn back to front by depth row: backdrop, doors, tree,
-    serpent, whole seated character.
+    because they sit inside the base slots. Cut-out openings (the V9 tree;
+    the doors' lattice holes are all printed) are drawn with the same lit edge
+    so the sky shows through them. Plates are drawn back to front by depth
+    row: backdrop, doors, tree, serpent, whole seated character.
     """
     ox, oy = 62, 212; dx, dy = .22, -.26
     bw, bh = CFG['base_mm']
@@ -987,10 +1057,33 @@ def assembly(assets, shapes, preset, folder):
         if body.geom_type != 'Polygon': body = max(body.geoms, key=lambda g: g.area)
         edges = path(poly_path(body), 'none', EDGE, EDGE_W)+''.join(path(poly_path(o), 'none', EDGE, EDGE_W) for o in s['openings'])
         parts.append(f'<g transform="translate({X:.4f} {Y:.4f})">' + edges + a['ink'] + '</g>')
-    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V8', 5, TEXT))
+    # Front-view inset (V9): the owner's two V9 requests are front-view
+    # properties (door tops level with the back panel, the tree between the
+    # left door and Len); the axonometric parallax above shifts deeper plates
+    # to the right and would misreport both. Printed rasters back to front at
+    # their true scene positions, cut edges as thin lit lines.
+    ZT, sc = 100.0, .33
+    inset = [f'<rect x="248" y="8" width="{280*sc+4:.2f}" height="{100*sc+4:.2f}" fill="#4a3d6b"/>',
+             f'<g transform="translate(250 10) scale({sc})">',
+             f'<rect width="280" height="{ZT}" fill="#3b3058"/>',
+             f'<g transform="translate({inset_x:.6f} {ZT+inset_y+b["h"]:.6f}) scale(1 -1)">{b["ink"]}</g>']
+    for spec in sorted(CFG['pieces'], key=lambda q: -q['mounts_mm'][0][1]):
+        pid = spec['id']; a = assets[pid]; s = shapes[pid]
+        mx = sum(m[0] for m in spec['mounts_mm'])/len(spec['mounts_mm'])
+        left = mx-(s['tab_x_mm'] if s['tab_x_mm'] is not None else a['w']/2)
+        inset.append(f'<g transform="translate({left:.4f} {ZT-s["shoulder"]:.4f})">{a["ink"]}</g>')
+    inset.append(f'<g transform="translate(0 {ZT}) scale(1 -1)">')
+    for pid, (g, my) in standing_cuts(shapes).items():
+        body = g.intersection(box(-300, 0, 600, 300))
+        inset.append(path(poly_path(body), 'none', EDGE, EDGE_W/sc))
+    inset.append(f'<line x1="0" y1="92" x2="280" y2="92" stroke="#ffffff" stroke-width="{.5/sc:.3f}"/></g></g>')
+    parts.extend(inset)
+    parts.append(svg_text(13, 15, 'LEN DIORAMA ORIGIN V9', 5, TEXT))
     parts.append(svg_text(13, 23, f'base {bw:.0f} x {bh:.1f} mm / {PIECE_COUNT} pieces / clear rim {CFG["clear_border_mm"]:.1f} mm on every plate / clear acrylic drawn see-through on a dark ground', 3.4))
+    parts.append(svg_text(250, 46, 'front view: doors and back panel both 95.0 mm assembled (white line = cut tops, 92.0 mm above the base)', 2.4, TEXT))
+    parts.append(svg_text(250, 49.5, f'tree {CFG["tree_one_piece"]["art_height_mm"]:.1f} mm art between the left door and Len, {TREE_CLEARANCE_MM:g} mm+ from both cuts', 2.4, TEXT))
     ti = assets['tree']['split_info']; nopen = sum(len(shapes[p['id']]['openings']) for p in CFG['pieces'])
-    parts.append(svg_text(13, 246, f'V8 / {preset["name"]} / back panel: sky + moon and clouds (doors no longer printed on it) / tree as ONE cut piece (trunk, branches and blossoms printed on it, {ti["openings"]} cut-out openings, {ti["connectors"]} twig connectors {ti["connector_width_mm"]} mm wide) standing diagonally behind the serpent / two lattice door plates at the sides in front of the back panel', 3.1))
+    parts.append(svg_text(13, 246, f'V9 / {preset["name"]} / back panel: sky + moon and clouds (doors no longer printed on it) / tree as ONE cut piece (trunk, branches and blossoms printed on it, {ti["openings"]} cut-out openings, {ti["connectors"]} twig connectors {ti["connector_width_mm"]} mm wide, {CFG["tree_one_piece"]["art_height_mm"]:.1f} mm art) standing in the gap between the left door and Len, behind the serpent / two lattice door plates as tall as the back panel at the sides in front of it', 3.1))
     parts.append(svg_text(13, 253, f'/ serpent plate / whole Len plate, feet on the base line, carried by a clear riser in the tab window / {nopen} cut-out openings in total, {CUT_PATH_COUNT} closed cut paths / 7 pieces, {SLOT_COUNT} slots', 3.1))
     svg = write_svg(folder/'preview/assembly.svg', 400, 260, ''.join(parts))
     render(svg, folder/'preview/assembly.png', 2.7)
@@ -1032,11 +1125,11 @@ def _visible_pct(raster, x0, ytop, sc, front_cuts, ra=None):
     return round(100*seen/total, 1) if total else None, vis
 
 
-def _ink_mask(raster, x0, ztop, res=.25):
+def _ink_mask(raster, x0, ztop, res=.25, key='res_alpha'):
     """Printed pixels of one raster as a scene grid (x from the base's left
     edge, z up from the base top) at `res` mm per cell; the raster is
     nearest-neighbour resampled from its own pixel size to the grid."""
-    ra = (raster['res_alpha'] > 128).astype('uint8')
+    ra = (raster[key] > 128).astype('uint8')
     h, w = ra.shape; sc = raster['h']/h
     nx = int(math.ceil(CFG['base_mm'][0]/res))+1; nz = int(math.ceil(100/res))+1
     m = np.zeros((nz, nx), bool)
@@ -1049,18 +1142,21 @@ def _ink_mask(raster, x0, ztop, res=.25):
     return m
 
 
-def composition_report(assets, shapes, tree_info):
-    """Measure the V8 scene from the real rasters and cut polygons: where every
-    plate stands, the one-piece tree's openings, connectors and printed gaps,
-    the two door plates, the moon's visibility, and how the character meets
-    the base line."""
+def composition_report(assets, shapes, tree_info, tree_clear):
+    """Measure the V9 scene from the real rasters and cut polygons: where every
+    plate stands and how tall its cut really is (door tops against the back
+    panel), the one-piece tree's position and clearances to the door and Len,
+    its openings, connectors and printed gaps, the moon's visibility, and how
+    the character meets the base line."""
     geo = _scene_geometry(assets, shapes)
     out = {'scene_width_mm': CFG['base_mm'][0], 'row_order_front_to_back': [p['id'] for p in sorted(CFG['pieces'], key=lambda q: q['mounts_mm'][0][1])], 'pieces': {}}
     for pid, g in geo.items():
         a = g['art']; s = g['shape']
+        cut_top = g['top']-s['poly'].bounds[1]
         out['pieces'][pid] = {'art_mm': [round(a['w'], 2), round(a['h'], 2)], 'plate_cut_bounds_mm': [round(x, 2) for x in s['poly'].bounds],
             'art_center_x_mm': round(g['mx'], 2), 'art_span_x_mm': [round(g['left'], 2), round(g['right'], 2)],
-            'depth_row_mm': g['my'], 'assembled_height_mm': round(CFG['presets'][0]['base_thickness_mm']+g['top'], 2),
+            'depth_row_mm': g['my'], 'cut_top_above_base_top_mm': round(cut_top, 2),
+            'assembled_height_mm': round(CFG['presets'][0]['base_thickness_mm']+cut_top, 2), 'art_top_above_base_top_mm': round(g['top'], 2),
             'effective_ppi': [r['effective_ppi'] for r in a['rasters']], 'clear_border_mm': s['border'],
             'tab_cx_mm': [round(g['mx']-g['tabx']+cx, 2) for cx in s['tab_cx']],
             'minimum_art_to_cut_mm': round(s['clearance'], 3), 'minimum_feature_mm': neck_width(s['poly']),
@@ -1070,6 +1166,13 @@ def composition_report(assets, shapes, tree_info):
             out['pieces'][pid]['minimum_feature_with_openings_mm'] = neck_width(holed)
     standing = standing_cuts(shapes)
     bd = assets['backdrop']; sky = bd['rasters'][0]; comp = out['pieces']['backdrop']
+    out['height_match'] = {'backdrop_cut_top_above_base_top_mm': comp['cut_top_above_base_top_mm'],
+        'door_left_cut_top_above_base_top_mm': out['pieces']['door_left']['cut_top_above_base_top_mm'],
+        'door_right_cut_top_above_base_top_mm': out['pieces']['door_right']['cut_top_above_base_top_mm'],
+        'door_minus_backdrop_mm': {d: round(out['pieces'][d]['cut_top_above_base_top_mm']-comp['cut_top_above_base_top_mm'], 3) for d in ('door_left', 'door_right')},
+        'backdrop_assembled_height_mm': comp['assembled_height_mm'],
+        'rule': 'V9: both door plates stand as tall as the back panel (cut tops aligned when assembled). Heights are real cut tops above the base top plus the 3 mm base; the V8 report counted art top + one rim (94.0 / 88.8) and omitted the 1.0 mm rim under every plate.'}
+    out['tree_piece_clearance_mm'] = dict(tree_clear, rule=CFG['tree_one_piece']['clearance_rule'])
     comp['sky_mm'] = [round(sky['w'], 2), round(sky['h'], 2)]
     comp['sky_span_x_mm'] = [round(geo['backdrop']['left'], 2), round(geo['backdrop']['right'], 2)]
     comp['sky_extension'] = {'rule': CFG['tree_one_piece'].get('sky_extension_rule', 'see pieces.backdrop.extend_sky_mm'), 'processing': sky['processing']}
@@ -1140,6 +1243,9 @@ def composition_report(assets, shapes, tree_info):
         'minimum_art_to_cut_mm': round(ts['clearance'], 3), 'minimum_feature_mm': neck_width(ts['poly']),
         'minimum_feature_with_openings_mm': neck_width(Polygon(ts['poly'].exterior, [o.exterior for o in ts['openings']])) if ts['openings'] else None,
         'tab_x_scene_mm': round(tg['mx']-tg['tabx']+ts['tab_cx'][0], 2), 'depth_row_mm': tg['my'],
+        'cut_top_above_base_top_mm': out['pieces']['tree']['cut_top_above_base_top_mm'], 'assembled_height_mm': out['pieces']['tree']['assembled_height_mm'],
+        'standing_cut_bounds_in_scene_mm': {'x': [round(tr_left+ts['poly'].bounds[0], 2), round(tr_left+ts['poly'].bounds[2], 2)], 'z_above_base_top': [round(ts['shoulder']-ts['poly'].bounds[3], 2), round(ts['shoulder']-ts['poly'].bounds[1], 2)]},
+        'clearance_to_door_and_character_mm': tree_clear,
         'visible_pct_in_front_view_not_hidden_by_front_plates': pct,
         'visible_pct_of_printed_ink_not_hidden_by_printed_ink_of_front_plates': visible_ink('tree'),
         'bud_guard_riser': ts['bud_guard'], 'printed_sky_fill_mm2': round(tr['fill_region'].area, 1), 'processing': ra['processing']})
@@ -1152,6 +1258,7 @@ def composition_report(assets, shapes, tree_info):
         pct, _ = visible(ra, g['my'], g['left'], s['shoulder'])
         ys, xs = np.nonzero(ra['res_alpha'] > 128)
         doors.append({'id': pid, 'art_mm': [round(a['w'], 2), round(a['h'], 2)], 'canvas_mm': [round(a['w'], 2), round(a['h'], 2)],
+            'cut_top_above_base_top_mm': out['pieces'][pid]['cut_top_above_base_top_mm'], 'configured_art_height_mm': a['rasters'][0]['art_height_mm_config'], 'scale_vs_v8_85mm': round(a['rasters'][0]['art_height_mm_config']/85.0, 4),
             'ink_box_in_scene_mm': {'x': [round(g['left']+xs.min()*sc, 2), round(g['left']+(xs.max()+1)*sc, 2)], 'z_above_base_top': [round(s['shoulder']-(ys.max()+1)*sc, 2), round(s['shoulder']-ys.min()*sc, 2)]},
             'plate_cut_bounds_mm': [round(v, 2) for v in s['poly'].bounds],
             'plate_cut_bounds_in_scene_mm': {'x': [round(g['left']+s['poly'].bounds[0], 2), round(g['left']+s['poly'].bounds[2], 2)], 'z_above_base_top': [round(s['shoulder']-s['poly'].bounds[3], 2), round(s['shoulder']-s['poly'].bounds[1], 2)]},
@@ -1195,6 +1302,7 @@ def composition_report(assets, shapes, tree_info):
 
 def validate(assets, shapes, preset, items, gap, slot_gap, split):
     mind, worst, over, pairs = assembly_clearance(shapes)
+    tclear = tree_clearance(shapes, assets)
     cov = front_coverage(shapes)
     folder = OUT/preset['name']
     im = Image.open(folder/'01_PRINT_300ppi.png')
@@ -1243,8 +1351,9 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
             for cx in s['tab_cx']:
                 x, y = p['tx']+cx, p['ty']+s['shoulder']+s['depth']/2
                 assert arr[round(y*PPI), round(x*PPI), 3] == 0
-    # V8 one-piece plates: every printed pixel inside its plate (outside the
-    # cut-out openings) with at least 0.5 mm of clear acrylic around it, the
+    # One-piece plates (the tree; the doors): every printed pixel inside its
+    # plate (outside the cut-out openings) with at least 0.5 mm of clear
+    # acrylic around it, the
     # minimum feature on the outer profile and across the openings, every
     # opening at least the minimum feature wide, and no clear fill inside
     # the body apart from the rim, the connectors and the riser.
@@ -1331,10 +1440,10 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
             cnt = int((region > 8).sum())
             assert .55*r['opaque_px'] <= cnt <= 1.6*r['opaque_px'], (p['name'], r['file'], cnt, r['opaque_px'])
     depths = sorted({m[1] for p in CFG['pieces'] for m in p['mounts_mm']})
-    heights = {pid: round(preset['base_thickness_mm']+assets[pid]['h']+shapes[pid]['border'], 2)
-               for pid in assets if pid != 'base' and not assets[pid].get('shoulder_override')}
-    for pid in assets:
-        if assets[pid].get('shoulder_override'): heights[pid] = round(preset['base_thickness_mm']+shapes[pid]['poly'].bounds[3], 2)
+    # V9: real cut tops above the base top plus the base thickness; the V8
+    # report counted art top + one rim and omitted the rim under every plate.
+    heights = {pid: round(preset['base_thickness_mm']+shapes[pid]['shoulder']-shapes[pid]['poly'].bounds[1], 2)
+               for pid in assets if pid != 'base'}
     report = {'revision': CFG['revision'], 'product': CFG['product'], 'concept_title': CFG['concept_title'],
         'character': CFG['character'], 'source_pack': CFG['source_pack'],
         'preset': preset, 'canvas_mm': list(BOARD),
@@ -1357,7 +1466,9 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
         'minimum_piece_gap_mm': gap, 'ai_layers': names,
         'same_row_standing_clearance_mm': mind, 'same_row_worst_pair': list(worst) if worst else None,
         'same_row_pairs': pairs,
-        'same_row_note': f"the two door plates share row {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('door_')})} far apart; every same-row pair of standing cuts keeps at least 2 mm",
+        'same_row_note': f"the two door plates share row {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('door_')})} far apart; every same-row pair of standing cuts keeps at least 2 mm; the tree (row 31) stands alone on its row and keeps at least {TREE_CLEARANCE_MM} mm from the character (row 12) and both doors (row 47) across rows (V9)",
+        'tree_visual_clearance_mm': tclear,
+        'door_backdrop_height_match': 'see composition.height_match (V9: both door cut tops level with the back panel cut top)',
         'art_overhang_beyond_base_mm': over,
         'front_view_coverage_pct': cov,
         'front_view_policy': CFG['front_view_policy'],
@@ -1372,14 +1483,14 @@ def validate(assets, shapes, preset, items, gap, slot_gap, split):
                       'on a 2.5 mm clear rim; {SLOT_COUNT} slot windows ink-cleared 1.5 mm in-memory '
                       'by the builder (no separate prepared copy, no placeholder-slot surgery)',
         'piece_breakdown': {
-            'backdrop': 'one plate: 05_background sky/wave raster mirrored into the two former door zones (30.4 / 30.5 mm) with the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; no doors and no tree printed on it (V8); 3 tabs',
-            'tree': 'V8: the complete blossom tree (trunk, branches, every blossom cluster) as ONE cut piece printed with the original pixels, 88 mm art rotated 35 deg clockwise, 1 tab under the trunk base behind the serpent; cut-out openings between branch/cluster groups, twig connectors 2.75 mm, narrow gaps printed with the sky colour',
-            'door_left, door_right': f"V8: the two lattice doorways of 06_lattice_doors.png as their own cut plates (85 mm art, 1.0 mm rim, lattice openings cut), one 18 mm tab each at row {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('door_')})[0]} in front of the back panel at their V2-V7 printed positions",
+            'backdrop': 'one plate: 05_background sky/wave raster mirrored into the two former door zones (30.4 / 30.5 mm) with the whole 04_moon_clouds layer (both islands) registered 5 mm below the sky top; no doors and no tree printed on it (V8); 3 tabs; its cut top 92.0 mm above the base top is the height both doors now match (V9)',
+            'tree': 'V9: the complete blossom tree (trunk, branches, every blossom cluster) as ONE cut piece printed with the original pixels, 35 deg clockwise; the V8 cut skeleton (opaque mask opened 1.5 mm at the 88 mm reference scale) carried to 56.0 mm art and moved into the gap between the left door and Len, 1 tab under the trunk base at scene x 96 behind the serpent; cut-out openings between branch/cluster groups, twig connectors 2.75 mm, narrow gaps printed with the sky colour; at least 1.0 mm from the door and Len cuts',
+            'door_left, door_right': f"V9: the two lattice doorways of 06_lattice_doors.png as their own cut plates (89.57 mm art, V8 85 mm scaled 1.0538x so the cut top stands 92.0 mm above the base top level with the back panel, 1.0 mm rim, lattice openings printed), one 18 mm tab each at row {sorted({p['mounts_mm'][0][1] for p in CFG['pieces'] if p['id'].startswith('door_')})[0]} in front of the back panel on their V2-V8 axes",
             'snake': '02_snake silhouette plate, 1 tab (V2/V4 position)',
             'character': '01_character silhouette plate, 1 tab; the whole 84 mm figure (no crop), boot rims on the base line, bud-guard clear riser inside the tab window between the legs (V2/V4 scale and x)'},
         'layer_order_back_to_front': ['backdrop (sky extended into the door zones, moon/clouds)', 'door_left, door_right (lattice doorways)', 'tree (one piece)', 'snake', 'character'],
         'row_order_front_to_back': [p['id'] for p in sorted(CFG['pieces'], key=lambda q: q['mounts_mm'][0][1])]+['backdrop'],
-        'composition': composition_report(assets, shapes, split),
+        'composition': composition_report(assets, shapes, split, tclear),
         'revision_note': CFG['revision_note'],
         'preview_rendering': 'clear acrylic see-through on a dark mauve ground: plate bodies unfilled, one 0.26 mm lit-edge stroke per plate, tabs clipped at the shoulder (inside the slots); base slab shows its front side band',
         'unused_source_islands': CFG['unused_source_islands'],
