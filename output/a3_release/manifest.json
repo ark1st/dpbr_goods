@@ -50,19 +50,19 @@
       {
         "folder": "a3_release/07_len_origin/3T/sheet_01",
         "pieces": 7,
-        "contours": 17
+        "contours": 16
       }
     ],
     "07_len_origin/5T": [
       {
         "folder": "a3_release/07_len_origin/5T/sheet_01",
         "pieces": 7,
-        "contours": 17
+        "contours": 16
       }
     ]
   },
   "physical_cut_test": false,
-  "revision": "A3-2026-11-28-len-origin-v8",
+  "revision": "A3-2026-11-28-len-origin-v9",
   "test_pieces_included": false,
   "superseded_releases": [
     {
@@ -100,7 +100,7 @@
       ],
       "masters_commit": "73a282329ebfe1fd46aa17fa23b79383c18440fd",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7 and V8 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
+      "reason": "Len ORIGIN V2 masters (commit 73a2823, local, never pushed as a release): one back panel, 1.0 mm rim and see-through preview. Its composition is the owner's preferred design and the base of V4, V6, V7, V8 and V9 (the V2 masters themselves were never gated as a release; V6 re-registers the same composition with the tree printed diagonally the right way and Len shown whole)."
     },
     {
       "commit": "657a4846ad78f481a2a64e10f496ba26291aefdc",
@@ -124,7 +124,7 @@
       "masters_commit": "a2a83cd9d70a317acf075caccf3118374421d028",
       "registration_commit": "84be30ca4085c295d211f5a96ff807f63fcabfca",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel (but rotated the wrong way by a builder sign error) and Len cropped at the seat line. The owner wants exactly two changes on V4 - the cropping fixed and the tree diagonal like the concept - which V6 applied; V4 was superseded by V5, V6, V7 and then V8 before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V4 masters (commit a2a83cd, release registration 84be30c; pushed to after_days/sleeg only, never to main/output_len): the V2 design with the blossom tree printed into the back panel (but rotated the wrong way by a builder sign error) and Len cropped at the seat line. The owner wants exactly two changes on V4 - the cropping fixed and the tree diagonal like the concept - which V6 applied; V4 was superseded by V5, V6, V7, V8 and then V9 before publication. Masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "c91c4a492c6b8d9dd03e148b04d4ab898ec67ff2",
@@ -148,7 +148,7 @@
       "masters_commit": "62963a8a8a8684a4bff3f16debdd52f3ca4519e7",
       "registration_commit": "b40cd6b83c4bd1f3e34a232e8ff702e1983c938d",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8 before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V6 masters (commit 62963a8, release registration b40cd6b; pushed to after_days/sleeg only, never to main/output_len): the V4 design with Len shown whole and the blossom tree printed into the back panel leaning up to the right (35 deg clockwise, 100 mm). The owner then decided the tree must be separate assets (\"벚꽃하고 나무는 별도 에셋으로 분리해줘\"), so V6 was superseded by V7 (the tree as its own wood cut piece plus six pink blossom cluster plates on clear stems) and then by V8 and V9 before publication. Masters and preview stay retrievable at the masters commit."
     },
     {
       "commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
@@ -160,7 +160,19 @@
       "masters_commit": "e8a480e61fa3a534d72a6acf0126a318195d812b",
       "registration_commit": "3a0d70faa403b1559d2f72732d8c25befc455adb",
       "status": "superseded_before_publication",
-      "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) before publication. Masters and preview stay retrievable at the masters commit."
+      "reason": "Len ORIGIN V7 masters (commit e8a480e, release registration 3a0d70f; pushed to after_days/sleeg only, never to main/output_len): the blossom tree split into a wood cut piece plus six pink blossom cluster plates on clear stems, the lattice doors still printed flat on the back panel. The owner corrected the design (\"벚꽃-나무는 하나여야지\" - the blossom tree must be ONE piece; \"저 문\" - the assets he wanted separate are the doors), so V7 was superseded by V8 (one-piece tree with real cut-out openings, two lattice door plates, sky extended into the former door zones) and then by V9 before publication. Masters and preview stay retrievable at the masters commit."
+    },
+    {
+      "commit": "268357cd5c6811d8699a91887b1176d259b8343c",
+      "revision": "A3-2026-11-28-len-origin-v8",
+      "groups": [
+        "07_len_origin/3T",
+        "07_len_origin/5T"
+      ],
+      "masters_commit": "13a36350f91cbab02a4916746e64eaaafc24f481",
+      "registration_commit": "268357cd5c6811d8699a91887b1176d259b8343c",
+      "status": "superseded_before_publication",
+      "reason": "Len ORIGIN V8 masters (commit 13a3635, release registration 268357c; pushed to after_days/sleeg only, never to main/output_len): the one-piece tree with real cut-out openings at 88 mm art standing behind Len (trunk at scene x 131, canopy crossing behind her), the two lattice door plates at 85 mm art (cut tops 87.45 mm above the base top, shorter than the back panel's 92.0 mm). The owner's final tweaks (\"마지막 수정 문하고 배경 높이만 좀 맞춰주고 벛꽃나무는 문하고 캐릭터사이 왼쪽으로 빼봐\" - match the door and backdrop heights; pull the blossom tree out to the left, between the door and the character) superseded it by V9 (doors at 89.57 mm art with their cut tops level with the back panel; the same one-piece tree at 56.0 mm art in the gap between the left door and Len, trunk at scene x 96) before publication. Masters and preview stay retrievable at the masters commit."
     }
   ],
   "physical_pages_per_selected_thickness": 2,

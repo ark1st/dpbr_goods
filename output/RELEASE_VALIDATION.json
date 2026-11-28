@@ -1,5 +1,5 @@
 {
-  "revision": "A3-2026-11-28-len-origin-v8",
+  "revision": "A3-2026-11-28-len-origin-v9",
   "errors": [],
   "repository": {
     "date": "2026-11-22",
@@ -150,7 +150,7 @@
       "a3_release/README.md",
       "a3_release/manifest.json"
     ],
-    "pinned_inputs_sha256_checked": 47,
+    "pinned_inputs_sha256_checked": 48,
     "preserved_source_assets_sha256_checked": [
       "assets/artwork.json",
       "assets/external/linked_supplied/줄줄이키링/이미지/새튀_0000_새튀W.png",
@@ -523,12 +523,12 @@
       {
         "folder": "a3_release/07_len_origin/3T/sheet_01",
         "pieces": 7,
-        "contours": 17,
+        "contours": 16,
         "max_export_deviation_mm": {
-          "03_CUT_ONLY.pdf": 0.0007177002242083776,
-          "02_MASTER.pdf": 0.0007177002242083776,
-          "02_MASTER.ai": 0.0007177002242083776,
-          "02_MASTER.vectorcraft": 0.0007177002242083776
+          "03_CUT_ONLY.pdf": 1.670560648979232e-05,
+          "02_MASTER.pdf": 1.670560648979232e-05,
+          "02_MASTER.ai": 2.6371452798964165e-05,
+          "02_MASTER.vectorcraft": 2.6371452798964165e-05
         },
         "png": [
           {
@@ -547,31 +547,31 @@
           }
         ],
         "sha256": {
-          "03_CUT_ONLY.svg": "8cdfa1aa1cba20a36a52d6e8179b7d0f31308db23e8247849d902dbaf6e1d9cc",
-          "validation.json": "d4a37a18357f9964ab2d29f67cd013231ce7430d34763f2cdaa00a6b5b5273fe",
-          "README.md": "052378eb410cb844405f2413a20cb2b63e8ee556fe0abc9c46f0b7d1d90cee75",
-          "01_PRINT.pdf": "4eab8419cad03d731a8b661151f4eaf5ec1ee866f334de8d0a09fdef1f3e3ce6",
-          "01_PRINT_300ppi.png": "9ec07d23540dfcce77dfe112c2a2020dc124fefb62c7fa561308e633ca7da23f",
-          "03_CUT_ONLY.pdf": "9887f5a18e16340caa4a5b6edf49b3cc7ef32787f46e01f6389bd071bb5cfddb",
-          "04_WHITE_INK_MASK.pdf": "3539627aaf2a7c8e5e66649914c0362b11b7e307090fc43a0a8fdd96c221af0f",
+          "03_CUT_ONLY.svg": "a09d7f9aaa063566189b28f6c05adfe58479b8c50c3cb06e63d6ef5eb37d4dd0",
+          "validation.json": "7ae1b035f23d89716f2bda1c4057044049f21f2f4d2af5c10e96f5a39d1cd18a",
+          "README.md": "df9f1f24ed70eac864aebb61e456d05d26b42dcc637b934c12af9efaff793167",
+          "01_PRINT.pdf": "90f702e824203665c0b69b1b1dfe3c913c6613f7ea7c1949d879fd6284e02627",
+          "01_PRINT_300ppi.png": "22adf6948e53a1574de6dd077df540cc22f6f5feaa72e57f72995dae976576d8",
+          "03_CUT_ONLY.pdf": "079dca9c180409e06d98055c9fa1e444edccb4d5bf77d87fc546bb59906f0550",
+          "04_WHITE_INK_MASK.pdf": "b7badd832b0591df4ce31499752ccf23a66dd505bbfc94e5de4e70b44912b90f",
           "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-          "02_MASTER.ai": "a7925772cb21886f4473911f966f98ac957f03c4f898fd2d40cfb266450a4bdc",
-          "02_MASTER.vectorcraft": "21a1c26b5e60d655adc3107c20f7c2b9c524ff6a049cd55e5ed727fead9f17f1",
-          "02_MASTER.pdf": "20a327c9a45cf087dd90fca8daaa272b170ad7c6bf469a6f30ca6af55e23dc5e",
-          "PREVIEW_NOT_FOR_CUT.pdf": "1d636dd1156941f00c562ae54212c2e8140e84e6c4ad3600951bf4ce805ec271",
-          "preview.png": "042487d75a46b6ddbb82e1269e7b7bca431f8921037e46519f89d53c87183b59",
-          "cut_detail.png": "482c049de0b3f9e2747ebe154b0572db5be8990590c19ae13e06418b9a289f42"
+          "02_MASTER.ai": "7d719e3c46cb5aba659854daf5cb971bbe4bb26d19ac82e7ecaff7d8d02563d4",
+          "02_MASTER.vectorcraft": "c7f6c0aa20ed676a2fbbe0b91c1a5fb530a38537c6aecc21f65390e99b1ff059",
+          "02_MASTER.pdf": "2bbc086371b13c02e68fe30ac5a1a99d72d2b7789cea8d92b047eee56c3da480",
+          "PREVIEW_NOT_FOR_CUT.pdf": "9cfa105ea7af427d4b8df6b68bb0374df6f651ab1bae2cd5ee9fdce02ed4859f",
+          "preview.png": "c6b44b137f82604490c5675dab1b7800f2b4644218986cde2ad0d08d6301236c",
+          "cut_detail.png": "f0d0d0377c792ff83cae41a1a683b1a301c69743158636cbd567555aafbe376d"
         }
       },
       {
         "folder": "a3_release/07_len_origin/5T/sheet_01",
         "pieces": 7,
-        "contours": 17,
+        "contours": 16,
         "max_export_deviation_mm": {
-          "03_CUT_ONLY.pdf": 0.0003731102978311381,
-          "02_MASTER.pdf": 0.0003731102978311381,
-          "02_MASTER.ai": 0.0003731102978311381,
-          "02_MASTER.vectorcraft": 0.0003731102978311381
+          "03_CUT_ONLY.pdf": 0.0005700578743299464,
+          "02_MASTER.pdf": 0.0005700578743299464,
+          "02_MASTER.ai": 0.0005700578743299464,
+          "02_MASTER.vectorcraft": 0.0005700578743299464
         },
         "png": [
           {
@@ -590,19 +590,19 @@
           }
         ],
         "sha256": {
-          "03_CUT_ONLY.svg": "f2178f6699766dd34e57a8050a65a7966efed9ec7620f7d509b4b7398e1f4851",
-          "validation.json": "84d50b61778240761a3a74b96154098bba3f28ae8b659ed3857c7acdf0113a1b",
-          "README.md": "052378eb410cb844405f2413a20cb2b63e8ee556fe0abc9c46f0b7d1d90cee75",
-          "01_PRINT.pdf": "a0231585cb4efdf18cae57002f7f465402b6585f7bb09aa6261f2f630162fdd5",
-          "01_PRINT_300ppi.png": "c4a79744581862df6b294de6a9543ce1c101c96bd19f8ea05b78d7e57c8f9cd6",
-          "03_CUT_ONLY.pdf": "b8d92b97e8f9684fa905207e8d9e50851ccf293fec0efa53e4beed90fd779d38",
-          "04_WHITE_INK_MASK.pdf": "47be0f6c93e4e58566402abbd705be0979a468228355a1690caba53e6c801749",
+          "03_CUT_ONLY.svg": "70209abfa1270590bf18ef50f64b47215f5a917e07d54c583b762b0c3960b826",
+          "validation.json": "23dfc3982d2bdefa5a99720e052e4a7949e8d6d83e1b7e5004282499e19f5b5f",
+          "README.md": "df9f1f24ed70eac864aebb61e456d05d26b42dcc637b934c12af9efaff793167",
+          "01_PRINT.pdf": "b4dafb0ed0a516a3b1246d9271f51a2d16811ced630419554f34c1ca06c5d40e",
+          "01_PRINT_300ppi.png": "b36d2b9ee00256f9f356aecaeee74ff6578315d315701ad17eb81990c573097a",
+          "03_CUT_ONLY.pdf": "5e4efd1d351475a3851fd8981ac28cca833126f466fbd7e1181fecd6bbf79696",
+          "04_WHITE_INK_MASK.pdf": "f7c8f11581ae2e1380be6ce9d1b341e0c27420e9877a55a2a92347f30e75aabd",
           "04_WHITE_INK_MASK_300ppi.png": "33f6daad5cde8807033659b2a11a40b41a145ef618d502f876a78068dd9afed9",
-          "02_MASTER.ai": "9b3c4a9b1d416a863dbbc3dfcf48f0c2af9125f7d1aa14dd1213467cf26d9ecb",
-          "02_MASTER.vectorcraft": "bbd45db958e0bc5524ba9198fc7a8f44bafbc89cb629104a0d5bf2f9868d59b8",
-          "02_MASTER.pdf": "afce38f06fafc0c0dc54099baed4908e165d66b29103c4d8cec1b4ed56526ded",
-          "PREVIEW_NOT_FOR_CUT.pdf": "be4fb58c0e41cf76a249d7115c370721d80fe8af7761c4367a10ef71cc1774e0",
-          "preview.png": "f6d981af669a1da8638cbb0093b5dccd03591e5c37840f2ab9433d5c70183e6a",
+          "02_MASTER.ai": "1489004e72c8d6da207ddd2ef4aca70fab4c9464d145180d3f6e432d59089667",
+          "02_MASTER.vectorcraft": "fd56871dca8797a4bf991b4254e129a080796ecccd9468ea074f843fc8d344bf",
+          "02_MASTER.pdf": "c31f17720be3b2bfa24ca2452401152fe01d0a6bd7e04c245873e711965ca702",
+          "PREVIEW_NOT_FOR_CUT.pdf": "95f285505cf8ce3d1ced7ac329d05832c84e7095d3bb8f5f52688ec8af44cab9",
+          "preview.png": "89b3f30f31ebb55687acfe13cbc329c6bf9368eb308a7b83ca59678eccd088f5",
           "cut_detail.png": "8120fedd5f7f3b443b4b1344dc2b274b432fecb629df41eb63682335169634c2"
         }
       }
@@ -610,43 +610,43 @@
     "packages": [
       {
         "file": "a3_release/02_extra_sheet_3T_A3.zip",
-        "bytes": 13986600,
-        "sha256": "13ae75649e5c1215ed420d4795c0acd9a1c1949c89eaffb794931a05665e31f6"
+        "bytes": 13986916,
+        "sha256": "828802c315d8e1ec06fa5705295623d9150ceec90fdd9f1ecc5dc9d2d46607e4"
       },
       {
         "file": "a3_release/02_extra_sheet_5T_A3.zip",
-        "bytes": 10255059,
-        "sha256": "a2416ca931602d76d810660e8e504b105fce2398bc83b5a672b6a60840141aa1"
+        "bytes": 10255375,
+        "sha256": "8d15f0bd09178aaa3de87a340d6cf110b00caab995a2c194e9549bd1e894cfd0"
       },
       {
         "file": "a3_release/05_len_3T_A3.zip",
-        "bytes": 16541604,
-        "sha256": "ae69db6623021c23fc6b77f4bfca917523b9eaa5f276f5508482b842b18cafbe"
+        "bytes": 16541920,
+        "sha256": "a1edfbdbb18ad2dcba77b67d6f93fb1bcb5d339e30b1143c9d6d22f0e3ff227f"
       },
       {
         "file": "a3_release/05_len_5T_A3.zip",
-        "bytes": 13927632,
-        "sha256": "58fa8beaa2deba385db8268115aed6bca3ba470b1225fac27593d2ba8bb0c52b"
+        "bytes": 13927948,
+        "sha256": "e29d2a4177eed120a3cc8841389699bc36c487e00b2b34737525f97cdf47a55c"
       },
       {
         "file": "a3_release/06_len_pad_3T_A3.zip",
-        "bytes": 12578125,
-        "sha256": "a25f9f53f2f56d9b83dc5a15c64a8fd636bad159d104349dc45ca3c2b6ba346e"
+        "bytes": 12578441,
+        "sha256": "97a1cc95fbc91b451e9779d163d06973b2fd55f2d37751d9a2d9c6fe85b36723"
       },
       {
         "file": "a3_release/06_len_pad_5T_A3.zip",
-        "bytes": 12547002,
-        "sha256": "37d6690a0b798ed72bdd8a10a615ba172e31f0d3db794e4f318d7067ebf475ca"
+        "bytes": 12547318,
+        "sha256": "1c6a6d76163aa87c6b19029e466dcd7685f400152e5fc385a2e543844f186c88"
       },
       {
         "file": "a3_release/07_len_origin_3T_A3.zip",
-        "bytes": 11994492,
-        "sha256": "f9e515ca03e0086d46f8ddf191b3bc10e22b7b8deb6e85eb38f67dc656220c5a"
+        "bytes": 12452935,
+        "sha256": "8e7f37446b60ffaac955318831aad910f663019bfae215e00848699348f000fe"
       },
       {
         "file": "a3_release/07_len_origin_5T_A3.zip",
-        "bytes": 11885927,
-        "sha256": "ac10beb2d89c31bd682c3ee2cbd8818c767f0cc753d97dab85c92e62498c8ff1"
+        "bytes": 11138284,
+        "sha256": "6088136e62070ec60b6f8e4eb55baa454b9556909caea5b268b6bb5ea2f255ce"
       }
     ],
     "errors": [],
@@ -818,51 +818,51 @@
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/01_PRINT.pdf",
-      "sha256": "4eab8419cad03d731a8b661151f4eaf5ec1ee866f334de8d0a09fdef1f3e3ce6"
+      "sha256": "90f702e824203665c0b69b1b1dfe3c913c6613f7ea7c1949d879fd6284e02627"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/02_MASTER.ai",
-      "sha256": "a7925772cb21886f4473911f966f98ac957f03c4f898fd2d40cfb266450a4bdc"
+      "sha256": "7d719e3c46cb5aba659854daf5cb971bbe4bb26d19ac82e7ecaff7d8d02563d4"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/02_MASTER.pdf",
-      "sha256": "20a327c9a45cf087dd90fca8daaa272b170ad7c6bf469a6f30ca6af55e23dc5e"
+      "sha256": "2bbc086371b13c02e68fe30ac5a1a99d72d2b7789cea8d92b047eee56c3da480"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "9887f5a18e16340caa4a5b6edf49b3cc7ef32787f46e01f6389bd071bb5cfddb"
+      "sha256": "079dca9c180409e06d98055c9fa1e444edccb4d5bf77d87fc546bb59906f0550"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/04_WHITE_INK_MASK.pdf",
-      "sha256": "3539627aaf2a7c8e5e66649914c0362b11b7e307090fc43a0a8fdd96c221af0f"
+      "sha256": "b7badd832b0591df4ce31499752ccf23a66dd505bbfc94e5de4e70b44912b90f"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
-      "sha256": "1d636dd1156941f00c562ae54212c2e8140e84e6c4ad3600951bf4ce805ec271"
+      "sha256": "9cfa105ea7af427d4b8df6b68bb0374df6f651ab1bae2cd5ee9fdce02ed4859f"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/01_PRINT.pdf",
-      "sha256": "a0231585cb4efdf18cae57002f7f465402b6585f7bb09aa6261f2f630162fdd5"
+      "sha256": "b4dafb0ed0a516a3b1246d9271f51a2d16811ced630419554f34c1ca06c5d40e"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/02_MASTER.ai",
-      "sha256": "9b3c4a9b1d416a863dbbc3dfcf48f0c2af9125f7d1aa14dd1213467cf26d9ecb"
+      "sha256": "1489004e72c8d6da207ddd2ef4aca70fab4c9464d145180d3f6e432d59089667"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/02_MASTER.pdf",
-      "sha256": "afce38f06fafc0c0dc54099baed4908e165d66b29103c4d8cec1b4ed56526ded"
+      "sha256": "c31f17720be3b2bfa24ca2452401152fe01d0a6bd7e04c245873e711965ca702"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/03_CUT_ONLY.pdf",
-      "sha256": "b8d92b97e8f9684fa905207e8d9e50851ccf293fec0efa53e4beed90fd779d38"
+      "sha256": "5e4efd1d351475a3851fd8981ac28cca833126f466fbd7e1181fecd6bbf79696"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/04_WHITE_INK_MASK.pdf",
-      "sha256": "47be0f6c93e4e58566402abbd705be0979a468228355a1690caba53e6c801749"
+      "sha256": "f7c8f11581ae2e1380be6ce9d1b341e0c27420e9877a55a2a92347f30e75aabd"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/PREVIEW_NOT_FOR_CUT.pdf",
-      "sha256": "be4fb58c0e41cf76a249d7115c370721d80fe8af7761c4367a10ef71cc1774e0"
+      "sha256": "95f285505cf8ce3d1ced7ac329d05832c84e7095d3bb8f5f52688ec8af44cab9"
     }
   ],
   "png_files_checked": [
@@ -964,7 +964,7 @@
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/01_PRINT_300ppi.png",
-      "sha256": "9ec07d23540dfcce77dfe112c2a2020dc124fefb62c7fa561308e633ca7da23f"
+      "sha256": "22adf6948e53a1574de6dd077df540cc22f6f5feaa72e57f72995dae976576d8"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
@@ -972,15 +972,15 @@
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/cut_detail.png",
-      "sha256": "482c049de0b3f9e2747ebe154b0572db5be8990590c19ae13e06418b9a289f42"
+      "sha256": "f0d0d0377c792ff83cae41a1a683b1a301c69743158636cbd567555aafbe376d"
     },
     {
       "file": "a3_release/07_len_origin/3T/sheet_01/preview.png",
-      "sha256": "042487d75a46b6ddbb82e1269e7b7bca431f8921037e46519f89d53c87183b59"
+      "sha256": "c6b44b137f82604490c5675dab1b7800f2b4644218986cde2ad0d08d6301236c"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/01_PRINT_300ppi.png",
-      "sha256": "c4a79744581862df6b294de6a9543ce1c101c96bd19f8ea05b78d7e57c8f9cd6"
+      "sha256": "b36d2b9ee00256f9f356aecaeee74ff6578315d315701ad17eb81990c573097a"
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/04_WHITE_INK_MASK_300ppi.png",
@@ -992,7 +992,7 @@
     },
     {
       "file": "a3_release/07_len_origin/5T/sheet_01/preview.png",
-      "sha256": "f6d981af669a1da8638cbb0093b5dccd03591e5c37840f2ab9433d5c70183e6a"
+      "sha256": "89b3f30f31ebb55687acfe13cbc329c6bf9368eb308a7b83ca59678eccd088f5"
     }
   ],
   "physical_cut_test": false,
